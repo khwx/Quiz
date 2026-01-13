@@ -8,6 +8,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Users, Play, Loader2, Trophy, ArrowRight } from "lucide-react";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
+import { generateQuestions } from "@/lib/ai-service";
 
 export default function TVHost() {
     const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion } = useGame();
@@ -16,6 +17,11 @@ export default function TVHost() {
     const [currentQuestions, setCurrentQuestions] = useState<any[]>([]);
     const [timeLeft, setTimeLeft] = useState(20);
     const [currentAnswers, setCurrentAnswers] = useState<any[]>([]);
+
+    // Theme State
+    const [topic, setTopic] = useState("Cultura Geral");
+    const [customTopic, setCustomTopic] = useState("");
+    const [isGenerating, setIsGenerating] = useState(false);
 
     // Initial Game Creation
     useEffect(() => {
@@ -80,23 +86,56 @@ export default function TVHost() {
         }
     }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions]);
 
-    // Fetch Questions on Start
+    // Fetch/Generate Questions on Start
     useEffect(() => {
-        const fetchQuestions = async () => {
+        const startRound = async () => {
             if (status === "STARTING") {
-                const country = await getCountryCode();
-                // Fetch all questions for now (mocking complex query)
-                const { data } = await supabase.from("questions").select("*");
-                if (data) {
-                    // Simple shuffle and slice
-                    const shuffled = data.sort(() => 0.5 - Math.random()).slice(0, 10);
-                    setCurrentQuestions(shuffled);
-                    // Move to first question
-                    nextQuestion(shuffled[0].id);
+                setIsGenerating(true);
+
+                try {
+                    // 1. Generate Questions via AI
+                    const finalTopic = customTopic || topic;
+                    console.log(`🤖 Generating questions for topic: ${finalTopic}`);
+
+                    const aiQuestions = await generateQuestions(finalTopic, 5);
+
+                    // 2. Insert into Supabase to get IDs (needed for mobile & results)
+                    // We map them to match the DB schema
+                    const questionsToInsert = aiQuestions.map((q: any) => ({
+                        text: q.text,
+                        options: q.options,
+                        correct_option: q.correct_option,
+                        category: finalTopic,
+                        age_rating: 18 // Default to adult for now
+                    }));
+
+                    const { data: insertedData, error } = await supabase
+                        .from("questions")
+                        .insert(questionsToInsert)
+                        .select();
+
+                    if (error) {
+                        console.error("Error saving questions:", error);
+                        // Fallback to existing questions if AI fails
+                        const { data: fallbackData } = await supabase.from("questions").select("*");
+                        if (fallbackData) {
+                            const shuffled = fallbackData.sort(() => 0.5 - Math.random()).slice(0, 5);
+                            setCurrentQuestions(shuffled);
+                            nextQuestion(shuffled[0].id);
+                        }
+                    } else if (insertedData) {
+                        setCurrentQuestions(insertedData);
+                        nextQuestion(insertedData[0].id);
+                    }
+                } catch (err) {
+                    console.error("AI Generation failed:", err);
+                    // Fallback identical to above
+                } finally {
+                    setIsGenerating(false);
                 }
             }
         };
-        fetchQuestions();
+        startRound();
     }, [status]);
 
     // Unified Question Loop (Timer and Reset Logic)
@@ -213,13 +252,50 @@ export default function TVHost() {
                         </div>
 
                         {players.length > 0 && (
-                            <button
-                                onClick={() => updateStatus("STARTING")}
-                                className="btn-quiz btn-primary w-full mt-8 flex items-center justify-center gap-2 group"
-                            >
-                                <Play className="group-hover:translate-x-1 transition-transform" />
-                                COMEÇAR JOGO
-                            </button>
+                            <div className="mt-8 flex flex-col gap-4">
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Escolha o Tema</label>
+                                    <div className="flex flex-wrap gap-2">
+                                        {["Cultura Geral", "Cinema", "Desporto", "Ciência", "Anos 90"].map(t => (
+                                            <button
+                                                key={t}
+                                                onClick={() => { setTopic(t); setCustomTopic(""); }}
+                                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${topic === t && !customTopic
+                                                        ? "bg-pink-500 text-white scale-105 shadow-lg shadow-pink-500/30"
+                                                        : "bg-white/10 text-gray-300 hover:bg-white/20"
+                                                    }`}
+                                            >
+                                                {t}
+                                            </button>
+                                        ))}
+                                    </div>
+                                    <input
+                                        type="text"
+                                        placeholder="Ou escreva um tema personalizado..."
+                                        value={customTopic}
+                                        onChange={(e) => setCustomTopic(e.target.value)}
+                                        className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
+                                    />
+                                </div>
+
+                                <button
+                                    onClick={() => updateStatus("STARTING")}
+                                    disabled={isGenerating}
+                                    className="btn-quiz btn-primary w-full flex items-center justify-center gap-2 group relative overflow-hidden"
+                                >
+                                    {isGenerating ? (
+                                        <>
+                                            <Loader2 className="animate-spin" />
+                                            <span className="animate-pulse">A Criar Quiz...</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Play className="group-hover:translate-x-1 transition-transform" />
+                                            COMEÇAR JOGO ({customTopic || topic})
+                                        </>
+                                    )}
+                                </button>
+                            </div>
                         )}
                     </motion.div>
                 </div>
