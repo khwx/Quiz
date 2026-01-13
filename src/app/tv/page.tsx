@@ -97,43 +97,61 @@ export default function TVHost() {
                 setIsGenerating(true);
 
                 try {
-                    // 1. Generate Questions via AI
-                    const finalTopic = customTopic || topic;
-                    console.log(`🤖 Generating questions for topic: ${finalTopic}`);
+                    // Normalize category name
+                    const finalTopic = (customTopic || topic).toLowerCase().trim();
+                    console.log(`🎯 Starting game with topic: ${finalTopic}`);
 
-                    const aiQuestions = await generateQuestions(finalTopic, 5);
-
-                    // 2. Insert into Supabase to get IDs (needed for mobile & results)
-                    // We map them to match the DB schema
-                    const questionsToInsert = aiQuestions.map((q: any) => ({
-                        text: q.text,
-                        options: q.options,
-                        correct_option: q.correct_option,
-                        category: finalTopic,
-                        age_rating: 18 // Default to adult for now
-                    }));
-
-                    const { data: insertedData, error } = await supabase
+                    // 1. Check if we have enough existing questions
+                    const { data: existingQuestions, count } = await supabase
                         .from("questions")
-                        .insert(questionsToInsert)
-                        .select();
+                        .select("*", { count: 'exact' })
+                        .ilike("category", finalTopic);
 
-                    if (error) {
-                        console.error("Error saving questions:", error);
-                        // Fallback to existing questions if AI fails
-                        const { data: fallbackData } = await supabase.from("questions").select("*");
-                        if (fallbackData) {
-                            const shuffled = fallbackData.sort(() => 0.5 - Math.random()).slice(0, 5);
-                            setCurrentQuestions(shuffled);
-                            nextQuestion(shuffled[0].id);
+                    let questionsToUse: any[] = [];
+
+                    if (count && count >= 10) {
+                        // REUSE: We have enough questions, randomly select 5
+                        console.log(`♻️ Reusing ${count} existing questions for "${finalTopic}"`);
+                        const shuffled = (existingQuestions || []).sort(() => 0.5 - Math.random()).slice(0, 5);
+                        questionsToUse = shuffled;
+                    } else {
+                        // GENERATE: Not enough questions, call AI
+                        console.log(`🤖 Generating new questions for "${finalTopic}" (only ${count || 0} exist)`);
+
+                        const aiQuestions = await generateQuestions(finalTopic, 5);
+
+                        // 2. Insert into Supabase (with duplicate check in API route)
+                        const questionsToInsert = aiQuestions.map((q: any) => ({
+                            text: q.text,
+                            options: q.options,
+                            correct_option: q.correct_option,
+                            category: finalTopic,
+                            age_rating: 18
+                        }));
+
+                        const { data: insertedData, error } = await supabase
+                            .from("questions")
+                            .insert(questionsToInsert)
+                            .select();
+
+                        if (error) {
+                            console.error("Error saving questions:", error);
+                            // Fallback to any existing questions
+                            const { data: fallbackData } = await supabase.from("questions").select("*");
+                            if (fallbackData) {
+                                questionsToUse = fallbackData.sort(() => 0.5 - Math.random()).slice(0, 5);
+                            }
+                        } else if (insertedData) {
+                            questionsToUse = insertedData;
                         }
-                    } else if (insertedData) {
-                        setCurrentQuestions(insertedData);
-                        nextQuestion(insertedData[0].id);
+                    }
+
+                    if (questionsToUse.length > 0) {
+                        setCurrentQuestions(questionsToUse);
+                        nextQuestion(questionsToUse[0].id);
                     }
                 } catch (err) {
-                    console.error("AI Generation failed:", err);
-                    // Fallback identical to above
+                    console.error("Question loading failed:", err);
                 } finally {
                     setIsGenerating(false);
                 }

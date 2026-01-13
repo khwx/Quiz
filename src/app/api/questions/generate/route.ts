@@ -6,14 +6,14 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 export async function POST(req: NextRequest) {
-    try {
-        const { prompt, count = 5, ageRating = "adults" } = await req.json();
+  try {
+    const { prompt, count = 5, ageRating = "adults" } = await req.json();
 
-        if (!apiKey) {
-            return NextResponse.json({ error: "API Key not configured on server" }, { status: 500 });
-        }
+    if (!apiKey) {
+      return NextResponse.json({ error: "API Key not configured on server" }, { status: 500 });
+    }
 
-        const fullPrompt = `
+    const fullPrompt = `
       Gera ${count} perguntas de quiz em Português de Portugal para o seguinte tema: "${prompt}".
       O público alvo é: ${ageRating === "children" ? "Crianças entre 6 e 12 anos" : "Adultos"}.
       
@@ -29,17 +29,23 @@ export async function POST(req: NextRequest) {
       ]
     `;
 
-        const result = await model.generateContent(fullPrompt);
-        const text = result.response.text();
-        console.log("[API] Generated:", text.substring(0, 50) + "...");
+    const result = await model.generateContent(fullPrompt);
+    const text = result.response.text();
+    console.log("[API] Generated:", text.substring(0, 50) + "...");
 
-        // Cleanup markdown
-        const jsonStr = text.replace(/```json|```/g, "").trim();
-        const questions = JSON.parse(jsonStr);
+    // Cleanup markdown
+    const jsonStr = text.replace(/```json|```/g, "").trim();
+    const questions = JSON.parse(jsonStr);
 
-        return NextResponse.json(questions);
-    } catch (error: any) {
-        console.error("[API] Error:", error);
-        return NextResponse.json({ error: "Failed to generate questions", details: error.message }, { status: 500 });
-    }
+    // Normalize category names for consistency
+    const normalizedQuestions = questions.map((q: any) => ({
+      ...q,
+      category: (q.category || prompt).toLowerCase().trim()
+    }));
+
+    return NextResponse.json(normalizedQuestions);
+  } catch (error: any) {
+    console.error("[API] Error:", error);
+    return NextResponse.json({ error: "Failed to generate questions", details: error.message }, { status: 500 });
+  }
 }
