@@ -9,6 +9,7 @@ import { Users, Play, Loader2, Trophy, ArrowRight } from "lucide-react";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
+import Podium from "@/components/tv/Podium";
 
 export default function TVHost() {
     const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion } = useGame();
@@ -261,8 +262,8 @@ export default function TVHost() {
                                                 key={t}
                                                 onClick={() => { setTopic(t); setCustomTopic(""); }}
                                                 className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${topic === t && !customTopic
-                                                        ? "bg-pink-500 text-white scale-105 shadow-lg shadow-pink-500/30"
-                                                        : "bg-white/10 text-gray-300 hover:bg-white/20"
+                                                    ? "bg-pink-500 text-white scale-105 shadow-lg shadow-pink-500/30"
+                                                    : "bg-white/10 text-gray-300 hover:bg-white/20"
                                                     }`}
                                             >
                                                 {t}
@@ -322,14 +323,33 @@ export default function TVHost() {
                 >
                     <button
                         onClick={() => {
-                            const nextQ = currentQuestions[currentQuestionIndex]; // currentQuestionIndex is already 1-based, so this gets the element at index currentQuestionIndex
-                            nextQuestion(nextQ?.id);
+                            const nextQ = currentQuestions[currentQuestionIndex];
+                            if (nextQ) {
+                                nextQuestion(nextQ.id);
+                            } else {
+                                updateStatus("PODIUM");
+                            }
                         }}
                         className="btn-quiz btn-primary flex items-center gap-2"
                     >
-                        Próxima Pergunta <ArrowRight />
+                        {currentQuestions[currentQuestionIndex] ? (
+                            <>Próxima Pergunta <ArrowRight /></>
+                        ) : (
+                            <>Ver Vencedores <Trophy /></>
+                        )}
                     </button>
                 </motion.div>
+            )}
+
+            {/* PODIUM VIEW */}
+            {status === "PODIUM" && (
+                <Podium
+                    players={players}
+                    onRestart={() => {
+                        setGameId(null);
+                        window.location.reload();
+                    }}
+                />
             )}
 
             {/* FINAL LEADERBOARD could go here */}

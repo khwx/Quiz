@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
-export type GameStatus = 'LOBBY' | 'STARTING' | 'QUESTION' | 'REVEAL' | 'LEADERBOARD' | 'FINAL';
+export type GameStatus = 'LOBBY' | 'STARTING' | 'QUESTION' | 'REVEAL' | 'LEADERBOARD' | 'FINAL' | 'PODIUM';
 
 interface GameState {
     gameId: string | null;
@@ -16,7 +16,7 @@ interface GameState {
 }
 
 interface GameContextType extends GameState {
-    setGameId: (id: string) => void;
+    setGameId: (id: string | null) => void;
     updateStatus: (status: GameStatus) => Promise<void>;
     nextQuestion: (questionId?: string) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
@@ -68,9 +68,9 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         if (data) setGameState(prev => ({ ...prev, players: data }));
     };
 
-    const setGameId = (id: string) => {
+    const setGameId = (id: string | null) => {
         setGameState(prev => ({ ...prev, gameId: id }));
-        fetchPlayers(id);
+        if (id) fetchPlayers(id);
     };
 
     const updateStatus = async (status: GameStatus) => {
