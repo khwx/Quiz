@@ -56,7 +56,29 @@ ALTER TABLE players ENABLE ROW LEVEL SECURITY;
 ALTER TABLE questions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE answers ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "Acesso público aos jogos" ON games FOR ALL USING (true);
-CREATE POLICY "Acesso público aos jogadores" ON players FOR ALL USING (true);
-CREATE POLICY "Acesso público às perguntas" ON questions FOR ALL USING (true);
-CREATE POLICY "Acesso público às respostas" ON answers FOR ALL USING (true);
+-- Políticas de Segurança (Melhoradas)
+ALTER TABLE games ENABLE ROW LEVEL SECURITY;
+ALTER TABLE players ENABLE ROW LEVEL SECURITY;
+ALTER TABLE questions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE answers ENABLE ROW LEVEL SECURITY;
+
+-- 1. Games: Qualquer pessoa cria e lê. NINGUÉM apaga (via API pública).
+DROP POLICY IF EXISTS "games_policy" ON games;
+CREATE POLICY "Public Read Games" ON games FOR SELECT USING (true);
+CREATE POLICY "Public Create Games" ON games FOR INSERT WITH CHECK (true);
+CREATE POLICY "Public Update Games" ON games FOR UPDATE USING (true);
+
+-- 2. Players: Qualquer pessoa entra.
+DROP POLICY IF EXISTS "players_policy" ON players;
+CREATE POLICY "Public Read Players" ON players FOR SELECT USING (true);
+CREATE POLICY "Public Join Players" ON players FOR INSERT WITH CHECK (true);
+CREATE POLICY "Public Update Players" ON players FOR UPDATE USING (true);
+
+-- 3. Questions: LEITURA APENAS. Ninguém altera perguntas pelo jogo.
+DROP POLICY IF EXISTS "questions_policy" ON questions;
+CREATE POLICY "Public Read Questions" ON questions FOR SELECT USING (true);
+
+-- 4. Answers: Jogadores respondem, Host lê.
+DROP POLICY IF EXISTS "answers_policy" ON answers;
+CREATE POLICY "Public Read Answers" ON answers FOR SELECT USING (true);
+CREATE POLICY "Public Give Answers" ON answers FOR INSERT WITH CHECK (true);
