@@ -10,6 +10,7 @@ import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
 import Podium from "@/components/tv/Podium";
+import LiveLeaderboard from "@/components/tv/LiveLeaderboard";
 import { useSound } from "@/hooks/useSound";
 
 export default function TVHost() {
@@ -24,6 +25,7 @@ export default function TVHost() {
     const [topic, setTopic] = useState("Cultura Geral");
     const [customTopic, setCustomTopic] = useState("");
     const [isGenerating, setIsGenerating] = useState(false);
+    const [timerDuration, setTimerDuration] = useState(20);
 
     const { playSound } = useSound();
 
