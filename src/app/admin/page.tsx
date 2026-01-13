@@ -114,8 +114,8 @@ export default function AdminPage() {
                         <button
                             onClick={() => setSelectedCategory("all")}
                             className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${selectedCategory === "all"
-                                    ? "bg-pink-500 text-white"
-                                    : "bg-white/10 text-gray-300 hover:bg-white/20"
+                                ? "bg-pink-500 text-white"
+                                : "bg-white/10 text-gray-300 hover:bg-white/20"
                                 }`}
                         >
                             Todas ({questions.length})
@@ -125,14 +125,45 @@ export default function AdminPage() {
                                 key={stat.category}
                                 onClick={() => setSelectedCategory(stat.category)}
                                 className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${selectedCategory === stat.category
-                                        ? "bg-pink-500 text-white"
-                                        : "bg-white/10 text-gray-300 hover:bg-white/20"
+                                    ? "bg-pink-500 text-white"
+                                    : "bg-white/10 text-gray-300 hover:bg-white/20"
                                     }`}
                             >
                                 {stat.category} ({stat.count})
                             </button>
                         ))}
                     </div>
+                </div>
+
+                {/* Danger Zone */}
+                <div className="glass-card mb-6 border-2 border-red-500/30">
+                    <div className="flex items-center gap-3 mb-4">
+                        <Trash2 className="text-red-500" />
+                        <h2 className="text-xl font-bold text-red-400">Zona de Perigo</h2>
+                    </div>
+                    <p className="text-gray-400 mb-4">
+                        Apagar todas as perguntas permanentemente. Esta ação não pode ser desfeita!
+                    </p>
+                    <button
+                        onClick={() => {
+                            const code = prompt("⚠️ ATENÇÃO! Isto vai apagar TODAS as perguntas.\n\nEscreve 'APAGAR' para confirmar:");
+                            if (code === "APAGAR") {
+                                const confirmAgain = confirm(`Tens MESMO a certeza? Vais apagar ${questions.length} perguntas!`);
+                                if (confirmAgain) {
+                                    supabase.from("questions").delete().neq("id", "00000000-0000-0000-0000-000000000000").then(() => {
+                                        alert("✅ Todas as perguntas foram apagadas!");
+                                        loadData();
+                                    });
+                                }
+                            } else if (code !== null) {
+                                alert("❌ Código errado. Nada foi apagado.");
+                            }
+                        }}
+                        className="bg-red-500/20 hover:bg-red-500/30 text-red-400 font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2"
+                    >
+                        <Trash2 size={20} />
+                        Apagar Todas as Perguntas ({questions.length})
+                    </button>
                 </div>
 
                 {/* Questions List */}
@@ -158,8 +189,8 @@ export default function AdminPage() {
                                             <div
                                                 key={i}
                                                 className={`px-3 py-2 rounded-lg text-sm ${i === q.correct_option
-                                                        ? "bg-green-500/20 text-green-400 font-bold"
-                                                        : "bg-white/5 text-gray-400"
+                                                    ? "bg-green-500/20 text-green-400 font-bold"
+                                                    : "bg-white/5 text-gray-400"
                                                     }`}
                                             >
                                                 {i === q.correct_option && "✓ "}{opt}
