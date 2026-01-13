@@ -16,6 +16,8 @@ CREATE TABLE players (
   game_id UUID REFERENCES games(id) ON DELETE CASCADE,
   name TEXT NOT NULL,
   score INTEGER DEFAULT 0,
+  avatar TEXT DEFAULT '🎮',
+  color TEXT DEFAULT '#FF6B6B',
   is_host BOOLEAN DEFAULT false,
   joined_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );

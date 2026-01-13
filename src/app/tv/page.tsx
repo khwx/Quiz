@@ -273,9 +273,11 @@ export default function TVHost() {
                                         initial={{ scale: 0, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
                                         exit={{ scale: 0, opacity: 0 }}
-                                        className="bg-white/10 p-4 rounded-2xl flex items-center justify-center font-bold text-xl text-center"
+                                        className="bg-white/10 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 font-bold text-xl text-center"
+                                        style={{ borderLeft: `4px solid ${player.color || '#FF6B6B'}` }}
                                     >
-                                        {player.name}
+                                        <span className="text-4xl">{player.avatar || '🎮'}</span>
+                                        <span className="text-white">{player.name}</span>
                                     </motion.div>
                                 ))}
                             </AnimatePresence>

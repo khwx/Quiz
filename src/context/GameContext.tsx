@@ -2,6 +2,8 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import { getRandomAvatar } from '@/lib/avatars';
+import { getRandomColor } from '@/lib/colors';
 
 export type GameStatus = 'LOBBY' | 'STARTING' | 'QUESTION' | 'REVEAL' | 'LEADERBOARD' | 'FINAL' | 'PODIUM';
 
@@ -88,8 +90,17 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     };
 
     const joinGame = async (gameId: string, playerName: string) => {
+        const avatar = getRandomAvatar();
+        const color = getRandomColor();
+
         const { data, error } = await supabase.from('players').insert([
-            { game_id: gameId, name: playerName, score: 0 }
+            {
+                game_id: gameId,
+                name: playerName,
+                score: 0,
+                avatar: avatar,
+                color: color
+            }
         ]).select();
 
         if (!error) {
