@@ -1,0 +1,202 @@
+[
+  {
+    "text": "Qual é a capital de Portugal?",
+    "options": ["Lisboa", "Porto", "Coimbra", "Faro"],
+    "correct_option": 0,
+    "category": "Geografia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Em que ano foi descoberto o caminho marítimo para a Índia?",
+    "options": ["1492", "1498", "1500", "1488"],
+    "correct_option": 1,
+    "category": "História",
+    "age_rating": 18,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual destas frutas é típica de Portugal?",
+    "options": ["Manga", "Abacaxi", "Laranja do Algarve", "Kiwi"],
+    "correct_option": 2,
+    "category": "Gastronomia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quantos planetas tem o Sistema Solar?",
+    "options": ["7", "8", "9", "10"],
+    "correct_option": 1,
+    "category": "Ciência",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual é o rio mais longo de Portugal?",
+    "options": ["Douro", "Tejo", "Mondego", "Guadiana"],
+    "correct_option": 1,
+    "category": "Geografia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quem escreveu 'Os Lusíadas'?",
+    "options": ["Fernando Pessoa", "Luís de Camões", "Eça de Queirós", "José Saramago"],
+    "correct_option": 1,
+    "category": "Literatura",
+    "age_rating": 18,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual a cor da bandeira de Portugal?",
+    "options": ["Azul e branco", "Verde e amarelo", "Verde e vermelho", "Vermelho e amarelo"],
+    "correct_option": 2,
+    "category": "Cultura Geral",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual destes animais vive no oceano?",
+    "options": ["Leão", "Girafa", "Golfinho", "Tigre"],
+    "correct_option": 2,
+    "category": "Ciência",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Em que continente fica Portugal?",
+    "options": ["África", "Ásia", "Europa", "América"],
+    "correct_option": 2,
+    "category": "Geografia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quantos dias tem uma semana?",
+    "options": ["5", "6", "7", "8"],
+    "correct_option": 2,
+    "category": "Cultura Geral",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual destes clubes é de futebol português?",
+    "options": ["FC Barcelona", "Benfica", "Real Madrid", "Manchester United"],
+    "correct_option": 1,
+    "category": "Desporto",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual é o maior mamífero do mundo?",
+    "options": ["Elefante", "Baleia Azul", "Girafa", "Urso Polar"],
+    "correct_option": 1,
+    "category": "Ciência",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quantas horas tem um dia?",
+    "options": ["12", "20", "24", "30"],
+    "correct_option": 2,
+    "category": "Cultura Geral",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual destes é um prato típico português?",
+    "options": ["Paella", "Bacalhau à Brás", "Pizza", "Sushi"],
+    "correct_option": 1,
+    "category": "Gastronomia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Em que ano Portugal ganhou o Campeonato Europeu de futebol?",
+    "options": ["2004", "2012", "2016", "2020"],
+    "correct_option": 2,
+    "category": "Desporto",
+    "age_rating": 18,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual é a moeda oficial de Portugal?",
+    "options": ["Dólar", "Libra", "Euro", "Peso"],
+    "correct_option": 2,
+    "category": "Economia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quantas cores tem o arco-íris?",
+    "options": ["5", "6", "7", "8"],
+    "correct_option": 2,
+    "category": "Ciência",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual é a montanha mais alta de Portugal?",
+    "options": ["Serra da Estrela", "Pico do Monte", "Torre", "Pico do Areeiro"],
+    "correct_option": 1,
+    "category": "Geografia",
+    "age_rating": 18,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quem foi Vasco da Gama?",
+    "options": ["Um escritor", "Um navegador", "Um rei", "Um pintor"],
+    "correct_option": 1,
+    "category": "História",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual destas ilhas pertence a Portugal?",
+    "options": ["Ibiza", "Madeira", "Sicília", "Creta"],
+    "correct_option": 1,
+    "category": "Geografia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quantos minutos tem uma hora?",
+    "options": ["30", "45", "60", "90"],
+    "correct_option": 2,
+    "category": "Matemática",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual é o oceano que banha Portugal?",
+    "options": ["Oceano Índico", "Oceano Pacífico", "Oceano Atlântico", "Oceano Ártico"],
+    "correct_option": 2,
+    "category": "Geografia",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual destes é um símbolo nacional de Portugal?",
+    "options": ["Torre Eiffel", "Big Ben", "Torre de Belém", "Coliseu"],
+    "correct_option": 2,
+    "category": "Cultura Geral",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Quantas estações do ano existem?",
+    "options": ["2", "3", "4", "5"],
+    "correct_option": 2,
+    "category": "Ciência",
+    "age_rating": 9,
+    "country_code": "PT"
+  },
+  {
+    "text": "Qual foi o primeiro rei de Portugal?",
+    "options": ["D. Afonso Henriques", "D. João I", "D. Manuel I", "D. Sebastião"],
+    "correct_option": 0,
+    "category": "História",
+    "age_rating": 18,
+    "country_code": "PT"
+  }
+]

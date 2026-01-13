@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --primary: #8b5cf6;
+  --secondary: #ec4899;
+  --accent: #f59e0b;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f172a] text-[#f8fafc] min-h-screen overflow-x-hidden;
+    background: radial-gradient(circle at top left, #1e1b4b 0%, #0f172a 100%);
+  }
+}
+
+@layer components {
+  .btn-quiz {
+    @apply px-8 py-4 rounded-2xl font-bold transition-all transform hover:scale-105 active:scale-95 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-violet-600 hover:bg-violet-500 text-white border-b-4 border-violet-800;
+  }
+  
+  .btn-secondary {
+    @apply bg-pink-600 hover:bg-pink-500 text-white border-b-4 border-pink-800;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-6;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
