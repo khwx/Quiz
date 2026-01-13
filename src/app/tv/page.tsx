@@ -10,6 +10,7 @@ import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
 import Podium from "@/components/tv/Podium";
+import { useSound } from "@/hooks/useSound";
 
 export default function TVHost() {
     const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion } = useGame();
@@ -23,6 +24,8 @@ export default function TVHost() {
     const [topic, setTopic] = useState("Cultura Geral");
     const [customTopic, setCustomTopic] = useState("");
     const [isGenerating, setIsGenerating] = useState(false);
+
+    const { playSound } = useSound();
 
     // Initial Game Creation
     useEffect(() => {
@@ -160,6 +163,12 @@ export default function TVHost() {
                         updateStatus("REVEAL");
                         return 0;
                     }
+
+                    // Play tick sound for last 5 seconds
+                    if (prev <= 5) {
+                        playSound('tick');
+                    }
+
                     return prev - 1;
                 });
             }, 1000);
@@ -176,6 +185,13 @@ export default function TVHost() {
             setTimeLeft(20);
         }
     }, [currentQuestionIndex]);
+
+    // Play win sound when podium appears
+    useEffect(() => {
+        if (status === "PODIUM") {
+            playSound('win');
+        }
+    }, [status, playSound]);
 
     if (loading) {
         return (

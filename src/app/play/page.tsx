@@ -6,6 +6,7 @@ import { useGame } from "@/context/GameContext";
 import { Gamepad2, Send, CheckCircle2, Loader2, Trophy } from "lucide-react";
 import AnswerController from "@/components/mobile/AnswerController";
 import { supabase } from "@/lib/supabase";
+import { useSound } from "@/hooks/useSound";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
     const resolvedParams = use(searchParams);
@@ -17,6 +18,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     const [hasAnswered, setHasAnswered] = useState(false);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [correctOption, setCorrectOption] = useState<number | null>(null);
+
+    const { playSound } = useSound();
 
     // Reset answer state when question index changes
     useEffect(() => {
@@ -39,6 +42,17 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
             getResult();
         }
     }, [status, currentQuestionId]);
+
+    // Play sound when result is revealed
+    useEffect(() => {
+        if (correctOption !== null && selectedOption !== null) {
+            if (selectedOption === correctOption) {
+                playSound('correct');
+            } else {
+                playSound('wrong');
+            }
+        }
+    }, [correctOption, selectedOption, playSound]);
 
     const handleJoin = async () => {
         if (!pin || !name) return;
