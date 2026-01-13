@@ -1,12 +1,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY || "");
-const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 export async function generateQuestions(prompt: string, count: number = 5, ageRating: string = "adults") {
   // Diagnostic log (masked)
   const key = process.env.NEXT_PUBLIC_GEMINI_API_KEY || "";
   console.log(`[AI-Service] Chave: ${key.substring(0, 4)}...${key.substring(key.length - 4)} (Len: ${key.length})`);
+  console.log(`[AI-Service] Prompt: ${prompt} | Count: ${count}`);
 
   const fullPrompt = `
     Gera ${count} perguntas de quiz em Português de Portugal para o seguinte tema: "${prompt}".
@@ -27,6 +28,8 @@ export async function generateQuestions(prompt: string, count: number = 5, ageRa
   try {
     const result = await model.generateContent(fullPrompt);
     const text = result.response.text();
+    console.log("[AI-Service] Raw response:", text);
+
     // Limpar markdown se a IA retornar blocks de código
     const jsonStr = text.replace(/```json|```/g, "").trim();
     return JSON.parse(jsonStr);
