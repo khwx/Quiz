@@ -2,9 +2,11 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(req: NextRequest) {
-    // Only protect /admin routes
-    if (!req.nextUrl.pathname.startsWith('/admin')) {
-        return NextResponse.next()
+    const path = req.nextUrl.pathname;
+
+    // STRICT CHECK: If it's not admin, let it pass immediately
+    if (!path.startsWith('/admin')) {
+        return NextResponse.next();
     }
 
     const basicAuth = req.headers.get('authorization')
@@ -13,9 +15,7 @@ export function middleware(req: NextRequest) {
         const authValue = basicAuth.split(' ')[1]
         const [user, pwd] = atob(authValue).split(':')
 
-        // DEFAULT CREDENTIALS
-        // User: admin
-        // Pass: load from env or default to "admin"
+        // Credenciais
         const validUser = 'admin'
         const validPass = process.env.ADMIN_PASSWORD || 'admin'
 
@@ -33,5 +33,6 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: '/admin/:path*',
+    // Update to Array syntax for stricter matching
+    matcher: ['/admin', '/admin/:path*'],
 }
