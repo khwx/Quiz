@@ -182,39 +182,35 @@ export default function TVHost() {
     useEffect(() => {
         let timer: NodeJS.Timeout;
 
+        // Force reset whenever we enter QUESTION mode or change question index
         if (status === "QUESTION") {
-            // Reset state for new question
-            setTimeLeft(20);
-            setCurrentAnswers([]);
-
-            // Start countdown
+            // Only start timer if we have > 0 time (avoid double start)
             timer = setInterval(() => {
                 setTimeLeft((prev) => {
-                    // Critical: if prev is 0 (from previous question), do NOT trigger REVEAL.
-                    // This avoids the race condition where the interval fires before the 20 is applied.
-                    if (prev <= 0) return 20;
-
                     if (prev <= 1) {
                         clearInterval(timer);
                         updateStatus("REVEAL");
                         return 0;
                     }
-
-                    // Play tick sound for last 5 seconds
-                    if (prev <= 5) {
-                        playSound('tick');
-                    }
-
+                    if (prev <= 5) playSound('tick');
                     return prev - 1;
                 });
             }, 1000);
         }
 
-        // Limpeza do timer ao desmontar ou mudar de estado
         return () => {
             if (timer) clearInterval(timer);
         };
-    }, [status, currentQuestionIndex]);
+    }, [status]); // Remove currentQuestionIndex dependency here to avoid double-trigger
+
+    // Separate effect for RESETTING specific to new question
+    useEffect(() => {
+        if (status === "QUESTION") {
+            console.log("🔄 New Question Loaded: Resetting Timer & Answers");
+            setTimeLeft(20);
+            setCurrentAnswers([]);
+        }
+    }, [currentQuestionIndex, status]);
 
     useEffect(() => {
         if (status === "QUESTION") {

@@ -73,10 +73,14 @@ export default function HostPage() {
                 {status === "LOBBY" && (
                     <button
                         onClick={() => updateStatus("STARTING")}
-                        className="btn-quiz btn-primary py-8 text-2xl flex flex-col items-center gap-2"
+                        disabled={players.length === 0}
+                        className={`py-8 text-2xl flex flex-col items-center gap-2 transition-all rounded-xl ${players.length > 0
+                            ? 'btn-quiz btn-primary'
+                            : 'bg-gray-700 text-gray-500 cursor-not-allowed opacity-50'
+                            }`}
                     >
                         <Play size={48} />
-                        Começar Jogo
+                        {players.length > 0 ? "Começar Jogo" : "Aguardando Jogadores..."}
                     </button>
                 )}
 
@@ -114,9 +118,12 @@ export default function HostPage() {
                     <Monitor size={24} />
                     <span className="text-xs">Abrir TV</span>
                 </button>
-                <button onClick={() => updateStatus("PODIUM")} className="flex flex-col items-center gap-1 text-gray-400 hover:text-white">
-                    <StopCircle size={24} />
-                    <span className="text-xs">Terminar</span>
+                <button
+                    onClick={() => updateStatus("PODIUM")}
+                    className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                >
+                    <Trophy size={32} className="text-yellow-500" />
+                    <span className="text-sm font-bold uppercase tracking-widest text-yellow-500">Ver Vencedores</span>
                 </button>
             </div>
         </main>
