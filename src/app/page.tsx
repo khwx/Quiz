@@ -36,15 +36,15 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <Link href="/tv" className="flex flex-col items-center gap-4 p-8 glass-card hover:bg-white/10 transition-all group">
+          <Link href="/host" className="flex flex-col items-center gap-4 p-8 glass-card hover:bg-white/10 transition-all group">
             <div className="p-4 bg-violet-500/20 rounded-2xl group-hover:scale-110 transition-transform">
               <Tv className="w-12 h-12 text-violet-400" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Anfitrião na TV</h3>
-              <p className="text-sm text-gray-400">Ideal para a sala com Chromecast</p>
+              <h3 className="text-2xl font-bold mb-2">Painel do Anfitrião</h3>
+              <p className="text-sm text-gray-400">Comando para controlar o jogo na TV</p>
             </div>
-            <button className="btn-quiz btn-primary w-full mt-4 underline-none">Criar Jogo</button>
+            <button className="btn-quiz btn-primary w-full mt-4 underline-none">Abrir Comando</button>
           </Link>
         </motion.div>
 

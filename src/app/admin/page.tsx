@@ -43,7 +43,10 @@ export default function AdminPage() {
             // Calculate stats
             const categoryMap = new Map<string, number>();
             questionsData.forEach(q => {
-                const cat = q.category || "Sem Categoria";
+                let cat = q.category || "Sem Categoria";
+                // Normalize for display: "ciência" -> "Ciência"
+                cat = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
+
                 categoryMap.set(cat, (categoryMap.get(cat) || 0) + 1);
             });
 
@@ -67,7 +70,11 @@ export default function AdminPage() {
 
     const filteredQuestions = selectedCategory === "all"
         ? questions
-        : questions.filter(q => q.category === selectedCategory);
+        : questions.filter(q => {
+            const cat = q.category || "Sem Categoria";
+            const normalizedCat = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
+            return normalizedCat === selectedCategory;
+        });
 
     if (loading) {
         return (

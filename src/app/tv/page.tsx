@@ -29,25 +29,41 @@ export default function TVHost() {
 
     const { playSound } = useSound();
 
-    // Initial Game Creation
+    // Initial Game Creation or Connection
     useEffect(() => {
-        const createGame = async () => {
-            const newPin = Math.floor(100000 + Math.random() * 900000).toString();
-            const { data } = await supabase
-                .from("games")
-                .insert([{ pin: newPin, status: "LOBBY" }])
-                .select()
-                .single();
+        const connectToGame = async () => {
+            // Check URL params for gameId (for Chromecast/Host opened view)
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryGameId = urlParams.get('gameId');
 
-            if (data) {
-                setPin(newPin);
-                setGameId(data.id);
+            if (queryGameId) {
+                console.log("🔗 Connecting to existing game:", queryGameId);
+                setGameId(queryGameId);
+                // Fetch game details to get PIN
+                const { data } = await supabase.from("games").select("pin").eq("id", queryGameId).single();
+                if (data) setPin(data.pin);
+                setLoading(false);
+                return;
+            }
+
+            // Only create new game if NO gameId is provided (Standalone mode)
+            if (!gameId) {
+                const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+                const { data } = await supabase
+                    .from("games")
+                    .insert([{ pin: newPin, status: "LOBBY" }])
+                    .select()
+                    .single();
+
+                if (data) {
+                    setPin(newPin);
+                    setGameId(data.id);
+                }
             }
             setLoading(false);
         };
 
-        if (!gameId) createGame();
-        else setLoading(false);
+        connectToGame();
     }, []);
 
     // Initial Answer Subscription (Already exists, adding answer subscription next)
