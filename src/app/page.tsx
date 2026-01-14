@@ -72,7 +72,7 @@ export default function Home() {
         transition={{ delay: 1 }}
         className="mt-12"
       >
-        <Link href="/admin" className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
+        <Link href="/admin" prefetch={false} className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
           <Settings className="w-4 h-4" />
           <span className="text-sm font-medium">Painel de Administração</span>
         </Link>
