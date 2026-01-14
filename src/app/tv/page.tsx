@@ -14,7 +14,7 @@ import LiveLeaderboard from "@/components/tv/LiveLeaderboard";
 import { useSound } from "@/hooks/useSound";
 
 export default function TVHost() {
-    const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion } = useGame();
+    const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
     const [pin, setPin] = useState<string>("");
     const [loading, setLoading] = useState(true);
     const [currentQuestions, setCurrentQuestions] = useState<any[]>([]);
@@ -166,6 +166,14 @@ export default function TVHost() {
 
                     if (questionsToUse.length > 0) {
                         setCurrentQuestions(questionsToUse);
+
+                        // SYNC: Save the playlist (Question IDs) to the game settings so Host can see them
+                        const questionIds = questionsToUse.map(q => q.id);
+                        await supabase.from("games").update({
+                            settings: { ...gameSettings, question_ids: questionIds }
+                        }).eq('id', gameId);
+
+                        // Start first question
                         nextQuestion(questionsToUse[0].id);
                     }
                 } catch (err) {

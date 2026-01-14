@@ -82,9 +82,37 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
     const nextQuestion = async (questionId?: string) => {
         const nextIndex = gameState.currentQuestionIndex + 1;
+
+        let nextId = questionId;
+
+        // Fallback: If no ID provided (Host Control), try to find it in settings playlist
+        if (!nextId && gameState.gameSettings?.question_ids) {
+            // Note: nextIndex is 1-based (question 1, 2, 3...)
+            // Array is 0-based. So question 1 is at index 0.
+            // When moving to question 2 (nextIndex=2), we want index 1.
+            nextId = gameState.gameSettings.question_ids[nextIndex - 1]; // nextIndex is 1-based usually? wait.
+            // Let's verify index logic. 
+            // Start: index 0. Next: index 1.
+            // If current is 1, next is 2.
+            // Arrays are 0-indexed.
+            // Logic in TV: nextQuestion(questionsToUse[0].id) -> sets index to 1?
+            // Let's check update: current_question_index: nextIndex.
+            // If existing is 0 -> next is 1. We want array[0].
+            // If existing is 1 -> next is 2. We want array[1].
+
+            // Correction: The array is 0-indexed. The index in DB is likely 1-indexed (Question 1, 2...).
+            // So if we are going to Question 2, we want array index 1.
+            if (gameState.gameSettings.question_ids[nextIndex - 1]) {
+                nextId = gameState.gameSettings.question_ids[nextIndex - 1];
+            }
+        }
+
         await supabase.from('games').update({
             current_question_index: nextIndex,
-            settings: { ...gameState.gameSettings, current_question_id: questionId },
+            settings: {
+                ...gameState.gameSettings,
+                current_question_id: nextId // Important: Update this so Mobile knows!
+            },
             status: 'QUESTION'
         }).eq('id', gameState.gameId);
     };
