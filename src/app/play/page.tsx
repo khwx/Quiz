@@ -59,15 +59,18 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         setIsJoining(true);
         try {
             // In real app, fetch gameId from pin first
-            const { data } = await supabase.from('games').select('id').eq('pin', pin).single();
-            if (data) {
-                await joinGame(data.id, name);
-                setHasJoined(true);
-            } else {
-                alert("Pin inválido!");
+            const { data, error: pinError } = await supabase.from('games').select('id').eq('pin', pin).single();
+
+            if (pinError || !data) {
+                alert("Pin inválido ou jogo não encontrado!");
+                return;
             }
-        } catch (err) {
-            console.error(err);
+
+            await joinGame(data.id, name);
+            setHasJoined(true);
+        } catch (err: any) {
+            console.error("Erro ao entrar:", err);
+            alert("Erro ao entrar no jogo: " + (err.message || "Tenta novamente"));
         } finally {
             setIsJoining(false);
         }

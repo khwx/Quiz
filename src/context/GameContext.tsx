@@ -103,7 +103,12 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
             }
         ]).select();
 
-        if (!error) {
+        if (error) {
+            console.error("Erro ao entrar no jogo:", error.message);
+            throw error;
+        }
+
+        if (data) {
             setGameId(gameId);
         }
     };
