@@ -7,7 +7,7 @@ import { Play, ArrowRight, Trophy, Users, RefreshCw, StopCircle, Monitor } from 
 import { motion } from "framer-motion";
 
 export default function HostPage() {
-    const { gameId, status, players, nextQuestion, updateStatus, setGameId } = useGame();
+    const { gameId, status, players, nextQuestion, updateStatus, setGameId, currentQuestionIndex, gameSettings } = useGame();
     const [loading, setLoading] = useState(false);
 
     // Initial check for active game in local storage or session
@@ -92,13 +92,32 @@ export default function HostPage() {
                 )}
 
                 {status === "REVEAL" && (
-                    <button
-                        onClick={() => nextQuestion()}
-                        className="btn-quiz btn-primary py-8 text-2xl flex flex-col items-center gap-2"
-                    >
-                        <ArrowRight size={48} />
-                        Próxima Pergunta
-                    </button>
+                    <>
+                        {gameSettings?.question_ids && currentQuestionIndex < gameSettings.question_ids.length ? (
+                            <button
+                                onClick={() => {
+                                    // Make Host smart: Pass the ID explicitly if we have it
+                                    // currentQuestionIndex is 1-based. So for Q1 (index 0), current is 1.
+                                    // Next question is at index (currentQuestionIndex).
+                                    // Example: Current is 1 (Array[0]). Next is 2 (Array[1]).
+                                    const nextId = gameSettings.question_ids[currentQuestionIndex];
+                                    nextQuestion(nextId);
+                                }}
+                                className="btn-quiz btn-primary py-8 text-2xl flex flex-col items-center gap-2"
+                            >
+                                <ArrowRight size={48} />
+                                Próxima Pergunta ({currentQuestionIndex + 1}/{gameSettings.question_ids.length})
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => updateStatus("PODIUM")}
+                                className="btn-quiz btn-secondary py-8 text-2xl flex flex-col items-center gap-2"
+                            >
+                                <Trophy size={48} className="text-yellow-400" />
+                                Ver Vencedores
+                            </button>
+                        )}
+                    </>
                 )}
 
                 {status === "PODIUM" && (
