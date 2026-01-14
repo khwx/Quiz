@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 export default function HostPage() {
     const { gameId, status, players, nextQuestion, updateStatus, setGameId, currentQuestionIndex, gameSettings } = useGame();
+    const [loading, setLoading] = useState(false);
     const [gamePin, setGamePin] = useState<string>("");
 
     // Fetch PIN when gameId is available
