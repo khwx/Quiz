@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Tv, Gamepad2, Settings } from "lucide-react";
+import { Tv, Gamepad2, Settings, Play } from "lucide-react";
 
 export default function Home() {
   return (
