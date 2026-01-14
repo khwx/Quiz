@@ -70,8 +70,13 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="mt-12"
+        className="mt-12 flex flex-col items-center gap-4"
       >
+        <Link href="/tutorial" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 transition-colors bg-violet-400/10 px-6 py-2 rounded-full border border-violet-400/20">
+          <Play size={16} fill="currentColor" />
+          <span className="text-sm font-bold uppercase tracking-wider">Como Jogar?</span>
+        </Link>
+
         <Link href="/admin" prefetch={false} className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors">
           <Settings className="w-4 h-4" />
           <span className="text-sm font-medium">Painel de Administração</span>
