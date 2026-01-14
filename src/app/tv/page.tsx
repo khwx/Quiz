@@ -167,14 +167,19 @@ export default function TVHost() {
                     if (questionsToUse.length > 0) {
                         setCurrentQuestions(questionsToUse);
 
-                        // SYNC: Save the playlist (Question IDs) to the game settings so Host can see them
+                        // SYNC: Atomic update to prevent race conditions
+                        // We set the playlist AND the first question simultaneously
                         const questionIds = questionsToUse.map(q => q.id);
+
                         await supabase.from("games").update({
-                            settings: { ...gameSettings, question_ids: questionIds }
+                            settings: { ...gameSettings, question_ids: questionIds, current_question_id: questionsToUse[0].id },
+                            current_question_index: 1, // Start at Q1
+                            status: "QUESTION"
                         }).eq('id', gameId);
 
-                        // Start first question
-                        nextQuestion(questionsToUse[0].id);
+                        // Note: We don't call nextQuestion() here because we just did it manually above
+                        // But we must ensure the local timer starts? 
+                        // The UpdateStatus("QUESTION") effect will handle the timer start.
                     }
                 } catch (err) {
                     console.error("Question loading failed:", err);
