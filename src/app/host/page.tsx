@@ -8,12 +8,17 @@ import { motion } from "framer-motion";
 
 export default function HostPage() {
     const { gameId, status, players, nextQuestion, updateStatus, setGameId, currentQuestionIndex, gameSettings } = useGame();
-    const [loading, setLoading] = useState(false);
+    const [gamePin, setGamePin] = useState<string>("");
 
-    // Initial check for active game in local storage or session
+    // Fetch PIN when gameId is available
     useEffect(() => {
-        // Here we could implement logic to restore session if needed
-    }, []);
+        if (!gameId) return;
+        const fetchPin = async () => {
+            const { data } = await supabase.from("games").select("pin").eq("id", gameId).single();
+            if (data?.pin) setGamePin(data.pin);
+        };
+        fetchPin();
+    }, [gameId]);
 
     const handleCreateGame = async () => {
         setLoading(true);
@@ -26,6 +31,7 @@ export default function HostPage() {
 
         if (data) {
             setGameId(data.id);
+            setGamePin(data.pin);
         }
         setLoading(false);
     };
@@ -59,7 +65,7 @@ export default function HostPage() {
                     <div className="text-xs text-gray-400 uppercase tracking-widest">PIN DO JOGO</div>
                     <div className="text-3xl font-black font-mono tracking-widest text-pink-500">
                         {/* We need to fetch the pin properly, assuming it's in context or we fetch it */}
-                        Running...
+                        {gamePin || "A gerar..."}
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
