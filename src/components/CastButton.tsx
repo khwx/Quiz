@@ -16,22 +16,24 @@ export default function CastButton() {
     const [isSessionConnected, setIsSessionConnected] = useState(false);
 
     useEffect(() => {
-        // 1. Check if API is already available (re-renders)
-        if (window.cast && window.cast.framework) {
+        // 1. Initial check
+        if (typeof window !== 'undefined' && window.cast && window.cast.framework) {
             initializeCast();
         }
 
         // 2. Setup Callback
         window.__onGCastApiAvailable = (isAvailable) => {
+            // console.log("Cast API Available:", isAvailable);
             if (isAvailable) {
                 initializeCast();
             }
         };
 
         function initializeCast() {
+            if (isApiAvailable) return; // Already init
+
             try {
                 const context = window.cast.framework.CastContext.getInstance();
-
                 context.setOptions({
                     receiverApplicationId: window.chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
                     autoJoinPolicy: window.chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
@@ -39,7 +41,10 @@ export default function CastButton() {
 
                 setIsApiAvailable(true);
 
-                // Listen for connection changes to toggle button style
+                // Check initial state
+                // const session = context.getCurrentSession();
+                // setIsSessionConnected(!!session);
+
                 context.addEventListener(
                     window.cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
                     (event: any) => {
@@ -48,39 +53,35 @@ export default function CastButton() {
                         setIsSessionConnected(sessionState === SESSION_STARTED);
                     }
                 );
-
             } catch (e) {
-                console.error("Cast Error:", e);
+                console.error("Cast Init Error:", e);
             }
         }
     }, []);
 
     const handleCastClick = () => {
-        if (window.cast && window.cast.framework) {
+        if (isApiAvailable && window.cast && window.cast.framework) {
             window.cast.framework.CastContext.getInstance().requestSession()
-                .then(() => console.log("Cast Session Started"))
-                .catch((err: any) => console.error("Cast Session Failed", err));
+                .then(() => console.log("Session Request Success"))
+                .catch((err: any) => {
+                    if (err !== 'cancel') console.error("Session Request Failed", err);
+                });
         } else {
-            console.warn("Cast API not ready");
+            alert("O serviço Google Cast ainda não está pronto. Verifique se tem a extensão instalada ou tente atualizar a página.");
         }
     };
 
-    // Always render something to debug, but maybe dim if not ready
-    if (!isApiAvailable) {
-        // Return a ghost button or nothing? Let's return nothing to be clean
-        // but if user says "not appearing", maybe we show a disabled one?
-        // Let's hide it until API is ready to avoid confusion.
-        return null;
-    }
-
+    // FORCE RENDER: Show button even if not ready (dimmed) so user knows it exists.
     return (
         <button
             onClick={handleCastClick}
-            className={`p-3 rounded-full transition-all duration-300 shadow-lg ${isSessionConnected
+            className={`p-3 rounded-full transition-all duration-300 shadow-lg flex items-center justify-center ${isSessionConnected
                     ? "bg-pink-500 text-white animate-pulse"
-                    : "bg-white text-gray-800 hover:bg-gray-100"
+                    : isApiAvailable
+                        ? "bg-white text-gray-800 hover:bg-gray-100"
+                        : "bg-gray-400 text-gray-200 cursor-not-allowed opacity-50"
                 }`}
-            title="Transmitir para TV"
+            title={isApiAvailable ? "Transmitir para TV" : "A aguardar Serviço Google Cast..."}
         >
             <Cast size={24} />
         </button>

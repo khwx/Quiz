@@ -263,11 +263,11 @@ export default function TVHost() {
                             <h1 className="text-5xl font-black text-white mb-4 italic uppercase tracking-tighter">
                                 Preparem os <span className="text-pink-500">telemóveis!</span>
                             </h1>
-                            <p className="text-2xl text-gray-400">Entrem no jogo em <span className="text-white font-bold">quiz.io/play</span></p>
+                            <p className="text-2xl text-gray-400">Entrem em <span className="text-white font-bold">quiz-two-zeta-67.vercel.app</span></p>
                         </div>
 
                         <div className="bg-white p-6 rounded-3xl w-fit shadow-2xl shadow-violet-500/20 relative">
-                            <QRCodeSVG value={`https://quizmaster.io/play?pin=${pin}`} size={256} level="H" />
+                            <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={256} level="H" />
 
                             {/* Cast Button positioned near QR code for visibility */}
                             <div className="absolute -top-12 right-0 bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
