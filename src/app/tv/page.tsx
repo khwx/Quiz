@@ -12,6 +12,7 @@ import { generateQuestions } from "@/lib/ai-service";
 import Podium from "@/components/tv/Podium";
 import LiveLeaderboard from "@/components/tv/LiveLeaderboard";
 import { useSound } from "@/hooks/useSound";
+import CastButton from "@/components/CastButton";
 
 export default function TVHost() {
     const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
@@ -265,8 +266,13 @@ export default function TVHost() {
                             <p className="text-2xl text-gray-400">Entrem no jogo em <span className="text-white font-bold">quiz.io/play</span></p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-3xl w-fit shadow-2xl shadow-violet-500/20">
+                        <div className="bg-white p-6 rounded-3xl w-fit shadow-2xl shadow-violet-500/20 relative">
                             <QRCodeSVG value={`https://quizmaster.io/play?pin=${pin}`} size={256} level="H" />
+
+                            {/* Cast Button positioned near QR code for visibility */}
+                            <div className="absolute -top-12 right-0 bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+                                <CastButton />
+                            </div>
                         </div>
 
                         <div className="flex flex-col gap-2">

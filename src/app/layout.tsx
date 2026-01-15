@@ -31,6 +31,7 @@ export default function RootLayout({
         <GameProvider>
           {children}
         </GameProvider>
+        <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" defer></script>
       </body>
     </html>
   );
