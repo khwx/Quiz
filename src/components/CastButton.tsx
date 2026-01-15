@@ -3,14 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { Cast } from 'lucide-react';
 
-declare global {
-    interface Window {
-        __onGCastApiAvailable: (isAvailable: boolean) => void;
-        cast: any;
-        chrome: any;
-    }
-}
-
 export default function CastButton() {
     const [isApiAvailable, setIsApiAvailable] = useState(false);
     const [isSessionConnected, setIsSessionConnected] = useState(false);
@@ -76,10 +68,10 @@ export default function CastButton() {
         <button
             onClick={handleCastClick}
             className={`p-3 rounded-full transition-all duration-300 shadow-lg flex items-center justify-center ${isSessionConnected
-                    ? "bg-pink-500 text-white animate-pulse"
-                    : isApiAvailable
-                        ? "bg-white text-gray-800 hover:bg-gray-100"
-                        : "bg-gray-400 text-gray-200 cursor-not-allowed opacity-50"
+                ? "bg-pink-500 text-white animate-pulse"
+                : isApiAvailable
+                    ? "bg-white text-gray-800 hover:bg-gray-100"
+                    : "bg-gray-400 text-gray-200 cursor-not-allowed opacity-50"
                 }`}
             title={isApiAvailable ? "Transmitir para TV" : "A aguardar Serviço Google Cast..."}
         >
