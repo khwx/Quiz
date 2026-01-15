@@ -127,13 +127,13 @@ export default function TVHost() {
 
                     let questionsToUse: any[] = [];
 
-                    if (count && count >= 10) {
-                        // REUSE: We have enough questions, randomly select 5
-                        console.log(`♻️ Reusing ${count} existing questions for "${finalTopic}"`);
+                    if (count && count >= 50) {
+                        // REUSE: We have a healthy pool (50+), randomly select 5
+                        console.log(`♻️ Reusing existing questions from pool of ${count} for "${finalTopic}"`);
                         const shuffled = (existingQuestions || []).sort(() => 0.5 - Math.random()).slice(0, 5);
                         questionsToUse = shuffled;
                     } else {
-                        // GENERATE: Not enough questions, call AI
+                        // GENERATE: Pool is small (<50), ensure variety by adding more
                         console.log(`🤖 Generating new questions for "${finalTopic}" (only ${count || 0} exist)`);
 
                         const aiQuestions = await generateQuestions(finalTopic, 5);
