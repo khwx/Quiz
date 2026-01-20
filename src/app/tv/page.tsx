@@ -105,6 +105,7 @@ export default function TVHost() {
 
         if (status === "QUESTION" && players.length > 0 && validAnswers.length >= players.length) {
             console.log("⚡ Everyone answered! Skipping timer...");
+            setTimeLeft(0);
             updateStatus("REVEAL");
         }
     }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions]);

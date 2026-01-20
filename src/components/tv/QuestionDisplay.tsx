@@ -118,7 +118,7 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                                                         className="bg-white/20 px-3 py-1 rounded-full text-sm font-black text-white border border-white/20 backdrop-blur-sm"
                                                         title={player.name}
                                                     >
-                                                        {getInitials(player.name)}
+                                                        {player.avatar || getInitials(player.name)}
                                                     </motion.div>
                                                 );
                                             })}
