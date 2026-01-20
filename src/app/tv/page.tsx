@@ -144,7 +144,7 @@ export default function TVHost() {
                     const { data, count: c } = await query;
                     count = c || 0;
 
-                    if (count >= 1000) {
+                    if (count >= 150) {
                         // We have enough questions! Shuffle and use them.
                         questionsToUse = (data || []).sort(() => 0.5 - Math.random()).slice(0, 5);
                         console.log(`✅ Found ${count} existing questions. Using 5.`);
