@@ -33,9 +33,83 @@ export default function TVHost() {
 
     // ... (keep Initial Game Creation effect)
 
-    // ... (keep Initial Answer Subscription effect)
+    // Initial Game Creation or Connection
+    useEffect(() => {
+        const connectToGame = async () => {
+            // Check URL params for gameId (for Chromecast/Host opened view)
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryGameId = urlParams.get('gameId');
 
-    // ... (keep Auto-skip logic effect)
+            if (queryGameId) {
+                console.log("🔗 Connecting to existing game:", queryGameId);
+                setGameId(queryGameId);
+                // Fetch game details to get PIN
+                const { data } = await supabase.from("games").select("pin").eq("id", queryGameId).single();
+                if (data) setPin(data.pin);
+                setLoading(false);
+                return;
+            }
+
+            // Only create new game if NO gameId is provided (Standalone mode)
+            if (!gameId) {
+                const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+                const { data } = await supabase
+                    .from("games")
+                    .insert([{ pin: newPin, status: "LOBBY" }])
+                    .select()
+                    .single();
+
+                if (data) {
+                    setPin(newPin);
+                    setGameId(data.id);
+                }
+            }
+            setLoading(false);
+        };
+
+        connectToGame();
+    }, []);
+
+    // Initial Answer Subscription
+    useEffect(() => {
+        if (!gameId) return;
+
+        const channel = supabase
+            .channel(`answers-${gameId}`)
+            .on('postgres_changes', {
+                event: 'INSERT',
+                schema: 'public',
+                table: 'answers',
+                filter: `game_id=eq.${gameId}`
+            }, (payload) => {
+                const newAnswer = payload.new;
+                // Only consider answers for the current question
+                const currentQ = currentQuestions[currentQuestionIndex - 1];
+                if (newAnswer.question_id === currentQ?.id) {
+                    setCurrentAnswers(prev => [...prev, newAnswer]);
+                }
+            })
+            .subscribe();
+
+        return () => {
+            supabase.removeChannel(channel);
+        };
+    }, [gameId, currentQuestionIndex, currentQuestions]);
+
+    // Auto-skip logic
+    useEffect(() => {
+        // Validation: Ensure we are only counting answers for the CURRENT question
+        // This prevents race conditions where old answers are still in state during transition
+        const currentQ = currentQuestions[currentQuestionIndex - 1];
+        if (!currentQ) return;
+
+        const validAnswers = currentAnswers.filter(a => a.question_id === currentQ.id);
+
+        if (status === "QUESTION" && players.length > 0 && validAnswers.length >= players.length) {
+            console.log("⚡ Everyone answered! Skipping timer...");
+            updateStatus("REVEAL");
+        }
+    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions]);
 
     // Fetch/Generate Questions on Start
     useEffect(() => {
@@ -218,8 +292,8 @@ export default function TVHost() {
                                                 key={age.id}
                                                 onClick={() => setAgeGroup(age.id)}
                                                 className={`py-2 rounded-xl text-sm font-bold transition-all border-2 ${ageGroup === age.id
-                                                        ? "bg-violet-500 border-violet-500 text-white shadow-lg scale-105"
-                                                        : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
+                                                    ? "bg-violet-500 border-violet-500 text-white shadow-lg scale-105"
+                                                    : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
                                                     }`}
                                             >
                                                 {age.label}
