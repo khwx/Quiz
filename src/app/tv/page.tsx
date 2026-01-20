@@ -31,8 +31,6 @@ export default function TVHost() {
 
     const { playSound } = useSound();
 
-    // ... (keep Initial Game Creation effect)
-
     // Initial Game Creation or Connection
     useEffect(() => {
         const connectToGame = async () => {
@@ -258,42 +256,15 @@ export default function TVHost() {
         }
     }, [currentQuestionIndex]);
 
-    // Unified Timer & Question Loop
-    useEffect(() => {
-        let timer: NodeJS.Timeout;
 
-        if (status === "QUESTION") {
-            timer = setInterval(() => {
-                setTimeLeft((prev) => {
-                    const newValue = prev - 1;
-                    if (newValue <= 5 && newValue > 0) playSound('tick');
-
-                    if (newValue <= 0) {
-                        clearInterval(timer);
-                        updateStatus("REVEAL");
-                        return 0;
-                    }
-                    return newValue;
-                });
-            }, 1000);
-        }
-
-        return () => {
-            if (timer) clearInterval(timer);
-        };
-    }, [status]); // Only restart loop if STATUS changes
-
-    // Reset Timer ONLY when Question Index Changes
-    useEffect(() => {
-        if (status === "QUESTION") {
-            console.log("🔄 New Question Loaded: Resetting Timer & Answers");
-            setTimeLeft(20);
-            setCurrentAnswers([]);
-        }
-    }, [currentQuestionIndex]); // Dependency on Index ensures we reset PER question
-
-
-    // ... (keep Loading check)
+    // Loading Check
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center min-h-screen bg-[#0f172a] text-white">
+                <Loader2 className="w-12 h-12 animate-spin text-pink-500" />
+            </div>
+        );
+    }
 
     const currentQ = currentQuestions[currentQuestionIndex - 1];
 
@@ -307,7 +278,15 @@ export default function TVHost() {
                         animate={{ opacity: 1, x: 0 }}
                         className="flex flex-col gap-8"
                     >
-                        {/* ... (keep Title and QR Code sections) */}
+                        <div>
+                            <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-4 inline-block">
+                                QuizMaster TV
+                            </span>
+                            <div className="flex items-center gap-4 mb-2">
+                                <Users className="text-pink-500 w-12 h-12" />
+                            </div>
+                        </div>
+
                         <div>
                             <h1 className="text-5xl font-black text-white mb-4 italic uppercase tracking-tighter">
                                 Preparem os <span className="text-pink-500">telemóveis!</span>
@@ -335,42 +314,43 @@ export default function TVHost() {
                         animate={{ opacity: 1, x: 0 }}
                         className="glass-card min-h-[500px] flex flex-col"
                     >
-                        {/* ... (keep Players Header) */}
-                        <div className="flex items-center justify-between mb-8">
-                            <div className="flex items-center gap-3">
-                                <Users className="text-pink-500 w-8 h-8" />
-                                <h2 className="text-3xl font-bold text-white">Jogadores</h2>
-                            </div>
-                            <span className="bg-pink-500 text-white px-4 py-1 rounded-full font-bold">
-                                {players.length}
-                            </span>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 flex-grow overflow-y-auto max-h-[400px]">
-                            <AnimatePresence>
-                                {players.map((player) => (
-                                    <motion.div
-                                        key={player.id}
-                                        initial={{ scale: 0, opacity: 0 }}
-                                        animate={{ scale: 1, opacity: 1 }}
-                                        exit={{ scale: 0, opacity: 0 }}
-                                        className="bg-white/10 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 font-bold text-xl text-center"
-                                        style={{ borderLeft: `4px solid ${player.color || '#FF6B6B'}` }}
-                                    >
-                                        <span className="text-4xl">{player.avatar || '🎮'}</span>
-                                        <span className="text-white">{player.name}</span>
-                                    </motion.div>
-                                ))}
-                            </AnimatePresence>
-                            {players.length === 0 && (
-                                <div className="col-span-full flex flex-col items-center justify-center text-gray-500 gap-4 mt-12">
-                                    <p className="text-xl italic">Aguardando que as equipas entrem...</p>
+                        <div className="p-8 border-b border-white/10">
+                            <div className="flex items-center justify-between mb-8">
+                                <div className="flex items-center gap-3">
+                                    <Users className="text-pink-500 w-8 h-8" />
+                                    <h2 className="text-3xl font-bold text-white">Jogadores</h2>
                                 </div>
-                            )}
+                                <span className="bg-pink-500 text-white px-4 py-1 rounded-full font-bold">
+                                    {players.length}
+                                </span>
+                            </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 flex-grow overflow-y-auto max-h-[400px]">
+                                <AnimatePresence>
+                                    {players.map((player) => (
+                                        <motion.div
+                                            key={player.id}
+                                            initial={{ scale: 0, opacity: 0 }}
+                                            animate={{ scale: 1, opacity: 1 }}
+                                            exit={{ scale: 0, opacity: 0 }}
+                                            className="bg-white/10 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 font-bold text-xl text-center"
+                                            style={{ borderLeft: `4px solid ${player.color || '#FF6B6B'}` }}
+                                        >
+                                            <span className="text-4xl">{player.avatar || '🎮'}</span>
+                                            <span className="text-white">{player.name}</span>
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                                {players.length === 0 && (
+                                    <div className="col-span-full flex flex-col items-center justify-center text-gray-500 gap-4 mt-12">
+                                        <p className="text-xl italic">Aguardando que as equipas entrem...</p>
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         {players.length > 0 && (
-                            <div className="mt-8 flex flex-col gap-6">
+                            <div className="p-8 flex flex-col gap-6 bg-black/20 flex-grow">
                                 {/* AGE GROUP SELECTOR */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Idade dos Jogadores</label>
@@ -424,7 +404,7 @@ export default function TVHost() {
                                 <button
                                     onClick={() => updateStatus("STARTING")}
                                     disabled={isGenerating}
-                                    className="btn-quiz btn-primary w-full flex items-center justify-center gap-2 group relative overflow-hidden"
+                                    className="btn-quiz btn-primary w-full flex items-center justify-center gap-2 group relative overflow-hidden mt-auto"
                                 >
                                     {isGenerating ? (
                                         <>
@@ -493,8 +473,6 @@ export default function TVHost() {
                     }}
                 />
             )}
-
-            {/* FINAL LEADERBOARD could go here */}
         </main>
     );
 }
