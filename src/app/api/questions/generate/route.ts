@@ -15,8 +15,13 @@ export async function POST(req: NextRequest) {
 
     const fullPrompt = `
       Gera ${count} perguntas de quiz em Português de Portugal para o seguinte tema: "${prompt}".
-      O público alvo é: ${ageRating === "children" ? "Crianças entre 6 e 12 anos" : "Adultos"}.
       
+      Público Alvo e Nível de Dificuldade:
+      ${ageRating === "7-9" ? "- Crianças (7-9 anos): Perguntas muito simples, divertidas e educativas. Vocabulário básico." : ""}
+      ${ageRating === "10-14" ? "- Jovens (10-14 anos): Nível escolar intermédio. Curiosidades interessantes." : ""}
+      ${ageRating === "15-17" ? "- Adolescentes (15-17 anos): Nível secundário. Desafiante mas acessível." : ""}
+      ${!["7-9", "10-14", "15-17"].includes(ageRating) ? "- Adultos: Nível geral de quiz show." : ""}
+
       Retorna APENAS um array JSON válido (sem markdown) com este formato exato:
       [
         {

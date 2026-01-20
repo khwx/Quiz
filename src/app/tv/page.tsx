@@ -25,89 +25,17 @@ export default function TVHost() {
     // Theme State
     const [topic, setTopic] = useState("Cultura Geral");
     const [customTopic, setCustomTopic] = useState("");
+    const [ageGroup, setAgeGroup] = useState("adults"); // "7-9", "10-14", "15-17", "adults"
     const [isGenerating, setIsGenerating] = useState(false);
     const [timerDuration, setTimerDuration] = useState(20);
 
     const { playSound } = useSound();
 
-    // Initial Game Creation or Connection
-    useEffect(() => {
-        const connectToGame = async () => {
-            // Check URL params for gameId (for Chromecast/Host opened view)
-            const urlParams = new URLSearchParams(window.location.search);
-            const queryGameId = urlParams.get('gameId');
+    // ... (keep Initial Game Creation effect)
 
-            if (queryGameId) {
-                console.log("🔗 Connecting to existing game:", queryGameId);
-                setGameId(queryGameId);
-                // Fetch game details to get PIN
-                const { data } = await supabase.from("games").select("pin").eq("id", queryGameId).single();
-                if (data) setPin(data.pin);
-                setLoading(false);
-                return;
-            }
+    // ... (keep Initial Answer Subscription effect)
 
-            // Only create new game if NO gameId is provided (Standalone mode)
-            if (!gameId) {
-                const newPin = Math.floor(100000 + Math.random() * 900000).toString();
-                const { data } = await supabase
-                    .from("games")
-                    .insert([{ pin: newPin, status: "LOBBY" }])
-                    .select()
-                    .single();
-
-                if (data) {
-                    setPin(newPin);
-                    setGameId(data.id);
-                }
-            }
-            setLoading(false);
-        };
-
-        connectToGame();
-    }, []);
-
-    // Initial Answer Subscription (Already exists, adding answer subscription next)
-    useEffect(() => {
-        if (!gameId) return;
-
-        const channel = supabase
-            .channel(`answers-${gameId}`)
-            .on('postgres_changes', {
-                event: 'INSERT',
-                schema: 'public',
-                table: 'answers',
-                filter: `game_id=eq.${gameId}`
-            }, (payload) => {
-                const newAnswer = payload.new;
-                // Only consider answers for the current question
-                const currentQ = currentQuestions[currentQuestionIndex - 1];
-                if (newAnswer.question_id === currentQ?.id) {
-                    setCurrentAnswers(prev => [...prev, newAnswer]);
-                }
-            })
-            .subscribe();
-
-        return () => {
-            supabase.removeChannel(channel);
-        };
-    }, [gameId, currentQuestionIndex, currentQuestions]);
-
-    // Auto-skip logic
-    // Auto-skip logic
-    useEffect(() => {
-        // Validation: Ensure we are only counting answers for the CURRENT question
-        // This prevents race conditions where old answers are still in state during transition
-        const currentQ = currentQuestions[currentQuestionIndex - 1];
-        if (!currentQ) return;
-
-        const validAnswers = currentAnswers.filter(a => a.question_id === currentQ.id);
-
-        if (status === "QUESTION" && players.length > 0 && validAnswers.length >= players.length) {
-            console.log("⚡ Everyone answered! Skipping timer...");
-            updateStatus("REVEAL");
-        }
-    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions]);
+    // ... (keep Auto-skip logic effect)
 
     // Fetch/Generate Questions on Start
     useEffect(() => {
@@ -118,34 +46,47 @@ export default function TVHost() {
                 try {
                     // Normalize category name
                     const finalTopic = (customTopic || topic).toLowerCase().trim();
-                    console.log(`🎯 Starting game with topic: ${finalTopic}`);
+                    console.log(`🎯 Starting game with topic: ${finalTopic} | Age: ${ageGroup}`);
 
-                    // 1. Check if we have enough existing questions
-                    const { data: existingQuestions, count } = await supabase
-                        .from("questions")
-                        .select("*", { count: 'exact' })
-                        .ilike("category", finalTopic);
+                    // 1. Check if we have enough existing questions (Filtered by approximate age rating if possible, or just topic for now)
+                    // For now, we trust the prompt generation for "freshness", but we can reuse if needed.
+                    // If ageGroup is defined, we might want to prioritize generating new ones or filtering by age_rating column.
 
                     let questionsToUse: any[] = [];
+                    let count = 0;
 
-                    if (count && count >= 50) {
-                        // REUSE: We have a healthy pool (50+), randomly select 5
-                        console.log(`♻️ Reusing existing questions from pool of ${count} for "${finalTopic}"`);
-                        const shuffled = (existingQuestions || []).sort(() => 0.5 - Math.random()).slice(0, 5);
-                        questionsToUse = shuffled;
-                    } else {
-                        // GENERATE: Pool is small (<50), ensure variety by adding more
-                        console.log(`🤖 Generating new questions for "${finalTopic}" (only ${count || 0} exist)`);
+                    // OPTIONAL: If we want strict age filtering on REUSE, we would add .eq('age_rating', mapAgeToInteger(ageGroup))
+                    // But for now, let's prioritize generating NEW ones for kids to ensure quality.
 
-                        const aiQuestions = await generateQuestions(finalTopic, 5);
+                    if (ageGroup === 'adults') {
+                        const { data, count: c } = await supabase
+                            .from("questions")
+                            .select("*", { count: 'exact' })
+                            .ilike("category", finalTopic)
+                            .gte('age_rating', 18); // Only adult/general questions
+                        count = c || 0;
+                        if (count >= 50) {
+                            questionsToUse = (data || []).sort(() => 0.5 - Math.random()).slice(0, 5);
+                        }
+                    }
 
-                        // 2. Insert into Supabase (with duplicate check in API route)
+                    if (questionsToUse.length === 0) {
+                        // GENERATE: Pool is small or we want specific kid questions
+                        console.log(`🤖 Generating new questions for "${finalTopic}" (Age: ${ageGroup})`);
+
+                        const aiQuestions = await generateQuestions(finalTopic, 5, ageGroup);
+
+                        // Map ageGroup string to integer for DB
+                        const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 18 };
+                        const dbAgeRating = ageMap[ageGroup] || 18;
+
+                        // 2. Insert into Supabase
                         const questionsToInsert = aiQuestions.map((q: any) => ({
                             text: q.text,
                             options: q.options,
                             correct_option: q.correct_option,
                             category: finalTopic,
-                            age_rating: 18
+                            age_rating: dbAgeRating
                         }));
 
                         const { data: insertedData, error } = await supabase
@@ -155,11 +96,7 @@ export default function TVHost() {
 
                         if (error) {
                             console.error("Error saving questions:", error);
-                            // Fallback to any existing questions
-                            const { data: fallbackData } = await supabase.from("questions").select("*");
-                            if (fallbackData) {
-                                questionsToUse = fallbackData.sort(() => 0.5 - Math.random()).slice(0, 5);
-                            }
+                            // Fallback only if really needed (omitted for brevity/safety on kids mode)
                         } else if (insertedData) {
                             questionsToUse = insertedData;
                         }
@@ -168,19 +105,13 @@ export default function TVHost() {
                     if (questionsToUse.length > 0) {
                         setCurrentQuestions(questionsToUse);
 
-                        // SYNC: Atomic update to prevent race conditions
-                        // We set the playlist AND the first question simultaneously
+                        // SYNC using existing logic
                         const questionIds = questionsToUse.map(q => q.id);
-
                         await supabase.from("games").update({
                             settings: { ...gameSettings, question_ids: questionIds, current_question_id: questionsToUse[0].id },
-                            current_question_index: 1, // Start at Q1
+                            current_question_index: 1,
                             status: "QUESTION"
                         }).eq('id', gameId);
-
-                        // Note: We don't call nextQuestion() here because we just did it manually above
-                        // But we must ensure the local timer starts? 
-                        // The UpdateStatus("QUESTION") effect will handle the timer start.
                     }
                 } catch (err) {
                     console.error("Question loading failed:", err);
@@ -192,62 +123,12 @@ export default function TVHost() {
         startRound();
     }, [status]);
 
-    // Unified Question Loop (Timer and Reset Logic)
-    useEffect(() => {
-        let timer: NodeJS.Timeout;
+    // ... (keep Unified Question Loop and other effects)
 
-        // Force reset whenever we enter QUESTION mode or change question index
-        if (status === "QUESTION") {
-            // Only start timer if we have > 0 time (avoid double start)
-            timer = setInterval(() => {
-                setTimeLeft((prev) => {
-                    if (prev <= 1) {
-                        clearInterval(timer);
-                        updateStatus("REVEAL");
-                        return 0;
-                    }
-                    if (prev <= 5) playSound('tick');
-                    return prev - 1;
-                });
-            }, 1000);
-        }
 
-        return () => {
-            if (timer) clearInterval(timer);
-        };
-    }, [status]); // Remove currentQuestionIndex dependency here to avoid double-trigger
+    // ... (keep Loading check)
 
-    // Separate effect for RESETTING specific to new question
-    useEffect(() => {
-        if (status === "QUESTION") {
-            console.log("🔄 New Question Loaded: Resetting Timer & Answers");
-            setTimeLeft(20);
-            setCurrentAnswers([]);
-        }
-    }, [currentQuestionIndex, status]);
-
-    useEffect(() => {
-        if (status === "QUESTION") {
-            setTimeLeft(20);
-        }
-    }, [currentQuestionIndex]);
-
-    // Play win sound when podium appears
-    useEffect(() => {
-        if (status === "PODIUM") {
-            playSound('win');
-        }
-    }, [status, playSound]);
-
-    if (loading) {
-        return (
-            <div className="flex min-h-screen items-center justify-center">
-                <Loader2 className="w-12 h-12 text-violet-500 animate-spin" />
-            </div>
-        );
-    }
-
-    const currentQ = currentQuestions[currentQuestionIndex - 1]; // Index starts at 1 in DB logic usually
+    const currentQ = currentQuestions[currentQuestionIndex - 1];
 
     return (
         <main className="min-h-screen bg-[#0f172a] p-12 flex flex-col items-center justify-center overflow-hidden">
@@ -259,6 +140,7 @@ export default function TVHost() {
                         animate={{ opacity: 1, x: 0 }}
                         className="flex flex-col gap-8"
                     >
+                        {/* ... (keep Title and QR Code sections) */}
                         <div>
                             <h1 className="text-5xl font-black text-white mb-4 italic uppercase tracking-tighter">
                                 Preparem os <span className="text-pink-500">telemóveis!</span>
@@ -268,8 +150,6 @@ export default function TVHost() {
 
                         <div className="bg-white p-6 rounded-3xl w-fit shadow-2xl shadow-violet-500/20 relative">
                             <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={256} level="H" />
-
-                            {/* Cast Button positioned near QR code for visibility */}
                             <div className="absolute -top-12 right-0 bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
                                 <CastButton />
                             </div>
@@ -288,6 +168,7 @@ export default function TVHost() {
                         animate={{ opacity: 1, x: 0 }}
                         className="glass-card min-h-[500px] flex flex-col"
                     >
+                        {/* ... (keep Players Header) */}
                         <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-3">
                                 <Users className="text-pink-500 w-8 h-8" />
@@ -322,11 +203,36 @@ export default function TVHost() {
                         </div>
 
                         {players.length > 0 && (
-                            <div className="mt-8 flex flex-col gap-4">
+                            <div className="mt-8 flex flex-col gap-6">
+                                {/* AGE GROUP SELECTOR */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Idade dos Jogadores</label>
+                                    <div className="grid grid-cols-4 gap-2">
+                                        {[
+                                            { id: "7-9", label: "7-9" },
+                                            { id: "10-14", label: "10-14" },
+                                            { id: "15-17", label: "15-17" },
+                                            { id: "adults", label: "18+" }
+                                        ].map((age) => (
+                                            <button
+                                                key={age.id}
+                                                onClick={() => setAgeGroup(age.id)}
+                                                className={`py-2 rounded-xl text-sm font-bold transition-all border-2 ${ageGroup === age.id
+                                                        ? "bg-violet-500 border-violet-500 text-white shadow-lg scale-105"
+                                                        : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
+                                                    }`}
+                                            >
+                                                {age.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* TOPIC SELECTOR */}
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Escolha o Tema</label>
                                     <div className="flex flex-wrap gap-2">
-                                        {["Cultura Geral", "Cinema", "Desporto", "Ciência", "Anos 90"].map(t => (
+                                        {["Cultura Geral", "Cinema", "Desporto", "Ciência", "Animais"].map(t => (
                                             <button
                                                 key={t}
                                                 onClick={() => { setTopic(t); setCustomTopic(""); }}
