@@ -33,12 +33,14 @@ export default function AnswerController({ onAnswer, disabled }: AnswerControlle
                 <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="bg-white/10 p-12 rounded-full mb-8"
+                    className={`p-12 rounded-3xl mb-8 border-b-8 shadow-2xl ${colors[selected]}`}
                 >
-                    <Loader2 className="w-16 h-16 text-white animate-spin" />
+                    <span className="text-6xl font-black text-white/90 drop-shadow-lg">
+                        {icons[selected]}
+                    </span>
                 </motion.div>
                 <h2 className="text-3xl font-bold text-white mb-2">Resposta Enviada!</h2>
-                <p className="text-gray-400">Olha para a TV...</p>
+                <p className="text-gray-400">Aguarda pelos outros...</p>
             </div>
         );
     }
