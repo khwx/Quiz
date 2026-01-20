@@ -171,8 +171,29 @@ export default function TVHost() {
                             .insert(questionsToInsert)
                             .select();
 
-                        if (insertedData) {
+                        if (insertedData && insertedData.length > 0) {
                             questionsToUse = insertedData;
+                        } else if (error && error.code === '23505') {
+                            // Duplicate detected! Questions already exist in DB.
+                            console.log("⚠️ Questions already exist. Fetching from database...");
+
+                            let fallbackQuery = supabase
+                                .from("questions")
+                                .select("*")
+                                .ilike("category", finalTopic);
+
+                            if (targetAge === 18) {
+                                fallbackQuery = fallbackQuery.gte('age_rating', 18);
+                            } else {
+                                fallbackQuery = fallbackQuery.eq('age_rating', targetAge);
+                            }
+
+                            const { data: existingQuestions } = await fallbackQuery;
+
+                            if (existingQuestions && existingQuestions.length >= 5) {
+                                questionsToUse = existingQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+                                console.log(`✅ Using ${questionsToUse.length} existing questions.`);
+                            }
                         } else if (error) {
                             console.error("Error saving questions:", error);
                         }
