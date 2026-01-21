@@ -168,10 +168,10 @@ export default function TVHost() {
 
                         // Insert into Supabase
                         const questionsToInsert = aiQuestions.map((q: any) => ({
-                            text: q.text,
+                            text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
                             options: q.options,
                             correct_option: q.correct_option,
-                            category: finalTopic,
+                            category: finalTopic.charAt(0).toUpperCase() + finalTopic.slice(1).toLowerCase(),
                             age_rating: dbAgeRating
                         }));
 

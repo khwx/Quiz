@@ -42,13 +42,22 @@ export async function POST(req: NextRequest) {
     const jsonStr = text.replace(/```json|```/g, "").trim();
     const questions = JSON.parse(jsonStr);
 
-    // Normalize category names for consistency
-    // Normalize category names for consistency (Title Case)
+    // Normalize question text and category names for consistency
     const normalizedQuestions = questions.map((q: any) => {
+      let text = (q.text || "").trim();
+      if (text) {
+        // Sentence case: Capitalize first letter, keep the rest
+        text = text.charAt(0).toUpperCase() + text.slice(1);
+        // Ensure it ends with ?
+        if (!text.endsWith("?")) text += "?";
+      }
+
       const rawCategory = (q.category || prompt).trim();
       const category = rawCategory.charAt(0).toUpperCase() + rawCategory.slice(1).toLowerCase();
+
       return {
         ...q,
+        text,
         category
       };
     });
