@@ -169,8 +169,10 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                             </>
                         ) : (
                             <>
-                                <div className="bg-black/20 p-6 rounded-full">
-                                    <Send className="w-24 h-24 text-white rotate-180" />
+                                <div className={`p-6 rounded-3xl mb-4 border-b-8 shadow-xl ${["bg-red-500 border-red-800", "bg-blue-500 border-blue-800", "bg-yellow-500 border-yellow-800", "bg-green-500 border-green-800"][selectedOption || 0]}`}>
+                                    <span className="text-6xl font-black text-white/90 drop-shadow-lg">
+                                        {["A", "B", "C", "D"][selectedOption || 0]}
+                                    </span>
                                 </div>
                                 <h2 className="text-5xl font-black text-white italic tracking-tighter">ERRADO...</h2>
                                 <p className="text-white/80 text-xl font-bold uppercase tracking-widest">Tenta na próxima!</p>

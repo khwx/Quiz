@@ -486,10 +486,13 @@ export default function TVHost() {
                                     className="btn-quiz btn-primary w-full flex items-center justify-center gap-2 group relative overflow-hidden mt-auto"
                                 >
                                     {isGenerating ? (
-                                        <>
-                                            <Loader2 className="animate-spin" />
-                                            <span className="animate-pulse">A Criar Quiz...</span>
-                                        </>
+                                        <div className="flex flex-col items-center gap-2 w-full">
+                                            <div className="flex items-center gap-3">
+                                                <Loader2 className="w-6 h-6 animate-spin" />
+                                                <span className="animate-pulse text-lg">A Criar Quiz com IA...</span>
+                                            </div>
+                                            <span className="text-xs text-white/50 font-normal normal-case">Isto pode demorar uns segundos (estamos a inventar perguntas!)</span>
+                                        </div>
                                     ) : (
                                         <>
                                             <Play className="group-hover:translate-x-1 transition-transform" />
