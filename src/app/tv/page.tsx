@@ -68,10 +68,11 @@ export default function TVHost() {
         connectToGame();
     }, []);
 
-    // Initial Answer Subscription
+    // Answer Subscription & Polling Fallback (Hybrid Strategy)
     useEffect(() => {
         if (!gameId) return;
 
+        // 1. Setup Realtime Subscription
         const channel = supabase
             .channel(`answers-${gameId}`)
             .on('postgres_changes', {
@@ -88,10 +89,9 @@ export default function TVHost() {
                     return; // Ignore answers from other games
                 }
 
-                console.log("📥 Received Answer:", newAnswer);
+                console.log("📥 Received Answer (Realtime):", newAnswer);
 
-                // Accumulate ALL answers for this game. We filter by question_id when checking for auto-skip.
-                // This prevents losing answers if the TV is slightly behind on currentQuestionIndex update.
+                // Accumulate ALL answers for this game.
                 setCurrentAnswers(prev => {
                     // Avoid duplicates in state
                     if (prev.some(a => a.id === newAnswer.id)) return prev;
@@ -102,11 +102,33 @@ export default function TVHost() {
                 console.log(`📡 Realtime Status: ${status}`);
             });
 
+        // 2. Setup Polling Fallback (Backup for when Realtime fails)
+        const pollInterval = setInterval(async () => {
+            if (status === "QUESTION") {
+                const { data: polledAnswers } = await supabase
+                    .from('answers')
+                    .select('*')
+                    .eq('game_id', gameId);
+
+                if (polledAnswers && polledAnswers.length > 0) {
+                    setCurrentAnswers(prev => {
+                        const newAnswers = polledAnswers.filter(pa => !prev.some(existing => existing.id === pa.id));
+                        if (newAnswers.length > 0) {
+                            console.log(`🔄 Polled ${newAnswers.length} new answers`);
+                            return [...prev, ...newAnswers];
+                        }
+                        return prev;
+                    });
+                }
+            }
+        }, 2000); // Check every 2 seconds
+
         return () => {
-            console.log("🔌 Unsubscribing from answers channel...");
+            console.log("🔌 Unsubscribing & Stopping Poller...");
             supabase.removeChannel(channel);
+            clearInterval(pollInterval);
         };
-    }, [gameId]); // CRITICAL FIX: Removed currentQuestionIndex/currentQuestions to prevent re-subscribing
+    }, [gameId, status]); // Added status dependency to only poll when relevant? No, gameId is stable. Status is needed for the "if" check inside poller.
 
     // Auto-skip logic
     useEffect(() => {
