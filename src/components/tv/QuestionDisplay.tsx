@@ -39,15 +39,25 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 <span className="bg-white/10 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-violet-300">
                     {question.category || "Geral"}
                 </span>
-                <div
-                    className="flex items-center gap-4 bg-black/30 px-6 py-3 rounded-2xl cursor-pointer hover:bg-black/40 transition-colors group"
-                    onClick={onTimerClick}
-                    title="Clicar para saltar tempo"
-                >
-                    <Clock className="text-pink-500 w-8 h-8 animate-pulse group-hover:scale-110 transition-transform" />
-                    <span className={`text-4xl font-black font-mono ${timeLeft <= 5 ? 'text-red-500' : 'text-white'}`}>
-                        {timeLeft}
-                    </span>
+                <div className="flex items-center gap-6">
+                    {/* Respostas Counter */}
+                    <div className="bg-white/5 px-4 py-2 rounded-xl flex items-center gap-2 border border-white/10">
+                        <span className="text-gray-400 font-bold uppercase text-xs tracking-widest">Respostas</span>
+                        <span className="text-2xl font-black text-white">
+                            {Array.from(new Set(answers.map(a => a.player_id))).length} / {players.length}
+                        </span>
+                    </div>
+
+                    <div
+                        className="flex items-center gap-4 bg-black/30 px-6 py-3 rounded-2xl cursor-pointer hover:bg-black/40 transition-colors group"
+                        onClick={onTimerClick}
+                        title="Clicar para saltar tempo"
+                    >
+                        <Clock className="text-pink-500 w-8 h-8 animate-pulse group-hover:scale-110 transition-transform" />
+                        <span className={`text-4xl font-black font-mono ${timeLeft <= 5 ? 'text-red-500' : 'text-white'}`}>
+                            {timeLeft}
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -109,7 +119,7 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
 
                                 {/* Jogadores que escolheram esta opção */}
                                 {isReveal && (
-                                    <div className="flex flex-wrap gap-2 mt-4">
+                                    <div className="flex flex-wrap gap-4 mt-4 justify-start">
                                         {answers
                                             .filter(a => Number(a.chosen_option) === idx)
                                             .map(a => {
@@ -122,13 +132,14 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                                                 return (
                                                     <motion.div
                                                         key={player.id}
-                                                        initial={{ scale: 0 }}
-                                                        animate={{ scale: 1 }}
-                                                        className="bg-white/20 px-3 py-1 rounded-full text-sm font-black text-white border border-white/20 backdrop-blur-sm flex items-center gap-2"
+                                                        initial={{ scale: 0, y: 10 }}
+                                                        animate={{ scale: 1, y: 0 }}
+                                                        className="bg-white/90 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-xl border-2"
+                                                        style={{ borderColor: player.color || '#FF6B6B' }}
                                                         title={player.name}
                                                     >
-                                                        <span className="text-lg">{player.avatar || '🎮'}</span>
-                                                        <span>{getInitials(player.name)}</span>
+                                                        <span className="text-3xl filter drop-shadow-sm">{player.avatar || '🎮'}</span>
+                                                        <span className="text-gray-900 font-black text-lg">{getInitials(player.name)}</span>
                                                     </motion.div>
                                                 );
                                             })}

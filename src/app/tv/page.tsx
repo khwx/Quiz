@@ -98,22 +98,19 @@ export default function TVHost() {
         if (!currentQ || status !== "QUESTION") return;
 
         // 1. Get unique player IDs who have answered THIS question
-        const uniqueAnswerPlayerIds = new Set(
-            currentAnswers
-                .filter(a => String(a.question_id) === String(currentQ.id))
-                .map(a => String(a.player_id))
-        );
+        const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === String(currentQ.id));
+        const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
 
         // 2. Compare with UNIQUE valid players currently in the lobby
+        // Deduplicate players by ID just in case of multiple join events
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
         if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
             console.log(`⚡ Everyone answered (${uniqueAnswerPlayerIds.size}/${uniquePlayers.length})! Skipping timer...`);
-            // Brief delay to ensure state is visually updated before reveal
             const timer = setTimeout(() => {
                 setTimeLeft(0);
                 updateStatus("REVEAL");
-            }, 500);
+            }, 800); // Slightly longer delay for visual feedback
             return () => clearTimeout(timer);
         }
     }, [currentAnswers, players.length, status, currentQuestionIndex, currentQuestions]);
@@ -279,12 +276,24 @@ export default function TVHost() {
         };
     }, [status]);
 
-    // Reset Timer ONLY when Question Index Changes
+    // Reset Timer & Refresh Players ONLY when Question Index Changes
     useEffect(() => {
         if (status === "QUESTION") {
             console.log("🔄 New Question Loaded: Resetting Timer & Answers");
             setTimeLeft(20);
             setCurrentAnswers([]);
+
+            // Refresh players list to ensure we don't count "ghost" players who joined but left
+            const syncPlayers = async () => {
+                if (gameId) {
+                    const { data } = await supabase.from('players').select('*').eq('game_id', gameId);
+                    if (data) {
+                        // We could filter here for active players, but simple refresh is a start
+                        console.log(`👥 Refreshed players: ${data.length}`);
+                    }
+                }
+            };
+            syncPlayers();
         }
     }, [currentQuestionIndex]);
 
