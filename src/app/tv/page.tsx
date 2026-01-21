@@ -81,11 +81,9 @@ export default function TVHost() {
                 filter: `game_id=eq.${gameId}`
             }, (payload) => {
                 const newAnswer = payload.new;
-                // Only consider answers for the current question
-                const currentQ = currentQuestions[currentQuestionIndex - 1];
-                if (newAnswer.question_id === currentQ?.id) {
-                    setCurrentAnswers(prev => [...prev, newAnswer]);
-                }
+                // Accumulate ALL answers for this game. We filter by question_id when checking for auto-skip.
+                // This prevents losing answers if the TV is slightly behind on currentQuestionIndex update.
+                setCurrentAnswers(prev => [...prev, newAnswer]);
             })
             .subscribe();
 
@@ -99,17 +97,24 @@ export default function TVHost() {
         const currentQ = currentQuestions[currentQuestionIndex - 1];
         if (!currentQ || status !== "QUESTION") return;
 
-        // Ensure we only count UNIQUE players who answered the CURRENT question
+        // 1. Get unique player IDs who have answered THIS question
         const uniqueAnswerPlayerIds = new Set(
             currentAnswers
-                .filter(a => a.question_id === currentQ.id)
+                .filter(a => String(a.question_id) === String(currentQ.id))
                 .map(a => String(a.player_id))
         );
 
-        if (players.length > 0 && uniqueAnswerPlayerIds.size >= players.length) {
-            console.log("⚡ Everyone answered! Skipping timer...");
-            setTimeLeft(0);
-            updateStatus("REVEAL");
+        // 2. Compare with UNIQUE valid players currently in the lobby
+        const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
+
+        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
+            console.log(`⚡ Everyone answered (${uniqueAnswerPlayerIds.size}/${uniquePlayers.length})! Skipping timer...`);
+            // Brief delay to ensure state is visually updated before reveal
+            const timer = setTimeout(() => {
+                setTimeLeft(0);
+                updateStatus("REVEAL");
+            }, 500);
+            return () => clearTimeout(timer);
         }
     }, [currentAnswers, players.length, status, currentQuestionIndex, currentQuestions]);
 

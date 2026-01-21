@@ -113,8 +113,14 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                                         {answers
                                             .filter(a => a.chosen_option === idx)
                                             .map(a => {
-                                                const player = players.find(p => String(p.id) === String(a.player_id));
-                                                if (!player) return null;
+                                                // Robust ID matching: String conversion, trimming, and case-insensitive check
+                                                const playerId = String(a.player_id).trim().toLowerCase();
+                                                const player = players.find(p => String(p.id).trim().toLowerCase() === playerId);
+
+                                                if (!player) {
+                                                    console.warn(`⚠️ Player not found for answer ID: ${playerId}. Available:`, players.map(p => p.id));
+                                                    return null;
+                                                }
                                                 return (
                                                     <motion.div
                                                         key={player.id}
