@@ -96,19 +96,22 @@ export default function TVHost() {
 
     // Auto-skip logic
     useEffect(() => {
-        // Validation: Ensure we are only counting answers for the CURRENT question
-        // This prevents race conditions where old answers are still in state during transition
         const currentQ = currentQuestions[currentQuestionIndex - 1];
-        if (!currentQ) return;
+        if (!currentQ || status !== "QUESTION") return;
 
-        const validAnswers = currentAnswers.filter(a => a.question_id === currentQ.id);
+        // Ensure we only count UNIQUE players who answered the CURRENT question
+        const uniqueAnswerPlayerIds = new Set(
+            currentAnswers
+                .filter(a => a.question_id === currentQ.id)
+                .map(a => String(a.player_id))
+        );
 
-        if (status === "QUESTION" && players.length > 0 && validAnswers.length >= players.length) {
+        if (players.length > 0 && uniqueAnswerPlayerIds.size >= players.length) {
             console.log("⚡ Everyone answered! Skipping timer...");
             setTimeLeft(0);
             updateStatus("REVEAL");
         }
-    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions]);
+    }, [currentAnswers, players.length, status, currentQuestionIndex, currentQuestions]);
 
     // Fetch/Generate Questions on Start
     useEffect(() => {
@@ -167,36 +170,38 @@ export default function TVHost() {
                             age_rating: dbAgeRating
                         }));
 
+                        // Insert into Supabase using upsert to ignore duplicates
+                        // This allows the game to proceed even if some AI questions already exist
                         const { data: insertedData, error } = await supabase
                             .from("questions")
-                            .insert(questionsToInsert)
+                            .upsert(questionsToInsert, {
+                                onConflict: 'text,category',
+                                ignoreDuplicates: true
+                            })
                             .select();
 
-                        if (insertedData && insertedData.length > 0) {
+                        // Fetch the full set of questions for this category/age to ensure we have enough
+                        // regardless of whether they were just inserted or already existed
+                        let finalQuery = supabase
+                            .from("questions")
+                            .select("*")
+                            .ilike("category", finalTopic);
+
+                        if (targetAge === 18) {
+                            finalQuery = finalQuery.gte('age_rating', 18);
+                        } else {
+                            finalQuery = finalQuery.eq('age_rating', targetAge);
+                        }
+
+                        const { data: allAvailableQuestions } = await finalQuery;
+
+                        if (allAvailableQuestions && allAvailableQuestions.length >= 5) {
+                            // Shuffle and take 5
+                            questionsToUse = allAvailableQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+                            console.log(`✅ Using ${questionsToUse.length} questions (mixed new/existing).`);
+                        } else if (insertedData && insertedData.length > 0) {
+                            // Fallback to just what we inserted if total pool is still small
                             questionsToUse = insertedData;
-                        } else if (error && error.code === '23505') {
-                            // Duplicate detected! Questions already exist in DB.
-                            console.log("⚠️ Questions already exist. Fetching from database...");
-
-                            let fallbackQuery = supabase
-                                .from("questions")
-                                .select("*")
-                                .ilike("category", finalTopic);
-
-                            if (targetAge === 18) {
-                                fallbackQuery = fallbackQuery.gte('age_rating', 18);
-                            } else {
-                                fallbackQuery = fallbackQuery.eq('age_rating', targetAge);
-                            }
-
-                            const { data: existingQuestions } = await fallbackQuery;
-
-                            if (existingQuestions && existingQuestions.length >= 5) {
-                                questionsToUse = existingQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
-                                console.log(`✅ Using ${questionsToUse.length} existing questions.`);
-                            }
-                        } else if (error) {
-                            console.error("Error saving questions:", error);
                         }
                     }
 
@@ -455,6 +460,7 @@ export default function TVHost() {
                     status={status}
                     players={players}
                     answers={currentAnswers.filter(a => a.question_id === currentQ.id)}
+                    onTimerClick={() => setTimeLeft(0)}
                 />
             )}
 

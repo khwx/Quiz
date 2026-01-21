@@ -11,6 +11,7 @@ interface QuestionDisplayProps {
     status: string;
     players?: any[];
     answers?: any[];
+    onTimerClick?: () => void;
 }
 
 const colors = [
@@ -22,7 +23,7 @@ const colors = [
 
 const icons = ["A", "B", "C", "D"];
 
-export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [] }: QuestionDisplayProps) {
+export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], onTimerClick }: QuestionDisplayProps) {
     const progress = (timeLeft / totalTime) * 100;
 
     // Helper to get player initials
@@ -38,8 +39,12 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 <span className="bg-white/10 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-violet-300">
                     {question.category || "Geral"}
                 </span>
-                <div className="flex items-center gap-4 bg-black/30 px-6 py-3 rounded-2xl">
-                    <Clock className="text-pink-500 w-8 h-8 animate-pulse" />
+                <div
+                    className="flex items-center gap-4 bg-black/30 px-6 py-3 rounded-2xl cursor-pointer hover:bg-black/40 transition-colors group"
+                    onClick={onTimerClick}
+                    title="Clicar para saltar tempo"
+                >
+                    <Clock className="text-pink-500 w-8 h-8 animate-pulse group-hover:scale-110 transition-transform" />
                     <span className={`text-4xl font-black font-mono ${timeLeft <= 5 ? 'text-red-500' : 'text-white'}`}>
                         {timeLeft}
                     </span>
@@ -108,17 +113,18 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                                         {answers
                                             .filter(a => a.chosen_option === idx)
                                             .map(a => {
-                                                const player = players.find(p => p.id === a.player_id);
+                                                const player = players.find(p => String(p.id) === String(a.player_id));
                                                 if (!player) return null;
                                                 return (
                                                     <motion.div
                                                         key={player.id}
                                                         initial={{ scale: 0 }}
                                                         animate={{ scale: 1 }}
-                                                        className="bg-white/20 px-3 py-1 rounded-full text-sm font-black text-white border border-white/20 backdrop-blur-sm"
+                                                        className="bg-white/20 px-3 py-1 rounded-full text-sm font-black text-white border border-white/20 backdrop-blur-sm flex items-center gap-2"
                                                         title={player.name}
                                                     >
-                                                        {player.avatar || getInitials(player.name)}
+                                                        <span className="text-lg">{player.avatar || '🎮'}</span>
+                                                        <span>{getInitials(player.name)}</span>
                                                     </motion.div>
                                                 );
                                             })}
