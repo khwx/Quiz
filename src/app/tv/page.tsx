@@ -464,7 +464,7 @@ export default function TVHost() {
                     totalTime={20}
                     status={status}
                     players={players}
-                    answers={currentAnswers.filter(a => a.question_id === currentQ.id)}
+                    answers={currentAnswers.filter(a => String(a.question_id) === String(currentQ.id))}
                     onTimerClick={() => setTimeLeft(0)}
                 />
             )}

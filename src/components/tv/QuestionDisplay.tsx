@@ -111,16 +111,14 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                                 {isReveal && (
                                     <div className="flex flex-wrap gap-2 mt-4">
                                         {answers
-                                            .filter(a => a.chosen_option === idx)
+                                            .filter(a => Number(a.chosen_option) === idx)
                                             .map(a => {
-                                                // Robust ID matching: String conversion, trimming, and case-insensitive check
-                                                const playerId = String(a.player_id).trim().toLowerCase();
-                                                const player = players.find(p => String(p.id).trim().toLowerCase() === playerId);
+                                                // Extremely robust matching
+                                                const targetPlayerId = String(a.player_id || "").toLowerCase().trim();
+                                                const player = (players || []).find(p => String(p.id).toLowerCase().trim() === targetPlayerId);
 
-                                                if (!player) {
-                                                    console.warn(`⚠️ Player not found for answer ID: ${playerId}. Available:`, players.map(p => p.id));
-                                                    return null;
-                                                }
+                                                if (!player) return null;
+
                                                 return (
                                                     <motion.div
                                                         key={player.id}
