@@ -78,12 +78,25 @@ export default function TVHost() {
                 event: 'INSERT',
                 schema: 'public',
                 table: 'answers',
-                filter: `game_id=eq.${gameId}`
+                // Nuclear Option: No server-side filter to avoid UUID casing issues
+                // filter: `game_id=eq.${gameId}` 
             }, (payload) => {
                 const newAnswer = payload.new;
+
+                // Nuclear Client-Side Filter: Check ID manually and robustly
+                if (String(newAnswer.game_id).toLowerCase() !== String(gameId).toLowerCase()) {
+                    return; // Ignore answers from other games
+                }
+
+                console.log("📥 Received Answer:", newAnswer);
+
                 // Accumulate ALL answers for this game. We filter by question_id when checking for auto-skip.
                 // This prevents losing answers if the TV is slightly behind on currentQuestionIndex update.
-                setCurrentAnswers(prev => [...prev, newAnswer]);
+                setCurrentAnswers(prev => {
+                    // Avoid duplicates in state
+                    if (prev.some(a => a.id === newAnswer.id)) return prev;
+                    return [...prev, newAnswer];
+                });
             })
             .subscribe((status) => {
                 console.log(`📡 Realtime Status: ${status}`);
