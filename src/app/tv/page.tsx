@@ -85,12 +85,15 @@ export default function TVHost() {
                 // This prevents losing answers if the TV is slightly behind on currentQuestionIndex update.
                 setCurrentAnswers(prev => [...prev, newAnswer]);
             })
-            .subscribe();
+            .subscribe((status) => {
+                console.log(`📡 Realtime Status: ${status}`);
+            });
 
         return () => {
+            console.log("🔌 Unsubscribing from answers channel...");
             supabase.removeChannel(channel);
         };
-    }, [gameId, currentQuestionIndex, currentQuestions]);
+    }, [gameId]); // CRITICAL FIX: Removed currentQuestionIndex/currentQuestions to prevent re-subscribing
 
     // Auto-skip logic
     useEffect(() => {
