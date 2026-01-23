@@ -138,7 +138,7 @@ export default function TVHost() {
             supabase.removeChannel(channel);
             clearInterval(pollInterval);
         };
-    }, [gameId, status]); // Added status dependency to only poll when relevant? No, gameId is stable. Status is needed for the "if" check inside poller.
+    }, [gameId]); // Only recreate if gameId changes (shouldn't happen). Status changes should NOT destroy subscription!
 
     // Auto-skip logic
     useEffect(() => {
