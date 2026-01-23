@@ -77,6 +77,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     };
 
     const handleAnswer = async (index: number) => {
+        // Optimistic Update
         setHasAnswered(true);
         setSelectedOption(index);
 
@@ -87,7 +88,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         const timeTaken = 20 - (document.getElementById('timer-ref')?.dataset.time ? Number(document.getElementById('timer-ref')?.dataset.time) : 10);
 
         try {
-            await fetch("/api/answer", {
+            const res = await fetch("/api/answer", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -98,8 +99,15 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                     timeTaken: 5.5 // NOTE: Ideally pass real time, but fixed for now is safe
                 })
             });
+
+            if (!res.ok) {
+                throw new Error("Falha ao enviar resposta");
+            }
         } catch (err) {
             console.error("Failed to submit answer", err);
+            alert("Erro ao enviar resposta! Tenta outra vez.");
+            setHasAnswered(false); // Revert so they can try again
+            setSelectedOption(null);
         }
     };
 
