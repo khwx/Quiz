@@ -76,28 +76,20 @@ export default function TVHost() {
 
         // 1. Setup Realtime Subscription
         const channel = supabase
-            .channel(`answers-${gameId}`)
+            .channel('game-answers') // Simplified channel name
             .on('postgres_changes', {
                 event: 'INSERT',
                 schema: 'public',
                 table: 'answers',
-                // Nuclear Option: No server-side filter to avoid UUID casing issues
-                // filter: `game_id=eq.${gameId}` 
+                filter: `game_id=eq.${gameId}` // Enable server-side filter!
             }, (payload) => {
                 const newAnswer = payload.new;
 
                 console.log(`🔔 RAW Event Received:`, {
                     answerGameId: newAnswer.game_id,
                     expectedGameId: gameId,
-                    match: String(newAnswer.game_id).toLowerCase() === String(gameId).toLowerCase(),
                     newAnswer
                 });
-
-                // Nuclear Client-Side Filter: Check ID manually and robustly
-                if (String(newAnswer.game_id).toLowerCase() !== String(gameId).toLowerCase()) {
-                    console.log(`❌ Filtered out (wrong game)`);
-                    return; // Ignore answers from other games
-                }
 
                 console.log("📥 Received Answer (Realtime):", newAnswer);
 
