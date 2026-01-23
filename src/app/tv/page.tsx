@@ -72,6 +72,8 @@ export default function TVHost() {
     useEffect(() => {
         if (!gameId) return;
 
+        console.log(`🔧 Setting up Answer Subscription for gameId: ${gameId}`);
+
         // 1. Setup Realtime Subscription
         const channel = supabase
             .channel(`answers-${gameId}`)
@@ -84,8 +86,16 @@ export default function TVHost() {
             }, (payload) => {
                 const newAnswer = payload.new;
 
+                console.log(`🔔 RAW Event Received:`, {
+                    answerGameId: newAnswer.game_id,
+                    expectedGameId: gameId,
+                    match: String(newAnswer.game_id).toLowerCase() === String(gameId).toLowerCase(),
+                    newAnswer
+                });
+
                 // Nuclear Client-Side Filter: Check ID manually and robustly
                 if (String(newAnswer.game_id).toLowerCase() !== String(gameId).toLowerCase()) {
+                    console.log(`❌ Filtered out (wrong game)`);
                     return; // Ignore answers from other games
                 }
 
