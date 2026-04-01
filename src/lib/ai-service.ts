@@ -13,7 +13,8 @@ export async function generateQuestions(prompt: string, count: number = 5, ageRa
     }
 
     const data = await response.json();
-    return data;
+    console.log(`[AI-Service-Client] Provider used: ${data.provider || "unknown"}`);
+    return data.questions || data;
   } catch (error) {
     console.error("Erro ao gerar perguntas (Client):", error);
     throw error;

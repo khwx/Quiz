@@ -16,6 +16,7 @@
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
     "framer-motion": "^12.26.1",
+    "groq-sdk": "^1.1.2",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "qrcode.react": "^4.2.0",
