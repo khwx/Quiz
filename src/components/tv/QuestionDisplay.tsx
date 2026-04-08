@@ -40,13 +40,40 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                     {question.category || "Geral"}
                 </span>
                 <div className="flex items-center gap-6">
-                    {/* Respostas Counter */}
-                    <div className="bg-white/5 px-4 py-2 rounded-xl flex items-center gap-2 border border-white/10">
-                        <span className="text-gray-400 font-bold uppercase text-xs tracking-widest">Respostas</span>
-                        <span className="text-2xl font-black text-white">
-                            {Array.from(new Set(answers.map(a => a.player_id))).length} / {players.length}
-                        </span>
-                    </div>
+                        {/* Respostas Counter */}
+                        <div className="bg-white/5 px-4 py-2 rounded-xl flex items-center gap-2 border border-white/10">
+                            <span className="text-gray-400 font-bold uppercase text-xs tracking-widest">Respostas</span>
+                            <span className="text-2xl font-black text-white">
+                                {Array.from(new Set(answers.map(a => a.player_id))).length} / {players.length}
+                            </span>
+                        </div>
+
+                        {/* Avatars dos jogadores que responderam */}
+                        <div className="flex flex-wrap gap-2 justify-end">
+                            {players.map(player => {
+                                const hasAnswered = answers.some(a => String(a.player_id) === String(player.id));
+                                return hasAnswered ? (
+                                    <motion.div
+                                        key={player.id}
+                                        initial={{ scale: 0, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        exit={{ scale: 0, opacity: 0 }}
+                                        className="bg-green-500/20 text-green-300 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner"
+                                        title={player.name}
+                                    >
+                                        {player.avatar || '🎮'}
+                                    </motion.div>
+                                ) : (
+                                    <div
+                                        key={player.id}
+                                        className="bg-gray-700/30 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner"
+                                        title={player.name + " (Ainda não respondeu)"}
+                                    >
+                                        {player.avatar || '...'}
+                                    </div>
+                                );
+                            })}
+                        </div>
 
                     <div
                         className="flex items-center gap-4 bg-black/30 px-6 py-3 rounded-2xl cursor-pointer hover:bg-black/40 transition-colors group"

@@ -77,15 +77,16 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     };
 
     const handleAnswer = async (index: number) => {
-        // Optimistic Update
         setHasAnswered(true);
         setSelectedOption(index);
 
         const player = players.find(p => p.name === name);
-        if (!player) return;
+        if (!player) {
+            console.error("❌ Player not found:", name, players);
+            return;
+        }
 
-        // Calculate simplified time taken (approximate)
-        const timeTaken = 20 - (document.getElementById('timer-ref')?.dataset.time ? Number(document.getElementById('timer-ref')?.dataset.time) : 10);
+        console.log("📱 Sending answer:", { gameId, playerId: player.id, questionId: currentQuestionId, option: index });
 
         try {
             const res = await fetch("/api/answer", {
@@ -94,19 +95,22 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                 body: JSON.stringify({
                     gameId,
                     playerId: player.id,
-                    questionId: currentQuestionId, // Must be current question ID
+                    questionId: currentQuestionId,
                     chosenOption: index,
-                    timeTaken: 5.5 // NOTE: Ideally pass real time, but fixed for now is safe
+                    timeTaken: 10
                 })
             });
 
+            const data = await res.json();
+            console.log("📱 API Response:", data);
+
             if (!res.ok) {
-                throw new Error("Falha ao enviar resposta");
+                throw new Error(data.error || "Falha ao enviar resposta");
             }
-        } catch (err) {
-            console.error("Failed to submit answer", err);
-            alert("Erro ao enviar resposta! Tenta outra vez.");
-            setHasAnswered(false); // Revert so they can try again
+        } catch (err: any) {
+            console.error("❌ Failed to submit answer:", err);
+            alert("Erro ao enviar resposta: " + err.message);
+            setHasAnswered(false);
             setSelectedOption(null);
         }
     };

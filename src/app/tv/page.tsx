@@ -76,54 +76,49 @@ export default function TVHost() {
 
         // 1. Setup Realtime Subscription
         const channel = supabase
-            .channel('game-answers') // Simplified channel name
+            .channel(`game-answers-${gameId}`)
             .on('postgres_changes', {
                 event: 'INSERT',
                 schema: 'public',
                 table: 'answers',
-                filter: `game_id=eq.${gameId}` // Enable server-side filter!
+                filter: `game_id=eq.${gameId}`
             }, (payload) => {
                 const newAnswer = payload.new;
-
-                console.log(`🔔 RAW Event Received:`, {
-                    answerGameId: newAnswer.game_id,
-                    expectedGameId: gameId,
-                    newAnswer
-                });
-
                 console.log("📥 Received Answer (Realtime):", newAnswer);
 
-                // Accumulate ALL answers for this game.
                 setCurrentAnswers(prev => {
-                    // Avoid duplicates in state
                     if (prev.some(a => a.id === newAnswer.id)) return prev;
+                    console.log("📥 ANSWER DETECTED (Realtime):", newAnswer);
                     return [...prev, newAnswer];
                 });
             })
             .subscribe((status) => {
-                console.log(`📡 Realtime Status: ${status}`);
+                console.log(`📡 Answer Subscription Status: ${status}`);
             });
 
         // 2. Setup Polling Fallback (Backup for when Realtime fails)
         const pollInterval = setInterval(async () => {
-            if (status === "QUESTION") {
-                const { data: polledAnswers } = await supabase
-                    .from('answers')
-                    .select('*')
-                    .eq('game_id', gameId);
+            const { data: polledAnswers, error } = await supabase
+                .from('answers')
+                .select('*')
+                .eq('game_id', gameId);
 
-                if (polledAnswers && polledAnswers.length > 0) {
-                    setCurrentAnswers(prev => {
-                        const newAnswers = polledAnswers.filter(pa => !prev.some(existing => existing.id === pa.id));
-                        if (newAnswers.length > 0) {
-                            console.log(`🔄 Polled ${newAnswers.length} new answers`);
-                            return [...prev, ...newAnswers];
-                        }
-                        return prev;
-                    });
-                }
+            if (error) {
+                console.error("❌ Polling Error:", error);
+                return;
             }
-        }, 2000); // Check every 2 seconds
+
+            if (polledAnswers && polledAnswers.length > 0) {
+                setCurrentAnswers(prev => {
+                    const newAnswers = polledAnswers.filter(pa => !prev.some(existing => existing.id === pa.id));
+                    if (newAnswers.length > 0) {
+                        console.log(`🔄 Polled ${newAnswers.length} new answers. Total answers in DB: ${polledAnswers.length}`);
+                        return [...prev, ...newAnswers];
+                    }
+                    return prev;
+                });
+            }
+        }, 1500);
 
         return () => {
             console.log("🔌 Unsubscribing & Stopping Poller...");
@@ -132,28 +127,26 @@ export default function TVHost() {
         };
     }, [gameId]); // Only recreate if gameId changes (shouldn't happen). Status changes should NOT destroy subscription!
 
-    // Auto-skip logic
+    // Auto-skip logic - advance to REVEAL when all players answered OR timer expires
     useEffect(() => {
+        if (status !== "QUESTION") return;
+
         const currentQ = currentQuestions[currentQuestionIndex - 1];
-        if (!currentQ || status !== "QUESTION") return;
+        if (!currentQ?.id) return;
 
-        // 1. Get unique player IDs who have answered THIS question
-        const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === String(currentQ.id));
+        const currentQuestionId = String(currentQ.id);
+        const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
-
-        // 2. Compare with UNIQUE valid players currently in the lobby
-        // Deduplicate players by ID just in case of multiple join events
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
-        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
-            console.log(`⚡ Everyone answered (${uniqueAnswerPlayerIds.size}/${uniquePlayers.length})! Skipping timer...`);
-            const timer = setTimeout(() => {
-                setTimeLeft(0);
-                updateStatus("REVEAL");
-            }, 800); // Slightly longer delay for visual feedback
-            return () => clearTimeout(timer);
+        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered`);
+
+        // Only auto-skip if ALL players answered AND there's still time left (> 3s buffer)
+        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length && timeLeft > 3) {
+            console.log(`⚡ Everyone answered with ${timeLeft}s left! Advancing to REVEAL...`);
+            updateStatus("REVEAL");
         }
-    }, [currentAnswers, players.length, status, currentQuestionIndex, currentQuestions]);
+    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, updateStatus]);
 
     // Fetch/Generate Questions on Start
     useEffect(() => {
@@ -314,7 +307,7 @@ export default function TVHost() {
         return () => {
             if (timer) clearInterval(timer);
         };
-    }, [status]);
+    }, [status, playSound, updateStatus]);
 
     // Reset Timer & Refresh Players ONLY when Question Index Changes
     useEffect(() => {
@@ -488,13 +481,13 @@ export default function TVHost() {
                                     className="btn-quiz btn-primary w-full flex items-center justify-center gap-2 group relative overflow-hidden mt-auto"
                                 >
                                     {isGenerating ? (
-                                        <div className="flex flex-col items-center gap-2 w-full">
-                                            <div className="flex items-center gap-3">
-                                                <Loader2 className="w-6 h-6 animate-spin" />
-                                                <span className="animate-pulse text-lg">A Criar Quiz com IA...</span>
+                                            <div className="flex flex-col items-center gap-2 w-full">
+                                                <div className="flex items-center gap-3">
+                                                    <Loader2 className="w-6 h-6 animate-spin" />
+                                                    <span className="animate-pulse text-lg">A Criar Quiz com IA...</span>
+                                                </div>
+                                                <span className="text-xs text-white/50 font-normal normal-case">Isto pode demorar uns segundos (estamos a inventar perguntas!)</span>
                                             </div>
-                                            <span className="text-xs text-white/50 font-normal normal-case">Isto pode demorar uns segundos (estamos a inventar perguntas!)</span>
-                                        </div>
                                     ) : (
                                         <>
                                             <Play className="group-hover:translate-x-1 transition-transform" />
