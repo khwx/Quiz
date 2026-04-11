@@ -13,8 +13,8 @@ async function testGemini() {
 
     try {
         const genAI = new GoogleGenerativeAI(API_KEY);
-        // Using the model we found to be available
-        const modelName = "gemini-2.0-flash";
+        // Use model from env or default to gemini-1.5-flash
+        const modelName = process.env.GEMINI_MODEL || "gemini-1.5-flash";
         console.log(`Testando modelo FINAL: ${modelName}...`);
 
         const model = genAI.getGenerativeModel({ model: modelName });
