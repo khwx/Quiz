@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Clock } from "lucide-react";
+import { Clock, Brain, Database } from "lucide-react";
 
 interface QuestionDisplayProps {
     question: any;
@@ -11,6 +11,7 @@ interface QuestionDisplayProps {
     status: string;
     players?: any[];
     answers?: any[];
+    questionSource?: "DB" | "AI" | null;
     onTimerClick?: () => void;
 }
 
@@ -23,7 +24,7 @@ const colors = [
 
 const icons = ["A", "B", "C", "D"];
 
-export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], onTimerClick }: QuestionDisplayProps) {
+export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], questionSource, onTimerClick }: QuestionDisplayProps) {
     const progress = (timeLeft / totalTime) * 100;
 
     // Helper to get player initials
@@ -36,9 +37,21 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
 
             {/* Timer Bar & Category */}
             <div className="w-full flex items-center justify-between mb-8">
-                <span className="bg-white/10 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-violet-300">
-                    {question.category || "Geral"}
-                </span>
+                <div className="flex items-center gap-3">
+                    <span className="bg-white/10 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-violet-300">
+                        {question.category || "Geral"}
+                    </span>
+                    {questionSource && (
+                        <div className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider ${
+                            questionSource === "AI" 
+                                ? "bg-pink-500/20 text-pink-300 border border-pink-500/30" 
+                                : "bg-green-500/20 text-green-300 border border-green-500/30"
+                        }`}>
+                            {questionSource === "AI" ? <Brain size={14} /> : <Database size={14} />}
+                            {questionSource === "AI" ? "IA" : "BD"}
+                        </div>
+                    )}
+                </div>
                 <div className="flex items-center gap-6">
                         {/* Respostas Counter */}
                         <div className="bg-white/5 px-4 py-2 rounded-xl flex items-center gap-2 border border-white/10">

@@ -28,6 +28,7 @@ export default function TVHost() {
     const [ageGroup, setAgeGroup] = useState("adults"); // "7-9", "10-14", "15-17", "adults"
     const [isGenerating, setIsGenerating] = useState(false);
     const [timerDuration, setTimerDuration] = useState(20);
+    const [questionSource, setQuestionSource] = useState<"DB" | "AI" | null>(null);
 
     const { playSound } = useSound();
 
@@ -186,11 +187,13 @@ export default function TVHost() {
                     if (count >= 150) {
                         // We have enough questions! Shuffle and use them.
                         questionsToUse = (data || []).sort(() => 0.5 - Math.random()).slice(0, 5);
+                        setQuestionSource("DB");
                         console.log(`✅ Found ${count} existing questions. Using 5.`);
                     }
 
                     // 2. If not enough, GENERATE new ones
                     if (questionsToUse.length === 0) {
+                        setQuestionSource("AI");
                         console.log(`🤖 Generating new questions for "${finalTopic}" (Age: ${ageGroup})`);
 
                         const aiQuestions = await generateQuestions(finalTopic, 5, ageGroup);
@@ -313,7 +316,7 @@ export default function TVHost() {
     useEffect(() => {
         if (status === "QUESTION") {
             console.log("🔄 New Question Loaded: Resetting Timer & Answers");
-            setTimeLeft(20);
+            setTimeLeft(timerDuration);
             setCurrentAnswers([]);
 
             // Refresh players list to ensure we don't count "ghost" players who joined but left
@@ -475,6 +478,25 @@ export default function TVHost() {
                                     />
                                 </div>
 
+                                {/* TIMER DURATION SELECTOR */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Tempo por Pergunta</label>
+                                    <div className="grid grid-cols-4 gap-2">
+                                        {[10, 15, 20, 30].map(seconds => (
+                                            <button
+                                                key={seconds}
+                                                onClick={() => setTimerDuration(seconds)}
+                                                className={`py-2 rounded-xl text-sm font-bold transition-all border-2 ${timerDuration === seconds
+                                                    ? "bg-pink-500 border-pink-500 text-white shadow-lg"
+                                                    : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
+                                                    }`}
+                                            >
+                                                {seconds}s
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 <button
                                     onClick={() => updateStatus("STARTING")}
                                     disabled={isGenerating}
@@ -506,9 +528,10 @@ export default function TVHost() {
                 <QuestionDisplay
                     question={currentQ}
                     timeLeft={timeLeft}
-                    totalTime={20}
+                    totalTime={timerDuration}
                     status={status}
                     players={players}
+                    questionSource={questionSource}
                     answers={currentAnswers.filter(a => String(a.question_id) === String(currentQ.id))}
                     onTimerClick={() => setTimeLeft(0)}
                 />
