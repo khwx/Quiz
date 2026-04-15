@@ -1,4 +1,4 @@
-# 🎮 Family Quiz Game
+# 🎮 Family Quiz
 
 Bem-vindo ao **Family Quiz**, uma experiência de jogo interativa estilo "Kahoot" para animar as tuas festas e reuniões familiares!
 
@@ -8,19 +8,18 @@ Bem-vindo ao **Family Quiz**, uma experiência de jogo interativa estilo "Kahoot
 
 - **📺 Modo TV (Host)**: O ecrã principal que mostra as perguntas, cronómetro e classificações.
 - **📱 Modo Jogador**: Entra com o teu telemóvel usando um PIN, escolhe o teu nome e avatar.
-- **🤖 Perguntas AI**: Gera perguntas infinitas sobre qualquer tema usando Inteligência Artificial.
-- **⚡ Realtime**: Sincronização instantânea entre todos os dispositivos.
-- **🏆 Pódio**: Celebra os vencedores com animações e música!
+- **🤖 Perguntas por IA**: Gera perguntas automaticamente sobre qualquer tema usando inteligência artificial (Gemini + Groq).
+- **⚡ Realtime**: Sincronização instantânea entre todos os dispositivos via Supabase Realtime.
+- **🏆 Pódio**: Celebra os vencedores com animações!
+- **⏱️ Timer Inteligente**: Quando todos os jogadores respondem, o timer avança automaticamente para a próxima pergunta.
 
-## 🛠️ Tecnologias Usadas
+## 🛠️ Tecnologias
 
-Este projeto foi construído com as tecnologias mais modernas:
-
-- **Frontend**: [Next.js 15](https://nextjs.org/) (App Router), React 19, TypeScript
-- **Estilos**: [Tailwind CSS](https://tailwindcss.com/) & Framer Motion (para animações suaves)
-- **Backend & Realtime**: [Supabase](https://supabase.com/)
-- **AI**: Google Gemini (via Vercel AI SDK)
-- **Icons**: Lucide React
+- **Frontend**: Next.js 16 (App Router), React 19, TypeScript
+- **Estilos**: Tailwind CSS v4 & Framer Motion
+- **Backend & Realtime**: Supabase (PostgreSQL + Realtime)
+- **AI**: Google Gemini + Groq Llama (com fallback automático)
+- **Deploy**: Vercel
 
 ## 🚀 Como Começar
 
@@ -31,16 +30,19 @@ cd Quiz
 ```
 
 ### 2. Configurar Variáveis de Ambiente
-Cria um ficheiro `.env.local` na raiz do projeto e adiciona as tuas chaves:
+Cria um ficheiro `.env.local` na raiz do projeto:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=a_tua_url_supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY=a_tua_key_supabase
 NEXT_PUBLIC_GEMINI_API_KEY=a_tua_api_key_google
+GROQ_API_KEY=a_tua_api_key_groq
+GEMINI_MODEL=gemini-1.5-flash
+GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
 ### 3. Configurar a Base de Dados
-Executa o script SQL disponível em `migration_fix.sql` no teu painel do Supabase para criar as tabelas necessárias.
+Executa o SQL do ficheiro `supabase_schema.sql` no teu painel do Supabase para criar as tabelas.
 
 ### 4. Instalar e Correr
 ```bash
@@ -48,7 +50,36 @@ npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) e diverte-te!
+## 📊 Estrutura do Projeto
+
+```
+quiz/
+├── src/
+│   ├── app/
+│   │   ├── api/          # APIs (answer, questions/generate)
+│   │   ├── tv/          # Página do Host/TV
+│   │   ├── play/        # Página do Jogador
+│   │   └── tutorial/     # Página de tutorial
+│   ├── components/       # Componentes reutilizáveis
+│   ├── context/         # Estado global (GameContext)
+│   ├── lib/             # Serviços (Supabase, AI, etc.)
+│   └── hooks/           # Hooks personalizados
+├── docs/                # Documentação e notas
+├── supabase_schema.sql  # Schema da base de dados
+└── test-gemini.js       # Script de teste da API AI
+```
+
+## 🐛 Problemas Conhecidos e Soluções
+
+1. **Contador de respostas fica a 0/1**: Verifica se a coluna `points` existe na tabela `answers` no Supabase.
+2. **Realtime não funciona**: Ativa a Replication na tabela `answers` no Supabase Dashboard.
+
+## 🚧 Em Desenvolvimento
+
+- Timer configurável (10s, 15s, 20s, 30s)
+- Pista "50/50" para eliminar opções
+- Leaderboard entre perguntas
+- Mais tipos de perguntas (V/F, com imagem)
 
 ## 📝 Licença
 
