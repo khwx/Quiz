@@ -1,27 +1,46 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Groq from "groq-sdk";
 
-const GEMINI_MODEL = "gemini-2.0-flash";
+const GEMINI_MODEL = "gemini-1.5-flash";
 const GROQ_MODEL = "llama-3.3-70b-versatile";
 
 function buildPrompt(prompt: string, count: number, ageRating: string) {
   return `
-    Gera ${count} perguntas de quiz em Português de Portugal para o seguinte tema: "${prompt}".
-    
-    Público Alvo e Nível de Dificuldade:
-    ${ageRating === "7-9" ? "- Crianças (7-9 anos): Perguntas muito simples, divertidas e educativas. Vocabulário básico." : ""}
-    ${ageRating === "10-14" ? "- Jovens (10-14 anos): Nível escolar intermédio. Curiosidades interessantes." : ""}
-    ${ageRating === "15-17" ? "- Adolescentes (15-17 anos): Nível secundário. Desafiante mas acessível." : ""}
-    ${!["7-9", "10-14", "15-17"].includes(ageRating) ? "- Adultos: Nível geral de quiz show." : ""}
+    Gera ${count} perguntas de quiz em Português de Portugal para: "${prompt}".
 
-    Retorna APENAS um array JSON válido (sem markdown) com este formato exato:
+    REGRAS DE QUALIDADE (MUITO IMPORTANTE):
+    1. Perguntas CURTAS e DIRETAS (máximo 80 caracteres no texto)
+    2. Evitar perguntas óbvias de senso comum
+    3. Focar em factos curiosas, surpreendentes ou pouco conhecidos
+    4. Variedade na estrutura: usar "Qual...", "O que...", "Quem...", "Em que..."
+    5. Opções de resposta devem ser PLURAIS e ESPECÍFICAS (não genéricas)
+    6. A resposta correta deve estar sempre nas opções
+    7. Para crianças (7-9): divertido e educativo
+    8. Para adultos: tipo quiz show,诱惑 mas não impossível
+
+    Exemplos de BOAS perguntas:
+    - "Quantos ossos tem o corpo humano?"
+    - "Qual o rio mais longo da Europa?"
+    - "Em que ano chegou o homem à Lua?"
+
+    Exemplos de PERGUNTAS A EVITAR:
+    - "Qual a cor do céu?" (muito óbvio)
+    - "O que é a água?" (muito vago)
+
+    Público Alvo:
+    ${ageRating === "7-9" ? "- Crianças (7-9 anos): Simples, divertido, educativo." : ""}
+    ${ageRating === "10-14" ? "- Jovens (10-14 anos): Curiosidades escolares e do dia-a-dia." : ""}
+    ${ageRating === "15-17" ? "- Adolescentes (15-17 anos): Mais desafiante, aplicações reais." : ""}
+    ${!["7-9", "10-14", "15-17"].includes(ageRating) ? "- Adultos: Quiz show, conhecimento geral interessante." : ""}
+
+    Retorna APENAS JSON válido (sem markdown):
     [
       {
-        "text": "Pergunta?",
-        "options": ["A", "B", "C", "D"],
+        "text": "Pergunta curta e direta?",
+        "options": ["Opção A específica", "Opção B específica", "Opção C específica", "Opção D específica"],
         "correct_option": 0,
         "category": "${prompt}",
-        "explanation": "Explicação curta"
+        "explanation": "Curiosidade ou explicação breve"
       }
     ]
   `;
