@@ -23,7 +23,7 @@ export default function Home() {
           A Melhor Experiência em Família
         </span>
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white mb-4 italic">
-          QUIZ<span className="text-pink-500">MASTER</span> <span className="text-xs text-gray-600">v3.0</span>
+          QUIZ<span className="text-pink-500">MASTER</span> <span className="text-xs text-gray-600">v3.0b</span>
         </h1>
         <p className="text-gray-400 text-lg md:text-xl max-w-md mx-auto">
           Joguem juntos no ecrã grande usando os vossos telemóveis como comandos!
