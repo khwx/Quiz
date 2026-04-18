@@ -46,22 +46,24 @@ export default function AnswerController({ onAnswer, disabled }: AnswerControlle
     }
 
     return (
-        <div className="grid grid-cols-2 gap-4 bg-[#0f172a] p-4 h-full">
+        <div className="flex flex-col gap-3 bg-[#0f172a] p-4 min-h-screen">
             {colors.map((color, idx) => (
                 <button
                     key={idx}
                     onClick={() => handleClick(idx)}
                     disabled={disabled}
                     className={`
-            ${color} border-b-8 rounded-3xl
-            flex flex-col items-center justify-center gap-2
-            active:border-b-0 active:translate-y-2 transition-all
-            h-full
-          `}
+                        flex-1 ${color} border-b-8 rounded-2xl
+                        flex items-center justify-center gap-3
+                        active:scale-95 transition-all
+                        text-4xl font-black text-white
+                    `}
+                    style={{ minHeight: '80px' }}
                 >
-                    <span className="text-6xl font-black text-white/90 drop-shadow-lg">
+                    <span className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center">
                         {icons[idx]}
                     </span>
+                    <span className="text-lg font-bold text-white/90">Opção {icons[idx]}</span>
                 </button>
             ))}
         </div>
