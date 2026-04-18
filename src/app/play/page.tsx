@@ -226,10 +226,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                                 PIN do Jogo
                             </label>
                             <input
-                                type="text"
+                                type="tel"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
                                 placeholder="Exemplo: 123456"
                                 value={pin}
-                                onChange={(e) => setPin(e.target.value)}
+                                onChange={(e) => setPin(e.target.value.replace(/\D/g, ''))}
                                 className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-2xl font-mono text-center tracking-[0.2em] focus:outline-none focus:border-pink-500 transition-colors"
                                 maxLength={6}
                             />
