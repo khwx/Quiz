@@ -476,7 +476,27 @@ export default function TVHost() {
         <main className="min-h-screen bg-[#0f172a] p-12 flex flex-col items-center justify-center overflow-hidden">
             {/* LOBBY VIEW */}
             {status === "LOBBY" && (
-                <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
+                    
+                    {/* Botão de Limpeza de Memória */}
+                    {usedQuestionIdsRef.current.length > 0 && (
+                        <div className="absolute -top-10 right-0">
+                            <button
+                                onClick={() => {
+                                    if (confirm(`Tens a certeza que queres limpar a memória da TV?\nForam memorizadas ${usedQuestionIdsRef.current.length} perguntas. Ao limpar, elas voltarão a repetir-se.`)) {
+                                        localStorage.removeItem('usedQuestionIds');
+                                        usedQuestionIdsRef.current = [];
+                                        alert("Memória limpa! Podes começar um jogo novo com o baralho completo.");
+                                    }
+                                }}
+                                className="px-4 py-2 bg-gray-800/80 hover:bg-red-600 text-gray-300 hover:text-white rounded-lg text-sm transition-all flex items-center gap-2 shadow-lg backdrop-blur-sm border border-white/10"
+                                title="Limpar as perguntas memorizadas na TV"
+                            >
+                                🧹 Limpar Memória ({usedQuestionIdsRef.current.length})
+                            </button>
+                        </div>
+                    )}
+
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
