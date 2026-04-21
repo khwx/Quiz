@@ -21,7 +21,7 @@ interface GameContextType extends GameState {
     setGameId: (id: string | null) => void;
     setPlayers: (players: any[]) => void;
     updateStatus: (status: GameStatus) => Promise<void>;
-    nextQuestion: (questionId?: string) => Promise<void>;
+    nextQuestion: (questionId?: string, correctOption?: number) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
 }
 
