@@ -140,10 +140,14 @@ export default function TVHost() {
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
-        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered`);
+        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question: ${currentQuestionId})`);
 
         // Only auto-skip if ALL players answered AND there's still time left (> 3s buffer)
-        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length && timeLeft > 3) {
+        // AND there are actually players in the game AND at least one answer was submitted
+        const allPlayersAnswered = uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length;
+        const hasAnswers = uniqueAnswerPlayerIds.size > 0;
+
+        if (allPlayersAnswered && hasAnswers && timeLeft > 3) {
             console.log(`⚡ Everyone answered with ${timeLeft}s left! Advancing to REVEAL...`);
             updateStatus("REVEAL");
         }
