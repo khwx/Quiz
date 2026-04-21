@@ -26,6 +26,19 @@ export default function TVHost() {
     const shouldRevealRef = useRef(false); // Shared signal between auto-skip and timer
     const questionStartTimeRef = useRef<number>(0); // Track when the question started
 
+    // Load used questions from local storage on mount
+    useEffect(() => {
+        try {
+            const savedIds = localStorage.getItem('usedQuestionIds');
+            if (savedIds) {
+                usedQuestionIdsRef.current = JSON.parse(savedIds);
+                console.log(`🧠 Loaded ${usedQuestionIdsRef.current.length} used questions from memory.`);
+            }
+        } catch (e) {
+            console.error("Failed to parse used questions from memory", e);
+        }
+    }, []);
+
     // Theme State
     const [topic, setTopic] = useState("Cultura Geral");
     const [customTopic, setCustomTopic] = useState("");
@@ -322,6 +335,11 @@ export default function TVHost() {
                     // BUG FIX #1: Update the ref instead of state (no re-trigger)
                     const newUsedIds = [...currentUsedIds, ...questionsToUse.map(q => String(q.id))];
                     usedQuestionIdsRef.current = newUsedIds;
+                    try {
+                        localStorage.setItem('usedQuestionIds', JSON.stringify(newUsedIds));
+                    } catch (e) {
+                        console.error("Failed to save used questions to memory", e);
+                    }
                     console.log(`📚 Used question IDs: ${newUsedIds.length}`);
 
                     // SYNC state to DB
