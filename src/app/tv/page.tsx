@@ -489,7 +489,7 @@ export default function TVHost() {
     return (
         <main className="min-h-screen bg-[#0f172a] p-12 flex flex-col items-center justify-center overflow-hidden">
             {/* LOBBY VIEW */}
-            {status === "LOBBY" && (
+            {(status === "LOBBY" || status === "STARTING") && (
                 <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
                     
                     {/* Botão de Limpeza de Memória */}
