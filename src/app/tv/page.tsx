@@ -566,26 +566,42 @@ export default function TVHost() {
                     animate={{ y: 0, opacity: 1 }}
                     className="absolute bottom-12 right-12 flex gap-4"
                 >
-                    <button
-                        onClick={() => {
-                            const nextQ = currentQuestions[currentQuestionIndex];
-                            if (nextQ) {
-                                nextQuestion(nextQ.id);
-                            } else {
-                                // No more questions - start new round
+                    <div className="flex gap-4">
+                        <button
+                            onClick={() => {
+                                const nextQ = currentQuestions[currentQuestionIndex];
+                                if (nextQ) {
+                                    nextQuestion(nextQ.id);
+                                } else {
+// No more questions - start new round
                                 console.log(`🔄 Starting round ${round + 1}...`);
                                 setRound(r => r + 1);
                                 updateStatus("STARTING");
-                            }
-                        }}
-                        className="btn-quiz btn-primary flex items-center gap-2"
-                    >
-                        {currentQuestionIndex < currentQuestions.length ? (
-                            <>Próxima Pergunta <ArrowRight /></>
+                                }
+                            }}
+                            className="btn-quiz btn-primary flex items-center gap-2"
+                        >
+                            {currentQuestionIndex < currentQuestions.length ? (
+                                <>Próxima Pergunta <ArrowRight /></>
                         ) : (
                             <>Nova Volta <ArrowRight /></>
                         )}
-                    </button>
+                        </button>
+                        <button
+                            onClick={() => {
+                                // Reset everything and go back to lobby
+                                console.log(`🔙 Returning to lobby...`);
+                                setGameId(null);
+                                setUsedQuestionIds([]);
+                                setRound(1);
+                                setCurrentQuestions([]);
+                                window.location.reload();
+                            }}
+                            className="btn-quiz btn-secondary flex items-center gap-2"
+                        >
+                            <>Escolher Outro Tema</>
+                        </button>
+                    </div>
                 </motion.div>
             )}
 
