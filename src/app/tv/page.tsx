@@ -30,6 +30,7 @@ export default function TVHost() {
     const [ageGroup, setAgeGroup] = useState("adults"); // "7-9", "10-14", "15-17", "adults"
     const [isGenerating, setIsGenerating] = useState(false);
     const [timerDuration, setTimerDuration] = useState(20);
+    const [questionCount, setQuestionCount] = useState(5);
     const [questionSource, setQuestionSource] = useState<"DB" | "AI" | null>(null);
 
     const { playSound } = useSound();
@@ -225,7 +226,7 @@ export default function TVHost() {
                     // We need at least 5 unused questions
                     if (count >= 5) {
                         // We have enough questions! Shuffle and use them.
-                        const shuffled = (data || []).sort(() => 0.5 - Math.random()).slice(0, 5);
+                        const shuffled = (data || []).sort(() => 0.5 - Math.random()).slice(0, questionCount);
                         questionsToUse = shuffled;
                         setQuestionSource("DB");
                         console.log(`✅ Found ${count} unused questions. Using 5.`);
@@ -239,7 +240,7 @@ export default function TVHost() {
                         setQuestionSource("AI");
                         console.log(`🤖 Generating new questions for "${finalTopic}" (Age: ${ageGroup})`);
 
-                        const aiQuestions = await generateQuestions(finalTopic, 5, ageGroup);
+                        const aiQuestions = await generateQuestions(finalTopic, questionCount, ageGroup);
                         const dbAgeRating = targetAge;
 
                         // Insert into Supabase
@@ -279,7 +280,7 @@ export default function TVHost() {
 
                         if (allAvailableQuestions && allAvailableQuestions.length >= 5) {
                             // Shuffle and take 5
-                            questionsToUse = allAvailableQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+                            questionsToUse = allAvailableQuestions.sort(() => 0.5 - Math.random()).slice(0, questionCount);
                             console.log(`✅ Using ${questionsToUse.length} questions (mixed new/existing).`);
                         } else if (insertedData && insertedData.length > 0) {
                             // Fallback to just what we inserted if total pool is still small
@@ -555,6 +556,25 @@ export default function TVHost() {
                                                     }`}
                                             >
                                                 {seconds}s
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* QUESTION COUNT SELECTOR */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Número de Perguntas</label>
+                                    <div className="grid grid-cols-4 gap-2">
+                                        {[3, 5, 7, 10].map(count => (
+                                            <button
+                                                key={count}
+                                                onClick={() => setQuestionCount(count)}
+                                                className={`py-2 rounded-xl text-sm font-bold transition-all border-2 ${questionCount === count
+                                                    ? "bg-violet-500 border-violet-500 text-white shadow-lg"
+                                                    : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
+                                                    }`}
+                                            >
+                                                {count}
                                             </button>
                                         ))}
                                     </div>
