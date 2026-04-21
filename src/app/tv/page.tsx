@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
@@ -22,7 +22,7 @@ export default function TVHost() {
     const [timeLeft, setTimeLeft] = useState(20);
     const [currentAnswers, setCurrentAnswers] = useState<any[]>([]);
     const [round, setRound] = useState(1);
-    const [usedQuestionIds, setUsedQuestionIds] = useState<string[]>([]);
+    const usedQuestionIdsRef = useRef<string[]>([]);
 
     // Theme State
     const [topic, setTopic] = useState("Cultura Geral");
@@ -93,6 +93,12 @@ export default function TVHost() {
     }, [currentQuestionIndex]);
 
     // Answer Subscription & Polling Fallback (Hybrid Strategy)
+    // BUG FIX #3: Track current question IDs to filter polling results
+    const currentQuestionIdsRef = useRef<string[]>([]);
+    useEffect(() => {
+        currentQuestionIdsRef.current = currentQuestions.map(q => String(q.id));
+    }, [currentQuestions]);
+
     useEffect(() => {
         if (!gameId) return;
 
@@ -108,6 +114,11 @@ export default function TVHost() {
                 filter: `game_id=eq.${gameId}`
             }, (payload) => {
                 const newAnswer = payload.new;
+                // BUG FIX #3: Only accept answers for questions in the current round
+                if (!currentQuestionIdsRef.current.includes(String(newAnswer.question_id))) {
+                    console.log("🚫 Ignoring answer for old question:", newAnswer.question_id);
+                    return;
+                }
                 console.log("📥 Received Answer (Realtime):", newAnswer);
 
                 setCurrentAnswers(prev => {
@@ -121,11 +132,16 @@ export default function TVHost() {
             });
 
         // 2. Setup Polling Fallback (Backup for when Realtime fails)
+        // BUG FIX #3: Only poll answers for current round's questions
         const pollInterval = setInterval(async () => {
+            const questionIds = currentQuestionIdsRef.current;
+            if (questionIds.length === 0) return;
+
             const { data: polledAnswers, error } = await supabase
                 .from('answers')
                 .select('*')
-                .eq('game_id', gameId);
+                .eq('game_id', gameId)
+                .in('question_id', questionIds);
 
             if (error) {
                 console.error("❌ Polling Error:", error);
@@ -177,137 +193,149 @@ export default function TVHost() {
     }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, timerDuration, updateStatus]);
 
     // Fetch/Generate Questions on Start
+    // BUG FIX #1: Use ref + guard to prevent double execution
+    const isStartingRef = useRef(false);
     useEffect(() => {
         const startRound = async () => {
-            if (status === "STARTING") {
-                setIsGenerating(true);
+            if (status !== "STARTING") return;
+            // Guard: prevent double execution from rapid state changes
+            if (isStartingRef.current) {
+                console.log("⚠️ startRound already running, skipping...");
+                return;
+            }
+            isStartingRef.current = true;
+            setIsGenerating(true);
 
-                try {
-                    // Normalize category name
-                    const finalTopic = (customTopic || topic).toLowerCase().trim();
-                    const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 18 };
-                    const targetAge = ageMap[ageGroup] || 18;
+            try {
+                // Normalize category name
+                const finalTopic = (customTopic || topic).toLowerCase().trim();
+                const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 18 };
+                const targetAge = ageMap[ageGroup] || 18;
+                // BUG FIX #1: Read from ref instead of state to avoid dependency loop
+                const currentUsedIds = usedQuestionIdsRef.current;
 
-                    console.log(`🎯 Starting game with topic: ${finalTopic} | Age: ${ageGroup} (DB: ${targetAge}) | Round: ${round}`);
+                console.log(`🎯 Starting game with topic: ${finalTopic} | Age: ${ageGroup} (DB: ${targetAge}) | Round: ${round} | Used IDs: ${currentUsedIds.length}`);
 
-                    let questionsToUse: any[] = [];
-                    let count = 0;
+                // Clear answers from previous round
+                setCurrentAnswers([]);
 
-                    // 1. Try to fetch EXISTING questions first (for ALL age groups)
-                    // We look for questions with the exact age rating (or 18+ for adults)
-                    // EXCLUDE already used questions
-                    let query = supabase
+                let questionsToUse: any[] = [];
+                let count = 0;
+
+                // 1. Try to fetch EXISTING questions first (for ALL age groups)
+                // EXCLUDE already used questions
+                let query = supabase
+                    .from("questions")
+                    .select("*", { count: 'exact' })
+                    .ilike("category", finalTopic);
+
+                // Filter out already used questions
+                if (currentUsedIds.length > 0) {
+                    query = query.not('id', 'in', `(${currentUsedIds.join(',')})`);
+                }
+
+                if (targetAge === 18) {
+                    query = query.gte('age_rating', 18);
+                } else {
+                    query = query.eq('age_rating', targetAge);
+                }
+
+                const { data, count: c } = await query;
+                count = c || 0;
+
+                // We need at least questionCount unused questions
+                if (count >= questionCount) {
+                    const shuffled = (data || []).sort(() => 0.5 - Math.random()).slice(0, questionCount);
+                    questionsToUse = shuffled;
+                    setQuestionSource("DB");
+                    console.log(`✅ Found ${count} unused questions. Using ${questionCount}.`);
+                } else {
+                    console.log(`⚠️ Only ${count} unused questions available. Generating more...`);
+                }
+
+                // 2. If not enough, GENERATE new ones
+                if (questionsToUse.length === 0) {
+                    setQuestionSource("AI");
+                    console.log(`🤖 Generating new questions for "${finalTopic}" (Age: ${ageGroup})`);
+
+                    const aiQuestions = await generateQuestions(finalTopic, questionCount, ageGroup);
+                    const dbAgeRating = targetAge;
+
+                    // Insert into Supabase
+                    const questionsToInsert = aiQuestions.map((q: any) => ({
+                        text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
+                        image_url: q.image_url || null,
+                        options: q.options,
+                        correct_option: q.correct_option,
+                        category: finalTopic.charAt(0).toUpperCase() + finalTopic.slice(1).toLowerCase(),
+                        age_rating: dbAgeRating
+                    }));
+
+                    const { data: insertedData, error } = await supabase
                         .from("questions")
-                        .select("*", { count: 'exact' })
+                        .upsert(questionsToInsert, {
+                            onConflict: 'text,category',
+                            ignoreDuplicates: true
+                        })
+                        .select();
+
+                    // BUG FIX #2: Fetch available questions EXCLUDING already used ones
+                    let finalQuery = supabase
+                        .from("questions")
+                        .select("*")
                         .ilike("category", finalTopic);
 
-                    // Filter out already used questions
-                    if (usedQuestionIds.length > 0) {
-                        query = query.not('id', 'in', `(${usedQuestionIds.join(',')})`);
+                    // Exclude used questions from this session
+                    if (currentUsedIds.length > 0) {
+                        finalQuery = finalQuery.not('id', 'in', `(${currentUsedIds.join(',')})`);
                     }
 
                     if (targetAge === 18) {
-                        query = query.gte('age_rating', 18);
+                        finalQuery = finalQuery.gte('age_rating', 18);
                     } else {
-                        // For kids, we want specific content. 
-                        // We could use .eq or allow a small range. For now, strict .eq matches our seed data.
-                        query = query.eq('age_rating', targetAge);
+                        finalQuery = finalQuery.eq('age_rating', targetAge);
                     }
 
-                    const { data, count: c } = await query;
-                    count = c || 0;
+                    const { data: allAvailableQuestions } = await finalQuery;
 
-                    // We need at least 5 unused questions
-                    if (count >= 5) {
-                        // We have enough questions! Shuffle and use them.
-                        const shuffled = (data || []).sort(() => 0.5 - Math.random()).slice(0, questionCount);
-                        questionsToUse = shuffled;
-                        setQuestionSource("DB");
-                        console.log(`✅ Found ${count} unused questions. Using 5.`);
-                    } else {
-                        // Not enough unused questions - need to generate more via AI
-                        console.log(`⚠️ Only ${count} unused questions available. Generating more...`);
+                    if (allAvailableQuestions && allAvailableQuestions.length >= questionCount) {
+                        questionsToUse = allAvailableQuestions.sort(() => 0.5 - Math.random()).slice(0, questionCount);
+                        console.log(`✅ Using ${questionsToUse.length} questions (mixed new/existing, no repeats).`);
+                    } else if (allAvailableQuestions && allAvailableQuestions.length > 0) {
+                        // Use what we have, even if less than questionCount
+                        questionsToUse = allAvailableQuestions.sort(() => 0.5 - Math.random());
+                        console.log(`⚠️ Only ${questionsToUse.length} unique questions available.`);
+                    } else if (insertedData && insertedData.length > 0) {
+                        questionsToUse = insertedData;
                     }
-
-                    // 2. If not enough, GENERATE new ones
-                    if (questionsToUse.length === 0) {
-                        setQuestionSource("AI");
-                        console.log(`🤖 Generating new questions for "${finalTopic}" (Age: ${ageGroup})`);
-
-                        const aiQuestions = await generateQuestions(finalTopic, questionCount, ageGroup);
-                        const dbAgeRating = targetAge;
-
-                        // Insert into Supabase
-                        const questionsToInsert = aiQuestions.map((q: any) => ({
-                            text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
-                            image_url: q.image_url || null,
-                            options: q.options,
-                            correct_option: q.correct_option,
-                            category: finalTopic.charAt(0).toUpperCase() + finalTopic.slice(1).toLowerCase(),
-                            age_rating: dbAgeRating
-                        }));
-
-                        // Insert into Supabase using upsert to ignore duplicates
-                        // This allows the game to proceed even if some AI questions already exist
-                        const { data: insertedData, error } = await supabase
-                            .from("questions")
-                            .upsert(questionsToInsert, {
-                                onConflict: 'text,category',
-                                ignoreDuplicates: true
-                            })
-                            .select();
-
-                        // Fetch the full set of questions for this category/age to ensure we have enough
-                        // regardless of whether they were just inserted or already existed
-                        let finalQuery = supabase
-                            .from("questions")
-                            .select("*")
-                            .ilike("category", finalTopic);
-
-                        if (targetAge === 18) {
-                            finalQuery = finalQuery.gte('age_rating', 18);
-                        } else {
-                            finalQuery = finalQuery.eq('age_rating', targetAge);
-                        }
-
-                        const { data: allAvailableQuestions } = await finalQuery;
-
-                        if (allAvailableQuestions && allAvailableQuestions.length >= 5) {
-                            // Shuffle and take 5
-                            questionsToUse = allAvailableQuestions.sort(() => 0.5 - Math.random()).slice(0, questionCount);
-                            console.log(`✅ Using ${questionsToUse.length} questions (mixed new/existing).`);
-                        } else if (insertedData && insertedData.length > 0) {
-                            // Fallback to just what we inserted if total pool is still small
-                            questionsToUse = insertedData;
-                        }
-                    }
-
-                    // 3. Start the Game
-                    if (questionsToUse.length > 0) {
-                        setCurrentQuestions(questionsToUse);
-
-                        // Track used questions for this round
-                        const newUsedIds = [...usedQuestionIds, ...questionsToUse.map(q => String(q.id))];
-                        setUsedQuestionIds(newUsedIds);
-                        console.log(`📚 Used question IDs: ${newUsedIds.length}`);
-
-                        // SYNC state to DB
-                        const questionIds = questionsToUse.map(q => q.id);
-                        await supabase.from("games").update({
-                            settings: { ...gameSettings, question_ids: questionIds, current_question_id: questionsToUse[0].id },
-                            current_question_index: 1,
-                            status: "QUESTION"
-                        }).eq('id', gameId);
-                    }
-                } catch (err) {
-                    console.error("Question loading failed:", err);
-                } finally {
-                    setIsGenerating(false);
                 }
+
+                // 3. Start the Game
+                if (questionsToUse.length > 0) {
+                    setCurrentQuestions(questionsToUse);
+
+                    // BUG FIX #1: Update the ref instead of state (no re-trigger)
+                    const newUsedIds = [...currentUsedIds, ...questionsToUse.map(q => String(q.id))];
+                    usedQuestionIdsRef.current = newUsedIds;
+                    console.log(`📚 Used question IDs: ${newUsedIds.length}`);
+
+                    // SYNC state to DB
+                    const questionIds = questionsToUse.map(q => q.id);
+                    await supabase.from("games").update({
+                        settings: { ...gameSettings, question_ids: questionIds, current_question_id: questionsToUse[0].id },
+                        current_question_index: 1,
+                        status: "QUESTION"
+                    }).eq('id', gameId);
+                }
+            } catch (err) {
+                console.error("Question loading failed:", err);
+            } finally {
+                setIsGenerating(false);
+                isStartingRef.current = false;
             }
         };
         startRound();
-    }, [status, round, usedQuestionIds]);
+    }, [status, round]); // BUG FIX #1: Removed usedQuestionIds from deps — using ref instead
 
     // State Recovery: Fetch questions if we join a game in progress
     useEffect(() => {
@@ -647,7 +675,7 @@ export default function TVHost() {
                                 // Reset everything and go back to lobby
                                 console.log(`🔙 Returning to lobby...`);
                                 setGameId(null);
-                                setUsedQuestionIds([]);
+                                usedQuestionIdsRef.current = [];
                                 setRound(1);
                                 setCurrentQuestions([]);
                                 window.location.reload();
@@ -671,7 +699,7 @@ export default function TVHost() {
                         onClick={() => {
                             console.log(`🔙 Returning to lobby...`);
                             setGameId(null);
-                            setUsedQuestionIds([]);
+                            usedQuestionIdsRef.current = [];
                             setRound(1);
                             setCurrentQuestions([]);
                             window.location.reload();

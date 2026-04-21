@@ -114,7 +114,8 @@ function cleanJson(text: string) {
 }
 
 async function tryGemini(fullPrompt: string, attempt: number = 0): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY || "";
+  // Security: Only use server-side env var. NEXT_PUBLIC_ would expose the key in the client bundle.
+  const apiKey = process.env.GEMINI_API_KEY || "";
   if (!apiKey) throw new Error("Gemini API key not configured");
 
   try {
