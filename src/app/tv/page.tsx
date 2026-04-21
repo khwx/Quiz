@@ -144,15 +144,19 @@ export default function TVHost() {
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
-        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question: ${currentQuestionId}, answers: ${validAnswersForQ.length})`);
+        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question ID: ${currentQuestionId.substring(0,8)}, answers: ${validAnswersForQ.length}, allAnswers: ${currentAnswers.length})`);
 
-        // ONLY auto-skip if at least 5 seconds left (more buffer)
-        // AND ALL players have answered WITH valid answers for THIS question
-        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length && timeLeft > 5) {
+        // CRITICAL: Only auto-skip if we're past the first 3 seconds
+        // This prevents the bug where old answers are counted immediately
+        const timeExpired = timerDuration - timeLeft;
+        
+        // ONLY auto-skip if at least 3 seconds have passed AND at least 5 seconds left
+        // AND ALL players have answered
+        if (timeExpired >= 3 && uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length && timeLeft > 5) {
             console.log(`⚡ Everyone answered with ${timeLeft}s left! Advancing to REVEAL...`);
             updateStatus("REVEAL");
         }
-    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, updateStatus]);
+    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, timerDuration, updateStatus]);
 
     // Fetch/Generate Questions on Start
     useEffect(() => {
