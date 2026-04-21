@@ -330,6 +330,15 @@ export default function TVHost() {
 
                 // 3. Start the Game
                 if (questionsToUse.length > 0) {
+                    // Randomize options for EVERY question so the correct answer is in a random position
+                    questionsToUse = questionsToUse.map(q => {
+                        const options: string[] = q.options || [];
+                        const correctText = options[q.correct_option ?? 0];
+                        const shuffledOptions = [...options].sort(() => Math.random() - 0.5);
+                        const newCorrectIndex = Math.max(0, shuffledOptions.indexOf(correctText));
+                        return { ...q, options: shuffledOptions, correct_option: newCorrectIndex };
+                    });
+
                     setCurrentQuestions(questionsToUse);
 
                     // BUG FIX #1: Update the ref instead of state (no re-trigger)
