@@ -21,6 +21,8 @@ export default function TVHost() {
     const [currentQuestions, setCurrentQuestions] = useState<any[]>([]);
     const [timeLeft, setTimeLeft] = useState(20);
     const [currentAnswers, setCurrentAnswers] = useState<any[]>([]);
+    const [round, setRound] = useState(1);
+    const [usedQuestionIds, setUsedQuestionIds] = useState<string[]>([]);
 
     // Theme State
     const [topic, setTopic] = useState("Cultura Geral");
@@ -165,17 +167,23 @@ export default function TVHost() {
                     const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 18 };
                     const targetAge = ageMap[ageGroup] || 18;
 
-                    console.log(`🎯 Starting game with topic: ${finalTopic} | Age: ${ageGroup} (DB: ${targetAge})`);
+                    console.log(`🎯 Starting game with topic: ${finalTopic} | Age: ${ageGroup} (DB: ${targetAge}) | Round: ${round}`);
 
                     let questionsToUse: any[] = [];
                     let count = 0;
 
                     // 1. Try to fetch EXISTING questions first (for ALL age groups)
                     // We look for questions with the exact age rating (or 18+ for adults)
+                    // EXCLUDE already used questions
                     let query = supabase
                         .from("questions")
                         .select("*", { count: 'exact' })
                         .ilike("category", finalTopic);
+
+                    // Filter out already used questions
+                    if (usedQuestionIds.length > 0) {
+                        query = query.not('id', 'in', `(${usedQuestionIds.join(',')})`);
+                    }
 
                     if (targetAge === 18) {
                         query = query.gte('age_rating', 18);
@@ -188,11 +196,16 @@ export default function TVHost() {
                     const { data, count: c } = await query;
                     count = c || 0;
 
-                    if (count >= 150) {
+                    // We need at least 5 unused questions
+                    if (count >= 5) {
                         // We have enough questions! Shuffle and use them.
-                        questionsToUse = (data || []).sort(() => 0.5 - Math.random()).slice(0, 5);
+                        const shuffled = (data || []).sort(() => 0.5 - Math.random()).slice(0, 5);
+                        questionsToUse = shuffled;
                         setQuestionSource("DB");
-                        console.log(`✅ Found ${count} existing questions. Using 5.`);
+                        console.log(`✅ Found ${count} unused questions. Using 5.`);
+                    } else {
+                        // Not enough unused questions - need to generate more via AI
+                        console.log(`⚠️ Only ${count} unused questions available. Generating more...`);
                     }
 
                     // 2. If not enough, GENERATE new ones
@@ -251,6 +264,11 @@ export default function TVHost() {
                     if (questionsToUse.length > 0) {
                         setCurrentQuestions(questionsToUse);
 
+                        // Track used questions for this round
+                        const newUsedIds = [...usedQuestionIds, ...questionsToUse.map(q => String(q.id))];
+                        setUsedQuestionIds(newUsedIds);
+                        console.log(`📚 Used question IDs: ${newUsedIds.length}`);
+
                         // SYNC state to DB
                         const questionIds = questionsToUse.map(q => q.id);
                         await supabase.from("games").update({
@@ -267,7 +285,7 @@ export default function TVHost() {
             }
         };
         startRound();
-    }, [status]);
+    }, [status, round, usedQuestionIds]);
 
     // State Recovery: Fetch questions if we join a game in progress
     useEffect(() => {
@@ -335,7 +353,7 @@ export default function TVHost() {
             };
             syncPlayers();
         }
-    }, [currentQuestionIndex]);
+    }, [currentQuestionIndex, round]);
 
 
     // Loading Check
@@ -554,15 +572,18 @@ export default function TVHost() {
                             if (nextQ) {
                                 nextQuestion(nextQ.id);
                             } else {
-                                updateStatus("PODIUM");
+                                // No more questions - start new round
+                                console.log(`🔄 Starting round ${round + 1}...`);
+                                setRound(r => r + 1);
+                                updateStatus("STARTING");
                             }
                         }}
                         className="btn-quiz btn-primary flex items-center gap-2"
                     >
-                        {currentQuestions[currentQuestionIndex] ? (
+                        {currentQuestionIndex < currentQuestions.length ? (
                             <>Próxima Pergunta <ArrowRight /></>
                         ) : (
-                            <>Ver Vencedores <Trophy /></>
+                            <>Nova Volta <ArrowRight /></>
                         )}
                     </button>
                 </motion.div>
