@@ -24,8 +24,28 @@ function getRetryDelay(attempt: number): number {
 }
 
 function buildPrompt(prompt: string, count: number, ageRating: string) {
+  const isCapitals = prompt.toLowerCase().includes("capitais");
+  const isFlags = prompt.toLowerCase().includes("bandeiras");
+  
+  const specificRules = isCapitals ? `
+    TEMA ESPECIAL: CAPITAIS DO MUNDO
+    - Perguntas sobre capitais de países
+    - Exemplos: "Qual é a capital de Portugal?", "Qual a capital do Brasil?"
+    - Opções devem ser países diferentes, não cidades
+    - Incluir países de diferentes continentes
+  ` : isFlags ? `
+    TEMA ESPECIAL: BANDEIRAS
+    - Perguntas sobre bandeiras de países
+    - Para a opção "image_url", usa o formato: https://flagcdn.com/w320/{codigo}.png
+    - Códigos: pt, br, es, fr, de, it, uk, us, jp, cn, in, ru, etc.
+    - Exemplos: "De que país é esta bandeira?", "Qual país tem esta bandeira?"
+    - A image_url deve ter a bandeira do país correto
+  ` : "";
+
   return `
     Gera ${count} perguntas de quiz em Português de Portugal para: "${prompt}".
+
+    ${specificRules}
 
     REGRAS DE QUALIDADE (MUITO IMPORTANTE):
     1. Perguntas CURTAS e DIRETAS (máximo 80 caracteres no texto)
@@ -41,6 +61,8 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     - "Quantos ossos tem o corpo humano?"
     - "Qual o rio mais longo da Europa?"
     - "Em que ano chegou o homem à Lua?"
+    ${isCapitals ? '- "Qual é a capital de Portugal?"' : ''}
+    ${isFlags ? '- "De que país é esta bandeira?" (com image_url)' : ''}
 
     Exemplos de PERGUNTAS A EVITAR:
     - "Qual a cor do céu?" (muito óbvio)
@@ -59,7 +81,7 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
         "options": ["Opção A específica", "Opção B específica", "Opção C específica", "Opção D específica"],
         "correct_option": 0,
         "category": "${prompt}",
-        "explanation": "Curiosidade ou explicação breve"
+        "explanation": "Curiosidade ou explicação breve"${isFlags ? ',\n        "image_url": "https://flagcdn.com/w320/pt.png"' : ''}
       }
     ]
   `;

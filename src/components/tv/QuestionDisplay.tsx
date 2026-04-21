@@ -106,13 +106,12 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    className="w-full max-w-4xl h-64 md:h-96 bg-black/20 rounded-3xl overflow-hidden mb-8 shadow-2xl border-4 border-white/10"
+                    className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl h-48 sm:h-64 md:h-80 lg:h-96 bg-black/20 rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-8 shadow-2xl border-2 sm:border-4 border-white/10"
                 >
-                    {/* Fallback image logic would go here */}
-                    <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${question.image_url})` }} />
+                    <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${question.image_url})` }} />
                 </motion.div>
             ) : (
-                <div className="h-24"></div> // Spacer if no image
+                <div className="h-12 sm:h-24"></div>
             )}
 
             {/* Question Text */}

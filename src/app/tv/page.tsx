@@ -488,7 +488,7 @@ export default function TVHost() {
                                 <div className="space-y-2">
                                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Escolha o Tema</label>
                                     <div className="flex flex-wrap gap-2">
-                                        {["Cultura Geral", "Cinema", "Desporto", "Ciência", "Animais"].map(t => (
+                                        {["Cultura Geral", "Capitais do Mundo", "Bandeiras", "Cinema", "Desporto", "Ciência", "Animais"].map(t => (
                                             <button
                                                 key={t}
                                                 onClick={() => { setTopic(t); setCustomTopic(""); }}
@@ -574,9 +574,9 @@ export default function TVHost() {
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    className="absolute bottom-12 right-12 flex gap-4"
+                    className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row gap-3 sm:justify-end sm:items-end"
                 >
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-3">
                         <button
                             onClick={() => {
                                 const nextQ = currentQuestions[currentQuestionIndex];
