@@ -80,6 +80,20 @@ export default function TVHost() {
                     setPin(newPin);
                     setGameId(data.id);
                 }
+
+                // Auto-cleanup: Delete ghost rooms older than 24h
+                // Helps keep the database clean automatically without Cron jobs
+                try {
+                    const yesterday = new Date();
+                    yesterday.setDate(yesterday.getDate() - 1);
+                    await supabase
+                        .from('games')
+                        .delete()
+                        .lt('created_at', yesterday.toISOString());
+                    console.log("🧹 Limpeza de salas fantasma concluída.");
+                } catch (e) {
+                    console.error("Failed to clean up old rooms:", e);
+                }
             }
             setLoading(false);
         };
