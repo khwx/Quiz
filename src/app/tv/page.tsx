@@ -74,10 +74,22 @@ export default function TVHost() {
     // Clear answers when status changes to STARTING (new round)
     useEffect(() => {
         if (status === "STARTING") {
-            console.log("🧹 Clearing old answers for new round");
+            console.log("🧹 Clearing old answers for new round", { currentQuestionIndex, currentQuestionsLength: currentQuestions.length });
             setCurrentAnswers([]);
         }
     }, [status]);
+
+    // Also clear answers when question index changes
+    useEffect(() => {
+        if (status === "QUESTION" && currentQuestionIndex > 0) {
+            const currentQ = currentQuestions[currentQuestionIndex - 1];
+            console.log("🧹 Question index changed, filtering answers", { 
+                questionIndex: currentQuestionIndex, 
+                questionId: currentQ?.id,
+                totalAnswersBefore: currentAnswers.length 
+            });
+        }
+    }, [currentQuestionIndex]);
 
     // Answer Subscription & Polling Fallback (Hybrid Strategy)
     useEffect(() => {
@@ -159,16 +171,14 @@ export default function TVHost() {
 
         console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question ID: ${currentQuestionId.substring(0,8)}, answers: ${validAnswersForQ.length}, allAnswers: ${currentAnswers.length}, timeLeft: ${timeLeft})`);
 
-        // CRITICAL: Only auto-skip if we're past the first 5 seconds
-        // AND at least 5 seconds remain on the timer
+        // Auto-skip: advance when ALL players have answered AND at least 3 seconds have passed
         const timeExpired = timerDuration - timeLeft;
-        // Auto-skip is DISABLED for now to prevent bugs
-        // The timer will reach 0 naturally and advance to REVEAL
-        // This is safer and more predictable
-        /* 
-        // Old auto-skip logic removed to prevent bugs
-        // Timer will naturally expire and advance to REVEAL
-        */
+        const allPlayersAnswered = uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length;
+        
+        if (timeExpired >= 3 && allPlayersAnswered) {
+            console.log(`⚡ ALL players answered! Advancing to REVEAL...`);
+            updateStatus("REVEAL");
+        }
     }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, timerDuration, updateStatus]);
 
     // Fetch/Generate Questions on Start
@@ -330,13 +340,17 @@ export default function TVHost() {
     useEffect(() => {
         let timer: NodeJS.Timeout;
 
-        if (status === "QUESTION") {
+        // Only start timer if we're in QUESTION state AND there's a valid question
+        const currentQ = currentQuestions[currentQuestionIndex - 1];
+        if (status === "QUESTION" && currentQ?.id) {
+            console.log("⏱️ Starting timer with duration:", timerDuration);
             timer = setInterval(() => {
                 setTimeLeft((prev) => {
                     const newValue = prev - 1;
                     if (newValue <= 5 && newValue > 0) playSound('tick');
 
                     if (newValue <= 0) {
+                        console.log("⏱️ Timer expired! Advancing to REVEAL");
                         clearInterval(timer);
                         updateStatus("REVEAL");
                         return 0;
@@ -347,9 +361,12 @@ export default function TVHost() {
         }
 
         return () => {
-            if (timer) clearInterval(timer);
+            if (timer) {
+                console.log("⏹️ Clearing timer");
+                clearInterval(timer);
+            }
         };
-    }, [status, playSound, updateStatus]);
+    }, [status, playSound, updateStatus, currentQuestionIndex, currentQuestions]);
 
     // Reset Timer & Refresh Players when Question Index Changes OR when entering QUESTION state
     useEffect(() => {
