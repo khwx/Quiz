@@ -24,8 +24,9 @@ function getRetryDelay(attempt: number): number {
 }
 
 function buildPrompt(prompt: string, count: number, ageRating: string) {
-  const isCapitals = prompt.toLowerCase().includes("capitais");
-  const isFlags = prompt.toLowerCase().includes("bandeiras");
+  const promptLower = prompt.toLowerCase();
+  const isCapitals = promptLower.includes("capitais");
+  const isFlags = promptLower.includes("bandeir");
   
   const specificRules = isCapitals ? `
     TEMA ESPECIAL: CAPITAIS DO MUNDO
@@ -36,10 +37,12 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
   ` : isFlags ? `
     TEMA ESPECIAL: BANDEIRAS
     - Perguntas sobre bandeiras de países
-    - Para a opção "image_url", usa o formato: https://flagcdn.com/w320/{codigo}.png
-    - Códigos: pt, br, es, fr, de, it, uk, us, jp, cn, in, ru, etc.
-    - Exemplos: "De que país é esta bandeira?", "Qual país tem esta bandeira?"
-    - A image_url deve ter a bandeira do país correto
+    - CADA pergunta deve ter uma image_url com a bandeira
+    - Formato: https://flagcdn.com/w320/{codigo}.png
+    - Códigos válidos: pt (Portugal), br (Brasil), es (Espanha), fr (França), de (Alemanha), it (Itália), uk (Reino Unido), us (Estados Unidos), jp (Japão), cn (China), in (Índia), ru (Rússia), mx (México), ca (Canadá), au (Austrália), ar (Argentina), kr (Coreia do Sul), nl (Holanda), be (Bélgica), ch (Suíça)
+    - O image_url deve corresponder ao país CORRETO na resposta
+    - Exemplo pergunta: "De que país é esta bandeira?"
+    - Exemplo JSON: {"text": "De que país é esta bandeira?", "options": ["Portugal", "Espanha", "França", "Itália"], "correct_option": 0, "image_url": "https://flagcdn.com/w320/pt.png"}
   ` : "";
 
   return `
