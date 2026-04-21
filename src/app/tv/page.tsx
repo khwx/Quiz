@@ -24,6 +24,7 @@ export default function TVHost() {
     const [round, setRound] = useState(1);
     const usedQuestionIdsRef = useRef<string[]>([]);
     const shouldRevealRef = useRef(false); // Shared signal between auto-skip and timer
+    const questionStartTimeRef = useRef<number>(0); // Track when the question started
 
     // Theme State
     const [topic, setTopic] = useState("Cultura Geral");
@@ -175,6 +176,10 @@ export default function TVHost() {
         const currentQ = currentQuestions[currentQuestionIndex - 1];
         if (!currentQ?.id) return;
 
+        // Safety: never auto-skip within the first 2 seconds of a question
+        const elapsedMs = Date.now() - questionStartTimeRef.current;
+        if (elapsedMs < 2000) return;
+
         const currentQuestionId = String(currentQ.id);
         const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
@@ -182,7 +187,6 @@ export default function TVHost() {
 
         if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
             console.log("🎯 Todos os jogadores responderam! Avançando para REVEAL...");
-            // Signal the timer interval to stop immediately
             shouldRevealRef.current = true;
             updateStatus("REVEAL");
         }
@@ -212,8 +216,13 @@ export default function TVHost() {
 
                 console.log(`🎯 Starting game with topic: ${finalTopic} | Age: ${ageGroup} (DB: ${targetAge}) | Round: ${round} | Used IDs: ${currentUsedIds.length}`);
 
-                // Clear answers from previous round
+                // Clear answers from previous round - both locally AND in the DB
+                // This prevents stale DB answers from triggering auto-skip on the next round
                 setCurrentAnswers([]);
+                if (gameId) {
+                    await supabase.from('answers').delete().eq('game_id', gameId);
+                    console.log('🗑️ Cleared old answers from DB for new round');
+                }
 
                 let questionsToUse: any[] = [];
                 let count = 0;
@@ -361,8 +370,9 @@ export default function TVHost() {
 
         const currentQ = currentQuestions[currentQuestionIndex - 1];
         if (status === "QUESTION" && currentQ?.id) {
-            // Reset the reveal signal when a new question starts
+            // Reset signals when a new question starts
             shouldRevealRef.current = false;
+            questionStartTimeRef.current = Date.now();
             console.log("⏱️ Starting timer with duration:", timerDuration);
             timer = setInterval(() => {
                 // Stop the interval immediately if auto-skip already triggered
