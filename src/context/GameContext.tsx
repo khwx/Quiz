@@ -85,10 +85,11 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         await supabase.from('games').update({ status }).eq('id', gameState.gameId);
     };
 
-    const nextQuestion = async (questionId?: string) => {
+    const nextQuestion = async (questionId?: string, correctOption?: number) => {
         const nextIndex = gameState.currentQuestionIndex + 1;
 
         let nextId = questionId;
+        let nextCorrectOption = correctOption;
 
         // Fallback: If no ID provided (Host Control), try to find it in settings playlist
         if (!nextId && gameState.gameSettings?.question_ids) {
@@ -116,7 +117,8 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
             current_question_index: nextIndex,
             settings: {
                 ...gameState.gameSettings,
-                current_question_id: nextId // Important: Update this so Mobile knows!
+                current_question_id: nextId, // Important: Update this so Mobile knows!
+                current_correct_option: nextCorrectOption !== undefined ? nextCorrectOption : gameState.gameSettings?.current_correct_option
             },
             status: 'QUESTION'
         }).eq('id', gameState.gameId);

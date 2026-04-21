@@ -34,12 +34,15 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     useEffect(() => {
         if (status === "REVEAL" && currentQuestionId) {
             const getResult = async () => {
+                if (!gameId) return;
                 const { data } = await supabase
-                    .from("questions")
-                    .select("correct_option")
-                    .eq("id", currentQuestionId)
+                    .from("games")
+                    .select("settings")
+                    .eq("id", gameId)
                     .single();
-                if (data) setCorrectOption(data.correct_option);
+                if (data && data.settings?.current_correct_option !== undefined) {
+                    setCorrectOption(data.settings.current_correct_option);
+                }
             };
             getResult();
         }

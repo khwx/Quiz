@@ -26,18 +26,25 @@ export async function POST(req: NextRequest) {
 
     console.log("🖥️ [API/answer] Received:", { gameId, playerId, questionId, chosenOption, timeTaken });
 
-    const { data: question, error: qError } = await supabase
-      .from("questions")
-      .select("correct_option")
-      .eq("id", questionId)
+    const { data: game, error: gameError } = await supabase
+      .from("games")
+      .select("settings")
+      .eq("id", gameId)
       .single();
 
-    if (qError || !question) {
-      console.error("❌ [API/answer] Question lookup failed:", qError);
-      return NextResponse.json({ error: "Question not found" }, { status: 404 });
+    if (gameError || !game) {
+      console.error("❌ [API/answer] Game lookup failed:", gameError);
+      return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    const isCorrect = question.correct_option === chosenOption;
+    const correctOption = game.settings?.current_correct_option;
+    
+    if (correctOption === undefined) {
+      console.error("❌ [API/answer] correct_option not found in game settings");
+      return NextResponse.json({ error: "Game state error" }, { status: 500 });
+    }
+
+    const isCorrect = correctOption === chosenOption;
 
     let points = 0;
     if (isCorrect) {
