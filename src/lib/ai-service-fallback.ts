@@ -133,10 +133,10 @@ async function tryGroq(fullPrompt: string, attempt: number = 0): Promise<string>
   }
 }
 
-export async function generateQuestionsWithFallback(prompt: string, count: number = 5, ageRating: string = "adults") {
-  const cached = getCachedQuestions(prompt, count, ageRating);
+export async function generateQuestionsWithFallback(prompt: string, count: number = 5, ageRating: string = "adults", round: number = 1) {
+  const cached = getCachedQuestions(prompt, count, ageRating, round);
   if (cached) {
-    console.log("[AI] Cache hit!");
+    console.log(`[AI] Cache hit for round ${round}!`);
     return cached;
   }
 
@@ -155,7 +155,7 @@ export async function generateQuestionsWithFallback(prompt: string, count: numbe
       const questions = JSON.parse(jsonStr);
       const normalized = normalizeQuestions(questions, prompt);
       console.log(`[AI] ${provider.name} succeeded!`);
-      setCachedQuestions(prompt, count, ageRating, normalized, provider.name);
+      setCachedQuestions(prompt, count, ageRating, round, normalized, provider.name);
       return { questions: normalized, provider: provider.name };
     } catch (error: any) {
       console.warn(`[AI] ${provider.name} failed: ${error.message}`);

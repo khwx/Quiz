@@ -324,7 +324,7 @@ export default function TVHost() {
                 if (gameId) {
                     const { data } = await supabase.from('players').select('*').eq('game_id', gameId);
                     if (data) {
-                        // We could filter here for active players, but simple refresh is a start
+                        setPlayers(data);
                         console.log(`👥 Refreshed players: ${data.length}`);
                     }
                 }

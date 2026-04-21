@@ -19,6 +19,7 @@ interface GameState {
 
 interface GameContextType extends GameState {
     setGameId: (id: string | null) => void;
+    setPlayers: (players: any[]) => void;
     updateStatus: (status: GameStatus) => Promise<void>;
     nextQuestion: (questionId?: string) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
@@ -73,6 +74,10 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     const setGameId = (id: string | null) => {
         setGameState(prev => ({ ...prev, gameId: id }));
         if (id) fetchPlayers(id);
+    };
+
+    const setPlayers = (players: any[]) => {
+        setGameState(prev => ({ ...prev, players }));
     };
 
     const updateStatus = async (status: GameStatus) => {
@@ -142,7 +147,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     };
 
     return (
-        <GameContext.Provider value={{ ...gameState, setGameId, updateStatus, nextQuestion, joinGame }}>
+        <GameContext.Provider value={{ ...gameState, setGameId, setPlayers, updateStatus, nextQuestion, joinGame }}>
             {children}
         </GameContext.Provider>
     );
