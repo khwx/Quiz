@@ -110,8 +110,11 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 >
                     {/* Use local flag if available, otherwise use URL */}
                     {(() => {
-                        const isFlag = question.category?.toLowerCase().includes('bandeira');
-                        const flagCode = question.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
+                        const flagCode = 
+                            // Extract from local path like /flags/pt.svg
+                            question.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
+                            // Extract from flagcdn URL like https://flagcdn.com/w320/pt.svg
+                            question.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
                         const localFlagPath = flagCode ? `/flags/${flagCode}.svg` : null;
                         
                         return (
