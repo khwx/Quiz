@@ -138,18 +138,17 @@ export default function TVHost() {
         if (!currentQ?.id) return;
 
         const currentQuestionId = String(currentQ.id);
+        
+        // Only count answers FOR THIS SPECIFIC QUESTION
         const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
-        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question: ${currentQuestionId})`);
+        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question: ${currentQuestionId}, answers: ${validAnswersForQ.length})`);
 
-        // Only auto-skip if ALL players answered AND there's still time left (> 3s buffer)
-        // AND there are actually players in the game AND at least one answer was submitted
-        const allPlayersAnswered = uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length;
-        const hasAnswers = uniqueAnswerPlayerIds.size > 0;
-
-        if (allPlayersAnswered && hasAnswers && timeLeft > 3) {
+        // ONLY auto-skip if at least 5 seconds left (more buffer)
+        // AND ALL players have answered WITH valid answers for THIS question
+        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length && timeLeft > 5) {
             console.log(`⚡ Everyone answered with ${timeLeft}s left! Advancing to REVEAL...`);
             updateStatus("REVEAL");
         }
@@ -341,6 +340,11 @@ export default function TVHost() {
             setTimeLeft(timerDuration);
             setCurrentAnswers([]);
 
+            // Small delay to ensure answers are cleared before auto-skip check
+            const timer = setTimeout(() => {
+                console.log("✅ Answers reset complete, ready for new question");
+            }, 100);
+
             // Refresh players list to ensure we don't count "ghost" players who joined but left
             const syncPlayers = async () => {
                 if (gameId) {
@@ -352,6 +356,8 @@ export default function TVHost() {
                 }
             };
             syncPlayers();
+
+            return () => clearTimeout(timer);
         }
     }, [currentQuestionIndex, round]);
 
