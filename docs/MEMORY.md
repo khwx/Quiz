@@ -148,27 +148,27 @@ quiz/
 
 ## 🚧 Funcionalidades a Implementar
 
-### Alta Prioridade
-- [ ] **Corrigir layout dos botões no TV para mobile**
-- [ ] **Adicionar flagcdn.com para imagens de bandeiras**
-- [ ] **Criar tema: Capitais do Mundo**
-- [ ] **Criar tema: Qual é a Bandeira?**
-- [ ] Melhorar prompt AI para gerar perguntas com imagens
-- [ ] Adicionar novos temas ao seletor
+### Alta Prioridade ✅ FEITO
+- [x] **Corrigir layout dos botões no TV para mobile**
+- [x] **Adicionar flagcdn.com para imagens de bandeiras**
+- [x] **Criar tema: Capitais do Mundo**
+- [x] **Criar tema: Qual é a Bandeira?**
+- [x] Melhorar prompt AI para gerar perguntas com imagens
+- [x] Adicionar novos temas ao seletor
+- [x] Adicionar seletor de número de perguntas (3, 5, 7, 10)
+- [x] Script SQL para pré-carregar bandeiras
 
 ### Média Prioridade
 - [ ] Timer configurável (10s, 15s, 20s, 30s)
 - [ ] Pista "50/50" (eliminar 2 opções) - **pendente bugfix**
 - [ ] Leaderboard entre perguntas
 - [ ] Perguntas V/F - **pendente bugfix**
-- [ ] Perguntas com imagem
 - [ ] Sistema de achievements/badges
 
 ### Baixa Prioridade
 - [ ] Modo equipas
 - [ ] Página de admin para estatísticas
 - [ ] Guardar cache na BD (atualmente em memória)
-- [ ] Fazer cache de imagens de bandeiras
 - [ ] Adicionar sons feedback adicionais
 - [ ] Tutorial para novos jogadores
 - [ ] Página de high scores
@@ -176,13 +176,21 @@ quiz/
 - [ ] Dificuldade adaptativa
 - [ ] Estatísticas do jogo
 
+### 🐛 Bugs para Corrigir
+- [ ] Auto-resposta nas perguntas repetidas (bug iniciado após 1ª volta)
+
 ## 📝Notas de Desenvolvimento
 
 - Autores: khwx (utilizador GitHub)
 - O projeto usa commits com author `khwx <khwx@users.noreply.github.com>` para evitar bloqueios Vercel
 - Deploy automático via Vercel ao fazer push para `main`
-- **Último commit estável**: `97c842e` (v3.0 clean)
-- **Último commit com melhorias**: `53aa2fe` (AI prompt melhorado)
+- **Último commit**: `0906b16` (question count selector + flag scripts)
+- flagcdn.com é gratis para bandeiras - sem API key necessária
+
+## 📂 Scripts Úteis
+
+- `scripts/seed-flags.sql` - 22 perguntas de bandeiras
+- `scripts/seed-flags-full.sql` - 50 perguntas de bandeiras completas
 
 ## 🔗 Links Úteis
 
