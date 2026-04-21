@@ -71,6 +71,14 @@ export default function TVHost() {
         connectToGame();
     }, []);
 
+    // Clear answers when status changes to STARTING (new round)
+    useEffect(() => {
+        if (status === "STARTING") {
+            console.log("🧹 Clearing old answers for new round");
+            setCurrentAnswers([]);
+        }
+    }, [status]);
+
     // Answer Subscription & Polling Fallback (Hybrid Strategy)
     useEffect(() => {
         if (!gameId) return;
@@ -154,21 +162,13 @@ export default function TVHost() {
         // CRITICAL: Only auto-skip if we're past the first 5 seconds
         // AND at least 5 seconds remain on the timer
         const timeExpired = timerDuration - timeLeft;
-        const MIN_TIME_BEFORE_SKIP = 5;
-        const MIN_TIME_REMAINING = 5;
-        
-        // ONLY auto-skip if:
-        // 1. At least 5 seconds have passed
-        // 2. At least 5 seconds remain on timer
-        // 3. ALL players have answered (not just some)
-        // 4. There are actually players in the game
-        if (timeExpired >= MIN_TIME_BEFORE_SKIP && 
-            timeLeft > MIN_TIME_REMAINING && 
-            uniquePlayers.length > 0 && 
-            uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
-            console.log(`⚡ Everyone answered with ${timeLeft}s left! Advancing to REVEAL...`);
-            updateStatus("REVEAL");
-        }
+        // Auto-skip is DISABLED for now to prevent bugs
+        // The timer will reach 0 naturally and advance to REVEAL
+        // This is safer and more predictable
+        /* 
+        // Old auto-skip logic removed to prevent bugs
+        // Timer will naturally expire and advance to REVEAL
+        */
     }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, timerDuration, updateStatus]);
 
     // Fetch/Generate Questions on Start
