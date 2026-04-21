@@ -102,27 +102,62 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
             </div>
 
             {/* Media / Image Area */}
-            {question.image_url ? (
+            {(question.image_url || question.category?.toLowerCase().includes("bandeira")) ? (
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl h-48 sm:h-64 md:h-80 lg:h-96 bg-black/20 rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-8 shadow-2xl border-2 sm:border-4 border-white/10 flex items-center justify-center"
+                    className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl h-48 sm:h-64 md:h-80 lg:h-96 bg-black/20 rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-8 shadow-2xl border-2 sm:border-4 border-white/10 flex items-center justify-center relative group"
                 >
-                    {/* Use local flag if available, otherwise use URL */}
                     {(() => {
-                        const flagCode = 
-                            // Extract from local path like /flags/pt.svg
+                        // 1. Try to extract flag code from existing URL
+                        let flagCode = 
                             question.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
-                            // Extract from flagcdn URL like https://flagcdn.com/w320/pt.svg
                             question.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
-                        const localFlagPath = flagCode ? `/flags/${flagCode}.svg` : null;
-                        
+
+                        // 2. If no flag code but it's a Flags category, try to guess from the correct answer
+                        if (!flagCode && question.category?.toLowerCase().includes("bandeira")) {
+                            const correctCountry = question.options[question.correct_option]?.toLowerCase().trim()
+                                .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove accents
+                            
+                            const countryMap: Record<string, string> = {
+                                'portugal': 'pt', 'espanha': 'es', 'franca': 'fr', 'italia': 'it', 
+                                'alemanha': 'de', 'brasil': 'br', 'angola': 'ao', 'mocambique': 'mz',
+                                'reino unido': 'gb', 'estados unidos': 'us', 'china': 'cn', 'japao': 'jp',
+                                'india': 'in', 'russia': 'ru', 'canada': 'ca', 'australia': 'au',
+                                'mexico': 'mx', 'argentina': 'ar', 'ucrania': 'ua', 'polonia': 'pl'
+                            };
+                            flagCode = countryMap[correctCountry];
+                        }
+
+                        const finalUrl = flagCode 
+                            ? `https://flagcdn.com/w640/${flagCode}.png` 
+                            : question.image_url;
+
+                        if (!finalUrl) return (
+                            <div className="flex flex-col items-center gap-4">
+                                <span className="text-gray-500 italic text-xl">Bandeira não encontrada</span>
+                                <span className="text-white font-black text-4xl uppercase opacity-20">{question.options[question.correct_option]}</span>
+                            </div>
+                        );
+
                         return (
-                            <img 
-                                src={localFlagPath || question.image_url} 
-                                alt="Flag"
-                                className="max-h-full max-w-full object-contain"
-                            />
+                            <div className="relative w-full h-full flex items-center justify-center">
+                                <img 
+                                    src={finalUrl} 
+                                    alt="Question Media"
+                                    className="max-h-full max-w-full object-contain shadow-2xl"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).style.display = 'none';
+                                        const parent = (e.target as HTMLImageElement).parentElement;
+                                        if (parent) {
+                                            const msg = document.createElement('div');
+                                            msg.className = "text-white font-black text-4xl opacity-20 uppercase";
+                                            msg.innerText = question.options[question.correct_option];
+                                            parent.appendChild(msg);
+                                        }
+                                    }}
+                                />
+                            </div>
                         );
                     })()}
                 </motion.div>

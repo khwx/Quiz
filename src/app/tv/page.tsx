@@ -23,6 +23,7 @@ export default function TVHost() {
     const [currentAnswers, setCurrentAnswers] = useState<any[]>([]);
     const [round, setRound] = useState(1);
     const usedQuestionIdsRef = useRef<string[]>([]);
+    const shouldRevealRef = useRef(false); // Shared signal between auto-skip and timer
 
     // Theme State
     const [topic, setTopic] = useState("Cultura Geral");
@@ -167,30 +168,25 @@ export default function TVHost() {
         };
     }, [gameId]); // Only recreate if gameId changes (shouldn't happen). Status changes should NOT destroy subscription!
 
-    // Auto-skip logic - advance to REVEAL when all players answered OR timer expires
+    // Auto-skip logic - advance to REVEAL when all players answered
     useEffect(() => {
-        // Don't auto-skip if not in QUESTION state
         if (status !== "QUESTION") return;
 
-        // Don't auto-skip if no question is loaded
         const currentQ = currentQuestions[currentQuestionIndex - 1];
-        if (!currentQ?.id) {
-            console.log("⏸️ Auto-skip skipped: no question loaded");
-            return;
-        }
+        if (!currentQ?.id) return;
 
         const currentQuestionId = String(currentQ.id);
-        
-        // Only count answers FOR THIS SPECIFIC QUESTION
         const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
-        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question ID: ${currentQuestionId.substring(0,8)}, answers: ${validAnswersForQ.length}, allAnswers: ${currentAnswers.length}, timeLeft: ${timeLeft})`);
-
-        // Auto-skip DESATIVADO - só avança quando o timer chega a 0
-        // Isso evita o bug de avançar automaticamente
-    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, timerDuration, updateStatus]);
+        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
+            console.log("🎯 Todos os jogadores responderam! Avançando para REVEAL...");
+            // Signal the timer interval to stop immediately
+            shouldRevealRef.current = true;
+            updateStatus("REVEAL");
+        }
+    }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, updateStatus]);
 
     // Fetch/Generate Questions on Start
     // BUG FIX #1: Use ref + guard to prevent double execution
@@ -363,11 +359,19 @@ export default function TVHost() {
     useEffect(() => {
         let timer: NodeJS.Timeout;
 
-        // Only start timer if we're in QUESTION state AND there's a valid question
         const currentQ = currentQuestions[currentQuestionIndex - 1];
         if (status === "QUESTION" && currentQ?.id) {
+            // Reset the reveal signal when a new question starts
+            shouldRevealRef.current = false;
             console.log("⏱️ Starting timer with duration:", timerDuration);
             timer = setInterval(() => {
+                // Stop the interval immediately if auto-skip already triggered
+                if (shouldRevealRef.current) {
+                    console.log("⏹️ Auto-skip triggered, stopping timer early");
+                    clearInterval(timer);
+                    return;
+                }
+
                 setTimeLeft((prev) => {
                     const newValue = prev - 1;
                     if (newValue <= 5 && newValue > 0) playSound('tick');

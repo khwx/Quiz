@@ -18,6 +18,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     const [hasAnswered, setHasAnswered] = useState(false);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [correctOption, setCorrectOption] = useState<number | null>(null);
+    const [startTime, setStartTime] = useState<number>(Date.now());
 
     const { playSound } = useSound();
 
@@ -26,6 +27,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         setHasAnswered(false);
         setSelectedOption(null);
         setCorrectOption(null);
+        setStartTime(Date.now());
     }, [currentQuestionIndex]);
 
     // Fetch correct answer when status is REVEAL
@@ -77,16 +79,24 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     };
 
     const handleAnswer = async (index: number) => {
+        if (hasAnswered || !currentQuestionId) {
+            console.warn("⚠️ Cannot answer: already answered or no question ID", { hasAnswered, currentQuestionId });
+            return;
+        }
+
         setHasAnswered(true);
         setSelectedOption(index);
+        playSound('tick');
 
         const player = players.find(p => p.name === name);
         if (!player) {
             console.error("❌ Player not found:", name, players);
+            setHasAnswered(false);
             return;
         }
 
-        console.log("📱 Sending answer:", { gameId, playerId: player.id, questionId: currentQuestionId, option: index });
+        const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
+        console.log("📱 Sending answer:", { gameId, playerId: player.id, questionId: currentQuestionId, option: index, timeTaken });
 
         try {
             const res = await fetch("/api/answer", {
@@ -97,7 +107,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                     playerId: player.id,
                     questionId: currentQuestionId,
                     chosenOption: index,
-                    timeTaken: 10
+                    timeTaken: timeTaken
                 })
             });
 

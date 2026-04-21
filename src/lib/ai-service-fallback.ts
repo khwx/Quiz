@@ -105,7 +105,13 @@ function normalizeQuestions(questions: any[], defaultCategory: string) {
     const rawCategory = (q.category || defaultCategory).trim();
     const category = rawCategory.charAt(0).toUpperCase() + rawCategory.slice(1).toLowerCase();
 
-    return { ...q, text, category };
+    // Shuffle options so the correct answer is NOT always option A
+    const options: string[] = q.options || [];
+    const correctText = options[q.correct_option ?? 0];
+    const shuffled = [...options].sort(() => Math.random() - 0.5);
+    const newCorrectIndex = shuffled.indexOf(correctText);
+
+    return { ...q, text, category, options: shuffled, correct_option: newCorrectIndex };
   });
 }
 
