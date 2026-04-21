@@ -293,6 +293,5 @@ INSERT INTO questions (text, options, correct_option, image_url, category, age_r
 ('De que país é esta bandeira?', '["Libéria", "Serra Leoa", "Costa do Marfim", "Guiné"]', 3, '/flags/gn.svg', 'Bandeiras', 18, 'GN'),
 ('De que país é esta bandeira?', '["Nigéria", "Gana", "Camarões", "Gabão"]', 2, '/flags/cm.svg', 'Bandeiras', 18, 'CM'),
 ('De que país é esta bandeira?', '["Marrocos", "Argélia", "Tunísia", "Egito"]', 0, '/flags/ma.svg', 'Bandeiras', 18, 'MA'),
-('De que país é esta bandeira?', '["Nigéria", "Gabão", "Camarões", "República do Congo"]', 1, '/flags/ga.svg', 'Bandeiras', 18, 'GA');
-
+('De que país é esta bandeira?', '["Nigéria", "Gabão", "Camarões", "República do Congo"]', 1, '/flags/ga.svg', 'Bandeiras', 18, 'GA')
 ON CONFLICT DO NOTHING;
