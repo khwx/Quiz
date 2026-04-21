@@ -30,11 +30,11 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
   
   const specificRules = isCapitals ? `
     TEMA ESPECIAL: CAPITAIS DO MUNDO
-    - Perguntas sobre capitais de países
+    - Perguntas sobre capitais de países (ex: "Qual é a capital de Portugal?")
     - CADA pergunta deve ser sobre um PAÍS DIFERENTE
-    - NÃO fazer perguntas sobre países relacionados (ex: não fazer "capital de Portugal" e depois "país de Lisboa")
+    - A resposta correta DEVE SER A CIDADE CAPITAL (ex: Lisboa, Madrid, Ottawa, etc.)
+    - NÃO colocar o nome do país como resposta correta!
     - Usar países de todos os continentes: Portugal, Brasil, Espanha, França, Alemanha, Itália, Reino Unido, Japão, China, Índia, Rússia, México, Argentina, Chile, Canadá, Austrália, etc.
-    - Cada pergunta deve ter um país diferente como resposta correta
   ` : isFlags ? `
     TEMA ESPECIAL: BANDEIRAS
     - Perguntas sobre bandeiras de países

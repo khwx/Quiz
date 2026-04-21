@@ -266,10 +266,14 @@ export default function TVHost() {
                     query = query.not('id', 'in', `(${currentUsedIds.join(',')})`);
                 }
 
-                if (targetAge === 18) {
-                    query = query.gte('age_rating', 18);
-                } else {
-                    query = query.eq('age_rating', targetAge);
+                // Ignore age rating for universal objective topics to maximize DB reuse
+                const isUniversalTopic = finalTopic === "Bandeiras" || finalTopic === "Capitais do Mundo";
+                if (!isUniversalTopic) {
+                    if (targetAge === 18) {
+                        query = query.gte('age_rating', 18);
+                    } else {
+                        query = query.eq('age_rating', targetAge);
+                    }
                 }
 
                 const { data, count: c } = await query;
@@ -368,7 +372,12 @@ export default function TVHost() {
                     // SYNC state to DB
                     const questionIds = questionsToUse.map(q => q.id);
                     await supabase.from("games").update({
-                        settings: { ...gameSettings, question_ids: questionIds, current_question_id: questionsToUse[0].id },
+                        settings: { 
+                            ...gameSettings, 
+                            question_ids: questionIds, 
+                            current_question_id: questionsToUse[0].id,
+                            current_correct_option: questionsToUse[0].correct_option
+                        },
                         current_question_index: 1,
                         status: "QUESTION"
                     }).eq('id', gameId);
@@ -729,7 +738,7 @@ export default function TVHost() {
                             onClick={() => {
                                 const nextQ = currentQuestions[currentQuestionIndex];
                                 if (nextQ) {
-                                    nextQuestion(nextQ.id);
+                                    nextQuestion(nextQ.id, nextQ.correct_option);
                                 } else {
 // No more questions - start new round
                                 console.log(`🔄 Starting round ${round + 1}...`);
