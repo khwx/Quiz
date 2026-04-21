@@ -106,9 +106,22 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl h-48 sm:h-64 md:h-80 lg:h-96 bg-black/20 rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-8 shadow-2xl border-2 sm:border-4 border-white/10"
+                    className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl h-48 sm:h-64 md:h-80 lg:h-96 bg-black/20 rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-8 shadow-2xl border-2 sm:border-4 border-white/10 flex items-center justify-center"
                 >
-                    <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${question.image_url})` }} />
+                    {/* Use local flag if available, otherwise use URL */}
+                    {(() => {
+                        const isFlag = question.category?.toLowerCase().includes('bandeira');
+                        const flagCode = question.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
+                        const localFlagPath = flagCode ? `/flags/${flagCode}.svg` : null;
+                        
+                        return (
+                            <img 
+                                src={localFlagPath || question.image_url} 
+                                alt="Flag"
+                                className="max-h-full max-w-full object-contain"
+                            />
+                        );
+                    })()}
                 </motion.div>
             ) : (
                 <div className="h-12 sm:h-24"></div>
