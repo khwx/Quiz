@@ -31,18 +31,19 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
   const specificRules = isCapitals ? `
     TEMA ESPECIAL: CAPITAIS DO MUNDO
     - Perguntas sobre capitais de países
-    - Exemplos: "Qual é a capital de Portugal?", "Qual a capital do Brasil?"
-    - Opções devem ser países diferentes, não cidades
-    - Incluir países de diferentes continentes
+    - CADA pergunta deve ser sobre um PAÍS DIFERENTE
+    - NÃO fazer perguntas sobre países relacionados (ex: não fazer "capital de Portugal" e depois "país de Lisboa")
+    - Usar países de todos os continentes: Portugal, Brasil, Espanha, França, Alemanha, Itália, Reino Unido, Japão, China, Índia, Rússia, México, Argentina, Chile, Canadá, Austrália, etc.
+    - Cada pergunta deve ter um país diferente como resposta correta
   ` : isFlags ? `
     TEMA ESPECIAL: BANDEIRAS
     - Perguntas sobre bandeiras de países
     - CADA pergunta deve ter uma image_url com a bandeira
+    - CADA pergunta deve ser sobre um PAÍS DIFERENTE
+    - NÃO repetires o mesmo país em perguntas diferentes
     - Formato: https://flagcdn.com/w320/{codigo}.png
-    - Códigos válidos: pt (Portugal), br (Brasil), es (Espanha), fr (França), de (Alemanha), it (Itália), uk (Reino Unido), us (Estados Unidos), jp (Japão), cn (China), in (Índia), ru (Rússia), mx (México), ca (Canadá), au (Austrália), ar (Argentina), kr (Coreia do Sul), nl (Holanda), be (Bélgica), ch (Suíça)
+    - Códigos válidos: pt, br, es, fr, de, it, uk, us, jp, cn, in, ru, mx, ca, au, ar, kr, nl, be, ch
     - O image_url deve corresponder ao país CORRETO na resposta
-    - Exemplo pergunta: "De que país é esta bandeira?"
-    - Exemplo JSON: {"text": "De que país é esta bandeira?", "options": ["Portugal", "Espanha", "França", "Itália"], "correct_option": 0, "image_url": "https://flagcdn.com/w320/pt.png"}
   ` : "";
 
   return `
@@ -54,11 +55,13 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     1. Perguntas CURTAS e DIRETAS (máximo 80 caracteres no texto)
     2. Evitar perguntas óbvias de senso comum
     3. Focar em factos curiosas, surpreendentes ou pouco conhecidos
-    4. Variedade na estrutura: usar "Qual...", "O que...", "Quem...", "Em que..."
-    5. Opções de resposta devem ser PLURAIS e ESPECÍFICAS (não genéricas)
-    6. A resposta correta deve estar sempre nas opções
-    7. Para crianças (7-9): divertido e educativo
-    8. Para adultos: tipo quiz show,诱惑 mas não impossível
+    4. NÃO GERAR PERGUNTAS SIMILARES - cada pergunta deve ser sobre um assunto DIFERENTE
+    5. NÃO REPETIR o mesmo país/cidade/tema em perguntas consecutivas
+    6. Variedade na estrutura: usar "Qual...", "O que...", "Quem...", "Em que..."
+    7. Opções de resposta devem ser PLURAIS e ESPECÍFICAS (não genéricas)
+    8. A resposta correta deve estar sempre nas opções
+    9. Para crianças (7-9): divertido e educativo
+    10. Para adultos: tipo quiz show,诱惑 mas não impossível
 
     Exemplos de BOAS perguntas:
     - "Quantos ossos tem o corpo humano?"
