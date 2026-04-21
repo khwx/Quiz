@@ -87,9 +87,10 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
         "options": ["Opção A específica", "Opção B específica", "Opção C específica", "Opção D específica"],
         "correct_option": 0,
         "category": "${prompt}",
-        "explanation": "Curiosidade ou explicação breve"${isFlags ? ',\n        "image_url": "https://flagcdn.com/w320/pt.png"' : ''}
+        "explanation": "Curiosidade ou explicação breve"${isFlags ? ',\n        "image_url": "https://flagcdn.com/w320/pt.png" (OBRIGATÓRIO para bandeiras!)' : ''}
       }
     ]
+    ${isFlags ? '\nIMPORTANTE: Para perguntas de bandeiras, TODAS as perguntas devem ter image_url!' : ''}
   `;
 }
 

@@ -172,14 +172,8 @@ export default function TVHost() {
 
         console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question ID: ${currentQuestionId.substring(0,8)}, answers: ${validAnswersForQ.length}, allAnswers: ${currentAnswers.length}, timeLeft: ${timeLeft})`);
 
-        // Auto-skip: advance when ALL players have answered AND at least 3 seconds have passed
-        const timeExpired = timerDuration - timeLeft;
-        const allPlayersAnswered = uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length;
-        
-        if (timeExpired >= 3 && allPlayersAnswered) {
-            console.log(`⚡ ALL players answered! Advancing to REVEAL...`);
-            updateStatus("REVEAL");
-        }
+        // Auto-skip DESATIVADO - só avança quando o timer chega a 0
+        // Isso evita o bug de avançar automaticamente
     }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, timeLeft, timerDuration, updateStatus]);
 
     // Fetch/Generate Questions on Start
