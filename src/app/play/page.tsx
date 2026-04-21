@@ -79,8 +79,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     };
 
     const handleAnswer = async (index: number) => {
-        if (hasAnswered || !currentQuestionId) {
-            console.warn("⚠️ Cannot answer: already answered or no question ID", { hasAnswered, currentQuestionId });
+        if (hasAnswered) return;
+        
+        if (!currentQuestionId) {
+            console.warn("⚠️ Cannot answer: no question ID");
+            alert("Aguarde um segundo, a sincronizar com a TV...");
             return;
         }
 
@@ -91,7 +94,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         const player = players.find(p => p.name === name);
         if (!player) {
             console.error("❌ Player not found:", name, players);
+            alert("Erro: Jogador não encontrado. Atualiza a página do telemóvel.");
             setHasAnswered(false);
+            setSelectedOption(null);
             return;
         }
 
