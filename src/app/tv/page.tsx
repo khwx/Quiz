@@ -607,13 +607,25 @@ export default function TVHost() {
 
             {/* PODIUM VIEW */}
             {status === "PODIUM" && (
-                <Podium
-                    players={players}
-                    onRestart={() => {
-                        setGameId(null);
-                        window.location.reload();
-                    }}
-                />
+                <div className="flex flex-col items-center gap-8">
+                    <Podium
+                        players={players}
+                        onRestart={() => {}}
+                    />
+                    <button
+                        onClick={() => {
+                            console.log(`🔙 Returning to lobby...`);
+                            setGameId(null);
+                            setUsedQuestionIds([]);
+                            setRound(1);
+                            setCurrentQuestions([]);
+                            window.location.reload();
+                        }}
+                        className="btn-quiz btn-primary flex items-center gap-2 text-xl px-8 py-4"
+                    >
+                        <>Escolher Outro Tema</>
+                    </button>
+                </div>
             )}
         </main>
     );
