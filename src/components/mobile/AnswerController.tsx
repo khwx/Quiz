@@ -7,6 +7,9 @@ import { Loader2 } from "lucide-react";
 interface AnswerControllerProps {
     onAnswer: (index: number) => void;
     disabled: boolean;
+    questionText?: string;
+    questionIndex?: number;
+    totalQuestions?: number;
 }
 
 const colors = [
@@ -18,7 +21,7 @@ const colors = [
 
 const icons = ["A", "B", "C", "D"];
 
-export default function AnswerController({ onAnswer, disabled }: AnswerControllerProps) {
+export default function AnswerController({ onAnswer, disabled, questionText, questionIndex, totalQuestions }: AnswerControllerProps) {
     const [selected, setSelected] = useState<number | null>(null);
 
     const handleClick = (idx: number) => {
@@ -47,6 +50,23 @@ export default function AnswerController({ onAnswer, disabled }: AnswerControlle
 
     return (
         <div className="flex flex-col gap-3 bg-[#0f172a] p-4 min-h-screen">
+            {(questionIndex !== undefined || totalQuestions !== undefined) && (
+                <div className="flex justify-between items-center px-2 py-2">
+                    <span className="text-gray-500 text-sm font-mono">
+                        {questionIndex !== undefined ? `Pergunta ${questionIndex + 1}` : ""}
+                        {totalQuestions !== undefined && ` de ${totalQuestions}`}
+                    </span>
+                </div>
+            )}
+
+            {questionText && (
+                <div className="bg-white/5 rounded-xl p-4 mb-2">
+                    <p className="text-white text-lg font-medium text-center leading-relaxed">
+                        {questionText}
+                    </p>
+                </div>
+            )}
+
             {colors.map((color, idx) => (
                 <button
                     key={idx}

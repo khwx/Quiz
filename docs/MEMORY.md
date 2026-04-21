@@ -19,19 +19,39 @@
    - Sistema de pontuação por velocidade
 
 2. **Geração de Perguntas com IA**
-   - Fallback: Gemini → Groq
+   - Fallback: Gemini → Groq (automático)
    - Gera perguntas automaticamente por tema/categoria
-   - Evita duplicatas via upsert
+   - Cache em memória (TTL 1h)
+   - Retry com backoff exponencial (até 2 tentativas)
+   - Timeout 10s por chamada
    - Modelo padrão: `gemini-1.5-flash`
 
 3. **Tipos de Perguntas**
    - Escolha múltipla (4 opções A/B/C/D)
    - Correção em tempo real após resposta
+   - 50/50 e V/F **REMOVIDOS** (bugs críticos)
 
 4. **Sistema de Feedback**
    - Contador de respostas em tempo real
    - Avatares coloridos (verde=certas, cinzento=pendentes)
    - Leaderboard entre perguntas
+
+## 🛡️ Segurança (Implementado)
+
+1. **Rate Limiting**
+   - 30 pedidos por minuto por IP
+   - Aplica-se a `/api/answer` e `/api/questions/generate`
+   - Headers `Retry-After` inclusos
+
+2. **Validação de Inputs**
+   - UUIDs validados (gameId, playerId, questionId)
+   - Números validados com ranges (chosenOption: 0-3, timeTaken: 0-300)
+   - Strings validadas com length limits
+   - Erros detalhados retornados
+
+3. **Timeouts nas Chamadas AI**
+   - 10 segundos por chamada
+   - Retry automático até 2 vezes com backoff exponencial
 
 ## 🗄️ Estrutura da Base de Dados (Supabase)
 
@@ -53,15 +73,15 @@
 
 ### Realtime
 
-Tabela `answers`需要有 Replication ativado no Supabase para o contador funcionar.
+Tabela `answers` 需要有 Replication ativado no Supabase para o contador funcionar.
 
 ## 🔧 Variáveis de Ambiente
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-NEXT_PUBLIC_GEMINI_API_KEY=
-GROQ_API_KEY=
+GEMINI_API_KEY=           # Server-only (não NEXT_PUBLIC_)
+GROQ_API_KEY=            # Server-only
 GEMINI_MODEL=gemini-1.5-flash
 GROQ_MODEL=llama-3.3-70b-versatile
 ```
@@ -89,9 +109,12 @@ quiz/
 │   ├── context/
 │   │   └── GameContext.tsx          # Estado global do jogo
 │   ├── lib/
-│   │   ├── ai-service-fallback.ts   # Lógica de fallback IA
+│   │   ├── ai-service-fallback.ts   # Lógica de fallback IA + cache + retry
 │   │   ├── ai-service.ts           # Cliente para API de geração
 │   │   ├── supabase.ts             # Cliente Supabase
+│   │   ├── rate-limit.ts           # Rate limiting por IP
+│   │   ├── validation.ts           # Validação de inputs
+│   │   ├── cache.ts                # Cache de perguntas geradas
 │   │   └── ... outras libs
 │   └── hooks/
 │       └── useSound.ts             # Efeitos sonoros
@@ -117,22 +140,32 @@ quiz/
 
 4. **Modelo Gemini desatualizado**: `gemini-2.0-flash` → `gemini-1.5-flash`
 
+5. **Bug 50/50**: Removido porque causava auto-resposta e state não resetava
+
+6. **Bug V/F**: Removido porque causava problemas de state entre perguntas
+
+7. **Incidente Vercel Abril 2026**: Recomendada mudança de API keys
+
 ## 🚧 Funcionalidades a Implementar
 
 - [ ] Timer configurável (10s, 15s, 20s, 30s)
-- [ ] Pista "50/50" (eliminar 2 opções)
+- [ ] Pista "50/50" (eliminar 2 opções) - **pendente bugfix**
 - [ ] Leaderboard entre perguntas
-- [ ] Perguntas V/F
+- [ ] Perguntas V/F - **pendente bugfix**
 - [ ] Perguntas com imagem
 - [ ] Sistema de achievements/badges
 - [ ] Modo equipas
 - [ ] Página de admin para estatísticas
+- [ ] UX mobile melhorada (mostrar timer, texto da pergunta)
+- [ ] Guardar cache na BD (atualmente em memória, perde-se com restart)
 
 ## 📝Notas de Desenvolvimento
 
 - Autores: khwx (utilizador GitHub)
 - O projeto usa commits com author `khwx <khwx@users.noreply.github.com>` para evitar bloqueios Vercel
 - Deploy automático via Vercel ao fazer push para `main`
+- **Último commit estável**: `97c842e` (v3.0 clean)
+- **Último commit com melhorias**: `53aa2fe` (AI prompt melhorado)
 
 ## 🔗 Links Úteis
 

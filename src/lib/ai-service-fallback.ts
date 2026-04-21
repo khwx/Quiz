@@ -1,8 +1,27 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Groq from "groq-sdk";
+import { getCachedQuestions, setCachedQuestions } from "./cache";
 
 const GEMINI_MODEL = "gemini-1.5-flash";
 const GROQ_MODEL = "llama-3.3-70b-versatile";
+
+const TIMEOUT_MS = 10000;
+const MAX_RETRIES = 2;
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`Timeout after ${ms}ms`)), ms);
+    promise.then((res) => { clearTimeout(timer); resolve(res); }).catch((err) => { clearTimeout(timer); reject(err); });
+  });
+}
+
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getRetryDelay(attempt: number): number {
+  return Math.min(1000 * Math.pow(2, attempt), 5000);
+}
 
 function buildPrompt(prompt: string, count: number, ageRating: string) {
   return `
@@ -65,34 +84,62 @@ function cleanJson(text: string) {
   return text.replace(/```json|```/g, "").trim();
 }
 
-async function tryGemini(fullPrompt: string) {
+async function tryGemini(fullPrompt: string, attempt: number = 0): Promise<string> {
   const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY || "";
   if (!apiKey) throw new Error("Gemini API key not configured");
 
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
-  const result = await model.generateContent(fullPrompt);
-  const text = result.response.text();
-  return cleanJson(text);
+  try {
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
+    const result = await withTimeout(model.generateContent(fullPrompt), TIMEOUT_MS);
+    return cleanJson(result.response.text());
+  } catch (error: any) {
+    if (attempt < MAX_RETRIES) {
+      const delay = getRetryDelay(attempt);
+      console.warn(`[AI] Gemini attempt ${attempt + 1} failed, retrying in ${delay}ms...`);
+      await sleep(delay);
+      return tryGemini(fullPrompt, attempt + 1);
+    }
+    throw error;
+  }
 }
 
-async function tryGroq(fullPrompt: string) {
+async function tryGroq(fullPrompt: string, attempt: number = 0): Promise<string> {
   const apiKey = process.env.GROQ_API_KEY || "";
   if (!apiKey) throw new Error("Groq API key not configured");
 
-  const groq = new Groq({ apiKey });
-  const response = await groq.chat.completions.create({
-    model: GROQ_MODEL,
-    messages: [{ role: "user", content: fullPrompt }],
-    temperature: 0.7,
-    max_tokens: 2048,
-  });
+  try {
+    const groq = new Groq({ apiKey });
+    const response = await withTimeout(
+      groq.chat.completions.create({
+        model: GROQ_MODEL,
+        messages: [{ role: "user", content: fullPrompt }],
+        temperature: 0.7,
+        max_tokens: 2048,
+      }),
+      TIMEOUT_MS
+    );
 
-  const text = response.choices[0]?.message?.content || "";
-  return cleanJson(text);
+    const text = response.choices[0]?.message?.content || "";
+    return cleanJson(text);
+  } catch (error: any) {
+    if (attempt < MAX_RETRIES) {
+      const delay = getRetryDelay(attempt);
+      console.warn(`[AI] Groq attempt ${attempt + 1} failed, retrying in ${delay}ms...`);
+      await sleep(delay);
+      return tryGroq(fullPrompt, attempt + 1);
+    }
+    throw error;
+  }
 }
 
 export async function generateQuestionsWithFallback(prompt: string, count: number = 5, ageRating: string = "adults") {
+  const cached = getCachedQuestions(prompt, count, ageRating);
+  if (cached) {
+    console.log("[AI] Cache hit!");
+    return cached;
+  }
+
   const fullPrompt = buildPrompt(prompt, count, ageRating);
   const providers = [
     { name: "Gemini", fn: () => tryGemini(fullPrompt) },
@@ -108,6 +155,7 @@ export async function generateQuestionsWithFallback(prompt: string, count: numbe
       const questions = JSON.parse(jsonStr);
       const normalized = normalizeQuestions(questions, prompt);
       console.log(`[AI] ${provider.name} succeeded!`);
+      setCachedQuestions(prompt, count, ageRating, normalized, provider.name);
       return { questions: normalized, provider: provider.name };
     } catch (error: any) {
       console.warn(`[AI] ${provider.name} failed: ${error.message}`);

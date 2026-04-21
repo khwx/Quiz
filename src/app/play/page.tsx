@@ -144,6 +144,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                         key={currentQuestionIndex}
                         onAnswer={handleAnswer}
                         disabled={hasAnswered}
+                        questionText={undefined}
+                        questionIndex={currentQuestionIndex}
+                        totalQuestions={undefined}
                     />
                 </main>
             );
