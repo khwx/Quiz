@@ -132,10 +132,15 @@ export default function TVHost() {
 
     // Auto-skip logic - advance to REVEAL when all players answered OR timer expires
     useEffect(() => {
+        // Don't auto-skip if not in QUESTION state
         if (status !== "QUESTION") return;
 
+        // Don't auto-skip if no question is loaded
         const currentQ = currentQuestions[currentQuestionIndex - 1];
-        if (!currentQ?.id) return;
+        if (!currentQ?.id) {
+            console.log("⏸️ Auto-skip skipped: no question loaded");
+            return;
+        }
 
         const currentQuestionId = String(currentQ.id);
         
@@ -144,15 +149,23 @@ export default function TVHost() {
         const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
         const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
 
-        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question ID: ${currentQuestionId.substring(0,8)}, answers: ${validAnswersForQ.length}, allAnswers: ${currentAnswers.length})`);
+        console.log(`📊 Answer check: ${uniqueAnswerPlayerIds.size}/${uniquePlayers.length} players answered (question ID: ${currentQuestionId.substring(0,8)}, answers: ${validAnswersForQ.length}, allAnswers: ${currentAnswers.length}, timeLeft: ${timeLeft})`);
 
-        // CRITICAL: Only auto-skip if we're past the first 3 seconds
-        // This prevents the bug where old answers are counted immediately
+        // CRITICAL: Only auto-skip if we're past the first 5 seconds
+        // AND at least 5 seconds remain on the timer
         const timeExpired = timerDuration - timeLeft;
+        const MIN_TIME_BEFORE_SKIP = 5;
+        const MIN_TIME_REMAINING = 5;
         
-        // ONLY auto-skip if at least 3 seconds have passed AND at least 5 seconds left
-        // AND ALL players have answered
-        if (timeExpired >= 3 && uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length && timeLeft > 5) {
+        // ONLY auto-skip if:
+        // 1. At least 5 seconds have passed
+        // 2. At least 5 seconds remain on timer
+        // 3. ALL players have answered (not just some)
+        // 4. There are actually players in the game
+        if (timeExpired >= MIN_TIME_BEFORE_SKIP && 
+            timeLeft > MIN_TIME_REMAINING && 
+            uniquePlayers.length > 0 && 
+            uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
             console.log(`⚡ Everyone answered with ${timeLeft}s left! Advancing to REVEAL...`);
             updateStatus("REVEAL");
         }
@@ -222,6 +235,7 @@ export default function TVHost() {
                         // Insert into Supabase
                         const questionsToInsert = aiQuestions.map((q: any) => ({
                             text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
+                            image_url: q.image_url || null,
                             options: q.options,
                             correct_option: q.correct_option,
                             category: finalTopic.charAt(0).toUpperCase() + finalTopic.slice(1).toLowerCase(),
@@ -337,10 +351,10 @@ export default function TVHost() {
         };
     }, [status, playSound, updateStatus]);
 
-    // Reset Timer & Refresh Players ONLY when Question Index Changes
+    // Reset Timer & Refresh Players when Question Index Changes OR when entering QUESTION state
     useEffect(() => {
         if (status === "QUESTION") {
-            console.log("🔄 New Question Loaded: Resetting Timer & Answers");
+            console.log("🔄 New Question Loaded: Resetting Timer & Answers", { currentQuestionIndex, timerDuration });
             setTimeLeft(timerDuration);
             setCurrentAnswers([]);
 
