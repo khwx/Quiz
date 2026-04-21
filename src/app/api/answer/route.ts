@@ -37,11 +37,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    const correctOption = game.settings?.current_correct_option;
+    let correctOption = game.settings?.current_correct_option;
     
+    // Fallback for older games or if setting is missing
     if (correctOption === undefined) {
-      console.error("❌ [API/answer] correct_option not found in game settings");
-      return NextResponse.json({ error: "Game state error" }, { status: 500 });
+      console.warn("⚠️ [API/answer] current_correct_option not found in game settings. Falling back to DB.");
+      const { data: questionData } = await supabase
+        .from("questions")
+        .select("correct_option")
+        .eq("id", questionId)
+        .single();
+        
+      if (questionData && questionData.correct_option !== undefined) {
+        correctOption = questionData.correct_option;
+      } else {
+        console.error("❌ [API/answer] correct_option completely missing.");
+        return NextResponse.json({ error: "Game state error" }, { status: 500 });
+      }
     }
 
     const isCorrect = correctOption === chosenOption;

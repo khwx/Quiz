@@ -42,6 +42,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                     .single();
                 if (data && data.settings?.current_correct_option !== undefined) {
                     setCorrectOption(data.settings.current_correct_option);
+                } else {
+                    const { data: qData } = await supabase
+                        .from("questions")
+                        .select("correct_option")
+                        .eq("id", currentQuestionId)
+                        .single();
+                    if (qData) setCorrectOption(qData.correct_option);
                 }
             };
             getResult();
