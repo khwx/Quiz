@@ -15,7 +15,7 @@ import { useSound } from "@/hooks/useSound";
 import CastButton from "@/components/CastButton";
 
 export default function TVHost() {
-    const { gameId, setGameId, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
+    const { gameId, setGameId, setPlayers, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
     const [pin, setPin] = useState<string>("");
     const [loading, setLoading] = useState(true);
     const [currentQuestions, setCurrentQuestions] = useState<any[]>([]);
