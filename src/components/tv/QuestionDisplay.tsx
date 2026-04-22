@@ -14,6 +14,8 @@ interface QuestionDisplayProps {
     answers?: any[];
     questionSource?: "DB" | "AI" | null;
     onTimerClick?: () => void;
+    localMode?: boolean;
+    onLocalAnswer?: (optionIndex: number) => void;
 }
 
 const colors = [
@@ -25,7 +27,7 @@ const colors = [
 
 const icons = ["A", "B", "C", "D"];
 
-export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], questionSource, onTimerClick }: QuestionDisplayProps) {
+export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], questionSource, onTimerClick, localMode = false, onLocalAnswer }: QuestionDisplayProps) {
     const progress = (timeLeft / totalTime) * 100;
     const [ttsEnabled, setTtsEnabled] = useState(true);
     const [isReading, setIsReading] = useState(false);
@@ -220,12 +222,14 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                                 y: 0
                             }}
                             transition={{ delay: idx * 0.1 }}
+                            onClick={() => localMode && status === "QUESTION" && onLocalAnswer?.(idx)}
                             className={`
                 ${colors[idx]} relative overflow-hidden
                 p-8 rounded-3xl border-b-8 shadow-2xl transform transition-all
                 flex items-center gap-6
                 ${isReveal && isCorrect ? 'ring-8 ring-green-400 ring-offset-4 ring-offset-[#0f172a]' : ''}
                 ${isReveal && !isCorrect ? 'grayscale' : ''}
+                ${localMode && status === "QUESTION" ? 'cursor-pointer hover:scale-105 hover:brightness-110 active:scale-95' : ''}
               `}
                         >
                             <div className="bg-black/20 w-16 h-16 rounded-xl flex items-center justify-center text-4xl font-black text-white/80 shrink-0">

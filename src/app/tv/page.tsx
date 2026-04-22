@@ -47,6 +47,8 @@ export default function TVHost() {
     const [timerDuration, setTimerDuration] = useState(20);
     const [questionCount, setQuestionCount] = useState(5);
     const [questionSource, setQuestionSource] = useState<"DB" | "AI" | null>(null);
+    const [localMode, setLocalMode] = useState(false);
+    const [localScore, setLocalScore] = useState(0);
 
     const arenaIcons: Record<string, any> = {
         "Cultura Geral": <Globe className="w-4 h-4" />,
@@ -59,6 +61,21 @@ export default function TVHost() {
     };
 
     const { playSound } = useSound();
+
+    // Handle local mode answer
+    const handleLocalAnswer = (optionIndex: number) => {
+        if (status !== "QUESTION" || !currentQ || localScore >= questionCount) return;
+        
+        const isCorrect = optionIndex === currentQ.correct_option;
+        if (isCorrect) {
+            const points = Math.max(10, Math.floor((timeLeft / timerDuration) * 100));
+            setLocalScore(prev => prev + points);
+            playSound?.('correct');
+        } else {
+            playSound?.('wrong');
+        }
+        updateStatus("REVEAL");
+    };
 
     // Initial Game Creation or Connection
     useEffect(() => {
@@ -704,9 +721,28 @@ export default function TVHost() {
                                     </div>
                                 </div>
 
+                                    {/* LOCAL MODE TOGGLE */}
+                                    <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/10">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                                <span className="text-xl">👆</span>
+                                            </div>
+                                            <div>
+                                                <div className="font-bold text-white">Modo Local</div>
+                                                <div className="text-xs text-gray-400">Responde no ecran</div>
+                                            </div>
+                                        </div>
+                                        <button
+                                            onClick={() => setLocalMode(!localMode)}
+                                            className={`w-14 h-8 rounded-full transition-all ${localMode ? 'bg-green-500' : 'bg-gray-600'}`}
+                                        >
+                                            <div className={`w-6 h-6 bg-white rounded-full shadow transform transition-transform ${localMode ? 'translate-x-7' : 'translate-x-1'}`} />
+                                        </button>
+                                    </div>
+
                                     <button
                                         onClick={() => updateStatus("STARTING")}
-                                        disabled={players.length === 0 || isGenerating || status === "STARTING"}
+                                        disabled={(players.length === 0 && !localMode) || isGenerating || status === "STARTING"}
                                         className="btn-quiz btn-primary w-full py-6 flex justify-center items-center gap-3 relative overflow-hidden group mt-auto"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity" />
@@ -717,13 +753,21 @@ export default function TVHost() {
                                                     A Invocar Arena...
                                                 </>
                                             ) : (
-                                                <>Entrar na Arena <ArrowRight className="group-hover:translate-x-2 transition-transform" /></>
+                                                <>{localMode ? 'Iniciar Quiz' : 'Entrar na Arena'} <ArrowRight className="group-hover:translate-x-2 transition-transform" /></>
                                             )}
                                         </span>
                                     </button>
                             </div>
                         )}
                     </motion.div>
+                </div>
+            )}
+
+            {/* LOCAL MODE SCORE */}
+            {localMode && (
+                <div className="absolute top-4 right-4 z-50 bg-green-500/20 backdrop-blur-md px-6 py-3 rounded-2xl border-2 border-green-500/50">
+                    <div className="text-xs text-green-300 font-bold uppercase tracking-widest">Pontuação</div>
+                    <div className="text-3xl font-black text-white">{localScore}</div>
                 </div>
             )}
 
@@ -738,6 +782,8 @@ export default function TVHost() {
                     questionSource={questionSource}
                     answers={currentAnswers.filter(a => String(a.question_id) === String(currentQ.id))}
                     onTimerClick={() => setTimeLeft(0)}
+                    localMode={localMode}
+                    onLocalAnswer={handleLocalAnswer}
                 />
             )}
 
