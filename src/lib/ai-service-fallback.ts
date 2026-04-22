@@ -46,10 +46,10 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     - O image_url deve corresponder ao país CORRETO na resposta
   ` : "";
 
-  return \`
-    Gera \${count} perguntas de quiz em Português de Portugal para: "\${prompt}".
+  return `
+    Gera ${count} perguntas de quiz em Português de Portugal para: "${prompt}".
 
-    \${specificRules}
+    ${specificRules}
 
     REGRAS DE QUALIDADE (MUITO IMPORTANTE):
     1. Perguntas CURTAS e DIRETAS (máximo 80 caracteres no texto)
@@ -62,6 +62,7 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     8. A resposta correta deve estar sempre nas opções
     9. Para crianças (7-9): divertido e educativo
     10. Para adultos: tipo quiz show, desafiante mas não impossível
+
 
 
     Exemplos de BOAS perguntas:
