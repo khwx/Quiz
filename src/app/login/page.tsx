@@ -112,13 +112,13 @@ export default function LoginPage() {
                 Username
               </label>
               <div className="relative group">
-                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors pointer-events-none z-10" />
                 <input
                   type="text"
                   placeholder="Commander"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full glass-input pl-12"
+                  className="w-full glass-input pl-12 pr-4"
                 />
               </div>
             </div>
@@ -129,13 +129,13 @@ export default function LoginPage() {
               Transmission Address
             </label>
             <div className="relative group">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors pointer-events-none z-10" />
               <input
                 type="email"
                 placeholder="commander@nebula.net"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full glass-input pl-12"
+                className="w-full glass-input pl-12 pr-4"
               />
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function LoginPage() {
               Security Codes
             </label>
             <div className="relative group">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-pink-400 transition-colors" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-pink-400 transition-colors pointer-events-none z-10" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
