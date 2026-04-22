@@ -1,47 +1,107 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Settings, Trophy, Star, Coins, Flame, Crown, Activity, Edit2, ExternalLink } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Settings, Trophy, Star, Coins, Flame, Crown, Activity, LogOut, Loader2 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function ProfilePage() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("stats");
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<any>(null);
+  const [stats, setStats] = useState<any>(null);
 
-  // Mock user data - replace with real Supabase data
-  const user = {
-    name: "Alex Nova",
-    username: "commander_alex",
-    level: 42,
-    xp: 8450,
-    xpToNext: 10000,
-    coins: 12400,
-    totalGames: 156,
-    wins: 89,
-    avgScore: 2450,
-    streak: 7,
-    rank: "Nebula Explorer",
-    avatar: null,
+  useEffect(() => {
+    loadUserData();
+  }, []);
+
+  const loadUserData = async () => {
+    try {
+      // Get current user
+      const { data: { user: currentUser } } = await supabase.auth.getUser();
+      
+      if (!currentUser) {
+        router.push("/login");
+        return;
+      }
+
+      // Get profile
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", currentUser.id)
+        .single();
+
+      // Get stats from answers
+      const { data: answers } = await supabase
+        .from("answers")
+        .select("game_id, is_correct, score")
+        .eq("player_id", currentUser.id);
+
+      const userAnswers = answers || [];
+      const totalGames = new Set(userAnswers.map((a: any) => a.game_id)).size;
+      const correctAnswers = userAnswers.filter((a: any) => a.is_correct).length;
+      const totalPoints = userAnswers.reduce((sum: number, a: any) => sum + (a.score || 0), 0);
+      const accuracy = userAnswers.length > 0 
+        ? Math.round((correctAnswers / userAnswers.length) * 100) 
+        : 0;
+
+      setUser({
+        id: currentUser.id,
+        email: currentUser.email,
+        name: currentUser.user_metadata?.name || profile?.username || "Player",
+        avatar: profile?.avatar || "🎮",
+        ...profile,
+      });
+
+      setStats({
+        totalGames,
+        correctAnswers,
+        totalPoints,
+        accuracy,
+        wins: correctAnswers,
+      });
+    } catch (error) {
+      console.error("Error loading user:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push("/");
   };
 
   const achievements = [
-    { id: 1, name: "First Victory", icon: "🏆", earned: true, date: "2024-01-15" },
-    { id: 2, name: "3 Win Streak", icon: "🔥", earned: true, date: "2024-02-20" },
-    { id: 3, name: "5 Win Streak", icon: "💎", earned: true, date: "2024-03-10" },
-    { id: 4, name: "Perfect Game", icon: "🌟", earned: true, date: "2024-04-05" },
-    { id: 5, name: "Speed Demon", icon: "⚡", earned: true, date: "2024-05-12" },
-    { id: 6, name: "Quiz Master", icon: "🎓", earned: false, date: null },
-    { id: 7, name: "Flag Expert", icon: "🚩", earned: false, date: null },
-    { id: 8, name: "Capital Master", icon: "🏛️", earned: false, date: null },
+    { id: 1, name: "Primeira Vitória", icon: "🏆", earned: stats?.wins >= 1, date: null },
+    { id: 2, name: "3 Vitórias", icon: "🔥", earned: stats?.wins >= 3, date: null },
+    { id: 3, name: "10 Vitórias", icon: "💎", earned: stats?.wins >= 10, date: null },
+    { id: 4, name: "Perfeito", icon: "🌟", earned: stats?.accuracy === 100, date: null },
+    { id: 5, name: "Velocista", icon: "⚡", earned: stats?.totalGames >= 5, date: null },
+    { id: 6, name: "Mestre", icon: "🎓", earned: stats?.wins >= 20, date: null },
+    { id: 7, name: "Especialista", icon: "🚩", earned: stats?.totalGames >= 50, date: null },
+    { id: 8, name: "Lendário", icon: "👑", earned: stats?.wins >= 50, date: null },
   ];
 
-  const recentGames = [
-    { id: 1, topic: "Capitais", score: 2800, position: 1, date: "2024-06-10" },
-    { id: 2, topic: "História", score: 2200, position: 2, date: "2024-06-09" },
-    { id: 3, topic: "Ciência", score: 3100, position: 1, date: "2024-06-08" },
-    { id: 4, topic: "Geografia", score: 1800, position: 3, date: "2024-06-07" },
-    { id: 5, topic: "Desporto", score: 2500, position: 1, date: "2024-06-06" },
-  ];
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-violet-400" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Link href="/login" className="text-violet-400">Entrar</Link>
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen relative overflow-x-hidden pb-24">
@@ -57,9 +117,9 @@ export default function ProfilePage() {
           <Link href="/" className="text-xl font-bold text-white/60 hover:text-white transition-colors">
             ← Back
           </Link>
-          <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Profile</h1>
-          <button className="text-white/60 hover:text-white transition-colors">
-            <Settings className="w-6 h-6" />
+          <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Perfil</h1>
+          <button onClick={handleLogout} className="text-white/60 hover:text-white transition-colors">
+            <LogOut className="w-6 h-6" />
           </button>
         </div>
       </header>
@@ -75,73 +135,46 @@ export default function ProfilePage() {
             {/* Avatar */}
             <div className="relative">
               <div className="w-28 h-28 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 flex items-center justify-center text-5xl font-bold text-white">
-                {user.name.charAt(0)}
-              </div>
-              <div className="absolute -bottom-1 -right-1 bg-pink-500 text-white text-sm font-bold px-3 py-1 rounded-full">
-                Lvl {user.level}
+                {user.avatar}
               </div>
             </div>
 
             {/* User Info */}
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-3xl font-bold text-white mb-1" style={{ fontFamily: 'Space Grotesk' }}>{user.name}</h2>
-              <p className="text-white/50 mb-3 flex items-center justify-center md:justify-start gap-2">
-                <Crown className="w-4 h-4 text-yellow-400" />
-                {user.rank}
-              </p>
-
-              {/* XP Progress */}
-              <div className="mb-4">
-                <div className="flex justify-between text-sm text-white/60 mb-1">
-                  <span>Level Progress</span>
-                  <span>{user.xp.toLocaleString()} / {user.xpToNext.toLocaleString()} XP</span>
-                </div>
-                <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: `${(user.xp / user.xpToNext) * 100}%` }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full shadow-[0_0_10px_rgba(139,92,246,0.8)]"
-                  />
-                </div>
-              </div>
+              <p className="text-white/50 mb-3">{user.email}</p>
 
               {/* Stats Row */}
               <div className="flex flex-wrap justify-center md:justify-start gap-4">
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
-                  <Coins className="w-5 h-5 text-yellow-400" />
+                  <Trophy className="w-5 h-5 text-violet-400" />
                   <div>
-                    <div className="text-xs text-white/40 uppercase">Coins</div>
-                    <div className="font-bold text-white">{user.coins.toLocaleString()}</div>
+                    <div className="text-xs text-white/40 uppercase">Vitórias</div>
+                    <div className="font-bold text-white">{stats?.wins || 0}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
-                  <Trophy className="w-5 h-5 text-violet-400" />
+                  <Coins className="w-5 h-5 text-yellow-400" />
                   <div>
-                    <div className="text-xs text-white/40 uppercase">Wins</div>
-                    <div className="font-bold text-white">{user.wins}</div>
+                    <div className="text-xs text-white/40 uppercase">Pontos</div>
+                    <div className="font-bold text-white">{stats?.totalPoints || 0}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
                   <Flame className="w-5 h-5 text-orange-400" />
                   <div>
-                    <div className="text-xs text-white/40 uppercase">Streak</div>
-                    <div className="font-bold text-white">{user.streak} days</div>
+                    <div className="text-xs text-white/40 uppercase">Jogos</div>
+                    <div className="font-bold text-white">{stats?.totalGames || 0}</div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Edit Button */}
-            <button className="md:self-start p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
-              <Edit2 className="w-5 h-5 text-white/60" />
-            </button>
           </div>
         </motion.section>
 
         {/* Tabs */}
         <div className="flex gap-2 mb-6 overflow-x-auto">
-          {["stats", "games", "achievements"].map((tab) => (
+          {["stats", "achievements", "history"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -152,9 +185,11 @@ export default function ProfilePage() {
               }`}
             >
               {tab === "stats" && <Activity className="w-4 h-4 inline mr-2" />}
-              {tab === "games" && <Trophy className="w-4 h-4 inline mr-2" />}
               {tab === "achievements" && <Star className="w-4 h-4 inline mr-2" />}
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === "history" && <Trophy className="w-4 h-4 inline mr-2" />}
+              {tab === "stats" && "Estatísticas"}
+              {tab === "achievements" && "Conquistas"}
+              {tab === "history" && "Histórico"}
             </button>
           ))}
         </div>
@@ -167,52 +202,21 @@ export default function ProfilePage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
           >
             <div className="glass-panel p-4 text-center">
-              <div className="text-3xl font-bold text-white mb-1">{user.totalGames}</div>
-              <div className="text-xs text-white/40 uppercase">Games Played</div>
+              <div className="text-3xl font-bold text-white mb-1">{stats?.totalGames || 0}</div>
+              <div className="text-xs text-white/40 uppercase">Jogos Totais</div>
             </div>
             <div className="glass-panel p-4 text-center">
-              <div className="text-3xl font-bold text-violet-400 mb-1">{user.wins}</div>
-              <div className="text-xs text-white/40 uppercase">Victories</div>
+              <div className="text-3xl font-bold text-violet-400 mb-1">{stats?.wins || 0}</div>
+              <div className="text-xs text-white/40 uppercase">Vitórias</div>
             </div>
             <div className="glass-panel p-4 text-center">
-              <div className="text-3xl font-bold text-pink-400 mb-1">{user.avgScore}</div>
-              <div className="text-xs text-white/40 uppercase">Avg Score</div>
+              <div className="text-3xl font-bold text-pink-400 mb-1">{stats?.totalPoints || 0}</div>
+              <div className="text-xs text-white/40 uppercase">Pontos Totais</div>
             </div>
             <div className="glass-panel p-4 text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-1">{user.coins}</div>
-              <div className="text-xs text-white/40 uppercase">Total Coins</div>
+              <div className="text-3xl font-bold text-emerald-400 mb-1">{stats?.accuracy || 0}%</div>
+              <div className="text-xs text-white/40 uppercase">Taxa de Acerto</div>
             </div>
-          </motion.section>
-        )}
-
-        {activeTab === "games" && (
-          <motion.section 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="space-y-3"
-          >
-            {recentGames.map((game, i) => (
-              <div key={game.id} className="glass-panel p-4 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-white/60">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-white">{game.topic}</div>
-                    <div className="text-xs text-white/40">{game.date}</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="font-bold text-white">{game.score.toLocaleString()}</div>
-                  <div className={`text-xs ${game.position === 1 ? "text-yellow-400" : "text-white/40"}`}>
-                    #{game.position} place
-                  </div>
-                </div>
-              </div>
-            ))}
-            <button className="w-full py-3 text-center text-white/40 hover:text-white transition-colors text-sm">
-              View All Games →
-            </button>
           </motion.section>
         )}
 
@@ -228,35 +232,29 @@ export default function ProfilePage() {
                 className={`glass-panel p-4 text-center transition-all ${
                   achievement.earned 
                     ? "hover:border-violet-400/50" 
-                    : "opacity-40"
+                    : "opacity-40 grayscale"
                 }`}
               >
                 <div className="text-3xl mb-2">{achievement.icon}</div>
                 <div className="font-medium text-white text-sm">{achievement.name}</div>
                 {achievement.earned && (
-                  <div className="text-xs text-emerald-400 mt-1">Unlocked</div>
+                  <div className="text-xs text-emerald-400 mt-1">Desbloqueado!</div>
                 )}
               </div>
             ))}
           </motion.section>
         )}
 
-        {/* Global Ranking CTA */}
-        <motion.section 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mt-8 glass-panel p-6 flex items-center justify-between"
-        >
-          <div>
-            <h3 className="text-xl font-bold text-white mb-1">Global Ranking</h3>
-            <p className="text-white/50 text-sm">See how you compare to other commanders</p>
-          </div>
-          <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold rounded-xl hover:brightness-110 transition-all">
-            <Trophy className="w-5 h-5" />
-            View Rankings
-          </button>
-        </motion.section>
+        {activeTab === "history" && (
+          <motion.section 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="glass-panel p-6 text-center"
+          >
+            <p className="text-white/50">Histórico de jogos em breve...</p>
+            <p className="text-white/30 text-sm mt-2">Joga mais para veres o teu histórico!</p>
+          </motion.section>
+        )}
       </div>
 
       {/* Bottom Nav */}
@@ -266,16 +264,14 @@ export default function ProfilePage() {
             <Trophy className="w-6 h-6" />
             <span className="text-[10px] mt-1">Home</span>
           </Link>
-          <Link href="/leaderboard" className="flex flex-col items-center justify-center text-white/50">
+          <Link href="/categories" className="flex flex-col items-center justify-center text-white/50">
             <Star className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Rankings</span>
+            <span className="text-[10px] mt-1">Categorias</span>
           </Link>
-          <Link href="/profile" className="flex flex-col items-center justify-center text-pink-500">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 flex items-center justify-center">
-              <span className="font-bold text-white">A</span>
-            </div>
-            <span className="text-[10px] mt-1">Profile</span>
-          </Link>
+          <button onClick={handleLogout} className="flex flex-col items-center justify-center text-pink-500">
+            <LogOut className="w-6 h-6" />
+            <span className="text-[10px] mt-1">Sair</span>
+          </button>
         </div>
       </nav>
     </main>
