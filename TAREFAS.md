@@ -73,6 +73,12 @@
 - [ ] Mais sons (aplausos,效果)
 - [ ] Volume ajustável
 
+### 11. Reportar Perguntas - 📋 NOVA FEATURE
+- [ ] Botão "Reportar erro" em cada pergunta no Admin
+- [ ] Campo para justificar o erro
+- [ ] Lista de perguntas reportadas para rever
+- [ ] Marcar pergunta como "revisão necessária"
+
 ---
 
 ## 📱 Novas Páginas

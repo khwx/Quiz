@@ -217,6 +217,31 @@ export default function AdminPage() {
         loadData();
     };
 
+    const reportQuestion = async (id: string) => {
+        const reason = prompt("Qual é o problema desta pergunta?");
+        if (!reason) return;
+
+        // Add report to question metadata (using update with JSON)
+        const { data } = await supabase
+            .from("questions")
+            .select("metadata")
+            .eq("id", id)
+            .single();
+        
+        const currentReports = data?.metadata?.reports || [];
+        await supabase
+            .from("questions")
+            .update({
+                metadata: {
+                    ...data?.metadata,
+                    reports: [...currentReports, { reason, date: new Date().toISOString() }]
+                }
+            })
+            .eq("id", id);
+        
+        alert("Pergunta reportada! Obrigado pelo feedback.");
+    };
+
     const filteredQuestions = selectedCategory === "all"
         ? questions
         : questions.filter(q => {
@@ -455,12 +480,22 @@ export default function AdminPage() {
                                         ))}
                                     </div>
                                 </div>
-                                <button
-                                    onClick={() => deleteQuestion(q.id)}
-                                    className="p-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl transition-colors"
-                                >
-                                    <Trash2 size={20} />
-                                </button>
+                                <div className="flex flex-col gap-2">
+                                    <button
+                                        onClick={() => deleteQuestion(q.id)}
+                                        className="p-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl transition-colors"
+                                        title="Eliminar pergunta"
+                                    >
+                                        <Trash2 size={20} />
+                                    </button>
+                                    <button
+                                        onClick={() => reportQuestion(q.id)}
+                                        className="p-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl transition-colors"
+                                        title="Reportar erro"
+                                    >
+                                        <AlertTriangle size={20} />
+                                    </button>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
