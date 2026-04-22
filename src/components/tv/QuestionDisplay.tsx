@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Clock, Brain, Database } from "lucide-react";
+import { Clock, Brain, Database, Volume2, VolumeX } from "lucide-react";
+import { speak, stopSpeaking, isSpeaking } from "@/lib/tts";
 
 interface QuestionDisplayProps {
     question: any;
@@ -26,6 +27,14 @@ const icons = ["A", "B", "C", "D"];
 
 export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], questionSource, onTimerClick }: QuestionDisplayProps) {
     const progress = (timeLeft / totalTime) * 100;
+    const [ttsEnabled, setTtsEnabled] = useState(true);
+    const [isReading, setIsReading] = useState(false);
+
+    // Stop TTS when question changes
+    useEffect(() => {
+        stopSpeaking();
+        setIsReading(false);
+    }, [question.text]);
 
     // Helper to get player initials
     const getInitials = (name: string) => {
@@ -52,6 +61,27 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                         </div>
                     )}
                 </div>
+                <button
+                    onClick={async () => {
+                        if (isReading) {
+                            stopSpeaking();
+                            setIsReading(false);
+                        } else {
+                            setIsReading(true);
+                            const text = `${question.text}. ${question.options.join('. ')}`;
+                            await speak(text, 'pt-PT');
+                            setIsReading(false);
+                        }
+                    }}
+                    className={`p-3 rounded-full border transition-all ${
+                        ttsEnabled 
+                            ? "bg-violet-500/20 border-violet-500/50 text-violet-300 hover:bg-violet-500/30" 
+                            : "bg-gray-500/20 border-gray-500/50 text-gray-400"
+                    }`}
+                    title={ttsEnabled ? "Ler questão em voz alta" : "TTS desativado"}
+                >
+                    {isReading ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                </button>
                 <div className="flex items-center gap-6">
                         {/* Respostas Counter */}
                         <div className="bg-white/5 px-4 py-2 rounded-xl flex items-center gap-2 border border-white/10">
