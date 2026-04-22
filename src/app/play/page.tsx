@@ -277,6 +277,18 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                         )}
                         <p className="text-white/40 text-sm mt-8 animate-pulse">Aguarda pela próxima pergunta</p>
                     </motion.div>
+                    
+                    {/* Report Button - Always visible */}
+                    <button
+                        onClick={() => {
+                            const reason = prompt("Qual é o problema desta pergunta? (Resposta errada, etc)");
+                            if (reason) handleReport(reason);
+                        }}
+                        className="fixed bottom-8 right-4 flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white/60 rounded-full text-sm transition-colors"
+                    >
+                        <Flag className="w-4 h-4" />
+                        Reportar
+                    </button>
                 </main>
             );
         }

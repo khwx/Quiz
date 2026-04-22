@@ -827,7 +827,7 @@ export default function TVHost() {
                 />
             )}
 
-            {/* REVEAL / LEADERBOARD INFO */}
+{/* REVEAL / LEADERBOARD INFO */}
             {status === "REVEAL" && currentQ && (
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
@@ -836,15 +836,21 @@ export default function TVHost() {
                 >
                     <div className="flex flex-col sm:flex-row gap-3">
                         <button
+                            onClick={handleReportQuestion}
+                            className="flex items-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all"
+                        >
+                            <Flag className="w-5 h-5" />
+                            Reportar
+                        </button>
+                        <button
                             onClick={() => {
                                 const nextQ = currentQuestions[currentQuestionIndex];
                                 if (nextQ) {
                                     nextQuestion(nextQ.id, nextQ.correct_option);
                                 } else {
-// No more questions - start new round
-                                console.log(`🔄 Starting round ${round + 1}...`);
-                                setRound(r => r + 1);
-                                updateStatus("STARTING");
+                                    console.log(`🔄 Starting round ${round + 1}...`);
+                                    setRound(r => r + 1);
+                                    updateStatus("STARTING");
                                 }
                             }}
                             className="btn-quiz btn-primary flex items-center gap-2"
@@ -857,7 +863,6 @@ export default function TVHost() {
                         </button>
                         <button
                             onClick={() => {
-                                // Reset everything and go back to lobby
                                 console.log(`🔙 Returning to lobby...`);
                                 setGameId(null);
                                 usedQuestionIdsRef.current = [];
@@ -880,26 +885,26 @@ export default function TVHost() {
                         players={players}
                         onRestart={() => {}}
                     />
-<button
-                            onClick={() => {
-                                console.log(`🔙 Returning to lobby...`);
-                                setGameId(null);
-                                usedQuestionIdsRef.current = [];
-                                setRound(1);
-                                setCurrentQuestions([]);
-                                window.location.reload();
-                            }}
-                            className="btn-quiz btn-secondary flex items-center gap-2"
-                        >
-                            <>Escolher Outro Tema</>
-                        </button>
-                        <button
-                            onClick={handleReportQuestion}
-                            className="flex items-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all"
-                        >
-                            <Flag className="w-5 h-5" />
-                            Reportar
-                        </button>
+                    <button
+                        onClick={() => {
+                            console.log(`🔙 Returning to lobby...`);
+                            setGameId(null);
+                            usedQuestionIdsRef.current = [];
+                            setRound(1);
+                            setCurrentQuestions([]);
+                            window.location.reload();
+                        }}
+                        className="btn-quiz btn-secondary flex items-center gap-2"
+                    >
+                        <>Escolher Outro Tema</>
+                    </button>
+                    <button
+                        onClick={handleReportQuestion}
+                        className="flex items-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all"
+                    >
+                        <Flag className="w-5 h-5" />
+                        Reportar
+                    </button>
                 </div>
             )}
         </main>
