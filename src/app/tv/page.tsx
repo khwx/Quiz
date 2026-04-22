@@ -529,26 +529,31 @@ export default function TVHost() {
     const currentQ = currentQuestions[currentQuestionIndex - 1];
 
     return (
-        <main className="min-h-screen bg-[#0f172a] p-12 flex flex-col items-center justify-center overflow-hidden">
+        <main className="min-h-screen relative overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center">
+            {/* Background Effects */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-violet-600/10 rounded-full blur-[150px]" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-pink-600/10 rounded-full blur-[150px]" />
+                <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-purple-500/5 rounded-full blur-[120px]" />
+            </div>
+
             {/* LOBBY VIEW */}
             {(status === "LOBBY" || status === "STARTING") && (
                 <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
                     
-                    {/* Botão de Limpeza de Memória */}
+                    {/* Memory Clear Button */}
                     {usedQuestionIdsRef.current.length > 0 && (
                         <div className="absolute -top-10 right-0">
                             <button
                                 onClick={() => {
-                                    if (confirm(`Tens a certeza que queres limpar a memória da TV?\nForam memorizadas ${usedQuestionIdsRef.current.length} perguntas. Ao limpar, elas voltarão a repetir-se.`)) {
+                                    if (confirm(`Limpar memória das perguntas?\n${usedQuestionIdsRef.current.length} perguntas memorizadas.`)) {
                                         localStorage.removeItem('usedQuestionIds');
                                         usedQuestionIdsRef.current = [];
-                                        alert("Memória limpa! Podes começar um jogo novo com o baralho completo.");
                                     }
                                 }}
-                                className="px-4 py-2 bg-gray-800/80 hover:bg-red-600 text-gray-300 hover:text-white rounded-lg text-sm transition-all flex items-center gap-2 shadow-lg backdrop-blur-sm border border-white/10"
-                                title="Limpar as perguntas memorizadas na TV"
+                                className="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-white/60 hover:text-red-400 rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
                             >
-                                🧹 Limpar Memória ({usedQuestionIdsRef.current.length})
+                                🧹 Memória ({usedQuestionIdsRef.current.length})
                             </button>
                         </div>
                     )}
@@ -558,32 +563,27 @@ export default function TVHost() {
                         animate={{ opacity: 1, x: 0 }}
                         className="flex flex-col gap-8"
                     >
-                        <div>
-                            <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-4 inline-block">
-                                QuizMaster TV
-                            </span>
-                            <div className="flex items-center gap-4 mb-2">
-                                <Users className="text-pink-500 w-12 h-12" />
+                        <div className="flex items-center gap-4 mb-2">
+                            <div className="p-4 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl">
+                                <Users className="w-10 h-10 text-white" />
                             </div>
+                            <span className="text-sm font-bold text-violet-400 uppercase tracking-widest">QuizVerse TV</span>
                         </div>
 
                         <div>
-                            <h1 className="text-5xl font-black text-white mb-4 italic uppercase tracking-tighter">
-                                Preparem os <span className="text-pink-500">telemóveis!</span>
+                            <h1 className="text-5xl lg:text-7xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'Space Grotesk' }}>
+                                Preparem os <span className="text-gradient">telemóveis!</span>
                             </h1>
-                            <p className="text-2xl text-gray-400">Entrem em <span className="text-white font-bold">quiz-two-zeta-67.vercel.app</span></p>
+                            <p className="text-xl text-white/60">Entrem em <span className="text-white font-bold">quizverse.app/play</span></p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-3xl w-fit shadow-2xl shadow-violet-500/20 relative">
-                            <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={256} level="H" />
-                            <div className="absolute -top-12 right-0 bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
-                                <CastButton />
-                            </div>
+                        <div className="glass-panel p-6 w-fit relative">
+                            <QRCodeSVG value={`https://quizverse.app/play?pin=${pin}`} size={220} level="H" />
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <span className="text-gray-500 uppercase font-black tracking-widest text-sm">PIN do Jogo</span>
-                            <div className="text-8xl font-black text-white tracking-widest font-mono bg-white/5 py-4 px-8 rounded-2xl border border-white/10">
+                            <span className="text-white/40 uppercase font-bold tracking-widest text-sm">Código do Jogo</span>
+                            <div className="text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500 tracking-widest font-mono">
                                 {pin}
                             </div>
                         </div>

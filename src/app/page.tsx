@@ -107,35 +107,25 @@ export default function Home() {
           </section>
         </div>
 
-        {/* Right Column - Quick Actions & Info */}
+        {/* Right Column - Quick Actions */}
         <aside className="lg:col-span-4 flex flex-col gap-6">
-          {/* Quick Join Card */}
+          {/* Join Button */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="glass-panel p-6 h-fit"
+            className="glass-panel p-6"
           >
             <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
               <Rocket className="w-5 h-5 text-violet-400" />
-              Entrada Rápida
+              Entrar no Jogo
             </h3>
-            <form className="space-y-4">
-              <div>
-                <input 
-                  type="text" 
-                  placeholder="Código do Jogo" 
-                  className="w-full glass-input text-center text-lg font-mono tracking-widest uppercase"
-                  maxLength={6}
-                />
-              </div>
-              <Link 
-                href="/play" 
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl hover:brightness-110 transition-all"
-              >
-                <Play className="w-5 h-5" />
-                Entrar
-              </Link>
-            </form>
+            <Link 
+              href="/play" 
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl hover:brightness-110 transition-all"
+            >
+              <Play className="w-5 h-5" />
+              Jogar no Telemóvel
+            </Link>
           </motion.div>
 
           {/* How to Play Card */}
