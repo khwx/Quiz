@@ -38,8 +38,8 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
             {/* Timer Bar & Category */}
             <div className="w-full flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
-                    <span className="bg-white/10 px-6 py-2 rounded-full font-bold uppercase tracking-widest text-violet-300">
-                        {question.category || "Geral"}
+                    <span className="bg-white/5 backdrop-blur-md px-6 py-2 rounded-full font-black uppercase tracking-tighter text-violet-400 border border-white/10 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                        Arena: {question.category || "Geral"}
                     </span>
                     {questionSource && (
                         <div className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider ${

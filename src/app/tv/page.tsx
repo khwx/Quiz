@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import { QRCodeSVG } from "qrcode.react";
-import { Users, Play, Loader2, Trophy, ArrowRight } from "lucide-react";
+import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Trash2 } from "lucide-react";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
@@ -47,6 +47,16 @@ export default function TVHost() {
     const [timerDuration, setTimerDuration] = useState(20);
     const [questionCount, setQuestionCount] = useState(5);
     const [questionSource, setQuestionSource] = useState<"DB" | "AI" | null>(null);
+
+    const arenaIcons: Record<string, any> = {
+        "Cultura Geral": <Globe className="w-4 h-4" />,
+        "Capitais do Mundo": <Zap className="w-4 h-4" />,
+        "Bandeiras": <Flag className="w-4 h-4" />,
+        "Cinema": <Film className="w-4 h-4" />,
+        "Desporto": <Trophy className="w-4 h-4" />,
+        "Ciência": <Atom className="w-4 h-4" />,
+        "Animais": <PawPrint className="w-4 h-4" />
+    };
 
     const { playSound } = useSound();
 
@@ -600,23 +610,26 @@ export default function TVHost() {
                         {players.length > 0 && (
                             <div className="p-8 flex flex-col gap-6 bg-black/20 flex-grow">
                                 {/* AGE GROUP SELECTOR */}
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Idade dos Jogadores</label>
-                                    <div className="grid grid-cols-4 gap-2">
+                                <div className="space-y-3">
+                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                                        <GraduationCap className="w-4 h-4 text-violet-500" /> Nível da Arena
+                                    </label>
+                                    <div className="grid grid-cols-4 gap-3">
                                         {[
-                                            { id: "7-9", label: "7-9" },
-                                            { id: "10-14", label: "10-14" },
-                                            { id: "15-17", label: "15-17" },
-                                            { id: "adults", label: "18+" }
+                                            { id: "7-9", label: "Infantil" },
+                                            { id: "10-14", label: "Júnior" },
+                                            { id: "15-17", label: "Teen" },
+                                            { id: "adults", label: "Master" }
                                         ].map((age) => (
                                             <button
                                                 key={age.id}
                                                 onClick={() => setAgeGroup(age.id)}
-                                                className={`py-2 rounded-xl text-sm font-bold transition-all border-2 ${ageGroup === age.id
-                                                    ? "bg-violet-500 border-violet-500 text-white shadow-lg scale-105"
-                                                    : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
+                                                className={`py-3 rounded-2xl text-xs font-bold transition-all border-2 flex flex-col items-center gap-1 ${ageGroup === age.id
+                                                    ? "bg-violet-600 border-violet-400 text-white shadow-[0_0_15px_rgba(139,92,246,0.5)] scale-105"
+                                                    : "bg-white/5 border-white/5 text-gray-400 hover:border-white/10"
                                                     }`}
                                             >
+                                                <span className="opacity-60 uppercase text-[10px]">{age.id === "adults" ? "18+" : age.id}</span>
                                                 {age.label}
                                             </button>
                                         ))}
@@ -624,18 +637,21 @@ export default function TVHost() {
                                 </div>
 
                                 {/* TOPIC SELECTOR */}
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Escolha o Tema</label>
-                                    <div className="flex flex-wrap gap-2">
-                                        {["Cultura Geral", "Capitais do Mundo", "Bandeiras", "Cinema", "Desporto", "Ciência", "Animais"].map(t => (
+                                <div className="space-y-3">
+                                    <label className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                                        <Zap className="w-4 h-4 text-pink-500" /> Escolha a Arena
+                                    </label>
+                                    <div className="flex flex-wrap gap-3">
+                                        {Object.keys(arenaIcons).map(t => (
                                             <button
                                                 key={t}
                                                 onClick={() => { setTopic(t); setCustomTopic(""); }}
-                                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${topic === t && !customTopic
-                                                    ? "bg-pink-500 text-white scale-105 shadow-lg shadow-pink-500/30"
-                                                    : "bg-white/10 text-gray-300 hover:bg-white/20"
+                                                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 border-2 ${topic === t && !customTopic
+                                                    ? "bg-pink-500 border-pink-400 text-white scale-105 shadow-[0_0_15px_rgba(236,72,153,0.5)]"
+                                                    : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10 hover:border-white/10"
                                                     }`}
                                             >
+                                                {arenaIcons[t]}
                                                 {t}
                                             </button>
                                         ))}
@@ -687,26 +703,23 @@ export default function TVHost() {
                                     </div>
                                 </div>
 
-                                <button
-                                    onClick={() => updateStatus("STARTING")}
-                                    disabled={isGenerating}
-                                    className="btn-quiz btn-primary w-full flex items-center justify-center gap-2 group relative overflow-hidden mt-auto"
-                                >
-                                    {isGenerating ? (
-                                            <div className="flex flex-col items-center gap-2 w-full">
-                                                <div className="flex items-center gap-3">
-                                                    <Loader2 className="w-6 h-6 animate-spin" />
-                                                    <span className="animate-pulse text-lg">A Criar Quiz com IA...</span>
-                                                </div>
-                                                <span className="text-xs text-white/50 font-normal normal-case">Isto pode demorar uns segundos (estamos a inventar perguntas!)</span>
-                                            </div>
-                                    ) : (
-                                        <>
-                                            <Play className="group-hover:translate-x-1 transition-transform" />
-                                            COMEÇAR JOGO ({customTopic || topic})
-                                        </>
-                                    )}
-                                </button>
+                                    <button
+                                        onClick={() => updateStatus("STARTING")}
+                                        disabled={players.length === 0 || isGenerating || status === "STARTING"}
+                                        className="btn-quiz btn-primary w-full py-6 flex justify-center items-center gap-3 relative overflow-hidden group mt-auto"
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity" />
+                                        <span className="relative z-10 flex items-center gap-3 text-2xl tracking-tighter uppercase font-black">
+                                            {(isGenerating || status === "STARTING") ? (
+                                                <>
+                                                    <Loader2 className="animate-spin" />
+                                                    A Invocar Arena...
+                                                </>
+                                            ) : (
+                                                <>Entrar na Arena <ArrowRight className="group-hover:translate-x-2 transition-transform" /></>
+                                            )}
+                                        </span>
+                                    </button>
                             </div>
                         )}
                     </motion.div>
