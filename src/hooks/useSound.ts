@@ -1,33 +1,38 @@
-import { useCallback, useRef, useEffect } from 'react';
+import { useCallback, useRef, useEffect, useState } from 'react';
 
 type SoundType = 'tick' | 'correct' | 'wrong' | 'win';
 
 export function useSound() {
     const audioContextRef = useRef<AudioContext | null>(null);
-    const unlockedRef = useRef(false);
+    const [soundEnabled, setSoundEnabled] = useState(false);
 
     const unlockAudio = useCallback(() => {
-        if (!unlockedRef.current) {
-            try {
-                audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-                if (audioContextRef.current?.state === 'suspended') {
-                    audioContextRef.current.resume();
-                }
-                unlockedRef.current = true;
-            } catch (e) {
-                console.log('Audio unlock failed:', e);
+        try {
+            audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+            if (audioContextRef.current?.state === 'suspended') {
+                audioContextRef.current.resume();
             }
+            setSoundEnabled(true);
+            console.log('🔊 Som ativado!');
+        } catch (e) {
+            console.log('Audio unlock failed:', e);
         }
     }, []);
 
     // Auto-unlock on first user interaction
     useEffect(() => {
-        const unlock = () => unlockAudio();
+        const unlock = () => {
+            unlockAudio();
+            console.log('👆 Unlock via interação');
+        };
         document.addEventListener('click', unlock, { once: true });
         document.addEventListener('touchstart', unlock, { once: true });
+        document.addEventListener('keydown', unlock, { once: true });
+        
         return () => {
             document.removeEventListener('click', unlock);
             document.removeEventListener('touchstart', unlock);
+            document.removeEventListener('keydown', unlock);
         };
     }, [unlockAudio]);
 

@@ -13,6 +13,7 @@ import Podium from "@/components/tv/Podium";
 import LiveLeaderboard from "@/components/tv/LiveLeaderboard";
 import { useSound } from "@/hooks/useSound";
 import CastButton from "@/components/CastButton";
+import SoundEnableButton from "@/components/SoundEnableButton";
 
 export default function TVHost() {
     const { gameId, setGameId, setPlayers, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
@@ -538,6 +539,9 @@ export default function TVHost() {
 
     return (
         <main className="min-h-screen relative overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center">
+            {/* Audio Enable Button */}
+            <SoundEnableButton />
+            
             {/* Background Effects */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-violet-600/10 rounded-full blur-[150px]" />
