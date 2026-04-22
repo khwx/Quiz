@@ -130,7 +130,7 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                         }
 
                         const finalUrl = flagCode 
-                            ? `https://flagcdn.com/w640/${flagCode}.png` 
+                            ? `/flags/${flagCode}.svg` 
                             : question.image_url;
 
                         if (!finalUrl) return (
