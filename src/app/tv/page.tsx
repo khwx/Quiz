@@ -574,11 +574,11 @@ export default function TVHost() {
                             <h1 className="text-5xl lg:text-7xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'Space Grotesk' }}>
                                 Preparem os <span className="text-gradient">telemóveis!</span>
                             </h1>
-                            <p className="text-xl text-white/60">Entrem em <span className="text-white font-bold">quizverse.app/play</span></p>
+                            <p className="text-xl text-white/60">Entrem em <span className="text-white font-bold">quiz-two-zeta-67.vercel.app</span></p>
                         </div>
 
                         <div className="glass-panel p-6 w-fit relative">
-                            <QRCodeSVG value={`https://quizverse.app/play?pin=${pin}`} size={220} level="H" />
+                            <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={220} level="H" />
                         </div>
 
                         <div className="flex flex-col gap-2">
