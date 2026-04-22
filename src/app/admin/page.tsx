@@ -14,6 +14,7 @@ interface Question {
     category: string;
     options: string[];
     correct_option: number;
+    image_url?: string;
 }
 
 interface CategoryStats {
@@ -427,7 +428,12 @@ export default function AdminPage() {
                             transition={{ delay: index * 0.05 }}
                             className="glass-card hover:bg-white/10 transition-colors"
                         >
-                            <div className="flex items-start justify-between gap-4">
+                            <div className="flex items-start gap-4">
+                                {q.image_url && (
+                                    <div className="w-24 h-16 rounded-lg overflow-hidden bg-black/20 flex-shrink-0">
+                                        <img src={q.image_url} alt="" className="w-full h-full object-cover" />
+                                    </div>
+                                )}
                                 <div className="flex-1">
                                     <div className="flex items-center gap-3 mb-2">
                                         <span className="bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full text-xs font-bold">
