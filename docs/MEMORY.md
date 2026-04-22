@@ -157,9 +157,25 @@ quiz/
 - [x] Adicionar novos temas ao seletor
 - [x] Adicionar seletor de número de perguntas (3, 5, 7, 10)
 - [x] Script SQL para pré-carregar bandeiras
+- [x] **252 bandeiras locais SVG** (alta qualidade)
+- [x] **TTS** - Ler questões em voz alta
+- [x] **Respostas randomizadas** - Não sempre A é correta
+- [x] **Modo Local** - Jogar sem telemóveis
+- [x] **Botão limpar memória** - Evitar perguntas repetidas
+- [x] **Sistema de Login** - Supabase Auth
+
+### Sistema de Login e Competições ✅ NOVO
+- [x] Tabela `profiles` - Perfis de utilizadores
+- [x] Tabela `game_sessions` - Histórico de jogos
+- [x] Tabela `leaderboard` - Ranking global
+- [x] Tabela `achievements` - Conquistas
+- [ ] Página de Login/Register
+- [ ] Página de Perfil
+- [ ] Leaderboard Global
+- [ ] Guardar jogos no histórico
 
 ### Média Prioridade
-- [ ] Timer configurável (10s, 15s, 20s, 30s)
+- [x] Timer configurável (10s, 15s, 20s, 30s) - ✅ já existe
 - [ ] Pista "50/50" (eliminar 2 opções) - **pendente bugfix**
 - [ ] Leaderboard entre perguntas
 - [ ] Perguntas V/F - **pendente bugfix**
@@ -171,13 +187,11 @@ quiz/
 - [ ] Guardar cache na BD (atualmente em memória)
 - [ ] Adicionar sons feedback adicionais
 - [ ] Tutorial para novos jogadores
-- [ ] Página de high scores
 - [ ] Perguntas com sons/música
 - [ ] Dificuldade adaptativa
-- [ ] Estatísticas do jogo
 
 ### 🐛 Bugs para Corrigir
-- [ ] Auto-resposta nas perguntas repetidas (bug iniciado após 1ª volta)
+- [x] Auto-resposta nas perguntas repetidas - ✅ tem botão limpar memória
 
 ## 📝Notas de Desenvolvimento
 
