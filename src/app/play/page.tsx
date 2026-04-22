@@ -3,14 +3,14 @@
 import { use, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/context/GameContext";
-import { Gamepad2, Send, CheckCircle2, Loader2, Trophy, Wifi, WifiOff, Rocket, ArrowLeft } from "lucide-react";
+import { Gamepad2, Send, CheckCircle2, Loader2, Trophy, Wifi, WifiOff, Rocket, ArrowLeft, LogOut } from "lucide-react";
 import AnswerController from "@/components/mobile/AnswerController";
 import { supabase } from "@/lib/supabase";
 import { useSound } from "@/hooks/useSound";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
     const resolvedParams = use(searchParams);
-    const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players } = useGame();
+    const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players, setGameId } = useGame();
     const [pin, setPin] = useState(resolvedParams.pin || "");
     const [name, setName] = useState("");
     const [isJoining, setIsJoining] = useState(false);
@@ -137,6 +137,22 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         }
     };
 
+    const handleLeave = async () => {
+        if (window.confirm("Queres sair do jogo?")) {
+            // Remove player from game
+            if (gameId) {
+                const player = players.find(p => p.name === name);
+                if (player) {
+                    await supabase.from('players').delete().eq('id', player.id);
+                }
+            }
+            // Reset state and go to home
+            setHasJoined(false);
+            setGameId(null);
+            window.location.href = '/';
+        }
+    };
+
 
     if (hasJoined) {
         if (status === "LOBBY" || status === "STARTING") {
@@ -163,6 +179,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                             <Wifi className="w-4 h-4 text-emerald-400" />
                             <span className="text-sm text-emerald-400">Conectado</span>
                         </div>
+                        <button 
+                            onClick={handleLeave}
+                            className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-full hover:bg-red-500/20 transition-colors"
+                        >
+                            <LogOut className="w-4 h-4" />
+                            <span className="text-sm">Sair</span>
+                        </button>
                     </motion.div>
                 </main>
             );
