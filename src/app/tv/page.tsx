@@ -271,6 +271,7 @@ export default function TVHost() {
                     .from("questions")
                     .select("*")
                     .ilike("category", finalTopic);
+                const isUniversalTopic = finalTopic === "Bandeiras" || finalTopic === "Capitais do Mundo";
 
                 if (!isUniversalTopic) {
                     if (targetAge === 18) {
