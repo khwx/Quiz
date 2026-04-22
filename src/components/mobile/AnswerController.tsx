@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, Flag } from "lucide-react";
 
 interface AnswerControllerProps {
     onAnswer: (index: number) => void;
@@ -10,6 +10,7 @@ interface AnswerControllerProps {
     questionText?: string;
     questionIndex?: number;
     totalQuestions?: number;
+    onReport?: (reason: string) => void;
 }
 
 const colors = [
@@ -21,7 +22,7 @@ const colors = [
 
 const icons = ["A", "B", "C", "D"];
 
-export default function AnswerController({ onAnswer, disabled, questionText, questionIndex, totalQuestions }: AnswerControllerProps) {
+export default function AnswerController({ onAnswer, disabled, questionText, questionIndex, totalQuestions, onReport }: AnswerControllerProps) {
     const [selected, setSelected] = useState<number | null>(null);
 
     const handleClick = (idx: number) => {
@@ -30,62 +31,61 @@ export default function AnswerController({ onAnswer, disabled, questionText, que
         onAnswer(idx);
     };
 
-    if (selected !== null) {
-        return (
-            <div className="flex flex-col items-center justify-center p-8 h-full">
-                <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className={`p-12 rounded-3xl mb-8 border-b-8 shadow-2xl ${colors[selected]}`}
-                >
-                    <span className="text-6xl font-black text-white/90 drop-shadow-lg">
-                        {icons[selected]}
-                    </span>
-                </motion.div>
-                <h2 className="text-3xl font-bold text-white mb-2">Resposta Enviada!</h2>
-                <p className="text-gray-400">Aguarda pelos outros...</p>
-            </div>
-        );
-    }
+    const handleReport = () => {
+        const reason = prompt("Qual é o problema desta pergunta? ( Resposta errada, Bandeira Trocada, etc)");
+        if (reason && onReport) {
+            onReport(reason);
+        }
+    };
 
     return (
-        <div className="flex flex-col gap-3 bg-[#0f172a] p-4 min-h-screen">
-            {(questionIndex !== undefined || totalQuestions !== undefined) && (
-                <div className="flex justify-between items-center px-2 py-2">
-                    <span className="text-gray-500 text-sm font-mono">
-                        {questionIndex !== undefined ? `Pergunta ${questionIndex + 1}` : ""}
-                        {totalQuestions !== undefined && ` de ${totalQuestions}`}
-                    </span>
+        <div className="flex flex-col h-full w-full max-w-md mx-auto p-4">
+            {/* Header with report button */}
+            <div className="flex justify-between items-center mb-4">
+                <div className="text-white/60 text-sm">
+                    Pergunta {questionIndex ? questionIndex + 1 : "?"} 
+                    {totalQuestions ? ` / ${totalQuestions}` : ""}
+                </div>
+                {onReport && (
+                    <button
+                        onClick={handleReport}
+                        className="flex items-center gap-1 px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-full text-xs transition-colors"
+                    >
+                        <Flag className="w-3 h-3" />
+                        Reportar
+                    </button>
+                )}
+            </div>
+
+            {/* Options Grid */}
+            <div className="grid grid-cols-2 gap-3 flex-1 content-center">
+                {icons.map((icon, idx) => (
+                    <motion.button
+                        key={idx}
+                        onClick={() => handleClick(idx)}
+                        disabled={disabled || selected !== null}
+                        whileTap={{ scale: 0.95 }}
+                        className={`
+                            ${colors[idx]} 
+                            ${selected === idx ? "ring-4 ring-white scale-95" : ""}
+                            ${disabled || selected !== null ? "opacity-50 cursor-not-allowed" : ""}
+                            aspect-square rounded-2xl text-4xl font-bold text-white/90
+                            shadow-lg border-b-4 active:border-b-0 active:translate-y-1
+                            transition-all duration-100
+                        `}
+                    >
+                        {icon}
+                    </motion.button>
+                ))}
+            </div>
+
+            {/* Loading indicator */}
+            {disabled && (
+                <div className="mt-4 flex items-center justify-center gap-2 text-white/50">
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>AguardaNext...</span>
                 </div>
             )}
-
-            {questionText && (
-                <div className="bg-white/5 rounded-xl p-4 mb-2">
-                    <p className="text-white text-lg font-medium text-center leading-relaxed">
-                        {questionText}
-                    </p>
-                </div>
-            )}
-
-            {colors.map((color, idx) => (
-                <button
-                    key={idx}
-                    onClick={() => handleClick(idx)}
-                    disabled={disabled}
-                    className={`
-                        flex-1 ${color} border-b-8 rounded-2xl
-                        flex items-center justify-center gap-3
-                        active:scale-95 transition-all
-                        text-4xl font-black text-white
-                    `}
-                    style={{ minHeight: '80px' }}
-                >
-                    <span className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center">
-                        {icons[idx]}
-                    </span>
-                    <span className="text-lg font-bold text-white/90">Opção {icons[idx]}</span>
-                </button>
-            ))}
         </div>
     );
 }

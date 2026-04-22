@@ -3,7 +3,7 @@
 import { use, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/context/GameContext";
-import { Gamepad2, Send, CheckCircle2, Loader2, Trophy, Wifi, WifiOff, Rocket, ArrowLeft, LogOut } from "lucide-react";
+import { Gamepad2, Send, CheckCircle2, Loader2, Trophy, Wifi, WifiOff, Rocket, ArrowLeft, LogOut, Flag } from "lucide-react";
 import AnswerController from "@/components/mobile/AnswerController";
 import { supabase } from "@/lib/supabase";
 import { useSound } from "@/hooks/useSound";
@@ -139,18 +139,45 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
     const handleLeave = async () => {
         if (window.confirm("Queres sair do jogo?")) {
-            // Remove player from game
             if (gameId) {
                 const player = players.find(p => p.name === name);
                 if (player) {
                     await supabase.from('players').delete().eq('id', player.id);
                 }
             }
-            // Reset state and go to home
             setHasJoined(false);
             setGameId(null);
             window.location.href = '/';
         }
+    };
+
+    const handleReport = async (reason: string) => {
+        if (!currentQuestionId) return;
+        
+        // Get question current metadata
+        const { data: q } = await supabase
+            .from('questions')
+            .select('metadata')
+            .eq('id', currentQuestionId)
+            .single();
+        
+        const currentReports = q?.metadata?.reports || [];
+        
+        // Add new report
+        await supabase
+            .from('questions')
+            .update({
+                metadata: {
+                    reports: [...currentReports, { 
+                        reason, 
+                        reporter: name,
+                        date: new Date().toISOString() 
+                    }]
+                }
+            })
+            .eq('id', currentQuestionId);
+        
+        alert("Obrigado! Pergunta reportada.");
     };
 
 
@@ -201,6 +228,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                         questionText={undefined}
                         questionIndex={currentQuestionIndex}
                         totalQuestions={undefined}
+                        onReport={handleReport}
                     />
                 </main>
             );

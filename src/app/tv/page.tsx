@@ -78,6 +78,30 @@ export default function TVHost() {
         updateStatus("REVEAL");
     };
 
+    const handleReportQuestion = async () => {
+        const reason = prompt("Qual é o problema desta pergunta?");
+        if (!reason || !currentQ?.id) return;
+
+        const { data: q } = await supabase
+            .from('questions')
+            .select('metadata')
+            .eq('id', currentQ.id)
+            .single();
+        
+        const currentReports = q?.metadata?.reports || [];
+        
+        await supabase
+            .from('questions')
+            .update({
+                metadata: {
+                    reports: [...currentReports, { reason, date: new Date().toISOString() }]
+                }
+            })
+            .eq('id', currentQ.id);
+        
+        alert("Obrigado! Pergunta reportada.");
+    };
+
     // Initial Game Creation or Connection
     useEffect(() => {
         const connectToGame = async () => {
@@ -856,19 +880,26 @@ export default function TVHost() {
                         players={players}
                         onRestart={() => {}}
                     />
-                    <button
-                        onClick={() => {
-                            console.log(`🔙 Returning to lobby...`);
-                            setGameId(null);
-                            usedQuestionIdsRef.current = [];
-                            setRound(1);
-                            setCurrentQuestions([]);
-                            window.location.reload();
-                        }}
-                        className="btn-quiz btn-primary flex items-center gap-2 text-xl px-8 py-4"
-                    >
-                        <>Escolher Outro Tema</>
-                    </button>
+<button
+                            onClick={() => {
+                                console.log(`🔙 Returning to lobby...`);
+                                setGameId(null);
+                                usedQuestionIdsRef.current = [];
+                                setRound(1);
+                                setCurrentQuestions([]);
+                                window.location.reload();
+                            }}
+                            className="btn-quiz btn-secondary flex items-center gap-2"
+                        >
+                            <>Escolher Outro Tema</>
+                        </button>
+                        <button
+                            onClick={handleReportQuestion}
+                            className="flex items-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all"
+                        >
+                            <Flag className="w-5 h-5" />
+                            Reportar
+                        </button>
                 </div>
             )}
         </main>
