@@ -1,30 +1,38 @@
--- Sistema de Equipas, Códigos de Jogador e Torneios (CORRIGIDO)
+-- CORREÇÃO: Remover FK para players e usar user_id do auth.users
 
--- 1. Tabela de Equipas
-CREATE TABLE IF NOT EXISTS teams (
+-- 1. Drop old tables
+DROP TABLE IF EXISTS team_members CASCADE;
+DROP TABLE IF EXISTS player_codes CASCADE;
+DROP TABLE IF EXISTS tournament_teams CASCADE;
+DROP TABLE IF EXISTS tournament_rounds CASCADE;
+DROP TABLE IF EXISTS tournaments CASCADE;
+DROP TABLE IF EXISTS teams CASCADE;
+
+-- 2. Create teams (sem FK para players)
+CREATE TABLE teams (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   pin TEXT UNIQUE NOT NULL,
   game_id UUID REFERENCES games(id) ON DELETE CASCADE,
-  created_by UUID, -- Agora reference auth.users, not players
+  created_by UUID,
   max_members INTEGER DEFAULT 4,
   is_active BOOLEAN DEFAULT true,
   total_score INTEGER DEFAULT 0,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 2. Tabela de Membros de Equipa (CORRIGIDO - sem FK para players)
-CREATE TABLE IF NOT EXISTS team_members (
+-- 3. Create team_members (user_id do auth.users)
+CREATE TABLE team_members (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   team_id UUID REFERENCES teams(id) ON DELETE CASCADE,
-  user_id UUID NOT NULL, -- Reference auth.users directly
+  user_id UUID NOT NULL,
   role TEXT DEFAULT 'member',
   joined_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   UNIQUE(team_id, user_id)
 );
 
--- 3. Tabela de Códigos Únicos por Jogador
-CREATE TABLE IF NOT EXISTS player_codes (
+-- 4. Create player_codes
+CREATE TABLE player_codes (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   code TEXT UNIQUE NOT NULL,
   user_id UUID NOT NULL,
@@ -34,8 +42,8 @@ CREATE TABLE IF NOT EXISTS player_codes (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 4. Tabela de Torneios
-CREATE TABLE IF NOT EXISTS tournaments (
+-- 5. Create tournaments
+CREATE TABLE tournaments (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   description TEXT,
@@ -49,8 +57,8 @@ CREATE TABLE IF NOT EXISTS tournaments (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 5. Tabela de Inscrições em Torneios
-CREATE TABLE IF NOT EXISTS tournament_teams (
+-- 6. Create tournament_teams
+CREATE TABLE tournament_teams (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tournament_id UUID REFERENCES tournaments(id) ON DELETE CASCADE,
   team_id UUID REFERENCES teams(id) ON DELETE CASCADE,
@@ -60,8 +68,8 @@ CREATE TABLE IF NOT EXISTS tournament_teams (
   UNIQUE(tournament_id, team_id)
 );
 
--- 6. Resultados de Ronda em Torneios
-CREATE TABLE IF NOT EXISTS tournament_rounds (
+-- 7. Create tournament_rounds
+CREATE TABLE tournament_rounds (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tournament_id UUID REFERENCES tournaments(id) ON DELETE CASCADE,
   round_number INTEGER NOT NULL,
@@ -70,15 +78,7 @@ CREATE TABLE IF NOT EXISTS tournament_rounds (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Habilitar Realtime
-ALTER PUBLICATION supabase_realtime ADD TABLE teams;
-ALTER PUBLICATION supabase_realtime ADD TABLE team_members;
-ALTER PUBLICATION supabase_realtime ADD TABLE player_codes;
-ALTER PUBLICATION supabase_realtime ADD TABLE tournaments;
-ALTER PUBLICATION supabase_realtime ADD TABLE tournament_teams;
-ALTER PUBLICATION supabase_realtime ADD TABLE tournament_rounds;
-
--- Row Level Security
+-- RLS
 ALTER TABLE teams ENABLE ROW LEVEL SECURITY;
 ALTER TABLE team_members ENABLE ROW LEVEL SECURITY;
 ALTER TABLE player_codes ENABLE ROW LEVEL SECURITY;
@@ -87,33 +87,29 @@ ALTER TABLE tournament_teams ENABLE ROW LEVEL SECURITY;
 ALTER TABLE tournament_rounds ENABLE ROW LEVEL SECURITY;
 
 -- Políticas
-DROP POLICY IF EXISTS "teams_policy" ON teams;
 CREATE POLICY "Public Read Teams" ON teams FOR SELECT USING (true);
 CREATE POLICY "Public Create Teams" ON teams FOR INSERT WITH CHECK (true);
 CREATE POLICY "Public Update Teams" ON teams FOR UPDATE USING (true);
 
-DROP POLICY IF EXISTS "team_members_policy" ON team_members;
 CREATE POLICY "Public Read Team Members" ON team_members FOR SELECT USING (true);
 CREATE POLICY "Public Join Team Members" ON team_members FOR INSERT WITH CHECK (true);
 
-DROP POLICY IF EXISTS "player_codes_policy" ON player_codes;
 CREATE POLICY "Public Read Player Codes" ON player_codes FOR SELECT USING (true);
 CREATE POLICY "Public Create Player Codes" ON player_codes FOR INSERT WITH CHECK (true);
 
-DROP POLICY IF EXISTS "tournaments_policy" ON tournaments;
 CREATE POLICY "Public Read Tournaments" ON tournaments FOR SELECT USING (true);
 CREATE POLICY "Public Create Tournaments" ON tournaments FOR INSERT WITH CHECK (true);
 
-DROP POLICY IF EXISTS "tournament_teams_policy" ON tournament_teams;
 CREATE POLICY "Public Read Tournament Teams" ON tournament_teams FOR SELECT USING (true);
 CREATE POLICY "Public Join Tournament Teams" ON tournament_teams FOR INSERT WITH CHECK (true);
 
-DROP POLICY IF EXISTS "tournament_rounds_policy" ON tournament_rounds;
 CREATE POLICY "Public Read Tournament Rounds" ON tournament_rounds FOR SELECT USING (true);
 CREATE POLICY "Public Create Tournament Rounds" ON tournament_rounds FOR INSERT WITH CHECK (true);
 
--- Indices
-CREATE INDEX IF NOT EXISTS idx_teams_pin ON teams(pin);
-CREATE INDEX IF NOT EXISTS idx_player_codes_code ON player_codes(code);
-CREATE INDEX IF NOT EXISTS idx_tournaments_pin ON tournaments(pin);
-CREATE INDEX IF NOT EXISTS idx_tournament_teams_tournament ON tournament_teams(tournament_id);
+-- Realtime
+ALTER PUBLICATION supabase_realtime ADD TABLE teams;
+ALTER PUBLICATION supabase_realtime ADD TABLE team_members;
+ALTER PUBLICATION supabase_realtime ADD TABLE player_codes;
+ALTER PUBLICATION supabase_realtime ADD TABLE tournaments;
+ALTER PUBLICATION supabase_realtime ADD TABLE tournament_teams;
+ALTER PUBLICATION supabase_realtime ADD TABLE tournament_rounds;

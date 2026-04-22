@@ -87,7 +87,7 @@ export default function TeamsPage() {
         .from("team_members")
         .insert({
           team_id: team.id,
-          player_id: user.id,
+          user_id: user.id,
           role: "host",
         });
 
@@ -136,7 +136,7 @@ export default function TeamsPage() {
         .from("team_members")
         .insert({
           team_id: team.id,
-          player_id: user.id,
+          user_id: user.id,
           role: "member",
         });
 
@@ -159,7 +159,7 @@ export default function TeamsPage() {
         .from("team_members")
         .delete()
         .eq("team_id", teamId)
-        .eq("player_id", user.id);
+        .eq("user_id", user.id);
 
       setMyTeam(null);
       await loadTeams();
