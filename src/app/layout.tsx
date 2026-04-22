@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { GameProvider } from "@/context/GameContext";
 import { Analytics } from "@vercel/analytics/react";
@@ -9,14 +9,14 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "QuizMaster | Family Quiz Game",
-  description: "Play together on the big screen! The ultimate family quiz experience.",
+  title: "QUIZVERSE | Family Quiz Game",
+  description: "Playson together on the big screen! The ultimate family quiz experience.",
 };
 
 export default function RootLayout({
@@ -27,12 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} font-inter antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
         <GameProvider>
           {children}
         </GameProvider>
-        {/* Load Google Cast Framework */}
         <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" defer></script>
         <Analytics />
       </body>

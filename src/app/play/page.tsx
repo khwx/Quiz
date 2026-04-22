@@ -3,7 +3,7 @@
 import { use, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/context/GameContext";
-import { Gamepad2, Send, CheckCircle2, Loader2, Trophy } from "lucide-react";
+import { Gamepad2, Send, CheckCircle2, Loader2, Trophy, Wifi, WifiOff, Rocket, ArrowLeft } from "lucide-react";
 import AnswerController from "@/components/mobile/AnswerController";
 import { supabase } from "@/lib/supabase";
 import { useSound } from "@/hooks/useSound";
@@ -22,18 +22,16 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
     const { playSound } = useSound();
 
-    // Reset answer state when question index changes
     useEffect(() => {
         if (status === "QUESTION") {
             setHasAnswered(false);
             setSelectedOption(null);
             setCorrectOption(null);
             setStartTime(Date.now());
-            console.log("📱 New question started, resetting mobile state");
+            console.log("New question started, resetting mobile state");
         }
     }, [status, currentQuestionIndex]);
 
-    // Fetch correct answer when status is REVEAL
     useEffect(() => {
         if (status === "REVEAL" && currentQuestionId) {
             const getResult = async () => {
@@ -58,7 +56,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         }
     }, [status, currentQuestionId]);
 
-    // Play sound when result is revealed
     useEffect(() => {
         if (correctOption !== null && selectedOption !== null) {
             if (selectedOption === correctOption) {
@@ -73,7 +70,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         if (!pin || !name) return;
         setIsJoining(true);
         try {
-            // In real app, fetch gameId from pin first
             const { data, error: pinError } = await supabase.from('games').select('id').eq('pin', pin).single();
 
             if (pinError || !data) {
@@ -95,7 +91,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         if (hasAnswered) return;
         
         if (!currentQuestionId) {
-            console.warn("⚠️ Cannot answer: no question ID");
+            console.warn("Cannot answer: no question ID");
             alert("Aguarde um segundo, a sincronizar com a TV...");
             return;
         }
@@ -106,7 +102,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
         const player = players.find(p => p.name === name);
         if (!player) {
-            console.error("❌ Player not found:", name, players);
+            console.error("Player not found:", name, players);
             alert("Erro: Jogador não encontrado. Atualiza a página do telemóvel.");
             setHasAnswered(false);
             setSelectedOption(null);
@@ -114,7 +110,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         }
 
         const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
-        console.log("📱 Sending answer:", { gameId, playerId: player.id, questionId: currentQuestionId, option: index, timeTaken });
 
         try {
             const res = await fetch("/api/answer", {
@@ -130,13 +125,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
             });
 
             const data = await res.json();
-            console.log("📱 API Response:", data);
 
             if (!res.ok) {
                 throw new Error(data.error || "Falha ao enviar resposta");
             }
         } catch (err: any) {
-            console.error("❌ Failed to submit answer:", err);
+            console.error("Failed to submit answer:", err);
             alert("Erro ao enviar resposta: " + err.message);
             setHasAnswered(false);
             setSelectedOption(null);
@@ -147,18 +141,27 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     if (hasJoined) {
         if (status === "LOBBY" || status === "STARTING") {
             return (
-                <main className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+                <main className="min-h-screen relative overflow-x-hidden">
+                    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
+                        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
+                    </div>
+                    
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="glass-card w-full max-w-sm flex flex-col items-center gap-6"
+                        className="relative z-10 glass-panel w-full max-w-sm flex flex-col items-center gap-6 m-6"
                     >
-                        <div className="bg-green-500/20 p-4 rounded-full">
-                            <CheckCircle2 className="w-16 h-16 text-green-500" />
+                        <div className="bg-emerald-500/20 p-6 rounded-full">
+                            <CheckCircle2 className="w-20 h-20 text-emerald-400" />
                         </div>
-                        <div>
-                            <h2 className="text-3xl font-bold mb-2">Estás dentro!</h2>
-                            <p className="text-gray-400">Olha para a TV, {name}. O jogo vai começar em breve!</p>
+                        <div className="text-center">
+                            <h2 className="text-3xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>ENTROU!</h2>
+                            <p className="text-white/60">Olá {name}! Olha para a TV, o jogo vai começar!</p>
+                        </div>
+                        <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
+                            <Wifi className="w-4 h-4 text-emerald-400" />
+                            <span className="text-sm text-emerald-400">Conectado</span>
                         </div>
                     </motion.div>
                 </main>
@@ -196,14 +199,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                             <>
                                 <div className="text-white opacity-50"><Loader2 className="w-24 h-24 animate-spin" /></div>
                                 <h2 className="text-4xl font-black text-white italic">DEMASIADO LENTO!</h2>
-                                <p className="text-white/60 text-xl font-bold">Não chegaste a responder a tempo...</p>
+                                <p className="text-white/60 text-xl font-bold uppercase tracking-widest">Não chegaste a responder...</p>
                             </>
                         ) : isCorrect ? (
                             <>
                                 <motion.div
                                     animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }}
                                     transition={{ repeat: Infinity, duration: 2 }}
-                                    className="bg-white/20 p-6 rounded-full"
+                                    className="bg-white/20 p-8 rounded-full"
                                 >
                                     <Trophy className="w-24 h-24 text-yellow-300" />
                                 </motion.div>
@@ -212,7 +215,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                             </>
                         ) : (
                             <>
-                                <div className={`p-6 rounded-3xl mb-4 border-b-8 shadow-xl ${["bg-red-500 border-red-800", "bg-blue-500 border-blue-800", "bg-yellow-500 border-yellow-800", "bg-green-500 border-green-800"][selectedOption || 0]}`}>
+                                <div className={`p-8 rounded-3xl mb-4 border-b-8 shadow-xl ${["bg-red-500 border-red-800", "bg-blue-500 border-blue-800", "bg-yellow-500 border-yellow-800", "bg-green-500 border-green-800"][selectedOption || 0]}`}>
                                     <span className="text-6xl font-black text-white/90 drop-shadow-lg">
                                         {["A", "B", "C", "D"][selectedOption || 0]}
                                     </span>
@@ -221,7 +224,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                                 <p className="text-white/80 text-xl font-bold uppercase tracking-widest">Tenta na próxima!</p>
                             </>
                         )}
-                        <p className="mt-8 text-white/40 font-mono text-sm animate-pulse">Aguarda pela próxima pergunta na TV</p>
+                        <p className="text-white/40 text-sm mt-8 animate-pulse">Aguarda pela próxima pergunta</p>
                     </motion.div>
                 </main>
             );
@@ -230,72 +233,90 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         return (
             <main className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
                 <Trophy className="w-24 h-24 text-yellow-500 mb-6 animate-bounce" />
-                <h2 className="text-3xl font-bold text-white">Fim do Tempo!</h2>
-                <p className="text-gray-400">Vê a resposta na TV...</p>
+                <h2 className="text-3xl font-bold text-white">Fim do Jogo!</h2>
+                <p className="text-gray-400">Vê a classificação na TV...</p>
             </main>
         )
     }
 
     return (
-        <main className="min-h-screen flex flex-col p-6 items-center justify-center">
+        <main className="min-h-screen relative overflow-x-hidden">
+            {/* Background Effects */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
+                <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
+            </div>
+            
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full max-w-sm"
+                className="relative z-10 w-full max-w-sm mx-auto p-6"
             >
                 <div className="flex items-center gap-4 mb-8 justify-center">
-                    <div className="p-3 bg-pink-500 rounded-2xl shadow-lg shadow-pink-500/20">
-                        <Gamepad2 className="w-8 h-8 text-white" />
+                    <div className="p-4 bg-gradient-to-r from-violet-600 to-pink-600 rounded-2xl shadow-lg shadow-pink-500/20">
+                        <Gamepad2 className="w-10 h-10 text-white" />
                     </div>
-                    <h1 className="text-4xl font-black italic">JOGAR</h1>
+                    <h1 className="text-4xl font-black text-white" style={{ fontFamily: 'Space Grotesk' }}>QUIZ<span className="text-pink-500">VERSE</span></h1>
                 </div>
 
-                <div className="space-y-4">
-                    <div className="glass-card flex flex-col gap-4">
-                        <div>
-                            <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">
-                                PIN do Jogo
-                            </label>
-                            <input
-                                type="tel"
-                                inputMode="numeric"
-                                pattern="[0-9]*"
-                                placeholder="Exemplo: 123456"
-                                value={pin}
-                                onChange={(e) => setPin(e.target.value.replace(/\D/g, ''))}
-                                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-2xl font-mono text-center tracking-[0.2em] focus:outline-none focus:border-pink-500 transition-colors"
-                                maxLength={6}
-                            />
-                        </div>
-
-                        <div>
-                            <label className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 block">
-                                O Teu Nome / Equipa
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Como te queres chamar?"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-xl focus:outline-none focus:border-pink-500 transition-colors"
-                            />
-                        </div>
-
-                        <button
-                            onClick={handleJoin}
-                            disabled={isJoining || !pin || !name}
-                            className="btn-quiz btn-secondary w-full flex items-center justify-center gap-2"
-                        >
-                            {isJoining ? (
-                                <Loader2 className="w-6 h-6 animate-spin" />
-                            ) : (
-                                <>
-                                    <Send className="w-5 h-5" />
-                                    ENTRAR AGORA
-                                </>
-                            )}
-                        </button>
+                <div className="glass-panel p-6 space-y-6">
+                    <div>
+                        <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 block">
+                            Código do Jogo
+                        </label>
+                        <input
+                            type="tel"
+                            inputMode="numeric"
+                            pattern="[0-9]*"
+                            placeholder="000000"
+                            value={pin}
+                            onChange={(e) => setPin(e.target.value.replace(/\D/g, ''))}
+                            className="w-full glass-input text-center text-3xl font-mono tracking-[0.3em] uppercase"
+                            maxLength={6}
+                        />
                     </div>
+
+                    <div>
+                        <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 block">
+                            O Teu Nome
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Como te queres chamar?"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="w-full glass-input text-xl"
+                        />
+                    </div>
+
+                    <button
+                        onClick={handleJoin}
+                        disabled={isJoining || !pin || !name}
+                        className={`w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl font-bold transition-all ${
+                            isJoining || !pin || !name
+                            ? 'bg-white/5 text-white/30 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-[0.98] active:scale-[0.95]'
+                        }`}
+                    >
+                        {isJoining ? (
+                            <Loader2 className="w-6 h-6 animate-spin" />
+                        ) : (
+                            <>
+                                <Rocket className="w-5 h-5" />
+                                ENTRAR NO JOGO
+                            </>
+                        )}
+                    </button>
+                </div>
+
+                <div className="mt-8 text-center">
+                    <button 
+                        onClick={() => window.history.back()}
+                        className="flex items-center gap-2 text-white/40 hover:text-white/60 transition-colors mx-auto"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        <span className="text-sm">Voltar</span>
+                    </button>
                 </div>
             </motion.div>
         </main>

@@ -516,8 +516,12 @@ export default function TVHost() {
     // Loading Check
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-[#0f172a] text-white">
-                <Loader2 className="w-12 h-12 animate-spin text-pink-500" />
+            <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+                <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                    <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
+                    <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
+                </div>
+                <Loader2 className="w-12 h-12 animate-spin text-violet-400 relative z-10" />
             </div>
         );
     }
