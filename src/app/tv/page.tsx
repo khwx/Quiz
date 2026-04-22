@@ -395,7 +395,7 @@ export default function TVHost() {
                 console.error("Question loading failed:", err);
                 // Revert status so user can try again
                 updateStatus("LOBBY");
-                alert("Falha ao gerar perguntas. Tenta outro tema ou limpa a memória das perguntas usadas.");
+                alert("Falha ao gerar perguntas: " + (err instanceof Error ? err.message : "Erro desconhecido") + "\nTenta outro tema ou limpa a memória das perguntas usadas.");
             } finally {
                 setIsGenerating(false);
                 isStartingRef.current = false;
