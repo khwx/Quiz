@@ -5,8 +5,8 @@ import { supabase } from "@/lib/supabase";
 import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Simple admin password (in production, use environment variable and server-side auth)
-const ADMIN_PASSWORD = "admin123";
+// Admin password from env or fallback
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin123";
 
 interface Question {
     id: string;
