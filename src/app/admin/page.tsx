@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff } from "lucide-react";
+import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff, Shield, ShieldCheck, Users, Star } from "lucide-react";
 import { motion } from "framer-motion";
-
-// Fixed default password - same on server and client
-const FALLBACK_ADMIN_PASSWORD = "admin123";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Question {
     id: string;
@@ -30,16 +29,21 @@ interface DuplicateGroup {
     duplicates: { question: Question; similarity: number }[];
 }
 
-// Normalize text for comparison: lowercase, remove accents, remove punctuation
+interface AdminUser {
+    id: string;
+    email: string;
+    role: string;
+    username: string;
+}
+
 function normalizeText(text: string): string {
     return text
         .toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove accents
-        .replace(/[^a-z0-9\s]/g, '') // remove punctuation
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\s]/g, '')
         .trim();
 }
 
-// Portuguese stopwords to ignore
 const STOPWORDS = new Set([
     'o', 'a', 'os', 'as', 'um', 'uma', 'uns', 'umas', 'de', 'do', 'da', 'dos', 'das',
     'em', 'no', 'na', 'nos', 'nas', 'por', 'para', 'com', 'sem', 'sob', 'sobre',
@@ -57,7 +61,6 @@ function getSignificantWords(text: string): Set<string> {
     return new Set(words);
 }
 
-// Jaccard similarity between two sets of words (0 to 1)
 function wordSimilarity(a: Set<string>, b: Set<string>): number {
     if (a.size === 0 && b.size === 0) return 1;
     const intersection = new Set([...a].filter(x => b.has(x)));
@@ -68,28 +71,21 @@ function wordSimilarity(a: Set<string>, b: Set<string>): number {
 function findDuplicates(questions: Question[], threshold = 0.6): DuplicateGroup[] {
     const groups: DuplicateGroup[] = [];
     const used = new Set<string>();
-
-    // Pre-compute word sets
     const wordSets = new Map<string, Set<string>>();
     questions.forEach(q => wordSets.set(q.id, getSignificantWords(q.text)));
 
     for (let i = 0; i < questions.length; i++) {
         if (used.has(questions[i].id)) continue;
-
         const anchor = questions[i];
         const anchorWords = wordSets.get(anchor.id)!;
         const duplicates: { question: Question; similarity: number }[] = [];
 
         for (let j = i + 1; j < questions.length; j++) {
             if (used.has(questions[j].id)) continue;
-
             const candidate = questions[j];
-            // Only compare within same category
             if (normalizeText(anchor.category) !== normalizeText(candidate.category)) continue;
-
             const candidateWords = wordSets.get(candidate.id)!;
             const sim = wordSimilarity(anchorWords, candidateWords);
-
             if (sim >= threshold) {
                 duplicates.push({ question: candidate, similarity: sim });
                 used.add(candidate.id);
@@ -98,18 +94,20 @@ function findDuplicates(questions: Question[], threshold = 0.6): DuplicateGroup[
 
         if (duplicates.length > 0) {
             used.add(anchor.id);
-            groups.push({ anchor, duplicates: duplicates.sort((a, b) => b.similarity - a.similarity) });
+            groups.push({ anchor, duplicates });
         }
     }
-
     return groups;
 }
 
 export default function AdminPage() {
+    const router = useRouter();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
-    const [authError, setAuthError] = useState("");
+    const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
+    const [adminUsers, setAdminUsers] = useState<AdminUser[]>([]);
+    const [newAdminEmail, setNewAdminEmail] = useState("");
+    const [newAdminRole, setNewAdminRole] = useState("moderator");
+    const [showAddAdmin, setShowAddAdmin] = useState(false);
     
     const [questions, setQuestions] = useState<Question[]>([]);
     const [stats, setStats] = useState<CategoryStats[]>([]);
@@ -119,423 +117,400 @@ export default function AdminPage() {
     const [isScanning, setIsScanning] = useState(false);
     const [showDuplicates, setShowDuplicates] = useState(false);
     const [showReported, setShowReported] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
 
-    const handleLogin = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (password === FALLBACK_ADMIN_PASSWORD) {
-            setIsAuthenticated(true);
-            setAuthError("");
-        } else {
-            setAuthError("Password incorreta");
+    useEffect(() => {
+        checkAuth();
+    }, []);
+
+    const checkAuth = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) {
+            router.push("/login");
+            return;
+        }
+
+        const { data: profile } = await supabase
+            .from("profiles")
+            .select("*")
+            .eq("id", user.id)
+            .single();
+
+        const userRole = profile?.role || 'user';
+        
+        if (userRole !== 'admin' && userRole !== 'moderator') {
+            alert("Não tens permissão para aceder ao painel de administração.");
+            router.push("/");
+            return;
+        }
+
+        setCurrentUser({
+            id: user.id,
+            email: user.email || "",
+            role: userRole,
+            username: profile?.username || user.email?.split('@')[0] || "Admin",
+        });
+        setIsAuthenticated(true);
+        loadData();
+        loadAdminUsers();
+    };
+
+    const loadAdminUsers = async () => {
+        const { data } = await supabase
+            .from("profiles")
+            .select("*")
+            .in("role", ["admin", "moderator"]);
+        setAdminUsers(data || []);
+    };
+
+    const addAdmin = async () => {
+        if (!newAdminEmail || !newAdminRole) return;
+        
+        try {
+            const { data } = await supabase
+                .from("profiles")
+                .select("id")
+                .eq("email", newAdminEmail)
+                .single();
+
+            if (!data) {
+                alert("Utilizador não encontrado. Precisa de fazer login primeiro.");
+                return;
+            }
+
+            await supabase
+                .from("profiles")
+                .update({ role: newAdminRole })
+                .eq("id", data.id);
+
+            alert(`${newAdminEmail} é agora ${newAdminRole}`);
+            setNewAdminEmail("");
+            setShowAddAdmin(false);
+            loadAdminUsers();
+        } catch (error) {
+            alert("Erro ao adicionar admin");
         }
     };
 
-    if (!isAuthenticated) {
-        return (
-            <main className="min-h-screen flex items-center justify-center p-6">
-                <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                    <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
-                    <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
-                </div>
-                
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="relative z-10 glass-panel p-8 w-full max-w-sm"
-                >
-                    <div className="text-center mb-8">
-                        <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl flex items-center justify-center">
-                            <Lock className="w-8 h-8 text-white" />
-                        </div>
-                        <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Admin</h1>
-                        <p className="text-white/50 text-sm">Área protegida</p>
-                    </div>
-                    
-                    <form onSubmit={handleLogin} className="space-y-4">
-                        <div>
-                            <input
-                                type={showPassword ? "text" : "password"}
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full glass-input text-center text-lg"
-                            />
-                        </div>
-                        {authError && (
-                            <p className="text-red-400 text-sm text-center">{authError}</p>
-                        )}
-                        <button
-                            type="submit"
-                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl"
-                        >
-                            <Eye className="w-5 h-5" />
-                            Entrar
-                        </button>
-                    </form>
-                </motion.div>
-            </main>
-        );
-    }
-
-    useEffect(() => {
-        loadData();
-    }, []);
+    const removeAdmin = async (userId: string, email: string) => {
+        if (!confirm(`Remover acesso de ${email}?`)) return;
+        
+        await supabase
+            .from("profiles")
+            .update({ role: "user" })
+            .eq("id", userId);
+        
+        loadAdminUsers();
+    };
 
     const loadData = async () => {
         setLoading(true);
-
-        // Fetch all questions
-        const { data: questionsData } = await supabase
-            .from("questions")
-            .select("*")
-            .order("created_at", { ascending: false });
-
-        if (questionsData) {
-            setQuestions(questionsData);
-
-            // Calculate stats
+        try {
+            const { data: questionsData } = await supabase
+                .from("questions")
+                .select("*")
+                .order("created_at", { ascending: false });
+            
+            setQuestions(questionsData || []);
+            
             const categoryMap = new Map<string, number>();
-            questionsData.forEach(q => {
-                let cat = q.category || "Sem Categoria";
-                // Normalize for display: "ciência" -> "Ciência"
-                cat = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
-
+            questionsData?.forEach(q => {
+                const cat = q.category || "Sem categoria";
                 categoryMap.set(cat, (categoryMap.get(cat) || 0) + 1);
             });
-
-            const statsArray = Array.from(categoryMap.entries()).map(([category, count]) => ({
+            
+            const statsData: CategoryStats[] = Array.from(categoryMap.entries()).map(([category, count]) => ({
                 category,
                 count
             })).sort((a, b) => b.count - a.count);
-
-            setStats(statsArray);
+            
+            setStats(statsData);
+        } catch (error) {
+            console.error("Error loading data:", error);
+        } finally {
+            setLoading(false);
         }
-
-        setLoading(false);
     };
 
-    const deleteQuestion = async (id: string) => {
-        if (!confirm("Tens a certeza que queres apagar esta pergunta?")) return;
-
+    const handleDeleteQuestion = async (id: string) => {
+        if (!confirm("Eliminar esta pergunta?")) return;
+        
         await supabase.from("questions").delete().eq("id", id);
         loadData();
     };
 
-    const reportQuestion = async (id: string) => {
-        const reason = prompt("Qual é o problema desta pergunta?");
-        if (!reason) return;
-
-        const q = questions.find(q => q.id === id);
-        const currentReports = q?.metadata?.reports || [];
-        await supabase
-            .from("questions")
-            .update({
-                metadata: {
-                    reports: [...currentReports, { reason, date: new Date().toISOString() }]
+    const handleDeleteDuplicate = async (id: string, keepBetter: boolean) => {
+        if (keepBetter) {
+            const { data: questionsData } = await supabase.from("questions").select("id, text").eq("id", id);
+            if (questionsData?.[0]) {
+                const similar = questions.filter(q => 
+                    normalizeText(q.text) === normalizeText(questionsData[0].text) &&
+                    q.id !== id
+                );
+                if (similar.length > 0) {
+                    const toDelete = similar.sort((a, b) => b.text.length - a.text.length)[0];
+                    await supabase.from("questions").delete().eq("id", toDelete.id);
                 }
-            })
-            .eq("id", id);
-        
-        alert("Pergunta reportada! Obrigado pelo feedback.");
+            }
+        }
+        await supabase.from("questions").delete().eq("id", id);
         loadData();
     };
 
-    const filteredQuestions = (() => {
-        if (showReported) {
-            return questions.filter(q => q.metadata?.reports && q.metadata.reports.length > 0);
-        }
-        if (selectedCategory === "all") return questions;
-        return questions.filter(q => {
-            const cat = q.category || "Sem Categoria";
-            const normalizedCat = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
-            return normalizedCat === selectedCategory;
-        });
-    })();
+    const handleScanDuplicates = () => {
+        setIsScanning(true);
+        setDuplicateGroups(findDuplicates(questions));
+        setIsScanning(false);
+        setShowDuplicates(true);
+    };
 
-    if (loading) {
+    const filteredQuestions = questions.filter(q => {
+        if (selectedCategory !== "all" && q.category !== selectedCategory) return false;
+        if (searchQuery && !normalizeText(q.text).includes(normalizeText(searchQuery))) return false;
+        return true;
+    });
+
+    const reportedQuestions = questions.filter(q => q.metadata?.reports && q.metadata.reports.length > 0);
+
+    const RoleBadge = ({ role }: { role: string }) => {
+        const colors: Record<string, string> = {
+            admin: "bg-red-500/20 text-red-400 border-red-500/30",
+            moderator: "bg-orange-500/20 text-orange-400 border-orange-500/30",
+            host: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+        };
         return (
-            <div className="min-h-screen bg-[#0f172a] flex items-center justify-center">
-                <div className="text-white text-2xl">A carregar...</div>
+            <span className={`px-2 py-1 text-xs rounded border ${colors[role] || "bg-gray-500/20 text-gray-400"}`}>
+                {role}
+            </span>
+        );
+    };
+
+    if (!isAuthenticated) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="w-8 h-8 border-2 border-violet-400 border-t-transparent rounded-full animate-spin" />
             </div>
         );
     }
 
     return (
-        <main className="min-h-screen bg-[#0f172a] p-8">
-            <div className="max-w-7xl mx-auto">
-                <h1 className="text-5xl font-black text-white mb-8 flex items-center gap-4">
-                    <Database className="text-pink-500" />
-                    Painel Admin
-                </h1>
+        <main className="min-h-screen relative overflow-x-hidden pb-20">
+            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-violet-600/10 blur-[150px]" />
+                <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-pink-600/10 blur-[150px]" />
+            </div>
 
-                {/* Statistics Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-                    <div className="glass-card">
-                        <div className="text-gray-400 text-sm uppercase tracking-wider mb-2">Total</div>
-                        <div className="text-4xl font-black text-white">{questions.length}</div>
-                        <div className="text-gray-500 text-xs mt-1">perguntas</div>
+            <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/10">
+                <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+                    <Link href="/" className="text-xl font-bold text-white/60 hover:text-white transition-colors">
+                        ←
+                    </Link>
+                    <div className="flex items-center gap-3">
+                        <Shield className="w-6 h-6 text-violet-400" />
+                        <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Admin</h1>
                     </div>
-
-                    {stats.slice(0, 3).map(stat => (
-                        <div key={stat.category} className="glass-card">
-                            <div className="text-gray-400 text-sm uppercase tracking-wider mb-2 truncate">
-                                {stat.category}
-                            </div>
-                            <div className="text-4xl font-black text-pink-500">{stat.count}</div>
-                            <div className="text-gray-500 text-xs mt-1">perguntas</div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Reported Questions */}
-                <div className="glass-card mb-6 p-4">
-                    <div className="flex items-center justify-between">
-                        <button
-                            onClick={() => setShowReported(!showReported)}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all ${showReported
-                                ? "bg-amber-500 text-white"
-                                : "bg-white/10 text-gray-300 hover:bg-white/20"
-                            }`}
-                        >
-                            <AlertTriangle size={18} />
-                            Perguntas Reportadas
-                        </button>
+                    <div className="flex items-center gap-2 text-white/60 text-sm">
+                        <span>{currentUser?.email}</span>
+                        <RoleBadge role={currentUser?.role || 'user'} />
                     </div>
                 </div>
+            </header>
 
-                {/* Category Filter */}
-                <div className="glass-card mb-6">
-                    <div className="flex items-center gap-3 mb-4">
-                        <Filter className="text-pink-500" />
-                        <h2 className="text-xl font-bold text-white">Filtrar por Categoria</h2>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                        <button
-                            onClick={() => setSelectedCategory("all")}
-                            className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${selectedCategory === "all"
-                                ? "bg-pink-500 text-white"
-                                : "bg-white/10 text-gray-300 hover:bg-white/20"
-                                }`}
-                        >
-                            Todas ({questions.length})
-                        </button>
-                        {stats.map(stat => (
-                            <button
-                                key={stat.category}
-                                onClick={() => setSelectedCategory(stat.category)}
-                                className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${selectedCategory === stat.category
-                                    ? "bg-pink-500 text-white"
-                                    : "bg-white/10 text-gray-300 hover:bg-white/20"
-                                    }`}
-                            >
-                                {stat.category} ({stat.count})
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Duplicate Detector */}
-                <div className="glass-card mb-6 border-2 border-amber-500/30">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                            <Copy className="text-amber-500" />
-                            <h2 className="text-xl font-bold text-amber-400">Detector de Duplicados</h2>
-                        </div>
-                        <button
-                            onClick={() => {
-                                setIsScanning(true);
-                                // Use setTimeout to allow UI to update before heavy computation
-                                setTimeout(() => {
-                                    const groups = findDuplicates(questions, 0.55);
-                                    setDuplicateGroups(groups);
-                                    setIsScanning(false);
-                                    setShowDuplicates(true);
-                                }, 50);
-                            }}
-                            disabled={isScanning || questions.length === 0}
-                            className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2 disabled:opacity-50"
-                        >
-                            <Search size={20} className={isScanning ? 'animate-spin' : ''} />
-                            {isScanning ? 'A analisar...' : `Analisar ${questions.length} Perguntas`}
-                        </button>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-4">
-                        Encontra perguntas similares ou inversas (ex: &ldquo;Capital de Portugal?&rdquo; vs &ldquo;País de Lisboa?&rdquo;). Usa comparação de palavras-chave com 55% de semelhança mínima.
-                    </p>
-
-                    {showDuplicates && (
-                        <div className="space-y-4 mt-4">
-                            {duplicateGroups.length === 0 ? (
-                                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
-                                    <p className="text-green-400 font-bold text-lg">✅ Nenhum duplicado encontrado!</p>
-                                    <p className="text-gray-500 text-sm">A tua base de dados está limpa.</p>
-                                </div>
-                            ) : (
-                                <>
-                                    <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 flex items-center gap-3">
-                                        <AlertTriangle className="text-amber-500 shrink-0" />
-                                        <p className="text-amber-300">
-                                            Encontrados <span className="font-black text-lg">{duplicateGroups.length}</span> grupos de perguntas similares
-                                            ({duplicateGroups.reduce((acc, g) => acc + g.duplicates.length, 0)} duplicados potenciais)
-                                        </p>
-                                    </div>
-                                    {duplicateGroups.map((group, gi) => (
-                                        <div key={group.anchor.id} className="bg-white/5 rounded-xl p-4 border border-white/10">
-                                            <div className="flex items-center gap-2 mb-3">
-                                                <span className="bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-xs font-bold">
-                                                    Grupo {gi + 1}
-                                                </span>
-                                                <span className="bg-violet-500/20 text-violet-400 px-3 py-1 rounded-full text-xs font-bold">
-                                                    {group.anchor.category}
-                                                </span>
-                                            </div>
-                                            {/* Anchor question */}
-                                            <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 mb-2 flex items-center justify-between">
-                                                <div>
-                                                    <span className="text-green-400 text-xs font-bold uppercase mr-2">Original</span>
-                                                    <span className="text-white font-bold">{group.anchor.text}</span>
-                                                </div>
-                                            </div>
-                                            {/* Duplicates */}
-                                            {group.duplicates.map(dup => (
-                                                <div key={dup.question.id} className="bg-red-500/10 border border-red-500/20 rounded-lg p-3 mb-1 flex items-center justify-between">
-                                                    <div className="flex-1">
-                                                        <span className={`text-xs font-bold uppercase mr-2 px-2 py-0.5 rounded ${dup.similarity >= 0.8 ? 'bg-red-500/30 text-red-300' : 'bg-amber-500/30 text-amber-300'}`}>
-                                                            {Math.round(dup.similarity * 100)}% similar
-                                                        </span>
-                                                        <span className="text-gray-300">{dup.question.text}</span>
-                                                    </div>
-                                                    <button
-                                                        onClick={async () => {
-                                                            if (!confirm(`Apagar: "${dup.question.text}"?`)) return;
-                                                            await supabase.from('questions').delete().eq('id', dup.question.id);
-                                                            loadData();
-                                                            setDuplicateGroups(prev => prev.map(g => ({
-                                                                ...g,
-                                                                duplicates: g.duplicates.filter(d => d.question.id !== dup.question.id)
-                                                            })).filter(g => g.duplicates.length > 0));
-                                                        }}
-                                                        className="p-2 bg-red-500/20 hover:bg-red-500/40 text-red-400 rounded-lg transition-colors shrink-0 ml-3"
-                                                        title="Apagar este duplicado"
-                                                    >
-                                                        <Trash2 size={16} />
-                                                    </button>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </>
-                            )}
-                        </div>
-                    )}
-                </div>
-
-                {/* Danger Zone */}
-                <div className="glass-card mb-6 border-2 border-red-500/30">
-                    <div className="flex items-center gap-3 mb-4">
-                        <Trash2 className="text-red-500" />
-                        <h2 className="text-xl font-bold text-red-400">Zona de Perigo</h2>
-                    </div>
-                    <p className="text-gray-400 mb-4">
-                        Apagar todas as perguntas permanentemente. Esta ação não pode ser desfeita!
-                    </p>
-                    <button
-                        onClick={() => {
-                            const code = prompt("⚠️ ATENÇÃO! Isto vai apagar TODAS as perguntas.\n\nEscreve 'APAGAR' para confirmar:");
-                            if (code === "APAGAR") {
-                                const confirmAgain = confirm(`Tens MESMO a certeza? Vais apagar ${questions.length} perguntas!`);
-                                if (confirmAgain) {
-                                    supabase.from("questions").delete().neq("id", "00000000-0000-0000-0000-000000000000").then(() => {
-                                        alert("✅ Todas as perguntas foram apagadas!");
-                                        loadData();
-                                    });
-                                }
-                            } else if (code !== null) {
-                                alert("❌ Código errado. Nada foi apagado.");
-                            }
-                        }}
-                        className="bg-red-500/20 hover:bg-red-500/30 text-red-400 font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2"
-                    >
-                        <Trash2 size={20} />
-                        Apagar Todas as Perguntas ({questions.length})
+            <div className="relative z-10 max-w-7xl mx-auto p-6 space-y-6">
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                    <button onClick={() => { setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-violet-500/15 text-violet-400 border border-violet-400/30 text-sm font-medium whitespace-nowrap">
+                        <Database className="w-4 h-4 inline mr-2" />
+                        Perguntas ({questions.length})
+                    </button>
+                    <button onClick={() => { setShowDuplicates(true); setShowReported(false); setShowAddAdmin(false); handleScanDuplicates(); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                        <Filter className="w-4 h-4 inline mr-2" />
+                        Duplicados
+                    </button>
+                    <button onClick={() => { setShowReported(true); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                        <AlertTriangle className="w-4 h-4 inline mr-2" />
+                        Reportadas ({reportedQuestions.length})
+                    </button>
+                    <button onClick={() => { setShowAddAdmin(true); setShowReported(false); setShowDuplicates(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                        <Users className="w-4 h-4 inline mr-2" />
+                        Equipa
                     </button>
                 </div>
 
-                {/* Questions List */}
-                <div className="space-y-4">
-                    {filteredQuestions.map((q, index) => (
-                        <motion.div
-                            key={q.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.05 }}
-                            className="glass-card hover:bg-white/10 transition-colors"
-                        >
-                            <div className="flex items-start gap-4">
-                                {q.image_url && (
-                                    <div className="w-24 h-16 rounded-lg overflow-hidden bg-black/20 flex-shrink-0">
-                                        <img src={q.image_url} alt="" className="w-full h-full object-cover" />
-                                    </div>
-                                )}
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <span className="bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full text-xs font-bold">
-                                            {q.category}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-3">{q.text}</h3>
-                                    {q.metadata?.reports && q.metadata.reports.length > 0 && (
-                                        <div className="mb-3 p-3 bg-amber-500/10 rounded-lg border border-amber-500/30">
-                                            <div className="text-amber-400 text-xs font-bold mb-2">RELATÓRIOS:</div>
-                                            {q.metadata.reports.map((r, i) => (
-                                                <div key={i} className="text-amber-200 text-sm">
-                                                    • {r.reason}
-                                                    <span className="text-amber-400/50 text-xs ml-2">
-                                                        {new Date(r.date).toLocaleDateString()}
-                                                    </span>
-                                                </div>
-                                            ))}
+                {showAddAdmin && (
+                    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass-panel p-6">
+                        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <ShieldCheck className="w-5 h-5 text-violet-400" />
+                            Gestão de Equipa
+                        </h2>
+                        
+                        <div className="mb-6">
+                            <h3 className="text-sm text-white/60 mb-3">Membros da Equipa</h3>
+                            <div className="space-y-2">
+                                {adminUsers.map(user => (
+                                    <div key={user.id} className="flex items-center justify-between bg-white/5 p-3 rounded-lg">
+                                        <div>
+                                            <div className="text-white font-medium">{user.username}</div>
+                                            <div className="text-white/40 text-sm">{user.email}</div>
                                         </div>
-                                    )}
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {q.options.map((opt, i) => (
-                                            <div
-                                                key={i}
-                                                className={`px-3 py-2 rounded-lg text-sm ${i === q.correct_option
-                                                    ? "bg-green-500/20 text-green-400 font-bold"
-                                                    : "bg-white/5 text-gray-400"
-                                                    }`}
-                                            >
-                                                {i === q.correct_option && "✓ "}{opt}
+                                        <div className="flex items-center gap-2">
+                                            <RoleBadge role={user.role} />
+                                            {user.id !== currentUser?.id && (
+                                                <button onClick={() => removeAdmin(user.id, user.email)} className="text-pink-400 hover:text-pink-300 text-sm">
+                                                    Remover
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="border-t border-white/10 pt-4">
+                            <h3 className="text-sm text-white/60 mb-3">Adicionar Membro</h3>
+                            <div className="flex gap-3">
+                                <input type="email" placeholder="Email do utilizador" value={newAdminEmail} onChange={e => setNewAdminEmail(e.target.value)} className="flex-1 glass-input" />
+                                <select value={newAdminRole} onChange={e => setNewAdminRole(e.target.value)} className="glass-input">
+                                    <option value="moderator">Moderator</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="host">Host</option>
+                                </select>
+                                <button onClick={addAdmin} className="px-6 py-3 bg-violet-600 text-white rounded-xl font-medium">
+                                    Adicionar
+                                </button>
+                            </div>
+                            <p className="text-white/40 text-xs mt-2">O utilizador precisa de ter conta criada primeiro.</p>
+                        </div>
+                    </motion.section>
+                )}
+
+                {!showDuplicates && !showReported && !showAddAdmin && (
+                    <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div className="glass-panel p-4 text-center">
+                            <div className="text-3xl font-bold text-white">{questions.length}</div>
+                            <div className="text-xs text-white/40 uppercase">Total Perguntas</div>
+                        </div>
+                        <div className="glass-panel p-4 text-center">
+                            <div className="text-3xl font-bold text-pink-400">{stats.length}</div>
+                            <div className="text-xs text-white/40 uppercase">Categorias</div>
+                        </div>
+                        <div className="glass-panel p-4 text-center">
+                            <div className="text-3xl font-bold text-orange-400">{reportedQuestions.length}</div>
+                            <div className="text-xs text-white/40 uppercase">Reportadas</div>
+                        </div>
+                        <div className="glass-panel p-4 text-center">
+                            <div className="text-3xl font-bold text-violet-400">{duplicateGroups.length}</div>
+                            <div className="text-xs text-white/40 uppercase">Duplicados</div>
+                        </div>
+                    </section>
+                )}
+
+                {!showDuplicates && !showReported && !showAddAdmin && (
+                    <section className="flex gap-2 overflow-x-auto pb-2">
+                        <button onClick={() => setSelectedCategory("all")} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === "all" ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
+                            Todas
+                        </button>
+                        {stats.map(s => (
+                            <button key={s.category} onClick={() => setSelectedCategory(s.category)} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === s.category ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
+                                {s.category} ({s.count})
+                            </button>
+                        ))}
+                    </section>
+                )}
+
+                {!showDuplicates && !showReported && !showAddAdmin && (
+                    <div className="relative">
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
+                        <input type="text" placeholder="Pesquisar perguntas..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="w-full glass-input pl-12" />
+                    </div>
+                )}
+
+                {!showDuplicates && !showReported && !showAddAdmin && (
+                    <section className="space-y-3">
+                        {loading ? (
+                            <div className="text-center py-12"><div className="w-8 h-8 border-2 border-violet-400 border-t-transparent rounded-full animate-spin mx-auto" /></div>
+                        ) : filteredQuestions.length === 0 ? (
+                            <div className="glass-panel p-8 text-center text-white/50">Nenhuma pergunta encontrada</div>
+                        ) : filteredQuestions.map(q => (
+                            <div key={q.id} className="glass-panel p-4">
+                                <div className="flex justify-between items-start mb-2">
+                                    <div className="flex-1">
+                                        <p className="text-white font-medium mb-1">{q.text}</p>
+                                        <div className="flex gap-2 text-xs text-white/40">
+                                            <span className="bg-white/10 px-2 py-1 rounded">{q.category}</span>
+                                            <span className="bg-white/10 px-2 py-1 rounded">Resposta: {q.options[q.correct_option]}</span>
+                                            {q.metadata?.reports && q.metadata.reports.length > 0 && (
+                                                <span className="bg-red-500/20 text-red-400 px-2 py-1 rounded">{q.metadata.reports.length} reports</span>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <button onClick={() => handleDeleteQuestion(q.id)} className="text-pink-400 hover:text-pink-300 p-2"><Trash2 className="w-4 h-4" /></button>
+                                </div>
+                                {q.options && (
+                                    <div className="grid grid-cols-2 gap-2 text-sm">
+                                        {q.options.map((opt, idx) => (
+                                            <div key={idx} className={`p-2 rounded ${idx === q.correct_option ? "bg-green-500/20 text-green-400" : "bg-white/5 text-white/60"}`}>
+                                                {idx + 1}. {opt}
                                             </div>
                                         ))}
                                     </div>
+                                )}
+                            </div>
+                        ))}
+                    </section>
+                )}
+
+                {showDuplicates && (
+                    <section className="space-y-4">
+                        <div className="flex justify-between items-center">
+                            <h2 className="text-xl font-bold text-white">Duplicados Detetados</h2>
+                            <button onClick={handleScanDuplicates} disabled={isScanning} className="px-4 py-2 bg-white/10 text-white rounded-lg text-sm">
+                                {isScanning ? "A escanear..." : "Escanear Novamente"}
+                            </button>
+                        </div>
+                        {duplicateGroups.length === 0 ? (
+                            <div className="glass-panel p-8 text-center text-white/50">Nenhum duplicado encontrado!</div>
+                        ) : duplicateGroups.map((group, idx) => (
+                            <div key={idx} className="glass-panel p-4 border border-orange-500/30">
+                                <div className="flex justify-between items-start mb-3">
+                                    <div>
+                                        <span className="text-orange-400 text-sm">Semelhança: {Math.round(group.duplicates[0].similarity * 100)}%</span>
+                                        <p className="text-white font-medium">{group.anchor.text}</p>
+                                    </div>
+                                    <button onClick={() => handleDeleteDuplicate(group.anchor.id, false)} className="text-pink-400 hover:text-pink-300 text-sm">Manter</button>
                                 </div>
-                                <div className="flex flex-col gap-2">
-                                    <button
-                                        onClick={() => deleteQuestion(q.id)}
-                                        className="p-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl transition-colors"
-                                        title="Eliminar pergunta"
-                                    >
-                                        <Trash2 size={20} />
-                                    </button>
-                                    <button
-                                        onClick={() => reportQuestion(q.id)}
-                                        className="p-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl transition-colors"
-                                        title="Reportar erro"
-                                    >
-                                        <AlertTriangle size={20} />
-                                    </button>
+                                {group.duplicates.map((dup, dIdx) => (
+                                    <div key={dIdx} className="flex justify-between items-start bg-white/5 p-3 rounded mb-2">
+                                        <div>
+                                            <p className="text-white/60">{dup.question.text}</p>
+                                        </div>
+                                        <button onClick={() => handleDeleteDuplicate(dup.question.id, true)} className="text-green-400 hover:text-green-300 text-sm">Remover</button>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </section>
+                )}
+
+                {showReported && (
+                    <section className="space-y-3">
+                        <h2 className="text-xl font-bold text-white">Perguntas Reportadas</h2>
+                        {reportedQuestions.length === 0 ? (
+                            <div className="glass-panel p-8 text-center text-white/50">Nenhuma pergunta reportada</div>
+                        ) : reportedQuestions.map(q => (
+                            <div key={q.id} className="glass-panel p-4 border border-red-500/30">
+                                <div className="flex justify-between mb-2">
+                                    <p className="text-white font-medium">{q.text}</p>
+                                    <button onClick={() => handleDeleteQuestion(q.id)} className="text-pink-400 hover:text-pink-300"><Trash2 className="w-4 h-4" /></button>
+                                </div>
+                                <div className="bg-white/5 p-3 rounded">
+                                    <div className="text-xs text-white/40 mb-1">Reports:</div>
+                                    {q.metadata?.reports?.map((r, idx) => (
+                                        <div key={idx} className="text-sm text-red-400">{r.reason} - {new Date(r.date).toLocaleDateString()}</div>
+                                    ))}
                                 </div>
                             </div>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {filteredQuestions.length === 0 && (
-                    <div className="glass-card text-center py-12">
-                        <p className="text-gray-500 text-xl">Nenhuma pergunta encontrada</p>
-                    </div>
+                        ))}
+                    </section>
                 )}
             </div>
         </main>
