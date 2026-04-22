@@ -24,11 +24,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
     // Reset answer state when question index changes
     useEffect(() => {
-        setHasAnswered(false);
-        setSelectedOption(null);
-        setCorrectOption(null);
-        setStartTime(Date.now());
-    }, [currentQuestionIndex]);
+        if (status === "QUESTION") {
+            setHasAnswered(false);
+            setSelectedOption(null);
+            setCorrectOption(null);
+            setStartTime(Date.now());
+            console.log("📱 New question started, resetting mobile state");
+        }
+    }, [status, currentQuestionIndex]);
 
     // Fetch correct answer when status is REVEAL
     useEffect(() => {

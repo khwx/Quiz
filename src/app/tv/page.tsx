@@ -254,20 +254,14 @@ export default function TVHost() {
                 let questionsToUse: any[] = [];
                 let count = 0;
 
-                // 1. Try to fetch EXISTING questions first (for ALL age groups)
-                // EXCLUDE already used questions
+                // 1. Fetch ALL questions for this category
+                // We filter used questions IN MEMORY because the list of IDs can become 
+                // too long for a URL (causing 414 URI Too Long errors)
                 let query = supabase
                     .from("questions")
-                    .select("*", { count: 'exact' })
+                    .select("*")
                     .ilike("category", finalTopic);
 
-                // Filter out already used questions
-                if (currentUsedIds.length > 0) {
-                    query = query.not('id', 'in', `(${currentUsedIds.join(',')})`);
-                }
-
-                // Ignore age rating for universal objective topics to maximize DB reuse
-                const isUniversalTopic = finalTopic === "Bandeiras" || finalTopic === "Capitais do Mundo";
                 if (!isUniversalTopic) {
                     if (targetAge === 18) {
                         query = query.gte('age_rating', 18);
@@ -276,17 +270,21 @@ export default function TVHost() {
                     }
                 }
 
-                const { data, count: c } = await query;
-                count = c || 0;
+                const { data } = await query;
+                const allQuestions = data || [];
+
+                // Filter out used questions in memory
+                const unusedQuestions = allQuestions.filter(q => !currentUsedIds.includes(String(q.id)));
+                count = unusedQuestions.length;
 
                 // We need at least questionCount unused questions
                 if (count >= questionCount) {
-                    const shuffled = (data || []).sort(() => 0.5 - Math.random()).slice(0, questionCount);
+                    const shuffled = unusedQuestions.sort(() => 0.5 - Math.random()).slice(0, questionCount);
                     questionsToUse = shuffled;
                     setQuestionSource("DB");
-                    console.log(`✅ Found ${count} unused questions. Using ${questionCount}.`);
+                    console.log(`✅ Found ${count} unused questions in DB. Using ${questionCount}.`);
                 } else {
-                    console.log(`⚠️ Only ${count} unused questions available. Generating more...`);
+                    console.log(`⚠️ Only ${count} unused questions available in DB. Generating more...`);
                 }
 
                 // 2. If not enough, GENERATE new ones
@@ -384,6 +382,9 @@ export default function TVHost() {
                 }
             } catch (err) {
                 console.error("Question loading failed:", err);
+                // Revert status so user can try again
+                updateStatus("LOBBY");
+                alert("Falha ao gerar perguntas. Tenta outro tema ou limpa a memória das perguntas usadas.");
             } finally {
                 setIsGenerating(false);
                 isStartingRef.current = false;
