@@ -5,8 +5,8 @@ import { supabase } from "@/lib/supabase";
 import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Admin password from env or fallback
-const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin123";
+// Fixed default password - same on server and client
+const FALLBACK_ADMIN_PASSWORD = "admin123";
 
 interface Question {
     id: string;
@@ -122,7 +122,7 @@ export default function AdminPage() {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (password === ADMIN_PASSWORD) {
+        if (password === FALLBACK_ADMIN_PASSWORD) {
             setIsAuthenticated(true);
             setAuthError("");
         } else {
