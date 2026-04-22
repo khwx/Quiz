@@ -5,7 +5,7 @@ import { getCachedQuestions, setCachedQuestions } from "./cache";
 const GEMINI_MODEL = "gemini-1.5-flash";
 const GROQ_MODEL = "llama-3.3-70b-versatile";
 
-const TIMEOUT_MS = 10000;
+const TIMEOUT_MS = 30000;
 const MAX_RETRIES = 2;
 
 function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
@@ -46,10 +46,10 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     - O image_url deve corresponder ao país CORRETO na resposta
   ` : "";
 
-  return `
-    Gera ${count} perguntas de quiz em Português de Portugal para: "${prompt}".
+  return \`
+    Gera \${count} perguntas de quiz em Português de Portugal para: "\${prompt}".
 
-    ${specificRules}
+    \${specificRules}
 
     REGRAS DE QUALIDADE (MUITO IMPORTANTE):
     1. Perguntas CURTAS e DIRETAS (máximo 80 caracteres no texto)
@@ -61,7 +61,8 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     7. Opções de resposta devem ser PLURAIS e ESPECÍFICAS (não genéricas)
     8. A resposta correta deve estar sempre nas opções
     9. Para crianças (7-9): divertido e educativo
-    10. Para adultos: tipo quiz show,诱惑 mas não impossível
+    10. Para adultos: tipo quiz show, desafiante mas não impossível
+
 
     Exemplos de BOAS perguntas:
     - "Quantos ossos tem o corpo humano?"
