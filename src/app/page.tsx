@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User } from "lucide-react";
+import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User, ArrowRight, ArrowLeft } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function Home() {
@@ -102,7 +102,7 @@ export default function Home() {
             <div className="flex justify-between items-end mb-6">
               <h2 className="text-2xl font-bold text-white" style={{ fontFamily: 'Space Grotesk, system-ui' }}>Categorias</h2>
               <Link href="/categories" className="text-sm text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-1">
-                Ver Todas <span className="material-symbols text-sm">arrow_forward</span>
+                Ver Todas <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight } from "lucide-react";
+import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
@@ -112,9 +112,7 @@ export default function LoginPage() {
                 Username
               </label>
               <div className="relative group">
-                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-violet-400 transition-colors">
-                  person
-                </span>
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors" />
                 <input
                   type="text"
                   placeholder="Commander"
