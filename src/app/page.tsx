@@ -1,10 +1,20 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket } from "lucide-react";
+import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function Home() {
+  const [user, setUser] = useState<any>(null);
+  
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+  }, []);
+
   const categories = [
     { icon: Globe, name: "Países", desc: "Capitais, bandeiras e muito mais", color: "emerald" },
     { icon: History, name: "História", desc: "Eventos que moldaram o mundo", color: "amber" },
@@ -30,6 +40,17 @@ export default function Home() {
           <Link href="/tutorial" className="text-white/60 hover:text-white transition-colors text-sm">Como Jogar</Link>
         </nav>
         <div className="flex gap-4">
+          {user ? (
+            <Link href="/profile" className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+              <User className="w-5 h-5" />
+              <span className="text-sm">{user.email?.split('@')[0]}</span>
+            </Link>
+          ) : (
+            <Link href="/login" className="flex items-center gap-2 px-4 py-2 bg-violet-500/20 hover:bg-violet-500/30 text-violet-400 rounded-full transition-colors">
+              <User className="w-5 h-5" />
+              <span className="text-sm">Entrar</span>
+            </Link>
+          )}
           <Link href="/admin" className="text-white/60 hover:text-white transition-colors">
             <Settings className="w-5 h-5" />
           </Link>
