@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -12,17 +13,43 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Simulate auth - replace with actual Supabase auth
-    setTimeout(() => {
+    setError("");
+
+    try {
+      if (isLogin) {
+        // Login com Supabase Auth
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        
+        if (signInError) throw signInError;
+        
+        // Login bem sucedido - ir para perfil
+        window.location.href = "/profile";
+      } else {
+        // Registar novo utilizador
+        const { data, error: signUpError } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: { name }
+          }
+        });
+        
+        if (signUpError) throw signUpError;
+        
+        alert("Conta criada! Verifica o teu email para ativar.");
+      }
+    } catch (err: any) {
+      setError(err.message || "Erro ao autenticar");
       setIsLoading(false);
-      // Redirect to home after login
-      window.location.href = "/";
-    }, 1500);
+    }
   };
 
   return (
@@ -143,6 +170,12 @@ export default function LoginPage() {
               <button type="button" className="text-xs text-pink-400 hover:text-pink-300 transition-colors">
                 Lost trajectory?
               </button>
+            </div>
+          )}
+
+          {error && (
+            <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
+              {error}
             </div>
           )}
 
