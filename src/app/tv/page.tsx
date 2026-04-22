@@ -230,16 +230,28 @@ export default function TVHost() {
         const currentQ = currentQuestions[currentQuestionIndex - 1];
         if (!currentQ?.id) return;
 
-        // Safety: never auto-skip within the first 2 seconds of a question
+        // Safety: never auto-skip within the first 3 seconds of a question
         const elapsedMs = Date.now() - questionStartTimeRef.current;
-        if (elapsedMs < 2000) return;
+        if (elapsedMs < 3000) return;
 
         const currentQuestionId = String(currentQ.id);
         const validAnswersForQ = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
-        const uniqueAnswerPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
-        const uniquePlayers = Array.from(new Set(players.map(p => String(p.id))));
+        
+        // Get unique players who answered this question
+        const answeredPlayerIds = new Set(validAnswersForQ.map(a => String(a.player_id)));
+        
+        // Get all active players from context
+        const allPlayerIds = new Set(players.map(p => String(p.id)));
 
-        if (uniquePlayers.length > 0 && uniqueAnswerPlayerIds.size >= uniquePlayers.length) {
+        console.log("📊 Auto-skip check:", {
+            questionId: currentQuestionId,
+            answeredPlayers: answeredPlayerIds.size,
+            totalPlayers: allPlayerIds.size,
+            answers: validAnswersForQ.length
+        });
+
+        // Only skip if we have players AND all have answered
+        if (allPlayerIds.size > 0 && answeredPlayerIds.size >= allPlayerIds.size) {
             console.log("🎯 Todos os jogadores responderam! Avançando para REVEAL...");
             shouldRevealRef.current = true;
             updateStatus("REVEAL");
@@ -487,30 +499,26 @@ export default function TVHost() {
     // Reset Timer & Refresh Players when Question Index Changes OR when entering QUESTION state
     useEffect(() => {
         if (status === "QUESTION") {
-            console.log("🔄 New Question Loaded: Resetting Timer & Answers", { currentQuestionIndex, timerDuration });
+            console.log("🔄 New Question Loaded: Resetting Timer & Answers", { currentQuestionIndex, timerDuration, playersInContext: players.length });
             setTimeLeft(timerDuration);
             setCurrentAnswers([]);
 
-            // Small delay to ensure answers are cleared before auto-skip check
-            const timer = setTimeout(() => {
-                console.log("✅ Answers reset complete, ready for new question");
-            }, 100);
-
-            // Refresh players list to ensure we don't count "ghost" players who joined but left
+            // Refresh players list to get latest state (someone might have left)
             const syncPlayers = async () => {
                 if (gameId) {
                     const { data } = await supabase.from('players').select('*').eq('game_id', gameId);
-                    if (data) {
+                    if (data && data.length > 0) {
                         setPlayers(data);
-                        console.log(`👥 Refreshed players: ${data.length}`);
+                        console.log(`👥 Synced players: ${data.length}`, data.map(p => p.name));
                     }
                 }
             };
+            
+            // Sync twice: immediately and after a short delay to catch late joiners
             syncPlayers();
-
-            return () => clearTimeout(timer);
+            setTimeout(syncPlayers, 1500);
         }
-    }, [currentQuestionIndex, round]);
+    }, [currentQuestionIndex, round, status]);
 
 
     // Loading Check
