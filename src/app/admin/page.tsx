@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import { Trash2, Database, Filter, Search, AlertTriangle, Copy } from "lucide-react";
+import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
+
+// Simple admin password (in production, use environment variable and server-side auth)
+const ADMIN_PASSWORD = "admin123";
 
 interface Question {
     id: string;
@@ -99,6 +102,11 @@ function findDuplicates(questions: Question[], threshold = 0.6): DuplicateGroup[
 }
 
 export default function AdminPage() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+    const [authError, setAuthError] = useState("");
+    
     const [questions, setQuestions] = useState<Question[]>([]);
     const [stats, setStats] = useState<CategoryStats[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -106,6 +114,63 @@ export default function AdminPage() {
     const [duplicateGroups, setDuplicateGroups] = useState<DuplicateGroup[]>([]);
     const [isScanning, setIsScanning] = useState(false);
     const [showDuplicates, setShowDuplicates] = useState(false);
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (password === ADMIN_PASSWORD) {
+            setIsAuthenticated(true);
+            setAuthError("");
+        } else {
+            setAuthError("Password incorreta");
+        }
+    };
+
+    if (!isAuthenticated) {
+        return (
+            <main className="min-h-screen flex items-center justify-center p-6">
+                <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                    <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
+                    <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
+                </div>
+                
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="relative z-10 glass-panel p-8 w-full max-w-sm"
+                >
+                    <div className="text-center mb-8">
+                        <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                            <Lock className="w-8 h-8 text-white" />
+                        </div>
+                        <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Admin</h1>
+                        <p className="text-white/50 text-sm">Área protegida</p>
+                    </div>
+                    
+                    <form onSubmit={handleLogin} className="space-y-4">
+                        <div>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="w-full glass-input text-center text-lg"
+                            />
+                        </div>
+                        {authError && (
+                            <p className="text-red-400 text-sm text-center">{authError}</p>
+                        )}
+                        <button
+                            type="submit"
+                            className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl"
+                        >
+                            <Eye className="w-5 h-5" />
+                            Entrar
+                        </button>
+                    </form>
+                </motion.div>
+            </main>
+        );
+    }
 
     useEffect(() => {
         loadData();
