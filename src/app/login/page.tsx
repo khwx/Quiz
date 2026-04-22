@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User } from "lucide-react";
+import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User, Facebook } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
@@ -85,6 +85,25 @@ export default function LoginPage() {
       if (discordError) throw discordError;
     } catch (err: any) {
       setError(err.message || "Erro ao entrar com Discord");
+      setIsLoading(false);
+    }
+  };
+
+  const handleFacebookLogin = async () => {
+    setIsLoading(true);
+    setError("");
+    
+    try {
+      const { error: facebookError } = await supabase.auth.signInWithOAuth({
+        provider: "facebook",
+        options: {
+          redirectTo: `${window.location.origin}/profile`,
+        }
+      });
+      
+      if (facebookError) throw facebookError;
+    } catch (err: any) {
+      setError(err.message || "Erro ao entrar com Facebook");
       setIsLoading(false);
     }
   };
@@ -242,7 +261,7 @@ export default function LoginPage() {
         </div>
 
         {/* Social Login */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-3 gap-3">
           <button 
             onClick={handleGoogleLogin}
             disabled={isLoading}
@@ -250,6 +269,14 @@ export default function LoginPage() {
           >
             <Globe className="w-5 h-5" />
             Google
+          </button>
+          <button 
+            onClick={handleFacebookLogin}
+            disabled={isLoading}
+            className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60 disabled:opacity-50"
+          >
+            <Facebook className="w-5 h-5" />
+            Facebook
           </button>
           <button 
             onClick={handleDiscordLogin}
