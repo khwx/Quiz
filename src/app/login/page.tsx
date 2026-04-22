@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -22,7 +24,6 @@ export default function LoginPage() {
 
     try {
       if (isLogin) {
-        // Login com Supabase Auth
         const { data, error: signInError } = await supabase.auth.signInWithPassword({
           email,
           password,
@@ -30,10 +31,8 @@ export default function LoginPage() {
         
         if (signInError) throw signInError;
         
-        // Login bem sucedido - ir para perfil
         window.location.href = "/profile";
       } else {
-        // Registar novo utilizador
         const { data, error: signUpError } = await supabase.auth.signUp({
           email,
           password,
@@ -48,6 +47,44 @@ export default function LoginPage() {
       }
     } catch (err: any) {
       setError(err.message || "Erro ao autenticar");
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    setError("");
+    
+    try {
+      const { error: googleError } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}/profile`,
+        }
+      });
+      
+      if (googleError) throw googleError;
+    } catch (err: any) {
+      setError(err.message || "Erro ao entrar com Google");
+      setIsLoading(false);
+    }
+  };
+
+  const handleDiscordLogin = async () => {
+    setIsLoading(true);
+    setError("");
+    
+    try {
+      const { error: discordError } = await supabase.auth.signInWithOAuth({
+        provider: "discord",
+        options: {
+          redirectTo: `${window.location.origin}/profile`,
+        }
+      });
+      
+      if (discordError) throw discordError;
+    } catch (err: any) {
+      setError(err.message || "Erro ao entrar com Discord");
       setIsLoading(false);
     }
   };
@@ -206,11 +243,19 @@ export default function LoginPage() {
 
         {/* Social Login */}
         <div className="grid grid-cols-2 gap-3">
-          <button className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60">
+          <button 
+            onClick={handleGoogleLogin}
+            disabled={isLoading}
+            className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60 disabled:opacity-50"
+          >
             <Globe className="w-5 h-5" />
             Google
           </button>
-          <button className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60">
+          <button 
+            onClick={handleDiscordLogin}
+            disabled={isLoading}
+            className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60 disabled:opacity-50"
+          >
             <Gamepad2 className="w-5 h-5" />
             Discord
           </button>

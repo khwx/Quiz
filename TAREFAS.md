@@ -1,23 +1,41 @@
 # Quizverse - Lista de Tarefas
 
-## 🎯 FASE 1: Login + Perfil (PRIORIDADE MÁXIMA)
+## ✅ JÁ FEITO (Última Atualização)
 
-### Login Real ✅ (quase pronto)
-- [x] Página login com Supabase Auth
-- [x] Sistema de registo
-- [ ] Configurar redirect URL no Supabase (resolver)
-- [ ] Login social (Google/Facebook)
+### Login e Autenticação
+- [x] Página login com Supabase Auth real
+- [x] Sistema de registo de contas
+- [x] Perfil ligado à conta do utilizador
+- [x] Botão Login/Perfil na homepage
+- [x] **Fixed**: Ícones sobrepostos nos inputs do login
 
-### Perfil do Jogador 🔴 (POR IMPLEMENTAR)
-- [ ] Dados do utilizador do Supabase Auth
-- [ ] Estatísticas pessoais (jogos ganhos, pontos, taxa de acerto)
-- [ ] Histórico de jogos
-- [ ] Editar nome/avatar
-- [ ] Achievements conquistados
+### Perfil e Estatísticas
+- [x] Perfil mostra dados do utilizador (email, nome)
+- [x] Estatísticas reais: Total de jogos, Vitórias, Pontos, Taxa de acerto
+- [x] Achievements básicos (desbloqueiam conforme joga)
+- [x] Logout funcional
+
+### Reportar Perguntas
+- [x] Botão "Reportar" no Play (telemóvel)
+- [x] Botão "Reportar" na TV
+- [x] Botão "Reportar" no Admin
+- [x] Lista de perguntas reportadas no Admin
+- [x] Guarda relato no metadata da pergunta
+
+### UI/UX Melhorias
+- [x] **Fixed**: Ícones material-symbols substituídos por Lucide
+- [x] Inputs com padding correto para não sobrepor texto
+- [x] Ícones com `pointer-events-none` para não bloquear input
 
 ---
 
-## 🎯 FASE 2: Jogar com Amigos
+## 🎯 FASE 1: Login + Perfil COMPLETA ✅
+
+Tudo implementado e funcional!
+
+---
+
+## 🎯 FASE 2: Jogar com Amigos (PRÓXIMO)
 
 ### Sistema de Equipas 🔴 (POR IMPLEMENTAR)
 - [ ] Criar equipas de 2-4 jogadores
@@ -32,7 +50,7 @@
 
 ---
 
-## 🎯 FASE 3: Campeonatos
+## 🎯 FASE 3: Campeonatos (FUTURO)
 
 ### Torneios 🔴 (POR IMPLEMENTAR)
 - [ ] Criar torneios com múltiplas rondas
@@ -43,25 +61,36 @@
 
 ---
 
-## ✅ JÁ FEITO
-
-- [x] Sistema de perguntas (games, players, questions, answers)
-- [x] PáginaHome (/), Host (/host), Play (/play), TV (/tv)
-- [x] Admin com password (/admin)
-- [x] Página de Categorias (/categories)
-- [x] Reportar perguntas erradas
-- [x] Som automático
-- [x] Design Stitch (glass panels, cores)
-
----
-
 ## 📋 ORDEM DE TRABALHO
 
-1️⃣ **Agora**: Login completo + Perfil ligado à conta
-2️⃣ **Próximo**: Melhorar perfil com estatísticas  
-3️⃣ **Depois**: Sistema de equipas
-4️⃣ **Futuro**: Torneios
+1️⃣ **COMPLETO ✅**: Login + Perfil com estatísticas
+2️⃣ **PRÓXIMO**: Sistema de equipas
+3️⃣ **FUTURO**: Código único por jogador  
+4️⃣ **FUTURO**: Torneios
 
 ---
 
-*Atualizado em Abril 2026*
+## 🐛 Bugs Corrigidos
+- [x] Ícones sobrepostos nos inputs do login
+- [x] Botão "Ver Todas" nas categorias
+- [x] Autenticação no Supabase
+
+---
+
+## 🛠️ Tech Stack
+- Next.js 16 (App Router)
+- Tailwind CSS v4
+- Supabase (DB + Auth)
+- Framer Motion (animações)
+- Vercel (hosting)
+
+---
+
+*Última atualização: 22 Abril 2026* 🎉
+
+**O que achas de implementar agora?**
+
+1. **Sistema de Equipas** (jogar em equipa)
+2. **Código único por jogador** (convites personalizados)
+3. **Login social** (Google/Facebook)
+4. **Melhorar histórico de jogos** no perfil

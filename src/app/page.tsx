@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User, ArrowRight, ArrowLeft } from "lucide-react";
+import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User, ArrowRight, ArrowLeft, Users, Trophy } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function Home() {
@@ -37,6 +37,8 @@ export default function Home() {
         </div>
         <nav className="flex items-center gap-6">
           <Link href="/" className="text-white font-bold border-b-2 border-pink-500 pb-1 text-sm">Home</Link>
+          <Link href="/teams" className="text-white/60 hover:text-white transition-colors text-sm">Equipas</Link>
+          <Link href="/tournaments" className="text-white/60 hover:text-white transition-colors text-sm">Torneios</Link>
           <Link href="/tutorial" className="text-white/60 hover:text-white transition-colors text-sm">Como Jogar</Link>
         </nav>
         <div className="flex gap-4">
