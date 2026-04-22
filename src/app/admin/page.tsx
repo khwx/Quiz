@@ -15,6 +15,9 @@ interface Question {
     options: string[];
     correct_option: number;
     image_url?: string;
+    metadata?: {
+        reports?: { reason: string; date: string }[];
+    };
 }
 
 interface CategoryStats {
@@ -115,6 +118,7 @@ export default function AdminPage() {
     const [duplicateGroups, setDuplicateGroups] = useState<DuplicateGroup[]>([]);
     const [isScanning, setIsScanning] = useState(false);
     const [showDuplicates, setShowDuplicates] = useState(false);
+    const [showReported, setShowReported] = useState(false);
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
@@ -221,34 +225,32 @@ export default function AdminPage() {
         const reason = prompt("Qual é o problema desta pergunta?");
         if (!reason) return;
 
-        // Add report to question metadata (using update with JSON)
-        const { data } = await supabase
-            .from("questions")
-            .select("metadata")
-            .eq("id", id)
-            .single();
-        
-        const currentReports = data?.metadata?.reports || [];
+        const q = questions.find(q => q.id === id);
+        const currentReports = q?.metadata?.reports || [];
         await supabase
             .from("questions")
             .update({
                 metadata: {
-                    ...data?.metadata,
                     reports: [...currentReports, { reason, date: new Date().toISOString() }]
                 }
             })
             .eq("id", id);
         
         alert("Pergunta reportada! Obrigado pelo feedback.");
+        loadData();
     };
 
-    const filteredQuestions = selectedCategory === "all"
-        ? questions
-        : questions.filter(q => {
+    const filteredQuestions = (() => {
+        if (showReported) {
+            return questions.filter(q => q.metadata?.reports && q.metadata.reports.length > 0);
+        }
+        if (selectedCategory === "all") return questions;
+        return questions.filter(q => {
             const cat = q.category || "Sem Categoria";
             const normalizedCat = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
             return normalizedCat === selectedCategory;
         });
+    })();
 
     if (loading) {
         return (
@@ -283,6 +285,22 @@ export default function AdminPage() {
                             <div className="text-gray-500 text-xs mt-1">perguntas</div>
                         </div>
                     ))}
+                </div>
+
+                {/* Reported Questions */}
+                <div className="glass-card mb-6 p-4">
+                    <div className="flex items-center justify-between">
+                        <button
+                            onClick={() => setShowReported(!showReported)}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all ${showReported
+                                ? "bg-amber-500 text-white"
+                                : "bg-white/10 text-gray-300 hover:bg-white/20"
+                            }`}
+                        >
+                            <AlertTriangle size={18} />
+                            Perguntas Reportadas
+                        </button>
+                    </div>
                 </div>
 
                 {/* Category Filter */}
@@ -466,6 +484,19 @@ export default function AdminPage() {
                                         </span>
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-3">{q.text}</h3>
+                                    {q.metadata?.reports && q.metadata.reports.length > 0 && (
+                                        <div className="mb-3 p-3 bg-amber-500/10 rounded-lg border border-amber-500/30">
+                                            <div className="text-amber-400 text-xs font-bold mb-2">RELATÓRIOS:</div>
+                                            {q.metadata.reports.map((r, i) => (
+                                                <div key={i} className="text-amber-200 text-sm">
+                                                    • {r.reason}
+                                                    <span className="text-amber-400/50 text-xs ml-2">
+                                                        {new Date(r.date).toLocaleDateString()}
+                                                    </span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                     <div className="grid grid-cols-2 gap-2">
                                         {q.options.map((opt, i) => (
                                             <div
