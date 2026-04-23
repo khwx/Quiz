@@ -1,0 +1,3782 @@
+[
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "udao",
+      "Andorra",
+      "Vanuatu",
+      "Tuvalu"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ad.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AD",
+    "id": "ad"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Chipre",
+      "Cabo Verde",
+      "Tailandia",
+      "Emirados Arabes Unidos"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ae.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AE",
+    "id": "ae"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Afeganistao",
+      "Sao Bartolomeu",
+      "Gibraltar",
+      "Santa Lucia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/af.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AF",
+    "id": "af"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Zimbabue",
+      "Bahamas",
+      "Namibia",
+      "Antigua e Barbuda"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ag.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AG",
+    "id": "ag"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Anguilla",
+      "India",
+      "Guiana",
+      "Portugal"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ai.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AI",
+    "id": "ai"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Albania",
+      "Gibraltar",
+      "China",
+      "Cabo Verde"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/al.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AL",
+    "id": "al"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Guatemala",
+      "Noruega",
+      "Armenia",
+      "Senegal"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/am.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AM",
+    "id": "am"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Anguilla",
+      "Australia",
+      "Angola",
+      "Portugal"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/ao.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AO",
+    "id": "ao"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Republica Dominicana",
+      "Dominica",
+      "AQ",
+      "Suriname"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/aq.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AQ",
+    "id": "aq"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "udao",
+      "Servia",
+      "Burkina Faso",
+      "Argentina"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ar.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AR",
+    "id": "ar"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Samoa Americana",
+      "Ilhas Aland",
+      "Ilhas Virgens Britanicas",
+      "Paraguai"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/as.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AS",
+    "id": "as"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Austria",
+      "Guiana",
+      "arga",
+      "Portugal"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/at.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AT",
+    "id": "at"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Australia",
+      "Belize",
+      "Moldavia",
+      "El Salvador"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/au.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AU",
+    "id": "au"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mauricia",
+      "Aruba",
+      "Guine Equatorial",
+      "Palestina"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/aw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AW",
+    "id": "aw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Aland",
+      "Botsuana",
+      "Africa do Sul",
+      "Romenia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ax.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AX",
+    "id": "ax"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mongolia",
+      "Austria",
+      "Azerbaijao",
+      "Nepal"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/az.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "AZ",
+    "id": "az"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Pedro e Miguelao",
+      "Bosnia-Herzegovina",
+      "Panama",
+      "Togo"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ba.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BA",
+    "id": "ba"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Barbados",
+      "Republica do Congo",
+      "Polinesia Francesa",
+      "Tunisia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/bb.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BB",
+    "id": "bb"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "udao",
+      "Afeganistao",
+      "Bangladesh",
+      "Dominica"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/bd.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BD",
+    "id": "bd"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Canada",
+      "Suica",
+      "Monaco",
+      "Belgica"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/be.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BE",
+    "id": "be"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Burkina Faso",
+      "Sao Pedro e Miguelao",
+      "Pitcairn",
+      "Israel"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/bf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BF",
+    "id": "bf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Bulgaria",
+      "Dinamarca",
+      "Angola",
+      "Iemen"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/bg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BG",
+    "id": "bg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nicaragua",
+      "Barbados",
+      "China",
+      "Barem"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/bh.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BH",
+    "id": "bh"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Azerbaijao",
+      "Belgica",
+      "Ilha de Man",
+      "Burundi"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/bi.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BI",
+    "id": "bi"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Africa do Sul",
+      "Benim",
+      "Monaco",
+      "Arabia Saudita"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/bj.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BJ",
+    "id": "bj"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Bartolomeu",
+      "Burkina Faso",
+      "Georgia",
+      "Guiana"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/bl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BL",
+    "id": "bl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Dominica",
+      "Equador",
+      "Bermudas",
+      "Liberia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/bm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BM",
+    "id": "bm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Koweit",
+      "Brunei",
+      "Mongolia",
+      "Armenia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/bn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BN",
+    "id": "bn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mianmar",
+      "Sao Marino",
+      "Timor-Leste",
+      "Bolivia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/bo.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BO",
+    "id": "bo"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "BQ",
+      "Belgica",
+      "Anguilla",
+      "Malasia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/bq.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BQ",
+    "id": "bq"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Monaco",
+      "Brasil",
+      "Palestina",
+      "Venezuela"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/br.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BR",
+    "id": "br"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suriname",
+      "Colombia",
+      "Bahamas",
+      "Tonga"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/bs.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BS",
+    "id": "bs"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "arga",
+      "Quirguistao",
+      "Quenia",
+      "El Salvador"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/bt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BT",
+    "id": "bt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Croacia",
+      "Etiopia",
+      "BV",
+      "Islandia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/bv.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BV",
+    "id": "bv"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Austria",
+      "Australia",
+      "Franca",
+      "Botsuana"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/bw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BW",
+    "id": "bw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Tunisia",
+      "Bielorrussia",
+      "Cazaquistao",
+      "Taiwan"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/by.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BY",
+    "id": "by"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Bahamas",
+      "Belize",
+      "Burundi",
+      "Samoa Americana"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/bz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "BZ",
+    "id": "bz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Chipre",
+      "Canada",
+      "Bosnia-Herzegovina",
+      "Mianmar"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ca.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CA",
+    "id": "ca"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Islandia",
+      "Zambia",
+      "Albania",
+      "CC"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/cc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CC",
+    "id": "cc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Republica Democratica do Congo",
+      "Seicheles",
+      "Sri Lanka",
+      "Chile"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/cd.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CD",
+    "id": "cd"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Samoa Americana",
+      "Republica Centro-Africana",
+      "Monaco",
+      "Montenegro"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/cf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CF",
+    "id": "cf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Argentina",
+      "Alemanha",
+      "Nicaragua",
+      "Republica do Congo"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/cg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CG",
+    "id": "cg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Monaco",
+      "Vietname",
+      "Paraguai",
+      "Suica"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ch.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CH",
+    "id": "ch"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nicaragua",
+      "Costa do Marfim",
+      "Iraque",
+      "Suazilandia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ci.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CI",
+    "id": "ci"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Pedro e Miguelao",
+      "Sao Bartolomeu",
+      "CK",
+      "Camboja"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/ck.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CK",
+    "id": "ck"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Comores",
+      "Liberia",
+      "Chile",
+      "Nepal"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/cl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CL",
+    "id": "cl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Camaroes",
+      "Santa Lucia",
+      "Argelia",
+      "udao"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/cm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CM",
+    "id": "cm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nigeria",
+      "Macau",
+      "China",
+      "Dinamarca"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/cn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CN",
+    "id": "cn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Colombia",
+      "Ira",
+      "Ilhas Marshall",
+      "Polinesia Francesa"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/co.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CO",
+    "id": "co"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Macau",
+      "Costa Rica",
+      "India",
+      "Botsuana"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/cr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CR",
+    "id": "cr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Cuba",
+      "Guiana",
+      "Bolivia",
+      "Oma"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/cu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CU",
+    "id": "cu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Comores",
+      "Cabo Verde",
+      "Guine",
+      "Guadalupe"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/cv.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CV",
+    "id": "cv"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "CW",
+      "Ira",
+      "Mauritania",
+      "Indonesia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/cw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CW",
+    "id": "cw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Chade",
+      "Grecia",
+      "CX",
+      "Turquia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/cx.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CX",
+    "id": "cx"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Quiribati",
+      "Emirados Arabes Unidos",
+      "Tajiquistao",
+      "Chipre"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/cy.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CY",
+    "id": "cy"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Republica Tcheca",
+      "Haiti",
+      "Uzbequisto",
+      "Mongolia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/cz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "CZ",
+    "id": "cz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Alemanha",
+      "Mocambique",
+      "Cabo Verde",
+      "Austria"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/de.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "DE",
+    "id": "de"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Turquemenistao",
+      "Santa Lucia",
+      "Gibraltar",
+      "Djibouti"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/dj.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "DJ",
+    "id": "dj"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Dinamarca",
+      "Romenia",
+      "Emirados Arabes Unidos",
+      "Bolivia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/dk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "DK",
+    "id": "dk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Gibraltar",
+      "Guine-Bissau",
+      "Dominica",
+      "Tuvalu"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/dm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "DM",
+    "id": "dm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Guatemala",
+      "Turquemenistao",
+      "Coreia do Norte",
+      "Republica Dominicana"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/do.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "DO",
+    "id": "do"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Argelia",
+      "Austria",
+      "Cuba",
+      "Sao Marino"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/dz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "DZ",
+    "id": "dz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Laos",
+      "Equador",
+      "Israel",
+      "Costa do Marfim"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ec.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "EC",
+    "id": "ec"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Equador",
+      "Suecia",
+      "Estonia",
+      "Dominica"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/ee.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "EE",
+    "id": "ee"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Faro",
+      "Egito",
+      "Djibouti",
+      "Espanha"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/eg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "EG",
+    "id": "eg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "EH",
+      "Tailandia",
+      "Malasia",
+      "Servia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/eh.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "EH",
+    "id": "eh"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Argentina",
+      "Eritreia",
+      "Croacia",
+      "Arabia Saudita"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/er.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ER",
+    "id": "er"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Espanha",
+      "Botsuana",
+      "Reino Unido",
+      "Liechtenstein"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/es.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ES",
+    "id": "es"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Israel",
+      "Oma",
+      "Etiopia",
+      "Timor-Leste"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/et.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ET",
+    "id": "et"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "EU",
+      "Andorra",
+      "Mocambique",
+      "Mali"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/eu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "EU",
+    "id": "eu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Liberia",
+      "Arabia Saudita",
+      "Finlandia",
+      "Georgia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/fi.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "FI",
+    "id": "fi"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Fiji",
+      "Japao",
+      "Nicaragua",
+      "Servia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/fj.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "FJ",
+    "id": "fj"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Vicente e Granadinas",
+      "Australia",
+      "Chile",
+      "Ilhas Falkland"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/fk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "FK",
+    "id": "fk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "FM",
+      "Tunisia",
+      "Serra Leoa",
+      "Colombia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/fm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "FM",
+    "id": "fm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Faro",
+      "Franca",
+      "Emirados Arabes Unidos",
+      "Argentina"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/fo.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "FO",
+    "id": "fo"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Barbados",
+      "Franca",
+      "Malta",
+      "Cuba"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/fr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "FR",
+    "id": "fr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Espanha",
+      "Gabao",
+      "Filipinas",
+      "Bangladesh"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ga.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GA",
+    "id": "ga"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Reino Unido",
+      "Ilhas Aland",
+      "Namibia",
+      "Montenegro"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/gb.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GB",
+    "id": "gb"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Austria",
+      "Granada",
+      "Santa Lucia",
+      "Porto Rico"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gd.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GD",
+    "id": "gd"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Camboja",
+      "Guine-Bissau",
+      "Djibouti",
+      "Georgia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ge.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GE",
+    "id": "ge"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "GF",
+      "Grecia",
+      "Quirguistao",
+      "Bangladesh"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/gf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GF",
+    "id": "gf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "GG",
+      "Togo",
+      "Coreia do Norte",
+      "Comores"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/gg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GG",
+    "id": "gg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Tuvalu",
+      "Gana",
+      "Palau",
+      "Bulgaria"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gh.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GH",
+    "id": "gh"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Eslovenia",
+      "Gibraltar",
+      "Nicaragua",
+      "Dominica"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gi.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GI",
+    "id": "gi"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Cazaquistao",
+      "Gronelandia",
+      "Serra Leoa",
+      "Palau"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GL",
+    "id": "gl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Letonia",
+      "Argelia",
+      "Gambia",
+      "Libia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/gm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GM",
+    "id": "gm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Romenia",
+      "Macau",
+      "Barem",
+      "Guine"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/gn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GN",
+    "id": "gn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Taiwan",
+      "Guadalupe",
+      "Liechtenstein",
+      "Macau"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gp.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GP",
+    "id": "gp"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Vicente e Granadinas",
+      "Cuba",
+      "Guine Equatorial",
+      "Dominica"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/gq.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GQ",
+    "id": "gq"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "arga",
+      "Grecia",
+      "Bangladesh",
+      "Armenia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GR",
+    "id": "gr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Israel",
+      "GS",
+      "Angola",
+      "Sao Marino"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gs.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GS",
+    "id": "gs"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Guatemala",
+      "Gibraltar",
+      "Palau",
+      "Mongolia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/gt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GT",
+    "id": "gt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suazilandia",
+      "Guam",
+      "Croacia",
+      "Libano"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GU",
+    "id": "gu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Polonia",
+      "Guine-Bissau",
+      "Nepal",
+      "Estonia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/gw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GW",
+    "id": "gw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Cristovao e Nevis",
+      "Luxemburgo",
+      "udao",
+      "Guiana"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/gy.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "GY",
+    "id": "gy"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Hong Kong",
+      "Equador",
+      "Chipre",
+      "Mocambique"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/hk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "HK",
+    "id": "hk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mauritania",
+      "Bosnia-Herzegovina",
+      "HM",
+      "Zimbabue"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/hm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "HM",
+    "id": "hm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suriname",
+      "Vaticano",
+      "Serra Leoa",
+      "Honduras"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/hn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "HN",
+    "id": "hn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Zambia",
+      "Tonga",
+      "Croacia",
+      "Guine Equatorial"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/hr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "HR",
+    "id": "hr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Arabia Saudita",
+      "Liberia",
+      "Timor-Leste",
+      "Haiti"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ht.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "HT",
+    "id": "ht"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Senegal",
+      "Hungria",
+      "Equador",
+      "Macedonia do Norte"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/hu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "HU",
+    "id": "hu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Portugal",
+      "Gabao",
+      "Palau",
+      "Indonesia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/id.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ID",
+    "id": "id"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Uganda",
+      "Irlanda",
+      "Jordania",
+      "Sri Lanka"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ie.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IE",
+    "id": "ie"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Botsuana",
+      "Israel",
+      "Mauritania",
+      "Venezuela"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/il.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IL",
+    "id": "il"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Aruba",
+      "Franca",
+      "Ilha de Man",
+      "Ucrani"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/im.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IM",
+    "id": "im"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Porto Rico",
+      "India",
+      "Senegal",
+      "Guiana"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/in.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IN",
+    "id": "in"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Franca",
+      "Liechtenstein",
+      "Guine",
+      "IO"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/io.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IO",
+    "id": "io"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Iraque",
+      "Republica Centro-Africana",
+      "Republica Democratica do Congo",
+      "Uruguai"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/iq.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IQ",
+    "id": "iq"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Albania",
+      "Ilhas Virgens Britanicas",
+      "Ira",
+      "Islandia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/ir.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IR",
+    "id": "ir"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Moldavia",
+      "Nepal",
+      "Islandia",
+      "Tailandia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/is.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IS",
+    "id": "is"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Italia",
+      "Mexico",
+      "Paquistao",
+      "Uzbequisto"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/it.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "IT",
+    "id": "it"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nauru",
+      "Jersey",
+      "Santa Lucia",
+      "Bulgaria"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/je.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "JE",
+    "id": "je"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suica",
+      "Luxemburgo",
+      "Jamaica",
+      "Mongolia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/jm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "JM",
+    "id": "jm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Lituania",
+      "Estados Unidos",
+      "Brunei",
+      "Jordania"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/jo.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "JO",
+    "id": "jo"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Burundi",
+      "Ilhas Virgens Britanicas",
+      "Papua Nova Guine",
+      "Japao"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/jp.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "JP",
+    "id": "jp"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Belgica",
+      "Libano",
+      "Quenia",
+      "Cazaquistao"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/ke.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KE",
+    "id": "ke"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Espanha",
+      "Georgia",
+      "Indonesia",
+      "Quirguistao"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/kg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KG",
+    "id": "kg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Camboja",
+      "Lituania",
+      "Guine-Bissau",
+      "Oma"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/kh.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KH",
+    "id": "kh"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Qatar",
+      "Martinica",
+      "Gabao",
+      "Quiribati"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ki.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KI",
+    "id": "ki"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Marshall",
+      "Equador",
+      "Comores",
+      "Servia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/km.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KM",
+    "id": "km"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Cristovao e Nevis",
+      "Mali",
+      "Antigua e Barbuda",
+      "Libano"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/kn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KN",
+    "id": "kn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Trinidad e Tobago",
+      "Espanha",
+      "Marrocos",
+      "Coreia do Norte"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/kp.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KP",
+    "id": "kp"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Estonia",
+      "Comores",
+      "Republica Tcheca",
+      "Coreia do Sul"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/kr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KR",
+    "id": "kr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Belize",
+      "Koweit",
+      "Mauricia",
+      "Ilhas Turks e Caicos"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/kw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KW",
+    "id": "kw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Caimao",
+      "Bermudas",
+      "Camaroes",
+      "Macau"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ky.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KY",
+    "id": "ky"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Cazaquistao",
+      "Republica Tcheca",
+      "udao",
+      "Gambia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/kz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "KZ",
+    "id": "kz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mocambique",
+      "Vaticano",
+      "Laos",
+      "Nigeria"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/la.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LA",
+    "id": "la"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suazilandia",
+      "Libano",
+      "Hungria",
+      "Cazaquistao"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/lb.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LB",
+    "id": "lb"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Caimao",
+      "Macedonia do Norte",
+      "Santa Lucia",
+      "Somalia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/lc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LC",
+    "id": "lc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Liechtenstein",
+      "Romenia",
+      "Brasil",
+      "Uzbequisto"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/li.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LI",
+    "id": "li"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Republica do Congo",
+      "Jordania",
+      "Malawi",
+      "Sri Lanka"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/lk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LK",
+    "id": "lk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Polinesia Francesa",
+      "Liberia",
+      "Vanuatu",
+      "Grecia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/lr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LR",
+    "id": "lr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Reino Unido",
+      "Samoa Americana",
+      "Iraque",
+      "Lesoto"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ls.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LS",
+    "id": "ls"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Libia",
+      "Republica Dominicana",
+      "Dominica",
+      "Lituania"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/lt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LT",
+    "id": "lt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Republica do Congo",
+      "Panama",
+      "Nova Caledonia",
+      "Luxemburgo"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/lu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LU",
+    "id": "lu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Letonia",
+      "Maldivas",
+      "Vaticano",
+      "Sao Vicente e Granadinas"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/lv.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LV",
+    "id": "lv"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Macau",
+      "Guine Equatorial",
+      "Republica Tcheca",
+      "Libia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ly.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "LY",
+    "id": "ly"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Venezuela",
+      "Marrocos",
+      "Arabia Saudita",
+      "Israel"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ma.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MA",
+    "id": "ma"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Gronelandia",
+      "Monaco",
+      "Oma",
+      "Barem"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/mc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MC",
+    "id": "mc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Brunei",
+      "Seicheles",
+      "Mexico",
+      "Moldavia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/md.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MD",
+    "id": "md"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Zimbabue",
+      "Montenegro",
+      "Canada",
+      "Guine Equatorial"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/me.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ME",
+    "id": "me"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ucrani",
+      "MF",
+      "Etiopia",
+      "Republica Tcheca"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/mf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MF",
+    "id": "mf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Colombia",
+      "Benim",
+      "Madagascar",
+      "Timor-Leste"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/mg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MG",
+    "id": "mg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Cabo Verde",
+      "Republica Centro-Africana",
+      "Belgica",
+      "Ilhas Marshall"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/mh.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MH",
+    "id": "mh"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Macedonia do Norte",
+      "Espanha",
+      "Turquia",
+      "Tajiquistao"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/mk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MK",
+    "id": "mk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mali",
+      "Guine-Bissau",
+      "Mexico",
+      "Noruega"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ml.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ML",
+    "id": "ml"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Polonia",
+      "Zimbabue",
+      "Mianmar",
+      "Gronelandia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/mm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MM",
+    "id": "mm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Turquia",
+      "Kosovo",
+      "Aruba",
+      "Mongolia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/mn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MN",
+    "id": "mn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Macau",
+      "Honduras",
+      "Tailandia",
+      "Camboja"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/mo.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MO",
+    "id": "mo"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Namibia",
+      "Niger",
+      "Brunei",
+      "MP"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/mp.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MP",
+    "id": "mp"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Martinica",
+      "Moldavia",
+      "Palestina",
+      "Malasia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/mq.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MQ",
+    "id": "mq"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Alemanha",
+      "Mauritania",
+      "Antigua e Barbuda",
+      "Papua Nova Guine"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/mr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MR",
+    "id": "mr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Antigua e Barbuda",
+      "Ilhas Aland",
+      "Montserrat",
+      "Gabao"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/ms.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MS",
+    "id": "ms"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nauru",
+      "Malta",
+      "Gambia",
+      "Guatemala"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/mt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MT",
+    "id": "mt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Honduras",
+      "Oma",
+      "Mauricia",
+      "Republica do Congo"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/mu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MU",
+    "id": "mu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Niger",
+      "Kosovo",
+      "Maldivas",
+      "Gibraltar"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/mv.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MV",
+    "id": "mv"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Quiribati",
+      "Dominica",
+      "Malawi",
+      "Chade"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/mw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MW",
+    "id": "mw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Haiti",
+      "Mexico",
+      "Cuba",
+      "Armenia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/mx.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MX",
+    "id": "mx"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nigeria",
+      "Seicheles",
+      "Malasia",
+      "Costa do Marfim"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/my.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MY",
+    "id": "my"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Malawi",
+      "Barem",
+      "Coreia do Norte",
+      "Mocambique"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/mz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "MZ",
+    "id": "mz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Libia",
+      "Burkina Faso",
+      "Equador",
+      "Namibia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/na.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NA",
+    "id": "na"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nova Caledonia",
+      "Antigua e Barbuda",
+      "Reino Unido",
+      "Costa do Marfim"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/nc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NC",
+    "id": "nc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Niger",
+      "Malawi",
+      "Filipinas",
+      "Venezuela"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ne.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NE",
+    "id": "ne"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "NF",
+      "Uzbequisto",
+      "Guatemala",
+      "Ilhas Aland"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/nf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NF",
+    "id": "nf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "udao",
+      "Montserrat",
+      "Sri Lanka",
+      "Nigeria"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ng.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NG",
+    "id": "ng"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Noruega",
+      "Nicaragua",
+      "Colombia",
+      "Ilhas Marshall"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ni.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NI",
+    "id": "ni"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mongolia",
+      "Cuba",
+      "Montenegro",
+      "Holanda"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/nl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NL",
+    "id": "nl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Chade",
+      "Noruega",
+      "Republica Centro-Africana",
+      "Venezuela"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/no.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NO",
+    "id": "no"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Filipinas",
+      "Nepal",
+      "Argentina",
+      "Arabia Saudita"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/np.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NP",
+    "id": "np"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Bermudas",
+      "Guine-Bissau",
+      "Nauru",
+      "Republica Dominicana"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/nr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NR",
+    "id": "nr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "NU",
+      "Suica",
+      "Dominica",
+      "Vanuatu"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/nu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NU",
+    "id": "nu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Belgica",
+      "Madagascar",
+      "Paraguai",
+      "Nova Zelandia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/nz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "NZ",
+    "id": "nz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Eritreia",
+      "Tuvalu",
+      "Oma",
+      "Brasil"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/om.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "OM",
+    "id": "om"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Bangladesh",
+      "Sao Tome e Principe",
+      "Belize",
+      "Panama"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/pa.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PA",
+    "id": "pa"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Afeganistao",
+      "Republica Dominicana",
+      "Peru",
+      "Malawi"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/pe.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PE",
+    "id": "pe"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Porto Rico",
+      "Malawi",
+      "Turquemenistao",
+      "Polinesia Francesa"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/pf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PF",
+    "id": "pf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Cazaquistao",
+      "Santa Lucia",
+      "Papua Nova Guine",
+      "Siria"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/pg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PG",
+    "id": "pg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Filipinas",
+      "Gabao",
+      "Republica do Congo",
+      "Monaco"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ph.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PH",
+    "id": "ph"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Georgia",
+      "Pitcairn",
+      "Paquistao",
+      "Tailandia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/pk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PK",
+    "id": "pk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Honduras",
+      "Polonia",
+      "Marrocos",
+      "Noruega"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/pl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PL",
+    "id": "pl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Uruguai",
+      "Sao Pedro e Miguelao",
+      "Santa Lucia",
+      "Benim"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/pm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PM",
+    "id": "pm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Niger",
+      "Pitcairn",
+      "Cazaquistao",
+      "Ucrani"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/pn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PN",
+    "id": "pn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Oma",
+      "Suica",
+      "Hungria",
+      "Porto Rico"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/pr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PR",
+    "id": "pr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Palestina",
+      "Timor-Leste",
+      "Jersey",
+      "Brunei"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ps.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PS",
+    "id": "ps"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Polinesia Francesa",
+      "Madagascar",
+      "Jamaica",
+      "Portugal"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/pt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "id": "pt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nigeria",
+      "Luxemburgo",
+      "Arabia Saudita",
+      "Palau"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/pw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PW",
+    "id": "pw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Portugal",
+      "Tajiquistao",
+      "Paraguai",
+      "Ira"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/py.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PY",
+    "id": "py"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Emirados Arabes Unidos",
+      "Republica Dominicana",
+      "Qatar",
+      "Botsuana"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/qa.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "QA",
+    "id": "qa"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Estonia",
+      "Taiwan",
+      "Ucrani",
+      "RE"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/re.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "RE",
+    "id": "re"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Honduras",
+      "Romenia",
+      "Mauricia",
+      "Grecia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ro.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "RO",
+    "id": "ro"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Servia",
+      "Ilhas Virgens Britanicas",
+      "Costa do Marfim",
+      "Azerbaijao"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/rs.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "RS",
+    "id": "rs"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Taiwan",
+      "Koweit",
+      "Chile",
+      "Russia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ru.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "RU",
+    "id": "ru"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suriname",
+      "Montserrat",
+      "Ruanda",
+      "Liberia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/rw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "RW",
+    "id": "rw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Arabia Saudita",
+      "Israel",
+      "Macedonia do Norte",
+      "Trinidad e Tobago"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sa.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SA",
+    "id": "sa"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Salomon",
+      "Republica Democratica do Congo",
+      "Coreia do Sul",
+      "Filipinas"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sb.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SB",
+    "id": "sb"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Australia",
+      "Malawi",
+      "Seicheles",
+      "udao"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/sc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SC",
+    "id": "sc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Armenia",
+      "udao",
+      "Iemen",
+      "Bangladesh"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/sd.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SD",
+    "id": "sd"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Haiti",
+      "Grecia",
+      "Suriname",
+      "Suecia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/se.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SE",
+    "id": "se"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Benim",
+      "Japao",
+      "Iraque",
+      "Singapura"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/sg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SG",
+    "id": "sg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Uruguai",
+      "SH",
+      "Antigua e Barbuda",
+      "Seicheles"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/sh.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SH",
+    "id": "sh"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Eslovaquia",
+      "Tajiquistao",
+      "Eslovenia",
+      "Tuvalu"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/si.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SI",
+    "id": "si"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Tajiquistao",
+      "SJ",
+      "Azerbaijao",
+      "Tonga"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/sj.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SJ",
+    "id": "sj"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Cristovao e Nevis",
+      "Eslovaquia",
+      "Aruba",
+      "Luxemburgo"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/sk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SK",
+    "id": "sk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Serra Leoa",
+      "Gana",
+      "Republica Democratica do Congo",
+      "Monaco"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SL",
+    "id": "sl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Marino",
+      "Moldavia",
+      "Eslovenia",
+      "Armenia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SM",
+    "id": "sm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Senegal",
+      "Chile",
+      "Cazaquistao",
+      "Gana"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SN",
+    "id": "sn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Somalia",
+      "Bosnia-Herzegovina",
+      "Uzbequisto",
+      "Bulgaria"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/so.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SO",
+    "id": "so"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Suriname",
+      "Jamaica",
+      "Liechtenstein",
+      "Mauricia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SR",
+    "id": "sr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "SS",
+      "Laos",
+      "Eslovenia",
+      "Aruba"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ss.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SS",
+    "id": "ss"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Emirados Arabes Unidos",
+      "Botsuana",
+      "Guine Equatorial",
+      "Sao Tome e Principe"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/st.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ST",
+    "id": "st"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Alemanha",
+      "Trinidad e Tobago",
+      "El Salvador",
+      "Porto Rico"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/sv.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SV",
+    "id": "sv"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "SX",
+      "Bosnia-Herzegovina",
+      "Fiji",
+      "Canada"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/sx.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SX",
+    "id": "sx"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Salomon",
+      "Siria",
+      "Sao Cristovao e Nevis",
+      "Eslovenia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/sy.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SY",
+    "id": "sy"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Hungria",
+      "Turquia",
+      "Irlanda",
+      "Suazilandia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/sz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "SZ",
+    "id": "sz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Turks e Caicos",
+      "Anguilla",
+      "Cabo Verde",
+      "Suecia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/tc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TC",
+    "id": "tc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Chade",
+      "Bolivia",
+      "Portugal",
+      "Tunisia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/td.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TD",
+    "id": "td"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Papua Nova Guine",
+      "Malasia",
+      "TF",
+      "Arabia Saudita"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/tf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TF",
+    "id": "tf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mocambique",
+      "Peru",
+      "Togo",
+      "El Salvador"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/tg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TG",
+    "id": "tg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Macau",
+      "Uganda",
+      "Mauricia",
+      "Tailandia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/th.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TH",
+    "id": "th"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Filipinas",
+      "Tajiquistao",
+      "Egito",
+      "Estados Unidos"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/tj.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TJ",
+    "id": "tj"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Eritreia",
+      "Sao Marino",
+      "TK",
+      "Republica Democratica do Congo"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/tk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TK",
+    "id": "tk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Timor-Leste",
+      "Africa do Sul",
+      "Bahamas",
+      "Japao"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/tl.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TL",
+    "id": "tl"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Aland",
+      "Mocambique",
+      "Camaroes",
+      "Turquemenistao"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/tm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TM",
+    "id": "tm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Mongolia",
+      "Palestina",
+      "Singapura",
+      "Tunisia"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/tn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TN",
+    "id": "tn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Turquemenistao",
+      "Irlanda",
+      "Islandia",
+      "Tonga"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/to.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TO",
+    "id": "to"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Vietname",
+      "Guine-Bissau",
+      "Turquia",
+      "Barbados"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/tr.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TR",
+    "id": "tr"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Trinidad e Tobago",
+      "Bangladesh",
+      "Maldivas",
+      "Argentina"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/tt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TT",
+    "id": "tt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Alemanha",
+      "Hong Kong",
+      "Tuvalu",
+      "Kosovo"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/tv.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TV",
+    "id": "tv"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Senegal",
+      "Bangladesh",
+      "Taiwan",
+      "Islandia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/tw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TW",
+    "id": "tw"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Sao Tome e Principe",
+      "Tanzania",
+      "Liechtenstein",
+      "Vietname"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/tz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "TZ",
+    "id": "tz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Singapura",
+      "Gambia",
+      "Liberia",
+      "Ucrani"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/ua.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "UA",
+    "id": "ua"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Uganda",
+      "Suecia",
+      "Cazaquistao",
+      "Holanda"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ug.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "UG",
+    "id": "ug"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Vietname",
+      "Turquemenistao",
+      "Luxemburgo",
+      "UM"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/um.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "UM",
+    "id": "um"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Vietname",
+      "Quirguistao",
+      "Republica Democratica do Congo",
+      "UN"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/un.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "UN",
+    "id": "un"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Chipre",
+      "Estados Unidos",
+      "Djibouti",
+      "Brunei"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/us.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "US",
+    "id": "us"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Uruguai",
+      "Colombia",
+      "Holanda",
+      "Guam"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/uy.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "UY",
+    "id": "uy"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Eritreia",
+      "Macedonia do Norte",
+      "Guine-Bissau",
+      "Uzbequisto"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/uz.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "UZ",
+    "id": "uz"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Granada",
+      "Vaticano",
+      "Gabao",
+      "Marrocos"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/va.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VA",
+    "id": "va"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Nova Zelandia",
+      "Macau",
+      "Sao Vicente e Granadinas",
+      "Republica Dominicana"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/vc.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VC",
+    "id": "vc"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Vanuatu",
+      "Venezuela",
+      "Porto Rico",
+      "Chade"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/ve.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VE",
+    "id": "ve"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Ilhas Virgens Britanicas",
+      "Albania",
+      "Suriname",
+      "Hong Kong"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/vg.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VG",
+    "id": "vg"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Russia",
+      "Nigeria",
+      "VI",
+      "Bielorrussia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/vi.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VI",
+    "id": "vi"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Santa Lucia",
+      "Polonia",
+      "Republica Centro-Africana",
+      "Vietname"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/vn.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VN",
+    "id": "vn"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Vanuatu",
+      "Indonesia",
+      "Burundi",
+      "Bahamas"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/vu.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "VU",
+    "id": "vu"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Anguilla",
+      "Barem",
+      "WF",
+      "Malasia"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/wf.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "WF",
+    "id": "wf"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Samoa",
+      "Tunisia",
+      "Guine-Bissau",
+      "Guatemala"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ws.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "WS",
+    "id": "ws"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "China",
+      "Bahamas",
+      "Kosovo",
+      "Paquistao"
+    ],
+    "correct_option": 2,
+    "image_url": "/flags/xk.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "XK",
+    "id": "xk"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Iemen",
+      "Croacia",
+      "China",
+      "Grecia"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/ye.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "YE",
+    "id": "ye"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "YT",
+      "Togo",
+      "Cuba",
+      "Burundi"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/yt.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "YT",
+    "id": "yt"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Africa do Sul",
+      "Tunisia",
+      "Holanda",
+      "Tuvalu"
+    ],
+    "correct_option": 0,
+    "image_url": "/flags/za.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ZA",
+    "id": "za"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Equador",
+      "Zambia",
+      "Azerbaijao",
+      "Bielorrussia"
+    ],
+    "correct_option": 1,
+    "image_url": "/flags/zm.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ZM",
+    "id": "zm"
+  },
+  {
+    "text": "De que pais e esta bandeira?",
+    "options": [
+      "Koweit",
+      "Tunisia",
+      "Uruguai",
+      "Zimbabue"
+    ],
+    "correct_option": 3,
+    "image_url": "/flags/zw.svg",
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "ZW",
+    "id": "zw"
+  }
+]

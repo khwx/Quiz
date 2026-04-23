@@ -1,0 +1,422 @@
+{
+  "ANIMAIS": [
+    {
+      "text": "Qual e o animal mais alto do mundo?",
+      "options": ["Elefante", "Girafa", "Zebra", "Urso"],
+      "correct_option": 1,
+      "hint": "E amarelo com manchas!"
+    },
+    {
+      "text": "Quantas pernas tem uma aranha?",
+      "options": ["4", "6", "8", "10"],
+      "correct_option": 2,
+      "hint": "Conta os pes!"
+    },
+    {
+      "text": "O que e que as abelhas produzem?",
+      "options": ["Leite", "Mel", "Sumo", "Agua"],
+      "correct_option": 1,
+      "hint": "As abelhas fazem um liquido doce"
+    },
+    {
+      "text": "Qual destes animais vive na agua e na terra?",
+      "options": ["Sapo", "Peixe", "Gato", "Passaro"],
+      "correct_option": 0,
+      "hint": "E um anfibio!"
+    },
+    {
+      "text": "O Nemo e que tipo de peixe?",
+      "options": ["Tubarao", "Peixe-Palhaço", "Baleia", "Salmao"],
+      "correct_option": 1,
+      "hint": "E laranja e branco, da Disney!"
+    },
+    {
+      "text": "Qual animal faz Miau?",
+      "options": ["Cao", "Gato", "Vaca", "Pato"],
+      "correct_option": 1,
+      "hint": "Miaaaaaau!"
+    },
+    {
+      "text": "Qual e o maior animal do mundo?",
+      "options": ["Elefante", "Girafa", "Baleia Azul", "Rinoceronte"],
+      "correct_option": 2,
+      "hint": "Vive no mar!"
+    },
+    {
+      "text": "Onde vive o urso polar?",
+      "options": ["No deserto", "Na selva", "No gelo", "No rio"],
+      "correct_option": 2,
+      "hint": "E muito frio la!"
+    },
+    {
+      "text": "Qual destes animais poe ovos?",
+      "options": ["Cao", "Gato", "Galinha", "Coelho"],
+      "correct_option": 2,
+      "hint": "A galinha poe ovos todos os dias!"
+    },
+    {
+      "text": "Que animal e conhecido por comer bambu?",
+      "options": ["Leao", "Panda", "Elefante", "Girafa"],
+      "correct_option": 1,
+      "hint": "E preto e branco, da China!"
+    }
+  ],
+  "CIENCIA": [
+    {
+      "text": "Quantos planetas tem o Sistema Solar?",
+      "options": ["7", "8", "9", "10"],
+      "correct_option": 1,
+      "hint": "Conta do Mercurio a Neptuno"
+    },
+    {
+      "text": "Qual e a cor do ceu num dia de sol?",
+      "options": ["Verde", "Azul", "Roxo", "Laranja"],
+      "correct_option": 1,
+      "hint": "E a cor do mar tambem!"
+    },
+    {
+      "text": "Quantas cores tem o arco-iris?",
+      "options": ["5", "6", "7", "8"],
+      "correct_option": 2,
+      "hint": "E igual aos dias da semana!"
+    },
+    {
+      "text": "Quantas estacoes do ano existem?",
+      "options": ["2", "3", "4", "5"],
+      "correct_option": 2,
+      "hint": "Primavera, Verao, Outono, Inverno"
+    },
+    {
+      "text": "Qual e o planeta mais perto do Sol?",
+      "options": ["Venus", "Marte", "Mercurio", "Terra"],
+      "correct_option": 2,
+      "hint": "E o mais proximo, logo o mais quente!"
+    },
+    {
+      "text": "O que as plantas precisam para fazer fotossintese?",
+      "options": ["Luz Solar", "Hamburguer", "Sombra", "Vento"],
+      "correct_option": 0,
+      "hint": "E o que vem do sol!"
+    },
+    {
+      "text": "Qual e o simbolo da agua?",
+      "options": ["CO2", "H2O", "O2", "NaCl"],
+      "correct_option": 1,
+      "hint": "H = Hidrogenio, O = Oxigenio"
+    },
+    {
+      "text": "Qual e o elemento quimico com o simbolo Au?",
+      "options": ["Prata", "Cobre", "Ouro", "Aluminio"],
+      "correct_option": 2,
+      "hint": "E um metal precioso!"
+    }
+  ],
+  "CULTURA_GERAL": [
+    {
+      "text": "Qual e a capital de Portugal?",
+      "options": ["Lisboa", "Porto", "Coimbra", "Faro"],
+      "correct_option": 0,
+      "hint": "E onde fica a Torre de Belem!"
+    },
+    {
+      "text": "Quantos dias tem uma semana?",
+      "options": ["5", "6", "7", "8"],
+      "correct_option": 2,
+      "hint": "E os dias de aulas!"
+    },
+    {
+      "text": "Quantas horas tem um dia?",
+      "options": ["12", "20", "24", "30"],
+      "correct_option": 2,
+      "hint": "Meio dia + meio dia = dia inteiro!"
+    },
+    {
+      "text": "Quantos minutos tem uma hora?",
+      "options": ["30", "45", "60", "90"],
+      "correct_option": 2,
+      "hint": "E 60 minutos!"
+    },
+    {
+      "text": "Qual e a cor da bata do Pai Natal?",
+      "options": ["Azul", "Verde", "Vermelho", "Amarelo"],
+      "correct_option": 2,
+      "hint": "E vermelho como o sangue!"
+    },
+    {
+      "text": "Em que estacao do ano vamos a praia?",
+      "options": ["Inverno", "Verao", "Outono", "Primavera"],
+      "correct_option": 1,
+      "hint": "E quando ha sol e calor!"
+    },
+    {
+      "text": "Qual e a capital da Australia?",
+      "options": ["Sydney", "Melbourne", "Canberra", "Perth"],
+      "correct_option": 2,
+      "hint": "Nem Sydney nem Melbourne!"
+    },
+    {
+      "text": "Quem pintou a Mona Lisa?",
+      "options": ["Van Gogh", "Picasso", "Da Vinci", "Michelangelo"],
+      "correct_option": 2,
+      "hint": "O quadro esta no Louvre!"
+    },
+    {
+      "text": "Em que ano terminou a II Guerra Mundial?",
+      "options": ["1940", "1945", "1950", "1939"],
+      "correct_option": 1,
+      "hint": "1945 foi o fim!"
+    },
+    {
+      "text": "Qual e o maior pais do mundo em area?",
+      "options": ["China", "EUA", "Russia", "Canada"],
+      "correct_option": 2,
+      "hint": "E muito frio la!"
+    }
+  ],
+  "GEOGRAFIA": [
+    {
+      "text": "Qual e o rio mais longo de Portugal?",
+      "options": ["Douro", "Tejo", "Mondego", "Guadiana"],
+      "correct_option": 0,
+      "hint": "Passa pelo Porto!"
+    },
+    {
+      "text": "Em que continente fica Portugal?",
+      "options": ["Africa", "Asia", "Europa", "America"],
+      "correct_option": 2,
+      "hint": "E um pais europeu!"
+    },
+    {
+      "text": "Qual e o oceano que banha Portugal?",
+      "options": ["Oceano Indico", "Oceano Pacifico", "Oceano Atlantico", "Oceano Artico"],
+      "correct_option": 2,
+      "hint": "E o oceano a oeste!"
+    },
+    {
+      "text": "Qual destas ilhas pertence a Portugal?",
+      "options": ["Ibiza", "Madeira", "Sicilia", "Creta"],
+      "correct_option": 1,
+      "hint": "E uma ilha portuguesa no Atlantico!"
+    },
+    {
+      "text": "Qual e a montanha mais alta de Portugal?",
+      "options": ["Serra da Estrela", "Pico do Monte", "Torre", "Pico do Areeiro"],
+      "correct_option": 1,
+      "hint": "Esta nos Acores!"
+    }
+  ],
+  "HISTORIA": [
+    {
+      "text": "Em que ano foi descoberto o caminho maritimo para a India?",
+      "options": ["1492", "1498", "1500", "1488"],
+      "correct_option": 1,
+      "hint": "1498 foi Vasco da Gama!"
+    },
+    {
+      "text": "Quem foi Vasco da Gama?",
+      "options": ["Um escritor", "Um navegador", "Um rei", "Um pintor"],
+      "correct_option": 1,
+      "hint": "Descobriu o caminho para a India!"
+    },
+    {
+      "text": "Qual foi o primeiro rei de Portugal?",
+      "options": ["D. Afonso Henriques", "D. Joao I", "D. Manuel I", "D. Sebastiao"],
+      "correct_option": 0,
+      "hint": "E o Fundador de Portugal!"
+    },
+    {
+      "text": "Quem escreveu Os Lusiadas?",
+      "options": ["Fernando Pessoa", "Luis de Camoes", "Eca de Queiros", "Jose Saramago"],
+      "correct_option": 1,
+      "hint": "E um poeta do sec. XVI"
+    },
+    {
+      "text": "Quem escreveu Os Maias?",
+      "options": ["Fernando Pessoa", "Jose Saramago", "Eca de Queiros", "Camilo Castelo Branco"],
+      "correct_option": 2,
+      "hint": "Eca de Queiros e do sec. XIX"
+    }
+  ],
+  "DESPORTO": [
+    {
+      "text": "Quantos jogadores tem uma equipa de futebol em campo?",
+      "options": ["9", "10", "11", "12"],
+      "correct_option": 2,
+      "hint": "E uma equipa completa!"
+    },
+    {
+      "text": "Em que desporto se usa uma raquete e um volante?",
+      "options": ["Tenis", "Badminton", "Padel", "Ping Pong"],
+      "correct_option": 1,
+      "hint": "E jogado em ginásio!"
+    },
+    {
+      "text": "Cristiano Ronaldo e conhecido por que numero?",
+      "options": ["5", "7", "9", "10"],
+      "correct_option": 1,
+      "hint": "E o numero da camisola CR7!"
+    },
+    {
+      "text": "Em que ano Portugal ganhou o Campeonato Europeo de futebol?",
+      "options": ["2004", "2012", "2016", "2020"],
+      "correct_option": 2,
+      "hint": "2016 em Franca!"
+    },
+    {
+      "text": "Qual destes clubes e de futebol portugues?",
+      "options": ["FC Barcelona", "Benfica", "Real Madrid", "Manchester United"],
+      "correct_option": 1,
+      "hint": "E dasAguias!"
+    }
+  ],
+  "CINEMA": [
+    {
+      "text": "Quem realizou o filme Titanic?",
+      "options": ["Steven Spielberg", "James Cameron", "Christopher Nolan", "George Lucas"],
+      "correct_option": 1,
+      "hint": "E o mesmo de Avatar!"
+    },
+    {
+      "text": "Qual ator interpreta o Homem de Ferro?",
+      "options": ["Chris Evans", "Chris Hemsworth", "Robert Downey Jr.", "Mark Ruffalo"],
+      "correct_option": 2,
+      "hint": "E o Tony Stark!"
+    },
+    {
+      "text": "Em Harry Potter, qual e a casa de Harry?",
+      "options": ["Slytherin", "Hufflepuff", "Ravenclaw", "Gryffindor"],
+      "correct_option": 3,
+      "hint": "E dos bravos!"
+    }
+  ],
+  "GASTRONOMIA": [
+    {
+      "text": "Qual destas frutas e tipica de Portugal?",
+      "options": ["Manga", "Abacaxi", "Laranja do Algarve", "Kiwi"],
+      "correct_option": 2,
+      "hint": "E do Algarve!"
+    },
+    {
+      "text": "Qual destes e um prato tipico portugues?",
+      "options": ["Paella", "Bacalhau a Bras", "Pizza", "Sushi"],
+      "correct_option": 1,
+      "hint": "E feito com bacalhau e batatas!"
+    },
+    {
+      "text": "Em que pais se come o melhor bacalhau?",
+      "options": ["Portugal", "Espanha", "Brasil", "Franca"],
+      "correct_option": 0,
+      "hint": "O bacalhau e muito popular em Portugal!"
+    },
+    {
+      "text": "Qual e o prato Bacalhau a Gomes de Sa?",
+      "options": ["Um doce", "Um prato de bacalhau com batatas", "Uma sopa", "Um peixe frito"],
+      "correct_option": 1,
+      "hint": "E um classico de Lisboa!"
+    }
+  ],
+  "MUSICA": [
+    {
+      "text": "Quem e a Diva do Fado?",
+      "options": ["Amalia Rodrigues", "Mariza", "Ana Mourao", "Theresa"],
+      "correct_option": 0,
+      "hint": "E a Rainha do Fado!"
+    },
+    {
+      "text": "O que e o Fado?",
+      "options": ["Um tipo de danca", "Um genero musical portugues", "Um tipo de cantiga", "Um instrumento"],
+      "correct_option": 1,
+      "hint": "E patrimonio de Portugal!"
+    },
+    {
+      "text": "Qual e o instrumento principal do Fado?",
+      "options": ["Viola", "Viola viola", "Guitarra portuguesa", "Piano"],
+      "correct_option": 2,
+      "hint": "Tem 12 cordas!"
+    }
+  ],
+  "MATEMATICA": [
+    {
+      "text": "Quanto e 7 + 8?",
+      "options": ["13", "14", "15", "16"],
+      "correct_option": 2,
+      "hint": "7 + 7 = 14, mais 1 = 15"
+    },
+    {
+      "text": "Quanto e 9 x 9?",
+      "options": ["72", "81", "90", "99"],
+      "correct_option": 1,
+      "hint": "9 x 10 = 90, menos 9 = 81"
+    },
+    {
+      "text": "Quanto e 100 - 37?",
+      "options": ["53", "63", "73", "83"],
+      "correct_option": 1,
+      "hint": "100 - 30 = 70, menos 7 = 63"
+    },
+    {
+      "text": "Quanto e 24 / 6?",
+      "options": ["3", "4", "5", "6"],
+      "correct_option": 1,
+      "hint": "6 x 4 = 24"
+    },
+    {
+      "text": "Quantos lados tem um hexagono?",
+      "options": ["5", "6", "7", "8"],
+      "correct_option": 1,
+      "hint": "Hexa = 6!"
+    }
+  ],
+  "CAPITAIS_DO_MUNDO": [
+    {
+      "text": "Qual e a capital do Brasil?",
+      "options": ["Rio de Janeiro", "Sao Paulo", "Brasilia", "Salvador"],
+      "correct_option": 2,
+      "hint": "Nao e Rio nem Sao Paulo!"
+    },
+    {
+      "text": "Qual e a capital de Franca?",
+      "options": ["Lyon", "Marseille", "Paris", "Nice"],
+      "correct_option": 2,
+      "hint": "E a cidade luz!"
+    },
+    {
+      "text": "Qual e a capital do Reino Unido?",
+      "options": ["Manchester", "Liverpool", "Londres", "Birmingham"],
+      "correct_option": 2,
+      "hint": "E Inglaterra!"
+    },
+    {
+      "text": "Qual e a capital da Italia?",
+      "options": ["Milao", "Roma", "Napoles", "Veneza"],
+      "correct_option": 1,
+      "hint": "A cidade eterna!"
+    },
+    {
+      "text": "Qual e a capital da Alemanha?",
+      "options": ["Munique", "Berlim", "Hamburgo", "Frankfurt"],
+      "correct_option": 1,
+      "hint": "E Berlim!"
+    }
+  ],
+  "ARTE": [
+    {
+      "text": "Quem pintou a Mona Lisa?",
+      "options": ["Van Gogh", "Picasso", "Leonardo da Vinci", "Michelangelo"],
+      "correct_option": 2,
+      "hint": "Esta no museu do Louvre!"
+    },
+    {
+      "text": "Quem pintou Noite Estrelada?",
+      "options": ["Picasso", "Van Gogh", "Monet", "Gauguin"],
+      "correct_option": 1,
+      "hint": "Pintou o ceu estrelado!"
+    },
+    {
+      "text": "Quem e Fernando Pessoa?",
+      "options": ["Um politico", "Um escritor e poeta", "Um pintor", "Um musico"],
+      "correct_option": 1,
+      "hint": "E o maior poeta de Portugal!"
+    }
+  ]
+}

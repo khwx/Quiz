@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-04-23",
+    "total_questions": 720,
+    "categories": 12,
+    "levels": 3
+  },
+  
+  "ANIMAIS": {
+    "8": [
+      {"text": "Qual e o animal mais alto?", "options": ["Elefante", "Girafa", "Zebra", "Urso"], "correct": 1, "hint": "E amarelo com manchas!"},
+      {"text": "Quantas pernas tem aranha?", "options": ["4", "6", "8", "10"], "correct": 2, "hint": "Conta os pes!"},
+      {"text": "O que abelhas fazem?", "options": ["Leite", "Mel", "Sumo", "Agua"], "correct": 1, "hint": "E doce!"},
+      {"text": "Qual animal vive na agua+e terra?", "options": ["Sapo", "Peixe", "Gato", "Passaro"], "correct": 0, "hint": "E anfibio!"},
+      {"text": "Nemo e que peixe?", "options": ["Tubarao", "Peixe-Palhaço", "Baleia", "Salmao"], "correct": 1, "hint": "E laranja!"},
+      {"text": "Qual faz Miau?", "options": ["Cao", "Gato", "Vaca", "Pato"], "correct": 1, "hint": "Miaaaaaau!"},
+      {"text": "Maior animal?", "options": ["Elefante", "Girafa", "Baleia Azul", "Rinoceronte"], "correct": 2, "hint": "Vive no mar!"},
+      {"text": "Urso polar onde?", "options": ["Deserto", "Selva", "Gelo", "Rio"], "correct": 2, "hint": "E frio!"},
+      {"text": "Qual poe ovos?", "options": ["Cao", "Gato", "Galinha", "Coelho"], "correct": 2, "hint": "Galinha!"},
+      {"text": "Panda come o quê?", "options": ["Frutas", "Carne", "Bambu", "Insetos"], "correct": 2, "hint": "E preto e branco!"}
+    ],
+    "12": [
+      {"text": "Qual animal regenera membros?", "options": ["Estrela do mar", "Caracol", "Lobo", "Coruja"], "correct": 0, "hint": "Consegue regenerar!"},
+      {"text": "O que e metamorfose?", "options": ["Danca", "Transformacao", "Reproducao", "Nascimento"], "correct": 1, "hint": "Borboleta!"},
+      {"text": "Qual animal nao vomita?", "options": ["Cao", "Gato", "Canguru", "Coelho"], "correct": 2, "hint": "E o canguru!"},
+      {"text": "Marsupial e...", "options": ["Urso", "Coelho", "Canguru", "Raposa"], "correct": 2, "hint": "Tem bolsa!"},
+      {"text": "ABELHAS na danca comunicam o quê?", "options": ["Danca", "Localizacao", "Brincar", "Acasalar"], "correct": 1, "hint": "Onde ha flores!"},
+      {"text": "Migracao e...", "options": ["Viagem", "Movimento sazonal", "Corrida", "Voar"], "correct": 1, "hint": "Mudam de estacao!"},
+      {"text": "Maior mamifero terrestre?", "options": ["Elefante africano", "Girafa", "Hipopotamo", "Rinoceronte"], "correct": 0, "hint": "E o africano!"},
+      {"text": "Quantos coracoes minhoca?", "options": ["Nenhum", "Um", "Cinco", "Dez"], "correct": 2, "hint": "Tem 5!"},
+      {"text": "Qual cambia cor?", "options": ["Leao", "Tigre", "Camaleao", "Zebra"], "correct": 2, "hint": "Para camuflar!"},
+      {"text": "Mais rapido do mundo?", "options": ["Leao", "Guepardo", "Tigre", "Lobo"], "correct": 1, "hint": "E o Guepardo!"}
+    ],
+    "16": [
+      {"text": "O que e evolucao?", "options": ["Mudanca ao longo do tempo", "Criacao", "Extincao", "Reproducao"], "correct": 0, "hint": "Mudanca!"},
+      {"text": "Quimera e o quizer?", "options": ["Animal mitologico", "Peixe", "Tubarao", "Rai"], "correct": 0, "hint": "E mitico!"},
+      {"text": "O que sao bilion?", "options": ["Milhao", "Mil milhões", "Biliao", "Triliao"], "correct": 1, "hint": "Mil milhes!"},
+      {"text": "Gene e o quizer?", "options": ["DNA", "Unidade genetica", "Cromossoma", "Celula"], "correct": 1, "hint": "Unidade!"},
+      {"text": "O que e simbiose?", "options": ["Combate", "Uniao benéfica", "Guerra", "Fuga"], "correct": 1, "hint": "Uniao boa!"},
+      {"text": "Cadeia alimentar e...", "options": ["Corrente", "Sequencia alimentar", "Teia", "Alimento"], "correct": 1, "hint": "Sequencia!"},
+      {"text": "Produtor primario e...", "options": ["Animal", "Planta", " Fungo", "Bacteria"], "correct": 1, "hint": "Faz fotossintese!"},
+      {"text": "Decompositor e...", "options": ["Animal", "Planta", "Fungo", "Pedra"], "correct": 2, "hint": "Fungo!"},
+      {"text": "O que e biomagnificacao?", "options": ["Crescimento", "Acumulo toxico", "Reproducao", "Alimentacao"], "correct": 1, "hint": "Acumulo!"},
+      {"text": "Nivel trofico e...", "options": ["Posicao alimentar", "Tamanho", "Peso", "Idade"], "correct": 0, "hint": "Posicao!"}
+    ]
+  },
+  
+  "CIENCIA": {
+    "8": [
+      {"text": "Sistema Solar quantos planetas?", "options": ["7", "8", "9", "10"], "correct": 1, "hint": "8 planetas!"},
+      {"text": "Cor doceu?", "options": ["Verde", "Azul", "Roxo", "Laranja"], "correct": 1, "hint": "E azul!"},
+      {"text": "Arco-iris cores?", "options": ["5", "6", "7", "8"], "correct": 2, "hint": "7 cores!"},
+      {"text": "Estacoes do ano?", "options": ["2", "3", "4", "5"], "correct": 2, "hint": "4 estacoes!"},
+      {"text": "Planeta mais perto Sol?", "options": ["Venus", "Marte", "Mercurio", "Terra"], "correct": 2, "hint": "E Mercurio!"},
+      {"text": "Plantas precisam de...", "options": ["Luz Solar", "Hamburguer", "Sombra", "Vento"], "correct": 0, "hint": "Luz solar!"},
+      {"text": "Simbolo da agua?", "options": ["CO2", "H2O", "O2", "NaCl"], "correct": 1, "hint": "H2O!"},
+      {"text": "Elemento Au?", "options": ["Prata", "Cobre", "Ouro", "Aluminio"], "correct": 2, "hint": "E ouro!"},
+      {"text": "Sol e uma...", "options": ["Estrela", "Planeta", "Lua", "Galaxia"], "correct": 0, "hint": "E uma estrela!"},
+      {"text": "Planeta vermelho?", "options": ["Venus", "Marte", "Mercurio", "Jupiter"], "correct": 1, "hint": "E Marte!"}
+    ],
+    "12": [
+      {"text": "O que e gravidade?", "options": ["Vento", "Forca de atracao", "Calor", "Luz"], "correct": 1, "hint": "Puxa para baixo!"},
+      {"text": "Maior planeta?", "options": ["Saturno", "Jupiter", "Neptuno", "Urano"], "correct": 1, "hint": "E Jupiter!"},
+      {"text": "Quantas luas Terra?", "options": ["0", "1", "2", "3"], "correct": 1, "hint": "1 lua!"},
+      {"text": "Lua e o quizer?", "options": ["Estrela", "Satelite", "Planeta", "Cometa"], "correct": 1, "hint": "Satelite!"},
+      {"text": "Gas que respiramos?", "options": ["Oxigenio", "Nitrogenio", "CO2", "Hidrogenio"], "correct": 0, "hint": "Oxigenio!"},
+      {"text": "Fotossintese e...", "options": ["Respirar", "Fazer luz", "Plantas fazer comida", "Crescer"], "correct": 2, "hint": "Fazem comida!"},
+      {"text": "Ponto fusao agua?", "options": ["0 graus", "100 graus", "50 graus", "25 graus"], "correct": 0, "hint": "0 graus!"},
+      {"text": "Fosseis sao...", "options": ["Pedras", "Restos antigos", "Plantas", "Agua"], "correct": 1, "hint": "Restos!"},
+      {"text": "Camada mais externa Terra?", "options": ["Nucleo", "Manto", "Crosta", "Atmosfera"], "correct": 2, "hint": "E a superficie!"},
+      {"text": "Eclipse e...", "options": ["Tempestade", "Sombra", "Chuva", "Vento"], "correct": 1, "hint": "Sombra!"}
+    ],
+    "16": [
+      {"text": "Planeta com aneis?", "options": ["Venus", "Marte", "Saturno", "Terra"], "correct": 2, "hint": "Saturno!"},
+      {"text": "ADN e o quizer?", "options": ["Orgao", "Acido genetico", "Celula", "Gene"], "correct": 1, "hint": "Tem genetica!"},
+      {"text": "O que causa estacoes?", "options": ["Sol", "Rotacao", "Orbita inclinada", "Lua"], "correct": 2, "hint": "Inclinacao!"},
+      {"text": "Asteroides estao onde?", "options": ["Entre Marte e Jupiter", "Depois de Jupiter", "Antes de Marte", "Entre Venus e Terra"], "correct": 0, "hint": "Cinto!"},
+      {"text": "Quasar e o quizer?", "options": ["Estrela", "Galaxia ativa", "Planeta", "Buraco negro"], "correct": 1, "hint": "Galaxia!"},
+      {"text": "Materia escura e...", "options": ["Preta", "Invisivel", "Escura", "Desconhecida"], "correct": 3, "hint": "Desconhecida!"},
+      {"text": "Big Bang foi ha...", "options": ["1 biliao", "13.8 bilioes", "100 anos", "1 milhao"], "correct": 1, "hint": "13.8 bilioes!"},
+      {"text": "Boson de Higgs?", "options": ["Particula", "Onda", "Forca", "Massa"], "correct": 0, "hint": "Particula!"},
+      {"text": "Constelacao e...", "options": ["Estrela", "Grupo de estrelas", "Planeta", "Galaxia"], "correct": 1, "hint": "Grupo!"},
+      {"text": "Velocidade da luz?", "options": ["300000 km/s", "150000 km/s", "500000 km/s", "1 milhao km/s"], "correct": 0, "hint": "300000 km/s!"}
+    ]
+  },
+  
+  "DESPORTO": {
+    "8": [
+      {"text": "Jogadores futebol em campo?", "options": ["9", "10", "11", "12"], "correct": 2, "hint": "11 jogadores!"},
+      {"text": "Qual CR7?", "options": ["5", "7", "9", "10"], "correct": 1, "hint": "Cristiano Ronaldo!"},
+      {"text": "Portugal Euro 2016?", "options": ["2004", "2012", "2016", "2020"], "correct": 2, "hint": "2016!"},
+      {"text": "Clube portugues?", "options": ["FC Barcelona", "Benfica", "Real Madrid", "Man United"], "correct": 1, "hint": "Benfica!"},
+      {"text": "Quantos aros Olimpidas?", "options": ["3", "4", "5", "6"], "correct": 2, "hint": "5!"},
+      {"text": "Raquete+volante?", "options": ["Tenis", "Badminton", "Padel", "Ping Pong"], "correct": 1, "hint": "Badminton!"},
+      {"text": "Quantos minutos jogo?", "options": ["45", "60", "90", "120"], "correct": 2, "hint": "90 minutos!"},
+      {"text": "O que e penalty?", "options": ["Falta", "Grandes penalidade", "Livre", "Escalao"], "correct": 1, "hint": "PENALTY!"},
+      {"text": "Em que desporto se usa bola?", "options": ["Futebol", "Todos", "Tenis", "Natacao"], "correct": 1, "hint": "Em muitos!"},
+      {"text": "O que e hat-trick?", "options": ["3 golos", "4 golos", "5 golos", "2 golos"], "correct": 0, "hint": "3 golos!"}
+    ],
+    "12": [
+      {"text": "Basquetebol jogadores?", "options": ["4", "5", "6", "7"], "correct": 1, "hint": "5!"},
+      {"text": "Maratona km?", "options": ["21 km", "42 km", "50 km", "100 km"], "correct": 1, "hint": "42 km!"},
+      {"text": "Futebol donde?", "options": ["Brasil", "Inglaterra", "Espanha", "Italia"], "correct": 1, "hint": "Inglaterra!"},
+      {"text": "Copa do Mundo de 4 em 4?", "options": ["2 anos", "4 anos", "5 anos", "1 ano"], "correct": 1, "hint": "4 anos!"},
+      {"text": "Qual mais titulado Benfica?", "options": ["Porto", "Sporting", "Benfica", "Braga"], "correct": 2, "hint": "Benfica!"},
+      {"text": "VAR significado?", "options": ["Video", "Video Assistente", "Arbitro", "Resultado"], "correct": 1, "hint": "Video Assistente!"},
+      {"text": "O que e autogolo?", "options": ["Golo contra", "Golo proprio", "Golo falta", "Golo penalty"], "correct": 0, "hint": "contra!"},
+      {"text": "Tenis pontuacao?", "options": ["15,30,45", "1,2,3", "A,B,C", "10,20,30"], "correct": 0, "hint": "15,30,45!"},
+      {"text": "Voleibol pontos por set?", "options": ["15", "21", "25", "30"], "correct": 2, "hint": "25 pontos!"},
+      {"text": "Handebol jogadores?", "options": ["4", "5", "6", "7"], "correct": 2, "hint": "6!"}
+    ],
+    "16": [
+      {"text": "Copa do Mundo 2022?", "options": ["EUA", "Qatar", "Brasil", "Russia"], "correct": 1, "hint": "Qatar!"},
+      {"text": "Olimpidas 2024?", "options": ["Paris", "Londres", "Toquio", "Los Angeles"], "correct": 0, "hint": "Paris!"},
+      {"text": "Qual pais mais ouros?", "options": ["China", "EUA", "Russia", "Reino Unido"], "correct": 1, "hint": "EUA!"},
+      {"text": "Quenina e doping?", "options": ["Substancia", "Metodo", "Pessoa", "Local"], "correct": 0, "hint": "Substancia!"},
+      {"text": "World Cup de rugby?", "options": ["4 em 4", "5 em 5", "3 em 3", "2 em 2"], "correct": 0, "hint": "4 em 4!"},
+      {"text": "Testeosterone doping?", "options": ["Estimulante", "Hormonio", "Aglutnante", "Diuretico"], "correct": 1, "hint": "Hormonio!"},
+      {"text": "ATP tennis organismo?", "options": ["Associacao", "Torneio", "Ranking", "Torneio"], "correct": 0, "hint": "Associacao!"},
+      {"text": "EPO doping?", "options": ["Hormonio", "Estimulante", " наркотик", "Vitamina"], "correct": 0, "hint": "Hormonio!"},
+      {"text": "Clasificacao por peso?", "options": ["Lutas", "Boxe", "Judo", "Todas"], "correct": 3, "hint": "Todas!"},
+      {"text": "Esports sao?", "options": ["Desporto", "Videojogos", "Competicao", "Jogos"], "correct": 1, "hint": "Videojogos!"}
+    ]
+  },
+  
+  "HISTORIA": {
+    "8": [
+      {"text": "Vasco da Gama?", "options": ["Escritor", "Navegador", "Rei", "Pintor"], "correct": 1, "hint": "Navegador!"},
+      {"text": "Caminho India?", "options": ["1492", "1498", "1500", "1488"], "correct": 1, "hint": "1498!"},
+      {"text": "Primeiro rei Portugal?", "options": ["D. Afonso Henriques", "D. Joao I", "D. Manuel I", "D. Sebastiao"], "correct": 0, "hint": "Fundador!"},
+      {"text": "Os Lusiadas autor?", "options": ["Fernando Pessoa", "Luis de Camoes", "Eca de Queiros", "Jose Saramago"], "correct": 1, "hint": "Camoes!"},
+      {"text": "Descobridor America?", "options": ["Vasco da Gama", "Cristovao Colombo", "Americo Vespuccio", "Pedro Cabral"], "correct": 1, "hint": "Colombo!"},
+      {"text": "Descobrimento America?", "options": ["1488", "1492", "1498", "1500"], "correct": 1, "hint": "1492!"},
+      {"text": "Terramoto Lisboa?", "options": ["1755", "1775", "1955", "1855"], "correct": 0, "hint": "1755!"},
+      {"text": "25 Abril?", "options": ["1972", "1973", "1974", "1975"], "correct": 2, "hint": "1974!"},
+      {"text": "Revolucao 25 Abril?", "options": ["Golpe", "Revolucao", "Guerra", "Independencia"], "correct": 1, "hint": "Revolucao!"},
+      {"text": "Homem Lua?", "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"], "correct": 1, "hint": "Neil Armstrong!"}
+    ],
+    "12": [
+      {"text": "Homem Lua ano?", "options": ["1965", "1969", "1972", "1975"], "correct": 1, "hint": "1969!"},
+      {"text": "Primeiro presidente EUA?", "options": ["George Washington", "Thomas Jefferson", "John Adams", "Benjamin Franklin"], "correct": 0, "hint": "Washington!"},
+      {"text": "Peste Negra?", "options": ["Guerra", "Epidemia", "Fome", "Terremoto"], "correct": 1, "hint": "Epidemia!"},
+      {"text": "Pirâmides construiram?", "options": ["Romanos", "Gregos", "Egipcios", "Maias"], "correct": 2, "hint": "Egipcios!"},
+      {"text": "Cruzadas?", "options": ["Guerras", "Viagens", "Feiras", "Festas"], "correct": 0, "hint": "Guerras!"},
+      {"text": "Napoleao?", "options": ["Rei", "General", "Imperador", "Duque"], "correct": 2, "hint": "Imperador!"},
+      {"text": "Renaissance?", "options": ["Arte", "Cultural", "Epoca", "Todas"], "correct": 3, "hint": "Renascimento!"},
+      {"text": "Hitler?", "options": ["Ditador", "General", "Rei", "Imperador"], "correct": 0, "hint": "Ditador!"},
+      {"text": "Guerra Fria?", "options": ["Guerra", "Conflito", "Periodo", "Festa"], "correct": 2, "hint": "Periodo!"},
+      {"text": "Muro Berlim caiu?", "options": ["1985", "1989", "1991", "1993"], "correct": 1, "hint": "1989!"}
+    ],
+    "16": [
+      {"text": "O que foi Inquisition?", "options": ["Tribunal", "Guerra", "Descoberta", "Imperio"], "correct": 0, "hint": "Tribunal!"},
+      {"text": "Feudalismo tinha?", "options": ["Reis + senhores", "Republica", "Democracia", "Imperio"], "correct": 0, "hint": "Reis + senhores!"},
+      {"text": "Iluminismo significou?", "options": ["Luz", "Conhecimento", "Saber", "Todas"], "correct": 3, "hint": "Iluminacao!"},
+      {"text": "Revolucao Industrial comecao?", "options": ["Inglaterra", "Franca", "Alemanha", "EUA"], "correct": 0, "hint": "Inglaterra!"},
+      {"text": "Nazismo ideologia?", "options": ["Esquerda", "Direita", "Centro", "Nenhum"], "correct": 1, "hint": "Direita extrema!"},
+      {"text": "Holocausto vitimas?", "options": ["1 miliao", "6 milioes", "10 milioes", "3 milioes"], "correct": 1, "hint": "6 milioes!"},
+      {"text": "Descolonizacao Africa?", "options": ["1950s-1970s", "1900s-1920s", "1980s-2000s", "1800s-1900s"], "correct": 0, "hint": "1950s-1970s!"},
+      {"text": "Guerra 100 Anos?", "options": ["1337-1453", "1414-1514", "1500-1600", "1600-1700"], "correct": 0, "hint": "1337-1453!"},
+      {"text": "Imperio Romano acaba?", "options": ["476 d.C.", "500 d.C.", "400 d.C.", "550 d.C."], "correct": 0, "hint": "476 d.C.!"},
+      {"text": "Protestantismo comecao?", "options": ["1517", "1500", "1530", "1550"], "correct": 0, "hint": "1517!"}
+    ]
+  },
+  
+  "GEOGRAFIA": {
+    "8": [
+      {"text": "Rio mais longo Portugal?", "options": ["Douro", "Tejo", "Mondego", "Guadiana"], "correct": 0, "hint": "Douro!"},
+      {"text": "Continente Portugal?", "options": ["Africa", "Asia", "Europa", "America"], "correct": 2, "hint": "Europa!"},
+      {"text": "Oceano Portugal?", "options": ["Indico", "Pacifico", "Atlantico", "Artico"], "correct": 2, "hint": "Atlantico!"},
+      {"text": "Ilha Portugal?", "options": ["Ibiza", "Madeira", "Sicilia", "Creta"], "correct": 1, "hint": "Madeira!"},
+      {"text": "Maior rio mundo?", "options": ["Amazonas", "Nilo", "Yangtse", "Mississippi"], "correct": 1, "hint": "Nilo!"},
+      {"text": "Maior oceano?", "options": ["Atlantico", "Indico", "Pacifico", "Artico"], "correct": 2, "hint": "Pacifico!"},
+      {"text": "Maior deserto?", "options": ["Sahara", "Gobi", "Antartida", "Arabia"], "correct": 2, "hint": "Frio!"},
+      {"text": "Continentes?", "options": ["5", "6", "7", "8"], "correct": 2, "hint": "7!"},
+      {"text": "Floresta maior?", "options": ["Amazonia", "Negra", "Equatorial", "Taiga"], "correct": 0, "hint": "Amazonia!"},
+      {"text": "Montanha mais alta?", "options": ["K2", "Everest", "Kilimanjaro", "Mont Blanc"], "correct": 1, "hint": "Everest!"}
+    ],
+    "12": [
+      {"text": "Pais com mais fronteiras?", "options": ["Brasil", "China", "Russia", "EUA"], "correct": 2, "hint": "Russia!"},
+      {"text": "Pais mais extenso?", "options": ["Canada", "China", "EUA", "Russia"], "correct": 3, "hint": "Russia!"},
+      {"text": "Arquipelago?", "options": ["Ilha", "Conjunto de ilhas", "Mar", "Rio"], "correct": 1, "hint": "Conjunto!"},
+      {"text": "Peninsula?", "options": ["Ilha", "Terra cercada de agua", "Montanha", "Rio"], "correct": 1, "hint": "Terra cercada!"},
+      {"text": "Linha Equador?", "options": ["Rio", "Circulo Terra", "Montanha", "Pais"], "correct": 1, "hint": "Circulo!"},
+      {"text": "Vulcao?", "options": ["Montanha", "Montanha com lava", "Rio", "Mar"], "correct": 1, "hint": "Expulsa lava!"},
+      {"text": "Coordenadas?", "options": ["Ruas", "Lat + Long", "Cidades", "Paises"], "correct": 1, "hint": "Latitude!"},
+      {"text": "Capital Russia?", "options": ["Sao Petersburgo", "Moscovo", "Kazan", "Sochi"], "correct": 1, "hint": "Moscovo!"},
+      {"text": "Capital Canada?", "options": ["Toronto", "Vancouver", "Otava", "Montreal"], "correct": 2, "hint": "Otava!"},
+      {"text": "Capital Austria?", "options": ["Salzburgo", "Viena", "Innsbruck", "Graz"], "correct": 1, "hint": "Viena!"}
+    ],
+    "16": [
+      {"text": "Pais mais populoso?", "options": ["EUA", "India", "China", "Indonesia"], "correct": 2, "hint": "China!"},
+      {"text": "Fusaonl ea?", "options": ["10%", "20%", "30%", "40%"], "correct": 0, "hint": "10%!"},
+      {"text": "Temperatura media subio?", "options": ["0.5C", "1.0C", "1.5C", "2.0C"], "correct": 1, "hint": "1 grau!"},
+      {"text": "Paises OECD?", "options": ["20", "30", "40", "50"], "correct": 2, "hint": "40!"},
+      {"text": "G20 paises?", "options": ["15", "20", "25", "30"], "correct": 1, "hint": "20!"},
+      {"text": "Maior emissor CO2?", "options": ["China", "EUA", "India", "Russia"], "correct": 0, "hint": "China!"},
+      {"text": "Bioma maior?", "options": ["Savana", "Tundra", "Floresta tropical", "Deserto"], "correct": 2, "hint": "Floresta!"},
+      {"text": "Tsunami ocorre?", "options": ["Terremoto", "Vento", "Chuva", "Onda"], "correct": 0, "hint": "Terremoto!"},
+      {"text": "Ilhas vulcanicas?", "options": ["Hawai", "Canarias", "Azores", "Todas"], "correct": 3, "hint": "Todas!"},
+      {"text": "Zona Franca?", "options": ["Livre comercio", "Livre circulacao", "ambas", "nenhuma"], "correct": 2, "hint": "Ambas!"}
+    ]
+  },
+  
+  "MATEMATICA": {
+    "8": [
+      {"text": "7+8?", "options": ["13", "14", "15", "16"], "correct": 2, "hint": "15!"},
+      {"text": "9x9?", "options": ["72", "81", "90", "99"], "correct": 1, "hint": "81!"},
+      {"text": "100-37?", "options": ["53", "63", "73", "83"], "correct": 1, "hint": "63!"},
+      {"text": "24/6?", "options": ["3", "4", "5", "6"], "correct": 1, "hint": "4!"},
+      {"text": "Hexagono lados?", "options": ["5", "6", "7", "8"], "correct": 1, "hint": "6!"},
+      {"text": "8x7?", "options": ["54", "56", "58", "52"], "correct": 1, "hint": "56!"},
+      {"text": "144/12?", "options": ["10", "11", "12", "13"], "correct": 2, "hint": "12!"},
+      {"text": "Quadrado de 5?", "options": ["10", "15", "25", "50"], "correct": 2, "hint": "25!"},
+      {"text": "2 elevado a 10?", "options": ["512", "1024", "2048", "256"], "correct": 1, "hint": "1024!"},
+      {"text": "Raiz de 81?", "options": ["7", "8", "9", "10"], "correct": 2, "hint": "9!"}
+    ],
+    "12": [
+      {"text": "15% de 200?", "options": ["20", "25", "30", "35"], "correct": 2, "hint": "30!"},
+      {"text": "25% de 80?", "options": ["15", "20", "25", "30"], "correct": 1, "hint": "20!"},
+      {"text": "11x11?", "options": ["111", "121", "131", "141"], "correct": 1, "hint": "121!"},
+      {"text": "50x50?", "options": ["2500", "5000", "250", "500"], "correct": 0, "hint": "2500!"},
+      {"text": "Area quadrado lado 5?", "options": ["10", "15", "20", "25"], "correct": 3, "hint": "25!"},
+      {"text": "Numero primo?", "options": ["4", "6", "7", "9"], "correct": 2, "hint": "7!"},
+      {"text": "Pi aproximado?", "options": ["2.14", "3.14", "4.14", "5.14"], "correct": 1, "hint": "3.14!"},
+      {"text": "3/4 de 100?", "options": ["25", "50", "75", "100"], "correct": 2, "hint": "75!"},
+      {"text": "20% de 150?", "options": ["20", "25", "30", "35"], "correct": 2, "hint": "30!"},
+      {"text": "Cubo de 2?", "options": ["4", "6", "8", "12"], "correct": 2, "hint": "8!"}
+    ],
+    "16": [
+      {"text": "Log2(1024)?", "options": ["8", "9", "10", "11"], "correct": 2, "hint": "10!"},
+      {"text": "Sin(90graus)?", "options": ["0", "0.5", "1", "-1"], "correct": 2, "hint": "1!"},
+      {"text": "Cos(0graus)?", "options": ["0", "0.5", "1", "-1"], "correct": 2, "hint": "1!"},
+      {"text": "Fatorial 5!", "options": ["60", "120", "240", "360"], "correct": 1, "hint": "120!"},
+      {"text": "Combinacoes 5,2?", "options": ["5", "10", "15", "20"], "correct": 1, "hint": "10!"},
+      {"text": "Permutacoes 3?", "options": ["3", "6", "9", "12"], "correct": 1, "hint": "6!"},
+      {"text": "Angulo interno triangulo?", "options": ["90", "180", "270", "360"], "correct": 1, "hint": "180!"},
+      {"text": "Angulo interno quadrilatero?", "options": ["180", "270", "360", "450"], "correct": 2, "hint": "360!"},
+      {"text": "Derivada x^2?", "options": ["x", "2x", "2", "x^2"], "correct": 1, "hint": "2x!"},
+      {"text": "Integral x?", "options": ["x", "x^2/2", "x^2", "2x"], "correct": 1, "hint": "x^2/2!"}
+    ]
+  },
+  
+  "CULTURA_GERAL": {
+    "8": [
+      {"text": "Capital Portugal?", "options": ["Lisboa", "Porto", "Coimbra", "Faro"], "correct": 0, "hint": "Lisboa!"},
+      {"text": "Dias semana?", "options": ["5", "6", "7", "8"], "correct": 2, "hint": "7!"},
+      {"text": "Horas dia?", "options": ["12", "20", "24", "30"], "correct": 2, "hint": "24!"},
+      {"text": "Minutos hora?", "options": ["30", "45", "60", "90"], "correct": 2, "hint": "60!"},
+      {"text": "Cor Pai Natal?", "options": ["Azul", "Verde", "Vermelho", "Amarelo"], "correct": 2, "hint": "Vermelho!"},
+      {"text": "Estacao praia?", "options": ["Inverno", "Verao", "Outono", "Primavera"], "correct": 1, "hint": "Verao!"},
+      {"text": "Capital Australia?", "options": ["Sydney", "Melbourne", "Canberra", "Perth"], "correct": 2, "hint": "Canberra!"},
+      {"text": "Mona Lisa autor?", "options": ["Van Gogh", "Picasso", "Da Vinci", "Michelangelo"], "correct": 2, "hint": "Da Vinci!"},
+      {"text": "II Guerra acaba?", "options": ["1940", "1945", "1950", "1939"], "correct": 1, "hint": "1945!"},
+      {"text": "Maior pais area?", "options": ["China", "EUA", "Russia", "Canada"], "correct": 2, "hint": "Russia!"}
+    ],
+    "12": [
+      {"text": "Dias ano?", "options": ["365", "360", "366", "364"], "correct": 0, "hint": "365!"},
+      {"text": "Mes mais curto?", "options": ["Janeiro", "Marco", "Fevereiro", "Abril"], "correct": 2, "hint": "Fevereiro!"},
+      {"text": "ONU?", "options": ["Banco", "Organizacao", "Pais", "Exercito"], "correct": 1, "hint": "Organizacao!"},
+      {"text": "Paises UE?", "options": ["25", "27", "30", "24"], "correct": 1, "hint": "27!"},
+      {"text": "Lingua mais falada?", "options": ["Ingles", "Espanhol", "Chines", "Hindi"], "correct": 2, "hint": "Chines!"},
+      {"text": "Direitos humanos sao?", "options": ["Leis", "Direitos", "Regras", "Internacionais"], "correct": 1, "hint": "Direitos!"},
+      {"text": "Carnaval?", "options": ["Natal", "Festa de fevereiro", "Festa de verao", "Festa de primavera"], "correct": 1, "hint": "Fevereiro!"},
+      {"text": "Bandeira ONU?", "options": ["Azul", "Verde", "Branca e azul", "Amarela"], "correct": 0, "hint": "Azul!"},
+      {"text": "Vogais?", "options": ["4", "5", "6", "7"], "correct": 1, "hint": "5!"},
+      {"text": "Desporto mais praticado?", "options": ["Futebol", "Natacao", "Caminhada", "Ciclismo"], "correct": 2, "hint": "Caminhada!"}
+    ],
+    "16": [
+      {"text": "Declaracao Universal?", "options": ["Livro", "Documento", "Pelicula", "Musica"], "correct": 1, "hint": "Documento!"},
+      {"text": "Pais mais populoso?", "options": ["EUA", "India", "China", "Indonesia"], "correct": 2, "hint": "China!"},
+      {"text": "Tolerancia e?", "options": ["Odio", "Respeito", "Guerra", "Briga"], "correct": 1, "hint": "Respeito!"},
+      {"text": "Paz?", "options": ["Guerra", "Ausencia de guerra", "Conflito", "Briga"], "correct": 1, "hint": "Sem guerra!"},
+      {"text": "Direitos vs Deveres?", "options": ["Opostos", "Relacionados", "Iguais", "Separados"], "correct": 1, "hint": "Relacionados!"},
+      {"text": "Democracia?", "options": ["Governo do povo", "Governo de poucos", "Governo de um", "Governo militar"], "correct": 0, "hint": "Governo do povo!"},
+      {"text": "Globalizacao efeitos?", "options": ["Locais", "Globais", "Nacionais", "Regionais"], "correct": 1, "hint": "Globais!"},
+      {"text": "Direitos sociais?", "options": ["Individuais", "Sociais", "Políticos", "Culturais"], "correct": 1, "hint": "Sociais!"},
+      {"text": "Cidadania ativa?", "options": ["Passiva", "Ativa", "Inativa", "Neutral"], "correct": 1, "hint": "Participar!"},
+      {"text": "Estado direito?", "options": ["Lei", "Justica", "Ordem", "Todas"], "correct": 3, "hint": "Todas!"}
+    ]
+  }
+}
