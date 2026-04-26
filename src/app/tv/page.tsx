@@ -370,12 +370,10 @@ export default function TVHost() {
                         age_rating: dbAgeRating
                     }));
 
+                    // Insert new questions (simples, sem upsert)
                     const { data: insertedData, error } = await supabase
                         .from("questions")
-                        .upsert(questionsToInsert, {
-                            onConflict: 'text,category',
-                            ignoreDuplicates: true
-                        })
+                        .insert(questionsToInsert)
                         .select();
 
                     // BUG FIX #2: Fetch available questions EXCLUDING already used ones
