@@ -1,4 +1,4 @@
--- Tabelas para Equipas e Torneios
+-- Tabelas para Equipas e Torneios (CORRIGIDO)
 -- Executar no Supabase SQL Editor
 
 -- 1. Equipas
@@ -55,26 +55,51 @@ ALTER TABLE team_members ENABLE ROW LEVEL SECURITY;
 ALTER TABLE tournaments ENABLE ROW LEVEL SECURITY;
 ALTER TABLE tournament_teams ENABLE ROW LEVEL SECURITY;
 
--- Políticas
-CREATE POLICY "Public Read Teams" ON teams FOR SELECT USING (true);
-CREATE POLICY "Public Create Teams" ON teams FOR INSERT WITH CHECK (true);
-CREATE POLICY "Public Update Teams" ON teams FOR UPDATE USING (true);
-
-CREATE POLICY "Public Read Team Members" ON team_members FOR SELECT USING (true);
-CREATE POLICY "Public Join Team Members" ON team_members FOR INSERT WITH CHECK (true);
-
-CREATE POLICY "Public Read Tournaments" ON tournaments FOR SELECT USING (true);
-CREATE POLICY "Public Create Tournaments" ON tournaments FOR INSERT WITH CHECK (true);
-
-CREATE POLICY "Public Read Tournament Teams" ON tournament_teams FOR SELECT USING (true);
-CREATE POLICY "Public Join Tournament Teams" ON tournament_teams FOR INSERT WITH CHECK (true);
+-- Políticas (apenas criar se não existirem)
+DO $$ 
+BEGIN
+  -- Teams
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Read Teams' AND tablename = 'teams') THEN
+    CREATE POLICY "Public Read Teams" ON teams FOR SELECT USING (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Create Teams' AND tablename = 'teams') THEN
+    CREATE POLICY "Public Create Teams" ON teams FOR INSERT WITH CHECK (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Update Teams' AND tablename = 'teams') THEN
+    CREATE POLICY "Public Update Teams" ON teams FOR UPDATE USING (true);
+  END IF;
+  
+  -- Team Members
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Read Team Members' AND tablename = 'team_members') THEN
+    CREATE POLICY "Public Read Team Members" ON team_members FOR SELECT USING (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Join Team Members' AND tablename = 'team_members') THEN
+    CREATE POLICY "Public Join Team Members" ON team_members FOR INSERT WITH CHECK (true);
+  END IF;
+  
+  -- Tournaments
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Read Tournaments' AND tablename = 'tournaments') THEN
+    CREATE POLICY "Public Read Tournaments" ON tournaments FOR SELECT USING (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Create Tournaments' AND tablename = 'tournaments') THEN
+    CREATE POLICY "Public Create Tournaments" ON tournaments FOR INSERT WITH CHECK (true);
+  END IF;
+  
+  -- Tournament Teams
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Read Tournament Teams' AND tablename = 'tournament_teams') THEN
+    CREATE POLICY "Public Read Tournament Teams" ON tournament_teams FOR SELECT USING (true);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'Public Join Tournament Teams' AND tablename = 'tournament_teams') THEN
+    CREATE POLICY "Public Join Tournament Teams" ON tournament_teams FOR INSERT WITH CHECK (true);
+  END IF;
+END $$;
 
 -- Realtime
-ALTER PUBLICATION supabase_realtime ADD TABLE teams;
-ALTER PUBLICATION supabase_realtime ADD TABLE team_members;
-ALTER PUBLICATION supabase_realtime ADD TABLE tournaments;
-ALTER PUBLICATION supabase_realtime ADD TABLE tournament_teams;
+ALTER PUBLICATION supabase_realtime ADD TABLE IF NOT EXISTS teams;
+ALTER PUBLICATION supabase_realtime ADD TABLE IF NOT EXISTS team_members;
+ALTER PUBLICATION supabase_realtime ADD TABLE IF NOT EXISTS tournaments;
+ALTER PUBLICATION supabase_realtime ADD TABLE IF NOT EXISTS tournament_teams;
 
 -- Índices
-CREATE INDEX idx_teams_pin ON teams(pin);
-CREATE INDEX idx_tournaments_pin ON tournaments(pin);
+CREATE INDEX IF NOT EXISTS idx_teams_pin ON teams(pin);
+CREATE INDEX IF NOT EXISTS idx_tournaments_pin ON tournaments(pin);
