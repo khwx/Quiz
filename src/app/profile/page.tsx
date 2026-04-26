@@ -13,6 +13,7 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
   const [stats, setStats] = useState<any>(null);
+  const [gamesHistory, setGamesHistory] = useState<any[]>([]);
 
   useEffect(() => {
     loadUserData();
@@ -35,11 +36,22 @@ export default function ProfilePage() {
         .eq("id", currentUser.id)
         .single();
 
-      // Get stats from answers
+      // Get player's answers for stats
       const { data: answers } = await supabase
         .from("answers")
-        .select("game_id, is_correct, score")
-        .eq("player_id", currentUser.id);
+        .select("game_id, is_correct, score, created_at")
+        .eq("player_id", currentUser.id)
+        .order("created_at", { ascending: false });
+
+      // Get games history
+      const { data: games } = await supabase
+        .from("answers")
+        .select("game_id, is_correct, score, created_at")
+        .eq("player_id", currentUser.id)
+        .order("created_at", { ascending: false })
+        .limit(20);
+
+      setGamesHistory(games || []);
 
       const userAnswers = answers || [];
       const totalGames = new Set(userAnswers.map((a: any) => a.game_id)).size;
@@ -249,10 +261,37 @@ export default function ProfilePage() {
           <motion.section 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="glass-panel p-6 text-center"
+            className="space-y-3"
           >
-            <p className="text-white/50">Histórico de jogos em breve...</p>
-            <p className="text-white/30 text-sm mt-2">Joga mais para veres o teu histórico!</p>
+            <h3 className="text-lg font-bold text-white mb-4">Os teus últimos jogos</h3>
+            {gamesHistory.length === 0 ? (
+              <div className="glass-panel p-6 text-center">
+                <p className="text-white/50">Ainda não jogaste nenhum jogo!</p>
+                <p className="text-white/30 text-sm mt-2">Joga para veres o teu histórico aqui.</p>
+              </div>
+            ) : (
+              gamesHistory.slice(0, 10).map((game: any, idx: number) => (
+                <div key={game.id} className="glass-panel p-4 flex justify-between items-center">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 font-bold">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <div className="text-white font-medium">Jogo #{game.game_id?.slice(-6)}</div>
+                      <div className="text-white/40 text-sm">
+                        {new Date(game.created_at).toLocaleDateString('pt-PT')}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-violet-400 font-bold">{game.score || 0} pts</div>
+                    <div className={`text-sm ${game.is_correct ? 'text-green-400' : 'text-red-400'}`}>
+                      {game.is_correct ? '✓ Acertou' : '✗ Errou'}
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </motion.section>
         )}
       </div>
