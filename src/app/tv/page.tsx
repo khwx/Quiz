@@ -116,6 +116,21 @@ export default function TVHost() {
             // Check URL params for gameId (for Chromecast/Host opened view)
             const urlParams = new URLSearchParams(window.location.search);
             const queryGameId = urlParams.get('gameId');
+            const queryCategories = urlParams.get('categories');
+            const queryAge = urlParams.get('age');
+
+            // If categories provided in URL, pre-select them
+            if (queryCategories) {
+                const cats = queryCategories.split(',');
+                console.log("📂 Loading categories from URL:", cats);
+                setTopic(cats);
+            }
+
+            // If age provided in URL, set it
+            if (queryAge) {
+                const ageMap: Record<string, string> = { "8": "kids", "12": "teens", "18": "adults" };
+                setAgeGroup(ageMap[queryAge] || "adults");
+            }
 
             if (queryGameId) {
                 console.log("🔗 Connecting to existing game:", queryGameId);
