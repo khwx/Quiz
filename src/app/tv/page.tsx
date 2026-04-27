@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import { QRCodeSVG } from "qrcode.react";
-import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Trash2 } from "lucide-react";
+import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Trash2, Map, History, Music, Palette, Utensils, Cpu, Languages, Star, Crown } from "lucide-react";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
@@ -41,7 +41,7 @@ export default function TVHost() {
     }, []);
 
     // Theme State
-    const [topic, setTopic] = useState("Cultura Geral");
+    const [topic, setTopic] = useState<string[]>(["Cultura Geral"]);
     const [customTopic, setCustomTopic] = useState("");
     const [ageGroup, setAgeGroup] = useState("adults"); // "7-9", "10-14", "15-17", "adults"
     const [isGenerating, setIsGenerating] = useState(false);
@@ -51,15 +51,23 @@ export default function TVHost() {
     const [localMode, setLocalMode] = useState(false);
     const [localScore, setLocalScore] = useState(0);
 
-    const arenaIcons: Record<string, any> = {
-        "Cultura Geral": <Globe className="w-4 h-4" />,
-        "Capitais do Mundo": <Zap className="w-4 h-4" />,
-        "Bandeiras": <Flag className="w-4 h-4" />,
-        "Cinema": <Film className="w-4 h-4" />,
-        "Desporto": <Trophy className="w-4 h-4" />,
-        "Ciência": <Atom className="w-4 h-4" />,
-        "Animais": <PawPrint className="w-4 h-4" />
-    };
+    const CATEGORIES = [
+        { name: "Cultura Geral", icon: <Globe className="w-4 h-4" />, dbName: "CULTURA_GERAL" },
+        { name: "Capitais do Mundo", icon: <Zap className="w-4 h-4" />, dbName: "CAPITAIS_DO_MUNDO" },
+        { name: "Bandeiras", icon: <Flag className="w-4 h-4" />, dbName: "Bandeiras" },
+        { name: "Cinema", icon: <Film className="w-4 h-4" />, dbName: "CINEMA" },
+        { name: "Desporto", icon: <Trophy className="w-4 h-4" />, dbName: "DESPORTO" },
+        { name: "Ciência", icon: <Atom className="w-4 h-4" />, dbName: "CIENCIA" },
+        { name: "Animais", icon: <PawPrint className="w-4 h-4" />, dbName: "ANIMAIS" },
+        { name: "Geografia", icon: <Map className="w-4 h-4" />, dbName: "GEOGRAFIA" },
+        { name: "História", icon: <History className="w-4 h-4" />, dbName: "HISTORIA" },
+        { name: "Música", icon: <Music className="w-4 h-4" />, dbName: "MUSICA" },
+        { name: "Arte", icon: <Palette className="w-4 h-4" />, dbName: "ARTE" },
+        { name: "Gastronomia", icon: <Utensils className="w-4 h-4" />, dbName: "GASTRONOMIA" },
+        { name: "Tecnologia", icon: <Cpu className="w-4 h-4" />, dbName: "TECNOLOGIA" },
+        { name: "Matemática", icon: <GraduationCap className="w-4 h-4" />, dbName: "MATEMATICA" },
+        { name: "Política", icon: <Crown className="w-4 h-4" />, dbName: "POLITICA" },
+    ];
 
     const { playSound } = useSound();
 
@@ -298,8 +306,8 @@ export default function TVHost() {
             setIsGenerating(true);
 
             try {
-                // Normalize category name
-                const finalTopic = (customTopic || topic).toLowerCase().trim();
+                // Normalize category name(s)
+                const finalTopic = customTopic || topic[0];
                 const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 18 };
                 const targetAge = ageMap[ageGroup] || 18;
                 // BUG FIX #1: Read from ref instead of state to avoid dependency loop
@@ -318,14 +326,21 @@ export default function TVHost() {
                 let questionsToUse: any[] = [];
                 let count = 0;
 
-                // 1. Fetch ALL questions for this category
-                // We filter used questions IN MEMORY because the list of IDs can become 
-                // too long for a URL (causing 414 URI Too Long errors)
+                // Get database category names from selected topics
+                const selectedDbNames = customTopic 
+                    ? [customTopic] 
+                    : topic.map(t => CATEGORIES.find(c => c.name === t)?.dbName || t);
+                
+                console.log(`🔍 Querying categories: ${selectedDbNames.join(", ")}`);
+
+                // 1. Fetch ALL questions for selected categories
+                // Use .in() to query multiple categories
                 let query = supabase
                     .from("questions")
                     .select("*")
-                    .ilike("category", finalTopic);
-                const isUniversalTopic = finalTopic === "Bandeiras" || finalTopic === "Capitais do Mundo";
+                    .in("category", selectedDbNames);
+                    
+                const isUniversalTopic = selectedDbNames.includes("Bandeiras") || selectedDbNames.includes("CAPITAIS_DO_MUNDO");
 
                 if (!isUniversalTopic) {
                     if (targetAge === 18) {
@@ -695,20 +710,27 @@ export default function TVHost() {
                                 {/* TOPIC SELECTOR */}
                                 <div className="space-y-3">
                                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-                                        <Zap className="w-4 h-4 text-pink-500" /> Escolha a Arena
+                                        <Zap className="w-4 h-4 text-pink-500" /> Escolha a(s) Arena(s)
                                     </label>
                                     <div className="flex flex-wrap gap-3">
-                                        {Object.keys(arenaIcons).map(t => (
+                                        {CATEGORIES.map(t => (
                                             <button
-                                                key={t}
-                                                onClick={() => { setTopic(t); setCustomTopic(""); }}
-                                                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 border-2 ${topic === t && !customTopic
+                                                key={t.name}
+                                                onClick={() => {
+                                                    if (topic.includes(t.name)) {
+                                                        setTopic(topic.filter(x => x !== t.name));
+                                                    } else {
+                                                        setTopic([...topic, t.name]);
+                                                    }
+                                                    setCustomTopic("");
+                                                }}
+                                                className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 border-2 ${topic.includes(t.name) && !customTopic
                                                     ? "bg-pink-500 border-pink-400 text-white scale-105 shadow-[0_0_15px_rgba(236,72,153,0.5)]"
                                                     : "bg-white/5 border-white/5 text-gray-400 hover:bg-white/10 hover:border-white/10"
                                                     }`}
                                             >
-                                                {arenaIcons[t]}
-                                                {t}
+                                                {t.icon}
+                                                {t.name}
                                             </button>
                                         ))}
                                     </div>
