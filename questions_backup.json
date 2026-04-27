@@ -800,23 +800,6 @@
       }
     },
     {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Van Gogh",
-        "Picasso",
-        "Michelangelo",
-        "Da Vinci"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Da Vinci"
-      }
-    },
-    {
       "text": "Em que ano terminou a II Guerra Mundial?",
       "options": [
         "1940",
@@ -868,57 +851,6 @@
       }
     },
     {
-      "text": "Quantos dias tem uma semana?",
-      "options": [
-        "7",
-        "6",
-        "5",
-        "8"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
-      "text": "Quantas horas tem um dia?",
-      "options": [
-        "20",
-        "30",
-        "12",
-        "24"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 24"
-      }
-    },
-    {
-      "text": "Quantos minutos tem uma hora?",
-      "options": [
-        "60",
-        "30",
-        "45",
-        "90"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 60"
-      }
-    },
-    {
       "text": "Em que estacao do ano vamos a praia?",
       "options": [
         "Inverno",
@@ -933,176 +865,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Verao"
-      }
-    },
-    {
-      "text": "Qual e a capital da Australia?",
-      "options": [
-        "Perth",
-        "Sydney",
-        "Melbourne",
-        "Canberra"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Canberra"
-      }
-    },
-    {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Van Gogh",
-        "Michelangelo",
-        "Da Vinci",
-        "Picasso"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Da Vinci"
-      }
-    },
-    {
-      "text": "Qual e o maior pais do mundo em area?",
-      "options": [
-        "Russia",
-        "EUA",
-        "Canada",
-        "China"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Russia"
-      }
-    },
-    {
-      "text": "Qual e a capital de Portugal?",
-      "options": [
-        "Lisboa",
-        "Coimbra",
-        "Faro",
-        "Porto"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Lisboa"
-      }
-    },
-    {
-      "text": "Quantos dias tem uma semana?",
-      "options": [
-        "8",
-        "5",
-        "7",
-        "6"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
-      "text": "Quantas horas tem um dia?",
-      "options": [
-        "12",
-        "24",
-        "20",
-        "30"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 24"
-      }
-    },
-    {
-      "text": "Quantos minutos tem uma hora?",
-      "options": [
-        "30",
-        "60",
-        "90",
-        "45"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 60"
-      }
-    },
-    {
-      "text": "Qual e a capital da Australia?",
-      "options": [
-        "Sydney",
-        "Canberra",
-        "Perth",
-        "Melbourne"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Canberra"
-      }
-    },
-    {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Picasso",
-        "Michelangelo",
-        "Da Vinci",
-        "Van Gogh"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Da Vinci"
-      }
-    },
-    {
-      "text": "Qual e o maior pais do mundo em area?",
-      "options": [
-        "EUA",
-        "Canada",
-        "Russia",
-        "China"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Russia"
       }
     },
     {
@@ -1154,74 +916,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Sim"
-      }
-    },
-    {
-      "text": "Qual e a capital de Portugal?",
-      "options": [
-        "Porto",
-        "Lisboa",
-        "Faro",
-        "Coimbra"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Lisboa"
-      }
-    },
-    {
-      "text": "Em que estacao do ano vamos a praia?",
-      "options": [
-        "Verao",
-        "Primavera",
-        "Outono",
-        "Inverno"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Verao"
-      }
-    },
-    {
-      "text": "Qual e a cor da bata do Pai Natal?",
-      "options": [
-        "Verde",
-        "Azul",
-        "Vermelho",
-        "Amarelo"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Vermelho"
-      }
-    },
-    {
-      "text": "Em que ano terminou a II Guerra Mundial?",
-      "options": [
-        "1950",
-        "1939",
-        "1940",
-        "1945"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1945"
       }
     },
     {
@@ -1480,23 +1174,6 @@
       }
     },
     {
-      "text": "Qual e a capital de Portugal?",
-      "options": [
-        "Porto",
-        "Lisboa",
-        "Coimbra",
-        "Faro"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Lisboa"
-      }
-    },
-    {
       "text": "Quantas Coroas tem o escudo de Portugal?",
       "options": [
         "5",
@@ -1565,23 +1242,6 @@
       }
     },
     {
-      "text": "Qual e a montanha mais alta de Portugal?",
-      "options": [
-        "Serra da Estrela",
-        "Pico",
-        "Monte Geral",
-        "Sera do Mirao"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Serra da Estrela"
-      }
-    },
-    {
       "text": "O que estabelece a Lei de Moore?",
       "options": [
         "Velocidade da luz",
@@ -1633,6 +1293,21 @@
       }
     },
     {
+      "text": "O que é o nome do maior planeta do sistema solar?",
+      "options": [
+        "Urano",
+        "Netuno",
+        "Júpiter",
+        "Saturno"
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
       "text": "Estacao praia?",
       "options": [
         "Primavera",
@@ -1667,23 +1342,6 @@
       }
     },
     {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Caravaggio",
-        "Rafael",
-        "Michelangelo",
-        "Leonardo da Vinci"
-      ],
-      "correct_option": 3,
-      "age_rating": 18,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leonardo da Vinci"
-      }
-    },
-    {
       "text": "Em que ano foi publicado o livro 'Dom Quixote'?",
       "options": [
         "1615",
@@ -1698,23 +1356,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1605"
-      }
-    },
-    {
-      "text": "Em que estacao do ano vamos a praia?",
-      "options": [
-        "Primavera",
-        "Inverno",
-        "Outono",
-        "Verao"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Verao"
       }
     },
     {
@@ -1735,55 +1376,49 @@
       }
     },
     {
-      "text": "Qual e a cor da bata do Pai Natal?",
+      "text": "Qual o rio mais longo da Ásia?",
       "options": [
-        "Amarelo",
-        "Vermelho",
-        "Azul",
-        "Verde"
+        "Yangtzé",
+        "Ob",
+        "Amur",
+        "Ienissei"
       ],
-      "correct_option": 1,
-      "age_rating": 8,
+      "correct_option": 0,
+      "age_rating": 18,
       "category": "CULTURA_GERAL",
       "country_code": "PT",
       "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Vermelho"
-      }
+      "metadata": {}
     },
     {
-      "text": "Em que ano terminou a II Guerra Mundial?",
+      "text": "Em que ano foi descoberto o penicilina?",
       "options": [
-        "1939",
-        "1950",
+        "1928",
+        "1920",
         "1940",
-        "1945"
+        "1930"
       ],
-      "correct_option": 3,
-      "age_rating": 8,
+      "correct_option": 0,
+      "age_rating": 18,
       "category": "CULTURA_GERAL",
       "country_code": "PT",
       "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1945"
-      }
+      "metadata": {}
     },
     {
-      "text": "Quem pintou a Mona Lisa?",
+      "text": "Quem escreveu 'Dom Quixote'?",
       "options": [
-        "Michelangelo",
-        "Leonardo da Vinci",
-        "Raphael",
-        "Botticelli"
+        "Miguel de Cervantes",
+        "William Shakespeare",
+        "Jane Austen",
+        "Charles Dickens"
       ],
-      "correct_option": 1,
-      "age_rating": 12,
+      "correct_option": 0,
+      "age_rating": 18,
       "category": "CULTURA_GERAL",
       "country_code": "PT",
       "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leonardo da Vinci"
-      }
+      "metadata": {}
     }
   ],
   "Bandeiras": [
@@ -1805,6 +1440,57 @@
       }
     },
     {
+      "text": "De que país é esta bandeira?",
+      "options": [
+        "Austrália",
+        "México",
+        "Canadá",
+        "Estados Unidos"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "Bandeiras",
+      "country_code": "PT",
+      "image_url": "https://flagcdn.com/w320/us.png",
+      "metadata": {
+        "hint": "A resposta correta e: Estados Unidos"
+      }
+    },
+    {
+      "text": "Qual é o país desta bandeira?",
+      "options": [
+        "Uruguai",
+        "Brasil",
+        "Argentina",
+        "Chile"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "Bandeiras",
+      "country_code": "PT",
+      "image_url": "https://flagcdn.com/w320/br.png",
+      "metadata": {
+        "hint": "A resposta correta e: Brasil"
+      }
+    },
+    {
+      "text": "De que pais e esta bandeira?",
+      "options": [
+        "Afeganistao",
+        "Libano",
+        "Bangladesh",
+        "Luxemburgo"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "Bandeiras",
+      "country_code": "AF",
+      "image_url": "/flags/af.svg",
+      "metadata": {
+        "hint": "A resposta correta e: Afeganistao"
+      }
+    },
+    {
       "text": "De que pais e esta bandeira?",
       "options": [
         "Tunisia",
@@ -1813,7 +1499,7 @@
         "Malta"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AG",
       "image_url": "/flags/ag.svg",
@@ -1830,7 +1516,7 @@
         "Anguilla"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AI",
       "image_url": "/flags/ai.svg",
@@ -1847,7 +1533,7 @@
         "Bermudas"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AL",
       "image_url": "/flags/al.svg",
@@ -1864,7 +1550,7 @@
         "Armenia"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AM",
       "image_url": "/flags/am.svg",
@@ -1881,7 +1567,7 @@
         "Mianmar"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AO",
       "image_url": "/flags/ao.svg",
@@ -1898,7 +1584,7 @@
         "AQ"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AQ",
       "image_url": "/flags/aq.svg",
@@ -1915,7 +1601,7 @@
         "Gana"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AR",
       "image_url": "/flags/ar.svg",
@@ -1932,7 +1618,7 @@
         "Iemen"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AS",
       "image_url": "/flags/as.svg",
@@ -1949,7 +1635,7 @@
         "Finlandia"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AT",
       "image_url": "/flags/at.svg",
@@ -1966,7 +1652,7 @@
         "Bielorrussia"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AU",
       "image_url": "/flags/au.svg",
@@ -1983,7 +1669,7 @@
         "Brunei"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AW",
       "image_url": "/flags/aw.svg",
@@ -2000,7 +1686,7 @@
         "Chipre"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AX",
       "image_url": "/flags/ax.svg",
@@ -2017,7 +1703,7 @@
         "El Salvador"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AZ",
       "image_url": "/flags/az.svg",
@@ -2034,7 +1720,7 @@
         "Ruanda"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BA",
       "image_url": "/flags/ba.svg",
@@ -2051,7 +1737,7 @@
         "Libano"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BB",
       "image_url": "/flags/bb.svg",
@@ -2068,7 +1754,7 @@
         "Portugal"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BD",
       "image_url": "/flags/bd.svg",
@@ -2085,7 +1771,7 @@
         "Belgica"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BE",
       "image_url": "/flags/be.svg",
@@ -2102,7 +1788,7 @@
         "Mongolia"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BF",
       "image_url": "/flags/bf.svg",
@@ -2119,7 +1805,7 @@
         "Portugal"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BG",
       "image_url": "/flags/bg.svg",
@@ -2136,7 +1822,7 @@
         "Africa do Sul"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BH",
       "image_url": "/flags/bh.svg",
@@ -2153,7 +1839,7 @@
         "Burundi"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BI",
       "image_url": "/flags/bi.svg",
@@ -2170,7 +1856,7 @@
         "Albania"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BJ",
       "image_url": "/flags/bj.svg",
@@ -2187,7 +1873,7 @@
         "Madagascar"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BL",
       "image_url": "/flags/bl.svg",
@@ -2204,7 +1890,7 @@
         "Vanuatu"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BM",
       "image_url": "/flags/bm.svg",
@@ -2221,7 +1907,7 @@
         "Uruguai"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BN",
       "image_url": "/flags/bn.svg",
@@ -2238,7 +1924,7 @@
         "Belize"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BO",
       "image_url": "/flags/bo.svg",
@@ -2255,7 +1941,7 @@
         "Anguilla"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BQ",
       "image_url": "/flags/bq.svg",
@@ -2272,7 +1958,7 @@
         "Cazaquistao"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BR",
       "image_url": "/flags/br.svg",
@@ -2289,7 +1975,7 @@
         "Bahamas"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BS",
       "image_url": "/flags/bs.svg",
@@ -2306,7 +1992,7 @@
         "Palau"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BT",
       "image_url": "/flags/bt.svg",
@@ -2323,7 +2009,7 @@
         "Palau"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BV",
       "image_url": "/flags/bv.svg",
@@ -2340,7 +2026,7 @@
         "Botsuana"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BW",
       "image_url": "/flags/bw.svg",
@@ -2357,7 +2043,7 @@
         "Emirados Arabes Unidos"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AE",
       "image_url": "/flags/ae.svg",
@@ -2374,7 +2060,7 @@
         "CC"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CC",
       "image_url": "/flags/cc.svg",
@@ -2391,7 +2077,7 @@
         "Mali"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CD",
       "image_url": "/flags/cd.svg",
@@ -2408,7 +2094,7 @@
         "Ilhas Caimao"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CF",
       "image_url": "/flags/cf.svg",
@@ -2425,7 +2111,7 @@
         "Bangladesh"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CG",
       "image_url": "/flags/cg.svg",
@@ -2442,7 +2128,7 @@
         "Hungria"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CH",
       "image_url": "/flags/ch.svg",
@@ -2459,7 +2145,7 @@
         "Tunisia"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CI",
       "image_url": "/flags/ci.svg",
@@ -2476,7 +2162,7 @@
         "Finlandia"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CK",
       "image_url": "/flags/ck.svg",
@@ -2493,7 +2179,7 @@
         "Zambia"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CL",
       "image_url": "/flags/cl.svg",
@@ -2510,7 +2196,7 @@
         "Burkina Faso"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CM",
       "image_url": "/flags/cm.svg",
@@ -2527,7 +2213,7 @@
         "Coreia do Sul"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CN",
       "image_url": "/flags/cn.svg",
@@ -2544,7 +2230,7 @@
         "Colombia"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CO",
       "image_url": "/flags/co.svg",
@@ -2561,7 +2247,7 @@
         "Costa Rica"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CR",
       "image_url": "/flags/cr.svg",
@@ -2578,7 +2264,7 @@
         "Namibia"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CU",
       "image_url": "/flags/cu.svg",
@@ -2595,7 +2281,7 @@
         "Comores"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CV",
       "image_url": "/flags/cv.svg",
@@ -2612,7 +2298,7 @@
         "CW"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CW",
       "image_url": "/flags/cw.svg",
@@ -2629,7 +2315,7 @@
         "Nepal"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CX",
       "image_url": "/flags/cx.svg",
@@ -2646,7 +2332,7 @@
         "Chipre"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CY",
       "image_url": "/flags/cy.svg",
@@ -2663,7 +2349,7 @@
         "Alemanha"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "DE",
       "image_url": "/flags/de.svg",
@@ -2680,7 +2366,7 @@
         "Jamaica"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "DJ",
       "image_url": "/flags/dj.svg",
@@ -2697,7 +2383,7 @@
         "Estonia"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "DK",
       "image_url": "/flags/dk.svg",
@@ -2714,7 +2400,7 @@
         "Samoa"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "DM",
       "image_url": "/flags/dm.svg",
@@ -2731,7 +2417,7 @@
         "Ucrani"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "DZ",
       "image_url": "/flags/dz.svg",
@@ -2748,7 +2434,7 @@
         "Suica"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "EC",
       "image_url": "/flags/ec.svg",
@@ -2765,7 +2451,7 @@
         "Holanda"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "EE",
       "image_url": "/flags/ee.svg",
@@ -2782,7 +2468,7 @@
         "Namibia"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "EG",
       "image_url": "/flags/eg.svg",
@@ -2799,7 +2485,7 @@
         "EH"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "EH",
       "image_url": "/flags/eh.svg",
@@ -2816,7 +2502,7 @@
         "Dominica"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "ER",
       "image_url": "/flags/er.svg",
@@ -2833,7 +2519,7 @@
         "Quenia"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "ES",
       "image_url": "/flags/es.svg",
@@ -2850,7 +2536,7 @@
         "Dominica"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "ET",
       "image_url": "/flags/et.svg",
@@ -2867,7 +2553,7 @@
         "Dominica"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "EU",
       "image_url": "/flags/eu.svg",
@@ -2884,7 +2570,7 @@
         "Palau"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "FI",
       "image_url": "/flags/fi.svg",
@@ -2901,7 +2587,7 @@
         "Monaco"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "FJ",
       "image_url": "/flags/fj.svg",
@@ -2918,7 +2604,7 @@
         "Bermudas"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "FK",
       "image_url": "/flags/fk.svg",
@@ -2935,7 +2621,7 @@
         "Dominica"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CA",
       "image_url": "/flags/ca.svg",
@@ -2952,7 +2638,7 @@
         "Jamaica"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "FR",
       "image_url": "/flags/fr.svg",
@@ -2969,7 +2655,7 @@
         "Oma"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GA",
       "image_url": "/flags/ga.svg",
@@ -2986,7 +2672,7 @@
         "Mocambique"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GB",
       "image_url": "/flags/gb.svg",
@@ -3003,7 +2689,7 @@
         "Luxemburgo"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GD",
       "image_url": "/flags/gd.svg",
@@ -3020,7 +2706,7 @@
         "Cazaquistao"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GE",
       "image_url": "/flags/ge.svg",
@@ -3037,7 +2723,7 @@
         "Vietname"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GF",
       "image_url": "/flags/gf.svg",
@@ -3054,7 +2740,7 @@
         "GG"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GG",
       "image_url": "/flags/gg.svg",
@@ -3071,7 +2757,7 @@
         "Franca"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GH",
       "image_url": "/flags/gh.svg",
@@ -3088,7 +2774,7 @@
         "China"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GI",
       "image_url": "/flags/gi.svg",
@@ -3105,7 +2791,7 @@
         "Gambia"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GM",
       "image_url": "/flags/gm.svg",
@@ -3122,7 +2808,7 @@
         "Guine"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GN",
       "image_url": "/flags/gn.svg",
@@ -3139,7 +2825,7 @@
         "Guadalupe"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GP",
       "image_url": "/flags/gp.svg",
@@ -3156,7 +2842,7 @@
         "Panama"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GQ",
       "image_url": "/flags/gq.svg",
@@ -3173,7 +2859,7 @@
         "Benim"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GR",
       "image_url": "/flags/gr.svg",
@@ -3190,7 +2876,7 @@
         "Siria"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GS",
       "image_url": "/flags/gs.svg",
@@ -3207,7 +2893,7 @@
         "Guatemala"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GT",
       "image_url": "/flags/gt.svg",
@@ -3224,7 +2910,7 @@
         "Cazaquistao"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GU",
       "image_url": "/flags/gu.svg",
@@ -3241,7 +2927,7 @@
         "Argentina"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GW",
       "image_url": "/flags/gw.svg",
@@ -3258,7 +2944,7 @@
         "Guiana"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GY",
       "image_url": "/flags/gy.svg",
@@ -3275,7 +2961,7 @@
         "Armenia"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "HK",
       "image_url": "/flags/hk.svg",
@@ -3292,7 +2978,7 @@
         "Angola"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "HM",
       "image_url": "/flags/hm.svg",
@@ -3309,7 +2995,7 @@
         "Venezuela"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "HN",
       "image_url": "/flags/hn.svg",
@@ -3326,7 +3012,7 @@
         "Brunei"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "HT",
       "image_url": "/flags/ht.svg",
@@ -3343,7 +3029,7 @@
         "Kosovo"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "HU",
       "image_url": "/flags/hu.svg",
@@ -3360,7 +3046,7 @@
         "Gronelandia"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "ID",
       "image_url": "/flags/id.svg",
@@ -3377,7 +3063,7 @@
         "Irlanda"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IE",
       "image_url": "/flags/ie.svg",
@@ -3394,7 +3080,7 @@
         "Israel"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IL",
       "image_url": "/flags/il.svg",
@@ -3411,7 +3097,7 @@
         "Afeganistao"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IM",
       "image_url": "/flags/im.svg",
@@ -3428,7 +3114,7 @@
         "Guatemala"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IN",
       "image_url": "/flags/in.svg",
@@ -3445,7 +3131,7 @@
         "Belgica"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IO",
       "image_url": "/flags/io.svg",
@@ -3462,7 +3148,7 @@
         "Cuba"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IQ",
       "image_url": "/flags/iq.svg",
@@ -3479,7 +3165,7 @@
         "Brunei"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IR",
       "image_url": "/flags/ir.svg",
@@ -3496,7 +3182,7 @@
         "Islandia"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IS",
       "image_url": "/flags/is.svg",
@@ -3513,7 +3199,7 @@
         "Sao Marino"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "FO",
       "image_url": "/flags/fo.svg",
@@ -3530,7 +3216,7 @@
         "Egito"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "JM",
       "image_url": "/flags/jm.svg",
@@ -3547,7 +3233,7 @@
         "Angola"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "JO",
       "image_url": "/flags/jo.svg",
@@ -3564,7 +3250,7 @@
         "Chade"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "JP",
       "image_url": "/flags/jp.svg",
@@ -3581,7 +3267,7 @@
         "Uruguai"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KE",
       "image_url": "/flags/ke.svg",
@@ -3598,7 +3284,7 @@
         "Antigua e Barbuda"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KG",
       "image_url": "/flags/kg.svg",
@@ -3615,7 +3301,7 @@
         "Gabao"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KH",
       "image_url": "/flags/kh.svg",
@@ -3632,7 +3318,7 @@
         "Comores"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KM",
       "image_url": "/flags/km.svg",
@@ -3649,7 +3335,7 @@
         "Palau"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KN",
       "image_url": "/flags/kn.svg",
@@ -3666,7 +3352,7 @@
         "KP"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KP",
       "image_url": "/flags/kp.svg",
@@ -3683,7 +3369,7 @@
         "Bulgaria"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KR",
       "image_url": "/flags/kr.svg",
@@ -3700,7 +3386,7 @@
         "Gana"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KW",
       "image_url": "/flags/kw.svg",
@@ -3717,7 +3403,7 @@
         "Madagascar"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KY",
       "image_url": "/flags/ky.svg",
@@ -3734,7 +3420,7 @@
         "Australia"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KZ",
       "image_url": "/flags/kz.svg",
@@ -3751,7 +3437,7 @@
         "Ilhas Faro"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LA",
       "image_url": "/flags/la.svg",
@@ -3768,7 +3454,7 @@
         "Hungria"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LB",
       "image_url": "/flags/lb.svg",
@@ -3785,7 +3471,7 @@
         "Santa Lucia"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LC",
       "image_url": "/flags/lc.svg",
@@ -3802,7 +3488,7 @@
         "Togo"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LI",
       "image_url": "/flags/li.svg",
@@ -3819,7 +3505,7 @@
         "Fiji"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LK",
       "image_url": "/flags/lk.svg",
@@ -3836,7 +3522,7 @@
         "Grecia"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LR",
       "image_url": "/flags/lr.svg",
@@ -3853,7 +3539,7 @@
         "udao"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LS",
       "image_url": "/flags/ls.svg",
@@ -3870,7 +3556,7 @@
         "Lituania"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LT",
       "image_url": "/flags/lt.svg",
@@ -3887,7 +3573,7 @@
         "Singapura"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LV",
       "image_url": "/flags/lv.svg",
@@ -3904,7 +3590,7 @@
         "Grecia"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LY",
       "image_url": "/flags/ly.svg",
@@ -3921,7 +3607,7 @@
         "Marrocos"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MA",
       "image_url": "/flags/ma.svg",
@@ -3938,7 +3624,7 @@
         "Eritreia"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MC",
       "image_url": "/flags/mc.svg",
@@ -3955,7 +3641,7 @@
         "Moldavia"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MD",
       "image_url": "/flags/md.svg",
@@ -3972,7 +3658,7 @@
         "Libia"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "ME",
       "image_url": "/flags/me.svg",
@@ -3989,7 +3675,7 @@
         "Suriname"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MF",
       "image_url": "/flags/mf.svg",
@@ -4006,7 +3692,7 @@
         "Brasil"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MG",
       "image_url": "/flags/mg.svg",
@@ -4023,7 +3709,7 @@
         "Bermudas"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MH",
       "image_url": "/flags/mh.svg",
@@ -4040,7 +3726,7 @@
         "Macedonia do Norte"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MK",
       "image_url": "/flags/mk.svg",
@@ -4057,7 +3743,7 @@
         "Jamaica"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "ML",
       "image_url": "/flags/ml.svg",
@@ -4074,7 +3760,7 @@
         "Brunei"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MM",
       "image_url": "/flags/mm.svg",
@@ -4091,7 +3777,7 @@
         "Italia"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "JE",
       "image_url": "/flags/je.svg",
@@ -4108,7 +3794,7 @@
         "Tunisia"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MP",
       "image_url": "/flags/mp.svg",
@@ -4125,7 +3811,7 @@
         "Moldavia"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MQ",
       "image_url": "/flags/mq.svg",
@@ -4142,7 +3828,7 @@
         "Liberia"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MR",
       "image_url": "/flags/mr.svg",
@@ -4159,7 +3845,7 @@
         "Ilhas Caimao"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MS",
       "image_url": "/flags/ms.svg",
@@ -4176,7 +3862,7 @@
         "Oma"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MT",
       "image_url": "/flags/mt.svg",
@@ -4193,7 +3879,7 @@
         "Trinidad e Tobago"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MV",
       "image_url": "/flags/mv.svg",
@@ -4210,7 +3896,7 @@
         "Angola"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MW",
       "image_url": "/flags/mw.svg",
@@ -4227,7 +3913,7 @@
         "Camaroes"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MX",
       "image_url": "/flags/mx.svg",
@@ -4244,7 +3930,7 @@
         "Malasia"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MY",
       "image_url": "/flags/my.svg",
@@ -4261,7 +3947,7 @@
         "Republica do Congo"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MZ",
       "image_url": "/flags/mz.svg",
@@ -4278,7 +3964,7 @@
         "Hong Kong"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NA",
       "image_url": "/flags/na.svg",
@@ -4295,7 +3981,7 @@
         "Palestina"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NC",
       "image_url": "/flags/nc.svg",
@@ -4312,7 +3998,7 @@
         "Niger"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NE",
       "image_url": "/flags/ne.svg",
@@ -4329,7 +4015,7 @@
         "Chipre"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NF",
       "image_url": "/flags/nf.svg",
@@ -4346,7 +4032,7 @@
         "Nigeria"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NG",
       "image_url": "/flags/ng.svg",
@@ -4363,7 +4049,7 @@
         "Camaroes"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NI",
       "image_url": "/flags/ni.svg",
@@ -4380,7 +4066,7 @@
         "Dinamarca"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NL",
       "image_url": "/flags/nl.svg",
@@ -4397,7 +4083,7 @@
         "Antigua e Barbuda"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NO",
       "image_url": "/flags/no.svg",
@@ -4414,7 +4100,7 @@
         "Honduras"
       ],
       "correct_option": 2,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NP",
       "image_url": "/flags/np.svg",
@@ -4431,7 +4117,7 @@
         "Nauru"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NR",
       "image_url": "/flags/nr.svg",
@@ -4448,7 +4134,7 @@
         "Cabo Verde"
       ],
       "correct_option": 0,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NU",
       "image_url": "/flags/nu.svg",
@@ -4669,7 +4355,7 @@
         "Macau"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MO",
       "image_url": "/flags/mo.svg",
@@ -5774,7 +5460,7 @@
         "Eslovenia"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "AD",
       "image_url": "/flags/ad.svg",
@@ -5791,7 +5477,7 @@
         "Guine"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BY",
       "image_url": "/flags/by.svg",
@@ -5808,7 +5494,7 @@
         "Vietname"
       ],
       "correct_option": 1,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "BZ",
       "image_url": "/flags/bz.svg",
@@ -5825,7 +5511,7 @@
         "Hong Kong"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "CZ",
       "image_url": "/flags/cz.svg",
@@ -5842,7 +5528,7 @@
         "FM"
       ],
       "correct_option": 3,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "FM",
       "image_url": "/flags/fm.svg",
@@ -5859,7 +5545,7 @@
         "Filipinas"
       ],
       "correct_option": 2,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "GL",
       "image_url": "/flags/gl.svg",
@@ -5876,7 +5562,7 @@
         "Ilhas Faro"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "IT",
       "image_url": "/flags/it.svg",
@@ -5893,7 +5579,7 @@
         "Tajiquistao"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "KI",
       "image_url": "/flags/ki.svg",
@@ -5910,7 +5596,7 @@
         "Uzbequisto"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MN",
       "image_url": "/flags/mn.svg",
@@ -5927,7 +5613,7 @@
         "Letonia"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "MU",
       "image_url": "/flags/mu.svg",
@@ -6046,7 +5732,7 @@
         "Republica do Congo"
       ],
       "correct_option": 0,
-      "age_rating": 12,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "DO",
       "image_url": "/flags/do.svg",
@@ -6063,7 +5749,7 @@
         "Croacia"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "HR",
       "image_url": "/flags/hr.svg",
@@ -6080,7 +5766,7 @@
         "Etiopia"
       ],
       "correct_option": 1,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "LU",
       "image_url": "/flags/lu.svg",
@@ -6097,7 +5783,7 @@
         "Nova Zelandia"
       ],
       "correct_option": 3,
-      "age_rating": 16,
+      "age_rating": 8,
       "category": "Bandeiras",
       "country_code": "NZ",
       "image_url": "/flags/nz.svg",
@@ -6943,40 +6629,6 @@
       }
     },
     {
-      "text": "Capital Russia?",
-      "options": [
-        "Sochi",
-        "Sao Petersburgo",
-        "Moscovo",
-        "Kazan"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Moscovo"
-      }
-    },
-    {
-      "text": "Capital Canada?",
-      "options": [
-        "Toronto",
-        "Montreal",
-        "Otava",
-        "Vancouver"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Otava"
-      }
-    },
-    {
       "text": "Capital Austria?",
       "options": [
         "Graz",
@@ -7198,23 +6850,6 @@
       }
     },
     {
-      "text": "Maior deserto?",
-      "options": [
-        "Antartida",
-        "Sahara",
-        "Gobi",
-        "Kalahari"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Antartida"
-      }
-    },
-    {
       "text": "Maior floresta?",
       "options": [
         "Congo",
@@ -7249,40 +6884,6 @@
       }
     },
     {
-      "text": "Capital Russia?",
-      "options": [
-        "Sao Petersburgo",
-        "Moscovo",
-        "Nenhuma",
-        "两者"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Moscovo"
-      }
-    },
-    {
-      "text": "Capital Australia?",
-      "options": [
-        "两者",
-        "Canberra",
-        "Sydney",
-        "Melbourne"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Canberra"
-      }
-    },
-    {
       "text": "Capital Brazil?",
       "options": [
         "Brasilia",
@@ -7314,40 +6915,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Washington DC"
-      }
-    },
-    {
-      "text": "Ilhas vulcanicas?",
-      "options": [
-        "Hawai",
-        "Canarias",
-        "Todas",
-        "Azores"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Continentes?",
-      "options": [
-        "6",
-        "8",
-        "7",
-        "5"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
       }
     },
     {
@@ -7487,40 +7054,6 @@
       }
     },
     {
-      "text": "Em que continente fica Portugal?",
-      "options": [
-        "Africa",
-        "America",
-        "Europa",
-        "Asia"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Europa"
-      }
-    },
-    {
-      "text": "Qual destas ilhas pertence a Portugal?",
-      "options": [
-        "Creta",
-        "Ibiza",
-        "Madeira",
-        "Sicilia"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Madeira"
-      }
-    },
-    {
       "text": "Qual e a montanha mais alta de Portugal?",
       "options": [
         "Torre",
@@ -7529,74 +7062,6 @@
         "Pico do Areeiro"
       ],
       "correct_option": 1,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Pico do Monte"
-      }
-    },
-    {
-      "text": "Qual e o rio mais longo de Portugal?",
-      "options": [
-        "Douro",
-        "Mondego",
-        "Guadiana",
-        "Tejo"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Douro"
-      }
-    },
-    {
-      "text": "Em que continente fica Portugal?",
-      "options": [
-        "Asia",
-        "Europa",
-        "America",
-        "Africa"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Europa"
-      }
-    },
-    {
-      "text": "Qual e o oceano que banha Portugal?",
-      "options": [
-        "Oceano Indico",
-        "Oceano Pacifico",
-        "Oceano Atlantico",
-        "Oceano Artico"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Oceano Atlantico"
-      }
-    },
-    {
-      "text": "Qual e a montanha mais alta de Portugal?",
-      "options": [
-        "Torre",
-        "Serra da Estrela",
-        "Pico do Areeiro",
-        "Pico do Monte"
-      ],
-      "correct_option": 3,
       "age_rating": 8,
       "category": "GEOGRAFIA",
       "country_code": "PT",
@@ -7671,57 +7136,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "Qual e o rio mais longo de Portugal?",
-      "options": [
-        "Mondego",
-        "Guadiana",
-        "Tejo",
-        "Douro"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Douro"
-      }
-    },
-    {
-      "text": "Qual e a montanha mais alta de Portugal?",
-      "options": [
-        "Pico do Monte",
-        "Serra da Estrela",
-        "Torre",
-        "Pico do Areeiro"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Pico do Monte"
-      }
-    },
-    {
-      "text": "Qual e o oceano que banha Portugal?",
-      "options": [
-        "Oceano Pacifico",
-        "Oceano Artico",
-        "Oceano Indico",
-        "Oceano Atlantico"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Oceano Atlantico"
       }
     },
     {
@@ -7912,57 +7326,6 @@
       }
     },
     {
-      "text": "Maior pais area?",
-      "options": [
-        "China",
-        "USA",
-        "Russia",
-        "Canada"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Russia"
-      }
-    },
-    {
-      "text": "Maior oceano?",
-      "options": [
-        "Pacifico",
-        "Indico",
-        "Atlantico",
-        "Arctico"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Pacifico"
-      }
-    },
-    {
-      "text": "Qual destas ilhas pertence a Portugal?",
-      "options": [
-        "Madeira",
-        "Ibiza",
-        "Creta",
-        "Sicilia"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Madeira"
-      }
-    },
-    {
       "text": "Oceano Portugal?",
       "options": [
         "Pacifico",
@@ -7994,23 +7357,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Conjunto de ilhas"
-      }
-    },
-    {
-      "text": "Pais mais populoso?",
-      "options": [
-        "India",
-        "EUA",
-        "China",
-        "Indonesia"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: China"
       }
     },
     {
@@ -8679,23 +8025,6 @@
       }
     },
     {
-      "text": "Muro Berlim caiu?",
-      "options": [
-        "1987",
-        "1993",
-        "1989",
-        "1991"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1989"
-      }
-    },
-    {
       "text": "Revolucao Francesa?",
       "options": [
         "1789",
@@ -8849,23 +8178,6 @@
       }
     },
     {
-      "text": "Qual foi o primeiro rei de Portugal?",
-      "options": [
-        "D. Manuel I",
-        "D. Afonso Henriques",
-        "D. Sebastiao",
-        "D. Joao I"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: D. Afonso Henriques"
-      }
-    },
-    {
       "text": "Quem escreveu Os Lusiadas?",
       "options": [
         "Eca de Queiros",
@@ -8891,142 +8203,6 @@
         "Jose Saramago"
       ],
       "correct_option": 0,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Eca de Queiros"
-      }
-    },
-    {
-      "text": "Quem foi Vasco da Gama?",
-      "options": [
-        "Um rei",
-        "Um escritor",
-        "Um navegador",
-        "Um pintor"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um navegador"
-      }
-    },
-    {
-      "text": "Quem escreveu Os Lusiadas?",
-      "options": [
-        "Jose Saramago",
-        "Fernando Pessoa",
-        "Luis de Camoes",
-        "Eca de Queiros"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Luis de Camoes"
-      }
-    },
-    {
-      "text": "Quem escreveu Os Maias?",
-      "options": [
-        "Jose Saramago",
-        "Fernando Pessoa",
-        "Eca de Queiros",
-        "Camilo Castelo Branco"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Eca de Queiros"
-      }
-    },
-    {
-      "text": "Em que ano foi descoberto o caminho maritimo para a India?",
-      "options": [
-        "1488",
-        "1492",
-        "1500",
-        "1498"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1498"
-      }
-    },
-    {
-      "text": "Em que ano foi descoberto o caminho maritimo para a India?",
-      "options": [
-        "1500",
-        "1488",
-        "1498",
-        "1492"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1498"
-      }
-    },
-    {
-      "text": "Quem foi Vasco da Gama?",
-      "options": [
-        "Um navegador",
-        "Um pintor",
-        "Um rei",
-        "Um escritor"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um navegador"
-      }
-    },
-    {
-      "text": "Quem escreveu Os Lusiadas?",
-      "options": [
-        "Fernando Pessoa",
-        "Eca de Queiros",
-        "Luis de Camoes",
-        "Jose Saramago"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Luis de Camoes"
-      }
-    },
-    {
-      "text": "Quem escreveu Os Maias?",
-      "options": [
-        "Camilo Castelo Branco",
-        "Jose Saramago",
-        "Fernando Pessoa",
-        "Eca de Queiros"
-      ],
-      "correct_option": 3,
       "age_rating": 8,
       "category": "HISTORIA",
       "country_code": "PT",
@@ -9206,23 +8382,6 @@
       }
     },
     {
-      "text": "Qual foi o primeiro rei de Portugal?",
-      "options": [
-        "D. Afonso Henriques",
-        "D. Sebastiao",
-        "D. Joao I",
-        "D. Manuel I"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: D. Afonso Henriques"
-      }
-    },
-    {
       "text": "Descobridor America?",
       "options": [
         "Cristovao Colombo",
@@ -9250,23 +8409,6 @@
         "Leonardo da Vinci"
       ],
       "correct_option": 3,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leonardo da Vinci"
-      }
-    },
-    {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Picasso",
-        "Leonardo da Vinci",
-        "Michelangelo",
-        "Van Gogh"
-      ],
-      "correct_option": 1,
       "age_rating": 8,
       "category": "ARTE",
       "country_code": "PT",
@@ -9718,23 +8860,6 @@
       }
     },
     {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Michelangelo",
-        "Picasso",
-        "Van Gogh",
-        "Leonardo da Vinci"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leonardo da Vinci"
-      }
-    },
-    {
       "text": "Museu do Prado fica em?",
       "options": [
         "Barcelona",
@@ -9956,91 +9081,6 @@
       }
     },
     {
-      "text": "Quem e Fernando Pessoa?",
-      "options": [
-        "Um politico",
-        "Um escritor e poeta",
-        "Um pintor",
-        "Um musico"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um escritor e poeta"
-      }
-    },
-    {
-      "text": "Quem pintou Noite Estrelada?",
-      "options": [
-        "Gauguin",
-        "Van Gogh",
-        "Picasso",
-        "Monet"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Van Gogh"
-      }
-    },
-    {
-      "text": "Quem e Fernando Pessoa?",
-      "options": [
-        "Um musico",
-        "Um escritor e poeta",
-        "Um pintor",
-        "Um politico"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um escritor e poeta"
-      }
-    },
-    {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Michelangelo",
-        "Picasso",
-        "Van Gogh",
-        "Leonardo da Vinci"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leonardo da Vinci"
-      }
-    },
-    {
-      "text": "Quem pintou Noite Estrelada?",
-      "options": [
-        "Van Gogh",
-        "Gauguin",
-        "Monet",
-        "Picasso"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Van Gogh"
-      }
-    },
-    {
       "text": "Van Gogh pintou quantos quadros?",
       "options": [
         "2000",
@@ -10055,23 +9095,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 900"
-      }
-    },
-    {
-      "text": "Quem pintou Noite Estrelada?",
-      "options": [
-        "Gauguin",
-        "Picasso",
-        "Monet",
-        "Van Gogh"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Van Gogh"
       }
     },
     {
@@ -10140,23 +9163,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Impressionismo"
-      }
-    },
-    {
-      "text": "Quem e Fernando Pessoa?",
-      "options": [
-        "Um politico",
-        "Um escritor e poeta",
-        "Um pintor",
-        "Um musico"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um escritor e poeta"
       }
     },
     {
@@ -11454,23 +10460,6 @@
       }
     },
     {
-      "text": "Qual e o animal mais alto?",
-      "options": [
-        "Elefante",
-        "Urso",
-        "Girafa",
-        "Zebra"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Girafa"
-      }
-    },
-    {
       "text": "Quantas pernas tem aranha?",
       "options": [
         "4",
@@ -11553,40 +10542,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
-      "text": "Maior animal?",
-      "options": [
-        "Rinoceronte",
-        "Girafa",
-        "Baleia Azul",
-        "Elefante"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Baleia Azul"
-      }
-    },
-    {
-      "text": "Urso polar onde?",
-      "options": [
-        "Selva",
-        "Deserto",
-        "Rio",
-        "Gelo"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gelo"
       }
     },
     {
@@ -11981,23 +10936,6 @@
       }
     },
     {
-      "text": "Qual destes animais vive na agua e na terra?",
-      "options": [
-        "Passaro",
-        "Peixe",
-        "Gato",
-        "Sapo"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sapo"
-      }
-    },
-    {
       "text": "O Nemo e que tipo de peixe?",
       "options": [
         "Tubarao",
@@ -12029,23 +10967,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
-      "text": "Onde vive o urso polar?",
-      "options": [
-        "No deserto",
-        "No rio",
-        "Na selva",
-        "No gelo"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: No gelo"
       }
     },
     {
@@ -12083,40 +11004,6 @@
       }
     },
     {
-      "text": "Qual e o animal mais alto do mundo?",
-      "options": [
-        "Zebra",
-        "Elefante",
-        "Girafa",
-        "Urso"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Girafa"
-      }
-    },
-    {
-      "text": "Quantas pernas tem uma aranha?",
-      "options": [
-        "6",
-        "10",
-        "8",
-        "4"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
       "text": "O que e que as abelhas produzem?",
       "options": [
         "Mel",
@@ -12134,40 +11021,6 @@
       }
     },
     {
-      "text": "O Nemo e que tipo de peixe?",
-      "options": [
-        "Baleia",
-        "Salmao",
-        "Peixe-Palhaço",
-        "Tubarao"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Peixe-Palhaço"
-      }
-    },
-    {
-      "text": "Qual animal faz Miau?",
-      "options": [
-        "Cao",
-        "Gato",
-        "Pato",
-        "Vaca"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
       "text": "Qual e o maior animal do mundo?",
       "options": [
         "Girafa",
@@ -12182,176 +11035,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Baleia Azul"
-      }
-    },
-    {
-      "text": "Qual destes animais poe ovos?",
-      "options": [
-        "Galinha",
-        "Cao",
-        "Gato",
-        "Coelho"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Galinha"
-      }
-    },
-    {
-      "text": "Que animal e conhecido por comer bambu?",
-      "options": [
-        "Girafa",
-        "Panda",
-        "Leao",
-        "Elefante"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Panda"
-      }
-    },
-    {
-      "text": "Qual e o animal mais alto do mundo?",
-      "options": [
-        "Urso",
-        "Elefante",
-        "Zebra",
-        "Girafa"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Girafa"
-      }
-    },
-    {
-      "text": "Quantas pernas tem uma aranha?",
-      "options": [
-        "4",
-        "8",
-        "6",
-        "10"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "O que e que as abelhas produzem?",
-      "options": [
-        "Mel",
-        "Sumo",
-        "Leite",
-        "Agua"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mel"
-      }
-    },
-    {
-      "text": "O Nemo e que tipo de peixe?",
-      "options": [
-        "Salmao",
-        "Baleia",
-        "Peixe-Palhaço",
-        "Tubarao"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Peixe-Palhaço"
-      }
-    },
-    {
-      "text": "Qual animal faz Miau?",
-      "options": [
-        "Vaca",
-        "Gato",
-        "Pato",
-        "Cao"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
-      "text": "Qual e o maior animal do mundo?",
-      "options": [
-        "Baleia Azul",
-        "Rinoceronte",
-        "Girafa",
-        "Elefante"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Baleia Azul"
-      }
-    },
-    {
-      "text": "Qual destes animais poe ovos?",
-      "options": [
-        "Galinha",
-        "Coelho",
-        "Gato",
-        "Cao"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Galinha"
-      }
-    },
-    {
-      "text": "Que animal e conhecido por comer bambu?",
-      "options": [
-        "Elefante",
-        "Panda",
-        "Girafa",
-        "Leao"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Panda"
       }
     },
     {
@@ -12437,57 +11120,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 5"
-      }
-    },
-    {
-      "text": "O que e que as abelhas produzem?",
-      "options": [
-        "Leite",
-        "Sumo",
-        "Mel",
-        "Agua"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mel"
-      }
-    },
-    {
-      "text": "Qual destes animais vive na agua e na terra?",
-      "options": [
-        "Passaro",
-        "Sapo",
-        "Gato",
-        "Peixe"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sapo"
-      }
-    },
-    {
-      "text": "Onde vive o urso polar?",
-      "options": [
-        "No gelo",
-        "Na selva",
-        "No rio",
-        "No deserto"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: No gelo"
       }
     },
     {
@@ -12695,23 +11327,6 @@
       }
     },
     {
-      "text": "Maior mamifero terrestre?",
-      "options": [
-        "Hipopotamo",
-        "Rinoceronte",
-        "Elefante africano",
-        "Girafa"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Elefante africano"
-      }
-    },
-    {
       "text": "O que e simbiose?",
       "options": [
         "Fuga",
@@ -12845,23 +11460,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Estrela do mar"
-      }
-    },
-    {
-      "text": "Qual e o maior animal do mundo?",
-      "options": [
-        "Rinoceronte",
-        "Baleia Azul",
-        "Girafa",
-        "Elefante"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Baleia Azul"
       }
     }
   ],
@@ -13530,23 +12128,6 @@
       }
     },
     {
-      "text": "Qual ator interpreta o Homem de Ferro?",
-      "options": [
-        "Chris Evans",
-        "Mark Ruffalo",
-        "Robert Downey Jr.",
-        "Chris Hemsworth"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CINEMA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Robert Downey Jr."
-      }
-    },
-    {
       "text": "Em Harry Potter, qual e a casa de Harry?",
       "options": [
         "Hufflepuff",
@@ -13578,74 +12159,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: James Cameron"
-      }
-    },
-    {
-      "text": "Em Harry Potter, qual e a casa de Harry?",
-      "options": [
-        "Ravenclaw",
-        "Hufflepuff",
-        "Gryffindor",
-        "Slytherin"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CINEMA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gryffindor"
-      }
-    },
-    {
-      "text": "Quem realizou o filme Titanic?",
-      "options": [
-        "Christopher Nolan",
-        "James Cameron",
-        "George Lucas",
-        "Steven Spielberg"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CINEMA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: James Cameron"
-      }
-    },
-    {
-      "text": "Qual ator interpreta o Homem de Ferro?",
-      "options": [
-        "Robert Downey Jr.",
-        "Chris Evans",
-        "Mark Ruffalo",
-        "Chris Hemsworth"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CINEMA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Robert Downey Jr."
-      }
-    },
-    {
-      "text": "Em Harry Potter, qual e a casa de Harry?",
-      "options": [
-        "Hufflepuff",
-        "Gryffindor",
-        "Ravenclaw",
-        "Slytherin"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CINEMA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gryffindor"
       }
     },
     {
@@ -13697,23 +12210,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 2001"
-      }
-    },
-    {
-      "text": "Quem realizou o filme Titanic?",
-      "options": [
-        "George Lucas",
-        "Christopher Nolan",
-        "James Cameron",
-        "Steven Spielberg"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CINEMA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: James Cameron"
       }
     },
     {
@@ -14467,23 +12963,6 @@
       }
     },
     {
-      "text": "Quem e a Diva do Fado?",
-      "options": [
-        "Mariza",
-        "Ana Mourao",
-        "Amalia Rodrigues",
-        "Theresa"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Amalia Rodrigues"
-      }
-    },
-    {
       "text": "O que e o Fado?",
       "options": [
         "Um genero musical portugues",
@@ -14498,57 +12977,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Um genero musical portugues"
-      }
-    },
-    {
-      "text": "Qual e o instrumento principal do Fado?",
-      "options": [
-        "Guitarra portuguesa",
-        "Piano",
-        "Viola",
-        "Viola viola"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Guitarra portuguesa"
-      }
-    },
-    {
-      "text": "Quem e a Diva do Fado?",
-      "options": [
-        "Amalia Rodrigues",
-        "Mariza",
-        "Theresa",
-        "Ana Mourao"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Amalia Rodrigues"
-      }
-    },
-    {
-      "text": "Qual e o instrumento principal do Fado?",
-      "options": [
-        "Viola",
-        "Viola viola",
-        "Guitarra portuguesa",
-        "Piano"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Guitarra portuguesa"
       }
     },
     {
@@ -14620,23 +13048,6 @@
       }
     },
     {
-      "text": "O que e o Fado?",
-      "options": [
-        "Um tipo de danca",
-        "Um instrumento",
-        "Um genero musical portugues",
-        "Um tipo de cantiga"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um genero musical portugues"
-      }
-    },
-    {
       "text": "Fado patrimonio?",
       "options": [
         "Mundial",
@@ -14702,23 +13113,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1952-1990"
-      }
-    },
-    {
-      "text": "O que e o Fado?",
-      "options": [
-        "Um genero musical portugues",
-        "Um tipo de cantiga",
-        "Um tipo de danca",
-        "Um instrumento"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um genero musical portugues"
       }
     },
     {
@@ -15574,40 +13968,6 @@
       }
     },
     {
-      "text": "Qual destes clubes e de futebol portugues?",
-      "options": [
-        "FC Barcelona",
-        "Benfica",
-        "Real Madrid",
-        "Manchester United"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Benfica"
-      }
-    },
-    {
-      "text": "Quantos jogadores tem uma equipa de futebol em campo?",
-      "options": [
-        "10",
-        "9",
-        "12",
-        "11"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 11"
-      }
-    },
-    {
       "text": "Em que desporto se usa uma raquete e um volante?",
       "options": [
         "Badminton",
@@ -15622,108 +13982,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Badminton"
-      }
-    },
-    {
-      "text": "Cristiano Ronaldo e conhecido por que numero?",
-      "options": [
-        "10",
-        "9",
-        "7",
-        "5"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
-      "text": "Em que ano Portugal ganhou o Campeonato Europeo de futebol?",
-      "options": [
-        "2004",
-        "2020",
-        "2016",
-        "2012"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 2016"
-      }
-    },
-    {
-      "text": "Quantos jogadores tem uma equipa de futebol em campo?",
-      "options": [
-        "11",
-        "9",
-        "10",
-        "12"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 11"
-      }
-    },
-    {
-      "text": "Em que desporto se usa uma raquete e um volante?",
-      "options": [
-        "Padel",
-        "Ping Pong",
-        "Badminton",
-        "Tenis"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Badminton"
-      }
-    },
-    {
-      "text": "Cristiano Ronaldo e conhecido por que numero?",
-      "options": [
-        "10",
-        "9",
-        "5",
-        "7"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
-      "text": "Qual destes clubes e de futebol portugues?",
-      "options": [
-        "Benfica",
-        "Manchester United",
-        "Real Madrid",
-        "FC Barcelona"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Benfica"
       }
     },
     {
@@ -15775,23 +14033,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1955"
-      }
-    },
-    {
-      "text": "Em que desporto se usa uma raquete e um volante?",
-      "options": [
-        "Ping Pong",
-        "Padel",
-        "Badminton",
-        "Tenis"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Badminton"
       }
     },
     {
@@ -15877,23 +14118,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Manchester City"
-      }
-    },
-    {
-      "text": "Em que ano Portugal ganhou o Campeonato Europeo de futebol?",
-      "options": [
-        "2004",
-        "2016",
-        "2012",
-        "2020"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "DESPORTO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 2016"
       }
     },
     {
@@ -16426,23 +14650,6 @@
       }
     },
     {
-      "text": "Bacalhau receitas?",
-      "options": [
-        "100",
-        "1000+",
-        "2000",
-        "500"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1000+"
-      }
-    },
-    {
       "text": "Vinho Porto e de?",
       "options": [
         "Douro",
@@ -16647,57 +14854,6 @@
       }
     },
     {
-      "text": "Qual e o prato Bacalhau a Gomes de Sa?",
-      "options": [
-        "Um doce",
-        "Uma sopa",
-        "Um prato de bacalhau com batatas",
-        "Um peixe frito"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um prato de bacalhau com batatas"
-      }
-    },
-    {
-      "text": "Qual destas frutas e tipica de Portugal?",
-      "options": [
-        "Abacaxi",
-        "Laranja do Algarve",
-        "Kiwi",
-        "Manga"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Laranja do Algarve"
-      }
-    },
-    {
-      "text": "Qual destes e um prato tipico portugues?",
-      "options": [
-        "Pizza",
-        "Paella",
-        "Sushi",
-        "Bacalhau a Bras"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Bacalhau a Bras"
-      }
-    },
-    {
       "text": "Em que pais se come o melhor bacalhau?",
       "options": [
         "Portugal",
@@ -16712,57 +14868,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Portugal"
-      }
-    },
-    {
-      "text": "Qual destes e um prato tipico portugues?",
-      "options": [
-        "Sushi",
-        "Paella",
-        "Pizza",
-        "Bacalhau a Bras"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Bacalhau a Bras"
-      }
-    },
-    {
-      "text": "Em que pais se come o melhor bacalhau?",
-      "options": [
-        "Franca",
-        "Espanha",
-        "Portugal",
-        "Brasil"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Portugal"
-      }
-    },
-    {
-      "text": "Qual e o prato Bacalhau a Gomes de Sa?",
-      "options": [
-        "Um doce",
-        "Um prato de bacalhau com batatas",
-        "Uma sopa",
-        "Um peixe frito"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um prato de bacalhau com batatas"
       }
     },
     {
@@ -16797,23 +14902,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 2º"
-      }
-    },
-    {
-      "text": "Em que pais se come o melhor bacalhau?",
-      "options": [
-        "Franca",
-        "Espanha",
-        "Brasil",
-        "Portugal"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Portugal"
       }
     },
     {
@@ -16916,23 +15004,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Prato bacalhau+batatas"
-      }
-    },
-    {
-      "text": "Qual destas frutas e tipica de Portugal?",
-      "options": [
-        "Manga",
-        "Laranja do Algarve",
-        "Kiwi",
-        "Abacaxi"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "GASTRONOMIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Laranja do Algarve"
       }
     }
   ],
@@ -17054,23 +15125,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Otava"
-      }
-    },
-    {
-      "text": "Capital Australia?",
-      "options": [
-        "Sydney",
-        "Canberra",
-        "Perth",
-        "Melbourne"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Canberra"
       }
     },
     {
@@ -17737,57 +15791,6 @@
       }
     },
     {
-      "text": "Qual e a capital de Franca?",
-      "options": [
-        "Nice",
-        "Paris",
-        "Lyon",
-        "Marseille"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Paris"
-      }
-    },
-    {
-      "text": "Qual e a capital do Reino Unido?",
-      "options": [
-        "Londres",
-        "Birmingham",
-        "Liverpool",
-        "Manchester"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Londres"
-      }
-    },
-    {
-      "text": "Qual e a capital da Italia?",
-      "options": [
-        "Napoles",
-        "Roma",
-        "Veneza",
-        "Milao"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Roma"
-      }
-    },
-    {
       "text": "Qual e a capital da Alemanha?",
       "options": [
         "Frankfurt",
@@ -17796,74 +15799,6 @@
         "Munique"
       ],
       "correct_option": 1,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Berlim"
-      }
-    },
-    {
-      "text": "Qual e a capital do Brasil?",
-      "options": [
-        "Salvador",
-        "Rio de Janeiro",
-        "Brasilia",
-        "Sao Paulo"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Brasilia"
-      }
-    },
-    {
-      "text": "Qual e a capital de Franca?",
-      "options": [
-        "Nice",
-        "Lyon",
-        "Paris",
-        "Marseille"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Paris"
-      }
-    },
-    {
-      "text": "Qual e a capital da Italia?",
-      "options": [
-        "Roma",
-        "Veneza",
-        "Milao",
-        "Napoles"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Roma"
-      }
-    },
-    {
-      "text": "Qual e a capital da Alemanha?",
-      "options": [
-        "Frankfurt",
-        "Hamburgo",
-        "Munique",
-        "Berlim"
-      ],
-      "correct_option": 3,
       "age_rating": 8,
       "category": "CAPITAIS_DO_MUNDO",
       "country_code": "PT",
@@ -17904,40 +15839,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Oslo"
-      }
-    },
-    {
-      "text": "Qual e a capital do Brasil?",
-      "options": [
-        "Brasilia",
-        "Rio de Janeiro",
-        "Salvador",
-        "Sao Paulo"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Brasilia"
-      }
-    },
-    {
-      "text": "Qual e a capital da Alemanha?",
-      "options": [
-        "Munique",
-        "Berlim",
-        "Frankfurt",
-        "Hamburgo"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Berlim"
       }
     },
     {
@@ -18094,23 +15995,6 @@
       }
     },
     {
-      "text": "Qual e a capital do Reino Unido?",
-      "options": [
-        "Manchester",
-        "Liverpool",
-        "Londres",
-        "Birmingham"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Londres"
-      }
-    },
-    {
       "text": "Qual e a capital de Alemanha?",
       "options": [
         "Munique",
@@ -18227,40 +16111,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Oslo"
-      }
-    },
-    {
-      "text": "Capital Austria?",
-      "options": [
-        "Innsbruck",
-        "Salzburgo",
-        "Graz",
-        "Viena"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Viena"
-      }
-    },
-    {
-      "text": "Qual e a capital do Reino Unido?",
-      "options": [
-        "Liverpool",
-        "Londres",
-        "Birmingham",
-        "Manchester"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CAPITAIS_DO_MUNDO",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Londres"
       }
     },
     {
@@ -18436,23 +16286,6 @@
       }
     },
     {
-      "text": "Arco-iris cores?",
-      "options": [
-        "5",
-        "7",
-        "6",
-        "8"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
       "text": "Estacoes do ano?",
       "options": [
         "2",
@@ -18484,23 +16317,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Mercurio"
-      }
-    },
-    {
-      "text": "Elemento Au?",
-      "options": [
-        "Aluminio",
-        "Prata",
-        "Ouro",
-        "Cobre"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Ouro"
       }
     },
     {
@@ -18841,23 +16657,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 300000 km/s"
-      }
-    },
-    {
-      "text": "Planeta vermelho?",
-      "options": [
-        "Marte",
-        "Jupiter",
-        "Venus",
-        "Mercurio"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Marte"
       }
     },
     {
@@ -19558,23 +17357,6 @@
       }
     },
     {
-      "text": "Maior planeta?",
-      "options": [
-        "Neptuno",
-        "Saturno",
-        "Urano",
-        "Jupiter"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Jupiter"
-      }
-    },
-    {
       "text": "Gas respiramos?",
       "options": [
         "Nitrogenio",
@@ -19745,23 +17527,6 @@
       }
     },
     {
-      "text": "Lua e?",
-      "options": [
-        "两者",
-        "Satelite",
-        "Estrela",
-        "Nenhuma"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
       "text": "Fotossintese faz?",
       "options": [
         "Glicose",
@@ -19776,23 +17541,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "Ponto fusao agua?",
-      "options": [
-        "100C",
-        "0C",
-        "50C",
-        "25C"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 0C"
       }
     },
     {
@@ -19821,23 +17569,6 @@
         "5"
       ],
       "correct_option": 0,
-      "age_rating": 12,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 4"
-      }
-    },
-    {
-      "text": "Planeta com aneis?",
-      "options": [
-        "3",
-        "4",
-        "2",
-        "5"
-      ],
-      "correct_option": 1,
       "age_rating": 12,
       "category": "CIENCIA",
       "country_code": "PT",
@@ -20153,23 +17884,6 @@
       }
     },
     {
-      "text": "Quantas estacoes do ano existem?",
-      "options": [
-        "5",
-        "2",
-        "4",
-        "3"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 4"
-      }
-    },
-    {
       "text": "Qual e o planeta mais perto do Sol?",
       "options": [
         "Mercurio",
@@ -20184,91 +17898,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Mercurio"
-      }
-    },
-    {
-      "text": "Quantos planetas tem o Sistema Solar?",
-      "options": [
-        "8",
-        "9",
-        "7",
-        "10"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "Qual e a cor do ceu num dia de sol?",
-      "options": [
-        "Verde",
-        "Laranja",
-        "Azul",
-        "Roxo"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Azul"
-      }
-    },
-    {
-      "text": "Quantas estacoes do ano existem?",
-      "options": [
-        "5",
-        "4",
-        "3",
-        "2"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 4"
-      }
-    },
-    {
-      "text": "Qual e o planeta mais perto do Sol?",
-      "options": [
-        "Mercurio",
-        "Terra",
-        "Venus",
-        "Marte"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mercurio"
-      }
-    },
-    {
-      "text": "Qual e o simbolo da agua?",
-      "options": [
-        "NaCl",
-        "O2",
-        "CO2",
-        "H2O"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: H2O"
       }
     },
     {
@@ -20289,40 +17918,6 @@
       }
     },
     {
-      "text": "Quantos planetas tem o Sistema Solar?",
-      "options": [
-        "8",
-        "7",
-        "10",
-        "9"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "Qual e a cor do ceu num dia de sol?",
-      "options": [
-        "Roxo",
-        "Laranja",
-        "Verde",
-        "Azul"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Azul"
-      }
-    },
-    {
       "text": "Quantas cores tem o arco-iris?",
       "options": [
         "6",
@@ -20340,23 +17935,6 @@
       }
     },
     {
-      "text": "Qual e o planeta mais perto do Sol?",
-      "options": [
-        "Terra",
-        "Mercurio",
-        "Marte",
-        "Venus"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mercurio"
-      }
-    },
-    {
       "text": "O que as plantas precisam para fazer fotossintese?",
       "options": [
         "Luz Solar",
@@ -20371,23 +17949,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Luz Solar"
-      }
-    },
-    {
-      "text": "Qual e o simbolo da agua?",
-      "options": [
-        "NaCl",
-        "CO2",
-        "H2O",
-        "O2"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: H2O"
       }
     },
     {
@@ -20507,91 +18068,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "Quantas cores tem o arco-iris?",
-      "options": [
-        "8",
-        "5",
-        "6",
-        "7"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
-      "text": "O que as plantas precisam para fazer fotossintese?",
-      "options": [
-        "Sombra",
-        "Vento",
-        "Hamburguer",
-        "Luz Solar"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Luz Solar"
-      }
-    },
-    {
-      "text": "Qual e o elemento quimico com o simbolo Au?",
-      "options": [
-        "Prata",
-        "Ouro",
-        "Aluminio",
-        "Cobre"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Ouro"
-      }
-    },
-    {
-      "text": "Quantas cores tem o arco-iris?",
-      "options": [
-        "6",
-        "5",
-        "8",
-        "7"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 7"
-      }
-    },
-    {
-      "text": "O que as plantas precisam para fazer fotossintese?",
-      "options": [
-        "Sombra",
-        "Hamburguer",
-        "Vento",
-        "Luz Solar"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Luz Solar"
       }
     },
     {
@@ -20728,23 +18204,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: n, l, m, s"
-      }
-    },
-    {
-      "text": "Qual e o elemento quimico com o simbolo Au?",
-      "options": [
-        "Cobre",
-        "Ouro",
-        "Prata",
-        "Aluminio"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "CIENCIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Ouro"
       }
     },
     {
@@ -21532,23 +18991,6 @@
       }
     },
     {
-      "text": "Quanto e 100 - 37?",
-      "options": [
-        "73",
-        "63",
-        "53",
-        "83"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 63"
-      }
-    },
-    {
       "text": "Quanto e 24 / 6?",
       "options": [
         "6",
@@ -21580,142 +19022,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 6"
-      }
-    },
-    {
-      "text": "Quanto e 7 + 8?",
-      "options": [
-        "14",
-        "16",
-        "15",
-        "13"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 15"
-      }
-    },
-    {
-      "text": "Quanto e 9 x 9?",
-      "options": [
-        "99",
-        "81",
-        "90",
-        "72"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 81"
-      }
-    },
-    {
-      "text": "Quanto e 24 / 6?",
-      "options": [
-        "6",
-        "4",
-        "5",
-        "3"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 4"
-      }
-    },
-    {
-      "text": "Quantos lados tem um hexagono?",
-      "options": [
-        "7",
-        "5",
-        "8",
-        "6"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 6"
-      }
-    },
-    {
-      "text": "Quanto e 7 + 8?",
-      "options": [
-        "16",
-        "14",
-        "13",
-        "15"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 15"
-      }
-    },
-    {
-      "text": "Quanto e 9 x 9?",
-      "options": [
-        "81",
-        "99",
-        "72",
-        "90"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 81"
-      }
-    },
-    {
-      "text": "Quanto e 100 - 37?",
-      "options": [
-        "73",
-        "83",
-        "53",
-        "63"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 63"
-      }
-    },
-    {
-      "text": "Quanto e 24 / 6?",
-      "options": [
-        "3",
-        "5",
-        "6",
-        "4"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 4"
       }
     },
     {
@@ -21804,57 +19110,6 @@
       }
     },
     {
-      "text": "Quanto e 7 + 8?",
-      "options": [
-        "13",
-        "14",
-        "15",
-        "16"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 15"
-      }
-    },
-    {
-      "text": "Quanto e 9 x 9?",
-      "options": [
-        "72",
-        "81",
-        "90",
-        "99"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 81"
-      }
-    },
-    {
-      "text": "Quanto e 100 - 37?",
-      "options": [
-        "63",
-        "73",
-        "83",
-        "53"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 63"
-      }
-    },
-    {
       "text": "Quanto e a raiz quadrada de 144?",
       "options": [
         "10",
@@ -21940,23 +19195,6 @@
       }
     },
     {
-      "text": "Quantos lados tem um hexagono?",
-      "options": [
-        "7",
-        "8",
-        "5",
-        "6"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "MATEMATICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 6"
-      }
-    },
-    {
       "text": "Numero romano X?",
       "options": [
         "50",
@@ -21972,6 +19210,81 @@
       "metadata": {
         "hint": "A resposta correta e: 10"
       }
+    },
+    {
+      "text": "Qual é o nome do teorema de Pitágoras?",
+      "options": [
+        "Teorema de Newton",
+        "Teorema de Euclides",
+        "Teorema de Pitágoras",
+        "Teorema de Arquimedes"
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "MATEMATICA",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Quem é o pai da geometria?",
+      "options": [
+        "Pitágoras",
+        "Arquimedes",
+        "Euclides",
+        "Newton"
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "MATEMATICA",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Em que ano foi publicado o livro 'Elementos' de Euclides?",
+      "options": [
+        "100 a.C.",
+        "200 a.C.",
+        "300 a.C.",
+        "0 d.C."
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "MATEMATICA",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Qual é o nome do número que é igual à sua própria raiz quadrada?",
+      "options": [
+        "Euler",
+        "Um",
+        "Pi",
+        "Zero"
+      ],
+      "correct_option": 1,
+      "age_rating": 18,
+      "category": "MATEMATICA",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Quem desenvolveu a teoria dos conjuntos?",
+      "options": [
+        "Henri Poincaré",
+        "David Hilbert",
+        "Georg Cantor",
+        "Bertrand Russell"
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "MATEMATICA",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
     }
   ],
   "POLITICA": [
@@ -22262,23 +19575,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta é: Um acordo entre países"
-      }
-    },
-    {
-      "text": "O que é a ONU?",
-      "options": [
-        "Organização das Nações Unidas",
-        "União Europeia",
-        "NATO",
-        "UNESCO"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "POLITICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta é: Organização das Nações Unidas"
       }
     },
     {
