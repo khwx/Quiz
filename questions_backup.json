@@ -110,6 +110,29 @@
       }
     },
     {
+      "text": "Direitos sociais?",
+      "options": [
+        "Culturais",
+        "Sociais",
+        "Políticos",
+        "Individuais"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "reports": [
+          {
+            "date": "2026-04-28T13:19:26.644Z",
+            "reason": "não faz sentido",
+            "reporter": "testeaaa"
+          }
+        ]
+      }
+    },
+    {
       "text": "Quantos dias tem uma semana?",
       "options": [
         "8",
@@ -498,23 +521,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Globais"
-      }
-    },
-    {
-      "text": "Direitos sociais?",
-      "options": [
-        "Culturais",
-        "Sociais",
-        "Políticos",
-        "Individuais"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sociais"
       }
     },
     {
@@ -1383,6 +1389,29 @@
       "metadata": {}
     },
     {
+      "text": "Paz?",
+      "options": [
+        "Briga",
+        "Conflito",
+        "Ausencia de guerra",
+        "Guerra"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "reports": [
+          {
+            "date": "2026-04-28T13:20:00.461Z",
+            "reason": "pazzz ?",
+            "reporter": "testeaaa"
+          }
+        ]
+      }
+    },
+    {
       "text": "Estacao praia?",
       "options": [
         "Primavera",
@@ -1397,23 +1426,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Verao"
-      }
-    },
-    {
-      "text": "Paz?",
-      "options": [
-        "Briga",
-        "Conflito",
-        "Ausencia de guerra",
-        "Guerra"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Ausencia de guerra"
       }
     },
     {
@@ -7675,23 +7687,6 @@
       }
     },
     {
-      "text": "Renaissance?",
-      "options": [
-        "Todas",
-        "Cultural",
-        "Arte",
-        "Epoca"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
       "text": "Hitler?",
       "options": [
         "Ditador",
@@ -8765,23 +8760,6 @@
       }
     },
     {
-      "text": "Renaissance foi?",
-      "options": [
-        "Cultural",
-        "Todas",
-        "Arte",
-        "Epoca"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
       "text": "Michelangelo foi?",
       "options": [
         "Arquiteto",
@@ -8833,23 +8811,6 @@
       }
     },
     {
-      "text": "O que e perspectiva?",
-      "options": [
-        "Metodo",
-        "Todas",
-        "Tecnica",
-        "Teoria"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Tecnica"
-      }
-    },
-    {
       "text": "Arte Rupestre e?",
       "options": [
         "Pintura nas rochas",
@@ -8881,23 +8842,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1870s"
-      }
-    },
-    {
-      "text": "Art Nouveau estilo?",
-      "options": [
-        " Arte moderna",
-        "Antigo",
-        "Arte nova",
-        "Todas"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
       }
     },
     {
@@ -9255,2286 +9199,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1970"
-      }
-    }
-  ],
-  "ANIMAIS": [
-    {
-      "text": "Metamorfose e?",
-      "options": [
-        "Nascimento",
-        "Danca",
-        "Transformacao",
-        "Reproducao"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Transformacao"
-      }
-    },
-    {
-      "text": "Canguru nao pode?",
-      "options": [
-        "Correr",
-        "Vomitar",
-        "Saltar",
-        "Dormir"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Vomitar"
-      }
-    },
-    {
-      "text": "Marsupial tem?",
-      "options": [
-        "Cauda",
-        "Nenhuma",
-        "Asa",
-        "Bolsa"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Bolsa"
-      }
-    },
-    {
-      "text": "ABELHAS comunicam?",
-      "options": [
-        "Nenhuma",
-        "Todas",
-        "Localizacao",
-        "Danca"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Migracao e?",
-      "options": [
-        "Todas",
-        "Movimento",
-        "两者",
-        "Viagem"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Camaleao cambia?",
-      "options": [
-        "Cor",
-        "Forma",
-        "Tamanho",
-        "Todas"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Mais rapido?",
-      "options": [
-        "Leao",
-        "Lobo",
-        "Tigre",
-        "Guepardo"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Guepardo"
-      }
-    },
-    {
-      "text": "Animal noturno?",
-      "options": [
-        "Cao",
-        "Galinha",
-        "Coruja",
-        "Pato"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Coruja"
-      }
-    },
-    {
-      "text": "Coral e?",
-      "options": [
-        "Planta",
-        "Animal",
-        "Nenhuma",
-        "Pedra"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Animal"
-      }
-    },
-    {
-      "text": "Baleia e?",
-      "options": [
-        "Mamifero",
-        "Reptil",
-        "Nenhuma",
-        "Peixe"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mamifero"
-      }
-    },
-    {
-      "text": "Onca pintada?",
-      "options": [
-        "America do Sul",
-        "Africa",
-        "Europa",
-        "Asia"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: America do Sul"
-      }
-    },
-    {
-      "text": "Polvo tentaculos?",
-      "options": [
-        "10",
-        "4",
-        "6",
-        "8"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "Ibis sagrado?",
-      "options": [
-        "Grecia",
-        "Persia",
-        "Roma",
-        "Egito"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Egito"
-      }
-    },
-    {
-      "text": "Panda vermelho?",
-      "options": [
-        "India",
-        "China",
-        "Todas",
-        "Nepal"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Peixe mais venenoso?",
-      "options": [
-        "Piranha",
-        "Barracuda",
-        "Peixe pedra",
-        "Tubarao"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Peixe pedra"
-      }
-    },
-    {
-      "text": "Medusa immortal?",
-      "options": [
-        "Aurelia",
-        "Nenhuma",
-        "Turritopsis",
-        "Cyanea"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Turritopsis"
-      }
-    },
-    {
-      "text": "Pinguim Emperor onde?",
-      "options": [
-        "Antartida",
-        "Groenlandia",
-        "Arctica",
-        "Svalbard"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Antartida"
-      }
-    },
-    {
-      "text": "Lobo Arctic?",
-      "options": [
-        "Preto",
-        "Castanho",
-        "Cinzento",
-        "Branco"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Branco"
-      }
-    },
-    {
-      "text": "Tigre branco?",
-      "options": [
-        "Todas",
-        "Bengal",
-        "Albino",
-        "Siberiano"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Bengal"
-      }
-    },
-    {
-      "text": "Gorila habitat?",
-      "options": [
-        "Selva",
-        "Montanha",
-        "Todas",
-        "Savana"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Selva"
-      }
-    },
-    {
-      "text": " Biomagnificacao e?",
-      "options": [
-        " both",
-        "Nenhuma",
-        "Acumulo",
-        "Decumulo"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Acumulo"
-      }
-    },
-    {
-      "text": "Homeostase e?",
-      "options": [
-        " both",
-        "Nenhuma",
-        "Desequilibrio",
-        "Equilibrio"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Equilibrio"
-      }
-    },
-    {
-      "text": "Fotossintese produtos?",
-      "options": [
-        "两者",
-        "O2 + Glicose",
-        "CO2 + Agua",
-        "Nenhuma"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: O2 + Glicose"
-      }
-    },
-    {
-      "text": "Respiracao celular local?",
-      "options": [
-        " both",
-        "Mitocondria",
-        "Nenhuma",
-        "Citoplasma"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mitocondria"
-      }
-    },
-    {
-      "text": "Enzimas sao?",
-      "options": [
-        "Catalisador",
-        "Nenhuma",
-        "Substrato",
-        " both"
-      ],
-      "correct_option": 0,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Catalisador"
-      }
-    },
-    {
-      "text": "Fermentacao produtos?",
-      "options": [
-        "Nenhuma",
-        "CO2",
-        "Alcool",
-        "两者"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "Crossing-over ocorre em?",
-      "options": [
-        "Profase II",
-        "Profase I",
-        "Nenhuma",
-        " ambas"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Profase I"
-      }
-    },
-    {
-      "text": "Hiena riso?",
-      "options": [
-        "Nao sei",
-        "Talvez",
-        "Nao",
-        "Sim"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sim"
-      }
-    },
-    {
-      "text": "Lula gigante pode ter?",
-      "options": [
-        "10m",
-        "15m",
-        "5m",
-        "20m"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 15m"
-      }
-    },
-    {
-      "text": "Cavalo-marinho e?",
-      "options": [
-        "Both",
-        "Peixe",
-        "Nenhuma",
-        "Cavalo"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Both"
-      }
-    },
-    {
-      "text": "Tubarao branco tamanho?",
-      "options": [
-        "5m",
-        "6m",
-        "8m",
-        "3m"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 6m"
-      }
-    },
-    {
-      "text": "Metabolismo e?",
-      "options": [
-        "两者",
-        "Nenhuma",
-        "Anabolismo",
-        "Catabolismo"
-      ],
-      "correct_option": 0,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "Mitose resultam em?",
-      "options": [
-        "1",
-        "2",
-        "4",
-        "8"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 2"
-      }
-    },
-    {
-      "text": "Meiose resultam em?",
-      "options": [
-        "8",
-        "4",
-        "2",
-        "6"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 2"
-      }
-    },
-    {
-      "text": "Cromossomas humanos?",
-      "options": [
-        "48",
-        "23",
-        "44",
-        "46"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 46"
-      }
-    },
-    {
-      "text": "Grupos sanguineos?",
-      "options": [
-        "2",
-        "3",
-        "5",
-        "4"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 4"
-      }
-    },
-    {
-      "text": "Qual e o animal mais alto?",
-      "options": [
-        "Girafa",
-        "Elefante",
-        "Urso",
-        "Zebra"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Girafa"
-      }
-    },
-    {
-      "text": "Quantas patas aranha?",
-      "options": [
-        "10",
-        "8",
-        "6",
-        "4"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "Nemo tipo peixe?",
-      "options": [
-        "Salmao",
-        "Tubarao",
-        "Baleia",
-        "Peixe-Palhaço"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Peixe-Palhaço"
-      }
-    },
-    {
-      "text": "Maior animal?",
-      "options": [
-        "Rinoceronte",
-        "Elefante",
-        "Girafa",
-        "Baleia Azul"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Baleia Azul"
-      }
-    },
-    {
-      "text": "Animal que poe ovos?",
-      "options": [
-        "Gato",
-        "Coelho",
-        "Galinha",
-        "Cao"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Galinha"
-      }
-    },
-    {
-      "text": "Panda come?",
-      "options": [
-        "Carne",
-        "Insetos",
-        "Bambu",
-        "Frutas"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Bambu"
-      }
-    },
-    {
-      "text": "Tigre riscas?",
-      "options": [
-        "Brancas",
-        "Nenhuma",
-        "Pretas e brancas",
-        "Amarelas"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Pretas e brancas"
-      }
-    },
-    {
-      "text": "Cavalo domesticado?",
-      "options": [
-        "Ha 1000 anos",
-        "Ha 100 anos",
-        "Ha 5000 anos",
-        "Nunca"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Ha 5000 anos"
-      }
-    },
-    {
-      "text": "Peixe respira?",
-      "options": [
-        "Boca",
-        "Guelras",
-        "Pulmoes",
-        "Nariz"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Guelras"
-      }
-    },
-    {
-      "text": "Papagaio fala?",
-      "options": [
-        "Nao",
-        "Talvez",
-        "So alguns",
-        "Sim"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: So alguns"
-      }
-    },
-    {
-      "text": "Ovelha la?",
-      "options": [
-        "Branca",
-        "Preta",
-        " castanha",
-        "Todas"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Porco e?",
-      "options": [
-        "Onivoro",
-        "Herbivoro",
-        "Carnivoro",
-        "Nao sei"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Onivoro"
-      }
-    },
-    {
-      "text": "ABELHAS vivem em?",
-      "options": [
-        "Colmeia",
-        "Casa",
-        "Arvore",
-        "Buraco"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Colmeia"
-      }
-    },
-    {
-      "text": "Golfinho e?",
-      "options": [
-        "Anfibio",
-        "Reptil",
-        "Mamifero",
-        "Peixe"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mamifero"
-      }
-    },
-    {
-      "text": "Elefante tromba?",
-      "options": [
-        "Braço",
-        "Perna",
-        "Todas",
-        "Naris"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Boi tem?",
-      "options": [
-        "Lã",
-        "Chifres",
-        "Pelos",
-        "Nenhuma"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Chifres"
-      }
-    },
-    {
-      "text": "Mosca patas?",
-      "options": [
-        "5",
-        "6",
-        "4",
-        "8"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 6"
-      }
-    },
-    {
-      "text": "Peixe dourado cor?",
-      "options": [
-        "Vermelho",
-        "Todas",
-        "Dourado",
-        "Laranja"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Borrego e?",
-      "options": [
-        "Gato",
-        "Cao",
-        "Ovelha jovem",
-        "Cabrito"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Ovelha jovem"
-      }
-    },
-    {
-      "text": "Coelho orelhas?",
-      "options": [
-        "Longas",
-        "Cortas",
-        "Nenhuma",
-        "Pequenas"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Longas"
-      }
-    },
-    {
-      "text": "Tartaruga速度?",
-      "options": [
-        "Lenta",
-        "Muito rapida",
-        "Rapida",
-        "Media"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Lenta"
-      }
-    },
-    {
-      "text": " ADN funcao?",
-      "options": [
-        " both",
-        "Nenhuma",
-        "Informacao",
-        "Energia"
-      ],
-      "correct_option": 0,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e:  both"
-      }
-    },
-    {
-      "text": "Genoma humano quantos genes?",
-      "options": [
-        "35000",
-        "20000",
-        "25000",
-        "30000"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 25000"
-      }
-    },
-    {
-      "text": "Biodiversidade inclui?",
-      "options": [
-        "Genes",
-        "Especies",
-        "Ecossistemas",
-        "Todas"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Fosseis estao em?",
-      "options": [
-        "Areia",
-        "Todas",
-        "Rocha",
-        "Agua"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Rocha"
-      }
-    },
-    {
-      "text": "Mutacao pode ser?",
-      "options": [
-        "Nenhuma",
-        "Maus",
-        "Boa",
-        " ambas"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e:  ambas"
-      }
-    },
-    {
-      "text": "Selecao natural ideia?",
-      "options": [
-        "Nenhuma",
-        "Lamarck",
-        "Darwin",
-        " ambas"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e:  ambas"
-      }
-    },
-    {
-      "text": "Cadeia alimentar inclui?",
-      "options": [
-        "Consumidor",
-        "Produtor",
-        "Todas",
-        "Decompositor"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Todas"
-      }
-    },
-    {
-      "text": "Nivel trofico primeiro?",
-      "options": [
-        "Planta",
-        "Herbivoro",
-        "Nenhuma",
-        "Carnivoro"
-      ],
-      "correct_option": 0,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Planta"
-      }
-    },
-    {
-      "text": "Simbiose e?",
-      "options": [
-        "Uniao",
-        "两者",
-        "Combate",
-        "Nenhuma"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "Parasitismo e?",
-      "options": [
-        "Nenhuma",
-        "Prejuizo",
-        "两者",
-        "Beneficio"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Prejuizo"
-      }
-    },
-    {
-      "text": "Competicao interespecifica?",
-      "options": [
-        "Nenhuma",
-        "Diferentes",
-        "Mesma especie",
-        "两者"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Diferentes"
-      }
-    },
-    {
-      "text": "Animal agua+terra?",
-      "options": [
-        "Peixe",
-        "Sapo",
-        "Gato",
-        "Passaro"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sapo"
-      }
-    },
-    {
-      "text": "Urso polar onde?",
-      "options": [
-        "Gelo",
-        "Deserto",
-        "Selva",
-        "Rio"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gelo"
-      }
-    },
-    {
-      "text": "Pinguim voa?",
-      "options": [
-        "Nao",
-        "Talvez",
-        "Sim",
-        "So novo"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Nao"
-      }
-    },
-    {
-      "text": "Cobra lingua?",
-      "options": [
-        "Rosa",
-        "Preta",
-        "Verde",
-        "Branca"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Rosa"
-      }
-    },
-    {
-      "text": "Celula tronco pode?",
-      "options": [
-        "Nada",
-        "Tudo",
-        "Alguns",
-        "Nao sei"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Tudo"
-      }
-    },
-    {
-      "text": "Extincao em massa foi?",
-      "options": [
-        "Nenhuma",
-        "1",
-        "10",
-        "5"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 5"
-      }
-    },
-    {
-      "text": "Ciclo do azoto inclui?",
-      "options": [
-        "4",
-        "6",
-        "5",
-        "3"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 5"
-      }
-    },
-    {
-      "text": "Quantas pernas tem aranha?",
-      "options": [
-        "4",
-        "10",
-        "8",
-        "6"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "O que abelhas fazem?",
-      "options": [
-        "Mel",
-        "Agua",
-        "Sumo",
-        "Leite"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mel"
-      }
-    },
-    {
-      "text": "Qual animal vive na agua+e terra?",
-      "options": [
-        "Gato",
-        "Sapo",
-        "Passaro",
-        "Peixe"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sapo"
-      }
-    },
-    {
-      "text": "Nemo e que peixe?",
-      "options": [
-        "Tubarao",
-        "Salmao",
-        "Peixe-Palhaço",
-        "Baleia"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Peixe-Palhaço"
-      }
-    },
-    {
-      "text": "Qual faz Miau?",
-      "options": [
-        "Cao",
-        "Gato",
-        "Vaca",
-        "Pato"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
-      "text": "Panda come o quê?",
-      "options": [
-        "Bambu",
-        "Insetos",
-        "Carne",
-        "Frutas"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Bambu"
-      }
-    },
-    {
-      "text": "Qual animal regenera membros?",
-      "options": [
-        "Lobo",
-        "Estrela do mar",
-        "Coruja",
-        "Caracol"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Estrela do mar"
-      }
-    },
-    {
-      "text": "O que e metamorfose?",
-      "options": [
-        "Transformacao",
-        "Danca",
-        "Reproducao",
-        "Nascimento"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Transformacao"
-      }
-    },
-    {
-      "text": "Qual animal nao vomita?",
-      "options": [
-        "Cao",
-        "Gato",
-        "Canguru",
-        "Coelho"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Canguru"
-      }
-    },
-    {
-      "text": "Marsupial e...",
-      "options": [
-        "Raposa",
-        "Coelho",
-        "Canguru",
-        "Urso"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Canguru"
-      }
-    },
-    {
-      "text": "ABELHAS na danca comunicam o quê?",
-      "options": [
-        "Brincar",
-        "Acasalar",
-        "Localizacao",
-        "Danca"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Localizacao"
-      }
-    },
-    {
-      "text": "Migracao e...",
-      "options": [
-        "Movimento sazonal",
-        "Corrida",
-        "Viagem",
-        "Voar"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Movimento sazonal"
-      }
-    },
-    {
-      "text": "Quantos coracoes minhoca?",
-      "options": [
-        "Um",
-        "Cinco",
-        "Dez",
-        "Nenhum"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Cinco"
-      }
-    },
-    {
-      "text": "Qual cambia cor?",
-      "options": [
-        "Camaleao",
-        "Tigre",
-        "Leao",
-        "Zebra"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Camaleao"
-      }
-    },
-    {
-      "text": "Mais rapido do mundo?",
-      "options": [
-        "Lobo",
-        "Leao",
-        "Tigre",
-        "Guepardo"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Guepardo"
-      }
-    },
-    {
-      "text": "O que e evolucao?",
-      "options": [
-        "Extincao",
-        "Reproducao",
-        "Mudanca ao longo do tempo",
-        "Criacao"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mudanca ao longo do tempo"
-      }
-    },
-    {
-      "text": "Quimera e o quizer?",
-      "options": [
-        "Rai",
-        "Animal mitologico",
-        "Tubarao",
-        "Peixe"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Animal mitologico"
-      }
-    },
-    {
-      "text": "O que sao bilion?",
-      "options": [
-        "Milhao",
-        "Triliao",
-        "Mil milhões",
-        "Biliao"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mil milhões"
-      }
-    },
-    {
-      "text": "Gene e o quizer?",
-      "options": [
-        "Cromossoma",
-        "DNA",
-        "Celula",
-        "Unidade genetica"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Unidade genetica"
-      }
-    },
-    {
-      "text": "Cadeia alimentar e...",
-      "options": [
-        "Teia",
-        "Sequencia alimentar",
-        "Alimento",
-        "Corrente"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sequencia alimentar"
-      }
-    },
-    {
-      "text": "Produtor primario e...",
-      "options": [
-        "Bacteria",
-        " Fungo",
-        "Planta",
-        "Animal"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Planta"
-      }
-    },
-    {
-      "text": "Decompositor e...",
-      "options": [
-        "Fungo",
-        "Planta",
-        "Animal",
-        "Pedra"
-      ],
-      "correct_option": 0,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Fungo"
-      }
-    },
-    {
-      "text": "O que e biomagnificacao?",
-      "options": [
-        "Alimentacao",
-        "Crescimento",
-        "Acumulo toxico",
-        "Reproducao"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Acumulo toxico"
-      }
-    },
-    {
-      "text": "Nivel trofico e...",
-      "options": [
-        "Tamanho",
-        "Idade",
-        "Peso",
-        "Posicao alimentar"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Posicao alimentar"
-      }
-    },
-    {
-      "text": "Qual destes animais vive na agua e na terra?",
-      "options": [
-        "Peixe",
-        "Gato",
-        "Passaro",
-        "Sapo"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Sapo"
-      }
-    },
-    {
-      "text": "Onde vive o urso polar?",
-      "options": [
-        "Na selva",
-        "No rio",
-        "No deserto",
-        "No gelo"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: No gelo"
-      }
-    },
-    {
-      "text": "Qual e o animal mais alto do mundo?",
-      "options": [
-        "Girafa",
-        "Elefante",
-        "Urso",
-        "Zebra"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Girafa"
-      }
-    },
-    {
-      "text": "Quantas pernas tem uma aranha?",
-      "options": [
-        "10",
-        "4",
-        "8",
-        "6"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 8"
-      }
-    },
-    {
-      "text": "O Nemo e que tipo de peixe?",
-      "options": [
-        "Tubarao",
-        "Peixe-Palhaço",
-        "Baleia",
-        "Salmao"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Peixe-Palhaço"
-      }
-    },
-    {
-      "text": "Qual animal faz Miau?",
-      "options": [
-        "Gato",
-        "Vaca",
-        "Pato",
-        "Cao"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
-      "text": "Qual destes animais poe ovos?",
-      "options": [
-        "Coelho",
-        "Gato",
-        "Cao",
-        "Galinha"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Galinha"
-      }
-    },
-    {
-      "text": "Que animal e conhecido por comer bambu?",
-      "options": [
-        "Leao",
-        "Elefante",
-        "Panda",
-        "Girafa"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Panda"
-      }
-    },
-    {
-      "text": "O que e que as abelhas produzem?",
-      "options": [
-        "Mel",
-        "Sumo",
-        "Leite",
-        "Agua"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mel"
-      }
-    },
-    {
-      "text": "Qual e o maior animal do mundo?",
-      "options": [
-        "Girafa",
-        "Rinoceronte",
-        "Baleia Azul",
-        "Elefante"
-      ],
-      "correct_option": 2,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Baleia Azul"
-      }
-    },
-    {
-      "text": "Minhoca coracoes?",
-      "options": [
-        "1",
-        "10",
-        "2",
-        "5"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 5"
-      }
-    },
-    {
-      "text": "Focaorca e?",
-      "options": [
-        "两者",
-        "Golfinho",
-        "Baleia",
-        "Nenhuma"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "ABELHAS fazem?",
-      "options": [
-        "Sumo",
-        "Mel",
-        "Leite",
-        "Agua"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mel"
-      }
-    },
-    {
-      "text": "Animal Miau?",
-      "options": [
-        "Gato",
-        "Vaca",
-        "Pato",
-        "Cao"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Gato"
-      }
-    },
-    {
-      "text": "Piramide ecologica tem?",
-      "options": [
-        "3",
-        "5",
-        "4",
-        "6"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 5"
-      }
-    },
-    {
-      "text": "Os polvos tem quantos coracoes?",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 3"
-      }
-    },
-    {
-      "text": "Qual animal e conhecido como rei dos animais?",
-      "options": [
-        "Tigre",
-        "Leao",
-        "Elefante",
-        "Urso"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leao"
-      }
-    },
-    {
-      "text": "Quanto tempo vive em media um cao?",
-      "options": [
-        "5 anos",
-        "10 anos",
-        "15 anos",
-        "20 anos"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 15 anos"
-      }
-    },
-    {
-      "text": "Qual e o maior felino do mundo?",
-      "options": [
-        "Tigre siberiano",
-        "Leao",
-        "Jaguar",
-        "Leopardo"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Tigre siberiano"
-      }
-    },
-    {
-      "text": "Qual e o periodo de gestacao de um elefante?",
-      "options": [
-        "12 meses",
-        "18 meses",
-        "22 meses",
-        "24 meses"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 22 meses"
-      }
-    },
-    {
-      "text": "Os golfinhos dormem?",
-      "options": [
-        "Nao dormem nunca",
-        "Com um olho aberto",
-        "Flutuam de pe",
-        "Nao precisam de dormir"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Com um olho aberto"
-      }
-    },
-    {
-      "text": "Qual e o animal mais venenoso do mundo?",
-      "options": [
-        "Cobra real",
-        "Aranha viuva negra",
-        "Medusa caixa",
-        "Escorpiao"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Medusa caixa"
-      }
-    },
-    {
-      "text": "Maior mamifero terrestre?",
-      "options": [
-        "Hipopotamo",
-        "Girafa",
-        "Rinoceronte",
-        "Elefante"
-      ],
-      "correct_option": 3,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Elefante"
-      }
-    },
-    {
-      "text": "O que e hibernacao?",
-      "options": [
-        "Dormir inverno",
-        "Voar",
-        "Todas",
-        "Correr"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Dormir inverno"
-      }
-    },
-    {
-      "text": "Eutrofizacao causa?",
-      "options": [
-        "Falta O2",
-        "Excesso O2",
-        " both",
-        "Nenhuma"
-      ],
-      "correct_option": 0,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Falta O2"
-      }
-    },
-    {
-      "text": "Evolucao e?",
-      "options": [
-        "Mudanca",
-        "Criacao",
-        "Nenhuma",
-        " ambas"
-      ],
-      "correct_option": 3,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e:  ambas"
-      }
-    },
-    {
-      "text": "Qual poe ovos?",
-      "options": [
-        "Gato",
-        "Cao",
-        "Coelho",
-        "Galinha"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Galinha"
-      }
-    },
-    {
-      "text": "O que e simbiose?",
-      "options": [
-        "Fuga",
-        "Combate",
-        "Uniao benéfica",
-        "Guerra"
-      ],
-      "correct_option": 2,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Uniao benéfica"
-      }
-    },
-    {
-      "text": "Qual e o mamifero mais rapido do mundo?",
-      "options": [
-        "Leao",
-        "Guepardo",
-        "Leopardo",
-        "Gazela"
-      ],
-      "correct_option": 1,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Guepardo"
-      }
-    },
-    {
-      "text": "Raposa nome?",
-      "options": [
-        "Canis",
-        "Felis",
-        "Vulpes",
-        "Nenhuma"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Vulpes"
-      }
-    },
-    {
-      "text": "Morcego e?",
-      "options": [
-        "Mamifero",
-        "Reptil",
-        "Passaro",
-        "Peixe"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Mamifero"
-      }
-    },
-    {
-      "text": "Galinha canta?",
-      "options": [
-        "So macho",
-        "Todas",
-        "Nao",
-        "Sim"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: So macho"
-      }
-    },
-    {
-      "text": "Ecossistema e?",
-      "options": [
-        "Nenhuma",
-        "两者",
-        "1 especie",
-        "Comunidade"
-      ],
-      "correct_option": 1,
-      "age_rating": 16,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 两者"
-      }
-    },
-    {
-      "text": "Leao e?",
-      "options": [
-        "Mais rapido",
-        "Mais pequeno",
-        "Maior",
-        " Rei dos animais"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e:  Rei dos animais"
-      }
-    },
-    {
-      "text": "Animal regenera?",
-      "options": [
-        "Lobo",
-        "Coruja",
-        "Estrela do mar",
-        "Caracol"
-      ],
-      "correct_option": 2,
-      "age_rating": 12,
-      "category": "ANIMAIS",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Estrela do mar"
       }
     }
   ],
@@ -16203,6 +13867,2167 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Nova Deli"
+      }
+    }
+  ],
+  "ANIMAIS": [
+    {
+      "text": "Camaleao cambia?",
+      "options": [
+        "Cor",
+        "Forma",
+        "Tamanho",
+        "Todas"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Mais rapido?",
+      "options": [
+        "Leao",
+        "Lobo",
+        "Tigre",
+        "Guepardo"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Guepardo"
+      }
+    },
+    {
+      "text": "Animal noturno?",
+      "options": [
+        "Cao",
+        "Galinha",
+        "Coruja",
+        "Pato"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Coruja"
+      }
+    },
+    {
+      "text": "Coral e?",
+      "options": [
+        "Planta",
+        "Animal",
+        "Nenhuma",
+        "Pedra"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Animal"
+      }
+    },
+    {
+      "text": "Baleia e?",
+      "options": [
+        "Mamifero",
+        "Reptil",
+        "Nenhuma",
+        "Peixe"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mamifero"
+      }
+    },
+    {
+      "text": "Onca pintada?",
+      "options": [
+        "America do Sul",
+        "Africa",
+        "Europa",
+        "Asia"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: America do Sul"
+      }
+    },
+    {
+      "text": "Polvo tentaculos?",
+      "options": [
+        "10",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 8"
+      }
+    },
+    {
+      "text": "Ibis sagrado?",
+      "options": [
+        "Grecia",
+        "Persia",
+        "Roma",
+        "Egito"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Egito"
+      }
+    },
+    {
+      "text": "Panda vermelho?",
+      "options": [
+        "India",
+        "China",
+        "Todas",
+        "Nepal"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Peixe mais venenoso?",
+      "options": [
+        "Piranha",
+        "Barracuda",
+        "Peixe pedra",
+        "Tubarao"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Peixe pedra"
+      }
+    },
+    {
+      "text": "Medusa immortal?",
+      "options": [
+        "Aurelia",
+        "Nenhuma",
+        "Turritopsis",
+        "Cyanea"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Turritopsis"
+      }
+    },
+    {
+      "text": "Pinguim Emperor onde?",
+      "options": [
+        "Antartida",
+        "Groenlandia",
+        "Arctica",
+        "Svalbard"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Antartida"
+      }
+    },
+    {
+      "text": "Lobo Arctic?",
+      "options": [
+        "Preto",
+        "Castanho",
+        "Cinzento",
+        "Branco"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Branco"
+      }
+    },
+    {
+      "text": "Tigre branco?",
+      "options": [
+        "Todas",
+        "Bengal",
+        "Albino",
+        "Siberiano"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Bengal"
+      }
+    },
+    {
+      "text": "Gorila habitat?",
+      "options": [
+        "Selva",
+        "Montanha",
+        "Todas",
+        "Savana"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Selva"
+      }
+    },
+    {
+      "text": " Biomagnificacao e?",
+      "options": [
+        " both",
+        "Nenhuma",
+        "Acumulo",
+        "Decumulo"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Acumulo"
+      }
+    },
+    {
+      "text": "Homeostase e?",
+      "options": [
+        " both",
+        "Nenhuma",
+        "Desequilibrio",
+        "Equilibrio"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Equilibrio"
+      }
+    },
+    {
+      "text": "Fotossintese produtos?",
+      "options": [
+        "两者",
+        "O2 + Glicose",
+        "CO2 + Agua",
+        "Nenhuma"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: O2 + Glicose"
+      }
+    },
+    {
+      "text": "Respiracao celular local?",
+      "options": [
+        " both",
+        "Mitocondria",
+        "Nenhuma",
+        "Citoplasma"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mitocondria"
+      }
+    },
+    {
+      "text": "Enzimas sao?",
+      "options": [
+        "Catalisador",
+        "Nenhuma",
+        "Substrato",
+        " both"
+      ],
+      "correct_option": 0,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Catalisador"
+      }
+    },
+    {
+      "text": "Fermentacao produtos?",
+      "options": [
+        "Nenhuma",
+        "CO2",
+        "Alcool",
+        "两者"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 两者"
+      }
+    },
+    {
+      "text": "Crossing-over ocorre em?",
+      "options": [
+        "Profase II",
+        "Profase I",
+        "Nenhuma",
+        " ambas"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Profase I"
+      }
+    },
+    {
+      "text": "Hiena riso?",
+      "options": [
+        "Nao sei",
+        "Talvez",
+        "Nao",
+        "Sim"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Sim"
+      }
+    },
+    {
+      "text": "Lula gigante pode ter?",
+      "options": [
+        "10m",
+        "15m",
+        "5m",
+        "20m"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 15m"
+      }
+    },
+    {
+      "text": "Cavalo-marinho e?",
+      "options": [
+        "Both",
+        "Peixe",
+        "Nenhuma",
+        "Cavalo"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Both"
+      }
+    },
+    {
+      "text": "Tubarao branco tamanho?",
+      "options": [
+        "5m",
+        "6m",
+        "8m",
+        "3m"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 6m"
+      }
+    },
+    {
+      "text": "Metabolismo e?",
+      "options": [
+        "两者",
+        "Nenhuma",
+        "Anabolismo",
+        "Catabolismo"
+      ],
+      "correct_option": 0,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 两者"
+      }
+    },
+    {
+      "text": "Mitose resultam em?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 2"
+      }
+    },
+    {
+      "text": "Meiose resultam em?",
+      "options": [
+        "8",
+        "4",
+        "2",
+        "6"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 2"
+      }
+    },
+    {
+      "text": "Cromossomas humanos?",
+      "options": [
+        "48",
+        "23",
+        "44",
+        "46"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 46"
+      }
+    },
+    {
+      "text": "Grupos sanguineos?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "4"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 4"
+      }
+    },
+    {
+      "text": "Qual e o animal mais alto?",
+      "options": [
+        "Girafa",
+        "Elefante",
+        "Urso",
+        "Zebra"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Girafa"
+      }
+    },
+    {
+      "text": "Quantas patas aranha?",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 8"
+      }
+    },
+    {
+      "text": "Nemo tipo peixe?",
+      "options": [
+        "Salmao",
+        "Tubarao",
+        "Baleia",
+        "Peixe-Palhaço"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Peixe-Palhaço"
+      }
+    },
+    {
+      "text": "Maior animal?",
+      "options": [
+        "Rinoceronte",
+        "Elefante",
+        "Girafa",
+        "Baleia Azul"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Baleia Azul"
+      }
+    },
+    {
+      "text": "Animal que poe ovos?",
+      "options": [
+        "Gato",
+        "Coelho",
+        "Galinha",
+        "Cao"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Galinha"
+      }
+    },
+    {
+      "text": "Panda come?",
+      "options": [
+        "Carne",
+        "Insetos",
+        "Bambu",
+        "Frutas"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Bambu"
+      }
+    },
+    {
+      "text": "Tigre riscas?",
+      "options": [
+        "Brancas",
+        "Nenhuma",
+        "Pretas e brancas",
+        "Amarelas"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Pretas e brancas"
+      }
+    },
+    {
+      "text": "Cavalo domesticado?",
+      "options": [
+        "Ha 1000 anos",
+        "Ha 100 anos",
+        "Ha 5000 anos",
+        "Nunca"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Ha 5000 anos"
+      }
+    },
+    {
+      "text": "Peixe respira?",
+      "options": [
+        "Boca",
+        "Guelras",
+        "Pulmoes",
+        "Nariz"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Guelras"
+      }
+    },
+    {
+      "text": "Papagaio fala?",
+      "options": [
+        "Nao",
+        "Talvez",
+        "So alguns",
+        "Sim"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: So alguns"
+      }
+    },
+    {
+      "text": "Ovelha la?",
+      "options": [
+        "Branca",
+        "Preta",
+        " castanha",
+        "Todas"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Porco e?",
+      "options": [
+        "Onivoro",
+        "Herbivoro",
+        "Carnivoro",
+        "Nao sei"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Onivoro"
+      }
+    },
+    {
+      "text": "ABELHAS vivem em?",
+      "options": [
+        "Colmeia",
+        "Casa",
+        "Arvore",
+        "Buraco"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Colmeia"
+      }
+    },
+    {
+      "text": "Golfinho e?",
+      "options": [
+        "Anfibio",
+        "Reptil",
+        "Mamifero",
+        "Peixe"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mamifero"
+      }
+    },
+    {
+      "text": "Elefante tromba?",
+      "options": [
+        "Braço",
+        "Perna",
+        "Todas",
+        "Naris"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Boi tem?",
+      "options": [
+        "Lã",
+        "Chifres",
+        "Pelos",
+        "Nenhuma"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Chifres"
+      }
+    },
+    {
+      "text": "Mosca patas?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "8"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 6"
+      }
+    },
+    {
+      "text": "Peixe dourado cor?",
+      "options": [
+        "Vermelho",
+        "Todas",
+        "Dourado",
+        "Laranja"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Borrego e?",
+      "options": [
+        "Gato",
+        "Cao",
+        "Ovelha jovem",
+        "Cabrito"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Ovelha jovem"
+      }
+    },
+    {
+      "text": "Coelho orelhas?",
+      "options": [
+        "Longas",
+        "Cortas",
+        "Nenhuma",
+        "Pequenas"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Longas"
+      }
+    },
+    {
+      "text": "Tartaruga速度?",
+      "options": [
+        "Lenta",
+        "Muito rapida",
+        "Rapida",
+        "Media"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Lenta"
+      }
+    },
+    {
+      "text": " ADN funcao?",
+      "options": [
+        " both",
+        "Nenhuma",
+        "Informacao",
+        "Energia"
+      ],
+      "correct_option": 0,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e:  both"
+      }
+    },
+    {
+      "text": "Genoma humano quantos genes?",
+      "options": [
+        "35000",
+        "20000",
+        "25000",
+        "30000"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 25000"
+      }
+    },
+    {
+      "text": "Biodiversidade inclui?",
+      "options": [
+        "Genes",
+        "Especies",
+        "Ecossistemas",
+        "Todas"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Fosseis estao em?",
+      "options": [
+        "Areia",
+        "Todas",
+        "Rocha",
+        "Agua"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Rocha"
+      }
+    },
+    {
+      "text": "Mutacao pode ser?",
+      "options": [
+        "Nenhuma",
+        "Maus",
+        "Boa",
+        " ambas"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e:  ambas"
+      }
+    },
+    {
+      "text": "Selecao natural ideia?",
+      "options": [
+        "Nenhuma",
+        "Lamarck",
+        "Darwin",
+        " ambas"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e:  ambas"
+      }
+    },
+    {
+      "text": "Cadeia alimentar inclui?",
+      "options": [
+        "Consumidor",
+        "Produtor",
+        "Todas",
+        "Decompositor"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Todas"
+      }
+    },
+    {
+      "text": "Nivel trofico primeiro?",
+      "options": [
+        "Planta",
+        "Herbivoro",
+        "Nenhuma",
+        "Carnivoro"
+      ],
+      "correct_option": 0,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Planta"
+      }
+    },
+    {
+      "text": "Simbiose e?",
+      "options": [
+        "Uniao",
+        "两者",
+        "Combate",
+        "Nenhuma"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 两者"
+      }
+    },
+    {
+      "text": "Parasitismo e?",
+      "options": [
+        "Nenhuma",
+        "Prejuizo",
+        "两者",
+        "Beneficio"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Prejuizo"
+      }
+    },
+    {
+      "text": "Competicao interespecifica?",
+      "options": [
+        "Nenhuma",
+        "Diferentes",
+        "Mesma especie",
+        "两者"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Diferentes"
+      }
+    },
+    {
+      "text": "Animal agua+terra?",
+      "options": [
+        "Peixe",
+        "Sapo",
+        "Gato",
+        "Passaro"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Sapo"
+      }
+    },
+    {
+      "text": "Urso polar onde?",
+      "options": [
+        "Gelo",
+        "Deserto",
+        "Selva",
+        "Rio"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Gelo"
+      }
+    },
+    {
+      "text": "Pinguim voa?",
+      "options": [
+        "Nao",
+        "Talvez",
+        "Sim",
+        "So novo"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Nao"
+      }
+    },
+    {
+      "text": "Cobra lingua?",
+      "options": [
+        "Rosa",
+        "Preta",
+        "Verde",
+        "Branca"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Rosa"
+      }
+    },
+    {
+      "text": "Celula tronco pode?",
+      "options": [
+        "Nada",
+        "Tudo",
+        "Alguns",
+        "Nao sei"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Tudo"
+      }
+    },
+    {
+      "text": "Extincao em massa foi?",
+      "options": [
+        "Nenhuma",
+        "1",
+        "10",
+        "5"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 5"
+      }
+    },
+    {
+      "text": "Ciclo do azoto inclui?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "3"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 5"
+      }
+    },
+    {
+      "text": "Quantas pernas tem aranha?",
+      "options": [
+        "4",
+        "10",
+        "8",
+        "6"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 8"
+      }
+    },
+    {
+      "text": "O que abelhas fazem?",
+      "options": [
+        "Mel",
+        "Agua",
+        "Sumo",
+        "Leite"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mel"
+      }
+    },
+    {
+      "text": "Qual animal vive na agua+e terra?",
+      "options": [
+        "Gato",
+        "Sapo",
+        "Passaro",
+        "Peixe"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Sapo"
+      }
+    },
+    {
+      "text": "Nemo e que peixe?",
+      "options": [
+        "Tubarao",
+        "Salmao",
+        "Peixe-Palhaço",
+        "Baleia"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Peixe-Palhaço"
+      }
+    },
+    {
+      "text": "Qual faz Miau?",
+      "options": [
+        "Cao",
+        "Gato",
+        "Vaca",
+        "Pato"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Gato"
+      }
+    },
+    {
+      "text": "Panda come o quê?",
+      "options": [
+        "Bambu",
+        "Insetos",
+        "Carne",
+        "Frutas"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Bambu"
+      }
+    },
+    {
+      "text": "Qual animal regenera membros?",
+      "options": [
+        "Lobo",
+        "Estrela do mar",
+        "Coruja",
+        "Caracol"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Estrela do mar"
+      }
+    },
+    {
+      "text": "Qual animal nao vomita?",
+      "options": [
+        "Cao",
+        "Gato",
+        "Canguru",
+        "Coelho"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Canguru"
+      }
+    },
+    {
+      "text": "Marsupial e...",
+      "options": [
+        "Raposa",
+        "Coelho",
+        "Canguru",
+        "Urso"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Canguru"
+      }
+    },
+    {
+      "text": "ABELHAS na danca comunicam o quê?",
+      "options": [
+        "Brincar",
+        "Acasalar",
+        "Localizacao",
+        "Danca"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Localizacao"
+      }
+    },
+    {
+      "text": "Quantos coracoes minhoca?",
+      "options": [
+        "Um",
+        "Cinco",
+        "Dez",
+        "Nenhum"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Cinco"
+      }
+    },
+    {
+      "text": "Qual cambia cor?",
+      "options": [
+        "Camaleao",
+        "Tigre",
+        "Leao",
+        "Zebra"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Camaleao"
+      }
+    },
+    {
+      "text": "Mais rapido do mundo?",
+      "options": [
+        "Lobo",
+        "Leao",
+        "Tigre",
+        "Guepardo"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Guepardo"
+      }
+    },
+    {
+      "text": "O que e evolucao?",
+      "options": [
+        "Extincao",
+        "Reproducao",
+        "Mudanca ao longo do tempo",
+        "Criacao"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mudanca ao longo do tempo"
+      }
+    },
+    {
+      "text": "Quimera e o quizer?",
+      "options": [
+        "Rai",
+        "Animal mitologico",
+        "Tubarao",
+        "Peixe"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Animal mitologico"
+      }
+    },
+    {
+      "text": "O que sao bilion?",
+      "options": [
+        "Milhao",
+        "Triliao",
+        "Mil milhões",
+        "Biliao"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mil milhões"
+      }
+    },
+    {
+      "text": "Gene e o quizer?",
+      "options": [
+        "Cromossoma",
+        "DNA",
+        "Celula",
+        "Unidade genetica"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Unidade genetica"
+      }
+    },
+    {
+      "text": "Cadeia alimentar e...",
+      "options": [
+        "Teia",
+        "Sequencia alimentar",
+        "Alimento",
+        "Corrente"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Sequencia alimentar"
+      }
+    },
+    {
+      "text": "Produtor primario e...",
+      "options": [
+        "Bacteria",
+        " Fungo",
+        "Planta",
+        "Animal"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Planta"
+      }
+    },
+    {
+      "text": "Decompositor e...",
+      "options": [
+        "Fungo",
+        "Planta",
+        "Animal",
+        "Pedra"
+      ],
+      "correct_option": 0,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Fungo"
+      }
+    },
+    {
+      "text": "O que e biomagnificacao?",
+      "options": [
+        "Alimentacao",
+        "Crescimento",
+        "Acumulo toxico",
+        "Reproducao"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Acumulo toxico"
+      }
+    },
+    {
+      "text": "Nivel trofico e...",
+      "options": [
+        "Tamanho",
+        "Idade",
+        "Peso",
+        "Posicao alimentar"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Posicao alimentar"
+      }
+    },
+    {
+      "text": "Qual destes animais vive na agua e na terra?",
+      "options": [
+        "Peixe",
+        "Gato",
+        "Passaro",
+        "Sapo"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Sapo"
+      }
+    },
+    {
+      "text": "Onde vive o urso polar?",
+      "options": [
+        "Na selva",
+        "No rio",
+        "No deserto",
+        "No gelo"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: No gelo"
+      }
+    },
+    {
+      "text": "Qual e o animal mais alto do mundo?",
+      "options": [
+        "Girafa",
+        "Elefante",
+        "Urso",
+        "Zebra"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Girafa"
+      }
+    },
+    {
+      "text": "Quantas pernas tem uma aranha?",
+      "options": [
+        "10",
+        "4",
+        "8",
+        "6"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 8"
+      }
+    },
+    {
+      "text": "O Nemo e que tipo de peixe?",
+      "options": [
+        "Tubarao",
+        "Peixe-Palhaço",
+        "Baleia",
+        "Salmao"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Peixe-Palhaço"
+      }
+    },
+    {
+      "text": "Qual animal faz Miau?",
+      "options": [
+        "Gato",
+        "Vaca",
+        "Pato",
+        "Cao"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Gato"
+      }
+    },
+    {
+      "text": "Qual destes animais poe ovos?",
+      "options": [
+        "Coelho",
+        "Gato",
+        "Cao",
+        "Galinha"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Galinha"
+      }
+    },
+    {
+      "text": "Que animal e conhecido por comer bambu?",
+      "options": [
+        "Leao",
+        "Elefante",
+        "Panda",
+        "Girafa"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Panda"
+      }
+    },
+    {
+      "text": "O que e que as abelhas produzem?",
+      "options": [
+        "Mel",
+        "Sumo",
+        "Leite",
+        "Agua"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mel"
+      }
+    },
+    {
+      "text": "Qual e o maior animal do mundo?",
+      "options": [
+        "Girafa",
+        "Rinoceronte",
+        "Baleia Azul",
+        "Elefante"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Baleia Azul"
+      }
+    },
+    {
+      "text": "Minhoca coracoes?",
+      "options": [
+        "1",
+        "10",
+        "2",
+        "5"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 5"
+      }
+    },
+    {
+      "text": "Focaorca e?",
+      "options": [
+        "两者",
+        "Golfinho",
+        "Baleia",
+        "Nenhuma"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 两者"
+      }
+    },
+    {
+      "text": "ABELHAS fazem?",
+      "options": [
+        "Sumo",
+        "Mel",
+        "Leite",
+        "Agua"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mel"
+      }
+    },
+    {
+      "text": "Animal Miau?",
+      "options": [
+        "Gato",
+        "Vaca",
+        "Pato",
+        "Cao"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Gato"
+      }
+    },
+    {
+      "text": "Piramide ecologica tem?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 5"
+      }
+    },
+    {
+      "text": "Os polvos tem quantos coracoes?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 3"
+      }
+    },
+    {
+      "text": "Qual animal e conhecido como rei dos animais?",
+      "options": [
+        "Tigre",
+        "Leao",
+        "Elefante",
+        "Urso"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Leao"
+      }
+    },
+    {
+      "text": "Quanto tempo vive em media um cao?",
+      "options": [
+        "5 anos",
+        "10 anos",
+        "15 anos",
+        "20 anos"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 15 anos"
+      }
+    },
+    {
+      "text": "Qual e o maior felino do mundo?",
+      "options": [
+        "Tigre siberiano",
+        "Leao",
+        "Jaguar",
+        "Leopardo"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Tigre siberiano"
+      }
+    },
+    {
+      "text": "Qual e o periodo de gestacao de um elefante?",
+      "options": [
+        "12 meses",
+        "18 meses",
+        "22 meses",
+        "24 meses"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 22 meses"
+      }
+    },
+    {
+      "text": "Os golfinhos dormem?",
+      "options": [
+        "Nao dormem nunca",
+        "Com um olho aberto",
+        "Flutuam de pe",
+        "Nao precisam de dormir"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Com um olho aberto"
+      }
+    },
+    {
+      "text": "Qual e o animal mais venenoso do mundo?",
+      "options": [
+        "Cobra real",
+        "Aranha viuva negra",
+        "Medusa caixa",
+        "Escorpiao"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Medusa caixa"
+      }
+    },
+    {
+      "text": "Maior mamifero terrestre?",
+      "options": [
+        "Hipopotamo",
+        "Girafa",
+        "Rinoceronte",
+        "Elefante"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Elefante"
+      }
+    },
+    {
+      "text": "O que e hibernacao?",
+      "options": [
+        "Dormir inverno",
+        "Voar",
+        "Todas",
+        "Correr"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Dormir inverno"
+      }
+    },
+    {
+      "text": "Eutrofizacao causa?",
+      "options": [
+        "Falta O2",
+        "Excesso O2",
+        " both",
+        "Nenhuma"
+      ],
+      "correct_option": 0,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Falta O2"
+      }
+    },
+    {
+      "text": "Evolucao e?",
+      "options": [
+        "Mudanca",
+        "Criacao",
+        "Nenhuma",
+        " ambas"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e:  ambas"
+      }
+    },
+    {
+      "text": "Qual poe ovos?",
+      "options": [
+        "Gato",
+        "Cao",
+        "Coelho",
+        "Galinha"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Galinha"
+      }
+    },
+    {
+      "text": "O que e simbiose?",
+      "options": [
+        "Fuga",
+        "Combate",
+        "Uniao benéfica",
+        "Guerra"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Uniao benéfica"
+      }
+    },
+    {
+      "text": "Qual e o mamifero mais rapido do mundo?",
+      "options": [
+        "Leao",
+        "Guepardo",
+        "Leopardo",
+        "Gazela"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Guepardo"
+      }
+    },
+    {
+      "text": "Raposa nome?",
+      "options": [
+        "Canis",
+        "Felis",
+        "Vulpes",
+        "Nenhuma"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Vulpes"
+      }
+    },
+    {
+      "text": "Morcego e?",
+      "options": [
+        "Mamifero",
+        "Reptil",
+        "Passaro",
+        "Peixe"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Mamifero"
+      }
+    },
+    {
+      "text": "Galinha canta?",
+      "options": [
+        "So macho",
+        "Todas",
+        "Nao",
+        "Sim"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: So macho"
+      }
+    },
+    {
+      "text": "Ecossistema e?",
+      "options": [
+        "Nenhuma",
+        "两者",
+        "1 especie",
+        "Comunidade"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: 两者"
+      }
+    },
+    {
+      "text": "Leao e?",
+      "options": [
+        "Mais rapido",
+        "Mais pequeno",
+        "Maior",
+        " Rei dos animais"
+      ],
+      "correct_option": 3,
+      "age_rating": 8,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e:  Rei dos animais"
+      }
+    },
+    {
+      "text": "Animal regenera?",
+      "options": [
+        "Lobo",
+        "Coruja",
+        "Estrela do mar",
+        "Caracol"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ANIMAIS",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {
+        "hint": "A resposta correta e: Estrela do mar"
       }
     }
   ],
