@@ -323,8 +323,8 @@ export default function TVHost() {
             try {
                 // Normalize category name(s)
                 const finalTopic = customTopic || topic[0];
-                const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 18 };
-                const targetAge = ageMap[ageGroup] || 18;
+                const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 16 };
+                const targetAge = ageMap[ageGroup] || 16;
                 // BUG FIX #1: Read from ref instead of state to avoid dependency loop
                 const currentUsedIds = usedQuestionIdsRef.current;
 
@@ -358,11 +358,8 @@ export default function TVHost() {
                 const isUniversalTopic = selectedDbNames.includes("Bandeiras") || selectedDbNames.includes("CAPITAIS_DO_MUNDO");
 
                 if (!isUniversalTopic) {
-                    if (targetAge === 18) {
-                        query = query.gte('age_rating', 18);
-                    } else {
-                        query = query.eq('age_rating', targetAge);
-                    }
+                    // Use >= for all ages to include all age-appropriate questions
+                    query = query.gte('age_rating', targetAge);
                 }
 
                 const { data } = await query;
