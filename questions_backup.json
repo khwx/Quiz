@@ -18,6 +18,81 @@
       }
     },
     {
+      "text": "Quem pintou a Mona Lisa?",
+      "options": [
+        "Caravaggio",
+        "Leonardo da Vinci",
+        "Michelangelo",
+        "Rafael"
+      ],
+      "correct_option": 1,
+      "age_rating": 18,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Qual o maior planeta do sistema solar?",
+      "options": [
+        "Urano",
+        "Saturno",
+        "Júpiter",
+        "Netuno"
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Em que ano foi publicado o livro 'Dom Quixote'?",
+      "options": [
+        "1625",
+        "1615",
+        "1605",
+        "1635"
+      ],
+      "correct_option": 2,
+      "age_rating": 18,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Quem foi o primeiro homem a voar em solo português?",
+      "options": [
+        "Alberto Santos",
+        "Santos Dumont",
+        "Charles Lindbergh",
+        "Amélia Earhart"
+      ],
+      "correct_option": 0,
+      "age_rating": 18,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
+      "text": "Qual o nome do maior deserto do mundo?",
+      "options": [
+        "Atacama",
+        "Mojave",
+        "Gobi",
+        "Sahara"
+      ],
+      "correct_option": 3,
+      "age_rating": 18,
+      "category": "CULTURA_GERAL",
+      "country_code": "PT",
+      "image_url": null,
+      "metadata": {}
+    },
+    {
       "text": "Dia do Trabalhador?",
       "options": [
         "1 Junho",
