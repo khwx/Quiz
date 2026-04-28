@@ -243,8 +243,18 @@ export default function TournamentsPage() {
               </div>
             </div>
 
-            {myTournament.status === 'LOBBY' && (
+{myTournament.status === 'LOBBY' && (
               <button
+                onClick={async () => {
+                  if (!confirm("Iniciar o torneio?")) return;
+                  await supabase
+                    .from('tournaments')
+                    .update({ status: 'QUALIFYING' })
+                    .eq('id', myTournament.id);
+                  setMyTournament({ ...myTournament, status: 'QUALIFYING' });
+                  // Open TV
+                  window.open(`/tv?tournament=${myTournament.id}`, '_blank');
+                }}
                 className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl font-bold text-white"
               >
                 <Play className="w-5 h-5" />
