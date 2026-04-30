@@ -10,7 +10,7 @@ import MobileNav from "@/components/MobileNav";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
   const resolvedParams = use(searchParams);
-  const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players, setGameId } = useGame();
+  const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players, setGameId, gameSettings } = useGame();
   const [pin, setPin] = useState(resolvedParams.pin || "");
   const [name, setName] = useState("");
   const [isJoining, setIsJoining] = useState(false);
@@ -34,10 +34,20 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       .eq("id", currentQuestionId)
       .single();
     if (data) {
+      // Use shuffled options from game settings if available (synced with TV)
+      const questionsData = gameSettings?.questions_data || [];
+      const questionDataFromSettings = questionsData.find((q: any) => q.id === currentQuestionId);
+      
+      if (questionDataFromSettings?.options) {
+        data.options = questionDataFromSettings.options;
+        data.correct_option = questionDataFromSettings.correct_option;
+        console.log("📱 Using shuffled options from settings for mobile");
+      }
+      
       setQuestionData(data);
       setShowHint(false);
     }
-  }, [currentQuestionId]);
+  }, [currentQuestionId, gameSettings]);
 
   useEffect(() => {
     if (status === "QUESTION" && currentQuestionId) {

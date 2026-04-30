@@ -21,7 +21,7 @@ interface GameContextType extends GameState {
     setGameId: (id: string | null) => void;
     setPlayers: (players: any[]) => void;
     updateStatus: (status: GameStatus) => Promise<void>;
-    nextQuestion: (questionId?: string, correctOption?: number) => Promise<void>;
+    nextQuestion: (questionId?: string, correctOption?: number, shuffledOptions?: string[]) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
 }
 
@@ -85,7 +85,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         await supabase.from('games').update({ status }).eq('id', gameState.gameId);
     };
 
-    const nextQuestion = async (questionId?: string, correctOption?: number) => {
+    const nextQuestion = async (questionId?: string, correctOption?: number, shuffledOptions?: string[]) => {
         const nextIndex = gameState.currentQuestionIndex + 1;
 
         let nextId = questionId;
@@ -93,33 +93,39 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
         // Fallback: If no ID provided (Host Control), try to find it in settings playlist
         if (!nextId && gameState.gameSettings?.question_ids) {
-            // Note: nextIndex is 1-based (question 1, 2, 3...)
-            // Array is 0-based. So question 1 is at index 0.
-            // When moving to question 2 (nextIndex=2), we want index 1.
-            nextId = gameState.gameSettings.question_ids[nextIndex - 1]; // nextIndex is 1-based usually? wait.
-            // Let's verify index logic. 
-            // Start: index 0. Next: index 1.
-            // If current is 1, next is 2.
-            // Arrays are 0-indexed.
-            // Logic in TV: nextQuestion(questionsToUse[0].id) -> sets index to 1?
-            // Let's check update: current_question_index: nextIndex.
-            // If existing is 0 -> next is 1. We want array[0].
-            // If existing is 1 -> next is 2. We want array[1].
-
-            // Correction: The array is 0-indexed. The index in DB is likely 1-indexed (Question 1, 2...).
-            // So if we are going to Question 2, we want array index 1.
             if (gameState.gameSettings.question_ids[nextIndex - 1]) {
                 nextId = gameState.gameSettings.question_ids[nextIndex - 1];
+                // Also get correct_option from settings if available
+                const qData = gameState.gameSettings.questions_data?.find((q: any) => q.id === nextId);
+                if (qData) {
+                    nextCorrectOption = qData.correct_option;
+                }
             }
+        }
+
+        // Build updated settings with optional shuffled options for mobile sync
+        const updatedSettings: any = {
+            ...gameState.gameSettings,
+            current_question_id: nextId,
+            current_correct_option: nextCorrectOption !== undefined ? nextCorrectOption : gameState.gameSettings?.current_correct_option
+        };
+
+        // If shuffled options provided, store them for mobile to use
+        if (shuffledOptions && nextId && nextCorrectOption !== undefined) {
+            const questionsData = updatedSettings.questions_data || [];
+            const existingIndex = questionsData.findIndex((q: any) => q.id === nextId);
+            if (existingIndex >= 0) {
+                questionsData[existingIndex].options = shuffledOptions;
+                questionsData[existingIndex].correct_option = nextCorrectOption;
+            } else {
+                questionsData.push({ id: nextId, options: shuffledOptions, correct_option: nextCorrectOption });
+            }
+            updatedSettings.questions_data = questionsData;
         }
 
         await supabase.from('games').update({
             current_question_index: nextIndex,
-            settings: {
-                ...gameState.gameSettings,
-                current_question_id: nextId, // Important: Update this so Mobile knows!
-                current_correct_option: nextCorrectOption !== undefined ? nextCorrectOption : gameState.gameSettings?.current_correct_option
-            },
+            settings: updatedSettings,
             status: 'QUESTION'
         }).eq('id', gameState.gameId);
     };

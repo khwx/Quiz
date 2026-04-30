@@ -459,12 +459,21 @@ export default function TVHost() {
 
                     // SYNC state to DB
                     const questionIds = questionsToUse.map(q => q.id);
+                    
+                    // Store shuffled options in settings so mobile gets the same order as TV
+                    const questionsForSettings = questionsToUse.map(q => ({
+                        id: q.id,
+                        options: q.options,
+                        correct_option: q.correct_option
+                    }));
+                    
                     await supabase.from("games").update({
                         settings: { 
                             ...gameSettings, 
                             question_ids: questionIds, 
                             current_question_id: questionsToUse[0].id,
-                            current_correct_option: questionsToUse[0].correct_option
+                            current_correct_option: questionsToUse[0].correct_option,
+                            questions_data: questionsForSettings // Store shuffled data for mobile sync
                         },
                         current_question_index: 1,
                         status: "QUESTION"
@@ -881,7 +890,8 @@ export default function TVHost() {
             onClick={() => {
                                 const nextQ = currentQuestions[currentQuestionIndex];
                                 if (nextQ) {
-                                    nextQuestion(nextQ.id, nextQ.correct_option);
+                                    // Pass shuffled options so mobile gets the same order as TV
+                                    nextQuestion(nextQ.id, nextQ.correct_option, nextQ.options);
                                 } else {
                                     console.log(`🔄 Starting round ${round + 1}...`);
                                     setRound(r => r + 1);
