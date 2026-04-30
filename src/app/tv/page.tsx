@@ -586,112 +586,117 @@ export default function TVHost() {
 
     const currentQ = currentQuestions[currentQuestionIndex - 1];
 
-    return (
-        <main className="min-h-screen relative overflow-hidden p-8 lg:p-12 flex flex-col items-center justify-center">
-            {/* Audio Enable Button */}
-            <SoundEnableButton />
-            
-            {/* Background Effects */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-violet-600/10 rounded-full blur-[150px]" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-pink-600/10 rounded-full blur-[150px]" />
-                <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-purple-500/5 rounded-full blur-[120px]" />
+  return (
+    <main className="min-h-screen relative overflow-hidden p-4 sm:p-8 lg:p-12 flex flex-col items-center justify-center">
+      {/* Audio Enable Button */}
+      <SoundEnableButton />
+
+      {/* Background Effects */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-violet-600/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-pink-600/10 rounded-full blur-[150px]" />
+        <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-purple-500/5 rounded-full blur-[120px]" />
+      </div>
+
+      {/* LOBBY VIEW */}
+      {(status === "LOBBY" || status === "STARTING") && (
+        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start relative">
+
+          {/* Memory Clear Button */}
+          {usedQuestionIdsRef.current.length > 0 && (
+            <div className="absolute -top-10 right-0">
+              <button
+                onClick={() => {
+                  if (confirm(`Limpar memória das perguntas?\n${usedQuestionIdsRef.current.length} perguntas memorizadas.`)) {
+                    localStorage.removeItem('usedQuestionIds');
+                    usedQuestionIdsRef.current = [];
+                  }
+                }}
+                className="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-white/60 hover:text-red-400 rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
+              >
+                🧹 Memória ({usedQuestionIdsRef.current.length})
+              </button>
+            </div>
+            )}
+            {!localMode && players.length === 0 && (
+              <div className="p-4 sm:p-8 flex flex-col items-center justify-center text-center gap-4 flex-grow">
+                <p className="text-white/40 text-sm">Ativa o Modo Local ou espera que os jogadores entrem</p>
+              </div>
+            )}
+
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex flex-col gap-4 lg:gap-8"
+          >
+            <div className="flex items-center gap-4 mb-2">
+              <div className="p-3 lg:p-4 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl">
+                <Users className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+              </div>
+              <span className="text-sm font-bold text-violet-400 uppercase tracking-widest">QuizVerse TV</span>
             </div>
 
-            {/* LOBBY VIEW */}
-            {(status === "LOBBY" || status === "STARTING") && (
-                <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
-                    
-                    {/* Memory Clear Button */}
-                    {usedQuestionIdsRef.current.length > 0 && (
-                        <div className="absolute -top-10 right-0">
-                            <button
-                                onClick={() => {
-                                    if (confirm(`Limpar memória das perguntas?\n${usedQuestionIdsRef.current.length} perguntas memorizadas.`)) {
-                                        localStorage.removeItem('usedQuestionIds');
-                                        usedQuestionIdsRef.current = [];
-                                    }
-                                }}
-                                className="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-white/60 hover:text-red-400 rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
-                            >
-                                🧹 Memória ({usedQuestionIdsRef.current.length})
-                            </button>
-                        </div>
-                    )}
+            <div>
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'Space Grotesk' }}>
+                Preparem os <span className="text-gradient">telemóveis!</span>
+              </h1>
+              <p className="text-base lg:text-xl text-white/60">Entrem em <span className="text-white font-bold">quiz-two-zeta-67.vercel.app</span></p>
+            </div>
 
+            <div className="glass-panel p-4 lg:p-6 w-fit relative">
+              <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={180} level="H" />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <span className="text-white/40 uppercase font-bold tracking-widest text-sm">Código do Jogo</span>
+              <div className="text-5xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500 tracking-widest font-mono">
+                {pin}
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="glass-card min-h-[300px] lg:min-h-[500px] flex flex-col"
+          >
+            <div className="p-4 sm:p-8 border-b border-white/10">
+              <div className="flex items-center justify-between mb-4 lg:mb-8">
+                <div className="flex items-center gap-3">
+                  <Users className="text-pink-500 w-6 h-6 lg:w-8 lg:h-8" />
+                  <h2 className="text-xl lg:text-3xl font-bold text-white">Jogadores</h2>
+                </div>
+                <span className="bg-pink-500 text-white px-4 py-1 rounded-full font-bold">
+                  {players.length}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 flex-grow overflow-y-auto max-h-[200px] lg:max-h-[400px]">
+                <AnimatePresence>
+                  {players.map((player) => (
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="flex flex-col gap-8"
+                      key={player.id}
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0, opacity: 0 }}
+                      className="bg-white/10 p-3 sm:p-4 rounded-2xl flex flex-col items-center justify-center gap-2 font-bold text-lg sm:text-xl text-center"
+                      style={{ borderLeft: `4px solid ${player.color || '#FF6B6B'}` }}
                     >
-                        <div className="flex items-center gap-4 mb-2">
-                            <div className="p-4 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl">
-                                <Users className="w-10 h-10 text-white" />
-                            </div>
-                            <span className="text-sm font-bold text-violet-400 uppercase tracking-widest">QuizVerse TV</span>
-                        </div>
-
-                        <div>
-                            <h1 className="text-5xl lg:text-7xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'Space Grotesk' }}>
-                                Preparem os <span className="text-gradient">telemóveis!</span>
-                            </h1>
-                            <p className="text-xl text-white/60">Entrem em <span className="text-white font-bold">quiz-two-zeta-67.vercel.app</span></p>
-                        </div>
-
-                        <div className="glass-panel p-6 w-fit relative">
-                            <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={220} level="H" />
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                            <span className="text-white/40 uppercase font-bold tracking-widest text-sm">Código do Jogo</span>
-                            <div className="text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500 tracking-widest font-mono">
-                                {pin}
-                            </div>
-                        </div>
+                      <span className="text-3xl sm:text-4xl">{player.avatar || '🎮'}</span>
+                      <span className="text-white text-sm sm:text-base">{player.name}</span>
                     </motion.div>
+                  ))}
+                </AnimatePresence>
+                {players.length === 0 && (
+                  <div className="col-span-full flex flex-col items-center justify-center text-gray-500 gap-4 mt-4 sm:mt-12">
+                    <p className="text-base sm:text-xl italic">Aguardando que as equipas entrem...</p>
+                  </div>
+                )}
+              </div>
+            </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="glass-card min-h-[500px] flex flex-col"
-                    >
-                        <div className="p-8 border-b border-white/10">
-                            <div className="flex items-center justify-between mb-8">
-                                <div className="flex items-center gap-3">
-                                    <Users className="text-pink-500 w-8 h-8" />
-                                    <h2 className="text-3xl font-bold text-white">Jogadores</h2>
-                                </div>
-                                <span className="bg-pink-500 text-white px-4 py-1 rounded-full font-bold">
-                                    {players.length}
-                                </span>
-                            </div>
-
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 flex-grow overflow-y-auto max-h-[400px]">
-                                <AnimatePresence>
-                                    {players.map((player) => (
-                                        <motion.div
-                                            key={player.id}
-                                            initial={{ scale: 0, opacity: 0 }}
-                                            animate={{ scale: 1, opacity: 1 }}
-                                            exit={{ scale: 0, opacity: 0 }}
-                                            className="bg-white/10 p-4 rounded-2xl flex flex-col items-center justify-center gap-2 font-bold text-xl text-center"
-                                            style={{ borderLeft: `4px solid ${player.color || '#FF6B6B'}` }}
-                                        >
-                                            <span className="text-4xl">{player.avatar || '🎮'}</span>
-                                            <span className="text-white">{player.name}</span>
-                                        </motion.div>
-                                    ))}
-                                </AnimatePresence>
-                                {players.length === 0 && (
-                                    <div className="col-span-full flex flex-col items-center justify-center text-gray-500 gap-4 mt-12">
-                                        <p className="text-xl italic">Aguardando que as equipas entrem...</p>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-
-                        {players.length > 0 && (
-                            <div className="p-8 flex flex-col gap-6 bg-black/20 flex-grow">
+            {players.length > 0 && (
+            <div className="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 bg-black/20 flex-grow">
                                 {/* AGE GROUP SELECTOR */}
                                 <div className="space-y-3">
                                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
@@ -859,23 +864,21 @@ export default function TVHost() {
                 />
             )}
 
-{/* REVEAL / LEADERBOARD INFO */}
-            {status === "REVEAL" && currentQ && (
-                <motion.div
-                    initial={{ y: 100, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row gap-3 sm:justify-end sm:items-end"
-                >
-                    <div className="flex flex-col sm:flex-row gap-3">
-                        <button
-                            onClick={handleReportQuestion}
-                            className="flex items-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all"
-                        >
-                            <Flag className="w-5 h-5" />
-                            Reportar
-                        </button>
-                        <button
-                            onClick={() => {
+      {/* REVEAL / LEADERBOARD INFO */}
+      {status === "REVEAL" && currentQ && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:justify-center sm:items-center mt-6 px-4"
+        >
+          <button
+            onClick={handleReportQuestion}
+            className="flex items-center justify-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all text-sm"
+          >
+            <Flag className="w-4 h-4" /> Reportar
+          </button>
+          <button
+            onClick={() => {
                                 const nextQ = currentQuestions[currentQuestionIndex];
                                 if (nextQ) {
                                     nextQuestion(nextQ.id, nextQ.correct_option);
@@ -885,30 +888,29 @@ export default function TVHost() {
                                     updateStatus("STARTING");
                                 }
                             }}
-                            className="btn-quiz btn-primary flex items-center gap-2"
-                        >
-                            {currentQuestionIndex < currentQuestions.length ? (
-                                <>Próxima Pergunta <ArrowRight /></>
-                        ) : (
-                            <>Nova Volta <ArrowRight /></>
-                        )}
-                        </button>
-                        <button
-                            onClick={() => {
-                                console.log(`🔙 Returning to lobby...`);
-                                setGameId(null);
-                                usedQuestionIdsRef.current = [];
-                                setRound(1);
-                                setCurrentQuestions([]);
-                                window.location.reload();
-                            }}
-                            className="btn-quiz btn-secondary flex items-center gap-2"
-                        >
-                            <>Escolher Outro Tema</>
-                        </button>
-                    </div>
-                </motion.div>
+          className="btn-quiz btn-primary flex items-center justify-center gap-2 flex-1 sm:flex-none py-3"
+          >
+            {currentQuestionIndex < currentQuestions.length ? (
+              <>Próxima Pergunta <ArrowRight /></>
+            ) : (
+              <>Nova Volta <ArrowRight /></>
             )}
+          </button>
+          <button
+            onClick={() => {
+              console.log(`🔙 Returning to lobby...`);
+              setGameId(null);
+              usedQuestionIdsRef.current = [];
+              setRound(1);
+              setCurrentQuestions([]);
+              window.location.reload();
+            }}
+            className="btn-quiz btn-secondary flex items-center justify-center gap-2 py-3"
+          >
+            Escolher Outro Tema
+          </button>
+        </motion.div>
+      )}
 
             {/* PODIUM VIEW */}
             {status === "PODIUM" && (

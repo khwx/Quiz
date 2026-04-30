@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Settings, Trophy, Star, Coins, Flame, Crown, Activity, LogOut, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import MobileNav from "@/components/MobileNav";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -296,23 +297,8 @@ export default function ProfilePage() {
         )}
       </div>
 
-      {/* Bottom Nav */}
-      <nav className="fixed bottom-0 w-full z-50 md:hidden border-t border-white/10">
-        <div className="flex justify-around items-center px-4 py-3 bg-slate-950/90 backdrop-blur-2xl border-t border-white/10">
-          <Link href="/" className="flex flex-col items-center justify-center text-white/50">
-            <Trophy className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Home</span>
-          </Link>
-          <Link href="/categories" className="flex flex-col items-center justify-center text-white/50">
-            <Star className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Categorias</span>
-          </Link>
-          <button onClick={handleLogout} className="flex flex-col items-center justify-center text-pink-500">
-            <LogOut className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Sair</span>
-          </button>
-        </div>
-      </nav>
+      <MobileNav />
+      <div className="h-20 md:hidden" />
     </main>
   );
 }

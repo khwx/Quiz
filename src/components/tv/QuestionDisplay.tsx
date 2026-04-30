@@ -206,24 +206,24 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 {question.text}
             </motion.h2>
 
-            {/* Options Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                {question.options.map((option: string, idx: number) => {
-                    const isCorrect = idx === question.correct_option;
-                    const isReveal = status === "REVEAL";
+      {/* Options Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        {question.options.map((option: string, idx: number) => {
+          const isCorrect = idx === question.correct_option;
+          const isReveal = status === "REVEAL";
 
-                    return (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{
-                                opacity: isReveal && !isCorrect ? 0.3 : 1,
-                                scale: isReveal && isCorrect ? 1.05 : 1,
-                                y: 0
-                            }}
-                            transition={{ delay: idx * 0.1 }}
-                            onClick={() => localMode && status === "QUESTION" && onLocalAnswer?.(idx)}
-                            className={`
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: isReveal && !isCorrect ? 0.3 : 1,
+                scale: isReveal && isCorrect ? 1.05 : 1,
+                y: 0
+              }}
+              transition={{ delay: idx * 0.1 }}
+              onClick={() => localMode && status === "QUESTION" && onLocalAnswer?.(idx)}
+              className={`
                 ${colors[idx]} relative overflow-hidden
                 p-8 rounded-3xl border-b-8 shadow-2xl transform transition-all
                 flex items-center gap-6
@@ -231,57 +231,70 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                 ${isReveal && !isCorrect ? 'grayscale' : ''}
                 ${localMode && status === "QUESTION" ? 'cursor-pointer hover:scale-105 hover:brightness-110 active:scale-95' : ''}
               `}
-                        >
-                            <div className="bg-black/20 w-16 h-16 rounded-xl flex items-center justify-center text-4xl font-black text-white/80 shrink-0">
-                                {icons[idx]}
-                            </div>
+            >
+              <div className="bg-black/20 w-16 h-16 rounded-xl flex items-center justify-center text-4xl font-black text-white/80 shrink-0">
+                {icons[idx]}
+              </div>
 
-                            <div className="flex flex-col flex-grow">
-                                <span className="text-2xl md:text-3xl font-bold text-white shadow-black drop-shadow-md">
-                                    {option}
-                                </span>
+              <div className="flex flex-col flex-grow">
+                <span className="text-2xl md:text-3xl font-bold text-white shadow-black drop-shadow-md">
+                  {option}
+                </span>
 
-                                {/* Jogadores que escolheram esta opção */}
-                                {isReveal && (
-                                    <div className="flex flex-wrap gap-4 mt-4 justify-start">
-                                        {answers
-                                            .filter(a => Number(a.chosen_option) === idx)
-                                            .map(a => {
-                                                // Extremely robust matching
-                                                const targetPlayerId = String(a.player_id || "").toLowerCase().trim();
-                                                const player = (players || []).find(p => String(p.id).toLowerCase().trim() === targetPlayerId);
+                {/* Jogadores que escolheram esta opção */}
+                {isReveal && (
+                  <div className="flex flex-wrap gap-4 mt-4 justify-start">
+                    {answers
+                      .filter(a => Number(a.chosen_option) === idx)
+                      .map(a => {
+                        const targetPlayerId = String(a.player_id || "").toLowerCase().trim();
+                        const player = (players || []).find(p => String(p.id).toLowerCase().trim() === targetPlayerId);
 
-                                                if (!player) return null;
+                        if (!player) return null;
 
-                                                return (
-                                                    <motion.div
-                                                        key={player.id}
-                                                        initial={{ scale: 0, y: 10 }}
-                                                        animate={{ scale: 1, y: 0 }}
-                                                        className="bg-white/90 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-xl border-2"
-                                                        style={{ borderColor: player.color || '#FF6B6B' }}
-                                                        title={player.name}
-                                                    >
-                                                        <span className="text-3xl filter drop-shadow-sm">{player.avatar || '🎮'}</span>
-                                                        <span className="text-gray-900 font-black text-lg">{getInitials(player.name)}</span>
-                                                    </motion.div>
-                                                );
-                                            })}
-                                    </div>
-                                )}
-                            </div>
+                        return (
+                          <motion.div
+                            key={player.id}
+                            initial={{ scale: 0, y: 10 }}
+                            animate={{ scale: 1, y: 0 }}
+                            className="bg-white/90 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-xl border-2"
+                            style={{ borderColor: player.color || '#FF6B6B' }}
+                            title={player.name}
+                          >
+                            <span className="text-3xl filter drop-shadow-sm">{player.avatar || '🎮'}</span>
+                            <span className="text-gray-900 font-black text-lg">{getInitials(player.name)}</span>
+                          </motion.div>
+                        );
+                      })}
+                  </div>
+                )}
+              </div>
 
-                            {isReveal && isCorrect && (
-                                <div className="absolute top-4 right-4 bg-white text-green-600 rounded-full p-2 shadow-lg z-10">
-                                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                            )}
-                        </motion.div>
-                    );
-                })}
-            </div>
+              {isReveal && isCorrect && (
+                <div className="absolute top-4 right-4 bg-white text-green-600 rounded-full p-2 shadow-lg z-10">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Hint on REVEAL */}
+      {status === "REVEAL" && question.metadata?.hint && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-6 p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl max-w-2xl"
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Dica</span>
+          </div>
+          <p className="text-amber-200/80 text-sm">{question.metadata.hint}</p>
+        </motion.div>
+      )}
 
             {/* Time Progress Bar */}
             <div className="fixed bottom-0 left-0 h-4 bg-violet-900 w-full">

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Map, Film, Trophy, Star, Crown, Rocket, ArrowLeft, Flag, Zap, PawPrint, Utensils, Check } from "lucide-react";
+import MobileNav from "@/components/MobileNav";
 
 const getCategoryStyles = (color: string) => {
   const colors: Record<string, { bg: string; text: string; hover: string }> = {
@@ -241,19 +242,8 @@ export default function CategoriesPage() {
         </section>
       </div>
 
-      {/* Bottom Nav */}
-      <nav className="fixed bottom-0 w-full z-50 md:hidden border-t border-white/10">
-        <div className="flex justify-around items-center px-4 py-3 bg-slate-950/90 backdrop-blur-2xl border-t border-white/10">
-          <Link href="/" className="flex flex-col items-center justify-center text-white/50">
-            <Rocket className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Home</span>
-          </Link>
-          <Link href="/categories" className="flex flex-col items-center justify-center text-pink-500">
-            <Globe className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Categorias</span>
-          </Link>
-        </div>
-      </nav>
+      <MobileNav />
+      <div className="h-20 md:hidden" />
     </main>
   );
 }

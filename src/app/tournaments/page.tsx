@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Trophy, Plus, Crown, Users, Loader2, Calendar, Clock, Medal, Target, ArrowRight, Play, Flag } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import MobileNav from "@/components/MobileNav";
 
 function generatePin(length: number = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -417,19 +418,8 @@ export default function TournamentsPage() {
         )}
       </div>
 
-      {/* Bottom Nav */}
-      <nav className="fixed bottom-0 w-full z-50 md:hidden border-t border-white/10">
-        <div className="flex justify-around items-center px-4 py-3 bg-slate-950/90 backdrop-blur-2xl border-t border-white/10">
-          <Link href="/" className="flex flex-col items-center justify-center text-white/50">
-            <Trophy className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Home</span>
-          </Link>
-          <Link href="/profile" className="flex flex-col items-center justify-center text-white/50">
-            <Medal className="w-6 h-6" />
-            <span className="text-[10px] mt-1">Perfil</span>
-          </Link>
-        </div>
-      </nav>
+      <MobileNav />
+      <div className="h-20 md:hidden" />
     </main>
   );
 }

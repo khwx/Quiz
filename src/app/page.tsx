@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User, ArrowRight, ArrowLeft, Users, Trophy } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import MobileNav from "@/components/MobileNav";
 
 export default function Home() {
   const [user, setUser] = useState<any>(null);
@@ -206,25 +207,7 @@ export default function Home() {
         </aside>
       </div>
 
-      {/* Bottom Nav - Mobile */}
-      <nav className="fixed bottom-0 w-full z-50 md:hidden border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
-        <div className="flex justify-around items-center px-4 py-3 bg-slate-950/90 backdrop-blur-2xl border-t border-white/10">
-          <Link href="/" className="flex flex-col items-center justify-center text-pink-500 relative">
-            <Tv className="w-6 h-6" style={{ fill: 'currentColor' }} />
-            <span className="text-[10px] uppercase tracking-widest font-bold mt-1">Home</span>
-          </Link>
-          <Link href="/play" className="flex flex-col items-center justify-center text-white/50">
-            <Gamepad2 className="w-6 h-6" />
-            <span className="text-[10px] uppercase tracking-widest font-bold mt-1">Jogar</span>
-          </Link>
-          <Link href="/tutorial" className="flex flex-col items-center justify-center text-white/50">
-            <Play className="w-6 h-6" />
-            <span className="text-[10px] uppercase tracking-widest font-bold mt-1">Ajuda</span>
-          </Link>
-        </div>
-      </nav>
-
-      {/* Spacer for mobile nav */}
+      <MobileNav />
       <div className="h-20 md:hidden" />
     </main>
   );
