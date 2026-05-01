@@ -69,11 +69,11 @@ export default function TournamentsPage() {
   const loadTournaments = async () => {
     const { data } = await supabase
       .from("tournaments")
-      .select("*, tournament_teams(*)")
+      .select("*, tournament_teams(count)")
       .order("created_at", { ascending: false });
     
     const allData = data || [];
-    setTournaments(allData.filter(t => t.status !== 'FINISHED'));
+    setTournaments(allData); // Show ALL tournaments
     setActiveTournaments(allData.filter(t => t.status === 'LOBBY'));
   };
 

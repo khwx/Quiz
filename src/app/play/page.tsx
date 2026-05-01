@@ -39,12 +39,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       const questionDataFromSettings = questionsData.find((q: any) => q.id === currentQuestionId);
       
       if (questionDataFromSettings?.options) {
-        data.options = questionDataFromSettings.options;
-        data.correct_option = questionDataFromSettings.correct_option;
+        (data as any).options = questionDataFromSettings.options;
+        (data as any).correct_option = questionDataFromSettings.correct_option;
         console.log("📱 Using shuffled options from settings for mobile");
       }
       
-      setQuestionData(data);
+      setQuestionData(data as any);
       setShowHint(false);
     }
   }, [currentQuestionId, gameSettings]);
