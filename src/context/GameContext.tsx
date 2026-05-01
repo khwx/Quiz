@@ -21,7 +21,7 @@ interface GameContextType extends GameState {
     setGameId: (id: string | null) => void;
     setPlayers: (players: any[]) => void;
     updateStatus: (status: GameStatus) => Promise<void>;
-    nextQuestion: (questionId?: string, correctOption?: number, shuffledOptions?: string[]) => Promise<void>;
+    nextQuestion: (questionId?: string, correctOption?: number) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
 }
 
@@ -85,7 +85,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         await supabase.from('games').update({ status }).eq('id', gameState.gameId);
     };
 
-    const nextQuestion = async (questionId?: string, correctOption?: number, shuffledOptions?: string[]) => {
+    const nextQuestion = async (questionId?: string, correctOption?: number) => {
         const nextIndex = gameState.currentQuestionIndex + 1;
 
         let nextId = questionId;
@@ -95,37 +95,16 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         if (!nextId && gameState.gameSettings?.question_ids) {
             if (gameState.gameSettings.question_ids[nextIndex - 1]) {
                 nextId = gameState.gameSettings.question_ids[nextIndex - 1];
-                // Also get correct_option from settings if available
-                const qData = gameState.gameSettings.questions_data?.find((q: any) => q.id === nextId);
-                if (qData) {
-                    nextCorrectOption = qData.correct_option;
-                }
             }
-        }
-
-        // Build updated settings with optional shuffled options for mobile sync
-        const updatedSettings: any = {
-            ...gameState.gameSettings,
-            current_question_id: nextId,
-            current_correct_option: nextCorrectOption !== undefined ? nextCorrectOption : gameState.gameSettings?.current_correct_option
-        };
-
-        // If shuffled options provided, store them for mobile to use
-        if (shuffledOptions && nextId && nextCorrectOption !== undefined) {
-            const questionsData = updatedSettings.questions_data || [];
-            const existingIndex = questionsData.findIndex((q: any) => q.id === nextId);
-            if (existingIndex >= 0) {
-                questionsData[existingIndex].options = shuffledOptions;
-                questionsData[existingIndex].correct_option = nextCorrectOption;
-            } else {
-                questionsData.push({ id: nextId, options: shuffledOptions, correct_option: nextCorrectOption });
-            }
-            updatedSettings.questions_data = questionsData;
         }
 
         await supabase.from('games').update({
             current_question_index: nextIndex,
-            settings: updatedSettings,
+            settings: {
+                ...gameState.gameSettings,
+                current_question_id: nextId,
+                current_correct_option: nextCorrectOption !== undefined ? nextCorrectOption : gameState.gameSettings?.current_correct_option
+            },
             status: 'QUESTION'
         }).eq('id', gameState.gameId);
     };
