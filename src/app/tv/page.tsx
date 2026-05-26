@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import { QRCodeSVG } from "qrcode.react";
-import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Trash2, Map, History, Music, Palette, Utensils, Cpu, Languages, Star, Crown } from "lucide-react";
+import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Trash2, Map, History, Music, Palette, Utensils, Cpu, Languages, Star, Crown, Timer } from "lucide-react";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
@@ -26,6 +26,7 @@ export default function TVHost() {
     const usedQuestionIdsRef = useRef<string[]>([]);
     const shouldRevealRef = useRef(false); // Shared signal between auto-skip and timer
     const questionStartTimeRef = useRef<number>(0); // Track when the question started
+    const [timeUntilNext, setTimeUntilNext] = useState(20); // Countdown between questions
 
     // Load used questions from local storage on mount
     useEffect(() => {
@@ -563,6 +564,59 @@ export default function TVHost() {
         }
     }, [currentQuestionIndex, round, status]);
 
+    // Countdown timer between questions (auto-advance after 20s)
+    const nextQuestionRef = useRef(nextQuestion);
+    const updateStatusRef = useRef(updateStatus);
+    const currentQuestionsRef = useRef(currentQuestions);
+    const currentQuestionIndexRef = useRef(currentQuestionIndex);
+    const roundRef = useRef(round);
+    const setRoundRef = useRef(setRound);
+    
+    useEffect(() => {
+        nextQuestionRef.current = nextQuestion;
+        updateStatusRef.current = updateStatus;
+        currentQuestionsRef.current = currentQuestions;
+        currentQuestionIndexRef.current = currentQuestionIndex;
+        roundRef.current = round;
+        setRoundRef.current = setRound;
+    }, [nextQuestion, updateStatus, currentQuestions, currentQuestionIndex, round, setRound]);
+
+    useEffect(() => {
+        if (status !== "REVEAL") {
+            setTimeUntilNext(20);
+            return;
+        }
+
+        const interval = setInterval(() => {
+            setTimeUntilNext((prev) => {
+                const next = prev - 1;
+                if (next <= 0) {
+                    clearInterval(interval);
+                    const qs = currentQuestionsRef.current;
+                    const idx = currentQuestionIndexRef.current;
+                    const nextQ = qs[idx];
+                    if (nextQ) {
+                        nextQuestionRef.current(nextQ.id, nextQ.correct_option);
+                    } else {
+                        setRoundRef.current(r => r + 1);
+                        updateStatusRef.current("STARTING");
+                    }
+                    return 20;
+                }
+                return next;
+            });
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [status]); // Only depends on status to reset/cancel the timer
+
+    // Reset timer when a new question starts
+    useEffect(() => {
+        if (status === "QUESTION") {
+            setTimeUntilNext(20);
+        }
+    }, [status, currentQuestionIndex]);
+
 
     // Loading Check
     if (loading) {
@@ -870,25 +924,31 @@ export default function TVHost() {
           >
             <Flag className="w-4 h-4" /> Reportar
           </button>
-          <button
-            onClick={() => {
-                                const nextQ = currentQuestions[currentQuestionIndex];
-                                if (nextQ) {
-                                    nextQuestion(nextQ.id, nextQ.correct_option);
-                                } else {
-                                    console.log(`🔄 Starting round ${round + 1}...`);
-                                    setRound(r => r + 1);
-                                    updateStatus("STARTING");
-                                }
-                            }}
-          className="btn-quiz btn-primary flex items-center justify-center gap-2 flex-1 sm:flex-none py-3"
-          >
-            {currentQuestionIndex < currentQuestions.length ? (
-              <>Próxima Pergunta <ArrowRight /></>
-            ) : (
-              <>Nova Volta <ArrowRight /></>
-            )}
-          </button>
+          <div className="flex flex-col items-center gap-2">
+            <button
+              onClick={() => {
+                                  const nextQ = currentQuestions[currentQuestionIndex];
+                                  if (nextQ) {
+                                      nextQuestion(nextQ.id, nextQ.correct_option);
+                                  } else {
+                                      console.log(`🔄 Starting round ${round + 1}...`);
+                                      setRound(r => r + 1);
+                                      updateStatus("STARTING");
+                                  }
+                              }}
+            className="btn-quiz btn-primary flex items-center justify-center gap-2 flex-1 sm:flex-none py-3"
+            >
+              {currentQuestionIndex < currentQuestions.length ? (
+                <>Próxima Pergunta <ArrowRight /></>
+              ) : (
+                <>Nova Volta <ArrowRight /></>
+              )}
+            </button>
+            <div className="flex items-center gap-2 text-white/50 text-sm">
+              <Timer className="w-4 h-4" />
+              <span className="font-mono font-bold text-white">{timeUntilNext}s</span>
+            </div>
+          </div>
           <button
             onClick={() => {
               console.log(`🔙 Returning to lobby...`);
