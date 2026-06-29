@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff, Shield, ShieldCheck, Users, Star } from "lucide-react";
+import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff, Shield, ShieldCheck, Users, Star, Plus, Edit2, X, Check, Save } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -118,6 +118,16 @@ export default function AdminPage() {
     const [showDuplicates, setShowDuplicates] = useState(false);
     const [showReported, setShowReported] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [showCreateForm, setShowCreateForm] = useState(false);
+    const [editId, setEditId] = useState<string | null>(null);
+    const [formData, setFormData] = useState({
+        text: "",
+        category: "CULTURA_GERAL",
+        age_rating: 12,
+        options: ["", "", "", ""],
+        correct_option: 0,
+    });
+    const [saving, setSaving] = useState(false);
 
     useEffect(() => {
         checkAuth();
@@ -239,6 +249,58 @@ export default function AdminPage() {
         loadData();
     };
 
+    const resetForm = () => {
+        setFormData({
+            text: "",
+            category: "CULTURA_GERAL",
+            age_rating: 12,
+            options: ["", "", "", ""],
+            correct_option: 0,
+        });
+        setEditId(null);
+    };
+
+    const startEdit = (q: Question & { age_rating?: number }) => {
+        setFormData({
+            text: q.text,
+            category: q.category,
+            age_rating: q.age_rating || 12,
+            options: q.options.length === 4 ? q.options : ["", "", "", ""],
+            correct_option: q.correct_option,
+        });
+        setEditId(q.id);
+        setShowCreateForm(true);
+    };
+
+    const handleSaveQuestion = async () => {
+        if (!formData.text.trim() || formData.options.some(o => !o.trim())) {
+            alert("Preenche todos os campos.");
+            return;
+        }
+        setSaving(true);
+        try {
+            const payload = {
+                text: formData.text.trim(),
+                category: formData.category,
+                age_rating: formData.age_rating,
+                options: formData.options,
+                correct_option: formData.correct_option,
+            };
+            if (editId) {
+                await supabase.from("questions").update(payload).eq("id", editId);
+            } else {
+                await supabase.from("questions").insert(payload);
+            }
+            resetForm();
+            setShowCreateForm(false);
+            loadData();
+        } catch (err) {
+            alert("Erro ao guardar.");
+        } finally {
+            setSaving(false);
+        }
+    };
+
     const handleDeleteDuplicate = async (id: string, keepBetter: boolean) => {
         if (keepBetter) {
             const { data: questionsData } = await supabase.from("questions").select("id, text").eq("id", id);
@@ -334,6 +396,10 @@ export default function AdminPage() {
                         <Users className="w-4 h-4 inline mr-2" />
                         Equipa
                     </button>
+                    <button onClick={() => { setShowCreateForm(true); resetForm(); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-400/30 text-sm font-medium whitespace-nowrap">
+                        <Plus className="w-4 h-4 inline mr-2" />
+                        Nova Pergunta
+                    </button>
                 </div>
 
                 {showAddAdmin && (
@@ -417,7 +483,99 @@ export default function AdminPage() {
                     </section>
                 )}
 
-                {!showDuplicates && !showReported && !showAddAdmin && (
+                {showCreateForm && (
+                    <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass-panel p-6 border border-emerald-500/30">
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                                {editId ? <Edit2 className="w-5 h-5 text-emerald-400" /> : <Plus className="w-5 h-5 text-emerald-400" />}
+                                {editId ? "Editar Pergunta" : "Nova Pergunta"}
+                            </h2>
+                            <button onClick={() => { setShowCreateForm(false); resetForm(); }} className="text-white/40 hover:text-white p-1">
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
+                        <div className="space-y-4">
+                            <div>
+                                <label className="text-sm text-white/60 mb-1 block">Pergunta</label>
+                                <textarea
+                                    value={formData.text}
+                                    onChange={e => setFormData({ ...formData, text: e.target.value })}
+                                    className="w-full glass-input min-h-[80px] resize-y"
+                                    placeholder="Escreve a pergunta aqui..."
+                                />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="text-sm text-white/60 mb-1 block">Categoria</label>
+                                    <select
+                                        value={formData.category}
+                                        onChange={e => setFormData({ ...formData, category: e.target.value })}
+                                        className="w-full glass-input"
+                                    >
+                                        {stats.map(s => (
+                                            <option key={s.category} value={s.category}>{s.category}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="text-sm text-white/60 mb-1 block">Idade</label>
+                                    <select
+                                        value={formData.age_rating}
+                                        onChange={e => setFormData({ ...formData, age_rating: Number(e.target.value) })}
+                                        className="w-full glass-input"
+                                    >
+                                        <option value={8}>8 (7-9 anos)</option>
+                                        <option value={12}>12 (10-14 anos)</option>
+                                        <option value={16}>16 (15-17 anos)</option>
+                                        <option value={18}>18 (Adultos)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label className="text-sm text-white/60 mb-2 block">Opções de Resposta</label>
+                                <div className="space-y-2">
+                                    {formData.options.map((opt, idx) => (
+                                        <div key={idx} className="flex items-center gap-3">
+                                            <input
+                                                type="radio"
+                                                name="correct_option"
+                                                checked={formData.correct_option === idx}
+                                                onChange={() => setFormData({ ...formData, correct_option: idx })}
+                                                className="accent-emerald-500"
+                                            />
+                                            <span className="text-white/40 text-sm w-6">{idx + 1}.</span>
+                                            <input
+                                                type="text"
+                                                value={opt}
+                                                onChange={e => {
+                                                    const opts = [...formData.options];
+                                                    opts[idx] = e.target.value;
+                                                    setFormData({ ...formData, options: opts });
+                                                }}
+                                                className={`flex-1 glass-input ${idx === formData.correct_option ? "border-emerald-500/50" : ""}`}
+                                                placeholder={`Opção ${idx + 1}${idx === 0 ? " (correta)" : ""}`}
+                                            />
+                                            {idx === formData.correct_option && (
+                                                <span className="text-emerald-400 text-xs font-medium">Correta</span>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex gap-3 justify-end pt-2">
+                                <button onClick={() => { setShowCreateForm(false); resetForm(); }} className="px-6 py-3 bg-white/5 text-white/60 rounded-xl">
+                                    Cancelar
+                                </button>
+                                <button onClick={handleSaveQuestion} disabled={saving} className="px-8 py-3 bg-emerald-600 text-white rounded-xl font-medium flex items-center gap-2 hover:bg-emerald-500 transition-colors">
+                                    <Save className="w-4 h-4" />
+                                    {saving ? "A guardar..." : editId ? "Guardar" : "Criar Pergunta"}
+                                </button>
+                            </div>
+                        </div>
+                    </motion.section>
+                )}
+
+                {!showDuplicates && !showReported && !showAddAdmin && !showCreateForm && (
                     <div className="relative">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
                         <input type="text" placeholder="Pesquisar perguntas..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="w-full glass-input pl-12" />
@@ -443,7 +601,10 @@ export default function AdminPage() {
                                             )}
                                         </div>
                                     </div>
-                                    <button onClick={() => handleDeleteQuestion(q.id)} className="text-pink-400 hover:text-pink-300 p-2"><Trash2 className="w-4 h-4" /></button>
+                                    <div className="flex gap-1">
+                                        <button onClick={() => startEdit(q)} className="text-blue-400 hover:text-blue-300 p-2"><Edit2 className="w-4 h-4" /></button>
+                                        <button onClick={() => handleDeleteQuestion(q.id)} className="text-pink-400 hover:text-pink-300 p-2"><Trash2 className="w-4 h-4" /></button>
+                                    </div>
                                 </div>
                                 {q.options && (
                                     <div className="grid grid-cols-2 gap-2 text-sm">
