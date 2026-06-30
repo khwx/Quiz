@@ -325,7 +325,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                 <div className="bg-black/20 w-10 h-10 rounded-lg flex items-center justify-center text-xl font-black text-white/80 shrink-0">
                   {optionLetters[idx]}
                 </div>
-                <span className="text-lg font-bold text-white/90 text-left flex-1">{option}</span>
+                <span className="text-lg font-bold text-white/90 text-left flex-1 whitespace-normal break-words">{option}</span>
               </motion.button>
             ))}
           </div>

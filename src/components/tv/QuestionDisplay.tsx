@@ -237,7 +237,7 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
               </div>
 
               <div className="flex flex-col flex-grow">
-                <span className="text-2xl md:text-3xl font-bold text-white shadow-black drop-shadow-md">
+                <span className="text-2xl md:text-3xl font-bold text-white shadow-black drop-shadow-md whitespace-normal break-words">
                   {option}
                 </span>
 

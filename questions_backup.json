@@ -6972,6 +6972,81 @@
       "metadata": {
         "hint": "A resposta correta é: Um ponto final"
       }
+    },
+    {
+      "text": "O que é um algoritmo?",
+      "options": [
+        "Um computador",
+        "Um programa",
+        "Um conjunto de passos",
+        "Um vírus"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "TECNOLOGIA",
+      "metadata": {
+        "hint": "Receita ou regra."
+      }
+    },
+    {
+      "text": "Quem criou a World Wide Web?",
+      "options": [
+        "Bill Gates",
+        "Steve Jobs",
+        "Tim Berners-Lee",
+        "Mark Zuckerberg"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "TECNOLOGIA",
+      "metadata": {
+        "hint": "Cientista britânico."
+      }
+    },
+    {
+      "text": "Qual é a linguagem de programação mais usada para web?",
+      "options": [
+        "Python",
+        "JavaScript",
+        "C++",
+        "Java"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "TECNOLOGIA",
+      "metadata": {
+        "hint": "Corre no navegador."
+      }
+    },
+    {
+      "text": "O que é phishing?",
+      "options": [
+        "Pesca esportiva",
+        "Falsificação eletrónica",
+        "Um vírus informático",
+        "Um tipo de hardware"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "TECNOLOGIA",
+      "metadata": {
+        "hint": "Golpe online."
+      }
+    },
+    {
+      "text": "Em que ano foi lançado o primeiro iPhone?",
+      "options": [
+        "2005",
+        "2007",
+        "2009",
+        "2010"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "TECNOLOGIA",
+      "metadata": {
+        "hint": "2007."
+      }
     }
   ],
   "GEOGRAFIA": [
@@ -8079,6 +8154,81 @@
       "metadata": {
         "hint": "A resposta correta e: Andes"
       }
+    },
+    {
+      "text": "Qual é o maior oceano do mundo?",
+      "options": [
+        "Atlântico",
+        "Índico",
+        "Pacífico",
+        "Ártico"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "GEOGRAFIA",
+      "metadata": {
+        "hint": "Maior que todos os continentes juntos."
+      }
+    },
+    {
+      "text": "Qual é o rio mais longo do mundo?",
+      "options": [
+        "Nilo",
+        "Amazonas",
+        "Mississípi",
+        "Yangtzé"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "GEOGRAFIA",
+      "metadata": {
+        "hint": "Continente africano."
+      }
+    },
+    {
+      "text": "Em que continente está o Brasil?",
+      "options": [
+        "Europa",
+        "África",
+        "América do Sul",
+        "Ásia"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "GEOGRAFIA",
+      "metadata": {
+        "hint": "América Latina."
+      }
+    },
+    {
+      "text": "Qual é a capital da Austrália?",
+      "options": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Brisbane"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "GEOGRAFIA",
+      "metadata": {
+        "hint": "Não é Sydney."
+      }
+    },
+    {
+      "text": "Quantos continentes existem?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "GEOGRAFIA",
+      "metadata": {
+        "hint": "Sete continentes."
+      }
     }
   ],
   "POLITICA": [
@@ -8981,6 +9131,81 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta é: Todas"
+      }
+    },
+    {
+      "text": "Quantos anos dura um mandato presidencial em Portugal?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "POLITICA",
+      "metadata": {
+        "hint": "Mandato quinquenal."
+      }
+    },
+    {
+      "text": "Quem é o Chefe de Estado em Portugal?",
+      "options": [
+        "Primeiro-ministro",
+        "Presidente da República",
+        "Presidente da Assembleia",
+        "Rei"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "POLITICA",
+      "metadata": {
+        "hint": "Maior figura política."
+      }
+    },
+    {
+      "text": "Em que ano Portugal entrou para a União Europeia?",
+      "options": [
+        "1981",
+        "1986",
+        "1992",
+        "1995"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "POLITICA",
+      "metadata": {
+        "hint": "Anos 80."
+      }
+    },
+    {
+      "text": "Quem foi o primeiro Presidente da República Portuguesa?",
+      "options": [
+        "Teófilo Braga",
+        "Bernardino Machado",
+        "Manuel de Arriaga",
+        "Sidónio Pais"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "POLITICA",
+      "metadata": {
+        "hint": "1911."
+      }
+    },
+    {
+      "text": "Qual é a capital de Portugal?",
+      "options": [
+        "Lisboa",
+        "Porto",
+        "Coimbra",
+        "Faro"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "POLITICA",
+      "metadata": {
+        "hint": "Cidade mais populosa."
       }
     }
   ],
@@ -9987,6 +10212,81 @@
       "metadata": {
         "hint": "A resposta correta e: Cristovao Colombo"
       }
+    },
+    {
+      "text": "Quem foi o último rei de Portugal?",
+      "options": [
+        "D. Manuel II",
+        "D. Carlos I",
+        "D. João VI",
+        "D. Pedro IV"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "HISTORIA",
+      "metadata": {
+        "hint": "Monarquia terminou em 1910."
+      }
+    },
+    {
+      "text": "Em que século foi a revolta de 25 de Abril?",
+      "options": [
+        "XVIII",
+        "XIX",
+        "XX",
+        "XXI"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "HISTORIA",
+      "metadata": {
+        "hint": "1974."
+      }
+    },
+    {
+      "text": "Quem foi Salazar?",
+      "options": [
+        "Um ator",
+        "Um ditador",
+        "Um escritor",
+        "Um cientista"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "HISTORIA",
+      "metadata": {
+        "hint": "Regime do Estado Novo."
+      }
+    },
+    {
+      "text": "Qual foi a primeira democracia da história?",
+      "options": [
+        "Roma",
+        "Atenas",
+        "Esparta",
+        "Egito"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "HISTORIA",
+      "metadata": {
+        "hint": "Polis grega."
+      }
+    },
+    {
+      "text": "Quem foi o primeiro presidente dos EUA?",
+      "options": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Abraham Lincoln",
+        "John Adams"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "HISTORIA",
+      "metadata": {
+        "hint": "General revolucionário."
+      }
     }
   ],
   "ARTE": [
@@ -10787,6 +11087,156 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1970"
+      }
+    },
+    {
+      "text": "Quem pintou o teto da Capela Sistina?",
+      "options": [
+        "Rafael",
+        "Leonardo da Vinci",
+        "Michelangelo",
+        "Donatello"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Um génio do Renascimento italiano."
+      }
+    },
+    {
+      "text": "Qual é o estilo arquitetónico da Torre de Belém?",
+      "options": [
+        "Barroco",
+        "Gótico",
+        "Manuelino",
+        "Romanico"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Estilo português único."
+      }
+    },
+    {
+      "text": "Quem é o autor da escultura 'O Pensador'?",
+      "options": [
+        "Rodin",
+        "Michelangelo",
+        "Donatello",
+        "Bernini"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Famoso escultor francês."
+      }
+    },
+    {
+      "text": "Quem pintou 'A Persistência da Memória'?",
+      "options": [
+        "Picasso",
+        "Salvador Dalí",
+        "Miró",
+        "Kandinsky"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Relógios derretidos numa pintura surrealista."
+      }
+    },
+    {
+      "text": "Qual é a técnica de pintura em que se usam água e pigmentos?",
+      "options": [
+        "Óleo",
+        "Acrílico",
+        "Aquarela",
+        "Tempera"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Papel e água."
+      }
+    },
+    {
+      "text": "O Louvre é um museu em qual cidade?",
+      "options": [
+        "Londres",
+        "Paris",
+        "Roma",
+        "Viena"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Capital francesa."
+      }
+    },
+    {
+      "text": "Quem é considerado o pai da arte moderna?",
+      "options": [
+        "Van Gogh",
+        "Picasso",
+        "Cézanne",
+        "Monet"
+      ],
+      "correct_option": 2,
+      "age_rating": 16,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Influenciou Picasso."
+      }
+    },
+    {
+      "text": "Qual é o espaço negativo numa composição artística?",
+      "options": [
+        "A cor preta",
+        "A área vazia",
+        "A sombra",
+        "O fundo"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Área sem objetos."
+      }
+    },
+    {
+      "text": "Quem compôs 'A Noite Estrelada' como música?",
+      "options": [
+        "Mozart",
+        "Beethoven",
+        "Debussy",
+        "Mussorgsky"
+      ],
+      "correct_option": 3,
+      "age_rating": 16,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "Quadro de Van Gogh musicado por um russo."
+      }
+    },
+    {
+      "text": "Qual destas cores não é uma cor primária?",
+      "options": [
+        "Azul",
+        "Vermelho",
+        "Verde",
+        "Amarelo"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "ARTE",
+      "metadata": {
+        "hint": "As primárias são usadas para misturar."
       }
     }
   ],
@@ -11843,6 +12293,81 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Qatar"
+      }
+    },
+    {
+      "text": "Em que ano Portugal ganhou o Euro2016?",
+      "options": [
+        "2014",
+        "2016",
+        "2018",
+        "2020"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "DESPORTO",
+      "metadata": {
+        "hint": "Ano com final contra França."
+      }
+    },
+    {
+      "text": "Quem é o melhor marcador de sempre da seleção portuguesa?",
+      "options": [
+        "Eusébio",
+        "Pauleta",
+        "Cristiano Ronaldo",
+        "Nani"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "DESPORTO",
+      "metadata": {
+        "hint": "Conhecido como CR7."
+      }
+    },
+    {
+      "text": "Qual é o clube com mais títulos da Primeira Liga?",
+      "options": [
+        "Benfica",
+        "Porto",
+        "Sporting",
+        "Boavista"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "DESPORTO",
+      "metadata": {
+        "hint": "Clube das águias."
+      }
+    },
+    {
+      "text": "Em que país nasceu Lionel Messi?",
+      "options": [
+        "Brasil",
+        "Argentina",
+        "Espanha",
+        "Itália"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "DESPORTO",
+      "metadata": {
+        "hint": "Albiceleste."
+      }
+    },
+    {
+      "text": "Quantos jogadores tem uma equipa de futebol em campo?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "DESPORTO",
+      "metadata": {
+        "hint": "Onze à parte."
       }
     }
   ],
@@ -12924,6 +13449,81 @@
       "country_code": "PT",
       "image_url": null,
       "metadata": {}
+    },
+    {
+      "text": "Quanto é 7 x 8?",
+      "options": [
+        "54",
+        "56",
+        "64",
+        "48"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "MATEMATICA",
+      "metadata": {
+        "hint": "Sete vezes oito."
+      }
+    },
+    {
+      "text": "Quanto é 12 x 12?",
+      "options": [
+        "124",
+        "144",
+        "132",
+        "148"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "MATEMATICA",
+      "metadata": {
+        "hint": "Dúzia ao quadrado."
+      }
+    },
+    {
+      "text": "Qual é o valor de pi?",
+      "options": [
+        "2.14",
+        "3.14",
+        "3.41",
+        "4.14"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "MATEMATICA",
+      "metadata": {
+        "hint": "Circunferência sobre diâmetro."
+      }
+    },
+    {
+      "text": "Quanto é 1000 / 8?",
+      "options": [
+        "125",
+        "120",
+        "130",
+        "100"
+      ],
+      "correct_option": 0,
+      "age_rating": 12,
+      "category": "MATEMATICA",
+      "metadata": {
+        "hint": "Mil dividido por oito."
+      }
+    },
+    {
+      "text": "Qual é a raiz quadrada de 144?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correct_option": 2,
+      "age_rating": 8,
+      "category": "MATEMATICA",
+      "metadata": {
+        "hint": "12 ao quadrado."
+      }
     }
   ],
   "MUSICA": [
@@ -13809,6 +14409,96 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1996"
+      }
+    },
+    {
+      "text": "Quem é o autor de 'Grândola, Vila Morena'?",
+      "options": [
+        "Amália Rodrigues",
+        "Zeca Afonso",
+        "José Afonso",
+        "Rui Veloso"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "MUSICA",
+      "metadata": {
+        "hint": "Cantor da Revolução."
+      }
+    },
+    {
+      "text": "Qual é o instrumento principal do fado?",
+      "options": [
+        "Viola",
+        "Guitarra portuguesa",
+        "Piano",
+        "Bandolim"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "MUSICA",
+      "metadata": {
+        "hint": "Cordas portuguesas."
+      }
+    },
+    {
+      "text": "Quem compôs a 'Sinfonia n.9'?",
+      "options": [
+        "Mozart",
+        "Bach",
+        "Beethoven",
+        "Haydn"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "MUSICA",
+      "metadata": {
+        "hint": "Surdo, compôs a 'Ode à Alegria'."
+      }
+    },
+    {
+      "text": "O que é um pentagrama musical?",
+      "options": [
+        "Um instrumento",
+        "Um tipo de partitura",
+        "Um ritmo",
+        "Um gênero"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "MUSICA",
+      "metadata": {
+        "hint": "Cinco linhas."
+      }
+    },
+    {
+      "text": "Em que cidade nasceu Amália Rodrigues?",
+      "options": [
+        "Lisboa",
+        "Porto",
+        "Coimbra",
+        "Funchal"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "MUSICA",
+      "metadata": {
+        "hint": "Capital."
+      }
+    },
+    {
+      "text": "Qual é a nota mais grave num piano standard?",
+      "options": [
+        "Lá",
+        "Mi",
+        "Dó",
+        "Ré"
+      ],
+      "correct_option": 2,
+      "age_rating": 12,
+      "category": "MUSICA",
+      "metadata": {
+        "hint": "Começa com 'C'."
       }
     }
   ],
@@ -14713,6 +15403,66 @@
       "metadata": {
         "hint": "A resposta correta e: Prato bacalhau+batatas"
       }
+    },
+    {
+      "text": "De que região é o vinho do Porto?",
+      "options": [
+        "Minho",
+        "Douro",
+        "Dão",
+        "Alentejo"
+      ],
+      "correct_option": 1,
+      "age_rating": 12,
+      "category": "GASTRONOMIA",
+      "metadata": {
+        "hint": "Região vinícola do Norte."
+      }
+    },
+    {
+      "text": "O que é bacalhau à Brás?",
+      "options": [
+        "Um prato de carne",
+        "Um prato de peixe desfiado",
+        "Um doce",
+        "Uma sopa"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "GASTRONOMIA",
+      "metadata": {
+        "hint": "Ouro do mar desfiado."
+      }
+    },
+    {
+      "text": "Qual é o principal ingrediente do caldo verde?",
+      "options": [
+        "Couve",
+        "Batata",
+        "Feijão",
+        "Espinafre"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "GASTRONOMIA",
+      "metadata": {
+        "hint": "Folha verde."
+      }
+    },
+    {
+      "text": "De onde vem o pastel de nata?",
+      "options": [
+        "Portugal",
+        "Espanha",
+        "Franca",
+        "Brasil"
+      ],
+      "correct_option": 0,
+      "age_rating": 8,
+      "category": "GASTRONOMIA",
+      "metadata": {
+        "hint": "Pastelaria portuguesa."
+      }
     }
   ],
   "CINEMA": [
@@ -15598,6 +16348,81 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1970s"
+      }
+    },
+    {
+      "text": "Quem realizou o filme 'O Padrinho'?",
+      "options": [
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Steven Spielberg",
+        "Brian De Palma"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "CINEMA",
+      "metadata": {
+        "hint": "Realizador de família Coppola."
+      }
+    },
+    {
+      "text": "Qual o primeiro filme de animação da Disney?",
+      "options": [
+        "Pinóquio",
+        "Branca de Neve",
+        "Fantasia",
+        "Dumbo"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "CINEMA",
+      "metadata": {
+        "hint": "Princesa e sete anões."
+      }
+    },
+    {
+      "text": "Quem interpretou o Padrinho?",
+      "options": [
+        "Al Pacino",
+        "Marlon Brando",
+        "Robert De Niro",
+        "Jack Nicholson"
+      ],
+      "correct_option": 1,
+      "age_rating": 16,
+      "category": "CINEMA",
+      "metadata": {
+        "hint": "Ator com algodão na boca."
+      }
+    },
+    {
+      "text": "Qual é o filme com mais Oscars de sempre?",
+      "options": [
+        "Titanic",
+        "Ben-Hur",
+        "O Senhor dos Anéis",
+        "Todas as opções anteriores"
+      ],
+      "correct_option": 3,
+      "age_rating": 12,
+      "category": "CINEMA",
+      "metadata": {
+        "hint": "Três filmes partilham o recorde."
+      }
+    },
+    {
+      "text": "Em que ano foi lançado o primeiro filme do Homem de Ferro?",
+      "options": [
+        "2006",
+        "2008",
+        "2010",
+        "2012"
+      ],
+      "correct_option": 1,
+      "age_rating": 8,
+      "category": "CINEMA",
+      "metadata": {
+        "hint": "Início do MCU."
       }
     }
   ],

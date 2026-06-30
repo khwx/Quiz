@@ -84,9 +84,21 @@ const newQuestions = [
 ];
 
 async function main() {
-  console.log('Inserindo ' + newQuestions.length + ' perguntas novas...');
+  const rows = newQuestions.map(q => ({
+    text: q.text,
+    options: q.options,
+    correct_option: q.correct,
+    age_rating: q.age,
+    category: q.category,
+    image_url: null,
+    country_code: null,
+    metadata: { hint: q.hint }
+  }));
   
-  const { error } = await supabase.from('questions').insert(newQuestions);
+  console.log('Inserindo ' + rows.length + ' perguntas novas...');
+  
+  
+  const { error } = await supabase.from('questions').insert(rows);
   
   if (error) {
     console.error('Error:', error);
