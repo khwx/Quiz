@@ -93,11 +93,11 @@
       "metadata": {}
     },
     {
-      "text": "Dia do Trabalhador?",
+      "text": "Quando se celebra o Dia do Trabalhador?",
       "options": [
         "1 Junho",
         "1 Abril",
-        "both",
+        "Nenhuma das anteriores",
         "1 Maio"
       ],
       "correct_option": 3,
@@ -110,7 +110,7 @@
       }
     },
     {
-      "text": "Direitos sociais?",
+      "text": "Qual destes tipos de direitos são os direitos sociais?",
       "options": [
         "Culturais",
         "Sociais",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "text": "O que e o Carnaval?",
+      "text": "O que é O que e o Carnaval?",
       "options": [
         "Uma festa",
         "Um jogo",
@@ -337,7 +337,7 @@
       }
     },
     {
-      "text": "Cor Pai Natal?",
+      "text": "Qual é a cor da roupa do Pai Natal?",
       "options": [
         "Azul",
         "Amarelo",
@@ -354,7 +354,7 @@
       }
     },
     {
-      "text": "Capital Australia?",
+      "text": "Qual é a capital da Austrália?",
       "options": [
         "Sydney",
         "Perth",
@@ -371,7 +371,7 @@
       }
     },
     {
-      "text": "Mona Lisa autor?",
+      "text": "Quem pintou a Mona Lisa?",
       "options": [
         "Michelangelo",
         "Picasso",
@@ -388,7 +388,7 @@
       }
     },
     {
-      "text": "Maior pais area?",
+      "text": "Qual é o maior país do mundo em área?",
       "options": [
         "China",
         "EUA",
@@ -405,7 +405,7 @@
       }
     },
     {
-      "text": "Minutos hora?",
+      "text": "Quantos minutos tem uma hora?",
       "options": [
         "45",
         "90",
@@ -422,7 +422,7 @@
       }
     },
     {
-      "text": "II Guerra acaba?",
+      "text": "Em que ano terminou a II Guerra Mundial?",
       "options": [
         "1945",
         "1939",
@@ -439,7 +439,7 @@
       }
     },
     {
-      "text": "Dias ano?",
+      "text": "Quantos dias tem um ano comum?",
       "options": [
         "364",
         "365",
@@ -456,7 +456,7 @@
       }
     },
     {
-      "text": "Paises UE?",
+      "text": "Quantos países fazem parte da União Europeia?",
       "options": [
         "30",
         "25",
@@ -473,7 +473,7 @@
       }
     },
     {
-      "text": "Vogais?",
+      "text": "Quantas vogais existem no alfabeto português?",
       "options": [
         "5",
         "7",
@@ -490,7 +490,7 @@
       }
     },
     {
-      "text": "Mes mais curto?",
+      "text": "Qual é o mês mais curto do ano?",
       "options": [
         "Abril",
         "Janeiro",
@@ -507,7 +507,7 @@
       }
     },
     {
-      "text": "ONU?",
+      "text": "O que é a ONU (Organização das Nações Unidas)?",
       "options": [
         "Organizacao",
         "Exercito",
@@ -524,7 +524,7 @@
       }
     },
     {
-      "text": "Lingua mais falada?",
+      "text": "Qual é a língua mais falada do mundo em número de falantes nativos?",
       "options": [
         "Hindi",
         "Chines",
@@ -558,7 +558,7 @@
       }
     },
     {
-      "text": "Carnaval?",
+      "text": "O que é O que é o Carnaval?",
       "options": [
         "Natal",
         "Festa de verao",
@@ -609,7 +609,7 @@
       }
     },
     {
-      "text": "Pais mais populoso?",
+      "text": "Qual é o país mais populoso do mundo?",
       "options": [
         "China",
         "EUA",
@@ -626,7 +626,7 @@
       }
     },
     {
-      "text": "Tolerancia e?",
+      "text": "O que é a tolerância?",
       "options": [
         "Briga",
         "Guerra",
@@ -660,7 +660,7 @@
       }
     },
     {
-      "text": "Democracia?",
+      "text": "O que é a democracia?",
       "options": [
         "Governo do povo",
         "Governo militar",
@@ -694,7 +694,7 @@
       }
     },
     {
-      "text": "Cidadania ativa?",
+      "text": "Qual é o tipo de cidadania que implica participação ativa na vida política e social?",
       "options": [
         "Passiva",
         "Ativa",
@@ -711,7 +711,7 @@
       }
     },
     {
-      "text": "Estado direito?",
+      "text": "O que é o Estado de direito?",
       "options": [
         "Ordem",
         "Lei",
@@ -728,7 +728,7 @@
       }
     },
     {
-      "text": "Dias semana?",
+      "text": "Quantos dias tem uma semana?",
       "options": [
         "5",
         "7",
@@ -745,27 +745,10 @@
       }
     },
     {
-      "text": "Qual o maior planeta do sistema solar?",
-      "options": [
-        "Netuno",
-        "Urano",
-        "Saturno",
-        "Júpiter"
-      ],
-      "correct_option": 3,
-      "age_rating": 18,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Júpiter"
-      }
-    },
-    {
       "text": "Patrimonio Mundial UNESCO?",
       "options": [
         "1200",
-        "both",
+        "Nenhuma das anteriores",
         "1100",
         "1000"
       ],
@@ -789,7 +772,7 @@
         "1 Maio",
         "1 Abril",
         "1 Junho",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 8,
@@ -801,9 +784,9 @@
       }
     },
     {
-      "text": "Natal data?",
+      "text": "Quando se celebra o Natal?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         "26 Dez",
         "24 Dez",
         "25 Dez"
@@ -818,12 +801,12 @@
       }
     },
     {
-      "text": "Carnaval data?",
+      "text": "Em que mês se celebra normalmente o Carnaval?",
       "options": [
         "Fevereiro",
         "Abril",
         "Marco",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 8,
@@ -835,9 +818,9 @@
       }
     },
     {
-      "text": "Dia da Republica?",
+      "text": "Quando se celebra o Dia da República em Portugal?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         "5 Outubro",
         "25 Abril",
         "1 Janeiro"
@@ -852,11 +835,11 @@
       }
     },
     {
-      "text": "Dia Portugal?",
+      "text": "Quando se celebra o Dia de Portugal?",
       "options": [
         "25 Abril",
         "1 Janeiro",
-        "both",
+        "Nenhuma das anteriores",
         "10 Junho"
       ],
       "correct_option": 3,
@@ -869,11 +852,11 @@
       }
     },
     {
-      "text": "Dia da Mãe?",
+      "text": "Quando se celebra o Dia da Mãe em Portugal?",
       "options": [
         "1 Domingo Maio",
         "1 Junho",
-        "both",
+        "Nenhuma das anteriores",
         "1 Maio"
       ],
       "correct_option": 0,
@@ -886,12 +869,12 @@
       }
     },
     {
-      "text": "Dia do Pai?",
+      "text": "Quando se celebra o Dia do Pai em Portugal?",
       "options": [
         "19 Junho",
         "19 Marco",
         "19 Maio",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 8,
@@ -903,10 +886,10 @@
       }
     },
     {
-      "text": "Páscoa data?",
+      "text": "Em que período do ano se celebra a Páscoa?",
       "options": [
         "Junho",
-        "both",
+        "Nenhuma das anteriores",
         "Maio",
         "Marco/Abril"
       ],
@@ -920,9 +903,9 @@
       }
     },
     {
-      "text": "Dia Europa?",
+      "text": "Quando se celebra o Dia da Europa?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         "9 Maio",
         "1 Maio",
         "5 Maio"
@@ -941,7 +924,7 @@
       "options": [
         "ate 3",
         "1 pessoa",
-        "both",
+        "Nenhuma das anteriores",
         "5"
       ],
       "correct_option": 0,
@@ -954,10 +937,10 @@
       }
     },
     {
-      "text": "Nobel Prémio areas?",
+      "text": "Em quantas áreas são atribuídos os Prémios Nobel?",
       "options": [
         "6",
-        "both",
+        "Nenhuma das anteriores",
         "7",
         "5"
       ],
@@ -975,7 +958,7 @@
       "options": [
         "10",
         "15",
-        "both",
+        "Nenhuma das anteriores",
         "20"
       ],
       "correct_option": 1,
@@ -1124,7 +1107,7 @@
       }
     },
     {
-      "text": "Horas dia?",
+      "text": "Quantas horas tem um dia?",
       "options": [
         "24",
         "30",
@@ -1141,7 +1124,7 @@
       }
     },
     {
-      "text": "Bandeira ONU?",
+      "text": "Qual é a cor principal da bandeira da ONU?",
       "options": [
         "Amarela",
         "Branca e azul",
@@ -1163,7 +1146,7 @@
         "Sim",
         "Talvez",
         "Nao",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 12,
@@ -1277,7 +1260,7 @@
       }
     },
     {
-      "text": "Quantosossos tem o corpo humano adulto?",
+      "text": "Quantos ossos tem o corpo humano adulto?",
       "options": [
         "186",
         "206",
@@ -1564,7 +1547,7 @@
       "metadata": {}
     },
     {
-      "text": "Paz?",
+      "text": "O que é O que é a paz?",
       "options": [
         "Briga",
         "Conflito",
@@ -1587,7 +1570,7 @@
       }
     },
     {
-      "text": "Estacao praia?",
+      "text": "Em que estação do ano é comum ir à praia?",
       "options": [
         "Primavera",
         "Verao",
@@ -1604,24 +1587,7 @@
       }
     },
     {
-      "text": "Em que ano foi publicado o livro 'Dom Quixote'?",
-      "options": [
-        "1615",
-        "1610",
-        "1605",
-        "1600"
-      ],
-      "correct_option": 2,
-      "age_rating": 18,
-      "category": "CULTURA_GERAL",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: 1605"
-      }
-    },
-    {
-      "text": "Capital Portugal?",
+      "text": "Qual é a capital de Portugal?",
       "options": [
         "Faro",
         "Lisboa",
@@ -6107,7 +6073,7 @@
   ],
   "TECNOLOGIA": [
     {
-      "text": "O que é um URL?",
+      "text": "O que é O que é um URL?",
       "options": [
         "Um archivo",
         "Endereço web",
@@ -6141,7 +6107,7 @@
       }
     },
     {
-      "text": "O que e um tablet?",
+      "text": "O que é O que e um tablet?",
       "options": [
         "Um medicamento",
         "Um computador portatil",
@@ -6158,7 +6124,7 @@
       }
     },
     {
-      "text": "O que e a internet?",
+      "text": "O que é O que e a internet?",
       "options": [
         "Uma estrada",
         "Uma rede de computadores",
@@ -6243,7 +6209,7 @@
       }
     },
     {
-      "text": "O que e um e-mail?",
+      "text": "O que é O que e um e-mail?",
       "options": [
         "Uma mensagem",
         "Um jogo",
@@ -6345,7 +6311,7 @@
       }
     },
     {
-      "text": "O que e um URL?",
+      "text": "O que é O que e um URL?",
       "options": [
         "Endereco web",
         "Um jogo",
@@ -6362,7 +6328,7 @@
       }
     },
     {
-      "text": "O que e Bluetooth?",
+      "text": "O que é O que e Bluetooth?",
       "options": [
         "Tecnologia sem fios",
         "Um jogo",
@@ -6379,7 +6345,7 @@
       }
     },
     {
-      "text": "O que e um pixel?",
+      "text": "O que é O que e um pixel?",
       "options": [
         "Ponto de imagem",
         "Um ponto",
@@ -6430,7 +6396,7 @@
       }
     },
     {
-      "text": "O que e blockchain?",
+      "text": "O que é O que e blockchain?",
       "options": [
         "Registos distribuidos",
         "Um jogo",
@@ -6447,7 +6413,7 @@
       }
     },
     {
-      "text": "O que e uma API?",
+      "text": "O que é O que e uma API?",
       "options": [
         "Interface de comunicacao",
         "Um programa",
@@ -6464,7 +6430,7 @@
       }
     },
     {
-      "text": "O que e CSS?",
+      "text": "O que é O que e CSS?",
       "options": [
         "Linguagem de estilo",
         "Um programa",
@@ -6481,7 +6447,7 @@
       }
     },
     {
-      "text": "O que e Docker?",
+      "text": "O que é O que e Docker?",
       "options": [
         "Plataforma de containers",
         "Um contentor",
@@ -6498,7 +6464,7 @@
       }
     },
     {
-      "text": "O que e Git?",
+      "text": "O que é O que e Git?",
       "options": [
         "Sistema de controle de versoes",
         "Um jogo",
@@ -6600,7 +6566,7 @@
       }
     },
     {
-      "text": "O que é a internet?",
+      "text": "O que é O que é a internet?",
       "options": [
         "Uma estrada",
         "Uma rede de computadores",
@@ -6719,23 +6685,6 @@
       }
     },
     {
-      "text": "O que significa RAM?",
-      "options": [
-        "Random Access Memory",
-        "Read All Memory",
-        "Rapid Access",
-        "Random All"
-      ],
-      "correct_option": 0,
-      "age_rating": 12,
-      "category": "TECNOLOGIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta é: Random Access Memory"
-      }
-    },
-    {
       "text": "O que é um sistema operativo?",
       "options": [
         "Um jogo",
@@ -6770,7 +6719,7 @@
       }
     },
     {
-      "text": "O que é o Wi-Fi?",
+      "text": "O que é O que é o Wi-Fi?",
       "options": [
         "Um fio",
         "Internet sem fios",
@@ -6838,7 +6787,7 @@
       }
     },
     {
-      "text": "O que é um pixel?",
+      "text": "O que é O que é um pixel?",
       "options": [
         "Um ponto de imagem",
         "Um quadro",
@@ -6889,7 +6838,7 @@
       }
     },
     {
-      "text": "O que é blockchain?",
+      "text": "O que é O que é blockchain?",
       "options": [
         "Um jogo",
         "Registos distribuidos",
@@ -6923,7 +6872,7 @@
       }
     },
     {
-      "text": "O que é uma API?",
+      "text": "O que é O que é uma API?",
       "options": [
         "Um programa",
         "Interface de comunicação",
@@ -6940,7 +6889,7 @@
       }
     },
     {
-      "text": "O que é CSS?",
+      "text": "O que é O que é CSS?",
       "options": [
         "Uma linguagem de estilo",
         "Um programa",
@@ -6957,7 +6906,7 @@
       }
     },
     {
-      "text": "O que é Docker?",
+      "text": "O que é O que é Docker?",
       "options": [
         "Um contentor",
         "Plataforma de containers",
@@ -6974,7 +6923,7 @@
       }
     },
     {
-      "text": "O que é Git?",
+      "text": "O que é O que é Git?",
       "options": [
         "Um jogo",
         "Sistema de controle de versões",
@@ -7146,7 +7095,7 @@
       }
     },
     {
-      "text": "Ilha Portugal?",
+      "text": "O que é Ilha Portugal?",
       "options": [
         "Sicilia",
         "Ibiza",
@@ -7163,7 +7112,7 @@
       }
     },
     {
-      "text": "Maior oceano?",
+      "text": "O que é Maior oceano?",
       "options": [
         "Atlantico",
         "Pacifico",
@@ -7180,7 +7129,7 @@
       }
     },
     {
-      "text": "Floresta maior?",
+      "text": "O que é Floresta maior?",
       "options": [
         "Amazonia",
         "Equatorial",
@@ -7197,7 +7146,7 @@
       }
     },
     {
-      "text": "Montanha mais alta?",
+      "text": "O que é Montanha mais alta?",
       "options": [
         "Mont Blanc",
         "K2",
@@ -7231,7 +7180,7 @@
       }
     },
     {
-      "text": "Pais mais extenso?",
+      "text": "O que é Pais mais extenso?",
       "options": [
         "China",
         "EUA",
@@ -7248,7 +7197,7 @@
       }
     },
     {
-      "text": "Maior rio mundo?",
+      "text": "O que é Maior rio mundo?",
       "options": [
         "Mississippi",
         "Yangtse",
@@ -7265,7 +7214,7 @@
       }
     },
     {
-      "text": "Maior deserto?",
+      "text": "O que é Maior deserto?",
       "options": [
         "Arabia",
         "Sahara",
@@ -7282,7 +7231,7 @@
       }
     },
     {
-      "text": "Continentes?",
+      "text": "O que é Continentes?",
       "options": [
         "5",
         "6",
@@ -7299,7 +7248,7 @@
       }
     },
     {
-      "text": "Peninsula?",
+      "text": "O que é uma península?",
       "options": [
         "Ilha",
         "Terra cercada de agua",
@@ -7316,7 +7265,7 @@
       }
     },
     {
-      "text": "Linha Equador?",
+      "text": "O que é Linha Equador?",
       "options": [
         "Circulo Terra",
         "Pais",
@@ -7333,7 +7282,7 @@
       }
     },
     {
-      "text": "Vulcao?",
+      "text": "O que é um vulcão?",
       "options": [
         "Montanha",
         "Rio",
@@ -7350,7 +7299,7 @@
       }
     },
     {
-      "text": "Coordenadas?",
+      "text": "O que é Coordenadas?",
       "options": [
         "Paises",
         "Cidades",
@@ -7367,7 +7316,7 @@
       }
     },
     {
-      "text": "Capital Austria?",
+      "text": "O que é Capital Austria?",
       "options": [
         "Graz",
         "Salzburgo",
@@ -7401,7 +7350,7 @@
       }
     },
     {
-      "text": "Maior emissor CO2?",
+      "text": "O que é Maior emissor CO2?",
       "options": [
         "EUA",
         "Russia",
@@ -7418,7 +7367,7 @@
       }
     },
     {
-      "text": "Bioma maior?",
+      "text": "O que é Bioma maior?",
       "options": [
         "Savana",
         "Deserto",
@@ -7435,7 +7384,7 @@
       }
     },
     {
-      "text": "Tsunami ocorre?",
+      "text": "O que é Tsunami ocorre?",
       "options": [
         "Chuva",
         "Terremoto",
@@ -7452,7 +7401,7 @@
       }
     },
     {
-      "text": "Ilhas vulcanicas?",
+      "text": "O que é Ilhas vulcanicas?",
       "options": [
         "Canarias",
         "Hawai",
@@ -7469,7 +7418,7 @@
       }
     },
     {
-      "text": "Zona Franca?",
+      "text": "O que é Zona Franca?",
       "options": [
         "ambas",
         "Livre comercio",
@@ -7486,7 +7435,7 @@
       }
     },
     {
-      "text": "Paises OECD?",
+      "text": "O que é Paises OECD?",
       "options": [
         "20",
         "30",
@@ -7588,10 +7537,10 @@
       }
     },
     {
-      "text": "Maior floresta?",
+      "text": "O que é Maior floresta?",
       "options": [
         "Congo",
-        "两者",
+        "Nenhuma das anteriores",
         "Amazonia",
         "Siberia"
       ],
@@ -7605,7 +7554,7 @@
       }
     },
     {
-      "text": "Maior montanha?",
+      "text": "O que é Maior montanha?",
       "options": [
         "Denali",
         "Kilimanjaro",
@@ -7622,11 +7571,11 @@
       }
     },
     {
-      "text": "Capital Brazil?",
+      "text": "O que é Capital Brazil?",
       "options": [
         "Brasilia",
         "Rio",
-        "两者",
+        "Nenhuma das anteriores",
         "Sao Paulo"
       ],
       "correct_option": 0,
@@ -7639,12 +7588,12 @@
       }
     },
     {
-      "text": "Capital USA?",
+      "text": "O que é Capital USA?",
       "options": [
         "Los Angeles",
         "Washington DC",
         "Nova Iorque",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 8,
@@ -7656,11 +7605,11 @@
       }
     },
     {
-      "text": "Ilhas mais paises?",
+      "text": "O que é Ilhas mais paises?",
       "options": [
         "Japao",
         "Indonesia",
-        "两者",
+        "Nenhuma das anteriores",
         "Filipinas"
       ],
       "correct_option": 2,
@@ -7690,7 +7639,7 @@
       }
     },
     {
-      "text": "Tropical paises?",
+      "text": "O que é Tropical paises?",
       "options": [
         "60",
         "50",
@@ -7724,7 +7673,7 @@
       }
     },
     {
-      "text": "Desertos cobertura?",
+      "text": "O que é Desertos cobertura?",
       "options": [
         "1/4",
         "1/5",
@@ -7775,23 +7724,6 @@
       }
     },
     {
-      "text": "Qual e o rio mais longo de Portugal?",
-      "options": [
-        "Guadiana",
-        "Tejo",
-        "Mondego",
-        "Douro"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "GEOGRAFIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Douro"
-      }
-    },
-    {
       "text": "Qual e a montanha mais alta de Portugal?",
       "options": [
         "Torre",
@@ -7809,7 +7741,7 @@
       }
     },
     {
-      "text": "Fusaonl ea?",
+      "text": "O que é a fossa (buraco) da fossa óssea?",
       "options": [
         "30%",
         "20%",
@@ -7826,7 +7758,7 @@
       }
     },
     {
-      "text": "G20 paises?",
+      "text": "O que representa o G20?",
       "options": [
         "25",
         "15",
@@ -7843,7 +7775,7 @@
       }
     },
     {
-      "text": "Maior rio?",
+      "text": "Qual é o maior rio do mundo?",
       "options": [
         "Yangtse",
         "Nilo",
@@ -7860,12 +7792,12 @@
       }
     },
     {
-      "text": "Maior lago?",
+      "text": "Qual é o maior lago do mundo?",
       "options": [
         "Baikal",
         "Victoria",
         "Superior",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 12,
@@ -8064,7 +7996,7 @@
       }
     },
     {
-      "text": "Oceano Portugal?",
+      "text": "O que é Oceano Portugal?",
       "options": [
         "Pacifico",
         "Artico",
@@ -8081,7 +8013,7 @@
       }
     },
     {
-      "text": "Arquipelago?",
+      "text": "O que é Arquipelago?",
       "options": [
         "Conjunto de ilhas",
         "Rio",
@@ -8119,7 +8051,7 @@
       "options": [
         "China",
         "Brasil",
-        "两者",
+        "Nenhuma das anteriores",
         "Russia"
       ],
       "correct_option": 3,
@@ -8190,7 +8122,7 @@
         "Um simbolo",
         "Um vestido",
         "Um chapéu",
-        "Uma绑o"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 8,
@@ -8236,7 +8168,7 @@
       }
     },
     {
-      "text": "O que e um votO?",
+      "text": "O que é O que e um votO?",
       "options": [
         "Uma escolha",
         "Um ponto",
@@ -8304,7 +8236,7 @@
       }
     },
     {
-      "text": "O que e a ONU?",
+      "text": "O que é O que e a ONU?",
       "options": [
         "Uma organizacao",
         "Um pais",
@@ -8321,7 +8253,7 @@
       }
     },
     {
-      "text": "O que e a NATO?",
+      "text": "O que é O que e a NATO?",
       "options": [
         "Uma aliada militar",
         "Um pais",
@@ -8372,7 +8304,7 @@
       }
     },
     {
-      "text": "O que e democracia?",
+      "text": "O que é O que e democracia?",
       "options": [
         "Governo do povo",
         "Um rei",
@@ -8576,7 +8508,7 @@
       }
     },
     {
-      "text": "O que é um rei?",
+      "text": "O que é O que é um rei?",
       "options": [
         "Um monarca",
         "Um presidente",
@@ -8593,7 +8525,7 @@
       }
     },
     {
-      "text": "O que é um país?",
+      "text": "O que é O que é um país?",
       "options": [
         "Uma cidade",
         "Uma nação",
@@ -8610,7 +8542,7 @@
       }
     },
     {
-      "text": "O que é a bandeira?",
+      "text": "O que é O que é a bandeira?",
       "options": [
         "Um símbolo nacional",
         "Um jogo",
@@ -8627,7 +8559,7 @@
       }
     },
     {
-      "text": "O que é um governo?",
+      "text": "O que é O que é um governo?",
       "options": [
         "Um grupo que governa",
         "Um partido",
@@ -8644,7 +8576,7 @@
       }
     },
     {
-      "text": "O que é democracy?",
+      "text": "O que é O que é democracy?",
       "options": [
         "Governo do povo",
         "Reino",
@@ -8729,7 +8661,7 @@
       }
     },
     {
-      "text": "O que é a ONU?",
+      "text": "O que é O que é a ONU?",
       "options": [
         "Organização das Nações Unidas",
         "União Europeia",
@@ -8763,7 +8695,7 @@
       }
     },
     {
-      "text": "O que é a NATO?",
+      "text": "O que é O que é a NATO?",
       "options": [
         "Uma alliance militar",
         "Uma organização",
@@ -8882,7 +8814,7 @@
       }
     },
     {
-      "text": "O que é a地道民主?",
+      "text": "O que é O que é a地道民主?",
       "options": [
         "Democracia direta",
         "Sistema politico",
@@ -8950,7 +8882,7 @@
       }
     },
     {
-      "text": "O que é a外交?",
+      "text": "O que é O que é a外交?",
       "options": [
         "Política externa",
         "Relações internacionais",
@@ -9122,7 +9054,7 @@
       }
     },
     {
-      "text": "Vasco da Gama?",
+      "text": "O que é Vasco da Gama?",
       "options": [
         "Rei",
         "Escritor",
@@ -9156,7 +9088,7 @@
       }
     },
     {
-      "text": "Os Lusiadas autor?",
+      "text": "O que é Os Lusiadas autor?",
       "options": [
         "Fernando Pessoa",
         "Eca de Queiros",
@@ -9173,7 +9105,7 @@
       }
     },
     {
-      "text": "Revolucao 25 Abril?",
+      "text": "O que é Revolucao 25 Abril?",
       "options": [
         "Golpe",
         "Revolucao",
@@ -9190,7 +9122,7 @@
       }
     },
     {
-      "text": "Homem Lua?",
+      "text": "Quem foi o primeiro homem na Lua?",
       "options": [
         "Buzz Aldrin",
         "Neil Armstrong",
@@ -9224,7 +9156,7 @@
       }
     },
     {
-      "text": "Peste Negra?",
+      "text": "O que é Peste Negra?",
       "options": [
         "Epidemia",
         "Guerra",
@@ -9258,7 +9190,7 @@
       }
     },
     {
-      "text": "Cruzadas?",
+      "text": "O que foram as Cruzadas?",
       "options": [
         "Viagens",
         "Feiras",
@@ -9275,7 +9207,7 @@
       }
     },
     {
-      "text": "Napoleao?",
+      "text": "Quem foi Napoleão Bonaparte?",
       "options": [
         "Rei",
         "General",
@@ -9292,7 +9224,7 @@
       }
     },
     {
-      "text": "Hitler?",
+      "text": "Quem foi Adolf Hitler?",
       "options": [
         "Ditador",
         "Rei",
@@ -9309,7 +9241,7 @@
       }
     },
     {
-      "text": "Guerra Fria?",
+      "text": "O que é Guerra Fria?",
       "options": [
         "Periodo",
         "Guerra",
@@ -9343,7 +9275,7 @@
       }
     },
     {
-      "text": "Feudalismo tinha?",
+      "text": "O que é Feudalismo tinha?",
       "options": [
         "Republica",
         "Reis + senhores",
@@ -9377,7 +9309,7 @@
       }
     },
     {
-      "text": "Nazismo ideologia?",
+      "text": "O que é Nazismo ideologia?",
       "options": [
         "Direita",
         "Centro",
@@ -9394,7 +9326,7 @@
       }
     },
     {
-      "text": "Holocausto vitimas?",
+      "text": "O que é Holocausto vitimas?",
       "options": [
         "10 milioes",
         "3 milioes",
@@ -9428,7 +9360,7 @@
       }
     },
     {
-      "text": "Guerra 100 Anos?",
+      "text": "O que é Guerra 100 Anos?",
       "options": [
         "1414-1514",
         "1500-1600",
@@ -9479,7 +9411,7 @@
       }
     },
     {
-      "text": "Terramoto Lisboa?",
+      "text": "O que é Terramoto Lisboa?",
       "options": [
         "1775",
         "1855",
@@ -9496,7 +9428,7 @@
       }
     },
     {
-      "text": "Homem Lua ano?",
+      "text": "O que é Homem Lua ano?",
       "options": [
         "1965",
         "1972",
@@ -9513,7 +9445,7 @@
       }
     },
     {
-      "text": "Muro Berlim caiu?",
+      "text": "O que é Muro Berlim caiu?",
       "options": [
         "1985",
         "1993",
@@ -9547,7 +9479,7 @@
       }
     },
     {
-      "text": "Iluminismo seculo?",
+      "text": "O que é Iluminismo seculo?",
       "options": [
         "XX",
         "XVII",
@@ -9566,7 +9498,7 @@
     {
       "text": "Feudalismo estrutura?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Todas",
         "Rei",
         "Senhor"
@@ -9581,12 +9513,12 @@
       }
     },
     {
-      "text": "Cruzadas resultado?",
+      "text": "O que é Cruzadas resultado?",
       "options": [
         "Perda",
         "Todas",
-        "两者",
-        " both"
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -9615,7 +9547,7 @@
       }
     },
     {
-      "text": "Imperio Romano fim?",
+      "text": "O que é Imperio Romano fim?",
       "options": [
         "376",
         "476",
@@ -9649,7 +9581,7 @@
       }
     },
     {
-      "text": "Guerra Fria inicio?",
+      "text": "O que é Guerra Fria inicio?",
       "options": [
         "1951",
         "1949",
@@ -9700,7 +9632,7 @@
       }
     },
     {
-      "text": "Revolucao Francesa?",
+      "text": "O que é Revolucao Francesa?",
       "options": [
         "1789",
         "1819",
@@ -9751,7 +9683,7 @@
       }
     },
     {
-      "text": "25 de Abril?",
+      "text": "O que é 25 de Abril?",
       "options": [
         "1975",
         "1972",
@@ -9768,7 +9700,7 @@
       }
     },
     {
-      "text": "Idade Media comeco?",
+      "text": "O que é Idade Media comeco?",
       "options": [
         "500",
         "400",
@@ -9887,7 +9819,7 @@
       }
     },
     {
-      "text": "Caminho India?",
+      "text": "O que é Caminho India?",
       "options": [
         "1498",
         "1500",
@@ -9904,7 +9836,7 @@
       }
     },
     {
-      "text": "25 Abril?",
+      "text": "O que é o 25 de Abril em Portugal?",
       "options": [
         "1974",
         "1975",
@@ -9969,23 +9901,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: 1870"
-      }
-    },
-    {
-      "text": "Quem descobriu o Brasil?",
-      "options": [
-        "Vasco da Gama",
-        "Pedro Alvares Cabral",
-        "Cristovao Colombo",
-        "Fernao de Magalhaes"
-      ],
-      "correct_option": 1,
-      "age_rating": 8,
-      "category": "HISTORIA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Pedro Alvares Cabral"
       }
     },
     {
@@ -10076,7 +9991,7 @@
   ],
   "ARTE": [
     {
-      "text": "O que e um painter?",
+      "text": "O que é O que e um painter?",
       "options": [
         "Pintor",
         "Escultor",
@@ -10144,7 +10059,7 @@
       }
     },
     {
-      "text": "O que e o barroco?",
+      "text": "O que é O que e o barroco?",
       "options": [
         "Estilo artistico",
         "Musica",
@@ -10158,23 +10073,6 @@
       "image_url": null,
       "metadata": {
         "hint": "A resposta correta e: Estilo artistico"
-      }
-    },
-    {
-      "text": "Quem pintou a Mona Lisa?",
-      "options": [
-        "Michelangelo",
-        "Picasso",
-        "Van Gogh",
-        "Leonardo da Vinci"
-      ],
-      "correct_option": 3,
-      "age_rating": 8,
-      "category": "ARTE",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Leonardo da Vinci"
       }
     },
     {
@@ -10212,7 +10110,7 @@
       }
     },
     {
-      "text": "O que e a Arte?",
+      "text": "O que é O que e a Arte?",
       "options": [
         "Todas",
         "Expressao",
@@ -10229,7 +10127,7 @@
       }
     },
     {
-      "text": "O que e um quadro?",
+      "text": "O que é O que e um quadro?",
       "options": [
         "Escultura",
         "Fotografia",
@@ -10246,7 +10144,7 @@
       }
     },
     {
-      "text": "O que e sculptura?",
+      "text": "O que é O que e sculptura?",
       "options": [
         "Desenho",
         "Forma 3D",
@@ -10263,7 +10161,7 @@
       }
     },
     {
-      "text": "Cores quentes sao?",
+      "text": "O que é Cores quentes sao?",
       "options": [
         "Preto + Branco",
         "Vermelho + Laranja",
@@ -10297,7 +10195,7 @@
       }
     },
     {
-      "text": "O que e um museo?",
+      "text": "O que é O que e um museo?",
       "options": [
         "Teatro",
         "Lugar de arte",
@@ -10314,7 +10212,7 @@
       }
     },
     {
-      "text": "Barroco foi?",
+      "text": "O que é Barroco foi?",
       "options": [
         "Estilo",
         "Movimento",
@@ -10331,7 +10229,7 @@
       }
     },
     {
-      "text": "Iluminura e?",
+      "text": "O que é Iluminura e?",
       "options": [
         "Miniatura",
         "Escultura",
@@ -10382,7 +10280,7 @@
       }
     },
     {
-      "text": "Dadaismo foi?",
+      "text": "O que é Dadaismo foi?",
       "options": [
         "Movimento",
         "Arte",
@@ -10399,7 +10297,7 @@
       }
     },
     {
-      "text": "Pop Art foi?",
+      "text": "O que é Pop Art foi?",
       "options": [
         "Arte de pop",
         "Todas",
@@ -10433,7 +10331,7 @@
       }
     },
     {
-      "text": "NFT arte?",
+      "text": "O que é um NFT em arte?",
       "options": [
         "Nenhuma",
         " fisica",
@@ -10450,7 +10348,7 @@
       }
     },
     {
-      "text": "Michelangelo foi?",
+      "text": "O que é Michelangelo foi?",
       "options": [
         "Arquiteto",
         "Pintor",
@@ -10467,7 +10365,7 @@
       }
     },
     {
-      "text": "O que e um fresco?",
+      "text": "O que é O que e um fresco?",
       "options": [
         "Escultura",
         "Quadro",
@@ -10484,7 +10382,7 @@
       }
     },
     {
-      "text": "Guernica autor?",
+      "text": "O que é Guernica autor?",
       "options": [
         "Picasso",
         "Miro",
@@ -10501,7 +10399,7 @@
       }
     },
     {
-      "text": "Arte Rupestre e?",
+      "text": "O que é Arte Rupestre e?",
       "options": [
         "Pintura nas rochas",
         "Escultura",
@@ -10591,7 +10489,7 @@
         "Nenhuma",
         "Mona Lisa",
         "David",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 8,
@@ -10608,7 +10506,7 @@
         "Nenhuma",
         "Nascimento de Venus",
         "Mona Lisa",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 12,
@@ -10622,7 +10520,7 @@
     {
       "text": "Rembrandt famoso por?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Retratos",
         "Paisagens"
@@ -10639,7 +10537,7 @@
     {
       "text": "Tarsila do Amaral e de onde?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Portugal",
         "Brasil",
         "Argentina"
@@ -10654,11 +10552,11 @@
       }
     },
     {
-      "text": "Street art origem?",
+      "text": "O que é Street art origem?",
       "options": [
         "1980s",
         "1970s",
-        "两者",
+        "Nenhuma das anteriores",
         "1960s"
       ],
       "correct_option": 0,
@@ -10671,10 +10569,10 @@
       }
     },
     {
-      "text": "Calle 13 arte?",
+      "text": "O que é Calle 13 arte?",
       "options": [
         "Braga",
-        "两者",
+        "Nenhuma das anteriores",
         "Porto",
         "Lisboa"
       ],
@@ -10688,12 +10586,12 @@
       }
     },
     {
-      "text": "Azulejo origem?",
+      "text": "O que é Azulejo origem?",
       "options": [
         "Portugal",
         "Brasil",
         "Espanha",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 8,
@@ -10707,7 +10605,7 @@
     {
       "text": "Museu Nacional Arte Antiga fica em?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Coimbra",
         "Lisboa",
         "Porto"
@@ -10725,7 +10623,7 @@
       "text": "Sagrada Familia autor?",
       "options": [
         "Picasso",
-        "两者",
+        "Nenhuma das anteriores",
         "Dalí",
         "Gaudi"
       ],
@@ -10741,7 +10639,7 @@
     {
       "text": "Museu Colecao Berardo fica em?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Faro",
         "Lisboa",
         "Porto"
@@ -10756,10 +10654,10 @@
       }
     },
     {
-      "text": "Graffiti e arte de?",
+      "text": "O que é Graffiti e arte de?",
       "options": [
         "Museu",
-        "两者",
+        "Nenhuma das anteriores",
         "Rua",
         "Nenhuma"
       ],
@@ -10773,11 +10671,11 @@
       }
     },
     {
-      "text": "Porto tem museo?",
+      "text": "O que é Porto tem museo?",
       "options": [
         "1",
         "3",
-        "两者",
+        "Nenhuma das anteriores",
         "2"
       ],
       "correct_option": 2,
@@ -10863,7 +10761,7 @@
         "Impressionismo",
         "Cubismo",
         "Nenhuma",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 12,
@@ -10996,7 +10894,7 @@
       }
     },
     {
-      "text": "Qual CR7?",
+      "text": "Quem é CR7?",
       "options": [
         "10",
         "7",
@@ -11013,7 +10911,7 @@
       }
     },
     {
-      "text": "Clube portugues?",
+      "text": "O que é Clube portugues?",
       "options": [
         "Man United",
         "Real Madrid",
@@ -11030,7 +10928,7 @@
       }
     },
     {
-      "text": "Raquete+volante?",
+      "text": "O que é Raquete+volante?",
       "options": [
         "Padel",
         "Ping Pong",
@@ -11064,7 +10962,7 @@
       }
     },
     {
-      "text": "O que e penalty?",
+      "text": "O que é O que e penalty?",
       "options": [
         "Falta",
         "Grandes penalidade",
@@ -11081,7 +10979,7 @@
       }
     },
     {
-      "text": "O que e hat-trick?",
+      "text": "O que é O que e hat-trick?",
       "options": [
         "5 golos",
         "3 golos",
@@ -11098,7 +10996,7 @@
       }
     },
     {
-      "text": "Maratona km?",
+      "text": "O que é Maratona km?",
       "options": [
         "42 km",
         "100 km",
@@ -11115,7 +11013,7 @@
       }
     },
     {
-      "text": "Futebol donde?",
+      "text": "O que é Futebol donde?",
       "options": [
         "Espanha",
         "Inglaterra",
@@ -11166,7 +11064,7 @@
       }
     },
     {
-      "text": "VAR significado?",
+      "text": "O que é VAR significado?",
       "options": [
         "Video Assistente",
         "Arbitro",
@@ -11183,7 +11081,7 @@
       }
     },
     {
-      "text": "O que e autogolo?",
+      "text": "O que é O que e autogolo?",
       "options": [
         "Golo penalty",
         "Golo falta",
@@ -11200,7 +11098,7 @@
       }
     },
     {
-      "text": "Tenis pontuacao?",
+      "text": "O que é Tenis pontuacao?",
       "options": [
         "A,B,C",
         "10,20,30",
@@ -11234,7 +11132,7 @@
       }
     },
     {
-      "text": "Olimpidas 2024?",
+      "text": "O que é Olimpidas 2024?",
       "options": [
         "Los Angeles",
         "Paris",
@@ -11251,7 +11149,7 @@
       }
     },
     {
-      "text": "Quenina e doping?",
+      "text": "O que é Quenina e doping?",
       "options": [
         "Pessoa",
         "Substancia",
@@ -11268,7 +11166,7 @@
       }
     },
     {
-      "text": "World Cup de rugby?",
+      "text": "O que é World Cup de rugby?",
       "options": [
         "3 em 3",
         "4 em 4",
@@ -11319,7 +11217,7 @@
       }
     },
     {
-      "text": "EPO doping?",
+      "text": "O que é o EPO no contexto do doping?",
       "options": [
         "Hormonio",
         "Vitamina",
@@ -11370,7 +11268,7 @@
       }
     },
     {
-      "text": "Handebol jogadores?",
+      "text": "O que é Handebol jogadores?",
       "options": [
         "5",
         "6",
@@ -11387,7 +11285,7 @@
       }
     },
     {
-      "text": "Esports sao?",
+      "text": "O que é Esports sao?",
       "options": [
         "Desporto",
         "Competicao",
@@ -11455,7 +11353,7 @@
       }
     },
     {
-      "text": "Ironman distancia?",
+      "text": "O que é Ironman distancia?",
       "options": [
         "2km",
         "5km",
@@ -11506,7 +11404,7 @@
       }
     },
     {
-      "text": "Giro d'Italia pais?",
+      "text": "O que é Giro d'Italia pais?",
       "options": [
         "Espanha",
         "Franca",
@@ -11540,7 +11438,7 @@
       }
     },
     {
-      "text": "Copa America 2024?",
+      "text": "O que é Copa America 2024?",
       "options": [
         "Argentina",
         "Colombia",
@@ -11557,7 +11455,7 @@
       }
     },
     {
-      "text": "Euro 2024 pais?",
+      "text": "O que é Euro 2024 pais?",
       "options": [
         "Franca",
         "Alemanha",
@@ -11625,7 +11523,7 @@
       }
     },
     {
-      "text": "F1 mundial 2023?",
+      "text": "O que é F1 mundial 2023?",
       "options": [
         "Hamilton",
         "Norris",
@@ -11642,7 +11540,7 @@
       }
     },
     {
-      "text": "Super Bowl evento?",
+      "text": "O que é Super Bowl evento?",
       "options": [
         "MLS",
         "MLB",
@@ -11693,7 +11591,7 @@
       }
     },
     {
-      "text": "NHLStanley Cup?",
+      "text": "O que é NHLStanley Cup?",
       "options": [
         "MLB",
         "NHL",
@@ -11778,7 +11676,7 @@
       }
     },
     {
-      "text": "Portugal Euro 2016?",
+      "text": "O que é Portugal Euro 2016?",
       "options": [
         "2020",
         "2012",
@@ -11931,7 +11829,7 @@
       }
     },
     {
-      "text": "Copa do Mundo 2022?",
+      "text": "O que é Copa do Mundo 2022?",
       "options": [
         "Qatar",
         "EUA",
@@ -11950,7 +11848,7 @@
   ],
   "MATEMATICA": [
     {
-      "text": "Quanto e 5 + 5?",
+      "text": "O que é Quanto e 5 + 5?",
       "options": [
         "8",
         "9",
@@ -11967,7 +11865,7 @@
       }
     },
     {
-      "text": "Quanto e 2 x 3?",
+      "text": "O que é Quanto e 2 x 3?",
       "options": [
         "5",
         "6",
@@ -11984,7 +11882,7 @@
       }
     },
     {
-      "text": "Quanto e 10 / 2?",
+      "text": "O que é Quanto e 10 / 2?",
       "options": [
         "3",
         "4",
@@ -12018,7 +11916,7 @@
       }
     },
     {
-      "text": "Quanto e 100 - 37?",
+      "text": "O que é Quanto e 100 - 37?",
       "options": [
         "73",
         "63",
@@ -12035,7 +11933,7 @@
       }
     },
     {
-      "text": "Integral x?",
+      "text": "O que é uma integral em matemática?",
       "options": [
         "2x",
         "x^2/2",
@@ -12052,7 +11950,7 @@
       }
     },
     {
-      "text": "7+8?",
+      "text": "Quanto é 7+8? (calcule)",
       "options": [
         "15",
         "16",
@@ -12069,7 +11967,7 @@
       }
     },
     {
-      "text": "9x9?",
+      "text": "Quanto é 9x9? (calcule)",
       "options": [
         "90",
         "99",
@@ -12086,7 +11984,7 @@
       }
     },
     {
-      "text": "100-37?",
+      "text": "Quanto é 100-37? (calcule)",
       "options": [
         "73",
         "53",
@@ -12103,7 +12001,7 @@
       }
     },
     {
-      "text": "24/6?",
+      "text": "Quanto é 24/6? (calcule)",
       "options": [
         "4",
         "3",
@@ -12120,7 +12018,7 @@
       }
     },
     {
-      "text": "Hexagono lados?",
+      "text": "O que é Hexagono lados?",
       "options": [
         "7",
         "6",
@@ -12137,7 +12035,7 @@
       }
     },
     {
-      "text": "144/12?",
+      "text": "Quanto é 144/12? (calcule)",
       "options": [
         "11",
         "13",
@@ -12154,7 +12052,7 @@
       }
     },
     {
-      "text": "Quadrado de 5?",
+      "text": "O que é Quadrado de 5?",
       "options": [
         "25",
         "50",
@@ -12171,7 +12069,7 @@
       }
     },
     {
-      "text": "2 elevado a 10?",
+      "text": "O que é 2 elevado a 10?",
       "options": [
         "512",
         "2048",
@@ -12188,7 +12086,7 @@
       }
     },
     {
-      "text": "Raiz de 81?",
+      "text": "Qual é a raiz quadrada de 81?",
       "options": [
         "9",
         "8",
@@ -12205,7 +12103,7 @@
       }
     },
     {
-      "text": "15% de 200?",
+      "text": "Quanto é 15% de 200?",
       "options": [
         "25",
         "30",
@@ -12222,7 +12120,7 @@
       }
     },
     {
-      "text": "25% de 80?",
+      "text": "Quanto é 25% de 80?",
       "options": [
         "15",
         "30",
@@ -12239,7 +12137,7 @@
       }
     },
     {
-      "text": "50x50?",
+      "text": "Quanto é 50x50? (calcule)",
       "options": [
         "2500",
         "5000",
@@ -12273,7 +12171,7 @@
       }
     },
     {
-      "text": "Numero primo?",
+      "text": "O que é Numero primo?",
       "options": [
         "6",
         "7",
@@ -12290,7 +12188,7 @@
       }
     },
     {
-      "text": "Pi aproximado?",
+      "text": "O que é Pi aproximado?",
       "options": [
         "2.14",
         "4.14",
@@ -12307,7 +12205,7 @@
       }
     },
     {
-      "text": "20% de 150?",
+      "text": "Quanto é 20% de 150?",
       "options": [
         "20",
         "25",
@@ -12324,7 +12222,7 @@
       }
     },
     {
-      "text": "Cubo de 2?",
+      "text": "Quanto é o cubo de 2?",
       "options": [
         "6",
         "4",
@@ -12341,7 +12239,7 @@
       }
     },
     {
-      "text": "Log2(1024)?",
+      "text": "Quanto é o logaritmo base 2 de 1024?",
       "options": [
         "11",
         "8",
@@ -12358,7 +12256,7 @@
       }
     },
     {
-      "text": "Sin(90graus)?",
+      "text": "O que é Sin(90graus)?",
       "options": [
         "0.5",
         "1",
@@ -12375,7 +12273,7 @@
       }
     },
     {
-      "text": "Cos(0graus)?",
+      "text": "O que é Cos(0graus)?",
       "options": [
         "0",
         "0.5",
@@ -12392,7 +12290,7 @@
       }
     },
     {
-      "text": "Fatorial 5!",
+      "text": "Fatorial 5! (explique)",
       "options": [
         "240",
         "120",
@@ -12409,7 +12307,7 @@
       }
     },
     {
-      "text": "Permutacoes 3?",
+      "text": "O que é Permutacoes 3?",
       "options": [
         "3",
         "6",
@@ -12460,7 +12358,7 @@
       }
     },
     {
-      "text": "Derivada x^2?",
+      "text": "O que é Derivada x^2?",
       "options": [
         "x^2",
         "2x",
@@ -12482,7 +12380,7 @@
         "0 1; 1 0",
         "1 1; 1 1",
         "1 0; 0 1",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 16,
@@ -12499,7 +12397,7 @@
         "ac-bd",
         "ad-bc",
         "ab-cd",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -12511,10 +12409,10 @@
       }
     },
     {
-      "text": "Pi decimalis?",
+      "text": "O que é Pi decimalis?",
       "options": [
         "4",
-        " both",
+        "Nenhuma das anteriores",
         "2",
         "3"
       ],
@@ -12528,10 +12426,10 @@
       }
     },
     {
-      "text": "Numero romano C?",
+      "text": "O que é Numero romano C?",
       "options": [
         "500",
-        " both",
+        "Nenhuma das anteriores",
         "10",
         "50"
       ],
@@ -12545,12 +12443,12 @@
       }
     },
     {
-      "text": "Angulo triangulo?",
+      "text": "O que é Angulo triangulo?",
       "options": [
         "180",
         "360",
         "90",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 8,
@@ -12562,10 +12460,10 @@
       }
     },
     {
-      "text": "Angulo quadrado?",
+      "text": "O que é Angulo quadrado?",
       "options": [
         "180",
-        " both",
+        "Nenhuma das anteriores",
         "90",
         "270"
       ],
@@ -12579,11 +12477,11 @@
       }
     },
     {
-      "text": "Area circulo r=1?",
+      "text": "O que é Area circulo r=1?",
       "options": [
         "1",
         "Pi",
-        "both",
+        "Nenhuma das anteriores",
         "2"
       ],
       "correct_option": 1,
@@ -12598,7 +12496,7 @@
     {
       "text": "Perimetro circulo r=1?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         "2",
         "2Pi",
         "1"
@@ -12613,12 +12511,12 @@
       }
     },
     {
-      "text": "Cos 0 graus?",
+      "text": "O que é Cos 0 graus?",
       "options": [
         "0",
         "1",
         "-1",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 12,
@@ -12630,12 +12528,12 @@
       }
     },
     {
-      "text": "Tangente 45graus?",
+      "text": "O que é Tangente 45graus?",
       "options": [
         "1",
         "0",
         "-1",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 12,
@@ -12647,11 +12545,11 @@
       }
     },
     {
-      "text": "Log 10 de 100?",
+      "text": "O que é Log 10 de 100?",
       "options": [
         "3",
         "2",
-        "both",
+        "Nenhuma das anteriores",
         "1"
       ],
       "correct_option": 1,
@@ -12664,10 +12562,10 @@
       }
     },
     {
-      "text": "Ln e?",
+      "text": "Qual é o valor do logaritmo natural de e?",
       "options": [
         "1",
-        "both",
+        "Nenhuma das anteriores",
         "0",
         "2"
       ],
@@ -12681,11 +12579,11 @@
       }
     },
     {
-      "text": "i ao quadrado?",
+      "text": "O que é i ao quadrado?",
       "options": [
         "-1",
         "1",
-        "both",
+        "Nenhuma das anteriores",
         "0"
       ],
       "correct_option": 0,
@@ -12698,7 +12596,7 @@
       }
     },
     {
-      "text": "Quanto e 7 + 8?",
+      "text": "O que é Quanto e 7 + 8?",
       "options": [
         "14",
         "16",
@@ -12715,7 +12613,7 @@
       }
     },
     {
-      "text": "Quanto e 9 x 9?",
+      "text": "O que é Quanto e 9 x 9?",
       "options": [
         "72",
         "81",
@@ -12732,7 +12630,7 @@
       }
     },
     {
-      "text": "Quanto e 24 / 6?",
+      "text": "O que é Quanto e 24 / 6?",
       "options": [
         "6",
         "5",
@@ -12766,7 +12664,7 @@
       }
     },
     {
-      "text": "8x7?",
+      "text": "Quanto é 8x7? (calcule)",
       "options": [
         "52",
         "56",
@@ -12783,7 +12681,7 @@
       }
     },
     {
-      "text": "11x11?",
+      "text": "Quanto é 11x11? (calcule)",
       "options": [
         "121",
         "141",
@@ -12800,7 +12698,7 @@
       }
     },
     {
-      "text": "3/4 de 100?",
+      "text": "Quanto é 3/4 de 100?",
       "options": [
         "75",
         "100",
@@ -12817,7 +12715,7 @@
       }
     },
     {
-      "text": "Combinacoes 5,2?",
+      "text": "O que é Combinacoes 5,2?",
       "options": [
         "15",
         "10",
@@ -12834,11 +12732,11 @@
       }
     },
     {
-      "text": "Seno 90graus?",
+      "text": "O que é Seno 90graus?",
       "options": [
         "1",
         "0",
-        "both",
+        "Nenhuma das anteriores",
         "-1"
       ],
       "correct_option": 0,
@@ -12936,12 +12834,12 @@
       }
     },
     {
-      "text": "Numero romano X?",
+      "text": "O que é Numero romano X?",
       "options": [
         "50",
         "10",
         "5",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 8,
@@ -13030,7 +12928,7 @@
   ],
   "MUSICA": [
     {
-      "text": "O que e o fado?",
+      "text": "O que é O que e o fado?",
       "options": [
         "Musica portuguesa",
         "Musica brasileira",
@@ -13081,7 +12979,7 @@
       }
     },
     {
-      "text": "Fado e?",
+      "text": "O que é O que é o fado?",
       "options": [
         "Danca",
         "Musica portuguesa",
@@ -13098,7 +12996,7 @@
       }
     },
     {
-      "text": "Amalia Rodrigues e?",
+      "text": "Quem foi Amália Rodrigues?",
       "options": [
         "Pintora",
         "Escritora",
@@ -13115,7 +13013,7 @@
       }
     },
     {
-      "text": "Instrumento Fado?",
+      "text": "O que é Instrumento Fado?",
       "options": [
         "Piano",
         "Viola",
@@ -13132,7 +13030,7 @@
       }
     },
     {
-      "text": "Zeca Afonso e?",
+      "text": "O que é Zeca Afonso e?",
       "options": [
         "Actor",
         "Pintor",
@@ -13149,7 +13047,7 @@
       }
     },
     {
-      "text": "Mariza e?",
+      "text": "Quem é a Mariza?",
       "options": [
         "Atriz",
         "Escritora",
@@ -13166,7 +13064,7 @@
       }
     },
     {
-      "text": "Corda Guitarra?",
+      "text": "O que é Corda Guitarra?",
       "options": [
         "14",
         "10",
@@ -13183,7 +13081,7 @@
       }
     },
     {
-      "text": "Fado castico?",
+      "text": "O que é Fado castico?",
       "options": [
         "Todas",
         "Novo",
@@ -13200,7 +13098,7 @@
       }
     },
     {
-      "text": "Amalia cognome?",
+      "text": "O que é Amalia cognome?",
       "options": [
         "Todas",
         "Estrela",
@@ -13217,7 +13115,7 @@
       }
     },
     {
-      "text": "Tuna?",
+      "text": "O que é uma tuna em música?",
       "options": [
         "Musica",
         "Instrumento",
@@ -13268,7 +13166,7 @@
       }
     },
     {
-      "text": " fadclubsLisboa?",
+      "text": "Qual é o famoso clube de fado em Lisboa?",
       "options": [
         "50",
         "100",
@@ -13302,7 +13200,7 @@
       }
     },
     {
-      "text": "Fado origen?",
+      "text": "O que é Fado origen?",
       "options": [
         "1840s",
         "1830s",
@@ -13319,7 +13217,7 @@
       }
     },
     {
-      "text": "Bossam nova?",
+      "text": "Qual é o estilo musical brasileiro conhecido como Bossa Nova?",
       "options": [
         "Cantor",
         "Compositor",
@@ -13353,7 +13251,7 @@
       }
     },
     {
-      "text": "Guitarra caracter?",
+      "text": "O que é Guitarra caracter?",
       "options": [
         "Caixa",
         "Pau",
@@ -13370,7 +13268,7 @@
       }
     },
     {
-      "text": "Fado internacional?",
+      "text": "O que é Fado internacional?",
       "options": [
         "Lisboa",
         "Porto",
@@ -13404,7 +13302,7 @@
       }
     },
     {
-      "text": " fadinho Brasil?",
+      "text": "O que é  fadinho Brasil?",
       "options": [
         "1890",
         "1920",
@@ -13421,7 +13319,7 @@
       }
     },
     {
-      "text": "Fado alternativa?",
+      "text": "O que é Fado alternativa?",
       "options": [
         "Novo Fado",
         "Fado moderno",
@@ -13438,7 +13336,7 @@
       }
     },
     {
-      "text": "Fado contemporaneo?",
+      "text": "O que é Fado contemporaneo?",
       "options": [
         "Todas",
         "2020",
@@ -13493,7 +13391,7 @@
       "options": [
         "1960s",
         "1950s",
-        " both",
+        "Nenhuma das anteriores",
         "1940s"
       ],
       "correct_option": 3,
@@ -13506,12 +13404,12 @@
       }
     },
     {
-      "text": "Festival NOS Alive?",
+      "text": "O que é Festival NOS Alive?",
       "options": [
         "Lisboa",
         "Porto",
         "Faro",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 8,
@@ -13528,7 +13426,7 @@
         "Lisboa",
         "Porto",
         "Coimbra",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 8,
@@ -13544,7 +13442,7 @@
       "options": [
         "Buraka Som",
         "Marta",
-        " both",
+        "Nenhuma das anteriores",
         "Kripton"
       ],
       "correct_option": 0,
@@ -13557,7 +13455,7 @@
       }
     },
     {
-      "text": "Festival Sudoeste?",
+      "text": "O que é Festival Sudoeste?",
       "options": [
         " Zambujeira do Mar",
         "Porto",
@@ -13577,7 +13475,7 @@
       "text": "Rock in Rio primeira edicao?",
       "options": [
         "1995",
-        " both",
+        "Nenhuma das anteriores",
         "1985",
         "1989"
       ],
@@ -13594,7 +13492,7 @@
       "text": "Musica mais ouvida em Portugal?",
       "options": [
         "Pop",
-        "两者",
+        "Nenhuma das anteriores",
         "Rock",
         "Fado"
       ],
@@ -13611,7 +13509,7 @@
       "text": "Guitarra portuguesa cordas?",
       "options": [
         "12",
-        " both",
+        "Nenhuma das anteriores",
         "10",
         "6"
       ],
@@ -13625,9 +13523,9 @@
       }
     },
     {
-      "text": "Baixo cifra?",
+      "text": "O que é Baixo cifra?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "6",
         "4",
         "2"
@@ -13642,10 +13540,10 @@
       }
     },
     {
-      "text": "CD substituio?",
+      "text": "O que é CD substituio?",
       "options": [
         "Cassete",
-        " both",
+        "Nenhuma das anteriores",
         "Vinil",
         "Radio"
       ],
@@ -13663,7 +13561,7 @@
       "options": [
         "3M",
         "2M",
-        " both",
+        "Nenhuma das anteriores",
         "1M"
       ],
       "correct_option": 2,
@@ -13676,11 +13574,11 @@
       }
     },
     {
-      "text": "Top 10 Portugal?",
+      "text": "O que é Top 10 Portugal?",
       "options": [
         "Pop",
         "Rock",
-        " both",
+        "Nenhuma das anteriores",
         "Fado"
       ],
       "correct_option": 2,
@@ -13727,24 +13625,7 @@
       }
     },
     {
-      "text": "O que e o Fado?",
-      "options": [
-        "Um genero musical portugues",
-        "Um instrumento",
-        "Um tipo de cantiga",
-        "Um tipo de danca"
-      ],
-      "correct_option": 0,
-      "age_rating": 8,
-      "category": "MUSICA",
-      "country_code": "PT",
-      "image_url": null,
-      "metadata": {
-        "hint": "A resposta correta e: Um genero musical portugues"
-      }
-    },
-    {
-      "text": "UNESCO Fado?",
+      "text": "O que é UNESCO Fado?",
       "options": [
         "2013",
         "2011",
@@ -13761,7 +13642,7 @@
       }
     },
     {
-      "text": "Corda minima?",
+      "text": "O que é Corda minima?",
       "options": [
         "4",
         "10",
@@ -13795,11 +13676,11 @@
       }
     },
     {
-      "text": "Madonna albums?",
+      "text": "O que é Madonna albums?",
       "options": [
         "20",
         "10",
-        " both",
+        "Nenhuma das anteriores",
         "15"
       ],
       "correct_option": 2,
@@ -13812,7 +13693,7 @@
       }
     },
     {
-      "text": "Fado patrimonio?",
+      "text": "O que é Fado patrimonio?",
       "options": [
         "Mundial",
         "Nacional",
@@ -13846,7 +13727,7 @@
       }
     },
     {
-      "text": "O que e um requiem?",
+      "text": "O que é O que e um requiem?",
       "options": [
         "Danca",
         "Missa funebre",
@@ -13863,7 +13744,7 @@
       }
     },
     {
-      "text": "Amalia grabacao?",
+      "text": "O que é Amalia grabacao?",
       "options": [
         "1960-2000",
         "1965-2005",
@@ -13880,7 +13761,7 @@
       }
     },
     {
-      "text": "Maria Teresa fonte?",
+      "text": "O que é Maria Teresa fonte?",
       "options": [
         "Letrista",
         "Compositora",
@@ -13902,7 +13783,7 @@
         "Mariza",
         "Cuca",
         "Amalia",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 8,
@@ -13919,7 +13800,7 @@
         "1996",
         "1999",
         "2000",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 12,
@@ -13984,7 +13865,7 @@
       }
     },
     {
-      "text": "Francesinha?",
+      "text": "O que é Francesinha?",
       "options": [
         "Doce",
         "Sandwich",
@@ -14001,7 +13882,7 @@
       }
     },
     {
-      "text": "Vinho Verde origem?",
+      "text": "O que é Vinho Verde origem?",
       "options": [
         "Alentejo",
         "Minho",
@@ -14018,7 +13899,7 @@
       }
     },
     {
-      "text": "Bacalhau prato?",
+      "text": "O que é Bacalhau prato?",
       "options": [
         "Sushi",
         "Pizza",
@@ -14035,7 +13916,7 @@
       }
     },
     {
-      "text": "Arroz doce?",
+      "text": "O que é o arroz doce?",
       "options": [
         "Arroz",
         "Prato",
@@ -14052,7 +13933,7 @@
       }
     },
     {
-      "text": "Azeite?",
+      "text": "O que é o azeite?",
       "options": [
         "Vinho",
         "Vinagre",
@@ -14069,7 +13950,7 @@
       }
     },
     {
-      "text": "Mel?",
+      "text": "O que é o mel?",
       "options": [
         "Acucar",
         "Fruta",
@@ -14103,7 +13984,7 @@
       }
     },
     {
-      "text": "Bacalhau onde?",
+      "text": "O que é Bacalhau onde?",
       "options": [
         "Portugal",
         "Brasil",
@@ -14205,12 +14086,12 @@
       }
     },
     {
-      "text": "Food pairing?",
+      "text": "O que é Food pairing?",
       "options": [
         "Composicao",
         "Todas",
         "Sabor",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -14222,7 +14103,7 @@
       }
     },
     {
-      "text": "Pastel de Nata?",
+      "text": "O que é Pastel de Nata?",
       "options": [
         "Bolo",
         "Pudim",
@@ -14256,7 +14137,7 @@
       }
     },
     {
-      "text": "Chef Andre?",
+      "text": "Quem é o Chef André?",
       "options": [
         "1970",
         "1975",
@@ -14273,7 +14154,7 @@
       }
     },
     {
-      "text": "Bacalhau receitas?",
+      "text": "O que é Bacalhau receitas?",
       "options": [
         "100",
         "10000",
@@ -14324,7 +14205,7 @@
       }
     },
     {
-      "text": "Queijo mais famoso?",
+      "text": "O que é Queijo mais famoso?",
       "options": [
         "Suico",
         "Flamengo",
@@ -14345,7 +14226,7 @@
       "options": [
         "Estrela",
         "Todas",
-        "Both",
+        "Nenhuma das anteriores",
         "Beira"
       ],
       "correct_option": 0,
@@ -14358,7 +14239,7 @@
       }
     },
     {
-      "text": "Vinho Porto origem?",
+      "text": "O que é Vinho Porto origem?",
       "options": [
         "Alentejo",
         "Dao",
@@ -14375,7 +14256,7 @@
       }
     },
     {
-      "text": "Alheira?",
+      "text": "O que é uma alheira?",
       "options": [
         "Lingua",
         "Carne",
@@ -14392,7 +14273,7 @@
       }
     },
     {
-      "text": "Doce mais antigo?",
+      "text": "O que é Doce mais antigo?",
       "options": [
         "Dom Rodrigo",
         "Cação",
@@ -14445,7 +14326,7 @@
     {
       "text": "Azeite Portugal producao?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "2º",
         "1º",
         "3º"
@@ -14465,7 +14346,7 @@
         "10",
         "5",
         "20",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 12,
@@ -14477,10 +14358,10 @@
       }
     },
     {
-      "text": "Vinho Porto e de?",
+      "text": "O que é Vinho Porto e de?",
       "options": [
         "Douro",
-        " both",
+        "Nenhuma das anteriores",
         "Minho",
         "Alentejo"
       ],
@@ -14496,7 +14377,7 @@
     {
       "text": "Alentejo famoso por?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Azeite",
         "Todos",
         "Vinho"
@@ -14514,7 +14395,7 @@
       "text": "Queijo Serra producao?",
       "options": [
         "Vaca",
-        " both",
+        "Nenhuma das anteriores",
         "Cabra",
         "Ovelha"
       ],
@@ -14528,10 +14409,10 @@
       }
     },
     {
-      "text": "Medronho bebida?",
+      "text": "O que é Medronho bebida?",
       "options": [
         "Norte",
-        " both",
+        "Nenhuma das anteriores",
         "Centro",
         "Sul"
       ],
@@ -14549,7 +14430,7 @@
       "options": [
         " factories",
         "Todos",
-        "both",
+        "Nenhuma das anteriores",
         " conventos"
       ],
       "correct_option": 3,
@@ -14565,7 +14446,7 @@
       "text": "Restaurante top Lisboa?",
       "options": [
         "Todos",
-        " both",
+        "Nenhuma das anteriores",
         "Feitoria",
         "Belcanto"
       ],
@@ -14581,7 +14462,7 @@
     {
       "text": "Cozinha Portuguesa e?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Simples",
         "Rica",
         "Variada"
@@ -14598,7 +14479,7 @@
     {
       "text": "Restaurante historico?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         " Martins",
         " chain",
         "Todos"
@@ -14613,9 +14494,9 @@
       }
     },
     {
-      "text": "Cataplana prato?",
+      "text": "O que é Cataplana prato?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Sul",
         "Centro",
         "Norte"
@@ -14632,7 +14513,7 @@
     {
       "text": "Arroz de marisco regiao?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Norte",
         "Sul",
         "Centro"
@@ -14698,7 +14579,7 @@
       }
     },
     {
-      "text": "Chef Jose Aville?",
+      "text": "O que é Chef Jose Aville?",
       "options": [
         "1950",
         "1970",
@@ -14719,7 +14600,7 @@
       "options": [
         "1º",
         "2º",
-        " both",
+        "Nenhuma das anteriores",
         "3º"
       ],
       "correct_option": 1,
@@ -14749,7 +14630,7 @@
       }
     },
     {
-      "text": "O que e o kimchi?",
+      "text": "O que é O que e o kimchi?",
       "options": [
         "Sopa coreana",
         "Prato japones",
@@ -14770,7 +14651,7 @@
       "options": [
         "Todos",
         "Vinho",
-        " both",
+        "Nenhuma das anteriores",
         "Azeite"
       ],
       "correct_option": 0,
@@ -14783,7 +14664,7 @@
       }
     },
     {
-      "text": "Tripas a Moda?",
+      "text": "O que é Tripas a Moda?",
       "options": [
         "Sopa",
         "Doce",
@@ -14836,7 +14717,7 @@
   ],
   "CINEMA": [
     {
-      "text": "O que e um filme?",
+      "text": "O que é O que e um filme?",
       "options": [
         "Filme de cinema",
         "Musica",
@@ -14870,7 +14751,7 @@
       }
     },
     {
-      "text": "Avatar realizada?",
+      "text": "O que é Avatar realizada?",
       "options": [
         "Steven Spielberg",
         "James Cameron",
@@ -14887,7 +14768,7 @@
       }
     },
     {
-      "text": "Batman trilogia?",
+      "text": "O que é Batman trilogia?",
       "options": [
         "Todas",
         "Zack Snyder",
@@ -14921,7 +14802,7 @@
       }
     },
     {
-      "text": "Matrix tem?",
+      "text": "O que representa a Matrix no filme?",
       "options": [
         "Warner",
         "Disney",
@@ -14938,7 +14819,7 @@
       }
     },
     {
-      "text": "Disney animou?",
+      "text": "O que é Disney animou?",
       "options": [
         "1990s",
         "1950s",
@@ -14955,7 +14836,7 @@
       }
     },
     {
-      "text": "Cannes festival?",
+      "text": "O que é Cannes festival?",
       "options": [
         "Franca",
         "Espanha",
@@ -14989,7 +14870,7 @@
       }
     },
     {
-      "text": "Streaming popular?",
+      "text": "O que é Streaming popular?",
       "options": [
         "Amazon",
         "Todas",
@@ -15040,7 +14921,7 @@
       }
     },
     {
-      "text": "Harry Potter casa?",
+      "text": "O que é Harry Potter casa?",
       "options": [
         "Gryffindor",
         "Hufflepuff",
@@ -15057,7 +14938,7 @@
       }
     },
     {
-      "text": "O que e Pixar?",
+      "text": "O que é O que e Pixar?",
       "options": [
         "Personagem",
         " Estudio",
@@ -15074,7 +14955,7 @@
       }
     },
     {
-      "text": "Star Wars tem?",
+      "text": "O que é Star Wars tem?",
       "options": [
         "Marvel",
         "Sony",
@@ -15091,7 +14972,7 @@
       }
     },
     {
-      "text": "Batman e?",
+      "text": "Quem é o Batman?",
       "options": [
         "Capitao America",
         "Super-homem",
@@ -15108,7 +14989,7 @@
       }
     },
     {
-      "text": "Vingadores sao?",
+      "text": "O que é Vingadores sao?",
       "options": [
         "Herois Marvel",
         "Herois DC",
@@ -15125,7 +15006,7 @@
       }
     },
     {
-      "text": "Filme mais visto?",
+      "text": "O que é Filme mais visto?",
       "options": [
         "Star Wars",
         "E.T.",
@@ -15142,7 +15023,7 @@
       }
     },
     {
-      "text": "Jack Sparrow e?",
+      "text": "O que é Jack Sparrow e?",
       "options": [
         "Capitao",
         "Nao existe",
@@ -15176,7 +15057,7 @@
       }
     },
     {
-      "text": "Francesha? E?",
+      "text": "O que é Francesha? E?",
       "options": [
         "Filme",
         "Todas",
@@ -15193,7 +15074,7 @@
       }
     },
     {
-      "text": "Cannes Palma Ouro?",
+      "text": "O que é Cannes Palma Ouro?",
       "options": [
         "Diretor",
         "Todas",
@@ -15210,7 +15091,7 @@
       }
     },
     {
-      "text": "BAFTA e?",
+      "text": "O que é a BAFTA?",
       "options": [
         "Nenhum",
         "Britannico",
@@ -15227,7 +15108,7 @@
       }
     },
     {
-      "text": "Berlinale festival?",
+      "text": "O que é Berlinale festival?",
       "options": [
         "Brasil",
         "Espanha",
@@ -15244,7 +15125,7 @@
       }
     },
     {
-      "text": "Locarno festival?",
+      "text": "O que é Locarno festival?",
       "options": [
         "Italia",
         "USA",
@@ -15278,7 +15159,7 @@
       }
     },
     {
-      "text": "Filme mais Oscar?",
+      "text": "O que é Filme mais Oscar?",
       "options": [
         "West Side Story",
         "Ben-Hur",
@@ -15295,7 +15176,7 @@
       }
     },
     {
-      "text": "Netflix original?",
+      "text": "O que é Netflix original?",
       "options": [
         "Stranger Things",
         "Todas",
@@ -15333,7 +15214,7 @@
       "options": [
         "1970s",
         "1950s",
-        "两者",
+        "Nenhuma das anteriores",
         "1960s"
       ],
       "correct_option": 3,
@@ -15351,7 +15232,7 @@
         "Ingles",
         "Americano",
         "Alemao",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 12,
@@ -15367,7 +15248,7 @@
       "options": [
         "Oppenheimer",
         "Killers",
-        "两者",
+        "Nenhuma das anteriores",
         "Barbie"
       ],
       "correct_option": 0,
@@ -15384,7 +15265,7 @@
       "options": [
         "Avengers",
         "Pirates",
-        "两者",
+        "Nenhuma das anteriores",
         "Avatar"
       ],
       "correct_option": 3,
@@ -15401,7 +15282,7 @@
       "options": [
         "Roger Moore",
         "Sean Connery",
-        " both",
+        "Nenhuma das anteriores",
         "Daniel Craig"
       ],
       "correct_option": 1,
@@ -15436,7 +15317,7 @@
         "1900",
         "1895",
         "1910",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 16,
@@ -15448,12 +15329,12 @@
       }
     },
     {
-      "text": "Soundtrack e?",
+      "text": "O que é Soundtrack e?",
       "options": [
         "Musica",
         "Som",
-        "两者",
-        " both"
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 8,
@@ -15468,7 +15349,7 @@
       "text": "Berlinale premio principal?",
       "options": [
         "Ouro",
-        "两者",
+        "Nenhuma das anteriores",
         "Urso",
         "Palma"
       ],
@@ -15485,7 +15366,7 @@
       "text": "Streaming mudou cinema?",
       "options": [
         "Sim",
-        " both",
+        "Nenhuma das anteriores",
         "Nao",
         "Talvez"
       ],
@@ -15502,7 +15383,7 @@
       "text": "Marvel started quando?",
       "options": [
         "2000s",
-        " both",
+        "Nenhuma das anteriores",
         "2010s",
         "2008"
       ],
@@ -15516,7 +15397,7 @@
       }
     },
     {
-      "text": "Oscars origem?",
+      "text": "O que é Oscars origem?",
       "options": [
         "Imprensa",
         "Academia",
@@ -15571,7 +15452,7 @@
       "options": [
         "100M",
         "200M",
-        "两者",
+        "Nenhuma das anteriores",
         "300M"
       ],
       "correct_option": 2,
@@ -15584,10 +15465,10 @@
       }
     },
     {
-      "text": "Star Wars primeiro?",
+      "text": "O que é Star Wars primeiro?",
       "options": [
         "1975",
-        "两者",
+        "Nenhuma das anteriores",
         "1980",
         "1977"
       ],
@@ -15605,7 +15486,7 @@
       "options": [
         "2001",
         "2003",
-        " both",
+        "Nenhuma das anteriores",
         "1999"
       ],
       "correct_option": 0,
@@ -15652,7 +15533,7 @@
       }
     },
     {
-      "text": "Oscar significado?",
+      "text": "O que é Oscar significado?",
       "options": [
         "Estatua",
         "Premio",
@@ -15686,7 +15567,7 @@
       }
     },
     {
-      "text": "Joker e?",
+      "text": "Quem é o Joker?",
       "options": [
         "Vilao Superman",
         "Vilao Batman",
@@ -15707,7 +15588,7 @@
       "options": [
         "1970s",
         "1960s",
-        "两者",
+        "Nenhuma das anteriores",
         "1980s"
       ],
       "correct_option": 0,
@@ -15739,7 +15620,7 @@
       }
     },
     {
-      "text": "Capital Brasil?",
+      "text": "O que é Capital Brasil?",
       "options": [
         "Sao Paulo",
         "Rio",
@@ -15756,7 +15637,7 @@
       }
     },
     {
-      "text": "Capital UK?",
+      "text": "Qual é a capital do Reino Unido?",
       "options": [
         "Birmingham",
         "Liverpool",
@@ -15773,7 +15654,7 @@
       }
     },
     {
-      "text": "CapitalAlemanha?",
+      "text": "O que é CapitalAlemanha?",
       "options": [
         "Frankfurt",
         "Hamburgo",
@@ -15790,7 +15671,7 @@
       }
     },
     {
-      "text": "Capital Japao?",
+      "text": "O que é Capital Japao?",
       "options": [
         "Nagasaki",
         "Quioto",
@@ -15807,7 +15688,7 @@
       }
     },
     {
-      "text": "Capital EUA?",
+      "text": "O que é Capital EUA?",
       "options": [
         "Washington",
         "Los Angeles",
@@ -15824,7 +15705,7 @@
       }
     },
     {
-      "text": "Capital Canada?",
+      "text": "O que é Capital Canada?",
       "options": [
         "Vancouver",
         "Toronto",
@@ -15841,7 +15722,7 @@
       }
     },
     {
-      "text": "Capital Russia?",
+      "text": "O que é Capital Russia?",
       "options": [
         "Kazan",
         "Sao Petersburgo",
@@ -15858,7 +15739,7 @@
       }
     },
     {
-      "text": "Capital Taiwan?",
+      "text": "O que é Capital Taiwan?",
       "options": [
         "Taipei",
         "Taichung",
@@ -15875,7 +15756,7 @@
       }
     },
     {
-      "text": "Capital India?",
+      "text": "O que é Capital India?",
       "options": [
         "Mumbai",
         "Calcutta",
@@ -15892,7 +15773,7 @@
       }
     },
     {
-      "text": "Capital Turkey?",
+      "text": "O que é Capital Turkey?",
       "options": [
         "Istambul",
         "Antalia",
@@ -15909,7 +15790,7 @@
       }
     },
     {
-      "text": "Capital Argentina?",
+      "text": "O que é Capital Argentina?",
       "options": [
         "Buenos Aires",
         "Rosario",
@@ -15926,7 +15807,7 @@
       }
     },
     {
-      "text": "Capital Colombia?",
+      "text": "O que é Capital Colombia?",
       "options": [
         "Barranquilla",
         "Medellim",
@@ -15943,7 +15824,7 @@
       }
     },
     {
-      "text": "Capital Chile?",
+      "text": "O que é Capital Chile?",
       "options": [
         "Concepcion",
         "La Serena",
@@ -15960,7 +15841,7 @@
       }
     },
     {
-      "text": "Capital Bolivia?",
+      "text": "O que é Capital Bolivia?",
       "options": [
         "Cochabamba",
         "Santa Cruz",
@@ -15977,7 +15858,7 @@
       }
     },
     {
-      "text": "Capital Italia?",
+      "text": "O que é Capital Italia?",
       "options": [
         "Veneza",
         "Milao",
@@ -16011,7 +15892,7 @@
       }
     },
     {
-      "text": "Capital Belgica?",
+      "text": "O que é Capital Belgica?",
       "options": [
         "Antuergia",
         "Bruges",
@@ -16028,7 +15909,7 @@
       }
     },
     {
-      "text": "Capital Grecia?",
+      "text": "O que é Capital Grecia?",
       "options": [
         "Atenas",
         "Salonica",
@@ -16045,7 +15926,7 @@
       }
     },
     {
-      "text": "Capital Polonia?",
+      "text": "O que é Capital Polonia?",
       "options": [
         "Varssovia",
         "Gdansk",
@@ -16062,7 +15943,7 @@
       }
     },
     {
-      "text": "Capital Suecia?",
+      "text": "O que é Capital Suecia?",
       "options": [
         "Malmo",
         "Gotemburgo",
@@ -16079,7 +15960,7 @@
       }
     },
     {
-      "text": "Capital Finlandia?",
+      "text": "O que é Capital Finlandia?",
       "options": [
         "Tampere",
         "Turku",
@@ -16096,7 +15977,7 @@
       }
     },
     {
-      "text": "Capital Hungria?",
+      "text": "O que é Capital Hungria?",
       "options": [
         "Debrecen",
         "Budapeste",
@@ -16113,7 +15994,7 @@
       }
     },
     {
-      "text": "Capital Suiça?",
+      "text": "O que é Capital Suiça?",
       "options": [
         "Zurique",
         "Basileia",
@@ -16232,12 +16113,12 @@
       }
     },
     {
-      "text": "Capital Cuba?",
+      "text": "O que é Capital Cuba?",
       "options": [
         "Havana",
         "Santiago",
         "Camaguey",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 8,
@@ -16249,9 +16130,9 @@
       }
     },
     {
-      "text": "Capital Kenya?",
+      "text": "O que é Capital Kenya?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         "Mombasa",
         "Nairóbi",
         "Kisumu"
@@ -16266,10 +16147,10 @@
       }
     },
     {
-      "text": "Capital Morocco?",
+      "text": "O que é Capital Morocco?",
       "options": [
         "Fes",
-        "both",
+        "Nenhuma das anteriores",
         "Rabat",
         "Casablanca"
       ],
@@ -16286,7 +16167,7 @@
       "text": "Capital New Zealand?",
       "options": [
         "Auckland",
-        "both",
+        "Nenhuma das anteriores",
         "Christchurch",
         "Wellington"
       ],
@@ -16300,11 +16181,11 @@
       }
     },
     {
-      "text": "Capital Egypt?",
+      "text": "O que é Capital Egypt?",
       "options": [
         "Luxor",
         "Alexandria",
-        "both",
+        "Nenhuma das anteriores",
         "Cairo"
       ],
       "correct_option": 3,
@@ -16317,11 +16198,11 @@
       }
     },
     {
-      "text": "Capital Vietnam?",
+      "text": "O que é Capital Vietnam?",
       "options": [
         "Hanoi",
         "Ho Chi Minh",
-        "both",
+        "Nenhuma das anteriores",
         "Da Nang"
       ],
       "correct_option": 0,
@@ -16336,7 +16217,7 @@
     {
       "text": "Capital South Korea?",
       "options": [
-        "both",
+        "Nenhuma das anteriores",
         "Incheon",
         "Seoul",
         "Busan"
@@ -16351,10 +16232,10 @@
       }
     },
     {
-      "text": "Capital Ireland?",
+      "text": "O que é Capital Ireland?",
       "options": [
         "Dublin",
-        "both",
+        "Nenhuma das anteriores",
         "Cork",
         "Galway"
       ],
@@ -16385,7 +16266,7 @@
       }
     },
     {
-      "text": "Capital Belgium?",
+      "text": "O que é Capital Belgium?",
       "options": [
         "Antwerp",
         "Bruges",
@@ -16402,7 +16283,7 @@
       }
     },
     {
-      "text": "Capital Sweden?",
+      "text": "O que é Capital Sweden?",
       "options": [
         "Estocolmo",
         "Goteborg",
@@ -16419,7 +16300,7 @@
       }
     },
     {
-      "text": "Capital Poland?",
+      "text": "O que é Capital Poland?",
       "options": [
         "Wroclaw",
         "Krakow",
@@ -16436,7 +16317,7 @@
       }
     },
     {
-      "text": "Capital Finland?",
+      "text": "O que é Capital Finland?",
       "options": [
         "Tampere",
         "Helsínquia",
@@ -16521,7 +16402,7 @@
       }
     },
     {
-      "text": "Capital Peru?",
+      "text": "O que é Capital Peru?",
       "options": [
         "Cusco",
         "Arequipa",
@@ -16538,7 +16419,7 @@
       }
     },
     {
-      "text": "Capital Norway?",
+      "text": "O que é Capital Norway?",
       "options": [
         "Stavanger",
         "Trondheim",
@@ -16759,7 +16640,7 @@
       }
     },
     {
-      "text": "Capital Franca?",
+      "text": "O que é Capital Franca?",
       "options": [
         "Nice",
         "Marselha",
@@ -16793,12 +16674,12 @@
       }
     },
     {
-      "text": "Capital Thailand?",
+      "text": "O que é Capital Thailand?",
       "options": [
         "Phuket",
         "Chiang Mai",
         "Bangkok",
-        "both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 8,
@@ -16810,7 +16691,7 @@
       }
     },
     {
-      "text": "Capital Noruega?",
+      "text": "O que é Capital Noruega?",
       "options": [
         "Stavanger",
         "Trondheim",
@@ -16846,7 +16727,7 @@
   ],
   "ANIMAIS": [
     {
-      "text": "Camaleao cambia?",
+      "text": "O que é Camaleao cambia?",
       "options": [
         "Cor",
         "Forma",
@@ -16863,7 +16744,7 @@
       }
     },
     {
-      "text": "Mais rapido?",
+      "text": "O que é Mais rapido?",
       "options": [
         "Leao",
         "Lobo",
@@ -16880,7 +16761,7 @@
       }
     },
     {
-      "text": "Animal noturno?",
+      "text": "O que é Animal noturno?",
       "options": [
         "Cao",
         "Galinha",
@@ -16897,7 +16778,7 @@
       }
     },
     {
-      "text": "Coral e?",
+      "text": "O que é um coral marinho?",
       "options": [
         "Planta",
         "Animal",
@@ -16914,7 +16795,7 @@
       }
     },
     {
-      "text": "Baleia e?",
+      "text": "O que é uma baleia?",
       "options": [
         "Mamifero",
         "Reptil",
@@ -16931,7 +16812,7 @@
       }
     },
     {
-      "text": "Onca pintada?",
+      "text": "O que é Onca pintada?",
       "options": [
         "America do Sul",
         "Africa",
@@ -16948,7 +16829,7 @@
       }
     },
     {
-      "text": "Polvo tentaculos?",
+      "text": "O que é Polvo tentaculos?",
       "options": [
         "10",
         "4",
@@ -16965,7 +16846,7 @@
       }
     },
     {
-      "text": "Ibis sagrado?",
+      "text": "O que é Ibis sagrado?",
       "options": [
         "Grecia",
         "Persia",
@@ -16982,7 +16863,7 @@
       }
     },
     {
-      "text": "Panda vermelho?",
+      "text": "O que é Panda vermelho?",
       "options": [
         "India",
         "China",
@@ -17016,7 +16897,7 @@
       }
     },
     {
-      "text": "Medusa immortal?",
+      "text": "O que é Medusa immortal?",
       "options": [
         "Aurelia",
         "Nenhuma",
@@ -17050,7 +16931,7 @@
       }
     },
     {
-      "text": "Lobo Arctic?",
+      "text": "O que é Lobo Arctic?",
       "options": [
         "Preto",
         "Castanho",
@@ -17067,7 +16948,7 @@
       }
     },
     {
-      "text": "Tigre branco?",
+      "text": "O que é Tigre branco?",
       "options": [
         "Todas",
         "Bengal",
@@ -17084,7 +16965,7 @@
       }
     },
     {
-      "text": "Gorila habitat?",
+      "text": "O que é Gorila habitat?",
       "options": [
         "Selva",
         "Montanha",
@@ -17101,9 +16982,9 @@
       }
     },
     {
-      "text": " Biomagnificacao e?",
+      "text": "O que é  Biomagnificacao e?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Acumulo",
         "Decumulo"
@@ -17118,9 +16999,9 @@
       }
     },
     {
-      "text": "Homeostase e?",
+      "text": "O que é Homeostase e?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Desequilibrio",
         "Equilibrio"
@@ -17137,7 +17018,7 @@
     {
       "text": "Fotossintese produtos?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "O2 + Glicose",
         "CO2 + Agua",
         "Nenhuma"
@@ -17154,7 +17035,7 @@
     {
       "text": "Respiracao celular local?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Mitocondria",
         "Nenhuma",
         "Citoplasma"
@@ -17169,12 +17050,12 @@
       }
     },
     {
-      "text": "Enzimas sao?",
+      "text": "O que é Enzimas sao?",
       "options": [
         "Catalisador",
         "Nenhuma",
         "Substrato",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 16,
@@ -17191,7 +17072,7 @@
         "Nenhuma",
         "CO2",
         "Alcool",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 16,
@@ -17220,7 +17101,7 @@
       }
     },
     {
-      "text": "Hiena riso?",
+      "text": "O que é a hiena do riso?",
       "options": [
         "Nao sei",
         "Talvez",
@@ -17254,9 +17135,9 @@
       }
     },
     {
-      "text": "Cavalo-marinho e?",
+      "text": "O que é Cavalo-marinho e?",
       "options": [
-        "Both",
+        "Nenhuma das anteriores",
         "Peixe",
         "Nenhuma",
         "Cavalo"
@@ -17288,9 +17169,9 @@
       }
     },
     {
-      "text": "Metabolismo e?",
+      "text": "O que é Metabolismo e?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Anabolismo",
         "Catabolismo"
@@ -17305,7 +17186,7 @@
       }
     },
     {
-      "text": "Mitose resultam em?",
+      "text": "O que é Mitose resultam em?",
       "options": [
         "1",
         "2",
@@ -17322,7 +17203,7 @@
       }
     },
     {
-      "text": "Meiose resultam em?",
+      "text": "O que é Meiose resultam em?",
       "options": [
         "8",
         "4",
@@ -17356,7 +17237,7 @@
       }
     },
     {
-      "text": "Grupos sanguineos?",
+      "text": "O que é Grupos sanguineos?",
       "options": [
         "2",
         "3",
@@ -17407,7 +17288,7 @@
       }
     },
     {
-      "text": "Nemo tipo peixe?",
+      "text": "O que é Nemo tipo peixe?",
       "options": [
         "Salmao",
         "Tubarao",
@@ -17424,7 +17305,7 @@
       }
     },
     {
-      "text": "Maior animal?",
+      "text": "O que é Maior animal?",
       "options": [
         "Rinoceronte",
         "Elefante",
@@ -17458,7 +17339,7 @@
       }
     },
     {
-      "text": "Panda come?",
+      "text": "O que come um panda?",
       "options": [
         "Carne",
         "Insetos",
@@ -17475,7 +17356,7 @@
       }
     },
     {
-      "text": "Tigre riscas?",
+      "text": "O que é Tigre riscas?",
       "options": [
         "Brancas",
         "Nenhuma",
@@ -17492,7 +17373,7 @@
       }
     },
     {
-      "text": "Cavalo domesticado?",
+      "text": "O que é Cavalo domesticado?",
       "options": [
         "Ha 1000 anos",
         "Ha 100 anos",
@@ -17509,7 +17390,7 @@
       }
     },
     {
-      "text": "Peixe respira?",
+      "text": "O que é Peixe respira?",
       "options": [
         "Boca",
         "Guelras",
@@ -17526,7 +17407,7 @@
       }
     },
     {
-      "text": "Papagaio fala?",
+      "text": "O que é Papagaio fala?",
       "options": [
         "Nao",
         "Talvez",
@@ -17543,7 +17424,7 @@
       }
     },
     {
-      "text": "Ovelha la?",
+      "text": "O que significa 'ovelha' em português?",
       "options": [
         "Branca",
         "Preta",
@@ -17560,7 +17441,7 @@
       }
     },
     {
-      "text": "Porco e?",
+      "text": "O que é o porco em termos biológicos?",
       "options": [
         "Onivoro",
         "Herbivoro",
@@ -17577,7 +17458,7 @@
       }
     },
     {
-      "text": "ABELHAS vivem em?",
+      "text": "O que é ABELHAS vivem em?",
       "options": [
         "Colmeia",
         "Casa",
@@ -17594,7 +17475,7 @@
       }
     },
     {
-      "text": "Golfinho e?",
+      "text": "O que é um golfinho?",
       "options": [
         "Anfibio",
         "Reptil",
@@ -17611,7 +17492,7 @@
       }
     },
     {
-      "text": "Elefante tromba?",
+      "text": "O que é Elefante tromba?",
       "options": [
         "Braço",
         "Perna",
@@ -17628,7 +17509,7 @@
       }
     },
     {
-      "text": "Boi tem?",
+      "text": "Quantos estômagos tem um boi?",
       "options": [
         "Lã",
         "Chifres",
@@ -17645,7 +17526,7 @@
       }
     },
     {
-      "text": "Mosca patas?",
+      "text": "O que é Mosca patas?",
       "options": [
         "5",
         "6",
@@ -17662,7 +17543,7 @@
       }
     },
     {
-      "text": "Peixe dourado cor?",
+      "text": "O que é Peixe dourado cor?",
       "options": [
         "Vermelho",
         "Todas",
@@ -17679,7 +17560,7 @@
       }
     },
     {
-      "text": "Borrego e?",
+      "text": "O que é um borrego?",
       "options": [
         "Gato",
         "Cao",
@@ -17696,7 +17577,7 @@
       }
     },
     {
-      "text": "Coelho orelhas?",
+      "text": "O que é Coelho orelhas?",
       "options": [
         "Longas",
         "Cortas",
@@ -17713,7 +17594,7 @@
       }
     },
     {
-      "text": "Tartaruga速度?",
+      "text": "O que é Tartaruga速度?",
       "options": [
         "Lenta",
         "Muito rapida",
@@ -17730,9 +17611,9 @@
       }
     },
     {
-      "text": " ADN funcao?",
+      "text": "O que é  ADN funcao?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Informacao",
         "Energia"
@@ -17781,7 +17662,7 @@
       }
     },
     {
-      "text": "Fosseis estao em?",
+      "text": "O que é Fosseis estao em?",
       "options": [
         "Areia",
         "Todas",
@@ -17798,7 +17679,7 @@
       }
     },
     {
-      "text": "Mutacao pode ser?",
+      "text": "O que é Mutacao pode ser?",
       "options": [
         "Nenhuma",
         "Maus",
@@ -17866,10 +17747,10 @@
       }
     },
     {
-      "text": "Simbiose e?",
+      "text": "O que é a simbiose?",
       "options": [
         "Uniao",
-        "两者",
+        "Nenhuma das anteriores",
         "Combate",
         "Nenhuma"
       ],
@@ -17883,11 +17764,11 @@
       }
     },
     {
-      "text": "Parasitismo e?",
+      "text": "O que é Parasitismo e?",
       "options": [
         "Nenhuma",
         "Prejuizo",
-        "两者",
+        "Nenhuma das anteriores",
         "Beneficio"
       ],
       "correct_option": 1,
@@ -17905,7 +17786,7 @@
         "Nenhuma",
         "Diferentes",
         "Mesma especie",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -17917,7 +17798,7 @@
       }
     },
     {
-      "text": "Animal agua+terra?",
+      "text": "O que é Animal agua+terra?",
       "options": [
         "Peixe",
         "Sapo",
@@ -17934,7 +17815,7 @@
       }
     },
     {
-      "text": "Urso polar onde?",
+      "text": "O que é Urso polar onde?",
       "options": [
         "Gelo",
         "Deserto",
@@ -17951,7 +17832,7 @@
       }
     },
     {
-      "text": "Pinguim voa?",
+      "text": "O que é Pinguim voa?",
       "options": [
         "Nao",
         "Talvez",
@@ -17968,7 +17849,7 @@
       }
     },
     {
-      "text": "Cobra lingua?",
+      "text": "O que é Cobra lingua?",
       "options": [
         "Rosa",
         "Preta",
@@ -17985,7 +17866,7 @@
       }
     },
     {
-      "text": "Celula tronco pode?",
+      "text": "O que é Celula tronco pode?",
       "options": [
         "Nada",
         "Tudo",
@@ -18087,7 +17968,7 @@
       }
     },
     {
-      "text": "Nemo e que peixe?",
+      "text": "O que é Nemo e que peixe?",
       "options": [
         "Tubarao",
         "Salmao",
@@ -18104,7 +17985,7 @@
       }
     },
     {
-      "text": "Qual faz Miau?",
+      "text": "O que é Qual faz Miau?",
       "options": [
         "Cao",
         "Gato",
@@ -18121,7 +18002,7 @@
       }
     },
     {
-      "text": "Panda come o quê?",
+      "text": "O que é Panda come o quê?",
       "options": [
         "Bambu",
         "Insetos",
@@ -18172,7 +18053,7 @@
       }
     },
     {
-      "text": "Marsupial e...",
+      "text": "Marsupial e (complete)",
       "options": [
         "Raposa",
         "Coelho",
@@ -18223,7 +18104,7 @@
       }
     },
     {
-      "text": "Qual cambia cor?",
+      "text": "O que é Qual cambia cor?",
       "options": [
         "Camaleao",
         "Tigre",
@@ -18257,7 +18138,7 @@
       }
     },
     {
-      "text": "O que e evolucao?",
+      "text": "O que é O que e evolucao?",
       "options": [
         "Extincao",
         "Reproducao",
@@ -18274,7 +18155,7 @@
       }
     },
     {
-      "text": "Quimera e o quizer?",
+      "text": "O que é Quimera e o quizer?",
       "options": [
         "Rai",
         "Animal mitologico",
@@ -18291,7 +18172,7 @@
       }
     },
     {
-      "text": "O que sao bilion?",
+      "text": "O que é O que sao bilion?",
       "options": [
         "Milhao",
         "Triliao",
@@ -18308,7 +18189,7 @@
       }
     },
     {
-      "text": "Gene e o quizer?",
+      "text": "O que é Gene e o quizer?",
       "options": [
         "Cromossoma",
         "DNA",
@@ -18359,7 +18240,7 @@
       }
     },
     {
-      "text": "Decompositor e...",
+      "text": "Decompositor e (complete)",
       "options": [
         "Fungo",
         "Planta",
@@ -18393,7 +18274,7 @@
       }
     },
     {
-      "text": "Nivel trofico e...",
+      "text": "Nivel trofico e (complete)",
       "options": [
         "Tamanho",
         "Idade",
@@ -18580,7 +18461,7 @@
       }
     },
     {
-      "text": "Minhoca coracoes?",
+      "text": "O que é Minhoca coracoes?",
       "options": [
         "1",
         "10",
@@ -18597,9 +18478,9 @@
       }
     },
     {
-      "text": "Focaorca e?",
+      "text": "O que é uma foca-orca?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Golfinho",
         "Baleia",
         "Nenhuma"
@@ -18614,7 +18495,7 @@
       }
     },
     {
-      "text": "ABELHAS fazem?",
+      "text": "O que é ABELHAS fazem?",
       "options": [
         "Sumo",
         "Mel",
@@ -18631,7 +18512,7 @@
       }
     },
     {
-      "text": "Animal Miau?",
+      "text": "O que é Animal Miau?",
       "options": [
         "Gato",
         "Vaca",
@@ -18801,7 +18682,7 @@
       }
     },
     {
-      "text": "O que e hibernacao?",
+      "text": "O que é O que e hibernacao?",
       "options": [
         "Dormir inverno",
         "Voar",
@@ -18818,11 +18699,11 @@
       }
     },
     {
-      "text": "Eutrofizacao causa?",
+      "text": "O que é Eutrofizacao causa?",
       "options": [
         "Falta O2",
         "Excesso O2",
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma"
       ],
       "correct_option": 0,
@@ -18835,7 +18716,7 @@
       }
     },
     {
-      "text": "Evolucao e?",
+      "text": "O que é a evolução?",
       "options": [
         "Mudanca",
         "Criacao",
@@ -18852,7 +18733,7 @@
       }
     },
     {
-      "text": "Qual poe ovos?",
+      "text": "O que é Qual poe ovos?",
       "options": [
         "Gato",
         "Cao",
@@ -18869,7 +18750,7 @@
       }
     },
     {
-      "text": "O que e simbiose?",
+      "text": "O que é O que e simbiose?",
       "options": [
         "Fuga",
         "Combate",
@@ -18903,7 +18784,7 @@
       }
     },
     {
-      "text": "Raposa nome?",
+      "text": "O que é Raposa nome?",
       "options": [
         "Canis",
         "Felis",
@@ -18920,7 +18801,7 @@
       }
     },
     {
-      "text": "Morcego e?",
+      "text": "O que é um morcego?",
       "options": [
         "Mamifero",
         "Reptil",
@@ -18937,7 +18818,7 @@
       }
     },
     {
-      "text": "Galinha canta?",
+      "text": "O que é Galinha canta?",
       "options": [
         "So macho",
         "Todas",
@@ -18954,10 +18835,10 @@
       }
     },
     {
-      "text": "Ecossistema e?",
+      "text": "O que é Ecossistema e?",
       "options": [
         "Nenhuma",
-        "两者",
+        "Nenhuma das anteriores",
         "1 especie",
         "Comunidade"
       ],
@@ -18971,7 +18852,7 @@
       }
     },
     {
-      "text": "Leao e?",
+      "text": "O que é um leão?",
       "options": [
         "Mais rapido",
         "Mais pequeno",
@@ -18988,7 +18869,7 @@
       }
     },
     {
-      "text": "Animal regenera?",
+      "text": "O que é Animal regenera?",
       "options": [
         "Lobo",
         "Coruja",
@@ -19007,7 +18888,7 @@
   ],
   "CIENCIA": [
     {
-      "text": "Planeta perto Sol?",
+      "text": "O que é Planeta perto Sol?",
       "options": [
         "Venus",
         "Marte",
@@ -19024,7 +18905,7 @@
       }
     },
     {
-      "text": "Sol e?",
+      "text": "O que é o Sol?",
       "options": [
         "Planeta",
         "Lua",
@@ -19058,7 +18939,7 @@
       }
     },
     {
-      "text": "Arco-iris cores?",
+      "text": "O que é Arco-iris cores?",
       "options": [
         "8",
         "6",
@@ -19075,7 +18956,7 @@
       }
     },
     {
-      "text": "Estacoes?",
+      "text": "Quais são as estações do ano?",
       "options": [
         "4",
         "5",
@@ -19092,7 +18973,7 @@
       }
     },
     {
-      "text": "Simbolo agua?",
+      "text": "O que é Simbolo agua?",
       "options": [
         "CO2",
         "H2O",
@@ -19109,7 +18990,7 @@
       }
     },
     {
-      "text": "Elemento Au?",
+      "text": "O que é Elemento Au?",
       "options": [
         "Aluminio",
         "Prata",
@@ -19143,7 +19024,7 @@
       }
     },
     {
-      "text": "Cor doceu?",
+      "text": "Qual é a cor do céu?",
       "options": [
         "Laranja",
         "Roxo",
@@ -19160,7 +19041,7 @@
       }
     },
     {
-      "text": "Estacoes do ano?",
+      "text": "O que é Estacoes do ano?",
       "options": [
         "2",
         "3",
@@ -19194,7 +19075,7 @@
       }
     },
     {
-      "text": "Sol e uma...",
+      "text": "Sol e uma (complete)",
       "options": [
         "Lua",
         "Galaxia",
@@ -19211,7 +19092,7 @@
       }
     },
     {
-      "text": "Planeta vermelho?",
+      "text": "O que é Planeta vermelho?",
       "options": [
         "Venus",
         "Marte",
@@ -19228,7 +19109,7 @@
       }
     },
     {
-      "text": "O que e gravidade?",
+      "text": "O que é O que e gravidade?",
       "options": [
         "Forca de atracao",
         "Luz",
@@ -19245,7 +19126,7 @@
       }
     },
     {
-      "text": "Maior planeta?",
+      "text": "O que é Maior planeta?",
       "options": [
         "Saturno",
         "Urano",
@@ -19262,7 +19143,7 @@
       }
     },
     {
-      "text": "Quantas luas Terra?",
+      "text": "O que é Quantas luas Terra?",
       "options": [
         "3",
         "0",
@@ -19279,7 +19160,7 @@
       }
     },
     {
-      "text": "Lua e o quizer?",
+      "text": "O que é Lua e o quizer?",
       "options": [
         "Estrela",
         "Satelite",
@@ -19296,7 +19177,7 @@
       }
     },
     {
-      "text": "Gas que respiramos?",
+      "text": "O que é Gas que respiramos?",
       "options": [
         "CO2",
         "Oxigenio",
@@ -19313,7 +19194,7 @@
       }
     },
     {
-      "text": "Fotossintese e...",
+      "text": "Fotossintese e (complete)",
       "options": [
         "Respirar",
         "Fazer luz",
@@ -19330,7 +19211,7 @@
       }
     },
     {
-      "text": "Ponto fusao agua?",
+      "text": "O que é Ponto fusao agua?",
       "options": [
         "100 graus",
         "25 graus",
@@ -19347,7 +19228,7 @@
       }
     },
     {
-      "text": "Fosseis sao...",
+      "text": "Fosseis sao (complete)",
       "options": [
         "Agua",
         "Pedras",
@@ -19381,7 +19262,7 @@
       }
     },
     {
-      "text": "Eclipse e...",
+      "text": "Eclipse e (complete)",
       "options": [
         "Tempestade",
         "Vento",
@@ -19398,7 +19279,7 @@
       }
     },
     {
-      "text": "Planeta com aneis?",
+      "text": "O que é Planeta com aneis?",
       "options": [
         "Venus",
         "Marte",
@@ -19449,7 +19330,7 @@
       }
     },
     {
-      "text": "Quasar e o quizer?",
+      "text": "O que é Quasar e o quizer?",
       "options": [
         "Buraco negro",
         "Estrela",
@@ -19466,7 +19347,7 @@
       }
     },
     {
-      "text": "Materia escura e...",
+      "text": "Materia escura e (complete)",
       "options": [
         "Preta",
         "Escura",
@@ -19483,7 +19364,7 @@
       }
     },
     {
-      "text": "Big Bang foi ha...",
+      "text": "Big Bang foi ha (complete)",
       "options": [
         "1 milhao",
         "13.8 bilioes",
@@ -19500,7 +19381,7 @@
       }
     },
     {
-      "text": "Boson de Higgs?",
+      "text": "O que é Boson de Higgs?",
       "options": [
         "Forca",
         "Particula",
@@ -19517,7 +19398,7 @@
       }
     },
     {
-      "text": "Velocidade da luz?",
+      "text": "O que é Velocidade da luz?",
       "options": [
         "500000 km/s",
         "150000 km/s",
@@ -19534,7 +19415,7 @@
       }
     },
     {
-      "text": "Lua e?",
+      "text": "O que é a Lua?",
       "options": [
         "Satelite",
         "Planeta",
@@ -19551,11 +19432,11 @@
       }
     },
     {
-      "text": "Terra e?",
+      "text": "O que é a Terra?",
       "options": [
         "Redonda",
         "Nenhuma",
-        " both",
+        "Nenhuma das anteriores",
         "Plana"
       ],
       "correct_option": 0,
@@ -19568,7 +19449,7 @@
       }
     },
     {
-      "text": "Sol luz demora?",
+      "text": "O que é Sol luz demora?",
       "options": [
         "1 hora",
         "8 min",
@@ -19585,7 +19466,7 @@
       }
     },
     {
-      "text": "Planeta maior?",
+      "text": "O que é Planeta maior?",
       "options": [
         "Urano",
         "Saturno",
@@ -19602,11 +19483,11 @@
       }
     },
     {
-      "text": "Nebulosa e?",
+      "text": "O que é uma nebulosa?",
       "options": [
         "Nuvem",
         "Estrela",
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma"
       ],
       "correct_option": 0,
@@ -19619,7 +19500,7 @@
       }
     },
     {
-      "text": "Luz velocidade?",
+      "text": "O que é Luz velocidade?",
       "options": [
         "3000 km/s",
         "300000 km/s",
@@ -19653,7 +19534,7 @@
       }
     },
     {
-      "text": "Pilhas fornecem?",
+      "text": "O que é Pilhas fornecem?",
       "options": [
         "Calor",
         "Luz",
@@ -19670,9 +19551,9 @@
       }
     },
     {
-      "text": "Quasar e?",
+      "text": "O que é um quasar?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Galaxia",
         "Nenhuma",
         "Estrela"
@@ -19687,12 +19568,12 @@
       }
     },
     {
-      "text": "Boson Higgs?",
+      "text": "O que é Boson Higgs?",
       "options": [
         "Nenhuma",
         "Onda",
         "Particula",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 16,
@@ -19704,10 +19585,10 @@
       }
     },
     {
-      "text": "Quark e?",
+      "text": "O que é um quark?",
       "options": [
         "Particula",
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Onda"
       ],
@@ -19721,11 +19602,11 @@
       }
     },
     {
-      "text": "Entropia e?",
+      "text": "O que é a entropia?",
       "options": [
         "Ordem",
         "Desordem",
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma"
       ],
       "correct_option": 1,
@@ -19741,7 +19622,7 @@
       "text": "Relatividade special?",
       "options": [
         "Newton",
-        " both",
+        "Nenhuma das anteriores",
         "Einstein",
         "Nenhuma"
       ],
@@ -19755,12 +19636,12 @@
       }
     },
     {
-      "text": "E=mc2 formula?",
+      "text": "O que é E=mc2 formula?",
       "options": [
         "Energia",
         "Todas",
         "Massa",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -19772,9 +19653,9 @@
       }
     },
     {
-      "text": "Isotopo tem?",
+      "text": "O que é Isotopo tem?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Proton",
         "Neuterons",
         "Nenhuma"
@@ -19791,7 +19672,7 @@
     {
       "text": "Radioatividade mede?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Becquerel",
         "Sievert",
         "Todas"
@@ -19806,10 +19687,10 @@
       }
     },
     {
-      "text": "Meia-vida e?",
+      "text": "O que é Meia-vida e?",
       "options": [
         "Tempo",
-        " both",
+        "Nenhuma das anteriores",
         "Todas",
         "Metade"
       ],
@@ -19826,7 +19707,7 @@
       "text": "Nanotecnologia escala?",
       "options": [
         "nm",
-        " both",
+        "Nenhuma das anteriores",
         "um",
         "Todas"
       ],
@@ -19842,7 +19723,7 @@
     {
       "text": "Efeito fotoelectrico?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Newton",
         "Todas",
         "Einstein"
@@ -19861,7 +19742,7 @@
       "options": [
         "Einstein",
         "Todas",
-        " both",
+        "Nenhuma das anteriores",
         "Heisenberg"
       ],
       "correct_option": 3,
@@ -19876,9 +19757,9 @@
     {
       "text": "Dualidade onda-particula?",
       "options": [
-        " both",
-        " both",
-        " both",
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores",
         "Todas"
       ],
       "correct_option": 3,
@@ -19891,12 +19772,12 @@
       }
     },
     {
-      "text": "Orbital atomico e?",
+      "text": "O que é Orbital atomico e?",
       "options": [
         "Nenhuma",
         "Probabilidade",
-        " both",
-        " both"
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -19908,7 +19789,7 @@
       }
     },
     {
-      "text": "Estrela mais perto?",
+      "text": "O que é Estrela mais perto?",
       "options": [
         "Venus",
         "Lua",
@@ -19927,7 +19808,7 @@
     {
       "text": "Saturno e conhecido por?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Anel",
         "Mancha"
@@ -19942,12 +19823,12 @@
       }
     },
     {
-      "text": " Cometa tem?",
+      "text": "O que é  Cometa tem?",
       "options": [
         "Cauda",
         "Cabeca",
         "Nenhuma",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 8,
@@ -19959,10 +19840,10 @@
       }
     },
     {
-      "text": "Meteorito e?",
+      "text": "O que é Meteorito e?",
       "options": [
         "Metal",
-        "两者",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Rocha"
       ],
@@ -19976,7 +19857,7 @@
       }
     },
     {
-      "text": "Agua ferve a?",
+      "text": "O que é Agua ferve a?",
       "options": [
         "150C",
         "50C",
@@ -20010,12 +19891,12 @@
       }
     },
     {
-      "text": "Som precisa?",
+      "text": "O que é Som precisa?",
       "options": [
         "Agua",
         "Ar",
         "Nenhuma",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 8,
@@ -20027,11 +19908,11 @@
       }
     },
     {
-      "text": "Ima tem?",
+      "text": "Quantos polos tem um íman?",
       "options": [
         "Todas",
         "Polo",
-        " both",
+        "Nenhuma das anteriores",
         "Nenhum"
       ],
       "correct_option": 2,
@@ -20044,9 +19925,9 @@
       }
     },
     {
-      "text": "Electricidade pode?",
+      "text": "O que é Electricidade pode?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Iluminar",
         "Matar",
         "Nenhuma"
@@ -20065,7 +19946,7 @@
       "options": [
         "Proton",
         "Eletron",
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma"
       ],
       "correct_option": 2,
@@ -20078,12 +19959,12 @@
       }
     },
     {
-      "text": "Agua pesada?",
+      "text": "O que é Agua pesada?",
       "options": [
         "Nenhuma",
         "H2O",
         "D2O",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 16,
@@ -20097,7 +19978,7 @@
     {
       "text": "Fusao nuclear ocorre em?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Sol",
         "Terra"
@@ -20112,12 +19993,12 @@
       }
     },
     {
-      "text": "Laser e?",
+      "text": "O que é um laser?",
       "options": [
         "Luz",
         "Nenhuma",
-        " both",
-        " both"
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 16,
@@ -20129,10 +20010,10 @@
       }
     },
     {
-      "text": "Fibra optica usa?",
+      "text": "O que é Fibra optica usa?",
       "options": [
         "Eletricidade",
-        " both",
+        "Nenhuma das anteriores",
         "Luz",
         "Nenhuma"
       ],
@@ -20146,10 +20027,10 @@
       }
     },
     {
-      "text": "Semicondutor pode?",
+      "text": "O que é Semicondutor pode?",
       "options": [
-        " both",
-        " both",
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Conduzir"
       ],
@@ -20163,9 +20044,9 @@
       }
     },
     {
-      "text": "LED emissao?",
+      "text": "O que é LED emissao?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Todas",
         "Calor",
         "Luz"
@@ -20180,12 +20061,12 @@
       }
     },
     {
-      "text": "Spin eletron e?",
+      "text": "O que é Spin eletron e?",
       "options": [
         "Nenhuma",
         "Momento",
-        " both",
-        " both"
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 16,
@@ -20197,7 +20078,7 @@
       }
     },
     {
-      "text": "Espectro visivel?",
+      "text": "O que é Espectro visivel?",
       "options": [
         "400-700nm",
         "Todas",
@@ -20214,11 +20095,11 @@
       }
     },
     {
-      "text": "Gravidade e?",
+      "text": "O que é Gravidade e?",
       "options": [
         "Energia",
         "Nenhuma",
-        " both",
+        "Nenhuma das anteriores",
         "Forca"
       ],
       "correct_option": 3,
@@ -20231,7 +20112,7 @@
       }
     },
     {
-      "text": "Gas respiramos?",
+      "text": "O que é Gas respiramos?",
       "options": [
         "Nitrogenio",
         "Oxigenio",
@@ -20248,9 +20129,9 @@
       }
     },
     {
-      "text": "Eclipse e?",
+      "text": "O que é um eclipse?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Sombra",
         "Luz"
@@ -20265,12 +20146,12 @@
       }
     },
     {
-      "text": "ADN e?",
+      "text": "O que é o ADN?",
       "options": [
         "Acido",
         "Base",
         "Nenhuma",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 12,
@@ -20282,7 +20163,7 @@
       }
     },
     {
-      "text": "Estacoes causa?",
+      "text": "O que é Estacoes causa?",
       "options": [
         "Orbita",
         "Sol",
@@ -20299,7 +20180,7 @@
       }
     },
     {
-      "text": "Big Bang foi?",
+      "text": "O que é Big Bang foi?",
       "options": [
         "10 bilioes",
         "13.8 bilioes",
@@ -20316,7 +20197,7 @@
       }
     },
     {
-      "text": "Velocidade luz?",
+      "text": "O que é Velocidade luz?",
       "options": [
         "1000000 km/s",
         "150000 km/s",
@@ -20333,9 +20214,9 @@
       }
     },
     {
-      "text": "Universo e?",
+      "text": "O que é o universo?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Estatico",
         "Expansao",
         "Nenhuma"
@@ -20350,12 +20231,12 @@
       }
     },
     {
-      "text": "Materia escura e?",
+      "text": "O que é Materia escura e?",
       "options": [
         "Nenhuma",
         "Preta",
         "Invisivel",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 12,
@@ -20367,11 +20248,11 @@
       }
     },
     {
-      "text": "Inducao magnetica?",
+      "text": "O que é Inducao magnetica?",
       "options": [
         "Corrente",
         "Todas",
-        " both",
+        "Nenhuma das anteriores",
         "Tensao"
       ],
       "correct_option": 1,
@@ -20384,7 +20265,7 @@
       }
     },
     {
-      "text": "Terra luas?",
+      "text": "Quantas luas tem a Terra?",
       "options": [
         "3",
         "1",
@@ -20401,11 +20282,11 @@
       }
     },
     {
-      "text": "Fotossintese faz?",
+      "text": "O que é Fotossintese faz?",
       "options": [
         "Glicose",
         "O2",
-        "两者",
+        "Nenhuma das anteriores",
         "Nenhuma"
       ],
       "correct_option": 2,
@@ -20418,12 +20299,12 @@
       }
     },
     {
-      "text": "Fosseis sao?",
+      "text": "O que é Fosseis sao?",
       "options": [
         "Pedras",
         "Restos",
         "Nenhuma",
-        "两者"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 12,
@@ -20435,7 +20316,7 @@
       }
     },
     {
-      "text": "Camada Terra?",
+      "text": "O que é Camada Terra?",
       "options": [
         "4",
         "6",
@@ -20452,7 +20333,7 @@
       }
     },
     {
-      "text": "Asteroides onde?",
+      "text": "O que é Asteroides onde?",
       "options": [
         "4",
         "2",
@@ -20469,11 +20350,11 @@
       }
     },
     {
-      "text": "Buraco negro e?",
+      "text": "O que é Buraco negro e?",
       "options": [
         "Massa",
         "Nenhuma",
-        " both",
+        "Nenhuma das anteriores",
         "Energia"
       ],
       "correct_option": 2,
@@ -20486,9 +20367,9 @@
       }
     },
     {
-      "text": " Constelacao e?",
+      "text": "O que é  Constelacao e?",
       "options": [
-        "两者",
+        "Nenhuma das anteriores",
         "Grupo",
         "Estrela",
         "Nenhuma"
@@ -20503,9 +20384,9 @@
       }
     },
     {
-      "text": "Atomo tem?",
+      "text": "O que é um átomo?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Eletron",
         "Proton"
@@ -20523,7 +20404,7 @@
       "text": "Tabela periodica organizacao?",
       "options": [
         "Massa",
-        " both",
+        "Nenhuma das anteriores",
         "Todas",
         "Numero atomico"
       ],
@@ -20542,7 +20423,7 @@
         "Forming",
         " breaking",
         "Nenhuma",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 12,
@@ -20559,7 +20440,7 @@
         "Nao",
         "Nenhuma",
         "Sim",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 2,
       "age_rating": 12,
@@ -20571,7 +20452,7 @@
       }
     },
     {
-      "text": "pH neutro?",
+      "text": "Qual é o valor de pH neutro?",
       "options": [
         "6",
         "7",
@@ -20588,7 +20469,7 @@
       }
     },
     {
-      "text": "Solucao acida pH?",
+      "text": "O que é Solucao acida pH?",
       "options": [
         "=7",
         "<7",
@@ -20610,7 +20491,7 @@
         "Radio",
         "Luz",
         "Nenhuma",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 12,
@@ -20622,12 +20503,12 @@
       }
     },
     {
-      "text": "Magnetismo pode?",
+      "text": "O que é Magnetismo pode?",
       "options": [
         "Atrair",
         "Repelir",
         "Nenhuma",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 3,
       "age_rating": 12,
@@ -20639,10 +20520,10 @@
       }
     },
     {
-      "text": "Eletrolise usa?",
+      "text": "O que é Eletrolise usa?",
       "options": [
-        " both",
-        " both",
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores",
         "Corrente",
         "Todas"
       ],
@@ -20656,9 +20537,9 @@
       }
     },
     {
-      "text": "Hibridacao sp3?",
+      "text": "O que é Hibridacao sp3?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "4",
         "3",
         "Nenhuma"
@@ -20675,10 +20556,10 @@
     {
       "text": "Reacaoredox envolve?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "Eletron",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 16,
@@ -20826,7 +20707,7 @@
       }
     },
     {
-      "text": "Cor ceu?",
+      "text": "Qual é a cor do céu?",
       "options": [
         "Azul",
         "Roxo",
@@ -20843,7 +20724,7 @@
       }
     },
     {
-      "text": "Simbolo da agua?",
+      "text": "O que é Simbolo da agua?",
       "options": [
         "H2O",
         "O2",
@@ -20860,10 +20741,10 @@
       }
     },
     {
-      "text": "Galaxia e?",
+      "text": "O que é uma galáxia?",
       "options": [
         "Nenhuma",
-        "两者",
+        "Nenhuma das anteriores",
         "Estrela",
         "Sistema"
       ],
@@ -20877,7 +20758,7 @@
       }
     },
     {
-      "text": "Agua congela a?",
+      "text": "O que é Agua congela a?",
       "options": [
         "0C",
         "10C",
@@ -20894,12 +20775,12 @@
       }
     },
     {
-      "text": "Tempo e relativo?",
+      "text": "O que é Tempo e relativo?",
       "options": [
         "Nao",
         "Sim",
         "Talvez",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 1,
       "age_rating": 16,
@@ -20915,7 +20796,7 @@
       "options": [
         "Zero",
         "Nenhuma",
-        " both",
+        "Nenhuma das anteriores",
         "Infinita"
       ],
       "correct_option": 0,
@@ -20928,10 +20809,10 @@
       }
     },
     {
-      "text": "Regra octeto?",
+      "text": "O que é Regra octeto?",
       "options": [
-        " both",
-        " both",
+        "Nenhuma das anteriores",
+        "Nenhuma das anteriores",
         "Nenhuma",
         "8"
       ],
@@ -21030,7 +20911,7 @@
       }
     },
     {
-      "text": "ADN e o quizer?",
+      "text": "O que é ADN e o quizer?",
       "options": [
         "Gene",
         "Celula",
@@ -21047,12 +20928,12 @@
       }
     },
     {
-      "text": "Fissão nuclear usa?",
+      "text": "O que é Fissão nuclear usa?",
       "options": [
         "Uranio",
         "Nenhuma",
         "Hidrogenio",
-        " both"
+        "Nenhuma das anteriores"
       ],
       "correct_option": 0,
       "age_rating": 16,
@@ -21066,7 +20947,7 @@
     {
       "text": "Numeros quanticos incluem?",
       "options": [
-        " both",
+        "Nenhuma das anteriores",
         "n, m",
         "Nenhuma",
         "n, l, m, s"
@@ -21081,7 +20962,7 @@
       }
     },
     {
-      "text": "Plantas precisam?",
+      "text": "O que é Plantas precisam?",
       "options": [
         "Sombra",
         "Vento",
@@ -21115,7 +20996,7 @@
       }
     },
     {
-      "text": "Constelacao e...",
+      "text": "Constelacao e (complete)",
       "options": [
         "Galaxia",
         "Estrela",
