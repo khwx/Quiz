@@ -932,7 +932,10 @@ export default function TVHost() {
                 />
             )}
 
-      {/* REVEAL / LEADERBOARD INFO */}
+            {/* REVEAL / LEADERBOARD INFO */}
+      {status === "REVEAL" && currentQ && (
+        <LiveLeaderboard players={players} />
+      )}
       {status === "REVEAL" && currentQ && (
         <motion.div
           initial={{ y: 100, opacity: 0 }}
