@@ -51,6 +51,7 @@ export default function TVHost() {
     const [questionSource, setQuestionSource] = useState<"DB" | "AI" | null>(null);
     const [localMode, setLocalMode] = useState(false);
     const [localScore, setLocalScore] = useState(0);
+    const [availableCount, setAvailableCount] = useState<number | null>(null);
 
     const CATEGORIES = [
         { name: "Cultura Geral", icon: <Globe className="w-4 h-4" />, dbName: "CULTURA_GERAL" },
@@ -71,6 +72,22 @@ export default function TVHost() {
     ];
 
     const { playSound } = useSound();
+
+    // Fetch available question count for selected categories + age
+    useEffect(() => {
+        const fetchCount = async () => {
+            const dbNames = topic.map(t => CATEGORIES.find(c => c.name === t)?.dbName).filter(Boolean);
+            if (dbNames.length === 0) { setAvailableCount(null); return; }
+            const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, "adults": 16 };
+            const targetAge = ageMap[ageGroup] || 16;
+            const isUniversal = dbNames.some(n => n === "Bandeiras" || n === "CAPITAIS_DO_MUNDO");
+            let query = supabase.from("questions").select("id", { count: "exact", head: true }).in("category", dbNames);
+            if (!isUniversal) query = query.gte("age_rating", targetAge);
+            const { count } = await query;
+            setAvailableCount(count ?? 0);
+        };
+        fetchCount();
+    }, [topic, ageGroup]);
 
     // Handle local mode answer
     const handleLocalAnswer = (optionIndex: number) => {
@@ -394,7 +411,7 @@ export default function TVHost() {
                         image_url: q.image_url || null,
                         options: q.options,
                         correct_option: q.correct_option,
-                        category: finalTopic.charAt(0).toUpperCase() + finalTopic.slice(1).toLowerCase(),
+                        category: selectedDbNames[0] || "CULTURA_GERAL",
                         age_rating: dbAgeRating
                     }));
 
@@ -408,17 +425,15 @@ export default function TVHost() {
                     let finalQuery = supabase
                         .from("questions")
                         .select("*")
-                        .ilike("category", finalTopic);
+                        .in("category", selectedDbNames);
 
                     // Exclude used questions from this session
                     if (currentUsedIds.length > 0) {
                         finalQuery = finalQuery.not('id', 'in', `(${currentUsedIds.join(',')})`);
                     }
 
-                    if (targetAge === 18) {
-                        finalQuery = finalQuery.gte('age_rating', 18);
-                    } else {
-                        finalQuery = finalQuery.eq('age_rating', targetAge);
+                    if (!isUniversalTopic) {
+                        finalQuery = finalQuery.gte('age_rating', targetAge);
                     }
 
                     const { data: allAvailableQuestions } = await finalQuery;
@@ -742,8 +757,8 @@ export default function TVHost() {
               </div>
             </div>
 
-            {players.length > 0 && (
-            <div className="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 bg-black/20 flex-grow">
+                            {(localMode || players.length > 0) && (
+                            <div className="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 bg-black/20 flex-grow">
                                 {/* AGE GROUP SELECTOR */}
                                 <div className="space-y-3">
                                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
@@ -805,6 +820,12 @@ export default function TVHost() {
                                         onChange={(e) => setCustomTopic(e.target.value)}
                                         className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
                                     />
+                                    {availableCount !== null && topic.length > 0 && (
+                                        <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold ${availableCount >= questionCount ? 'bg-green-500/10 text-green-400' : availableCount > 0 ? 'bg-amber-500/10 text-amber-400' : 'bg-red-500/10 text-red-400'}`}>
+                                            <span className={`w-2 h-2 rounded-full ${availableCount >= questionCount ? 'bg-green-400' : availableCount > 0 ? 'bg-amber-400' : 'bg-red-400'}`} />
+                                            {availableCount} perguntas disponiveis (pediste {questionCount})
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* TIMER DURATION SELECTOR */}

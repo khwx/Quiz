@@ -50,7 +50,7 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
             <div className="w-full flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
                     <span className="bg-white/5 backdrop-blur-md px-6 py-2 rounded-full font-black uppercase tracking-tighter text-violet-400 border border-white/10 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
-                        Arena: {question.category || "Geral"}
+                        Arena: {(question.category || "Geral").replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (l: string) => l.toUpperCase())}
                     </span>
                     {questionSource && (
                         <div className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider ${
