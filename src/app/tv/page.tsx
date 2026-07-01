@@ -17,6 +17,7 @@ import SoundEnableButton from "@/components/SoundEnableButton";
 import { useToast } from "@/hooks/useToast";
 import ToastContainer from "@/components/Toast";
 import ReportModal from "@/components/ReportModal";
+import ConfirmModal from "@/components/ConfirmModal";
 
 export default function TVHost() {
     const { gameId, setGameId, setPlayers, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
@@ -77,6 +78,7 @@ export default function TVHost() {
     const { playSound } = useSound();
     const { toasts, show: showToast, dismiss } = useToast();
     const [reportOpen, setReportOpen] = useState(false);
+    const [memoryConfirmOpen, setMemoryConfirmOpen] = useState(false);
 
     // Fetch available question count for selected categories + age
     useEffect(() => {
@@ -672,15 +674,10 @@ export default function TVHost() {
           {usedQuestionIdsRef.current.length > 0 && (
             <div className="absolute -top-10 right-0">
               <button
-                onClick={() => {
-                  if (confirm(`Limpar memória das perguntas?\n${usedQuestionIdsRef.current.length} perguntas memorizadas.`)) {
-                    localStorage.removeItem('usedQuestionIds');
-                    usedQuestionIdsRef.current = [];
-                  }
-                }}
+                onClick={() => setMemoryConfirmOpen(true)}
                 className="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-white/60 hover:text-red-400 rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
               >
-                🧹 Memória ({usedQuestionIdsRef.current.length})
+                Limpar Memoria ({usedQuestionIdsRef.current.length})
               </button>
             </div>
             )}
@@ -1030,6 +1027,18 @@ export default function TVHost() {
             )}
             <ToastContainer toasts={toasts} onDismiss={dismiss} />
             <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReportQuestion} />
+            <ConfirmModal
+              isOpen={memoryConfirmOpen}
+              onClose={() => setMemoryConfirmOpen(false)}
+              onConfirm={() => {
+                localStorage.removeItem('usedQuestionIds');
+                usedQuestionIdsRef.current = [];
+              }}
+              title="Limpar Memoria"
+              message={`Tens a certeza? ${usedQuestionIdsRef.current.length} perguntas memorizadas serao apagadas.`}
+              confirmLabel="Limpar"
+              danger
+            />
         </main>
     );
 }

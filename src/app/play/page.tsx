@@ -9,6 +9,7 @@ import { useSound } from "@/hooks/useSound";
 import { useToast } from "@/hooks/useToast";
 import ToastContainer from "@/components/Toast";
 import ReportModal from "@/components/ReportModal";
+import ConfirmModal from "@/components/ConfirmModal";
 import MobileNav from "@/components/MobileNav";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
@@ -30,6 +31,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const { playSound } = useSound();
   const { toasts, show: showToast, dismiss } = useToast();
   const [reportOpen, setReportOpen] = useState(false);
+  const [leaveConfirmOpen, setLeaveConfirmOpen] = useState(false);
 
   const fetchQuestion = useCallback(async () => {
     if (!currentQuestionId) return;
@@ -170,15 +172,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   };
 
   const handleLeave = async () => {
-    if (window.confirm("Queres sair do jogo?")) {
-      if (gameId) {
-        const player = players.find(p => p.name === name);
-        if (player) await supabase.from('players').delete().eq('id', player.id);
-      }
-      setHasJoined(false);
-      setGameId(null);
-      window.location.href = '/';
+    if (gameId) {
+      const player = players.find(p => p.name === name);
+      if (player) await supabase.from('players').delete().eq('id', player.id);
     }
+    setHasJoined(false);
+    setGameId(null);
+    window.location.href = '/';
   };
 
   const handleReport = async (reason: string) => {
@@ -224,7 +224,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               <Wifi className="w-4 h-4 text-emerald-400" />
               <span className="text-sm text-emerald-400">Conectado</span>
             </div>
-            <button onClick={handleLeave} className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-full hover:bg-red-500/20 transition-colors">
+            <button onClick={() => setLeaveConfirmOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-full hover:bg-red-500/20 transition-colors">
               <LogOut className="w-4 h-4" />
               <span className="text-sm">Sair</span>
             </button>
@@ -516,8 +516,17 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       </motion.div>
 
       <MobileNav />
-      <ToastContainer toasts={toasts} onDismiss={dismiss} />
-      <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+          <ToastContainer toasts={toasts} onDismiss={dismiss} />
+          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+          <ConfirmModal
+            isOpen={leaveConfirmOpen}
+            onClose={() => setLeaveConfirmOpen(false)}
+            onConfirm={handleLeave}
+            title="Sair do Jogo?"
+            message="Tens a certeza que queres sair?"
+            confirmLabel="Sair"
+            danger
+          />
       <div className="h-20 md:hidden" />
     </main>
   );
