@@ -996,7 +996,11 @@ export default function TVHost() {
                 <div className="flex flex-col items-center gap-8">
                     <Podium
                         players={players}
-                        onRestart={() => {}}
+                        onRestart={() => {
+                            setRound(r => r + 1);
+                            setCurrentAnswers([]);
+                            updateStatus("STARTING");
+                        }}
                     />
                     <button
                         onClick={() => {
