@@ -929,6 +929,8 @@ export default function TVHost() {
                     onTimerClick={() => setTimeLeft(0)}
                     localMode={localMode}
                     onLocalAnswer={handleLocalAnswer}
+                    questionNumber={currentQuestionIndex}
+                    totalQuestions={currentQuestions.length}
                 />
             )}
 

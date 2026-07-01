@@ -10,7 +10,7 @@ import MobileNav from "@/components/MobileNav";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
   const resolvedParams = use(searchParams);
-  const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players, setGameId } = useGame();
+  const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players, setGameId, gameSettings } = useGame();
   const [pin, setPin] = useState(resolvedParams.pin || "");
   const [name, setName] = useState("");
   const [isJoining, setIsJoining] = useState(false);
@@ -245,6 +245,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
             <span className="text-xs font-bold text-white/40 uppercase tracking-widest">
               {questionData.category?.replace(/_/g, ' ')}
             </span>
+            {gameSettings?.question_ids && (
+              <span className="text-xs font-bold text-pink-300/60 uppercase tracking-widest">
+                {currentQuestionIndex}/{gameSettings.question_ids.length}
+              </span>
+            )}
             <div className="flex items-center gap-2">
               <Clock className={`w-4 h-4 ${timeLeft <= 5 ? 'text-red-400 animate-pulse' : 'text-white/40'}`} />
               <span className={`text-lg font-black font-mono ${timeLeft <= 5 ? 'text-red-400' : 'text-white'}`}>

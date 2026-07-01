@@ -16,6 +16,8 @@ interface QuestionDisplayProps {
     onTimerClick?: () => void;
     localMode?: boolean;
     onLocalAnswer?: (optionIndex: number) => void;
+    questionNumber?: number;
+    totalQuestions?: number;
 }
 
 const colors = [
@@ -27,7 +29,7 @@ const colors = [
 
 const icons = ["A", "B", "C", "D"];
 
-export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], questionSource, onTimerClick, localMode = false, onLocalAnswer }: QuestionDisplayProps) {
+export default function QuestionDisplay({ question, timeLeft, totalTime, status, players = [], answers = [], questionSource, onTimerClick, localMode = false, onLocalAnswer, questionNumber, totalQuestions }: QuestionDisplayProps) {
     const progress = (timeLeft / totalTime) * 100;
     const [ttsEnabled, setTtsEnabled] = useState(true);
     const [isReading, setIsReading] = useState(false);
@@ -52,6 +54,11 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                     <span className="bg-white/5 backdrop-blur-md px-6 py-2 rounded-full font-black uppercase tracking-tighter text-violet-400 border border-white/10 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
                         Arena: {(question.category || "Geral").replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (l: string) => l.toUpperCase())}
                     </span>
+                    {questionNumber && totalQuestions && (
+                        <span className="bg-pink-500/10 backdrop-blur-md px-4 py-2 rounded-full font-black text-pink-300 border border-pink-500/20 text-sm">
+                            {questionNumber}/{totalQuestions}
+                        </span>
+                    )}
                     {questionSource && (
                         <div className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider ${
                             questionSource === "AI" 
