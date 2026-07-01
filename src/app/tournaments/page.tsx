@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { Trophy, Plus, Crown, Users, Loader2, Calendar, Clock, Medal, Target, ArrowRight, Play, Flag } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import ConfirmModal from "@/components/ConfirmModal";
 
 function generatePin(length: number = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -45,6 +46,7 @@ export default function TournamentsPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [myTournament, setMyTournament] = useState<any>(null);
+  const [startConfirmOpen, setStartConfirmOpen] = useState(false);
 
   useEffect(() => {
     checkUser();
@@ -246,16 +248,7 @@ export default function TournamentsPage() {
 
 {myTournament.status === 'LOBBY' && (
               <button
-                onClick={async () => {
-                  if (!confirm("Iniciar o torneio?")) return;
-                  await supabase
-                    .from('tournaments')
-                    .update({ status: 'QUALIFYING' })
-                    .eq('id', myTournament.id);
-                  setMyTournament({ ...myTournament, status: 'QUALIFYING' });
-                  // Open TV
-                  window.open(`/tv?tournament=${myTournament.id}`, '_blank');
-                }}
+                onClick={() => setStartConfirmOpen(true)}
                 className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl font-bold text-white"
               >
                 <Play className="w-5 h-5" />
@@ -418,6 +411,21 @@ export default function TournamentsPage() {
         )}
       </div>
 
+      <ConfirmModal
+        isOpen={startConfirmOpen}
+        onClose={() => setStartConfirmOpen(false)}
+        onConfirm={async () => {
+          await supabase
+            .from('tournaments')
+            .update({ status: 'QUALIFYING' })
+            .eq('id', myTournament.id);
+          setMyTournament({ ...myTournament, status: 'QUALIFYING' });
+          window.open(`/tv?tournament=${myTournament.id}`, '_blank');
+        }}
+        title="Iniciar Torneio?"
+        message="Tens a certeza que queres iniciar o torneio?"
+        confirmLabel="Iniciar"
+      />
       <MobileNav />
       <div className="h-20 md:hidden" />
     </main>
