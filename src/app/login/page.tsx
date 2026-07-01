@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User, Facebook } from "lucide-react";
+import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User, Facebook, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
@@ -16,6 +16,7 @@ export default function LoginPage() {
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +44,7 @@ export default function LoginPage() {
         
         if (signUpError) throw signUpError;
         
-        alert("Conta criada! Verifica o teu email para ativar.");
+        setSuccess("Conta criada! Verifica o teu email para ativar.");
       }
     } catch (err: any) {
       setError(err.message || "Erro ao autenticar");
@@ -230,6 +231,13 @@ export default function LoginPage() {
           {error && (
             <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
               {error}
+            </div>
+          )}
+
+          {success && (
+            <div className="p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-sm flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 shrink-0" />
+              {success}
             </div>
           )}
 

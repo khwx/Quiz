@@ -14,6 +14,9 @@ import LiveLeaderboard from "@/components/tv/LiveLeaderboard";
 import { useSound } from "@/hooks/useSound";
 import CastButton from "@/components/CastButton";
 import SoundEnableButton from "@/components/SoundEnableButton";
+import { useToast } from "@/hooks/useToast";
+import ToastContainer from "@/components/Toast";
+import ReportModal from "@/components/ReportModal";
 
 export default function TVHost() {
     const { gameId, setGameId, setPlayers, status, updateStatus, players, currentQuestionIndex, nextQuestion, gameSettings } = useGame();
@@ -72,6 +75,8 @@ export default function TVHost() {
     ];
 
     const { playSound } = useSound();
+    const { toasts, show: showToast, dismiss } = useToast();
+    const [reportOpen, setReportOpen] = useState(false);
 
     // Fetch available question count for selected categories + age
     useEffect(() => {
@@ -104,9 +109,8 @@ export default function TVHost() {
         updateStatus("REVEAL");
     };
 
-    const handleReportQuestion = async () => {
-        const reason = prompt("Qual é o problema desta pergunta?");
-        if (!reason || !currentQ?.id) return;
+    const handleReportQuestion = async (reason: string) => {
+        if (!currentQ?.id) return;
 
         const { data: q } = await supabase
             .from('questions')
@@ -125,7 +129,7 @@ export default function TVHost() {
             })
             .eq('id', currentQ.id);
         
-        alert("Obrigado! Pergunta reportada.");
+        showToast("Obrigado! Pergunta reportada.", "success");
     };
 
     // Initial Game Creation or Connection
@@ -483,7 +487,7 @@ export default function TVHost() {
                 console.error("Question loading failed:", err);
                 // Revert status so user can try again
                 updateStatus("LOBBY");
-                alert("Falha ao gerar perguntas: " + (err instanceof Error ? err.message : "Erro desconhecido") + "\nTenta outro tema ou limpa a memória das perguntas usadas.");
+                showToast("Falha ao gerar perguntas: " + (err instanceof Error ? err.message : "Erro desconhecido") + ". Tenta outro tema ou limpa a memoria.", "error");
             } finally {
                 setIsGenerating(false);
                 isStartingRef.current = false;
@@ -945,7 +949,7 @@ export default function TVHost() {
           className="w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:justify-center sm:items-center mt-6 px-4"
         >
           <button
-            onClick={handleReportQuestion}
+            onClick={() => setReportOpen(true)}
             className="flex items-center justify-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all text-sm"
           >
             <Flag className="w-4 h-4" /> Reportar
@@ -1016,7 +1020,7 @@ export default function TVHost() {
                         <>Escolher Outro Tema</>
                     </button>
                     <button
-                        onClick={handleReportQuestion}
+                        onClick={() => setReportOpen(true)}
                         className="flex items-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all"
                     >
                         <Flag className="w-5 h-5" />
@@ -1024,6 +1028,8 @@ export default function TVHost() {
                     </button>
                 </div>
             )}
+            <ToastContainer toasts={toasts} onDismiss={dismiss} />
+            <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReportQuestion} />
         </main>
     );
 }

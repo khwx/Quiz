@@ -53,6 +53,7 @@ export default function CategoriesPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [categoryCounts, setCategoryCounts] = useState<CategoryCount[]>([]);
   const [ageGroup, setAgeGroup] = useState<string>("adults");
+  const [catError, setCatError] = useState("");
 
   useEffect(() => {
     async function fetchCounts() {
@@ -88,6 +89,7 @@ export default function CategoriesPage() {
   }, [ageGroup]);
 
   const toggleCategory = (name: string) => {
+    setCatError("");
     if (selectedCategories.includes(name)) {
       setSelectedCategories(selectedCategories.filter(c => c !== name));
     } else {
@@ -97,7 +99,7 @@ export default function CategoriesPage() {
 
   const handlePlay = () => {
     if (selectedCategories.length === 0) {
-      alert("Seleciona pelo menos uma categoria!");
+      setCatError("Seleciona pelo menos uma categoria!");
       return;
     }
     // Navigate to TV page with selected categories
@@ -210,6 +212,11 @@ export default function CategoriesPage() {
 
         {/* Play Button */}
         <section className="mt-8">
+          {catError && (
+            <div className="mb-3 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
+              {catError}
+            </div>
+          )}
           <button
             onClick={handlePlay}
             disabled={totalSelected === 0}

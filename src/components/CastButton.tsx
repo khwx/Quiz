@@ -59,7 +59,7 @@ export default function CastButton() {
                     if (err !== 'cancel') console.error("Session Request Failed", err);
                 });
         } else {
-            alert("O serviço Google Cast ainda não está pronto. Verifique se tem a extensão instalada ou tente atualizar a página.");
+            console.warn("Google Cast not available. Ensure the extension is installed.");
         }
     };
 

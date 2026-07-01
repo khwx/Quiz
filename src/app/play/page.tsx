@@ -6,6 +6,9 @@ import { useGame } from "@/context/GameContext";
 import { Gamepad2, CheckCircle2, Loader2, Trophy, Wifi, Rocket, ArrowLeft, LogOut, Flag, Lightbulb, Clock, Image as ImageIcon } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useSound } from "@/hooks/useSound";
+import { useToast } from "@/hooks/useToast";
+import ToastContainer from "@/components/Toast";
+import ReportModal from "@/components/ReportModal";
 import MobileNav from "@/components/MobileNav";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
@@ -25,6 +28,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [timerActive, setTimerActive] = useState(false);
 
   const { playSound } = useSound();
+  const { toasts, show: showToast, dismiss } = useToast();
+  const [reportOpen, setReportOpen] = useState(false);
 
   const fetchQuestion = useCallback(async () => {
     if (!currentQuestionId) return;
@@ -110,14 +115,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     try {
       const { data, error: pinError } = await supabase.from('games').select('id').eq('pin', pin).single();
       if (pinError || !data) {
-        alert("Pin invalido ou jogo nao encontrado!");
+        showToast("Pin invalido ou jogo nao encontrado!", "error");
         return;
       }
       await joinGame(data.id, name);
       setHasJoined(true);
     } catch (err: any) {
       console.error("Erro ao entrar:", err);
-      alert("Erro ao entrar no jogo: " + (err.message || "Tenta novamente"));
+      showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
     } finally {
       setIsJoining(false);
     }
@@ -126,7 +131,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const handleAnswer = async (index: number) => {
     if (hasAnswered) return;
     if (!currentQuestionId) {
-      alert("Aguarde um segundo, a sincronizar...");
+      showToast("Aguarde, a sincronizar...", "info");
       return;
     }
     setHasAnswered(true);
@@ -135,7 +140,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
     const player = players.find(p => p.name === name);
     if (!player) {
-      alert("Erro: Jogador nao encontrado. Atualiza a pagina.");
+      showToast("Jogador nao encontrado. Atualiza a pagina.", "error");
       setHasAnswered(false);
       setSelectedOption(null);
       return;
@@ -158,7 +163,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
     } catch (err: any) {
-      alert("Erro ao enviar resposta: " + err.message);
+      showToast("Erro ao enviar resposta: " + err.message, "error");
       setHasAnswered(false);
       setSelectedOption(null);
     }
@@ -183,7 +188,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     await supabase.from('questions').update({
       metadata: { reports: [...currentReports, { reason, reporter: name, date: new Date().toISOString() }] }
     }).eq('id', currentQuestionId);
-    alert("Obrigado! Pergunta reportada.");
+    showToast("Obrigado! Pergunta reportada.", "success");
   };
 
   const optionColors = [
@@ -224,6 +229,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               <span className="text-sm">Sair</span>
             </button>
           </motion.div>
+          <ToastContainer toasts={toasts} onDismiss={dismiss} />
+          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
         </main>
       );
     }
@@ -345,15 +352,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
           {/* Report button */}
           <button
-            onClick={() => {
-              const reason = prompt("Qual e o problema desta pergunta?");
-              if (reason) handleReport(reason);
-            }}
+            onClick={() => setReportOpen(true)}
             className="fixed bottom-4 right-4 flex items-center gap-1 px-3 py-2 bg-white/10 hover:bg-white/20 text-white/50 rounded-full text-xs transition-colors z-40"
           >
             <Flag className="w-3 h-3" />
             Reportar
           </button>
+          <ToastContainer toasts={toasts} onDismiss={dismiss} />
+          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
         </main>
       );
     }
@@ -416,11 +422,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           </motion.div>
 
           <button
-            onClick={() => { const reason = prompt("Qual e o problema?"); if (reason) handleReport(reason); }}
+            onClick={() => setReportOpen(true)}
             className="fixed bottom-4 right-4 flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white/60 rounded-full text-sm transition-colors"
           >
             <Flag className="w-4 h-4" /> Reportar
           </button>
+          <ToastContainer toasts={toasts} onDismiss={dismiss} />
+          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
         </main>
       );
     }
@@ -508,6 +516,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       </motion.div>
 
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
+      <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
       <div className="h-20 md:hidden" />
     </main>
   );

@@ -6,6 +6,8 @@ import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOf
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/useToast";
+import ToastContainer from "@/components/Toast";
 
 interface Question {
     id: string;
@@ -102,6 +104,7 @@ function findDuplicates(questions: Question[], threshold = 0.6): DuplicateGroup[
 
 export default function AdminPage() {
     const router = useRouter();
+    const { toasts, show: showToast, dismiss } = useToast();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
     const [adminUsers, setAdminUsers] = useState<AdminUser[]>([]);
@@ -149,7 +152,7 @@ export default function AdminPage() {
         const userRole = profile?.role || 'user';
         
         if (userRole !== 'admin' && userRole !== 'moderator') {
-            alert("Não tens permissão para aceder ao painel de administração.");
+            showToast("Nao tens permissao para aceder ao painel de administracao.", "error");
             router.push("/");
             return;
         }
@@ -184,7 +187,7 @@ export default function AdminPage() {
                 .single();
 
             if (!data) {
-                alert("Utilizador não encontrado. Precisa de fazer login primeiro.");
+                showToast("Utilizador nao encontrado. Precisa de fazer login primeiro.", "error");
                 return;
             }
 
@@ -193,12 +196,12 @@ export default function AdminPage() {
                 .update({ role: newAdminRole })
                 .eq("id", data.id);
 
-            alert(`${newAdminEmail} é agora ${newAdminRole}`);
+            showToast(`${newAdminEmail} e agora ${newAdminRole}`, "success");
             setNewAdminEmail("");
             setShowAddAdmin(false);
             loadAdminUsers();
         } catch (error) {
-            alert("Erro ao adicionar admin");
+            showToast("Erro ao adicionar admin", "error");
         }
     };
 
@@ -274,7 +277,7 @@ export default function AdminPage() {
 
     const handleSaveQuestion = async () => {
         if (!formData.text.trim() || formData.options.some(o => !o.trim())) {
-            alert("Preenche todos os campos.");
+            showToast("Preenche todos os campos.", "error");
             return;
         }
         setSaving(true);
@@ -295,7 +298,7 @@ export default function AdminPage() {
             setShowCreateForm(false);
             loadData();
         } catch (err) {
-            alert("Erro ao guardar.");
+            showToast("Erro ao guardar.", "error");
         } finally {
             setSaving(false);
         }
@@ -674,6 +677,7 @@ export default function AdminPage() {
                     </section>
                 )}
             </div>
+            <ToastContainer toasts={toasts} onDismiss={dismiss} />
         </main>
     );
 }
