@@ -270,29 +270,41 @@ export default function ProfilePage() {
                 <p className="text-white/50">Ainda não jogaste nenhum jogo!</p>
                 <p className="text-white/30 text-sm mt-2">Joga para veres o teu histórico aqui.</p>
               </div>
-            ) : (
-              gamesHistory.slice(0, 10).map((game: any, idx: number) => (
+            ) : (() => {
+              const gameMap = new Map<string, { correct: number; total: number; points: number; date: string }>();
+              gamesHistory.forEach((g: any) => {
+                const id = g.game_id;
+                if (!gameMap.has(id)) {
+                  gameMap.set(id, { correct: 0, total: 0, points: 0, date: g.created_at });
+                }
+                const entry = gameMap.get(id)!;
+                entry.total++;
+                if (g.is_correct) entry.correct++;
+                entry.points += g.score || 0;
+              });
+              const gameList = Array.from(gameMap.entries()).map(([id, data]) => ({ id, ...data }));
+              return gameList.slice(0, 10).map((game, idx) => (
                 <div key={game.id} className="glass-panel p-4 flex justify-between items-center">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 font-bold">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${game.correct === game.total ? 'bg-green-500/20 text-green-400' : 'bg-violet-500/20 text-violet-400'}`}>
                       {idx + 1}
                     </div>
                     <div>
-                      <div className="text-white font-medium">Jogo #{game.game_id?.slice(-6)}</div>
+                      <div className="text-white font-medium">Jogo #{game.id?.slice(-6)}</div>
                       <div className="text-white/40 text-sm">
-                        {new Date(game.created_at).toLocaleDateString('pt-PT')}
+                        {new Date(game.date).toLocaleDateString('pt-PT')} · {game.correct}/{game.total} corretas
                       </div>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-violet-400 font-bold">{game.score || 0} pts</div>
-                    <div className={`text-sm ${game.is_correct ? 'text-green-400' : 'text-red-400'}`}>
-                      {game.is_correct ? '✓ Acertou' : '✗ Errou'}
+                    <div className="text-violet-400 font-bold">{game.points} pts</div>
+                    <div className={`text-sm font-medium ${game.correct === game.total ? 'text-green-400' : game.correct > game.total / 2 ? 'text-yellow-400' : 'text-red-400'}`}>
+                      {game.correct === game.total ? 'Perfeito!' : game.correct > game.total / 2 ? 'Bom jogo' : 'Pode melhorar'}
                     </div>
                   </div>
                 </div>
-              ))
-            )}
+              ));
+            })()}
           </motion.section>
         )}
       </div>

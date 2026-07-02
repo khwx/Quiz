@@ -3,7 +3,7 @@
 import { use, useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/context/GameContext";
-import { Gamepad2, CheckCircle2, Loader2, Trophy, Wifi, Rocket, ArrowLeft, LogOut, Flag, Lightbulb, Clock, Image as ImageIcon } from "lucide-react";
+import { Gamepad2, CheckCircle2, Loader2, Trophy, Wifi, Rocket, ArrowLeft, LogOut, Flag, Lightbulb, Clock, Image as ImageIcon, Users } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useSound } from "@/hooks/useSound";
 import { useToast } from "@/hooks/useToast";
@@ -228,9 +228,21 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               <h2 className="text-3xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>ENTROU!</h2>
               <p className="text-white/60">Ola {name}! O jogo vai comecar!</p>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
-              <Wifi className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm text-emerald-400">Conectado</span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
+                <Wifi className="w-4 h-4 text-emerald-400" />
+                <span className="text-sm text-emerald-400">Conectado</span>
+              </div>
+              {players.length > 0 && (
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full">
+                  <Users className="w-4 h-4 text-white/50" />
+                  <span className="text-sm text-white/50">{players.length} jogador{players.length !== 1 ? 'es' : ''}</span>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col items-center gap-1 text-white/30 text-sm">
+              <Loader2 className="w-4 h-4 animate-spin" />
+              <span>Aguarda pelo anfitrião...</span>
             </div>
             <button onClick={() => setLeaveConfirmOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-full hover:bg-red-500/20 transition-colors">
               <LogOut className="w-4 h-4" />

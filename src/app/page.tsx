@@ -3,12 +3,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User, ArrowRight, ArrowLeft, Users, Trophy } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
 export default function Home() {
+  const router = useRouter();
   const [user, setUser] = useState<any>(null);
+  const [quickPin, setQuickPin] = useState("");
   
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -79,7 +82,7 @@ export default function Home() {
                 Acende a tua <span className="text-violet-400 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-purple-400">Mente</span>.
               </h1>
               <p className="text-white/70 text-lg max-w-xl mb-8">
-                Entra na arena do conhecimento. Desafia os teus amigos e família num jogo de perguntas e respostaseno ecrã grande!
+                Entra na arena do conhecimento. Desafia os teus amigos e família num jogo de perguntas e respostas no ecrã grande!
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
@@ -133,7 +136,7 @@ export default function Home() {
 
         {/* Right Column - Quick Actions */}
         <aside className="lg:col-span-4 flex flex-col gap-6">
-          {/* Join Button */}
+          {/* Join Button with Quick PIN */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -143,9 +146,36 @@ export default function Home() {
               <Rocket className="w-5 h-5 text-violet-400" />
               Entrar no Jogo
             </h3>
-            <Link 
-              href="/play" 
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl hover:brightness-110 transition-all"
+            <div className="flex gap-2 mb-3">
+              <input
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                placeholder="PIN"
+                value={quickPin}
+                onChange={(e) => setQuickPin(e.target.value.replace(/\D/g, ''))}
+                maxLength={6}
+                className="flex-1 bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white text-center text-lg font-mono tracking-widest placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors"
+              />
+              <button
+                onClick={() => {
+                  if (quickPin.length >= 4) {
+                    router.push(`/play?pin=${quickPin}`);
+                  }
+                }}
+                disabled={quickPin.length < 4}
+                className={`px-4 py-3 rounded-xl font-bold transition-all ${
+                  quickPin.length >= 4
+                    ? "bg-violet-600 text-white hover:brightness-110"
+                    : "bg-white/5 text-white/30 cursor-not-allowed"
+                }`}
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </div>
+            <Link
+              href="/play"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl hover:brightness-110 transition-all"
             >
               <Play className="w-5 h-5" />
               Jogar no Telemóvel
