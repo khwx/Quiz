@@ -8,47 +8,52 @@ Bem-vindo ao **Family Quiz**, uma experiência de jogo interativa estilo "Kahoot
 
 ### 🎮 Modo de Jogo
 - **📺 Modo TV (Host)**: O ecrã principal que mostra as perguntas, cronómetro, respostas em tempo real e classificações.
-- **📱 Modo Jogador**: Entra com o teu telemóvel usando um PIN de 6 dígitos, escolhe o teu nome e avatar.
-- **🎯 QR Code**: Mostra um QR Code no ecrã para os jogadores entrarem instantaneamente.
-- **📡 Chromecast**: Suporte para enviar o ecrã do jogo para uma TV via Chromecast.
+- **📱 Modo Jogador (Remote)**: Entra com o teu telemóvel usando um PIN de 6 dígitos — vê a pergunta completa, opções A/B/C/D, cronómetro e dicas.
+- **🏠 Modo Local**: Joga no mesmo dispositivo — seleciona jogadores e joga sem precisar de TV.
+- **🎯 QR Code + PIN Rápido**: QR Code no ecrã da TV ou PIN de 6 dígitos na página inicial para entrar instantaneamente.
+
+### 📂 15 Categorias com 1.692 Perguntas
+Bandeiras (260) · Animais (127) · Ciência (126) · História (101) · Capitais do Mundo (101) · Arte (100) · Desporto (100) · Política (99) · Cinema (98) · Gastronomia (98) · Matemática (98) · Tecnologia (97) · Cultura Geral (97) · Música (96) · Geografia (94)
 
 ### 🤖 Inteligência Artificial
 - **Geração Automática**: Gera perguntas sobre qualquer tema usando IA (Google Gemini + Groq Llama).
 - **Fallback Automático**: Se um provedor de IA falhar, tenta automaticamente o seguinte.
-- **Anti-Duplicados**: Sistema inteligente que evita gerar perguntas repetidas ou demasiado parecidas.
+- **Multi-Categoria**: Gera perguntas distribuídas por todas as categorias selecionadas.
 - **Cache Inteligente**: Perguntas geradas são guardadas na base de dados para reutilização futura.
 
 ### ⚙️ Configurações do Jogo
 - **🕐 Timer Configurável**: 10s, 15s, 20s ou 30s por pergunta.
 - **📊 Número de Perguntas**: 3, 5, 7 ou 10 perguntas por volta.
-- **👶 Faixas Etárias**: 7-9, 10-14, 15-17 ou 18+ (adultos).
-- **🎨 Temas Predefinidos**: Cultura Geral, Capitais do Mundo, Bandeiras, Cinema, Desporto, Ciência, Animais.
-- **✏️ Temas Personalizados**: Escreve qualquer tema que quiseres!
+- **👶 Faixas Etárias**: 7-9, 10-14, 15-17 ou adultos (≥16).
+- **🎨 Seleção Múltipla**: Seleciona várias categorias para cada jogo.
 - **🔄 Múltiplas Voltas**: Joga várias rondas sem repetir perguntas.
 
 ### 🏆 Experiência de Jogo
 - **⚡ Realtime**: Sincronização instantânea entre todos os dispositivos via Supabase Realtime + polling de backup.
 - **🏅 Pontuação Inteligente**: Quanto mais rápido responderes corretamente, mais pontos ganhas (600-1000 pts).
-- **🏆 Pódio Animado**: Celebra os vencedores com animações e efeitos visuais.
-- **🔊 Efeitos Sonoros**: Sons para tick-tock, resposta correta e resposta errada.
-- **🏳️ Bandeiras SVG**: 252 bandeiras de países em formato SVG de alta qualidade incluídas localmente.
+- **📊 Animação de Pontuação**: Mostra +XX pts animado ao acertar, +0 ao errar.
+- **📈 Barra de Progresso**: Indicador visual X/Y (ex: 3/10) durante o jogo.
+- **🏆 Pódio Animado**: Celebra os vencedores com confetti e efeitos visuais.
+- **⌨️ Atalhos de Teclado (TV)**: `Espaço` avançar/pular timer, `R` reportar pergunta, `Esc` fechar modais.
+- **🏳️ Bandeiras SVG**: 260+ bandeiras de países em formato SVG de alta qualidade incluídas localmente.
 
 ### 🛠️ Painel Admin (`/admin`)
 - **📊 Estatísticas**: Total de perguntas e contagem por categoria.
 - **🔍 Filtro por Categoria**: Filtra e navega perguntas por tema.
-- **🔎 Detector de Duplicados**: Analisa automaticamente a base de dados e encontra perguntas similares ou inversas usando comparação de palavras-chave (Jaccard similarity).
+- **🔎 Detector de Duplicados**: Analisa automaticamente a base de dados e encontra perguntas similares.
 - **🗑️ Gestão**: Apagar perguntas individuais ou todas de uma vez (com dupla confirmação de segurança).
 
 ## 📄 Páginas da Aplicação
 
 | Rota | Descrição |
 |------|-----------|
-| `/` | Página inicial com links para todas as secções |
-| `/tv` | Ecrã do Host/TV — mostra perguntas e QR code |
-| `/play` | Página do jogador — entrar com PIN e responder |
-| `/play?pin=123456` | Entrada direta com PIN pré-preenchido (via QR) |
+| `/` | Página inicial com acesso rápido por PIN e acesso a todas as secções |
+| `/categories` | Selecionar categorias e faixa etária antes de jogar |
+| `/tv` | Ecrã do Host/TV — mostra perguntas, cronómetro, QR code e ranking |
+| `/play` | Página do jogador — entrar com PIN e responder perguntas remotamente |
+| `/play?pin=123456` | Entrada direta com PIN pré-preenchido |
+| `/profile` | Perfil do utilizador com histórico de jogos e estatísticas |
 | `/admin` | Painel de administração — gerir perguntas e duplicados |
-| `/tutorial` | Tutorial interativo de como jogar |
 
 ## 🛠️ Tecnologias
 
@@ -115,37 +120,39 @@ quiz/
 ├── src/
 │   ├── app/
 │   │   ├── api/
-│   │   │   ├── answer/        # API de submissão de respostas
+│   │   │   ├── answer/          # API de submissão de respostas
 │   │   │   └── questions/
-│   │   │       └── generate/  # API de geração de perguntas com IA
-│   │   ├── admin/             # Painel de administração
-│   │   ├── tv/                # Página do Host/TV
-│   │   ├── play/              # Página do Jogador
-│   │   └── tutorial/          # Página de tutorial
+│   │   │       └── generate/    # API de geração de perguntas com IA
+│   │   ├── admin/               # Painel de administração
+│   │   ├── categories/          # Seleção de categorias
+│   │   ├── login/               # Login e registo
+│   │   ├── play/                # Página do Jogador (remote)
+│   │   ├── profile/             # Perfil com histórico de jogos
+│   │   └── tv/                  # Página do Host/TV
 │   ├── components/
-│   │   ├── tv/                # Componentes TV (QuestionDisplay, Podium, Leaderboard)
-│   │   ├── mobile/            # Componentes Mobile (AnswerController)
-│   │   └── CastButton.tsx     # Botão de Chromecast
+│   │   ├── tv/                  # Componentes TV (QuestionDisplay, Podium, LiveLeaderboard)
+│   │   ├── ConfirmModal.tsx     # Modal de confirmação
+│   │   ├── MobileNav.tsx        # Navegação mobile partilhada
+│   │   ├── ReportModal.tsx      # Modal de reportar perguntas
+│   │   ├── Toast.tsx            # Sistema de notificações
+│   │   └── CastButton.tsx       # Botão de Chromecast
 │   ├── context/
-│   │   └── GameContext.tsx     # Estado global do jogo (Supabase Realtime)
-│   ├── lib/
-│   │   ├── supabase.ts        # Cliente Supabase
-│   │   ├── ai-service.ts      # Cliente de geração de perguntas
-│   │   ├── ai-service-fallback.ts  # Gemini + Groq com fallback e retry
-│   │   ├── rate-limit.ts      # Rate limiting por IP
-│   │   ├── validation.ts      # Validação de inputs
-│   │   ├── cache.ts           # Cache de perguntas
-│   │   ├── geo-service.ts     # Serviço de geolocalização
-│   │   ├── avatars.ts         # Gerador de avatares
-│   │   └── colors.ts          # Gerador de cores
-│   └── hooks/
-│       └── useSound.ts        # Hook de efeitos sonoros
+│   │   └── GameContext.tsx       # Estado global do jogo (Supabase Realtime)
+│   ├── hooks/
+│   │   ├── useSound.ts          # Hook de efeitos sonoros
+│   │   └── useToast.ts          # Hook de notificações Toast
+│   └── lib/
+│       ├── supabase.ts          # Cliente Supabase
+│       ├── ai-service.ts        # Geração de perguntas com IA
+│       ├── ai-service-fallback.ts # Gemini + Groq com fallback
+│       ├── rate-limit.ts        # Rate limiting por IP
+│       ├── validation.ts        # Validação de inputs
+│       ├── cache.ts             # Cache de perguntas
+│       └── avatars.ts           # Gerador de avatares
 ├── public/
-│   └── flags/                 # 252 bandeiras SVG de países
-├── scripts/                   # Scripts SQL para semear dados
-├── docs/                      # Documentação e notas
-├── supabase_schema.sql        # Schema completo da base de dados
-└── test-gemini.js             # Script de teste da API AI
+│   └── flags/                   # 260+ bandeiras SVG de países
+├── supabase_schema.sql          # Schema completo da base de dados
+└── questions_backup.json        # Backup de todas as perguntas
 ```
 
 ## 🔒 Segurança
@@ -154,6 +161,7 @@ quiz/
 - **Validação de Inputs**: Todos os UUIDs, números e strings são validados server-side.
 - **API Keys Protegidas**: Chaves de IA são apenas server-side (`GEMINI_API_KEY`, `GROQ_API_KEY`).
 - **Timeout**: Pedidos à IA têm timeout de 10 segundos com retry automático.
+- **Zero Native Dialogs**: Sem `alert()`, `prompt()` ou `confirm()` no fluxo do utilizador — usa Toast, ReportModal e ConfirmModal.
 
 ## 🐛 Problemas Conhecidos e Soluções
 
