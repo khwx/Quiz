@@ -27,6 +27,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [showHint, setShowHint] = useState(false);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerActive, setTimerActive] = useState(false);
+  const [earnedPoints, setEarnedPoints] = useState<number | null>(null);
 
   const { playSound } = useSound();
   const { toasts, show: showToast, dismiss } = useToast();
@@ -104,12 +105,19 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   useEffect(() => {
     if (correctOption !== null && selectedOption !== null) {
       if (selectedOption === correctOption) {
+        const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
+        const timerDur = 20;
+        const points = Math.max(10, Math.floor(((timerDur - timeTaken) / timerDur) * 100));
+        setEarnedPoints(points);
         playSound('correct');
+        setTimeout(() => setEarnedPoints(null), 2000);
       } else {
+        setEarnedPoints(0);
         playSound('wrong');
+        setTimeout(() => setEarnedPoints(null), 2000);
       }
     }
-  }, [correctOption, selectedOption, playSound]);
+  }, [correctOption, selectedOption, playSound, startTime]);
 
   const handleJoin = async () => {
     if (!pin || !name) return;
@@ -393,6 +401,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                   <Trophy className="w-16 h-16 text-yellow-300" />
                 </motion.div>
                 <h2 className="text-5xl font-black text-white italic tracking-tighter">BOA!!!</h2>
+                {earnedPoints !== null && earnedPoints > 0 && (
+                  <motion.div initial={{ scale: 0, y: 20 }} animate={{ scale: 1, y: 0 }} className="text-3xl font-black text-yellow-300">
+                    +{earnedPoints} pts
+                  </motion.div>
+                )}
                 <p className="text-white/80 text-lg font-bold uppercase tracking-widest">Acertaste em cheio!</p>
               </>
             ) : (
@@ -401,6 +414,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                   <span className="text-5xl font-black text-white/90">{optionLetters[selectedOption || 0]}</span>
                 </div>
                 <h2 className="text-5xl font-black text-white italic tracking-tighter">ERRADO...</h2>
+                {earnedPoints !== null && earnedPoints === 0 && (
+                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-2xl font-bold text-white/60">
+                    +0 pts
+                  </motion.div>
+                )}
                 {correctText && (
                   <p className="text-white/80 text-lg font-bold">Resposta certa: {correctText}</p>
                 )}

@@ -638,6 +638,39 @@ export default function TVHost() {
         }
     }, [status, currentQuestionIndex]);
 
+    // Keyboard shortcuts for host
+    useEffect(() => {
+        const handleKey = (e: KeyboardEvent) => {
+            if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+            
+            if (e.code === "Space" || e.key === " ") {
+                e.preventDefault();
+                if (status === "REVEAL") {
+                    const nextQ = currentQuestions[currentQuestionIndex];
+                    if (nextQ) {
+                        nextQuestion(nextQ.id, nextQ.correct_option);
+                    } else {
+                        setRound(r => r + 1);
+                        updateStatus("STARTING");
+                    }
+                } else if (status === "QUESTION") {
+                    setTimeLeft(0);
+                }
+            }
+            if (e.key === "r" || e.key === "R") {
+                if (status === "QUESTION" || status === "REVEAL") {
+                    setReportOpen(true);
+                }
+            }
+            if (e.key === "Escape") {
+                setReportOpen(false);
+                setMemoryConfirmOpen(false);
+            }
+        };
+        window.addEventListener("keydown", handleKey);
+        return () => window.removeEventListener("keydown", handleKey);
+    }, [status, currentQuestionIndex, currentQuestions, nextQuestion, updateStatus]);
+
 
     // Loading Check
     if (loading) {
@@ -971,9 +1004,17 @@ export default function TVHost() {
                 <>Nova Volta <ArrowRight /></>
               )}
             </button>
-            <div className="flex items-center gap-2 text-white/50 text-sm">
-              <Timer className="w-4 h-4" />
-              <span className="font-mono font-bold text-white">{timeUntilNext}s</span>
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full transition-all duration-1000 ease-linear"
+                  style={{ width: `${(timeUntilNext / 20) * 100}%` }}
+                />
+              </div>
+              <div className="flex items-center gap-2 text-white/50 text-sm">
+                <Timer className="w-4 h-4" />
+                <span className="font-mono font-bold text-white">{timeUntilNext}s</span>
+              </div>
             </div>
           </div>
           <button
@@ -989,6 +1030,9 @@ export default function TVHost() {
           >
             Escolher Outro Tema
           </button>
+          <div className="flex justify-center w-full mt-2">
+            <span className="text-white/20 text-xs font-mono">[SPACE] avancar  [R] reportar</span>
+          </div>
         </motion.div>
       )}
 

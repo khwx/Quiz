@@ -10,31 +10,26 @@ export default function TutorialPage() {
             icon: <Monitor className="w-8 h-8 text-violet-400" />,
             title: "1. Prepare o Ecrã Principal",
             description: "Abra o site na sua Smart TV ou computador. Este será o 'tabuleiro' onde todos vêem as perguntas e o ranking em tempo real.",
-            image: "/tutorial/step1.png"
         },
         {
             icon: <Smartphone className="w-8 h-8 text-pink-400" />,
             title: "2. Telemóveis a Postos",
             description: "Cada jogador entra no link de jogo pelo telemóvel. Use o QR Code ou insira o PIN de 6 dígitos que aparece na TV.",
-            image: "/tutorial/step3.png"
         },
         {
             icon: <Users className="w-8 h-8 text-blue-400" />,
             title: "3. Entre no Lobby",
             description: "Escolha o seu nome e avatar. Assim que todos os jogadores aparecerem no ecrã da TV, o anfitrião pode dar o sinal de partida!",
-            image: "/tutorial/step2.png"
         },
         {
             icon: <Target className="w-8 h-8 text-emerald-400" />,
             title: "4. Responda no Telemóvel",
-            description: "As perguntas aparecem na TV, mas os botões de resposta estão no seu telemóvel. Seja rápido!",
-            image: "/tutorial/step1.png"
+            description: "As perguntas aparecem na TV, mas os botões de resposta estão no seu telemóvel. Use a DICA se precisar de ajuda! Seja rápido!",
         },
         {
             icon: <Trophy className="w-8 h-8 text-amber-400" />,
             title: "5. Conquiste o Pódio",
             description: "No final, os 3 melhores sobem ao pódio com direito a festa, confetis e glória eterna (até à próxima partida).",
-            image: "/tutorial/step3.png"
         }
     ];
 
