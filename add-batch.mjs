@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js';
-import { readFileSync, writeFileSync } from 'fs';
 
 const supabase = createClient(
   'https://lmfexrtxrxmeajxtuoof.supabase.co',
@@ -7,1919 +6,254 @@ const supabase = createClient(
 );
 
 const newQuestions = [
-  // ═══════════════════════════ ARTE ═══════════════════════════
-  {
-    text: "Quem pintou 'A Noite Estrelada'?",
-    options: ["Vincent van Gogh", "Claude Monet", "Pablo Picasso", "Salvador Dalí"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Pintor holandês com problemas mentais" }
-  },
-  {
-    text: "Em que museu está exposta a Mona Lisa?",
-    options: ["Museu do Louvre", "Galeria Uffizi", "British Museum", "Metropolitan Museum"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Museu em Paris" }
-  },
-  {
-    text: "Qual é o nome da escultura de Michelangelo que representa Davi?",
-    options: ["Davi", "Moisés", "Pietà", "O Escravo Rebelde"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Leva o nome do personagem bíblico" }
-  },
-  {
-    text: "Que movimento artístico Salvador Dalí representava?",
-    options: ["Surrealismo", "Cubismo", "Impressionismo", "Expressionismo"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Relacionado com sonhos e o subconsciente" }
-  },
-  {
-    text: "Quem esculpiu a estátua da Liberdade (parte estrutural)?",
-    options: ["Gustave Eiffel", "Frédéric Auguste Bartholdi", "António Gaudí", "Le Corbusier"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Engenheiro francês da Torre Eiffel" }
-  },
-  {
-    text: "Qual é o nome da técnica de pintura a óleo sobre paredes secas?",
-    options: ["Afresco", "Tempera", "Guache", "Aquarela"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Usada na Capela Sistina" }
-  },
-  {
-    text: "Em que país nasceu o pintor Pablo Picasso?",
-    options: ["Espanha", "França", "Itália", "Portugal"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "País ibérico" }
-  },
-  {
-    text: "Qual artista é conhecido por cortar a sua própria orelha?",
-    options: ["Vincent van Gogh", "Paul Gauguin", "Edvard Munch", "Paul Cézanne"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Pintor holandês do pós-impressionismo" }
-  },
-  {
-    text: "Que material usou Alexander Calder para as suas esculturas cinéticas?",
-    options: ["Chapa de metal", "Madeira", "Vidro", "Mármore"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Esculturas que se movem com o vento" }
-  },
-  {
-    text: "Qual é o nome do famoso fresco de Michelangelo no teto da Capela Sistina?",
-    options: ["A Criação de Adão", "O Juízo Final", "A Anunciação", "A Última Ceia"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Representa Deus a tocar em Adão" }
-  },
-  {
-    text: "Quem pintou 'Guernica', um dos quadros mais famosos sobre a guerra?",
-    options: ["Pablo Picasso", "Joan Miró", "Salvador Dalí", "Francis Bacon"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Artista espanhol cubista" }
-  },
-  {
-    text: "Que tipo de arte é o 'street art' ou arte urbana?",
-    options: ["Arte contemporânea", "Arte clássica", "Arte abstrata", "Arte renascentista"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Feita nas ruas com spray e tinta" }
-  },
-  {
-    text: "Quem criou a instalação artística 'O Carneiro' com um animal preservado em formaldeído?",
-    options: ["Damien Hirst", "Jeff Koons", "Banksy", "Andy Warhol"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Artista britânico conhecido por choque" }
-  },
-  {
-    text: "Qual é a obra mais famosa de Leonardo da Vinci além da Mona Lisa?",
-    options: ["A Última Ceia", "A Primavera", "O Nascimento de Vénus", "A Escola de Atenas"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Pintura mural num refectório em Milão" }
-  },
-  {
-    text: "Em que museu está o quadro 'A Persistência da Memória' de Dalí?",
-    options: ["MoMA", "Tate Modern", "Guggenheim", "Prado"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Museu de arte moderna em Nova Iorque" }
-  },
-  {
-    text: "Que artista português é famoso pelas azulejarias do metropolitano de Lisboa?",
-    options: ["Júlio Pomar", "Paula Rego", "Joana Vasconcelos", "Vieira da Silva"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Artista plástico lisboeta" }
-  },
-  {
-    text: "Qual movimento artístico usava pontos de cor para criar imagens?",
-    options: ["Pontilhismo", "Fauvismo", "Futurismo", "Dadaísmo"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Georges Seurat foi o seu maior expoente" }
-  },
-  {
-    text: "Quem pintou 'O Grito', uma das obras mais icónicas da história?",
-    options: ["Edvard Munch", "Wassily Kandinsky", "Gustav Klimt", "Egon Schiele"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Pintor norueguês expressionista" }
-  },
-  {
-    text: "Que material é usado na escultura 'Balões' de Jeff Koons?",
-    options: ["Aço inox polido", "Bronze", "Mármore", "Resina"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Superfície espelhada muito brilhante" }
-  },
-  {
-    text: "Qual é a técnica de gravura que usa ácido para dissolver o metal?",
-    options: ["Água-forte", "Xilogravura", "Litografia", "Calcografia"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "O nome descreve o processo químico" }
-  },
-  {
-    text: "Quem pintou 'O Nascimento de Vénus'?",
-    options: ["Sandro Botticelli", "Rafael", "Caravaggio", "Tiziano"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Pintor renascentista italiano" }
-  },
-  {
-    text: "Que estilo artístico utilizava formas geométricas para retratar a realidade?",
-    options: ["Cubismo", "Impressionismo", "Romantismo", "Realismo"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Picasso e Braque foram os fundadores" }
-  },
-  {
-    text: "Em que cidade se encontra a Pinacoteca Ambrosiana?",
-    options: ["Milão", "Roma", "Florencia", "Veneza"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Cidade do norte de Itália" }
-  },
-  {
-    text: "Qual artista contemporâneo é famoso por recortes e colagens de celebridades?",
-    options: ["Andy Warhol", "Jean-Michel Basquiat", "Keith Haring", "Roy Lichtenstein"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Ícone do Pop Art americano" }
-  },
-  {
-    text: "Que arte milenar consiste em enrolar fios coloridos numa tábua?",
-    options: ["Ojo de Dios", "Mosaico", "Tapeçaria", "Filigrana"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Arte tradicional indígena mexicana" }
-  },
-  {
-    text: "Quem foi a pintora italiana que se tornou num ícone do Renascimento e era conhecida pela sua força?",
-    options: ["Artemisia Gentileschi", "Sofonisba Anguissola", "Lavinia Fontana", "Elisabetta Sirani"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Pintora baroca que retratou Judith" }
-  },
-  {
-    text: "Que tipo de arte é feita digitalmente usando software como Photoshop?",
-    options: ["Arte digital", "Arte generativa", "Arte conceitual", "Arte performática"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Usa computadores e tablets" }
-  },
-  {
-    text: "Qual é o nome da técnica japonesa de decorar madeira com ouro?",
-    options: ["Laquê", "Origami", "Ikebana", "Ukiyo-e"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Arte tradicional japonesa com verniz" }
-  },
-  {
-    text: "Quem pintou 'A Dama do Arminho'?",
-    options: ["Leonardo da Vinci", "Rafael", "Michelangelo", "Botticelli"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "O mesmo da Mona Lisa" }
-  },
-  {
-    text: "Que movimento artístico rejeitou a razão e valorizou as emoções?",
-    options: ["Romantismo", "Iluminismo", "Neoclassicismo", "Realismo"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Séculos XVIII-XIX, oposto ao Iluminismo" }
-  },
-  {
-    text: "Qual é a arte de criar figuras com papel dobrado?",
-    options: ["Origami", "Decoupage", "Collage", "Découpage"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Arte tradicional japonesa" }
-  },
-  {
-    text: "Quem criou a famosa instalação 'As Cadeiras' no pátio do Museu Serralves?",
-    options: ["Joana Vasconcelos", "Paula Rego", "Julio Pomar", "Luis Dourdil"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Artista portuguesa contemporânea" }
-  },
-  {
-    text: "Que técnica artística usa pequenos pedaços de cerâmica, vidro ou pedra?",
-    options: ["Mosaico", "Afresco", "Grafitis", "Galeria"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 8,
-    metadata: { hint: "Usada nos chãos e paredes de templos romanos" }
-  },
-  {
-    text: "Em que cidade se encontra a Galleria dell'Accademia com o Davi de Michelangelo?",
-    options: ["Florencia", "Roma", "Nápoles", "Veneza"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Cidade da Toscana, berço do Renascimento" }
-  },
-  {
-    text: "Qual artista é conhecido pelas suas latas de sopa Campbell's?",
-    options: ["Andy Warhol", "Roy Lichtenstein", "Jasper Johns", "Robert Rauschenberg"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Ícone do Pop Art dos anos 60" }
-  },
-  {
-    text: "Que estilo de arquitetura é caracterizado por linhas curvas e formas orgânicas?",
-    options: ["Art Nouveau", "Art Deco", "Brutalismo", "Minimalismo"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Gaudí é o seu maior expoente" }
-  },
-  {
-    text: "Quem pintou 'O Beijo', uma das obras mais românticas da história?",
-    options: ["Gustav Klimt", "Edvard Munch", "Pablo Picasso", "Amedeo Modigliani"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Pintor austríaco da Secessão de Viena" }
-  },
-  {
-    text: "Que tipo de arte é feita com a manipulação de luz e sombras?",
-    options: ["Instalação luminosa", "Pintura a óleo", "Escultura", "Gravura"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Dan Flavin usava neon, James Turrell usa luz natural" }
-  },
-  {
-    text: "Qual é o nome do famoso festival de arte contemporânea que ocorre em Veneza?",
-    options: ["Bienal de Veneza", "Documenta", "Frieze", "Art Basel"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Ocorre de dois em dois anos" }
-  },
-  {
-    text: "Quem foi o arquiteto que desenhou a Ópera de Sydney?",
-    options: ["Jørn Utzon", "Frank Gehry", "Zaha Hadid", "Le Corbusier"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Arquiteto dinamarquês" }
-  },
-  {
-    text: "Que tipo de arte usa o corpo humano como meio de expressão?",
-    options: ["Performance", "Instalação", "Pintura", "Escultura"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Yoko Ono e Marina Abramović são conhecidas por isto" }
-  },
-  {
-    text: "Qual é a obra-prima de Rafael que se encontra nos Museus Vaticanos?",
-    options: ["A Escola de Atenas", "A Criação de Adão", "A Anunciação", "A Transfiguração"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 16,
-    metadata: { hint: "Frescos nos Palácios Vaticanos" }
-  },
-  {
-    text: "Que arte portuguesa consiste em trabalhar metais preciosos com fios finos?",
-    options: ["Filigrana", "Cerâmica", "Azulejo", "Tapeçaria"],
-    correct_option: 0,
-    category: "ARTE",
-    age_rating: 12,
-    metadata: { hint: "Tradição de Gondomar e Póvoa de Lanhoso" }
-  },
+  // ═══════════════════════════ HISTORIA (64→100, need ~36) ═══════════════════════════
+  { text: "Quem foi o primeiro homem a pisar a Lua?", options: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Ameriano, 1969" } },
+  { text: "Em que ano começou a Primeira Guerra Mundial?", options: ["1914", "1916", "1918", "1912"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Início do século XX" } },
+  { text: "Quem era o líder da Alemanha Nazi durante a Segunda Guerra Mundial?", options: ["Adolf Hitler", "Benito Mussolini", "Joseph Stalin", "Winston Churchill"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Ditador alemão" } },
+  { text: "Em que ano caiu o Muro de Berlim?", options: ["1989", "1991", "1985", "1987"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Fim da Guerra Fria" } },
+  { text: "Quem pintou a Mona Lisa?", options: ["Leonardo da Vinci", "Michelangelo", "Rafael", "Sandro Botticelli"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Polímata italiano do Renascimento" } },
+  { text: "Qual civilização construiu as pirâmides de Gizé?", options: ["Egípcios", "Romanos", "Gregos", "Persas"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Civilização do Norte de África" } },
+  { text: "Em que ano foi assinado o Tratado de Versalhes?", options: ["1919", "1918", "1920", "1917"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Fim oficial da Primeira Guerra Mundial" } },
+  { text: "Quem foi o primeiro imperador romano?", options: ["Augusto", "Júlio César", "Nero", "Tibério"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Sobrinho-neto de Júlio César" } },
+  { text: "Em que ano começou a Revolução Francesa?", options: ["1789", "1776", "1804", "1799"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Queda da Bastilha" } },
+  { text: "Quem descobriu a América em 1492?", options: ["Cristóvão Colombo", "Vasco da Gama", "Pedro Álvares Cabral", "Fernão de Magalhães"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Navegador genovês" } },
+  { text: "Qual foi o maior império da história?", options: ["Império Britânico", "Império Romano", "Império Mongol", "Império Otomano"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "O império onde o sol nunca se punha" } },
+  { text: "Em que ano foi abolido a escravatura no Brasil?", options: ["1888", "1889", "1850", "1900"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Lei Áurea" } },
+  { text: "Quem foi Cleópatra?", options: ["Rainha do Egito", "Imperatriz romana", "Deusa grega", "Rainha da Pérsia"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Última faraó do Egito" } },
+  { text: "Em que ano começou a Segunda Guerra Mundial?", options: ["1939", "1941", "1937", "1940"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Invasão da Polónia" } },
+  { text: "Quem foi Albert Einstein?", options: ["Físico teórico", "Biólogo", "Matemático", "Químico"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Teoria da Relatividade" } },
+  { text: "Qual cidade foi destruída por um vulcão em 79 d.C.?", options: ["Pompeia", "Roma", "Atenas", "Cartago"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Cidade romana soterrada" } },
+  { text: "Em que ano foi fundada a ONU?", options: ["1945", "1950", "1939", "1948"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Após a Segunda Guerra Mundial" } },
+  { text: "Quem foi Napoleão Bonaparte?", options: ["Imperador francês", "Rei espanhol", "Papa", "General britânico"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Conquistou quase toda a Europa" } },
+  { text: "Em que ano o homem pisou na Lua pela primeira vez?", options: ["1969", "1965", "1972", "1960"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Missão Apollo 11" } },
+  { text: "Qual foi o motivo da Guerra Fria?", options: ["Rivalidade EUA-URSS", "Disputa territorial", "Religião", "Comércio"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Dois blocos ideológicos" } },
+  { text: "Quem inventou a prensa de tipos móveis?", options: ["Johannes Gutenberg", "Thomas Edison", "Alexander Graham Bell", "Galileu"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Alemanha, século XV" } },
+  { text: "Em que ano começou a Revolução Industrial?", options: ["1760", "1800", "1700", "1850"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Inglaterra, século XVIII" } },
+  { text: "Qual país foi o primeiro a conceder o voto às mulheres?", options: ["Nova Zelândia", "Reino Unido", "Estados Unidos", "França"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "1893" } },
+  { text: "Quem foi Jesus Cristo para a história ocidental?", options: ["Fundador do Cristianismo", "Rei romano", "Filósofo grego", "Imperador bizantino"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Religião com mais fiéis no mundo" } },
+  { text: "Em que ano foi abolido o sistema feudal no Japão?", options: ["1868", "1900", "1800", "1945"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Restauração Meiji" } },
+  { text: "Qual batalha marcou o fim do poderio napoleónico?", options: ["Batalha de Waterloo", "Batalha de Austerlitz", "Batalha de Borodino", "Batalha de Trafalgar"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "1815, Bélgica" } },
+  { text: "Quem foi Aristóteles?", options: ["Filósofo grego", "Imperador romano", "Pintor renascentista", "Explorador"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Mentor de Alexandre, o Grande" } },
+  { text: "Em que ano foi descoberto o Brasil?", options: ["1500", "1492", "1520", "1488"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Pedro Álvares Cabral" } },
+  { text: "Qual foi a capital do Império Bizantino?", options: ["Constantinopla", "Roma", "Atenas", "Alexandria"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Hoje chamada Istambul" } },
+  { text: "Quem foi o faraó mais famoso do Egito antigo?", options: ["Queops", "Ramesses II", "Tutancâmon", "Cleópatra"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Construiu a Grande Pirâmide" } },
+  { text: "Em que ano caiu o Império Romano do Ocidente?", options: ["476", "1453", "800", "395"], correct_option: 0, category: "HISTORIA", age_rating: 16, metadata: { hint: "Fim da Antiguidade Clássica" } },
+  { text: "Qual evento marcou o início da Idade Média?", options: ["Queda de Roma", "Descoberta da América", "Revolução Francesa", "Primeira Cruzada"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "476 d.C." } },
+  { text: "Quem foi Marco Polo?", options: ["Explorador veneziano", "Pintor italiano", "Papa", "General romano"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Viajou para a China" } },
+  { text: "Em que ano terminou a Segunda Guerra Mundial?", options: ["1945", "1944", "1946", "1943"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Bombardeamento de Hiroshima" } },
+  { text: "Qual foi o primeiro país a usar a pólvora em guerras?", options: ["China", "Japão", "Índia", "Mongólia"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Dinastia Tang" } },
+  { text: "Quem foi Sócrates?", options: ["Filósofo grego", "Imperador romano", "Pintor", "General"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Mentor de Platão" } },
+  { text: "Em que ano foi proclamada a República Portuguesa?", options: ["1910", "1926", "1890", "1974"], correct_option: 0, category: "HISTORIA", age_rating: 12, metadata: { hint: "Fim da monarquia" } },
+  { text: "Qual é a data do 25 de Abril em Portugal?", options: ["Dia da Liberdade", "Dia da República", "Dia de Portugal", "Dia da Bandeira"], correct_option: 0, category: "HISTORIA", age_rating: 8, metadata: { hint: "Revolução dos Cravos" } },
 
-  // ═══════════════════════════ CINEMA ═══════════════════════════
-  {
-    text: "Quem realizou 'A Lista de Schindler'?",
-    options: ["Steven Spielberg", "Martin Scorsese", "James Cameron", "Christopher Nolan"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Realizador americano de blockbusters" }
-  },
-  {
-    text: "Em que filme aparece a frase 'Eu sou teu pai'?",
-    options: ["Star Wars", "O Senhor dos Anéis", "Matrix", "O Poderoso Chefinho"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Saga espacial dos anos 70" }
-  },
-  {
-    text: "Qual é o nome do dinossauro robotico em Jurassic Park?",
-    options: ["T-Rex", "Velociraptor", "Brontossauro", "Triceratops"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "O maior predador do filme" }
-  },
-  {
-    text: "Quem interpretou Jack Dawson em 'Titanic'?",
-    options: ["Leonardo DiCaprio", "Brad Pitt", "Johnny Depp", "Matt Damon"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Ator americano, também em Inception" }
-  },
-  {
-    text: "Qual filme ganhou o Oscar de Melhor Filme em 1994?",
-    options: ["Forrest Gump", "Pulp Fiction", "O Shawshank Redemption", "Quatro Casamentos e um Funeral"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Tom Hanks interpreta o protagonista" }
-  },
-  {
-    text: "Em que série de filmes Harry Potter estuda?",
-    options: ["Hogwarts", "Narnia", "Wakanda", "Midgar"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Escola de magia britânica" }
-  },
-  {
-    text: "Quem realizou 'Avatar' (2009)?",
-    options: ["James Cameron", "Ridley Scott", "Steven Spielberg", "Peter Jackson"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Realizador de Titanic e Aliens" }
-  },
-  {
-    text: "Qual é o nome do vilão em 'O Cavaleiro das Trevas'?",
-    options: ["Coringa", "Duas Caras", "Pinguim", "Charada"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Interpretado por Heath Ledger" }
-  },
-  {
-    text: "Em que filme os personagens entram dentro de sonhos para roubar segredos?",
-    options: ["Inception", "Interstellar", "The Matrix", "Blade Runner"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Christopher Nolan, com Leonardo DiCaprio" }
-  },
-  {
-    text: "Qual é a franquia de filmes com o personagem Indiana Jones?",
-    options: ["Caçadores da Arca Perdida", "O Senhor dos Anéis", "Star Trek", "O Exorcista"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Aventuras arqueológicas de um professor" }
-  },
-  {
-    text: "Quem interpretou Neo na trilogia The Matrix?",
-    options: ["Keanu Reeves", "Tom Cruise", "Will Smith", "Brad Pitt"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Ator canadense também em John Wick" }
-  },
-  {
-    text: "Qual é o filme de animação da Pixar sobre um robot num planeta deserto?",
-    options: ["WALL-E", "Up", "Cars", "Finding Nemo"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Robot que recicla lixo no espaço" }
-  },
-  {
-    text: "Em que filme aparece o personagem Darth Vader?",
-    options: ["Star Wars", "Star Trek", "Guardiões da Galáxia", "Duna"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Saga de George Lucas" }
-  },
-  {
-    text: "Quem realizou a trilogia 'O Senhor dos Anéis'?",
-    options: ["Peter Jackson", "George Lucas", "Steven Spielberg", "James Cameron"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Realizador neozelandês" }
-  },
-  {
-    text: "Qual filme tem a famosa cena do 'eu voou, Jack, eu voei'?",
-    options: ["Titanic", "Avatar", "Gravity", "O Regresso"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Filme sobre o naufrágio de um transatlântico" }
-  },
-  {
-    text: "Em que filme James Cameron explorou o Titanic no fundo do mar?",
-    options: ["Titanic", "Abyss", "Avatar", "Aliens"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Filme de 1997 com Leonardo DiCaprio" }
-  },
-  {
-    text: "Qual é o nome do actor que interpreta o Homem-Aranha no MCU?",
-    options: ["Tom Holland", "Tobey Maguire", "Andrew Garfield", "Robert Downey Jr."],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Ator britânico mais jovem" }
-  },
-  {
-    text: "Em que filme aparece a frase 'Há sempre um plano'?",
-    options: ["Os Impossíveis", "Blow", "O Lobo de Wall Street", "Heat"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Filme de Steven Soderbergh com roubos" }
-  },
-  {
-    text: "Quem interpretou o Coringa em 'O Cavaleiro das Trevas'?",
-    options: ["Heath Ledger", "Joaquin Phoenix", "Jared Leto", "Jack Nicholson"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Ator australiano que faleceu em 2008" }
-  },
-  {
-    text: "Qual é o filme de 2023 que se tornou no maior de todos os tempos em bilheteira?",
-    options: ["Oppenheimer", "Barbie", "Avatar 2", "Super Mario Bros"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Filme de Christopher Nolan" }
-  },
-  {
-    text: "Em que franquia aparece o personagem Gollum?",
-    options: ["O Senhor dos Anéis", "Harry Potter", "As Crónicas de Narnia", "Star Wars"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "A criatura que quer o anel" }
-  },
-  {
-    text: "Qual é o primeiro filme da franquia Jurassic Park?",
-    options: ["Jurassic Park", "O Mundo Perdido", "Jurassic World", "Jurassic Park III"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Lançado em 1993" }
-  },
-  {
-    text: "Quem realizou 'Clube da Luta'?",
-    options: ["David Fincher", "Quentin Tarantino", "Martin Scorsese", "Stanley Kubrick"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 16,
-    metadata: { hint: "Realizador americano de thrillers sombrios" }
-  },
-  {
-    text: "Qual é o nome do robô em WALL-E que se apaixona?",
-    options: ["EVE", "ALICE", "CORTANA", "ALEXA"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Robot feminina de exploração vegetal" }
-  },
-  {
-    text: "Em que filme aparece o personagem Terminator?",
-    options: ["O Exterminador do Futuro", "Robocop", "O Predador", "Blade Runner"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Arnold Schwarzenegger diz 'Até à vista, bebé'" }
-  },
-  {
-    text: "Qual é o filme mais longo da saga O Senhor dos Anéis (versão estendida)?",
-    options: ["O Retorno do Rei", "A Sociedade do Anel", "As Duas Torres", "O Hobbit"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "O terceiro filme, com mais de 4 horas" }
-  },
-  {
-    text: "Quem interpreta Wolverine nos filmes dos X-Men?",
-    options: ["Hugh Jackman", "Ryan Reynolds", "Chris Evans", "Chris Hemsworth"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 12,
-    metadata: { hint: "Ator australiano e cantor" }
-  },
-  {
-    text: "Em que filme uma IA chamada HAL 9000 se rebela contra a tripulação?",
-    options: ["2001: Uma Odisseia no Espaço", "Blade Runner", "O Exterminador do Futuro", "Interstellar"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 16,
-    metadata: { hint: "Clássico de Stanley Kubrick" }
-  },
-  {
-    text: "Qual é o nome do vilão em O Rei Leão?",
-    options: ["Scar", "Mufasa", "Timão", "Pumba"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "O tio traiçoeiro de Simba" }
-  },
-  {
-    text: "Em que filme aparece a frase 'Que a Força esteja contigo'?",
-    options: ["Star Wars", "Star Trek", "Duna", "Blade Runner"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Slogan da saga criada por George Lucas" }
-  },
-  {
-    text: "Qual filme de animação da Disney tem a personagem Elsa?",
-    options: ["Frozen", "Moana", "Rapunzel", "Cinderela"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "A rainha do gelo que diz 'Let it go'" }
-  },
-  {
-    text: "Quem realizou 'O Padrinho'?",
-    options: ["Francis Ford Coppola", "Martin Scorsese", "Steven Spielberg", "Brian De Palma"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 16,
-    metadata: { hint: "Realizador ítalo-americano" }
-  },
-  {
-    text: "Em que filme um grupo de super-heróis se une pela primeira vez no MCU?",
-    options: ["Os Vingadores", "X-Men", "Os Guardiões da Galáxia", "A Justice League"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Lançado em 2012, com Iron Man, Capitão América, etc." }
-  },
-  {
-    text: "Qual é o primeiro filme da saga Harry Potter?",
-    options: ["A Pedra Filosofal", "A Câmara Secreta", "O Prisioneiro de Azkaban", "O Cálice de Fogo"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Harry descobre que é mago" }
-  },
-  {
-    text: "Quem interpretou Jack Sparrow nos Piratas das Caraíbas?",
-    options: ["Johnny Depp", "Orlando Bloom", "Brad Pitt", "George Clooney"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "Ator americano conhecido por Papai Noel" }
-  },
-  {
-    text: "Em que filme o personagem Andy Dufresne foge da prisão por 19 anos?",
-    options: ["O Shawshank Redemption", "Cidadão Kane", "Clube da Luta", "Pulp Fiction"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 16,
-    metadata: { hint: "Adaptado de Stephen King, com Tim Robbins" }
-  },
-  {
-    text: "Qual é o filme da Pixar que se passa dentro da mente de uma rapariga?",
-    options: ["Divertida-mente", "Inside Out", "Coco", "Soul"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 8,
-    metadata: { hint: "As emoções控制am a Riley" }
-  },
-  {
-    text: "Quem realizou 'O Regresso' com Leonardo DiCaprio?",
-    options: ["Alejandro González Iñárritu", "Alfonso Cuarón", "Guillermo del Toro", "Denis Villeneuve"],
-    correct_option: 0,
-    category: "CINEMA",
-    age_rating: 16,
-    metadata: { hint: "Realizador mexicano, ganhou 3 Oscars seguidos" }
-  },
+  // ═══════════════════════════ GEOGRAFIA (70→100, need ~30) ═══════════════════════════
+  { text: "Qual é o maior oceano do mundo?", options: ["Pacífico", "Atlântico", "Índico", "Ártico"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Coberta mais de 30% da Terra" } },
+  { text: "Em que continente está o Deserto do Saara?", options: ["África", "Ásia", "América do Sul", "Oceania"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Maior deserto quente do mundo" } },
+  { text: "Qual é a capital do Brasil?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Construída para ser capital" } },
+  { text: "Qual é o rio mais longo do mundo?", options: ["Nilo", "Amazonas", "Mississípi", "Yangtze"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Passa pelo Egito" } },
+  { text: "Em que país fica Machu Picchu?", options: ["Peru", "Bolívia", "Colômbia", "Equador"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Cidade inca nas montanhas" } },
+  { text: "Qual é o maior país do mundo em área?", options: ["Rússia", "Canadá", "China", "Estados Unidos"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Estendida pela Europa e Ásia" } },
+  { text: "Qual é o ponto mais alto do mundo?", options: ["Monte Everest", "K2", "Kangchenjunga", "Monte Kilimanjaro"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "8.849 metros" } },
+  { text: "Em que continente está a Austrália?", options: ["Oceania", "Ásia", "Europa", "América"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Menor continente" } },
+  { text: "Qual é a capital da França?", options: ["Paris", "Lyon", "Marselha", "Toulouse"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Cidade da Torre Eiffel" } },
+  { text: "Qual é o menor país do mundo?", options: ["Vaticano", "Mônaco", "San Marino", "Liechtenstein"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Dentro de Roma" } },
+  { text: "Qual oceano banha a costa leste do Brasil?", options: ["Atlântico", "Pacífico", "Índico", "Ártico"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Oceano que separa América de África" } },
+  { text: "Em que país fica a Torre Eiffel?", options: ["França", "Espanha", "Itália", "Alemanha"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "País da baguette" } },
+  { text: "Qual é o maior deserto do mundo?", options: ["Saara", "Gobi", "Kalahari", "Atacama"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Norte de África" } },
+  { text: "Em que continente fica a China?", options: ["Ásia", "Europa", "África", "Oceania"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Maior população do mundo" } },
+  { text: "Qual é a capital de Portugal?", options: ["Lisboa", "Porto", "Coimbra", "Braga"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Cidade das sete colinas" } },
+  { text: "Qual é a montanha mais alta de África?", options: ["Kilimanjaro", "Monte Branco", "Atlas", "Rwenzori"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "5.895 metros, Tanzânia" } },
+  { text: "Em que país fica o Taj Mahal?", options: ["Índia", "Paquistão", "Nepal", "Bangladesh"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Monumento de mármore branco" } },
+  { text: "Qual é o maior lago do mundo?", options: ["Caspial", "Superior", "Victoria", "Baikal"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Entre Europa e Ásia" } },
+  { text: "Qual país tem formato de bota?", options: ["Itália", "Grécia", "Chile", "Tailândia"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Península no Mediterrâneo" } },
+  { text: "Em que continente fica o Amazonas?", options: ["América do Sul", "África", "Ásia", "América do Norte"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Maior floresta tropical" } },
+  { text: "Qual é a capital da Espanha?", options: ["Madrid", "Barcelona", "Sevilha", "Valência"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Cidade do Real Madrid" } },
+  { text: "Qual rio atravessa Londres?", options: ["Tamisa", "Sena", "Danúbio", "Reno"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Passa pelo Big Ben" } },
+  { text: "Em que país fica a Grande Muralha?", options: ["China", "Japão", "Mongólia", "Coreia do Norte"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Visível do espaço (quase)" } },
+  { text: "Qual é o menor oceano do mundo?", options: ["Ártico", "Índico", "Atlântico", "Pacífico"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Ao redor do Polo Norte" } },
+  { text: "Em que continente fica o Canadá?", options: ["América do Norte", "Europa", "Ásia", "Oceania"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Acima dos Estados Unidos" } },
+  { text: "Qual é a capital do Japão?", options: ["Tóquio", "Osaka", "Kyoto", "Yokohama"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Maior área metropolitana do mundo" } },
+  { text: "Qual é o maior arquipélago do mundo?", options: ["Indonésia", "Filipinas", "Japão", "Malásia"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Mais de 17.000 ilhas" } },
+  { text: "Em que país fica a Estátua da Liberdade?", options: ["Estados Unidos", "França", "Reino Unido", "Itália"], correct_option: 0, category: "GEOGRAFIA", age_rating: 8, metadata: { hint: "Nova Iorque" } },
+  { text: "Qual é o maior país da África?", options: ["Argélia", "Nigéria", "Sudão", "República Democrática do Congo"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Norte de África" } },
+  { text: "Em que continente fica a Islândia?", options: ["Europa", "América do Norte", "Ásia", "Oceania"], correct_option: 0, category: "GEOGRAFIA", age_rating: 12, metadata: { hint: "Ilha no Atlântico Norte" } },
 
-  // ═══════════════════════════ GASTRONOMIA ═══════════════════════════
-  {
-    text: "Qual é o ingrediente principal do guacamole?",
-    options: ["Abacate", "Tomate", "Cebola", "Limão"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Fruta verde e cremosa do México" }
-  },
-  {
-    text: "De que país é originária a pizza?",
-    options: ["Itália", "Grécia", "Espanha", "Turquia"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "País da bota" }
-  },
-  {
-    text: "Qual é a bebida fermentada feita de uva?",
-    options: ["Vinho", "Cerveja", "Cidra", "Sake"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Bebida acompanhada com queijo" }
-  },
-  {
-    text: "Que prato português é feito com arroz, marisco e colorau?",
-    options: ["Arroz de marisco", "Bacalhau à Brás", "Arroz de pato", "Cataplana"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Prato típico da costa portuguesa" }
-  },
-  {
-    text: "Qual é o nome do molho italiano feito com manjericão e pinhões?",
-    options: ["Pesto", "Ragu", "Carbonara", "Bolognese"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Molho verde da Ligúria" }
-  },
-  {
-    text: "De que país é originário o sushi?",
-    options: ["Japão", "China", "Coreia", "Tailândia"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "País do sol nascente" }
-  },
-  {
-    text: "Que ingrediente é essencial na feijoada portuguesa?",
-    options: ["Feijão", "Arroz", "Batata", "Massa"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Legume que dá nome ao prato" }
-  },
-  {
-    text: "Qual é a sobremesa francesa feita com ovos e açúcar caramelizado?",
-    options: ["Crème brûlée", "Tiramisu", "Panna cotta", "Serradura"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Nome significa 'creme queimado'" }
-  },
-  {
-    text: "Que espécie de peixe é o bacalhau em inglês?",
-    options: ["Cod", "Tuna", "Salmon", "Haddock"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Os portugueses comem 365 receitas dele" }
-  },
-  {
-    text: "Qual é o queijo italiano usado na pizza margherita?",
-    options: ["Mozzarella", "Parmesão", "Ricotta", "Gorgonzola"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Queijo mole de leite de búfala" }
-  },
-  {
-    text: "De que país é originária a lasanha?",
-    options: ["Itália", "França", "Espanha", "Grécia"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Prato com camadas de massa e molho" }
-  },
-  {
-    text: "Qual é o tempero que dá a cor amarela ao curry?",
-    options: ["Açafrão", "Pimentão", "Cúrcuma", "Manjericão"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Especiaria mais cara do mundo" }
-  },
-  {
-    text: "Que prato espanhol é feito com arroz, açafrão e frutos do mar?",
-    options: ["Paella", "Tortilla", "Gazpacho", "Tapas"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Prato típico da região de Valência" }
-  },
-  {
-    text: "Qual é a bebida fermentada feita de cevada e lúpulo?",
-    options: ["Cerveja", "Vinho", "Sidra", "Champanhe"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Bebida mais consumida do mundo" }
-  },
-  {
-    text: "Que doce português é feito com ovos e açúcar e tem forma de esfera?",
-    options: ["Ovos moles", "Pastel de nata", "Pão de ló", "Toucinho do céu"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Doce típico de Aveiro" }
-  },
-  {
-    text: "Qual é o nome do prato japonês com massa e caldo?",
-    options: ["Ramen", "Sushi", "Tempura", "Sashimi"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Prato quente com noodles" }
-  },
-  {
-    text: "De que fruta se faz a marmelada?",
-    options: ["Marmelo", "Maçã", "Pêra", "Laranja"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "A fruta dá o nome ao doce" }
-  },
-  {
-    text: "Qual é o prato italiano feito com massa recheada?",
-    options: ["Ravioli", "Esparguete", "Pene", "Risoto"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Massa em forma de almofada" }
-  },
-  {
-    text: "Que carne é usada no tradicional churrasco argentino?",
-    options: ["Vaca", "Porco", "Frango", "Cordeiro"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "A Argentina é famosa pela sua carne" }
-  },
-  {
-    text: "Qual é o nome do molho italiano feito com tomate e manjericão?",
-    options: ["Marinara", "Pesto", "Alfredo", "Carbonara"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Molho de marinheiros" }
-  },
-  {
-    text: "Que prato francês é uma sopa de cebola gratinada?",
-    options: ["Soupe à l'oignon", "Ratatouille", "Bouillabaisse", "Crème brûlée"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Sopa com queijo derretido por cima" }
-  },
-  {
-    text: "Qual é o ingrediente principal do hummus?",
-    options: ["Grão-de-bico", "Feijão", "Lentilha", "Ricota"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Legume pequeno e redondo" }
-  },
-  {
-    text: "De que país é originário o churrasco rodízio?",
-    options: ["Brasil", "Argentina", "Portugal", "Espanha"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "País da América do Sul conhecido pelo futebol" }
-  },
-  {
-    text: "Qual é o nome do queijo português curado da Serra da Estrela?",
-    options: ["Queijo da Serra", "Queijo de Azeitão", "Queijo de São Jorge", "Queijo do Pico"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Queijo de ovelha com pasta mole" }
-  },
-  {
-    text: "Que prato grego é feito com folhas de vinha d'olha recheadas?",
-    options: ["Dolmas", "Moussaka", "Gyros", "Souvlaki"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Recheio de arroz e ervas" }
-  },
-  {
-    text: "Qual é o nome da sobremesa italiana com café e mascarpone?",
-    options: ["Tiramisu", "Panna cotta", "Gelato", "Cannoli"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Nome significa 'levanta-me'" }
-  },
-  {
-    text: "Que fruta é usada na preparação do mole mexicano?",
-    options: ["Chocolate", "Abacate", "Manga", "Limão"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Ingrediente principal do chocolate" }
-  },
-  {
-    text: "Qual é o prato coreano fermentado feito de vegetais?",
-    options: ["Kimchi", "Sushi", "Ramen", "Tempura"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Prato picante e fermentado" }
-  },
-  {
-    text: "De que é feito o traditionally italiano risoto?",
-    options: ["Arroz", "Massa", "Batata", "Quinoa"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Grão que é cozinhado lentamente" }
-  },
-  {
-    text: "Qual é o nome do pão sírio/redondo achatado?",
-    options: ["Pita", "Naan", "Focaccia", "Baguette"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Pão que pode ser recheado" }
-  },
-  {
-    text: "Que prato português é feito com peixe frito e batatas?",
-    options: ["Peixe grelhado", "Bacalhau à Brás", "Arroz de polvo", "Caldeirada"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Simples e saboroso" }
-  },
-  {
-    text: "Qual é o nome do doce turco feito com nozes e mel?",
-    options: ["Baklava", "Loukoumades", "Halva", "Turkish Delight"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Camadas de massa folhada" }
-  },
-  {
-    text: "Que bebida é feita da fermentação da cana-de-açúcar?",
-    options: ["Rum", "Vodka", "Gim", "Tequila"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 16,
-    metadata: { hint: "Bebida típica do Caribe" }
-  },
-  {
-    text: "Qual é o nome do prato indiano com iogurte e especiarias?",
-    options: ["Tandoori", "Curry", "Biryani", "Samosa"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Cozinhado num forno de barro" }
-  },
-  {
-    text: "Que fruta é o principal ingrediente da guacamole mexicana?",
-    options: ["Abacate", "Tomate", "Laranja", "Manga"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Fruta verde com caroço grande" }
-  },
-  {
-    text: "Qual é o nome do prato japonês de massa frita?",
-    options: ["Tempura", "Sushi", "Ramen", "Udon"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "Legumes e marisco em massa crocante" }
-  },
-  {
-    text: "De que país é originário o pad thai?",
-    options: ["Tailândia", "Vietname", "China", "Japão"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 8,
-    metadata: { hint: "País do sudeste asiático" }
-  },
-  {
-    text: "Qual é o ingrediente secreto na cocacola (original)?",
-    options: ["Extrato de noz de cola", "Canela", "Gengibre", "Licor de laranja"],
-    correct_option: 0,
-    category: "GASTRONOMIA",
-    age_rating: 12,
-    metadata: { hint: "Ingrediente que dá o nome à bebida" }
-  },
+  // ═══════════════════════════ MATEMATICA (69→100, need ~31) ═══════════════════════════
+  { text: "Quanto é 12 × 12?", options: ["144", "124", "132", "148"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "Dúzia de dúzias" } },
+  { text: "Qual é a raiz quadrada de 81?", options: ["9", "8", "7", "10"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "9 × 9" } },
+  { text: "Quanto é 15% de 200?", options: ["30", "25", "35", "20"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "10% + 5%" } },
+  { text: "Qual é o valor de π (pi) arredondado a 2 casas decimais?", options: ["3,14", "3,41", "3,12", "3,16"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "Razão entre circunferência e diâmetro" } },
+  { text: "Quanto é 7³?", options: ["343", "49", "21", "243"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "7 × 7 × 7" } },
+  { text: "Qual é o próximo número: 2, 6, 12, 20, 30, ...?", options: ["42", "36", "40", "44"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Diferenças crescentes" } },
+  { text: "Quanto é √144?", options: ["12", "14", "11", "13"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "12 × 12 = 144" } },
+  { text: "Qual é o dobro de 25?", options: ["50", "45", "55", "60"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "25 + 25" } },
+  { text: "Quanto é 100 ÷ 4?", options: ["25", "30", "20", "15"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "Metade de metade de 100" } },
+  { text: "Qual é a área de um quadrado com lado 8 cm?", options: ["64 cm²", "32 cm²", "16 cm²", "72 cm²"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Lado × Lado" } },
+  { text: "Quanto é 3 × 4 + 5 × 2?", options: ["22", "20", "24", "18"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "Ordem das operações" } },
+  { text: "Qual é o dobro de 17?", options: ["34", "32", "36", "27"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "17 + 17" } },
+  { text: "Quanto é 25²?", options: ["625", "525", "600", "650"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "25 × 25" } },
+  { text: "Qual é o perímetro de um retângulo com lados 5 e 3?", options: ["16", "15", "8", "30"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "2 × (comprimento + largura)" } },
+  { text: "Quanto é 1000 ÷ 8?", options: ["125", "100", "150", "120"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Metade de metade de metade de 1000" } },
+  { text: "Qual é o fatorial de 5?", options: ["120", "60", "24", "720"], correct_option: 0, category: "MATEMATICA", age_rating: 16, metadata: { hint: "5! = 5 × 4 × 3 × 2 × 1" } },
+  { text: "Quanto é 2³ + 3²?", options: ["17", "15", "12", "20"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "8 + 9" } },
+  { text: "Qual é a área de um triângulo com base 10 e altura 6?", options: ["30", "60", "16", "36"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "(base × altura) ÷ 2" } },
+  { text: "Quanto é 1/2 + 1/3?", options: ["5/6", "2/5", "1/6", "2/6"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: " MMC de 2 e 3 é 6" } },
+  { text: "Qual é o MDC de 12 e 18?", options: ["6", "3", "12", "9"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Maior divisor comum" } },
+  { text: "Quanto é 10² - 5²?", options: ["75", "50", "100", "25"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "100 - 25" } },
+  { text: "Qual é o MMC de 4 e 6?", options: ["12", "24", "8", "18"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Mínimo múltiplo comum" } },
+  { text: "Quanto é 0,75 × 8?", options: ["6", "5,5", "6,5", "7"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "3/4 de 8" } },
+  { text: "Qual é o triplo de 14?", options: ["42", "36", "48", "28"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "14 × 3" } },
+  { text: "Quanto é 2⁵?", options: ["32", "64", "16", "25"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "2 × 2 × 2 × 2 × 2" } },
+  { text: "Qual é a hipotenusa de um triângulo retângulo com catetos 3 e 4?", options: ["5", "7", "6", "4"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Teorema de Pitágoras" } },
+  { text: "Quanto é 3/4 de 100?", options: ["75", "80", "70", "60"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "75% de 100" } },
+  { text: "Qual é o próximo número primo após 7?", options: ["11", "9", "13", "10"], correct_option: 0, category: "MATEMATICA", age_rating: 12, metadata: { hint: "Não é par" } },
+  { text: "Quanto é 9 × 9 + 1?", options: ["82", "81", "83", "80"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "81 + 1" } },
+  { text: "Qual é o diâmetro de um círculo com raio 5 cm?", options: ["10 cm", "5 cm", "15 cm", "25 cm"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "Dobro do raio" } },
+  { text: "Quanto é 144 ÷ 12?", options: ["12", "14", "11", "13"], correct_option: 0, category: "MATEMATICA", age_rating: 8, metadata: { hint: "Inverso de 12 × 12" } },
 
-  // ═══════════════════════════ MÚSICA ═══════════════════════════
-  {
-    text: "Quem é conhecido como o 'Rei do Pop'?",
-    options: ["Michael Jackson", "Elvis Presley", "Prince", "Freddie Mercury"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Cantor americano com luva de lantejoula" }
-  },
-  {
-    text: "De que banda era Freddie Mercury o vocalista?",
-    options: ["Queen", "Beatles", "Rolling Stones", "Led Zeppelin"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Banda britânica de rock" }
-  },
-  {
-    text: "Que instrumento tem 6 cordas e é mais associado ao rock?",
-    options: ["Guitarra", "Piano", "Violino", "Bateria"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Instrumento elétrico solista" }
-  },
-  {
-    text: "Qual é o nome do álbum mais vendido de todos os tempos?",
-    options: ["Thriller", "Back in Black", "The Dark Side of the Moon", "Hotel California"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Álbum de Michael Jackson, 1982" }
-  },
-  {
-    text: "Em que cidade nasceu The Beatles?",
-    options: ["Liverpool", "Londres", "Manchester", "Edimburgo"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Cidade portuária do norte de Inglaterra" }
-  },
-  {
-    text: "Que género musical nasceu em Nova Orleães nos EUA?",
-    options: ["Jazz", "Rock", "Pop", "Hip-hop"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Género com improvisação e trompete" }
-  },
-  {
-    text: "Quem compôs 'Quatro Estações'?",
-    options: ["Antonio Vivaldi", "Wolfgang Amadeus Mozart", "Ludwig van Beethoven", "Johann Sebastian Bach"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Compositor barco italiano" }
-  },
-  {
-    text: "Que banda portuguesa cantou 'Saudade, Saudade' no Festival da Eurovisão?",
-    options: ["Ana Moura", "Mariza", "Miguel Araújo", "Capitão Fausto"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Fado contemporâneo" }
-  },
-  {
-    text: "Qual é o nome do instrumento de teclas mais comum?",
-    options: ["Piano", "Acordeão", "Harpa", "Órgão"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "88 teclas pretas e brancas" }
-  },
-  {
-    text: "Quem cantou 'Bohemian Rhapsody'?",
-    options: ["Queen", "Beatles", "Pink Floyd", "The Who"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Banda de Freddie Mercury" }
-  },
-  {
-    text: "Que género musical é associado ao Bob Marley?",
-    options: ["Reggae", "Ska", "Rocksteady", "Dancehall"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Género da Jamaica" }
-  },
-  {
-    text: "Quantas sinfonias compôs Beethoven?",
-    options: ["9", "7", "12", "15"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 16,
-    metadata: { hint: "A última tem coro" }
-  },
-  {
-    text: "Que instrumento de sopro é feito de metal e tem válvulas?",
-    options: ["Trompete", "Flauta", "Clarinete", "Saxofone"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Instrumento de jazz e orquestra" }
-  },
-  {
-    text: "Quem é o cantor português conhecido como 'O Rei do Fado'?",
-    options: ["Amália Rodrigues", "Carlos do Carmo", "Mariza", "Mísia"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "A rainha do fado" }
-  },
-  {
-    text: "Que banda britânica lançou 'Stairway to Heaven'?",
-    options: ["Led Zeppelin", "Pink Floyd", "The Rolling Stones", "The Who"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Banda de hard rock dos anos 70" }
-  },
-  {
-    text: "Quantas cordas tem um violino?",
-    options: ["4", "6", "5", "3"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Menos que uma guitarra" }
-  },
-  {
-    text: "Que género musical é o rap e o hip-hop?",
-    options: ["Hip-hop", "Rock", "Pop", "Jazz"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Género urbano com rimas faladas" }
-  },
-  {
-    text: "Quem compôs a 'Sonata para Piano n.º 14' (Clair de Lune)?",
-    options: ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Frédéric Chopin", "Claude Debussy"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 16,
-    metadata: { hint: "Compositor alemão surdo" }
-  },
-  {
-    text: "Que instrumento tem cordas e é tocado com um arco?",
-    options: ["Violino", "Guitarra", "Harpa", "Banjo"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Instrumento de cordas mais agudo" }
-  },
-  {
-    text: "Qual é o nome do festival de música mais famoso de Portugal?",
-    options: ["NOS Alive", "Rock in Rio", "Super Bock Super Rock", "MEO Sudoeste"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Festival em Lisboa" }
-  },
-  {
-    text: "Quem cantou 'Imagine'?",
-    options: ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Membro dos Beatles" }
-  },
-  {
-    text: "Que género musical é o Fado?",
-    options: ["Música tradicional portuguesa", "Música popular brasileira", "Música espanhola", "Música italiana"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Género lisboeta com guitarra portuguesa" }
-  },
-  {
-    text: "Quantos membros tinha a banda The Beatles?",
-    options: ["4", "5", "3", "6"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "John, Paul, George e Ringo" }
-  },
-  {
-    text: "Que instrumento de percussão é usado para marcar o ritmo?",
-    options: ["Bateria", "Guitarra", "Piano", "Flauta"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Conjunto de tambores e pratos" }
-  },
-  {
-    text: "Quem cantou 'A little song about a big man' (What's Up)?",
-    options: ["4 Non Blondes", "No Doubt", "The Cranberries", "Alanis Morissette"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Banda feminina americana dos anos 90" }
-  },
-  {
-    text: "Que piano tem apenas 88 teclas?",
-    options: ["Piano de cauda", "Piano vertical", "Teclado digital", "Harpsicórdio"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Instrumento de concerto" }
-  },
-  {
-    text: "Em que ano os Beatles se separaram?",
-    options: ["1970", "1965", "1975", "1980"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 16,
-    metadata: { hint: "Fim da década de 60" }
-  },
-  {
-    text: "Que乐器 tem cordas e é tocado ao dedo, comum no fado?",
-    options: ["Guitarra portuguesa", "Violão", "Bandolim", "Ukulele"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Instrumento de 12 cordas em forma de leque" }
-  },
-  {
-    text: "Quem é conhecido como o 'Rei do Rock and Roll'?",
-    options: ["Elvis Presley", "Chuck Berry", "Little Richard", "Buddy Holly"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Cantor com pentelho e quadril icónico" }
-  },
-  {
-    text: "Que género musical é o EDM (Electronic Dance Music)?",
-    options: ["Música eletrónica", "Rock alternativo", "Jazz fusion", "Blues"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Música feita com computadores e sintetizadores" }
-  },
-  {
-    text: "Quantas cordas tem uma guitarra padrão?",
-    options: ["6", "4", "8", "12"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "E, A, D, G, B, e" }
-  },
-  {
-    text: "Quem compôs 'Para Elisa'?",
-    options: ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Pequena peça para piano" }
-  },
-  {
-    text: "Que banda cantou 'Smells Like Teen Spirit'?",
-    options: ["Nirvana", "Pearl Jam", "Soundgarden", "Alice in Chains"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Banda de grunge dos anos 90" }
-  },
-  {
-    text: "De que país é originário o Tango?",
-    options: ["Argentina", "Espanha", "Brasil", "Portugal"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "País do Rio da Prata" }
-  },
-  {
-    text: "Quem cantou 'Purple Rain'?",
-    options: ["Prince", "Michael Jackson", "David Bowie", "Stevie Wonder"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Artista multi-instrumentista Minneapolis" }
-  },
-  {
-    text: "Que instrumento tem teclas e é soprado por tubos?",
-    options: ["Órgão", "Piano", "Acordeão", "Sanfona"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Instrumento de igreja" }
-  },
-  {
-    text: "Qual é o nome do primeiro álbum dos Beatles?",
-    options: ["Please Please Me", "Help!", "Revolver", "Sgt. Pepper's"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 12,
-    metadata: { hint: "Lançado em 1963" }
-  },
-  {
-    text: "Que género musical é cantado em língua portuguesa do Brasil?",
-    options: ["Samba", "Fado", "Flamenco", "Tango"],
-    correct_option: 0,
-    category: "MUSICA",
-    age_rating: 8,
-    metadata: { hint: "Género do carnaval" }
-  },
+  // ═══════════════════════════ DESPORTO (67→100, need ~33) ═══════════════════════════
+  { text: "Quantos jogadores tem uma equipa de futebol em campo?", options: ["11", "10", "12", "9"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "包括Guarda-redes" } },
+  { text: "Em que país se realiza a Fórmula 1 do Grande Prémio de Mônaco?", options: ["Mônaco", "França", "Itália", "Espanha"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Cidade-estado no Mediterrâneo" } },
+  { text: "Quantos sets são necessários para ganhar no vôleibol masculino?", options: ["3", "2", "4", "5"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Melhor de 5" } },
+  { text: "Em que desporto se usa um taco e uma bola pequena branca?", options: ["Golfe", "Polo", "Críquete", "Hóquei"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "18 buracos" } },
+  { text: "Qual é a distância de uma maratona?", options: ["42,195 km", "40 km", "45 km", "50 km"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "De Atenas a Maratona (original)" } },
+  { text: "Em que país se inventou o judo?", options: ["Japão", "Coreia do Sul", "China", "Rússia"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Arte marcial oriental" } },
+  { text: "Quantos jogadores tem uma equipa de basquetebol em campo?", options: ["5", "6", "4", "7"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "5 por equipa" } },
+  { text: "Em que país se realiza o Torneio de Roland Garros?", options: ["França", "Inglaterra", "Espanha", "Itália"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Torneio de ténis em terra batida" } },
+  { text: "Quantos pontos vale um touchdown no futebol americano?", options: ["6", "7", "3", "5"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Mais a conversão" } },
+  { text: "Em que desporto se compete com espada?", options: ["Esgrima", "Karatê", "Boxe", "Judo"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Desporto olímpico desde 1896" } },
+  { text: "Qual é o recorde do mundo dos 100 metros rasos (homem)?", options: ["9,58s", "9,69s", "9,72s", "9,80s"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Usain Bolt, 2009" } },
+  { text: "Em que desporto se usa um pucks?", options: ["Hóquei no gelo", "Pólo", "Críquete", "Rugby"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Gelo e stick" } },
+  { text: "Quantos jogadores tem uma equipa de handebol em campo?", options: ["7", "6", "8", "5"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "6 jogadores + guarda-redes" } },
+  { text: "Em que país se realiza o Open da Austrália de ténis?", options: ["Austrália", "Nova Zelândia", "Índia", "Japão"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Melbourne" } },
+  { text: "Qual é o tamanho de um campo de futebol (comprimento)?", options: ["90-120 metros", "80-100 metros", "100-130 metros", "70-90 metros"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Varia conforme o estádio" } },
+  { text: "Em que desporto se compete nadando?", options: ["Natação", "Polo aquático", "Saltos ornamentais", "Surf"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "4 estilos principais" } },
+  { text: "Quantos rounds tem uma luta de boxe profissional?", options: ["12", "10", "15", "8"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Campeonatos do mundo" } },
+  { text: "Em que país se originou o cricket?", options: ["Inglaterra", "Índia", "Austrália", "África do Sul"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Desporto nacional britânico" } },
+  { text: "Qual é o nome do troféu da Copa do Mundo de Futebol?", options: ["Troféu FIFA", "Troféu Jules Rimet", "Troféumundial", "Copa Ouro"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Em ouro maciço" } },
+  { text: "Em que desporto se usa um arco e flecha?", options: ["Tiro com arco", "Pentatlo", "Hóquei", "Pólo"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Desporto olímpico" } },
+  { text: "Quantos jogadores tem uma equipa de rugby em campo?", options: ["15", "11", "13", "14"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Rugby union" } },
+  { text: "Em que país se realiza o Tour de France?", options: ["França", "Bélgica", "Itália", "Espanha"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Corrida ciclista parisiense" } },
+  { text: "Qual é o deporte mais popular do mundo?", options: ["Futebol", "Críquete", "Basquetebol", "Ténis"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Mais de 4 bilhões de fãs" } },
+  { text: "Em que desporto se compete com uma raquete e uma peteca?", options: ["Badmínton", "Squash", "Ténis", "Pádel"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "O bicho voa" } },
+  { text: "Quantos jogadores tem uma equipa de vôlei de praia?", options: ["2", "3", "4", "6"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Metade do vôleibol de quadra" } },
+  { text: "Em que país se originou o karatê?", options: ["Japão", "Coreia do Sul", "China", "Tailândia"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Okinawa" } },
+  { text: "Qual é o tempo mínimo para uma prova de 100 metros rasos ser considerada de elite (homem)?", options: ["Menos de 10 segundos", "Menos de 9,5 segundos", "Menos de 11 segundos", "Menos de 10,5 segundos"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Barreira dos 10 segundos" } },
+  { text: "Em que desporto se usa um tabuleiro com 64 casas?", options: ["Xadrez", "Damas", "Monopoly", "Ludo"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Rei, rainha, bispo, cavalo" } },
+  { text: "Quantos jogadores tem uma equipa de hóquei em campo?", options: ["11", "10", "12", "9"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Como o futebol" } },
+  { text: "Em que país se realiza o Grand Slam de ténis de Wimbledon?", options: ["Inglaterra", "França", "Espanha", "Itália"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Londres" } },
+  { text: "Qual é o peso de uma bola de basquetebol?", options: ["600-650g", "500-550g", "700-750g", "450-500g"], correct_option: 0, category: "DESPORTO", age_rating: 16, metadata: { hint: "Tamanho 7 (masculino)" } },
+  { text: "Em que desporto se compete em duplas com raquetes?", options: ["Ténis de mesa", "Squash", "Badmínton", "Todos anteriores"], correct_option: 0, category: "DESPORTO", age_rating: 8, metadata: { hint: "Pode ser individual ou duplas" } },
+  { text: "Quantos jogadores tem uma equipa de polo em campo?", options: ["4", "5", "6", "3"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "Cavalo e taco" } },
+  { text: "Em que país se realizou a primeira Copa do Mundo de Futebol?", options: ["Uruguai", "Brasil", "Itália", "França"], correct_option: 0, category: "DESPORTO", age_rating: 12, metadata: { hint: "1930" } },
 
-  // ═══════════════════════════ POLÍTICA ═══════════════════════════
-  {
-    text: "Quem foi o primeiro presidente dos Estados Unidos?",
-    options: ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Presidente da independência americana" }
-  },
-  {
-    text: "Em que ano caiu o Muro de Berlim?",
-    options: ["1989", "1991", "1979", "1961"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Fim da Guerra Fria" }
-  },
-  {
-    text: "Qual é o órgão supremo de soberania em Portugal?",
-    options: ["Assembleia da República", "Conselho de Ministros", "Tribunal Constitucional", "Presidência da República"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Parlamento português" }
-  },
-  {
-    text: "Quem escreveu 'O Príncipe', um tratado sobre política?",
-    options: ["Nicolau Maquiavel", "Tomás Hobbes", "John Locke", "Jean-Jacques Rousseau"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Pensador florentino do Renascimento" }
-  },
-  {
-    text: "Em que ano foi a Revolução Francesa?",
-    options: ["1789", "1776", "1804", "1815"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Queda da Bastilha" }
-  },
-  {
-    text: "Qual é a forma de governo de Portugal?",
-    options: ["República semi-presidencial", "Monarquia constitucional", "República presidencial", "República parlamentar"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Tem presidente e primeiro-ministro" }
-  },
-  {
-    text: "Quem foi Nelson Mandela?",
-    options: ["Presidente da África do Sul", "Presidente dos EUA", "Primeiro-ministro da Índia", "Líder da Rússia"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Lutou contra o apartheid" }
-  },
-  {
-    text: "O que é a ONU?",
-    options: ["Organização das Nações Unidas", "Organização Nacional Unida", "Ordem dos Novos Unidos", "Oficina Nacional Única"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Organização mundial de paz" }
-  },
-  {
-    text: "Em que ano Portugal aderiu à CEE (atual UE)?",
-    options: ["1986", "1974", "1992", "2000"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Juntamente com a Espanha" }
-  },
-  {
-    text: "Quem foi Winston Churchill?",
-    options: ["Primeiro-ministro britânico", "Rei de Inglaterra", "General americano", "Papa"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Líder durante a Segunda Guerra Mundial" }
-  },
-  {
-    text: "O que é a Constituição?",
-    options: ["Lei fundamental de um país", "Lei fiscal", "Lei eleitoral", "Lei penal"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Documento que define os direitos e deveres" }
-  },
-  {
-    text: "Em que ano foi a Revolução dos Cravos em Portugal?",
-    options: ["1974", "1964", "1984", "1976"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "25 de abril, fim do Estado Novo" }
-  },
-  {
-    text: "Qual é a capital dos Estados Unidos?",
-    options: ["Washington D.C.", "Nova Iorque", "Los Angeles", "Chicago"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 8,
-    metadata: { hint: "Cidade com o nome do primeiro presidente" }
-  },
-  {
-    text: "Quem foi Mahatma Gandhi?",
-    options: ["Líder da independência da Índia", "Presidente da China", "Rei do Egipto", "General francês"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Lutou pela independência pacificamente" }
-  },
-  {
-    text: "O que é o Parlamento?",
-    options: ["Assembleia legislativa", "Tribunal superior", "Exército", "Igreja"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Órgão que faz as leis" }
-  },
-  {
-    text: "Qual é o partido que está no poder em Portugal em 2024?",
-    options: ["PSD", "PS", "Bloco de Esquerda", "CDS"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Partido Social-Democrata" }
-  },
-  {
-    text: "Em que ano nasceu a Organização das Nações Unidas?",
-    options: ["1945", "1939", "1950", "1918"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Fim da Segunda Guerra Mundial" }
-  },
-  {
-    text: "Quem foi Abraham Lincoln?",
-    options: ["Presidente dos EUA que aboliu a escravatura", "Primeiro presidente americano", "General da guerra civil", "Inventor"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "16.º presidente dos Estados Unidos" }
-  },
-  {
-    text: "O que é o voto secreto?",
-    options: ["Voto anónimo", "Voto público", "Voto online", "Voto obrigatório"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Ninguém sabe em quem votaste" }
-  },
-  {
-    text: "Qual é a moeda da União Europeia?",
-    options: ["Euro", "Libra", "Dólar", "Franco"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 8,
-    metadata: { hint: "Moeda usada em 20 países da UE" }
-  },
-  {
-    text: "Em que ano Portugal tornou-se república?",
-    options: ["1910", "1926", "1974", "1890"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Fim da monarquia" }
-  },
-  {
-    text: "Quem foi Karl Marx?",
-    options: ["Filósofo e economista", "Rei da Prússia", "General napoleónico", "Papa"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Escreveu 'O Capital'" }
-  },
-  {
-    text: "O que é a UE?",
-    options: ["União Europeia", "União Eclesiástica", "União Escolar", "União Empresarial"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 8,
-    metadata: { hint: "Organização de 27 países europeus" }
-  },
-  {
-    text: "Qual é a função do Presidente da República em Portugal?",
-    options: ["Representar o país", "Fazer leis", "Gerir o orçamento", "Comandar a polícia"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Chefe de Estado" }
-  },
-  {
-    text: "Em que ano terminou a Primeira Guerra Mundial?",
-    options: ["1918", "1914", "1939", "1945"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "4 anos de conflito" }
-  },
-  {
-    text: "Quem foi Dalai Lama?",
-    options: ["Líder espiritual do Tibete", "Imperador da China", "Rei do Nepal", "General mongol"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Líder budista no exílio" }
-  },
-  {
-    text: "O que é o Direito?",
-    options: ["Sistema de leis de um país", "Ciência política", "Economia", "Filosofia"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Conjunto de normas jurídicas" }
-  },
-  {
-    text: "Qual é o nome da sede do governo português?",
-    options: ["Palácio de São Bento", "Palácio de Belém", "Assembleia da República", "Supremo Tribunal"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Sede do governo e do parlamento" }
-  },
-  {
-    text: "Quem foi José Sócrates?",
-    options: ["Primeiro-ministro de Portugal", "Presidente da República", "Líder da oposição", "Governador do Banco de Portugal"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "PM entre 2005 e 2011" }
-  },
-  {
-    text: "Em que ano começou a Segunda Guerra Mundial?",
-    options: ["1939", "1914", "1945", "1950"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Alemanha invadiu a Polónia" }
-  },
-  {
-    text: "O que é a NATO?",
-    options: ["Organização do Tratado do Atlântico Norte", "Organização das Nações Unidas", "União Europeia", "Banco Europeu"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Aliança militar ocidental" }
-  },
-  {
-    text: "Qual é a função do Primeiro-Ministro em Portugal?",
-    options: ["Dirigir o governo", "Representar o país", "Fazer leis", "Presidir julgamentos"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 12,
-    metadata: { hint: "Chefe do governo" }
-  },
-  {
-    text: "Quem foi Fidel Castro?",
-    options: ["Líder de Cuba", "Presidente dos EUA", "Rei de Espanha", "General argentino"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Revolução cubana de 1959" }
-  },
-  {
-    text: "O que é o sufrágio universal?",
-    options: ["Direito de voto de todos os cidadãos", "Voto apenas de homens", "Voto apenas de ricos", "Voto secreto"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Todos podem votar independentemente de género ou renda" }
-  },
-  {
-    text: "Em que ano foi assinado o Tratado de Lisboa?",
-    options: ["2007", "1992", "2001", "2010"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Reformou a União Europeia" }
-  },
-  {
-    text: "Qual é o nome do tribunal supremo de Portugal?",
-    options: ["Supremo Tribunal de Justiça", "Tribunal Constitucional", "Supremo Tribunal Administrativo", "Tribunal Penal Internacional"],
-    correct_option: 0,
-    category: "POLITICA",
-    age_rating: 16,
-    metadata: { hint: "Tribunal de último recurso" }
-  },
+  // ═══════════════════════════ CAPITAIS_DO_MUNDO (66→100, need ~34) ═══════════════════════════
+  { text: "Qual é a capital da Alemanha?", options: ["Berlim", "Munique", "Hamburgo", "Frankfurt"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Muro de Berlim" } },
+  { text: "Qual é a capital da Itália?", options: ["Roma", "Milão", "Nápoles", "Turim"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Coliseu" } },
+  { text: "Qual é a capital da Rússia?", options: ["Moscovo", "São Petersburgo", "Kiev", "Varsóvia"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Maior país do mundo" } },
+  { text: "Qual é a capital do Egito?", options: ["Cairo", "Alexandria", "Luxor", "Assuão"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Pirâmides de Gizé" } },
+  { text: "Qual é a capital do Canadá?", options: ["Ottawa", "Toronto", "Vancouver", "Montreal"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Não é Toronto" } },
+  { text: "Qual é a capital da Austrália?", options: ["Camberra", "Sydney", "Melbourne", "Brisbane"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Não é Sydney" } },
+  { text: "Qual é a capital da Índia?", options: ["Nova Deli", "Bombaim", "Calcutá", "Bangalore"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Taj Mahal fica na Índia" } },
+  { text: "Qual é a capital do México?", options: ["Cidade do México", "Cancún", "Guadalajara", "Monterrey"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Maior cidade da América Latina" } },
+  { text: "Qual é a capital da Argentina?", options: ["Buenos Aires", "Córdoba", "Rosário", "Mendoza"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Tango" } },
+  { text: "Qual é a capital da Turquia?", options: ["Ancara", "Istambul", "Izmir", "Antália"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 12, metadata: { hint: "Não é Istambul" } },
+  { text: "Qual é a capital do Japão?", options: ["Tóquio", "Osaka", "Kyoto", "Yokohama"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Vulcão Fuji" } },
+  { text: "Qual é a capital da Coreia do Sul?", options: ["Seul", "Busan", "Incheon", "Daegu"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "K-pop" } },
+  { text: "Qual é a capital da Grécia?", options: ["Atenas", "Salónica", "Sparta", "Rodes"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Partenão" } },
+  { text: "Qual é a capital da Tailândia?", options: ["Bangkok", "Chiang Mai", "Pattaya", "Phuket"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Templos dourados" } },
+  { text: "Qual é a capital de Marrocos?", options: ["Rabat", "Casablanca", "Marrakech", "Fez"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 12, metadata: { hint: "Não é Casablanca" } },
+  { text: "Qual é a capital da Colômbia?", options: ["Bogotá", "Medellín", "Cali", "Barranquilla"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "América do Sul" } },
+  { text: "Qual é a capital do Chile?", options: ["Santiago", "Valparaíso", "Concepción", "Antofagasta"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Estreito de Magalhães" } },
+  { text: "Qual é a capital da Noruega?", options: ["Oslo", "Bergen", "Trondheim", "Stavanger"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Fiorde" } },
+  { text: "Qual é a capital da Suécia?", options: ["Estocolmo", "Gotemburgo", "Malmö", "Uppsala"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "IKEA" } },
+  { text: "Qual é a capital da Finlândia?", options: ["Helsínquia", "Tampere", "Turku", "Oulu"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Terra do Pai Natal" } },
+  { text: "Qual é a capital da Dinamarca?", options: ["Copenhaga", "Aarhus", "Odense", "Elsinore"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Pequena Sereia" } },
+  { text: "Qual é a capital da Polónia?", options: ["Varsóvia", "Cracóvia", "Gdansk", "Wroclaw"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Europa Central" } },
+  { text: "Qual é a capital da Áustria?", options: ["Viena", "Salzburgo", "Innsbruck", "Graz"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Valsa" } },
+  { text: "Qual é a capital da Bélgica?", options: ["Bruxelas", "Bruges", "Gante", "Antuérpia"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Sede da UE" } },
+  { text: "Qual é a capital dos Países Baixos?", options: ["Amsterdã", "Rotão Haia", "Utrecht", "Eindhoven"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Tulipas e moinhos" } },
+  { text: "Qual é a capital de Portugal?", options: ["Lisboa", "Porto", "Coimbra", "Faro"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Sete colinas" } },
+  { text: "Qual é a capital da Suíça?", options: ["Berna", "Zurique", "Genebra", "Basileia"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 12, metadata: { hint: "Neutro e neutro" } },
+  { text: "Qual é a capital da Hungria?", options: ["Budapeste", "Debrecen", "Szeged", "Pécs"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 12, metadata: { hint: "Danúbio" } },
+  { text: "Qual é a capital da Irlanda?", options: ["Dublin", "Cork", "Galway", "Limerick"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Cerveja e shamrocks" } },
+  { text: "Qual é a capital de Moçambique?", options: ["Maputo", "Beira", "Nampula", "Quelimane"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "País lusófono em África" } },
+  { text: "Qual é a capital de Angola?", options: ["Luanda", "Benguela", "Huambo", "Lobito"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "País lusófono em África" } },
+  { text: "Qual é a capital do Brasil?", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Construída para ser capital" } },
+  { text: "Qual é a capital da Venezuela?", options: ["Caracas", "Valência", "Maracaibo", "Barquisimeto"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "América do Sul" } },
+  { text: "Qual é a capital do Peru?", options: ["Lima", "Cusco", "Arequipa", "Trujillo"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Machu Picchu" } },
+  { text: "Qual é a capital do Equador?", options: ["Quito", "Guayaquil", "Cuenca", "Ambato"], correct_option: 0, category: "CAPITAIS_DO_MUNDO", age_rating: 8, metadata: { hint: "Linha do Equador" } },
 
-  // ═══════════════════════════ TECNOLOGIA ═══════════════════════════
-  {
-    text: "Quem fundou a Apple?",
-    options: ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Jeff Bezos"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Fundador que vestia preto sempre" }
-  },
-  {
-    text: "O que é a Internet?",
-    options: ["Rede mundial de computadores", "Um programa de computador", "Um tipo de telemóvel", "Um jogo"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Rede que liga computadores em todo o mundo" }
-  },
-  {
-    text: "Qual é o nome do sistema operativo da Google para telemóveis?",
-    options: ["Android", "iOS", "Windows", "Linux"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Sistema verde com robot" }
-  },
-  {
-    text: "Quem inventou a World Wide Web?",
-    options: ["Tim Berners-Lee", "Steve Jobs", "Bill Gates", "Vint Cerf"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Cientista britânico no CERN" }
-  },
-  {
-    text: "O que é um smartphone?",
-    options: ["Telemóvel inteligente", "Computador portátil", "Consola de jogos", "Televisão"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Telemóvel com ecrã tátil" }
-  },
-  {
-    text: "Qual é a linguagem de programação mais usada para websites?",
-    options: ["JavaScript", "Python", "C++", "Java"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Linguagem que torna websites interativos" }
-  },
-  {
-    text: "Quem é o fundador da Microsoft?",
-    options: ["Bill Gates", "Steve Jobs", "Mark Zuckerberg", "Larry Page"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Empresário americano e filántropo" }
-  },
-  {
-    text: "O que é a inteligência artificial?",
-    options: ["Máquinas que aprendem e raciocinam", "Um tipo de robot", "Um programa de jogos", "Uma rede social"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Computadores que simulam inteligência humana" }
-  },
-  {
-    text: "Qual é o nome da assistente virtual da Apple?",
-    options: ["Siri", "Alexa", "Cortana", "Google Assistant"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Assistente no iPhone" }
-  },
-  {
-    text: "O que é o Wi-Fi?",
-    options: ["Rede sem fios", "Um tipo de cabo", "Um browser", "Um telemóvel"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Conexão à Internet sem cabos" }
-  },
-  {
-    text: "Quem fundou o Facebook (agora Meta)?",
-    options: ["Mark Zuckerberg", "Larry Page", "Jack Dorsey", "Elon Musk"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Fundador jovem de Harvard" }
-  },
-  {
-    text: "O que é um algoritmo?",
-    options: ["Conjunto de passos para resolver um problema", "Um tipo de virus", "Um computador", "Uma aplicação"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Receita passo-a-passo para computadores" }
-  },
-  {
-    text: "Qual é a empresa de Elon Musk?",
-    options: ["Tesla", "Apple", "Google", "Amazon"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Carros elétricos e foguetões" }
-  },
-  {
-    text: "O que é o cloud computing?",
-    options: ["Computação na nuvem", "Computador portátil", "Programa de nuvens", "Jogo de nuvens"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Armazenamento e processamento remoto" }
-  },
-  {
-    text: "Qual é o nome da empresa que criou o YouTube?",
-    options: ["Google", "Meta", "Amazon", "Microsoft"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Mesma empresa do Google" }
-  },
-  {
-    text: "O que é um chip de computador?",
-    options: ["Circuito integrado miniaturizado", "Uma peça de chocolate", "Um disco rígido", "Um ecrã"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Cérebro do computador" }
-  },
-  {
-    text: "Qual é a empresa que criou o iPhone?",
-    options: ["Apple", "Samsung", "Google", "Nokia"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Empresa da maçã" }
-  },
-  {
-    text: "O que é o blockchain?",
-    options: ["Cadeia de blocos digitais seguros", "Um tipo de cadeia", "Um programa de bloco", "Um site"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Tecnologia por trás das criptomoedas" }
-  },
-  {
-    text: "Quem fundou a Amazon?",
-    options: ["Jeff Bezos", "Bill Gates", "Steve Jobs", "Mark Zuckerberg"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Maior loja online do mundo" }
-  },
-  {
-    text: "O que é o Bluetooth?",
-    options: ["Conexão sem fios de curta distância", "Um tipo de WiFi", "Um programa", "Uma rede social"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Usado para ligar auscultadores sem fios" }
-  },
-  {
-    text: "Qual é a empresa que desenvolveu o ChatGPT?",
-    options: ["OpenAI", "Google", "Meta", "Microsoft"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Empresa de IA fundada por Sam Altman" }
-  },
-  {
-    text: "O que é um cookie na Internet?",
-    options: ["Ficheiro de dados no browser", "Um bolo virtual", "Um vírus", "Um tipo de rede"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Guarda preferências do utilizador" }
-  },
-  {
-    text: "Qual é a linguagem de programação mais usada em ciência de dados?",
-    options: ["Python", "JavaScript", "C#", "PHP"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Linguagem com nome de serpente" }
-  },
-  {
-    text: "O que é um drone?",
-    options: ["Veículo aéreo não tripulado", "Um tipo de helicóptero", "Um robô terrestre", "Um submarino"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Aviãozinho controlado remotamente" }
-  },
-  {
-    text: "Quem é o CEO da Tesla?",
-    options: ["Elon Musk", "Jeff Bezos", "Mark Zuckerberg", "Tim Cook"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Também fundador da SpaceX" }
-  },
-  {
-    text: "O que é a realidade virtual (VR)?",
-    options: ["Ambiente digital imersivo", "Um jogo de realidade", "Uma televisão 3D", "Um cinema"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Usa óculos especiais" }
-  },
-  {
-    text: "Qual é a empresa que criou o Instagram?",
-    options: ["Meta", "Google", "Twitter", "Snapchat"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Agora pertence ao Facebook" }
-  },
-  {
-    text: "O que é a hacking ética?",
-    options: ["Invadir sistemas com autorização", "Criar vírus", "Roubar dados", "Destruir computadores"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Encontrar falhas de segurança legalmente" }
-  },
-  {
-    text: "Qual é o nome do satélite artificial lançado pela URSS em 1957?",
-    options: ["Sputnik", "Apollo", "Voyager", "Hubble"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Primeiro satélite no espaço" }
-  },
-  {
-    text: "O que é o machine learning?",
-    options: ["Aprendizagem automática por máquinas", "Um curso online", "Um tipo de computador", "Uma rede social"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Sub-ramo da inteligência artificial" }
-  },
-  {
-    text: "Qual é a unidade de medida da velocidade de processamento?",
-    options: ["Hertz (Hz)", "Bytes", "Pixels", "Metros"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Frequência de ciclos por segundo" }
-  },
-  {
-    text: "O que é o 5G?",
-    options: ["Quinta geração de rede móvel", "Um tipo de WiFi", "Um jogo", "Um programa"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Rede de telemóvel mais rápida" }
-  },
-  {
-    text: "Quem inventou o telefone?",
-    options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Inventor escocês-canadense" }
-  },
-  {
-    text: "O que é um firewall?",
-    options: ["Sistema de segurança de rede", "Um muro de proteção física", "Um tipo de vírus", "Um browser"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Protege a rede contra acessos não autorizados" }
-  },
-  {
-    text: "Qual é a empresa que criou o Windows?",
-    options: ["Microsoft", "Apple", "Google", "Samsung"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Sistema operativo mais usado em PCs" }
-  },
-  {
-    text: "O que é um USB?",
-    options: ["Porta de ligação universal", "Um disco rígido", "Uma rede sem fios", "Um processador"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 8,
-    metadata: { hint: "Cabo para ligar dispositivos" }
-  },
-  {
-    text: "Qual é a startup portuguesa de mobilidade elétrica?",
-    options: ["EVA", "Via Verde", "Bolt", "Uber"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Car-sharing elétrico em Lisboa" }
-  },
-  {
-    text: "O que é o open source?",
-    options: ["Código aberto e acessível", "Um tipo de loja", "Um programa pago", "Uma rede fechada"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 16,
-    metadata: { hint: "Software com código disponível para todos" }
-  },
-  {
-    text: "Qual é o nome do processador fabricado pela Intel?",
-    options: ["Core", "Ryzen", "Snapdragon", "M1"],
-    correct_option: 0,
-    category: "TECNOLOGIA",
-    age_rating: 12,
-    metadata: { hint: "Série Core i3, i5, i7, i9" }
-  }
+  // ═══════════════════════════ POLITICA (94→100, need ~6) ═══════════════════════════
+  { text: "Qual é o órgão supremo de poder em Portugal?", options: ["Assembleia da República", "Conselho de Estado", "Tribunal Constitucional", "Presidência da República"], correct_option: 0, category: "POLITICA", age_rating: 16, metadata: { hint: "Parlamento português" } },
+  { text: "Quantos deputados tem a Assembleia da República?", options: ["230", "200", "250", "260"], correct_option: 0, category: "POLITICA", age_rating: 16, metadata: { hint: "226 + 4 da Madeira e Açores" } },
+  { text: "Qual é a função do Presidente da República em Portugal?", options: ["Representar a República e fiscalizar o Governo", "Governar o país diretamente", "Aprovar leis sem revisão", "Escolher o Primeiro-Ministro sozinho"], correct_option: 0, category: "POLITICA", age_rating: 16, metadata: { hint: "Funções de soberania" } },
+  { text: "Qual partido político foi fundado por António de Oliveira Salazar?", options: ["União Nacional", "PSD", "PS", "CDS-PP"], correct_option: 0, category: "POLITICA", age_rating: 16, metadata: { hint: "Estado Novo" } },
+  { text: "Em que ano foi restaurada a democracia em Portugal?", options: ["1974", "1976", "1982", "1975"], correct_option: 0, category: "POLITICA", age_rating: 16, metadata: { hint: "25 de Abril" } },
+  { text: "Qual é o partido político mais antigo de Portugal?", options: ["PSD", "PCP", "PS", "CDS-PP"], correct_option: 0, category: "POLITICA", age_rating: 16, metadata: { hint: "Fundado em 1974" } },
+
+  // ═══════════════════════════ CINEMA (95→100, need ~5) ═══════════════════════════
+  { text: "Qual filme ganhou o Oscar de Melhor Filme em 1994?", options: ["Forrest Gump", "Pulp Fiction", "O Cliente", "Quatro Casamentos e um Funeral"], correct_option: 0, category: "CINEMA", age_rating: 8, metadata: { hint: "\"A vida é como uma caixa de chocolates\"" } },
+  { text: "Quem dirigiu 'A Lista de Schindler'?", options: ["Steven Spielberg", "Martin Scorsese", "James Cameron", "Quentin Tarantino"], correct_option: 0, category: "CINEMA", age_rating: 12, metadata: { hint: "Diretor de E.T. e Jurassic Park" } },
+  { text: "Qual é o filme com maior bilheteria de sempre (ajustado à inflação)?", options: ["Avatar", "Titanic", "Guerra das Estrelas", "Avengers: Endgame"], correct_option: 0, category: "CINEMA", age_rating: 8, metadata: { hint: "James Cameron, 2009" } },
+  { text: "Em que filme aparece a frase 'Eu sou teu pai'?", options: ["Guerra das Estrelas", "O Senhor dos Anéis", "Matrix", "Star Trek"], correct_option: 0, category: "CINEMA", age_rating: 8, metadata: { hint: "Darth Vader" } },
+  { text: "Qual ator interpretou Jack Sparrow em 'Piratas do Caribe'?", options: ["Johnny Depp", "Orlando Bloom", "Brad Pitt", "Tom Cruise"], correct_option: 0, category: "CINEMA", age_rating: 8, metadata: { hint: "Capitão excêntrico" } },
+
+  // ═══════════════════════════ GASTRONOMIA (95→100, need ~5) ═══════════════════════════
+  { text: "Qual é o ingrediente principal do guacamole?", options: ["Abacate", "Tomate", "Cebola", "Limão"], correct_option: 0, category: "GASTRONOMIA", age_rating: 8, metadata: { hint: "Fruta verde" } },
+  { text: "De que país é originário o sushi?", options: ["Japão", "China", "Coreia", "Tailândia"], correct_option: 0, category: "GASTRONOMIA", age_rating: 8, metadata: { hint: "Peixe cru com arroz" } },
+  { text: "Qual é o molho mais usado na cozinha italiana?", options: ["Molho de tomate", "Molho branco", "Molho de soja", "Molho bechamel"], correct_option: 0, category: "GASTRONOMIA", age_rating: 8, metadata: { hint: "Vermelho" } },
+  { text: "De que país é originário o croissant?", options: ["França", "Áustria", "Bélgica", "Suíça"], correct_option: 0, category: "GASTRONOMIA", age_rating: 8, metadata: { hint: "Pastelaria francesa" } },
+  { text: "Qual fruta é usada para fazer o chimichanga?", options: ["Nenhuma - é um prato de carne", "Banana", "Manga", "Abacaxi"], correct_option: 0, category: "GASTRONOMIA", age_rating: 12, metadata: { hint: "Torta frita mexicana" } },
 ];
 
-async function main() {
-  console.log(`📝 Total de perguntas novas: ${newQuestions.length}`);
-  
-  const toInsert = newQuestions.map(q => ({
-    ...q,
-    text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
-    metadata: { ...q.metadata, hint: q.metadata.hint }
-  }));
+// ═══════════════════════════════════════════════════════════════════════════════════
+// INSERT INTO SUPABASE
+// ═══════════════════════════════════════════════════════════════════════════════════
+async function insertBatch() {
+  // Check for duplicates
+  const { data: existing } = await supabase.from('questions').select('text, category');
+  const existingSet = new Set((existing || []).map(q => `${q.text}|${q.category}`));
+  const unique = newQuestions.filter(q => !existingSet.has(`${q.text}|${q.category}`));
 
-  const batchSize = 50;
-  let inserted = 0;
-  
-  for (let i = 0; i < toInsert.length; i += batchSize) {
-    const batch = toInsert.slice(i, i + batchSize);
-    const { data, error } = await supabase.from('questions').insert(batch).select();
-    
+  console.log(`📝 Total: ${newQuestions.length} | Novas: ${unique.length} | Duplicadas: ${newQuestions.length - unique.length}`);
+
+  // Insert in batches of 50
+  const BATCH_SIZE = 50;
+  let totalInserted = 0;
+
+  for (let i = 0; i < unique.length; i += BATCH_SIZE) {
+    const batch = unique.slice(i, i + BATCH_SIZE).map(q => ({
+      text: q.text,
+      image_url: q.image_url || null,
+      options: q.options,
+      correct_option: q.correct_option,
+      category: q.category,
+      age_rating: q.age_rating,
+      metadata: q.metadata
+    }));
+
+    const { error } = await supabase.from('questions').insert(batch);
     if (error) {
-      console.error(`❌ Batch ${Math.floor(i / batchSize) + 1} error:`, error.message);
+      console.error(`❌ Batch ${Math.floor(i / BATCH_SIZE) + 1} failed:`, error.message);
     } else {
-      inserted += data.length;
-      console.log(`✅ Batch ${Math.floor(i / batchSize) + 1}: ${data.length} perguntas inseridas`);
+      console.log(`✅ Batch ${Math.floor(i / BATCH_SIZE) + 1}: ${batch.length} perguntas inseridas`);
+      totalInserted += batch.length;
     }
   }
 
-  console.log(`\n🎉 Total inserido: ${inserted}/${newQuestions.length}`);
-  
-  // Update backup
-  const { data: allQuestions } = await supabase.from('questions').select('*').order('created_at');
-  if (allQuestions) {
-    writeFileSync('questions_backup.json', JSON.stringify(allQuestions, null, 2));
-    console.log(`📦 Backup atualizado: ${allQuestions.length} perguntas totais`);
-  }
-  
-  // Final distribution
-  const { data: final } = await supabase.from('questions').select('category');
-  if (final) {
-    const cats = {};
-    for (const q of final) { cats[q.category] = (cats[q.category] || 0) + 1; }
-    console.log('\n📊 Distribuição final:');
-    Object.entries(cats).sort((a, b) => b[1] - a[1]).forEach(([cat, count]) => {
-      console.log(`  ${count.toString().padStart(3)} | ${cat}`);
-    });
-    console.log(`  ${final.length.toString().padStart(3)} | TOTAL`);
-  }
+  console.log(`🎉 Total inserido: ${totalInserted}/${unique.length}`);
+
+  // Get final distribution
+  const { data: all } = await supabase.from('questions').select('category').range(0, 9999);
+  const cats = {};
+  for (const q of all || []) cats[q.category] = (cats[q.category] || 0) + 1;
+
+  console.log('\n📊 Distribuição final:');
+  Object.entries(cats).sort((a, b) => b[1] - a[1]).forEach(([cat, count]) => {
+    const bar = '█'.repeat(Math.round(count / 5));
+    console.log(count.toString().padStart(3) + ' | ' + bar + ' ' + cat);
+  });
 }
 
-main().catch(console.error);
+insertBatch().catch(console.error);

@@ -5472,6 +5472,3217 @@
     }
   },
   {
+    "id": "618427f0-50ce-469f-9601-fe296baa73ac",
+    "text": "Quem foi o primeiro homem a pisar a Lua?",
+    "image_url": null,
+    "options": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "John Glenn"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Ameriano, 1969"
+    }
+  },
+  {
+    "id": "ffb782b0-7bff-4c18-ab48-be6d8b3bb90a",
+    "text": "Em que ano começou a Primeira Guerra Mundial?",
+    "image_url": null,
+    "options": [
+      "1914",
+      "1916",
+      "1918",
+      "1912"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Início do século XX"
+    }
+  },
+  {
+    "id": "8687c894-d1a7-46b4-8797-991cd535db46",
+    "text": "Quem era o líder da Alemanha Nazi durante a Segunda Guerra Mundial?",
+    "image_url": null,
+    "options": [
+      "Adolf Hitler",
+      "Benito Mussolini",
+      "Joseph Stalin",
+      "Winston Churchill"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Ditador alemão"
+    }
+  },
+  {
+    "id": "fa467ce6-70d8-4739-97c2-762b18c809d1",
+    "text": "Em que ano caiu o Muro de Berlim?",
+    "image_url": null,
+    "options": [
+      "1989",
+      "1991",
+      "1985",
+      "1987"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Fim da Guerra Fria"
+    }
+  },
+  {
+    "id": "2ef50caf-c872-464f-8a9a-6f418be90c54",
+    "text": "Quem pintou a Mona Lisa?",
+    "image_url": null,
+    "options": [
+      "Leonardo da Vinci",
+      "Michelangelo",
+      "Rafael",
+      "Sandro Botticelli"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Polímata italiano do Renascimento"
+    }
+  },
+  {
+    "id": "0e40d654-eed4-4753-bdb2-b821cb2bcf54",
+    "text": "Qual civilização construiu as pirâmides de Gizé?",
+    "image_url": null,
+    "options": [
+      "Egípcios",
+      "Romanos",
+      "Gregos",
+      "Persas"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Civilização do Norte de África"
+    }
+  },
+  {
+    "id": "c2fb5b86-b80a-4b1c-8dea-c79e5c507558",
+    "text": "Em que ano foi assinado o Tratado de Versalhes?",
+    "image_url": null,
+    "options": [
+      "1919",
+      "1918",
+      "1920",
+      "1917"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Fim oficial da Primeira Guerra Mundial"
+    }
+  },
+  {
+    "id": "c5108e59-7c37-4f74-99cf-6b283faf1fc1",
+    "text": "Quem foi o primeiro imperador romano?",
+    "image_url": null,
+    "options": [
+      "Augusto",
+      "Júlio César",
+      "Nero",
+      "Tibério"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Sobrinho-neto de Júlio César"
+    }
+  },
+  {
+    "id": "3a0d6efe-0aec-48a8-ac84-f3fc08984a8f",
+    "text": "Em que ano começou a Revolução Francesa?",
+    "image_url": null,
+    "options": [
+      "1789",
+      "1776",
+      "1804",
+      "1799"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Queda da Bastilha"
+    }
+  },
+  {
+    "id": "af6d59e4-7817-4381-aa7b-90f72118fcc7",
+    "text": "Quem descobriu a América em 1492?",
+    "image_url": null,
+    "options": [
+      "Cristóvão Colombo",
+      "Vasco da Gama",
+      "Pedro Álvares Cabral",
+      "Fernão de Magalhães"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Navegador genovês"
+    }
+  },
+  {
+    "id": "0b9ff980-bac1-4253-b3a1-308c3056e69e",
+    "text": "Qual foi o maior império da história?",
+    "image_url": null,
+    "options": [
+      "Império Britânico",
+      "Império Romano",
+      "Império Mongol",
+      "Império Otomano"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "O império onde o sol nunca se punha"
+    }
+  },
+  {
+    "id": "bfc6526d-bfb0-4f96-bcc1-914c8697fc00",
+    "text": "Em que ano foi abolido a escravatura no Brasil?",
+    "image_url": null,
+    "options": [
+      "1888",
+      "1889",
+      "1850",
+      "1900"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Lei Áurea"
+    }
+  },
+  {
+    "id": "678e9888-c035-4a57-a029-0c5bdc79f6ef",
+    "text": "Quem foi Cleópatra?",
+    "image_url": null,
+    "options": [
+      "Rainha do Egito",
+      "Imperatriz romana",
+      "Deusa grega",
+      "Rainha da Pérsia"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Última faraó do Egito"
+    }
+  },
+  {
+    "id": "06f408aa-14ff-40d3-8b91-addd2611e851",
+    "text": "Em que ano começou a Segunda Guerra Mundial?",
+    "image_url": null,
+    "options": [
+      "1939",
+      "1941",
+      "1937",
+      "1940"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Invasão da Polónia"
+    }
+  },
+  {
+    "id": "6fab07c7-9bcf-48ad-9d99-d3eb29d5a986",
+    "text": "Quem foi Albert Einstein?",
+    "image_url": null,
+    "options": [
+      "Físico teórico",
+      "Biólogo",
+      "Matemático",
+      "Químico"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Teoria da Relatividade"
+    }
+  },
+  {
+    "id": "39ed7a76-a06e-4d4f-a1b9-af9a9c9b6c13",
+    "text": "Qual cidade foi destruída por um vulcão em 79 d.C.?",
+    "image_url": null,
+    "options": [
+      "Pompeia",
+      "Roma",
+      "Atenas",
+      "Cartago"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Cidade romana soterrada"
+    }
+  },
+  {
+    "id": "b68768f7-989a-4110-871c-970d30778f07",
+    "text": "Em que ano foi fundada a ONU?",
+    "image_url": null,
+    "options": [
+      "1945",
+      "1950",
+      "1939",
+      "1948"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Após a Segunda Guerra Mundial"
+    }
+  },
+  {
+    "id": "5af04aac-e7db-4af7-9c25-da40d0a9149f",
+    "text": "Em que ano o homem pisou na Lua pela primeira vez?",
+    "image_url": null,
+    "options": [
+      "1969",
+      "1965",
+      "1972",
+      "1960"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Missão Apollo 11"
+    }
+  },
+  {
+    "id": "99e03f89-749a-4d44-92e1-0ae4ec3f38c7",
+    "text": "Qual foi o motivo da Guerra Fria?",
+    "image_url": null,
+    "options": [
+      "Rivalidade EUA-URSS",
+      "Disputa territorial",
+      "Religião",
+      "Comércio"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Dois blocos ideológicos"
+    }
+  },
+  {
+    "id": "3cb546af-d316-4b46-aa14-34dc474d3dd6",
+    "text": "Quem inventou a prensa de tipos móveis?",
+    "image_url": null,
+    "options": [
+      "Johannes Gutenberg",
+      "Thomas Edison",
+      "Alexander Graham Bell",
+      "Galileu"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Alemanha, século XV"
+    }
+  },
+  {
+    "id": "32dbd281-dca9-4636-82ab-5742e5ec0723",
+    "text": "Em que ano começou a Revolução Industrial?",
+    "image_url": null,
+    "options": [
+      "1760",
+      "1800",
+      "1700",
+      "1850"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Inglaterra, século XVIII"
+    }
+  },
+  {
+    "id": "edecf8f7-db77-441c-99e2-db841aa4c120",
+    "text": "Qual país foi o primeiro a conceder o voto às mulheres?",
+    "image_url": null,
+    "options": [
+      "Nova Zelândia",
+      "Reino Unido",
+      "Estados Unidos",
+      "França"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "1893"
+    }
+  },
+  {
+    "id": "e0fe3dba-b9dd-4bb1-9af8-44410af48514",
+    "text": "Quem foi Jesus Cristo para a história ocidental?",
+    "image_url": null,
+    "options": [
+      "Fundador do Cristianismo",
+      "Rei romano",
+      "Filósofo grego",
+      "Imperador bizantino"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Religião com mais fiéis no mundo"
+    }
+  },
+  {
+    "id": "bc488c3e-ee72-4cec-be31-ee7e1cd4ee08",
+    "text": "Em que ano foi abolido o sistema feudal no Japão?",
+    "image_url": null,
+    "options": [
+      "1868",
+      "1900",
+      "1800",
+      "1945"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Restauração Meiji"
+    }
+  },
+  {
+    "id": "bb4b480f-c80e-4164-b97c-da6af162eb83",
+    "text": "Qual batalha marcou o fim do poderio napoleónico?",
+    "image_url": null,
+    "options": [
+      "Batalha de Waterloo",
+      "Batalha de Austerlitz",
+      "Batalha de Borodino",
+      "Batalha de Trafalgar"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "1815, Bélgica"
+    }
+  },
+  {
+    "id": "ebdc79c3-6b8e-46ef-871b-17462a3a0b47",
+    "text": "Quem foi Aristóteles?",
+    "image_url": null,
+    "options": [
+      "Filósofo grego",
+      "Imperador romano",
+      "Pintor renascentista",
+      "Explorador"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Mentor de Alexandre, o Grande"
+    }
+  },
+  {
+    "id": "8857dd12-5041-4db7-a30d-c17b60648908",
+    "text": "Em que ano foi descoberto o Brasil?",
+    "image_url": null,
+    "options": [
+      "1500",
+      "1492",
+      "1520",
+      "1488"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Pedro Álvares Cabral"
+    }
+  },
+  {
+    "id": "d7c4b9ae-1848-432e-a04d-667ecefaf09e",
+    "text": "Qual foi a capital do Império Bizantino?",
+    "image_url": null,
+    "options": [
+      "Constantinopla",
+      "Roma",
+      "Atenas",
+      "Alexandria"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Hoje chamada Istambul"
+    }
+  },
+  {
+    "id": "e1f9e929-7a93-4e4a-9bc9-908611aa045f",
+    "text": "Quem foi o faraó mais famoso do Egito antigo?",
+    "image_url": null,
+    "options": [
+      "Queops",
+      "Ramesses II",
+      "Tutancâmon",
+      "Cleópatra"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Construiu a Grande Pirâmide"
+    }
+  },
+  {
+    "id": "8a7b365c-cf09-4736-bea9-99a5760c50ab",
+    "text": "Em que ano caiu o Império Romano do Ocidente?",
+    "image_url": null,
+    "options": [
+      "476",
+      "1453",
+      "800",
+      "395"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Fim da Antiguidade Clássica"
+    }
+  },
+  {
+    "id": "1a9c5e12-171a-47e6-bac5-98e8b65cd47b",
+    "text": "Qual evento marcou o início da Idade Média?",
+    "image_url": null,
+    "options": [
+      "Queda de Roma",
+      "Descoberta da América",
+      "Revolução Francesa",
+      "Primeira Cruzada"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "476 d.C."
+    }
+  },
+  {
+    "id": "a6fe691a-3c4f-459d-bc50-5fb75b06d2bc",
+    "text": "Quem foi Marco Polo?",
+    "image_url": null,
+    "options": [
+      "Explorador veneziano",
+      "Pintor italiano",
+      "Papa",
+      "General romano"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Viajou para a China"
+    }
+  },
+  {
+    "id": "934e60e3-d901-4b89-b43a-d069e8ed9dd1",
+    "text": "Em que ano terminou a Segunda Guerra Mundial?",
+    "image_url": null,
+    "options": [
+      "1945",
+      "1944",
+      "1946",
+      "1943"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Bombardeamento de Hiroshima"
+    }
+  },
+  {
+    "id": "a9e236d3-d0af-499a-858a-145442464a63",
+    "text": "Qual foi o primeiro país a usar a pólvora em guerras?",
+    "image_url": null,
+    "options": [
+      "China",
+      "Japão",
+      "Índia",
+      "Mongólia"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Dinastia Tang"
+    }
+  },
+  {
+    "id": "dd978e9f-88b0-4d6e-8c28-a4736e3c55a3",
+    "text": "Quem foi Sócrates?",
+    "image_url": null,
+    "options": [
+      "Filósofo grego",
+      "Imperador romano",
+      "Pintor",
+      "General"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Mentor de Platão"
+    }
+  },
+  {
+    "id": "e46e8f92-4430-4782-97f6-e34eb0c2ef62",
+    "text": "Em que ano foi proclamada a República Portuguesa?",
+    "image_url": null,
+    "options": [
+      "1910",
+      "1926",
+      "1890",
+      "1974"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Fim da monarquia"
+    }
+  },
+  {
+    "id": "bb4647f3-bd2a-4591-a229-71902f9d72fc",
+    "text": "Qual é a data do 25 de Abril em Portugal?",
+    "image_url": null,
+    "options": [
+      "Dia da Liberdade",
+      "Dia da República",
+      "Dia de Portugal",
+      "Dia da Bandeira"
+    ],
+    "correct_option": 0,
+    "category": "HISTORIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Revolução dos Cravos"
+    }
+  },
+  {
+    "id": "1a5c120f-1f71-4744-84f5-e552501640a7",
+    "text": "Em que continente está o Deserto do Saara?",
+    "image_url": null,
+    "options": [
+      "África",
+      "Ásia",
+      "América do Sul",
+      "Oceania"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Maior deserto quente do mundo"
+    }
+  },
+  {
+    "id": "fe7d7479-6ea3-4f37-beef-dcfe04300410",
+    "text": "Qual é a capital do Brasil?",
+    "image_url": null,
+    "options": [
+      "Brasília",
+      "Rio de Janeiro",
+      "São Paulo",
+      "Salvador"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Construída para ser capital"
+    }
+  },
+  {
+    "id": "aadfafe3-76e8-48c0-ab52-18e279ea8b8e",
+    "text": "Em que país fica Machu Picchu?",
+    "image_url": null,
+    "options": [
+      "Peru",
+      "Bolívia",
+      "Colômbia",
+      "Equador"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Cidade inca nas montanhas"
+    }
+  },
+  {
+    "id": "f013474d-ffb2-4ccc-9a9f-e4158d940975",
+    "text": "Em que continente está a Austrália?",
+    "image_url": null,
+    "options": [
+      "Oceania",
+      "Ásia",
+      "Europa",
+      "América"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Menor continente"
+    }
+  },
+  {
+    "id": "9797faec-3567-4339-ba63-f2b948a6bdb1",
+    "text": "Qual é a capital da França?",
+    "image_url": null,
+    "options": [
+      "Paris",
+      "Lyon",
+      "Marselha",
+      "Toulouse"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Cidade da Torre Eiffel"
+    }
+  },
+  {
+    "id": "903e242f-bfe0-409f-a891-cc285df10889",
+    "text": "Qual oceano banha a costa leste do Brasil?",
+    "image_url": null,
+    "options": [
+      "Atlântico",
+      "Pacífico",
+      "Índico",
+      "Ártico"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Oceano que separa América de África"
+    }
+  },
+  {
+    "id": "c2271e54-6a4b-44c6-9a72-62eaacb2643f",
+    "text": "Em que país fica a Torre Eiffel?",
+    "image_url": null,
+    "options": [
+      "França",
+      "Espanha",
+      "Itália",
+      "Alemanha"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "País da baguette"
+    }
+  },
+  {
+    "id": "7feaa5e6-fb85-41d1-a256-67c08ace261a",
+    "text": "Qual é o maior deserto do mundo?",
+    "image_url": null,
+    "options": [
+      "Saara",
+      "Gobi",
+      "Kalahari",
+      "Atacama"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Norte de África"
+    }
+  },
+  {
+    "id": "f7dbd27e-a7c8-4b8b-9ee1-58d0225bc4f3",
+    "text": "Em que continente fica a China?",
+    "image_url": null,
+    "options": [
+      "Ásia",
+      "Europa",
+      "África",
+      "Oceania"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Maior população do mundo"
+    }
+  },
+  {
+    "id": "b1fae960-a50f-486d-a2d4-516941331ada",
+    "text": "Qual é a capital de Portugal?",
+    "image_url": null,
+    "options": [
+      "Lisboa",
+      "Porto",
+      "Coimbra",
+      "Braga"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Cidade das sete colinas"
+    }
+  },
+  {
+    "id": "f70f696c-48c8-40f1-bba3-a636608ca004",
+    "text": "Qual é a montanha mais alta de África?",
+    "image_url": null,
+    "options": [
+      "Kilimanjaro",
+      "Monte Branco",
+      "Atlas",
+      "Rwenzori"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "5.895 metros, Tanzânia"
+    }
+  },
+  {
+    "id": "6d494efb-c77a-45a6-9211-caa84d18f653",
+    "text": "Em que país fica o Taj Mahal?",
+    "image_url": null,
+    "options": [
+      "Índia",
+      "Paquistão",
+      "Nepal",
+      "Bangladesh"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Monumento de mármore branco"
+    }
+  },
+  {
+    "id": "129e63fa-3f5b-42c9-b6b7-45c7e33265de",
+    "text": "Qual país tem formato de bota?",
+    "image_url": null,
+    "options": [
+      "Itália",
+      "Grécia",
+      "Chile",
+      "Tailândia"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.433776+00:00",
+    "metadata": {
+      "hint": "Península no Mediterrâneo"
+    }
+  },
+  {
+    "id": "41ece73e-678b-478e-9b63-f511fb40e71b",
+    "text": "Em que continente fica o Amazonas?",
+    "image_url": null,
+    "options": [
+      "América do Sul",
+      "África",
+      "Ásia",
+      "América do Norte"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Maior floresta tropical"
+    }
+  },
+  {
+    "id": "f19c2681-5497-4e72-94f0-8218a2d019cc",
+    "text": "Qual é a capital da Espanha?",
+    "image_url": null,
+    "options": [
+      "Madrid",
+      "Barcelona",
+      "Sevilha",
+      "Valência"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Cidade do Real Madrid"
+    }
+  },
+  {
+    "id": "00333334-688b-42cf-accc-12d8a3bf71c8",
+    "text": "Qual rio atravessa Londres?",
+    "image_url": null,
+    "options": [
+      "Tamisa",
+      "Sena",
+      "Danúbio",
+      "Reno"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Passa pelo Big Ben"
+    }
+  },
+  {
+    "id": "8f6c55c5-1500-4ec8-b4f6-44da30a27f55",
+    "text": "Em que país fica a Grande Muralha?",
+    "image_url": null,
+    "options": [
+      "China",
+      "Japão",
+      "Mongólia",
+      "Coreia do Norte"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Visível do espaço (quase)"
+    }
+  },
+  {
+    "id": "e110f834-3a69-4744-ab48-fbeaea189f48",
+    "text": "Qual é o menor oceano do mundo?",
+    "image_url": null,
+    "options": [
+      "Ártico",
+      "Índico",
+      "Atlântico",
+      "Pacífico"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Ao redor do Polo Norte"
+    }
+  },
+  {
+    "id": "3d53d2e8-5751-40e9-8302-6ae23deefb04",
+    "text": "Em que continente fica o Canadá?",
+    "image_url": null,
+    "options": [
+      "América do Norte",
+      "Europa",
+      "Ásia",
+      "Oceania"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Acima dos Estados Unidos"
+    }
+  },
+  {
+    "id": "b8e73e40-2073-4f03-aa7a-709935d061ab",
+    "text": "Qual é a capital do Japão?",
+    "image_url": null,
+    "options": [
+      "Tóquio",
+      "Osaka",
+      "Kyoto",
+      "Yokohama"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Maior área metropolitana do mundo"
+    }
+  },
+  {
+    "id": "500d8b63-df6c-4a4d-aa5a-4e1f58b9d8aa",
+    "text": "Qual é o maior arquipélago do mundo?",
+    "image_url": null,
+    "options": [
+      "Indonésia",
+      "Filipinas",
+      "Japão",
+      "Malásia"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Mais de 17.000 ilhas"
+    }
+  },
+  {
+    "id": "a88a13e1-23c6-4802-9b57-b1a1b16fad32",
+    "text": "Em que país fica a Estátua da Liberdade?",
+    "image_url": null,
+    "options": [
+      "Estados Unidos",
+      "França",
+      "Reino Unido",
+      "Itália"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Nova Iorque"
+    }
+  },
+  {
+    "id": "4a52d2c3-e947-4ef2-8051-fd675ad42420",
+    "text": "Qual é o maior país da África?",
+    "image_url": null,
+    "options": [
+      "Argélia",
+      "Nigéria",
+      "Sudão",
+      "República Democrática do Congo"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Norte de África"
+    }
+  },
+  {
+    "id": "f8578a6a-fbbc-42be-92b5-4674d9585ed9",
+    "text": "Em que continente fica a Islândia?",
+    "image_url": null,
+    "options": [
+      "Europa",
+      "América do Norte",
+      "Ásia",
+      "Oceania"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Ilha no Atlântico Norte"
+    }
+  },
+  {
+    "id": "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
+    "text": "Quanto é 12 × 12?",
+    "image_url": null,
+    "options": [
+      "144",
+      "124",
+      "132",
+      "148"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Dúzia de dúzias"
+    }
+  },
+  {
+    "id": "7763f2d1-697a-4a45-8c5e-ba505486d0ab",
+    "text": "Qual é o valor de π (pi) arredondado a 2 casas decimais?",
+    "image_url": null,
+    "options": [
+      "3,14",
+      "3,41",
+      "3,12",
+      "3,16"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Razão entre circunferência e diâmetro"
+    }
+  },
+  {
+    "id": "b36396fe-f128-4e56-9b22-269eba1bbbde",
+    "text": "Quanto é 7³?",
+    "image_url": null,
+    "options": [
+      "343",
+      "49",
+      "21",
+      "243"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "7 × 7 × 7"
+    }
+  },
+  {
+    "id": "04958334-56df-43e0-80c6-f7a1a3f63c6c",
+    "text": "Qual é o próximo número: 2, 6, 12, 20, 30, ...?",
+    "image_url": null,
+    "options": [
+      "42",
+      "36",
+      "40",
+      "44"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Diferenças crescentes"
+    }
+  },
+  {
+    "id": "a146e614-3f3c-4b40-9809-c2a0d7f1359b",
+    "text": "Quanto é √144?",
+    "image_url": null,
+    "options": [
+      "12",
+      "14",
+      "11",
+      "13"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "12 × 12 = 144"
+    }
+  },
+  {
+    "id": "b9a34bf4-6001-49b1-9ce4-f72b02fecfd5",
+    "text": "Qual é o dobro de 25?",
+    "image_url": null,
+    "options": [
+      "50",
+      "45",
+      "55",
+      "60"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "25 + 25"
+    }
+  },
+  {
+    "id": "3d8314c7-4762-4906-95ff-45450c97c181",
+    "text": "Quanto é 100 ÷ 4?",
+    "image_url": null,
+    "options": [
+      "25",
+      "30",
+      "20",
+      "15"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Metade de metade de 100"
+    }
+  },
+  {
+    "id": "194f0de6-fde1-4ca3-81de-7796334a9984",
+    "text": "Qual é a área de um quadrado com lado 8 cm?",
+    "image_url": null,
+    "options": [
+      "64 cm²",
+      "32 cm²",
+      "16 cm²",
+      "72 cm²"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Lado × Lado"
+    }
+  },
+  {
+    "id": "5583be81-20de-4bf8-9e6b-a393c5b8f889",
+    "text": "Quanto é 3 × 4 + 5 × 2?",
+    "image_url": null,
+    "options": [
+      "22",
+      "20",
+      "24",
+      "18"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Ordem das operações"
+    }
+  },
+  {
+    "id": "1fbcc7bc-f308-46d2-abd2-b6b9864ec511",
+    "text": "Qual é o dobro de 17?",
+    "image_url": null,
+    "options": [
+      "34",
+      "32",
+      "36",
+      "27"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "17 + 17"
+    }
+  },
+  {
+    "id": "09515873-3725-4fe5-9518-ec851c8f0064",
+    "text": "Quanto é 25²?",
+    "image_url": null,
+    "options": [
+      "625",
+      "525",
+      "600",
+      "650"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "25 × 25"
+    }
+  },
+  {
+    "id": "31ce6509-2454-4ae6-8dcc-67d5c30ec222",
+    "text": "Qual é o perímetro de um retângulo com lados 5 e 3?",
+    "image_url": null,
+    "options": [
+      "16",
+      "15",
+      "8",
+      "30"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "2 × (comprimento + largura)"
+    }
+  },
+  {
+    "id": "d85c5cb1-21a3-4305-a888-ef20f1286cd3",
+    "text": "Quanto é 1000 ÷ 8?",
+    "image_url": null,
+    "options": [
+      "125",
+      "100",
+      "150",
+      "120"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Metade de metade de metade de 1000"
+    }
+  },
+  {
+    "id": "ab92632b-a862-4136-b998-6734e5f6e94a",
+    "text": "Qual é o fatorial de 5?",
+    "image_url": null,
+    "options": [
+      "120",
+      "60",
+      "24",
+      "720"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "5! = 5 × 4 × 3 × 2 × 1"
+    }
+  },
+  {
+    "id": "57f35c16-3219-4877-bfad-d49bb307ffa7",
+    "text": "Quanto é 2³ + 3²?",
+    "image_url": null,
+    "options": [
+      "17",
+      "15",
+      "12",
+      "20"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "8 + 9"
+    }
+  },
+  {
+    "id": "90f82544-7354-4667-a97c-d11f0819cd5e",
+    "text": "Qual é a área de um triângulo com base 10 e altura 6?",
+    "image_url": null,
+    "options": [
+      "30",
+      "60",
+      "16",
+      "36"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "(base × altura) ÷ 2"
+    }
+  },
+  {
+    "id": "08009f80-f265-42d2-b470-08b377233dc0",
+    "text": "Quanto é 1/2 + 1/3?",
+    "image_url": null,
+    "options": [
+      "5/6",
+      "2/5",
+      "1/6",
+      "2/6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": " MMC de 2 e 3 é 6"
+    }
+  },
+  {
+    "id": "bc1c99ae-32a3-4712-b12f-998a01145590",
+    "text": "Qual é o MDC de 12 e 18?",
+    "image_url": null,
+    "options": [
+      "6",
+      "3",
+      "12",
+      "9"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Maior divisor comum"
+    }
+  },
+  {
+    "id": "b6265ff2-a113-4851-a7df-fcaf4e8e4aaf",
+    "text": "Quanto é 10² - 5²?",
+    "image_url": null,
+    "options": [
+      "75",
+      "50",
+      "100",
+      "25"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "100 - 25"
+    }
+  },
+  {
+    "id": "14f0de9f-51d4-4473-a365-c9d1f44053dc",
+    "text": "Qual é o MMC de 4 e 6?",
+    "image_url": null,
+    "options": [
+      "12",
+      "24",
+      "8",
+      "18"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Mínimo múltiplo comum"
+    }
+  },
+  {
+    "id": "72c7dab2-5879-4a43-8f68-738b8fcdb072",
+    "text": "Quanto é 0,75 × 8?",
+    "image_url": null,
+    "options": [
+      "6",
+      "5,5",
+      "6,5",
+      "7"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "3/4 de 8"
+    }
+  },
+  {
+    "id": "07259ffc-cd57-4fba-8007-bd624e02dae6",
+    "text": "Qual é o triplo de 14?",
+    "image_url": null,
+    "options": [
+      "42",
+      "36",
+      "48",
+      "28"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "14 × 3"
+    }
+  },
+  {
+    "id": "6e27a86f-adc5-449d-8e0f-a386c09330df",
+    "text": "Quanto é 2⁵?",
+    "image_url": null,
+    "options": [
+      "32",
+      "64",
+      "16",
+      "25"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "2 × 2 × 2 × 2 × 2"
+    }
+  },
+  {
+    "id": "1793a7a7-a0bc-4158-8dcf-d09eb17e35f2",
+    "text": "Qual é a hipotenusa de um triângulo retângulo com catetos 3 e 4?",
+    "image_url": null,
+    "options": [
+      "5",
+      "7",
+      "6",
+      "4"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Teorema de Pitágoras"
+    }
+  },
+  {
+    "id": "e769fd56-f524-4820-a104-af6d147d654a",
+    "text": "Quanto é 3/4 de 100?",
+    "image_url": null,
+    "options": [
+      "75",
+      "80",
+      "70",
+      "60"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "75% de 100"
+    }
+  },
+  {
+    "id": "e07ebabc-79a0-44e6-afd4-5424d0db0511",
+    "text": "Qual é o próximo número primo após 7?",
+    "image_url": null,
+    "options": [
+      "11",
+      "9",
+      "13",
+      "10"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Não é par"
+    }
+  },
+  {
+    "id": "c97a738c-d722-4d87-8a20-53850bb763d5",
+    "text": "Quanto é 9 × 9 + 1?",
+    "image_url": null,
+    "options": [
+      "82",
+      "81",
+      "83",
+      "80"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "81 + 1"
+    }
+  },
+  {
+    "id": "6fc90832-0b02-4e59-985f-1a555e737ce3",
+    "text": "Qual é o diâmetro de um círculo com raio 5 cm?",
+    "image_url": null,
+    "options": [
+      "10 cm",
+      "5 cm",
+      "15 cm",
+      "25 cm"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Dobro do raio"
+    }
+  },
+  {
+    "id": "29a66a94-a409-4493-8d5c-8905ca2f1c62",
+    "text": "Quanto é 144 ÷ 12?",
+    "image_url": null,
+    "options": [
+      "12",
+      "14",
+      "11",
+      "13"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Inverso de 12 × 12"
+    }
+  },
+  {
+    "id": "fdc0b804-98aa-4090-8323-36d5e3772924",
+    "text": "Em que país se realiza a Fórmula 1 do Grande Prémio de Mônaco?",
+    "image_url": null,
+    "options": [
+      "Mônaco",
+      "França",
+      "Itália",
+      "Espanha"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Cidade-estado no Mediterrâneo"
+    }
+  },
+  {
+    "id": "134767b4-9588-4321-9d14-8f9052be4600",
+    "text": "Quantos sets são necessários para ganhar no vôleibol masculino?",
+    "image_url": null,
+    "options": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Melhor de 5"
+    }
+  },
+  {
+    "id": "fae5942a-57d6-427a-a89a-d500d8857f0b",
+    "text": "Em que desporto se usa um taco e uma bola pequena branca?",
+    "image_url": null,
+    "options": [
+      "Golfe",
+      "Polo",
+      "Críquete",
+      "Hóquei"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "18 buracos"
+    }
+  },
+  {
+    "id": "b8b1c197-fdff-4d48-9873-bd0284260b10",
+    "text": "Qual é a distância de uma maratona?",
+    "image_url": null,
+    "options": [
+      "42,195 km",
+      "40 km",
+      "45 km",
+      "50 km"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "De Atenas a Maratona (original)"
+    }
+  },
+  {
+    "id": "bd17dad6-8dba-49e5-ab9a-ac17274f2856",
+    "text": "Em que país se inventou o judo?",
+    "image_url": null,
+    "options": [
+      "Japão",
+      "Coreia do Sul",
+      "China",
+      "Rússia"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Arte marcial oriental"
+    }
+  },
+  {
+    "id": "1b2b9e6a-58dd-4e4f-aacc-823d0b08e17e",
+    "text": "Quantos jogadores tem uma equipa de basquetebol em campo?",
+    "image_url": null,
+    "options": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "5 por equipa"
+    }
+  },
+  {
+    "id": "daee2a40-c90e-4c44-b96c-d48ccb1e9099",
+    "text": "Em que país se realiza o Torneio de Roland Garros?",
+    "image_url": null,
+    "options": [
+      "França",
+      "Inglaterra",
+      "Espanha",
+      "Itália"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Torneio de ténis em terra batida"
+    }
+  },
+  {
+    "id": "3b313a19-4e80-4e90-a00c-82051f9ca434",
+    "text": "Quantos pontos vale um touchdown no futebol americano?",
+    "image_url": null,
+    "options": [
+      "6",
+      "7",
+      "3",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Mais a conversão"
+    }
+  },
+  {
+    "id": "bea8fd53-a0ff-4067-a3d4-cae978beaa08",
+    "text": "Em que desporto se compete com espada?",
+    "image_url": null,
+    "options": [
+      "Esgrima",
+      "Karatê",
+      "Boxe",
+      "Judo"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Desporto olímpico desde 1896"
+    }
+  },
+  {
+    "id": "3636227d-b402-40ca-ad50-2a6ccc3d4179",
+    "text": "Qual é o recorde do mundo dos 100 metros rasos (homem)?",
+    "image_url": null,
+    "options": [
+      "9,58s",
+      "9,69s",
+      "9,72s",
+      "9,80s"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.608834+00:00",
+    "metadata": {
+      "hint": "Usain Bolt, 2009"
+    }
+  },
+  {
+    "id": "765f5063-2707-4cff-ba56-d9bf051db405",
+    "text": "Em que desporto se usa um pucks?",
+    "image_url": null,
+    "options": [
+      "Hóquei no gelo",
+      "Pólo",
+      "Críquete",
+      "Rugby"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Gelo e stick"
+    }
+  },
+  {
+    "id": "16c4bcae-888a-4813-8f39-4524d193615a",
+    "text": "Quantos jogadores tem uma equipa de handebol em campo?",
+    "image_url": null,
+    "options": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "6 jogadores + guarda-redes"
+    }
+  },
+  {
+    "id": "3f8c61e3-5b69-4295-a222-d7a504c361a8",
+    "text": "Em que país se realiza o Open da Austrália de ténis?",
+    "image_url": null,
+    "options": [
+      "Austrália",
+      "Nova Zelândia",
+      "Índia",
+      "Japão"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Melbourne"
+    }
+  },
+  {
+    "id": "9082be25-f903-4373-8ba5-c3b422794127",
+    "text": "Qual é o tamanho de um campo de futebol (comprimento)?",
+    "image_url": null,
+    "options": [
+      "90-120 metros",
+      "80-100 metros",
+      "100-130 metros",
+      "70-90 metros"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Varia conforme o estádio"
+    }
+  },
+  {
+    "id": "e3f62c52-2bad-4fc1-895c-d1220d752d47",
+    "text": "Em que desporto se compete nadando?",
+    "image_url": null,
+    "options": [
+      "Natação",
+      "Polo aquático",
+      "Saltos ornamentais",
+      "Surf"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "4 estilos principais"
+    }
+  },
+  {
+    "id": "2e7daaf1-76df-49f7-81a4-2ab290d7cacb",
+    "text": "Quantos rounds tem uma luta de boxe profissional?",
+    "image_url": null,
+    "options": [
+      "12",
+      "10",
+      "15",
+      "8"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Campeonatos do mundo"
+    }
+  },
+  {
+    "id": "4723e690-080f-4d64-b613-e71bc96a92f7",
+    "text": "Em que país se originou o cricket?",
+    "image_url": null,
+    "options": [
+      "Inglaterra",
+      "Índia",
+      "Austrália",
+      "África do Sul"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Desporto nacional britânico"
+    }
+  },
+  {
+    "id": "15cde9ea-53b9-42e7-a89a-501474da000b",
+    "text": "Qual é o nome do troféu da Copa do Mundo de Futebol?",
+    "image_url": null,
+    "options": [
+      "Troféu FIFA",
+      "Troféu Jules Rimet",
+      "Troféumundial",
+      "Copa Ouro"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Em ouro maciço"
+    }
+  },
+  {
+    "id": "37b183dd-00f1-4e9c-afbe-59adba68ace2",
+    "text": "Em que desporto se usa um arco e flecha?",
+    "image_url": null,
+    "options": [
+      "Tiro com arco",
+      "Pentatlo",
+      "Hóquei",
+      "Pólo"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Desporto olímpico"
+    }
+  },
+  {
+    "id": "82c2ff92-f371-4010-9c6f-449172399cf8",
+    "text": "Quantos jogadores tem uma equipa de rugby em campo?",
+    "image_url": null,
+    "options": [
+      "15",
+      "11",
+      "13",
+      "14"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Rugby union"
+    }
+  },
+  {
+    "id": "3702bc65-34d0-42ab-a45a-0427645b1b4b",
+    "text": "Em que país se realiza o Tour de France?",
+    "image_url": null,
+    "options": [
+      "França",
+      "Bélgica",
+      "Itália",
+      "Espanha"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Corrida ciclista parisiense"
+    }
+  },
+  {
+    "id": "8c434b90-409e-486f-981a-b88481fb5802",
+    "text": "Qual é o deporte mais popular do mundo?",
+    "image_url": null,
+    "options": [
+      "Futebol",
+      "Críquete",
+      "Basquetebol",
+      "Ténis"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Mais de 4 bilhões de fãs"
+    }
+  },
+  {
+    "id": "afde3e2f-eced-4c97-8b35-84d83172621e",
+    "text": "Em que desporto se compete com uma raquete e uma peteca?",
+    "image_url": null,
+    "options": [
+      "Badmínton",
+      "Squash",
+      "Ténis",
+      "Pádel"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "O bicho voa"
+    }
+  },
+  {
+    "id": "9a4dd13f-77c1-42ee-b81e-a012a4bf23ab",
+    "text": "Quantos jogadores tem uma equipa de vôlei de praia?",
+    "image_url": null,
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Metade do vôleibol de quadra"
+    }
+  },
+  {
+    "id": "8e35241b-0e89-4453-a559-63ebc52519cb",
+    "text": "Em que país se originou o karatê?",
+    "image_url": null,
+    "options": [
+      "Japão",
+      "Coreia do Sul",
+      "China",
+      "Tailândia"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Okinawa"
+    }
+  },
+  {
+    "id": "0a84d8be-1050-4ba8-8b5b-5522000df15a",
+    "text": "Qual é o tempo mínimo para uma prova de 100 metros rasos ser considerada de elite (homem)?",
+    "image_url": null,
+    "options": [
+      "Menos de 10 segundos",
+      "Menos de 9,5 segundos",
+      "Menos de 11 segundos",
+      "Menos de 10,5 segundos"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Barreira dos 10 segundos"
+    }
+  },
+  {
+    "id": "573d1bf3-6782-4def-883b-c4479ed8af8f",
+    "text": "Em que desporto se usa um tabuleiro com 64 casas?",
+    "image_url": null,
+    "options": [
+      "Xadrez",
+      "Damas",
+      "Monopoly",
+      "Ludo"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Rei, rainha, bispo, cavalo"
+    }
+  },
+  {
+    "id": "6e8130f2-4f80-4dbe-9a95-65794e7b6fb0",
+    "text": "Quantos jogadores tem uma equipa de hóquei em campo?",
+    "image_url": null,
+    "options": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Como o futebol"
+    }
+  },
+  {
+    "id": "86d2e866-1942-4f83-a19c-8b8c66fed8d7",
+    "text": "Em que país se realiza o Grand Slam de ténis de Wimbledon?",
+    "image_url": null,
+    "options": [
+      "Inglaterra",
+      "França",
+      "Espanha",
+      "Itália"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Londres"
+    }
+  },
+  {
+    "id": "7446274a-d83d-43b0-801c-786f8a9285a4",
+    "text": "Qual é o peso de uma bola de basquetebol?",
+    "image_url": null,
+    "options": [
+      "600-650g",
+      "500-550g",
+      "700-750g",
+      "450-500g"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Tamanho 7 (masculino)"
+    }
+  },
+  {
+    "id": "75abfd67-d0f5-415b-82d0-0b35d59957b1",
+    "text": "Em que desporto se compete em duplas com raquetes?",
+    "image_url": null,
+    "options": [
+      "Ténis de mesa",
+      "Squash",
+      "Badmínton",
+      "Todos anteriores"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Pode ser individual ou duplas"
+    }
+  },
+  {
+    "id": "080b82cc-da69-4fa2-b825-a4cb9a8a5f6c",
+    "text": "Quantos jogadores tem uma equipa de polo em campo?",
+    "image_url": null,
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Cavalo e taco"
+    }
+  },
+  {
+    "id": "4d24c210-47e4-4400-a57f-89fec863333d",
+    "text": "Em que país se realizou a primeira Copa do Mundo de Futebol?",
+    "image_url": null,
+    "options": [
+      "Uruguai",
+      "Brasil",
+      "Itália",
+      "França"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "1930"
+    }
+  },
+  {
+    "id": "84a2c1c4-3d7b-40c3-a5fc-df2db19e841d",
+    "text": "Qual é a capital da Alemanha?",
+    "image_url": null,
+    "options": [
+      "Berlim",
+      "Munique",
+      "Hamburgo",
+      "Frankfurt"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Muro de Berlim"
+    }
+  },
+  {
+    "id": "4500cd67-74a7-435e-9293-b553a492049b",
+    "text": "Qual é a capital da Itália?",
+    "image_url": null,
+    "options": [
+      "Roma",
+      "Milão",
+      "Nápoles",
+      "Turim"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Coliseu"
+    }
+  },
+  {
+    "id": "10a78a9e-1c78-492e-ac5a-ac8dfe5be6d9",
+    "text": "Qual é a capital da Rússia?",
+    "image_url": null,
+    "options": [
+      "Moscovo",
+      "São Petersburgo",
+      "Kiev",
+      "Varsóvia"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Maior país do mundo"
+    }
+  },
+  {
+    "id": "1e32d849-3d1c-4806-898a-af0c5a091f89",
+    "text": "Qual é a capital do Egito?",
+    "image_url": null,
+    "options": [
+      "Cairo",
+      "Alexandria",
+      "Luxor",
+      "Assuão"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Pirâmides de Gizé"
+    }
+  },
+  {
+    "id": "91a5c3a1-073e-4a69-be0e-edf6086d1f45",
+    "text": "Qual é a capital do Canadá?",
+    "image_url": null,
+    "options": [
+      "Ottawa",
+      "Toronto",
+      "Vancouver",
+      "Montreal"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Não é Toronto"
+    }
+  },
+  {
+    "id": "b7165e25-aacf-4eda-9b80-5414d77de6fb",
+    "text": "Qual é a capital da Austrália?",
+    "image_url": null,
+    "options": [
+      "Camberra",
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Não é Sydney"
+    }
+  },
+  {
+    "id": "c1778215-da8b-4152-a08d-284f686f87be",
+    "text": "Qual é a capital da Índia?",
+    "image_url": null,
+    "options": [
+      "Nova Deli",
+      "Bombaim",
+      "Calcutá",
+      "Bangalore"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Taj Mahal fica na Índia"
+    }
+  },
+  {
+    "id": "e003d4d3-1497-40b8-9984-e862c5c71f9c",
+    "text": "Qual é a capital do México?",
+    "image_url": null,
+    "options": [
+      "Cidade do México",
+      "Cancún",
+      "Guadalajara",
+      "Monterrey"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Maior cidade da América Latina"
+    }
+  },
+  {
+    "id": "81a062b5-95fe-4130-a9b5-659405a8f7a2",
+    "text": "Qual é a capital da Argentina?",
+    "image_url": null,
+    "options": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosário",
+      "Mendoza"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Tango"
+    }
+  },
+  {
+    "id": "0ab072df-0ddc-4fe2-900b-e2d9d25eb39c",
+    "text": "Qual é a capital da Turquia?",
+    "image_url": null,
+    "options": [
+      "Ancara",
+      "Istambul",
+      "Izmir",
+      "Antália"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Não é Istambul"
+    }
+  },
+  {
+    "id": "a5d5036a-17ec-4bdc-ba21-2e57010d9e31",
+    "text": "Qual é a capital do Japão?",
+    "image_url": null,
+    "options": [
+      "Tóquio",
+      "Osaka",
+      "Kyoto",
+      "Yokohama"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Vulcão Fuji"
+    }
+  },
+  {
+    "id": "1b905919-01b8-4af8-9e27-5f20c38d47de",
+    "text": "Qual é a capital da Coreia do Sul?",
+    "image_url": null,
+    "options": [
+      "Seul",
+      "Busan",
+      "Incheon",
+      "Daegu"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "K-pop"
+    }
+  },
+  {
+    "id": "bf87b3c1-2b66-4a1e-8166-ab738c13f4eb",
+    "text": "Qual é a capital da Grécia?",
+    "image_url": null,
+    "options": [
+      "Atenas",
+      "Salónica",
+      "Sparta",
+      "Rodes"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Partenão"
+    }
+  },
+  {
+    "id": "3b01ca99-e983-454b-b2f8-2eef391efd9a",
+    "text": "Qual é a capital da Tailândia?",
+    "image_url": null,
+    "options": [
+      "Bangkok",
+      "Chiang Mai",
+      "Pattaya",
+      "Phuket"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Templos dourados"
+    }
+  },
+  {
+    "id": "c13f1b5a-76c2-4df1-a069-240786f89c47",
+    "text": "Qual é a capital de Marrocos?",
+    "image_url": null,
+    "options": [
+      "Rabat",
+      "Casablanca",
+      "Marrakech",
+      "Fez"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Não é Casablanca"
+    }
+  },
+  {
+    "id": "a98bc3b4-ba3c-41d7-bc84-4ef352b03dfa",
+    "text": "Qual é a capital da Colômbia?",
+    "image_url": null,
+    "options": [
+      "Bogotá",
+      "Medellín",
+      "Cali",
+      "Barranquilla"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "América do Sul"
+    }
+  },
+  {
+    "id": "077a8f1b-8818-4801-a486-fec53df27f3a",
+    "text": "Qual é a capital do Chile?",
+    "image_url": null,
+    "options": [
+      "Santiago",
+      "Valparaíso",
+      "Concepción",
+      "Antofagasta"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Estreito de Magalhães"
+    }
+  },
+  {
+    "id": "273470fc-1e14-4872-a658-f0554015a0aa",
+    "text": "Qual é a capital da Noruega?",
+    "image_url": null,
+    "options": [
+      "Oslo",
+      "Bergen",
+      "Trondheim",
+      "Stavanger"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Fiorde"
+    }
+  },
+  {
+    "id": "54318b17-297c-427c-8078-0e7124042f15",
+    "text": "Qual é a capital da Suécia?",
+    "image_url": null,
+    "options": [
+      "Estocolmo",
+      "Gotemburgo",
+      "Malmö",
+      "Uppsala"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "IKEA"
+    }
+  },
+  {
+    "id": "616f0390-863e-49db-9207-6e139d08ad13",
+    "text": "Qual é a capital da Finlândia?",
+    "image_url": null,
+    "options": [
+      "Helsínquia",
+      "Tampere",
+      "Turku",
+      "Oulu"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Terra do Pai Natal"
+    }
+  },
+  {
+    "id": "5ce14620-9a5a-43be-ac3a-9b6ec264d60b",
+    "text": "Qual é a capital da Dinamarca?",
+    "image_url": null,
+    "options": [
+      "Copenhaga",
+      "Aarhus",
+      "Odense",
+      "Elsinore"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Pequena Sereia"
+    }
+  },
+  {
+    "id": "383d2dcc-4b01-4c7c-a6a4-dbb45701b145",
+    "text": "Qual é a capital da Polónia?",
+    "image_url": null,
+    "options": [
+      "Varsóvia",
+      "Cracóvia",
+      "Gdansk",
+      "Wroclaw"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Europa Central"
+    }
+  },
+  {
+    "id": "ef2dec41-da60-4a61-9dd6-04593d3df83d",
+    "text": "Qual é a capital da Áustria?",
+    "image_url": null,
+    "options": [
+      "Viena",
+      "Salzburgo",
+      "Innsbruck",
+      "Graz"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Valsa"
+    }
+  },
+  {
+    "id": "ba11f3bc-f9cf-403c-ae18-d4b98943b834",
+    "text": "Qual é a capital da Bélgica?",
+    "image_url": null,
+    "options": [
+      "Bruxelas",
+      "Bruges",
+      "Gante",
+      "Antuérpia"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Sede da UE"
+    }
+  },
+  {
+    "id": "da4ccf92-50e9-4505-9987-809a87b677a1",
+    "text": "Qual é a capital dos Países Baixos?",
+    "image_url": null,
+    "options": [
+      "Amsterdã",
+      "Rotão Haia",
+      "Utrecht",
+      "Eindhoven"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Tulipas e moinhos"
+    }
+  },
+  {
+    "id": "5d9dfc14-fb2b-4e05-bb50-7642c995e0ed",
+    "text": "Qual é a capital de Portugal?",
+    "image_url": null,
+    "options": [
+      "Lisboa",
+      "Porto",
+      "Coimbra",
+      "Faro"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Sete colinas"
+    }
+  },
+  {
+    "id": "e042b1a8-97f7-47bf-bba4-58fdd8ecd9ed",
+    "text": "Qual é a capital da Suíça?",
+    "image_url": null,
+    "options": [
+      "Berna",
+      "Zurique",
+      "Genebra",
+      "Basileia"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.702842+00:00",
+    "metadata": {
+      "hint": "Neutro e neutro"
+    }
+  },
+  {
+    "id": "af3fb1a1-4ffa-489d-a4f5-5ea7fd5624c5",
+    "text": "Qual é a capital da Hungria?",
+    "image_url": null,
+    "options": [
+      "Budapeste",
+      "Debrecen",
+      "Szeged",
+      "Pécs"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Danúbio"
+    }
+  },
+  {
+    "id": "7331ae9c-8e84-44f7-8c37-9772d7be1f5d",
+    "text": "Qual é a capital da Irlanda?",
+    "image_url": null,
+    "options": [
+      "Dublin",
+      "Cork",
+      "Galway",
+      "Limerick"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Cerveja e shamrocks"
+    }
+  },
+  {
+    "id": "5b05a88e-15a7-4f39-8825-9c7c6537dc41",
+    "text": "Qual é a capital de Moçambique?",
+    "image_url": null,
+    "options": [
+      "Maputo",
+      "Beira",
+      "Nampula",
+      "Quelimane"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "País lusófono em África"
+    }
+  },
+  {
+    "id": "6e6528be-c32a-4ccf-8f39-399a2df26588",
+    "text": "Qual é a capital de Angola?",
+    "image_url": null,
+    "options": [
+      "Luanda",
+      "Benguela",
+      "Huambo",
+      "Lobito"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "País lusófono em África"
+    }
+  },
+  {
+    "id": "5ad1dcff-473e-4fad-abed-887eac2d5074",
+    "text": "Qual é a capital do Brasil?",
+    "image_url": null,
+    "options": [
+      "Brasília",
+      "Rio de Janeiro",
+      "São Paulo",
+      "Salvador"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Construída para ser capital"
+    }
+  },
+  {
+    "id": "11cded4f-ea62-4892-b248-fa017c7d803d",
+    "text": "Qual é a capital da Venezuela?",
+    "image_url": null,
+    "options": [
+      "Caracas",
+      "Valência",
+      "Maracaibo",
+      "Barquisimeto"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "América do Sul"
+    }
+  },
+  {
+    "id": "c365a5f1-9e7f-45c7-950b-a1d3410ba7e4",
+    "text": "Qual é a capital do Peru?",
+    "image_url": null,
+    "options": [
+      "Lima",
+      "Cusco",
+      "Arequipa",
+      "Trujillo"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Machu Picchu"
+    }
+  },
+  {
+    "id": "1e6f6a68-822a-4748-94a4-f0b2448f5bd0",
+    "text": "Qual é a capital do Equador?",
+    "image_url": null,
+    "options": [
+      "Quito",
+      "Guayaquil",
+      "Cuenca",
+      "Ambato"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Linha do Equador"
+    }
+  },
+  {
+    "id": "aa219a69-6b8b-4503-b564-f7187cad09e7",
+    "text": "Qual é o órgão supremo de poder em Portugal?",
+    "image_url": null,
+    "options": [
+      "Assembleia da República",
+      "Conselho de Estado",
+      "Tribunal Constitucional",
+      "Presidência da República"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Parlamento português"
+    }
+  },
+  {
+    "id": "caf7613b-fdca-4a7a-b43d-251e0e7e5911",
+    "text": "Quantos deputados tem a Assembleia da República?",
+    "image_url": null,
+    "options": [
+      "230",
+      "200",
+      "250",
+      "260"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "226 + 4 da Madeira e Açores"
+    }
+  },
+  {
+    "id": "ba625f90-bf57-4f44-930c-e61a96ff53b5",
+    "text": "Qual partido político foi fundado por António de Oliveira Salazar?",
+    "image_url": null,
+    "options": [
+      "União Nacional",
+      "PSD",
+      "PS",
+      "CDS-PP"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Estado Novo"
+    }
+  },
+  {
+    "id": "0919770a-7eba-4d99-8c2e-f44e7e951b90",
+    "text": "Em que ano foi restaurada a democracia em Portugal?",
+    "image_url": null,
+    "options": [
+      "1974",
+      "1976",
+      "1982",
+      "1975"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "25 de Abril"
+    }
+  },
+  {
+    "id": "d71ade34-151f-4759-9567-73568397398b",
+    "text": "Qual é o partido político mais antigo de Portugal?",
+    "image_url": null,
+    "options": [
+      "PSD",
+      "PCP",
+      "PS",
+      "CDS-PP"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Fundado em 1974"
+    }
+  },
+  {
+    "id": "2c4f2ae2-ddf3-4c13-b5e8-4949f0704692",
+    "text": "Quem dirigiu 'A Lista de Schindler'?",
+    "image_url": null,
+    "options": [
+      "Steven Spielberg",
+      "Martin Scorsese",
+      "James Cameron",
+      "Quentin Tarantino"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Diretor de E.T. e Jurassic Park"
+    }
+  },
+  {
+    "id": "e7acf6be-836f-488d-8c33-b4542dde45ed",
+    "text": "Qual é o filme com maior bilheteria de sempre (ajustado à inflação)?",
+    "image_url": null,
+    "options": [
+      "Avatar",
+      "Titanic",
+      "Guerra das Estrelas",
+      "Avengers: Endgame"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "James Cameron, 2009"
+    }
+  },
+  {
+    "id": "4b99260d-7edf-4a62-aed9-0a946dc3a62e",
+    "text": "Qual ator interpretou Jack Sparrow em 'Piratas do Caribe'?",
+    "image_url": null,
+    "options": [
+      "Johnny Depp",
+      "Orlando Bloom",
+      "Brad Pitt",
+      "Tom Cruise"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Capitão excêntrico"
+    }
+  },
+  {
+    "id": "bfb4b6d0-e43e-47d2-9c27-26e9469921ac",
+    "text": "Qual é o molho mais usado na cozinha italiana?",
+    "image_url": null,
+    "options": [
+      "Molho de tomate",
+      "Molho branco",
+      "Molho de soja",
+      "Molho bechamel"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Vermelho"
+    }
+  },
+  {
+    "id": "2c8c826d-26a8-41f8-989c-981862a77114",
+    "text": "De que país é originário o croissant?",
+    "image_url": null,
+    "options": [
+      "França",
+      "Áustria",
+      "Bélgica",
+      "Suíça"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Pastelaria francesa"
+    }
+  },
+  {
+    "id": "d69cd78c-ae51-4d15-a20a-f7f8b84c0e8e",
+    "text": "Qual fruta é usada para fazer o chimichanga?",
+    "image_url": null,
+    "options": [
+      "Nenhuma - é um prato de carne",
+      "Banana",
+      "Manga",
+      "Abacaxi"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T03:32:36.782325+00:00",
+    "metadata": {
+      "hint": "Torta frita mexicana"
+    }
+  },
+  {
     "id": "9967496f-439e-4672-930e-cd7ead5b45b5",
     "text": "Quanto é 100-37? (calcule)",
     "image_url": null,

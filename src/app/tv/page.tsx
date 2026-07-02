@@ -403,23 +403,30 @@ export default function TVHost() {
                     console.log(`⚠️ Only ${count} unused questions available in DB. Generating more...`);
                 }
 
-                // 2. If not enough, GENERATE new ones
+                // 2. If not enough, GENERATE new ones (distribute across selected categories)
                 if (questionsToUse.length === 0) {
                     setQuestionSource("AI");
-                    console.log(`🤖 Generating new questions for "${finalTopic}" (Age: ${ageGroup})`);
-
-                    const aiQuestions = await generateQuestions(finalTopic, questionCount, ageGroup);
                     const dbAgeRating = targetAge;
 
-                    // Insert into Supabase
-                    const questionsToInsert = aiQuestions.map((q: any) => ({
-                        text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
-                        image_url: q.image_url || null,
-                        options: q.options,
-                        correct_option: q.correct_option,
-                        category: selectedDbNames[0] || "CULTURA_GERAL",
-                        age_rating: dbAgeRating
-                    }));
+                    // Distribute question generation across categories
+                    const perCategory = Math.ceil(questionCount / selectedDbNames.length);
+                    const allInserted: any[] = [];
+
+                    for (const catName of selectedDbNames) {
+                        const aiQuestions = await generateQuestions(catName, perCategory, ageGroup);
+                        const questionsToInsert = aiQuestions.map((q: any) => ({
+                            text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
+                            image_url: q.image_url || null,
+                            options: q.options,
+                            correct_option: q.correct_option,
+                            category: catName,
+                            age_rating: dbAgeRating
+                        }));
+                        allInserted.push(...questionsToInsert);
+                        console.log(`🤖 Generated ${aiQuestions.length} questions for "${catName}"`);
+                    }
+
+                    const questionsToInsert = allInserted;
 
                     // Insert new questions (simples, sem upsert)
                     const { data: insertedData, error } = await supabase
