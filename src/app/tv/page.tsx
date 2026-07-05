@@ -486,7 +486,8 @@ export default function TVHost() {
                             ...gameSettings, 
                             question_ids: questionIds, 
                             current_question_id: questionsToUse[0].id,
-                            current_correct_option: questionsToUse[0].correct_option
+                            current_correct_option: questionsToUse[0].correct_option,
+                            timer_duration: timerDuration
                         },
                         current_question_index: 1,
                         status: "QUESTION"
@@ -743,11 +744,11 @@ export default function TVHost() {
               <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'Space Grotesk' }}>
                 Preparem os <span className="text-gradient">telemóveis!</span>
               </h1>
-              <p className="text-base lg:text-xl text-white/60">Entrem em <span className="text-white font-bold">quiz-two-zeta-67.vercel.app</span></p>
+              <p className="text-base lg:text-xl text-white/60">Entrem em <span className="text-white font-bold">{typeof window !== 'undefined' ? window.location.host : 'quizverse.app'}</span></p>
             </div>
 
             <div className="glass-panel p-4 lg:p-6 w-fit relative">
-              <QRCodeSVG value={`https://quiz-two-zeta-67.vercel.app/play?pin=${pin}`} size={180} level="H" />
+              <QRCodeSVG value={`${typeof window !== 'undefined' ? window.location.origin : 'https://quizverse.app'}/play?pin=${pin}`} size={180} level="H" />
             </div>
 
             <div className="flex flex-col gap-2">

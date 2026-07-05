@@ -16,16 +16,26 @@ export async function GET() {
       .eq("id", user.id)
       .single();
     
+    // Get player IDs linked to this auth user
+    const { data: userPlayers } = await supabase
+      .from("players")
+      .select("id, game_id")
+      .eq("user_id", user.id);
+    
+    const playerIds = userPlayers?.map(p => p.id) || [];
+    
     // Get player's answers
-    const { data: answers } = await supabase
-      .from("answers")
-      .select("game_id, is_correct, score")
-      .eq("player_id", user.id);
+    const { data: answers } = playerIds.length > 0
+      ? await supabase
+          .from("answers")
+          .select("game_id, is_correct, points")
+          .in("player_id", playerIds)
+      : { data: [] };
     
     const userAnswers = answers || [];
     const totalGames = new Set(userAnswers.map(a => a.game_id)).size;
     const correctAnswers = userAnswers.filter(a => a.is_correct).length;
-    const totalPoints = userAnswers.reduce((sum, a) => sum + (a.score || 0), 0);
+    const totalPoints = userAnswers.reduce((sum, a) => sum + (a.points || 0), 0);
     const accuracy = userAnswers.length > 0 
       ? Math.round((correctAnswers / userAnswers.length) * 100) 
       : 0;

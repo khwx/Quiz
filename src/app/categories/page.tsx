@@ -57,11 +57,7 @@ export default function CategoriesPage() {
 
   useEffect(() => {
     async function fetchCounts() {
-      const { createClient } = await import('@supabase/supabase-js');
-      const supabase = createClient(
-        'https://lmfexrtxrxmeajxtuoof.supabase.co',
-        'sb_publishable_9UJr6k6WUFOIOn4Iebynpg_ROzznDve'
-      );
+      const { supabase } = await import('@/lib/supabase');
       
       const { data } = await supabase.from('questions').select('category, age_rating');
       

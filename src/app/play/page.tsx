@@ -54,7 +54,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setCorrectOption(null);
       setStartTime(Date.now());
       setTimerActive(true);
-      setTimeLeft(20);
+      setTimeLeft(gameSettings?.timer_duration || 20);
       fetchQuestion();
     }
     if (status !== "QUESTION") {
@@ -106,7 +106,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     if (correctOption !== null && selectedOption !== null) {
       if (selectedOption === correctOption) {
         const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
-        const timerDur = 20;
+        const timerDur = gameSettings?.timer_duration || 20;
         const points = Math.max(10, Math.floor(((timerDur - timeTaken) / timerDur) * 100));
         setEarnedPoints(points);
         playSound('correct');
@@ -261,7 +261,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           {/* Timer bar */}
           <div className="w-full h-2 bg-slate-800">
             <motion.div
-              animate={{ width: `${(timeLeft / 20) * 100}%` }}
+              animate={{ width: `${(timeLeft / (gameSettings?.timer_duration || 20)) * 100}%` }}
               transition={{ ease: "linear", duration: 1 }}
               className={`h-full ${timeLeft <= 5 ? 'bg-red-500' : 'bg-pink-500'}`}
             />

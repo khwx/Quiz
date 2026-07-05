@@ -60,7 +60,8 @@ export async function POST(req: NextRequest) {
 
     let points = 0;
     if (isCorrect) {
-      const timeRatio = Math.max(0, 20 - timeTaken) / 20;
+      const timerDuration = game.settings?.timer_duration || 20;
+      const timeRatio = Math.max(0, timerDuration - timeTaken) / timerDuration;
       points = Math.round(600 + (400 * timeRatio));
     }
 
@@ -82,15 +83,15 @@ export async function POST(req: NextRequest) {
     console.log("✅ [API/answer] Answer saved:", insertedAnswer);
 
     if (points > 0) {
-      const { error: scoreError } = await supabase.rpc('increment_score', {
-        row_id: playerId,
-        score_inc: points
-      });
+      const { data: player } = await supabase.from('players').select('score').eq('id', playerId).single();
+      const newScore = (player?.score || 0) + points;
+      const { error: scoreError } = await supabase
+        .from('players')
+        .update({ score: newScore })
+        .eq('id', playerId);
 
       if (scoreError) {
-        console.warn("⚠️ [API/answer] RPC failed, using fallback:", scoreError.message);
-        const { data: player } = await supabase.from('players').select('score').eq('id', playerId).single();
-        await supabase.from('players').update({ score: (player?.score || 0) + points }).eq('id', playerId);
+        console.warn("⚠️ [API/answer] Score update failed:", scoreError.message);
       }
     }
 

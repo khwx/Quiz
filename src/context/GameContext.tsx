@@ -113,13 +113,17 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         const avatar = getRandomAvatar();
         const color = getRandomColor();
 
+        // Get current auth user (if logged in)
+        const { data: { user } } = await supabase.auth.getUser();
+
         const { data, error } = await supabase.from('players').insert([
             {
                 game_id: gameId,
                 name: playerName,
                 score: 0,
                 avatar: avatar,
-                color: color
+                color: color,
+                user_id: user?.id || null
             }
         ]).select();
 

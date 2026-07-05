@@ -131,6 +131,8 @@ export default function AdminPage() {
         correct_option: 0,
     });
     const [saving, setSaving] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const PAGE_SIZE = 50;
 
     useEffect(() => {
         checkAuth();
@@ -475,11 +477,11 @@ export default function AdminPage() {
 
                 {!showDuplicates && !showReported && !showAddAdmin && (
                     <section className="flex gap-2 overflow-x-auto pb-2">
-                        <button onClick={() => setSelectedCategory("all")} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === "all" ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
+                        <button onClick={() => { setSelectedCategory("all"); setCurrentPage(1); }} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === "all" ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
                             Todas
                         </button>
                         {stats.map(s => (
-                            <button key={s.category} onClick={() => setSelectedCategory(s.category)} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === s.category ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
+                            <button key={s.category} onClick={() => { setSelectedCategory(s.category); setCurrentPage(1); }} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === s.category ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
                                 {s.category} ({s.count})
                             </button>
                         ))}
@@ -581,7 +583,7 @@ export default function AdminPage() {
                 {!showDuplicates && !showReported && !showAddAdmin && !showCreateForm && (
                     <div className="relative">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
-                        <input type="text" placeholder="Pesquisar perguntas..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="w-full glass-input pl-12" />
+                        <input type="text" placeholder="Pesquisar perguntas..." value={searchQuery} onChange={e => { setSearchQuery(e.target.value); setCurrentPage(1); }} className="w-full glass-input pl-12" />
                     </div>
                 )}
 
@@ -591,7 +593,17 @@ export default function AdminPage() {
                             <div className="text-center py-12"><div className="w-8 h-8 border-2 border-violet-400 border-t-transparent rounded-full animate-spin mx-auto" /></div>
                         ) : filteredQuestions.length === 0 ? (
                             <div className="glass-panel p-8 text-center text-white/50">Nenhuma pergunta encontrada</div>
-                        ) : filteredQuestions.map(q => (
+                        ) : (
+                            <>
+                                <div className="flex justify-between items-center text-sm text-white/50">
+                                    <span>Mostrando {((currentPage - 1) * PAGE_SIZE) + 1}-{Math.min(currentPage * PAGE_SIZE, filteredQuestions.length)} de {filteredQuestions.length}</span>
+                                    <div className="flex gap-2">
+                                        <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} className="px-3 py-1 rounded bg-white/10 disabled:opacity-30">← Anterior</button>
+                                        <span className="px-3 py-1">{currentPage}/{Math.ceil(filteredQuestions.length / PAGE_SIZE)}</span>
+                                        <button onClick={() => setCurrentPage(p => p + 1)} disabled={currentPage * PAGE_SIZE >= filteredQuestions.length} className="px-3 py-1 rounded bg-white/10 disabled:opacity-30">Próxima →</button>
+                                    </div>
+                                </div>
+                                {filteredQuestions.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE).map(q => (
                             <div key={q.id} className="glass-panel p-4">
                                 <div className="flex justify-between items-start mb-2">
                                     <div className="flex-1">
@@ -620,6 +632,8 @@ export default function AdminPage() {
                                 )}
                             </div>
                         ))}
+                            </>
+                        )}
                     </section>
                 )}
 

@@ -37,27 +37,39 @@ export default function ProfilePage() {
         .eq("id", currentUser.id)
         .single();
 
+      // Get player IDs linked to this auth user
+      const { data: userPlayers } = await supabase
+        .from("players")
+        .select("id")
+        .eq("user_id", currentUser.id);
+      
+      const playerIds = userPlayers?.map(p => p.id) || [];
+
       // Get player's answers for stats
-      const { data: answers } = await supabase
-        .from("answers")
-        .select("game_id, is_correct, score, created_at")
-        .eq("player_id", currentUser.id)
-        .order("created_at", { ascending: false });
+      const { data: answers } = playerIds.length > 0
+        ? await supabase
+            .from("answers")
+            .select("game_id, is_correct, points, created_at")
+            .in("player_id", playerIds)
+            .order("created_at", { ascending: false })
+        : { data: [] };
 
       // Get games history
-      const { data: games } = await supabase
-        .from("answers")
-        .select("game_id, is_correct, score, created_at")
-        .eq("player_id", currentUser.id)
-        .order("created_at", { ascending: false })
-        .limit(20);
+      const { data: games } = playerIds.length > 0
+        ? await supabase
+            .from("answers")
+            .select("game_id, is_correct, points, created_at")
+            .in("player_id", playerIds)
+            .order("created_at", { ascending: false })
+            .limit(20)
+        : { data: [] };
 
       setGamesHistory(games || []);
 
       const userAnswers = answers || [];
       const totalGames = new Set(userAnswers.map((a: any) => a.game_id)).size;
       const correctAnswers = userAnswers.filter((a: any) => a.is_correct).length;
-      const totalPoints = userAnswers.reduce((sum: number, a: any) => sum + (a.score || 0), 0);
+      const totalPoints = userAnswers.reduce((sum: number, a: any) => sum + (a.points || 0), 0);
       const accuracy = userAnswers.length > 0 
         ? Math.round((correctAnswers / userAnswers.length) * 100) 
         : 0;

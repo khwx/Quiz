@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "QUIZVERSE | Family Quiz Game",
-  description: "Playson together on the big screen! The ultimate family quiz experience.",
+  description: "Play together on the big screen! The ultimate family quiz experience.",
 };
 
 export default function RootLayout({
