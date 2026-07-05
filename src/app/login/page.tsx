@@ -133,7 +133,7 @@ export default function LoginPage() {
             QUIZVERSE
           </h1>
           <p className="text-white/50 text-sm">
-            {isLogin ? "Welcome back, commander!" : "Begin your journey"}
+            {isLogin ? "Bem-vindo de volta!" : "Começa a tua aventura"}
           </p>
         </header>
 
@@ -147,7 +147,7 @@ export default function LoginPage() {
                 : "text-white/40 hover:text-white"
             }`}
           >
-            Sign In
+                Entrar
           </button>
           <button 
             onClick={() => setIsLogin(false)}
@@ -157,7 +157,7 @@ export default function LoginPage() {
                 : "text-white/40 hover:text-white"
             }`}
           >
-            Create Account
+            Criar Conta
           </button>
         </div>
 
@@ -166,13 +166,13 @@ export default function LoginPage() {
           {!isLogin && (
             <div>
               <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 ml-1 block">
-                Username
+                Nome de Utilizador
               </label>
               <div className="relative group">
                 <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors pointer-events-none z-10" />
                 <input
                   type="text"
-                  placeholder="Commander"
+                  placeholder="O teu nome"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full glass-input pl-12 pr-4"
@@ -183,13 +183,13 @@ export default function LoginPage() {
 
           <div>
             <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 ml-1 block">
-              Transmission Address
+              Email
             </label>
             <div className="relative group">
               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors pointer-events-none z-10" />
               <input
                 type="email"
-                placeholder="commander@nebula.net"
+                placeholder="teu@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full glass-input pl-12 pr-4"
@@ -199,7 +199,7 @@ export default function LoginPage() {
 
           <div>
             <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 ml-1 block">
-              Security Codes
+              Password
             </label>
             <div className="relative group">
               <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-pink-400 transition-colors pointer-events-none z-10" />
@@ -222,8 +222,22 @@ export default function LoginPage() {
 
           {isLogin && (
             <div className="flex justify-end -mt-2">
-              <button type="button" className="text-xs text-pink-400 hover:text-pink-300 transition-colors">
-                Lost trajectory?
+              <button type="button" onClick={async () => {
+                if (!email) {
+                  setError("Insere o teu email primeiro.");
+                  return;
+                }
+                try {
+                  const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
+                    redirectTo: `${window.location.origin}/login`,
+                  });
+                  if (resetError) throw resetError;
+                  setSuccess("Email de recuperação enviado! Verifica a tua caixa de entrada.");
+                } catch (err: any) {
+                  setError(err.message || "Erro ao enviar email de recuperação");
+                }
+              }} className="text-xs text-pink-400 hover:text-pink-300 transition-colors">
+                Esqueceste-te da password?
               </button>
             </div>
           )}
@@ -254,7 +268,7 @@ export default function LoginPage() {
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             ) : (
               <>
-                {isLogin ? "Enter the Galaxy" : "Create Account"}
+                {isLogin ? "Entrar" : "Criar Conta"}
                 <Rocket className="w-5 h-5" />
               </>
             )}
@@ -264,7 +278,7 @@ export default function LoginPage() {
         {/* Divider */}
         <div className="mt-8 mb-6 flex items-center">
           <div className="flex-grow border-t border-white/10" />
-          <span className="mx-4 text-white/30 text-xs uppercase tracking-widest">or dock via</span>
+          <span className="mx-4 text-white/30 text-xs uppercase tracking-widest">ou entra com</span>
           <div className="flex-grow border-t border-white/10" />
         </div>
 
@@ -300,7 +314,7 @@ export default function LoginPage() {
         <div className="mt-8 text-center">
           <Link href="/" className="flex items-center justify-center gap-2 text-white/40 hover:text-white/60 transition-colors text-sm">
             <ArrowRight className="w-4 h-4 rotate-180" />
-            Back to Home
+            Voltar ao Início
           </Link>
         </div>
       </motion.div>

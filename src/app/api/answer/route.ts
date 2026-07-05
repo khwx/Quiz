@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getRateLimitKey } from "@/lib/rate-limit";
 import { validateAnswerPayload } from "@/lib/validation";
-import { supabase } from "@/lib/supabase";
+import { getServerClient } from "@/lib/supabase";
 
 export async function POST(req: NextRequest) {
+  const supabase = await getServerClient();
   const rateLimitKey = getRateLimitKey(req, "answer");
   const rateLimitResult = rateLimit(rateLimitKey);
 

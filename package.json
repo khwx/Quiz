@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.90.1",
     "@vercel/analytics": "^1.5.0",
     "canvas-confetti": "^1.9.4",

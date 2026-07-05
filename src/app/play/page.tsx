@@ -11,6 +11,7 @@ import ToastContainer from "@/components/Toast";
 import ReportModal from "@/components/ReportModal";
 import ConfirmModal from "@/components/ConfirmModal";
 import MobileNav from "@/components/MobileNav";
+import StreakBadge from "@/components/mobile/StreakBadge";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
   const resolvedParams = use(searchParams);
@@ -28,6 +29,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerActive, setTimerActive] = useState(false);
   const [earnedPoints, setEarnedPoints] = useState<number | null>(null);
+  const [streak, setStreak] = useState(0);
 
   const { playSound } = useSound();
   const { toasts, show: showToast, dismiss } = useToast();
@@ -59,6 +61,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     }
     if (status !== "QUESTION") {
       setTimerActive(false);
+    }
+    if (status === "REVEAL") {
+      setStreak(0);
     }
   }, [status, currentQuestionIndex, currentQuestionId, fetchQuestion]);
 
@@ -109,10 +114,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         const timerDur = gameSettings?.timer_duration || 20;
         const points = Math.max(10, Math.floor(((timerDur - timeTaken) / timerDur) * 100));
         setEarnedPoints(points);
+        setStreak(prev => prev + 1);
         playSound('correct');
         setTimeout(() => setEarnedPoints(null), 2000);
       } else {
         setEarnedPoints(0);
+        setStreak(0);
         playSound('wrong');
         setTimeout(() => setEarnedPoints(null), 2000);
       }
@@ -380,6 +387,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           </button>
           <ToastContainer toasts={toasts} onDismiss={dismiss} />
           <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+          <AnimatePresence>
+            {streak >= 2 && <StreakBadge streak={streak} />}
+          </AnimatePresence>
         </main>
       );
     }
