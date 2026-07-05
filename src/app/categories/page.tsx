@@ -54,9 +54,11 @@ export default function CategoriesPage() {
   const [categoryCounts, setCategoryCounts] = useState<CategoryCount[]>([]);
   const [ageGroup, setAgeGroup] = useState<string>("adults");
   const [catError, setCatError] = useState("");
+  const [countsLoading, setCountsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCounts() {
+      setCountsLoading(true);
       const { supabase } = await import('@/lib/supabase');
       
       const { data } = await supabase.from('questions').select('category, age_rating');
@@ -68,17 +70,17 @@ export default function CategoriesPage() {
       data?.forEach(q => {
         const cat = q.category;
         if (ageGroup === "adults" || q.age_rating >= targetAge) {
-          if (!cat.includes("Bandeiras")) { // Skip bandeiras in age filtering
+          if (!cat.includes("Bandeiras")) {
             counts[cat] = (counts[cat] || 0) + 1;
           }
         }
       });
       
-      // Add bandeiras count separately
       const bandeirasCount = data?.filter(q => q.category === "Bandeiras").length || 0;
       counts["Bandeiras"] = bandeirasCount;
       
       setCategoryCounts(Object.entries(counts).map(([name, count]) => ({ name, count })));
+      setCountsLoading(false);
     }
     
     fetchCounts();
@@ -198,7 +200,16 @@ export default function CategoriesPage() {
                   </div>
                   <p className="text-white/50 text-sm mb-3">{cat.desc}</p>
                   <div className="mt-auto flex items-center justify-between w-full">
-                    <span className="text-white/40 text-xs">{count} perguntas</span>
+                    <span className="text-white/40 text-xs">
+                      {countsLoading ? (
+                        <span className="inline-flex items-center gap-1">
+                          <span className="w-3 h-3 border border-white/20 border-t-white/60 rounded-full animate-spin" />
+                          a carregar...
+                        </span>
+                      ) : (
+                        `${count} perguntas`
+                      )}
+                    </span>
                   </div>
                 </motion.div>
               );

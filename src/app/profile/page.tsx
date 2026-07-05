@@ -140,7 +140,7 @@ export default function ProfilePage() {
       <header className="sticky top-0 z-50 bg-slate-950/50 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
           <Link href="/" className="text-xl font-bold text-white/60 hover:text-white transition-colors">
-            ← Back
+            ← Voltar
           </Link>
           <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Perfil</h1>
           <button onClick={handleLogout} className="text-white/60 hover:text-white transition-colors">
@@ -292,7 +292,7 @@ export default function ProfilePage() {
                 const entry = gameMap.get(id)!;
                 entry.total++;
                 if (g.is_correct) entry.correct++;
-                entry.points += g.score || 0;
+                entry.points += g.points || 0;
               });
               const gameList = Array.from(gameMap.entries()).map(([id, data]) => ({ id, ...data }));
               return gameList.slice(0, 10).map((game, idx) => (
