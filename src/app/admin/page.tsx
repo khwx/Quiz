@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
-import { Trash2, Database, Filter, Search, AlertTriangle, Copy, Lock, Eye, EyeOff, Shield, ShieldCheck, Users, Star, Plus, Edit2, X, Check, Save } from "lucide-react";
+import { Trash2, Database, Filter, Search, AlertTriangle, Shield, ShieldCheck, Users, Plus, Edit2, X, Save } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -154,7 +154,7 @@ export default function AdminPage() {
         const userRole = profile?.role || 'user';
         
         if (userRole !== 'admin' && userRole !== 'moderator') {
-            showToast("Nao tens permissao para aceder ao painel de administracao.", "error");
+            showToast("Não tens permissão para aceder ao painel de administração.", "error");
             router.push("/");
             return;
         }
@@ -189,7 +189,7 @@ export default function AdminPage() {
                 .single();
 
             if (!data) {
-                showToast("Utilizador nao encontrado. Precisa de fazer login primeiro.", "error");
+                showToast("Utilizador não encontrado. Precisa de fazer login primeiro.", "error");
                 return;
             }
 
@@ -345,9 +345,14 @@ export default function AdminPage() {
             moderator: "bg-orange-500/20 text-orange-400 border-orange-500/30",
             host: "bg-blue-500/20 text-blue-400 border-blue-500/30",
         };
+        const labels: Record<string, string> = {
+            admin: "Administrador",
+            moderator: "Moderador",
+            host: "Anfitrião",
+        };
         return (
             <span className={`px-2 py-1 text-xs rounded border ${colors[role] || "bg-gray-500/20 text-gray-400"}`}>
-                {role}
+                {labels[role] || role}
             </span>
         );
     };
@@ -441,9 +446,9 @@ export default function AdminPage() {
                             <div className="flex gap-3">
                                 <input type="email" placeholder="Email do utilizador" value={newAdminEmail} onChange={e => setNewAdminEmail(e.target.value)} className="flex-1 glass-input" />
                                 <select value={newAdminRole} onChange={e => setNewAdminRole(e.target.value)} className="glass-input">
-                                    <option value="moderator">Moderator</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="host">Host</option>
+                                    <option value="moderator">Moderador</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="host">Anfitrião</option>
                                 </select>
                                 <button onClick={addAdmin} className="px-6 py-3 bg-violet-600 text-white rounded-xl font-medium">
                                     Adicionar
@@ -612,7 +617,7 @@ export default function AdminPage() {
                                             <span className="bg-white/10 px-2 py-1 rounded">{q.category}</span>
                                             <span className="bg-white/10 px-2 py-1 rounded">Resposta: {q.options[q.correct_option]}</span>
                                             {q.metadata?.reports && q.metadata.reports.length > 0 && (
-                                                <span className="bg-red-500/20 text-red-400 px-2 py-1 rounded">{q.metadata.reports.length} reports</span>
+                                                <span className="bg-red-500/20 text-red-400 px-2 py-1 rounded">{q.metadata.reports.length} reportes</span>
                                             )}
                                         </div>
                                     </div>
@@ -681,7 +686,7 @@ export default function AdminPage() {
                                     <button onClick={() => handleDeleteQuestion(q.id)} className="text-pink-400 hover:text-pink-300"><Trash2 className="w-4 h-4" /></button>
                                 </div>
                                 <div className="bg-white/5 p-3 rounded">
-                                    <div className="text-xs text-white/40 mb-1">Reports:</div>
+                                    <div className="text-xs text-white/40 mb-1">Reportes:</div>
                                     {q.metadata?.reports?.map((r, idx) => (
                                         <div key={idx} className="text-sm text-red-400">{r.reason} - {new Date(r.date).toLocaleDateString()}</div>
                                     ))}

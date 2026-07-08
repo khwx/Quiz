@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
   if (!rateLimitResult.success) {
     return NextResponse.json(
-      { error: "Too many requests. Please try again later.", resetIn: rateLimitResult.resetIn },
+      { error: "Demasiados pedidos. Tenta novamente mais tarde.", resetIn: rateLimitResult.resetIn },
       { status: 429, headers: { "Retry-After": String(Math.ceil(rateLimitResult.resetIn / 1000)) } }
     );
   }
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     const validationErrors = validateAnswerPayload(payload);
 
     if (validationErrors.length > 0) {
-      return NextResponse.json({ error: "Validation failed", details: validationErrors }, { status: 400 });
+      return NextResponse.json({ error: "Validação falhou", details: validationErrors }, { status: 400 });
     }
 
     const { gameId, playerId, questionId, chosenOption, timeTaken } = payload;
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
 
     if (gameError || !game) {
       console.error("❌ [API/answer] Game lookup failed:", gameError);
-      return NextResponse.json({ error: "Game not found" }, { status: 404 });
+      return NextResponse.json({ error: "Jogo não encontrado" }, { status: 404 });
     }
 
     let correctOption = game.settings?.current_correct_option;
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
         correctOption = questionData.correct_option;
       } else {
         console.error("❌ [API/answer] correct_option completely missing.");
-        return NextResponse.json({ error: "Game state error" }, { status: 500 });
+        return NextResponse.json({ error: "Erro no estado do jogo" }, { status: 500 });
       }
     }
 

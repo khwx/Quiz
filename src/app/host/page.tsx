@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
-import { Play, ArrowRight, Trophy, Users, RefreshCw, StopCircle, Monitor, Rocket, Wifi, Gamepad2, Share2 } from "lucide-react";
+import { Play, ArrowRight, Trophy, Users, RefreshCw, Monitor, Rocket, Wifi, Gamepad2, Share2, Clock, HelpCircle, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HostPage() {
     const { gameId, status, players, nextQuestion, updateStatus, setGameId, currentQuestionIndex, gameSettings } = useGame();
     const [loading, setLoading] = useState(false);
     const [gamePin, setGamePin] = useState<string>("");
+    const [showSettings, setShowSettings] = useState(false);
 
     useEffect(() => {
         if (!gameId) return;
@@ -44,6 +45,17 @@ export default function HostPage() {
     const copyPin = () => {
         if (gamePin) {
             navigator.clipboard.writeText(gamePin);
+        }
+    };
+
+    const getStatusLabel = () => {
+        switch(status) {
+            case "LOBBY": return "Sala de Espera";
+            case "STARTING": return "A Iniciar...";
+            case "QUESTION": return "Pergunta em Curso";
+            case "REVEAL": return "A Revelar Resposta";
+            case "PODIUM": return "Pódio";
+            default: return status;
         }
     };
 
@@ -101,13 +113,11 @@ export default function HostPage() {
 
     return (
         <main className="min-h-screen relative overflow-x-hidden pb-32">
-            {/* Background Effects */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-0 left-0 w-[50vw] h-[50vw] bg-violet-600/10 rounded-full blur-[120px]" />
                 <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-pink-600/10 rounded-full blur-[120px]" />
             </div>
 
-            {/* Header */}
             <header className="relative z-10 flex justify-between items-center p-6 max-w-4xl mx-auto">
                 <div>
                     <div className="text-xs text-white/40 uppercase tracking-widest mb-1">Código do Jogo</div>
@@ -128,16 +138,43 @@ export default function HostPage() {
                         </button>
                     </motion.div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                     <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${getStatusColor()}/20 border border-white/10`}>
+                        <div className={`w-2 h-2 rounded-full ${getStatusColor()}`} />
+                        <span className="text-sm font-medium text-white">{getStatusLabel()}</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
                         <Wifi className="w-4 h-4 text-emerald-400" />
-                        <span className="text-sm font-medium text-white">{players.length} jogadores</span>
+                        <span className="text-sm font-medium text-white">{players.length} jogador{players.length !== 1 ? 'es' : ''}</span>
                     </div>
                 </div>
             </header>
 
-            {/* Main Game Area */}
             <div className="relative z-10 max-w-4xl mx-auto p-6">
+                {/* Game Settings Summary - Only show in LOBBY */}
+                {status === "LOBBY" && gameSettings?.question_ids && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="glass-panel p-4 mb-6 flex flex-wrap items-center gap-4 text-sm"
+                    >
+                        <div className="flex items-center gap-2 text-white/60">
+                            <HelpCircle className="w-4 h-4 text-violet-400" />
+                            <span><strong className="text-white">{gameSettings.question_ids.length}</strong> perguntas</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-white/60">
+                            <Clock className="w-4 h-4 text-pink-400" />
+                            <span><strong className="text-white">{gameSettings.timer_duration || 20}s</strong> por pergunta</span>
+                        </div>
+                        {gameSettings.question_ids && (
+                            <div className="flex items-center gap-2 text-white/60">
+                                <Zap className="w-4 h-4 text-amber-400" />
+                                <span>Pergunta <strong className="text-white">{currentQuestionIndex + 1}</strong>/{gameSettings.question_ids.length}</span>
+                            </div>
+                        )}
+                    </motion.div>
+                )}
+
                 {/* Players Grid */}
                 <section className="glass-panel p-6 mb-6">
                     <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
@@ -278,7 +315,6 @@ export default function HostPage() {
                 </section>
             </div>
 
-            {/* Quick Actions Footer */}
             <footer className="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-2xl border-t border-white/10 p-4">
                 <div className="flex justify-around items-center max-w-4xl mx-auto">
                     <button 

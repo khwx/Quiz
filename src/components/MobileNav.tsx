@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Tv, Gamepad2, Globe, User } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/", icon: Tv, label: "Home" },
+  { href: "/", icon: Tv, label: "Início" },
   { href: "/categories", icon: Globe, label: "Categorias" },
   { href: "/play", icon: Gamepad2, label: "Jogar" },
   { href: "/profile", icon: User, label: "Perfil" },

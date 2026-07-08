@@ -7,7 +7,7 @@ export async function GET() {
     const { data: { user } } = await supabase.auth.getUser();
     
     if (!user) {
-      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+      return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
     }
     
     // Get profile data
@@ -58,6 +58,6 @@ export async function GET() {
       }
     });
   } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json({ error: "Erro interno" }, { status: 500 });
   }
 }

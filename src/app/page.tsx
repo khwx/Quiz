@@ -4,19 +4,20 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Rocket, User, ArrowRight, ArrowLeft, Users, Trophy } from "lucide-react";
+import { Tv, Gamepad2, Settings, Play, Globe, Languages, History, FlaskConical, Rocket, User, ArrowRight } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
 export default function Home() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [quickPin, setQuickPin] = useState("");
   
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user);
-    });
+    }).finally(() => setAuthLoading(false));
   }, []);
 
   const categories = [
@@ -40,13 +41,15 @@ export default function Home() {
           QUIZVERSE
         </div>
         <nav className="flex items-center gap-6">
-          <Link href="/" className="text-white font-bold border-b-2 border-pink-500 pb-1 text-sm">Home</Link>
+          <Link href="/" className="text-white font-bold border-b-2 border-pink-500 pb-1 text-sm">Início</Link>
           <Link href="/teams" className="text-white/60 hover:text-white transition-colors text-sm">Equipas</Link>
           <Link href="/tournaments" className="text-white/60 hover:text-white transition-colors text-sm">Torneios</Link>
           <Link href="/tutorial" className="text-white/60 hover:text-white transition-colors text-sm">Como Jogar</Link>
         </nav>
         <div className="flex gap-4">
-          {user ? (
+          {authLoading ? (
+            <div className="w-8 h-8 border-2 border-white/20 border-t-white/60 rounded-full animate-spin" />
+          ) : user ? (
             <Link href="/profile" className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
               <User className="w-5 h-5" />
               <span className="text-sm">{user.email?.split('@')[0]}</span>

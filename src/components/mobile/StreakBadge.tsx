@@ -24,7 +24,7 @@ export default function StreakBadge({ streak }: StreakBadgeProps) {
                 🔥
             </motion.span>
             <div>
-                <div className="text-xs font-bold uppercase tracking-wider">Streak</div>
+                <div className="text-xs font-bold uppercase tracking-wider">Sequência</div>
                 <div className="text-2xl font-black">{streak}x</div>
             </div>
         </motion.div>

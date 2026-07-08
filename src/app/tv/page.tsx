@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import { QRCodeSVG } from "qrcode.react";
-import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Trash2, Map, History, Music, Palette, Utensils, Cpu, Languages, Star, Crown, Timer } from "lucide-react";
+import { Users, Play, Loader2, Trophy, ArrowRight, Globe, Flag, Film, Atom, PawPrint, GraduationCap, Zap, Map, History, Music, Palette, Utensils, Cpu, Languages, Crown, Timer } from "lucide-react";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
 import { getCountryCode, filterQuestions } from "@/lib/geo-service";
 import { generateQuestions } from "@/lib/ai-service";
@@ -497,7 +497,7 @@ export default function TVHost() {
                 console.error("Question loading failed:", err);
                 // Revert status so user can try again
                 updateStatus("LOBBY");
-                showToast("Falha ao gerar perguntas: " + (err instanceof Error ? err.message : "Erro desconhecido") + ". Tenta outro tema ou limpa a memoria.", "error");
+                showToast("Falha ao gerar perguntas: " + (err instanceof Error ? err.message : "Erro desconhecido") + ". Tenta outro tema ou limpa a memória.", "error");
             } finally {
                 setIsGenerating(false);
                 isStartingRef.current = false;
@@ -718,7 +718,7 @@ export default function TVHost() {
                 onClick={() => setMemoryConfirmOpen(true)}
                 className="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-white/60 hover:text-red-400 rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
               >
-                Limpar Memoria ({usedQuestionIdsRef.current.length})
+                Limpar Memória ({usedQuestionIdsRef.current.length})
               </button>
             </div>
             )}
@@ -810,7 +810,7 @@ export default function TVHost() {
                                         {[
                                             { id: "7-9", label: "Infantil" },
                                             { id: "10-14", label: "Júnior" },
-                                            { id: "15-17", label: "Teen" },
+                                            { id: "15-17", label: "Adolescente" },
                                             { id: "adults", label: "Master" }
                                         ].map((age) => (
                                             <button
@@ -865,7 +865,7 @@ export default function TVHost() {
                                     {availableCount !== null && topic.length > 0 && (
                                         <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold ${availableCount >= questionCount ? 'bg-green-500/10 text-green-400' : availableCount > 0 ? 'bg-amber-500/10 text-amber-400' : 'bg-red-500/10 text-red-400'}`}>
                                             <span className={`w-2 h-2 rounded-full ${availableCount >= questionCount ? 'bg-green-400' : availableCount > 0 ? 'bg-amber-400' : 'bg-red-400'}`} />
-                                            {availableCount} perguntas disponiveis (pediste {questionCount})
+                                            {availableCount} perguntas disponíveis (pediste {questionCount})
                                         </div>
                                     )}
                                 </div>
@@ -1039,7 +1039,7 @@ export default function TVHost() {
             Escolher Outro Tema
           </button>
           <div className="flex justify-center w-full mt-2">
-            <span className="text-white/20 text-xs font-mono">[SPACE] avancar  [R] reportar</span>
+            <span className="text-white/20 text-xs font-mono">[ESPAÇO] avançar  [R] reportar</span>
           </div>
         </motion.div>
       )}
@@ -1086,8 +1086,8 @@ export default function TVHost() {
                 localStorage.removeItem('usedQuestionIds');
                 usedQuestionIdsRef.current = [];
               }}
-              title="Limpar Memoria"
-              message={`Tens a certeza? ${usedQuestionIdsRef.current.length} perguntas memorizadas serao apagadas.`}
+              title="Limpar Memória"
+              message={`Tens a certeza? ${usedQuestionIdsRef.current.length} perguntas memorizadas serão apagadas.`}
               confirmLabel="Limpar"
               danger
             />

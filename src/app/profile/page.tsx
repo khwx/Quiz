@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Settings, Trophy, Star, Coins, Flame, Crown, Activity, LogOut, Loader2 } from "lucide-react";
+import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
@@ -54,17 +54,7 @@ export default function ProfilePage() {
             .order("created_at", { ascending: false })
         : { data: [] };
 
-      // Get games history
-      const { data: games } = playerIds.length > 0
-        ? await supabase
-            .from("answers")
-            .select("game_id, is_correct, points, created_at")
-            .in("player_id", playerIds)
-            .order("created_at", { ascending: false })
-            .limit(20)
-        : { data: [] };
-
-      setGamesHistory(games || []);
+      setGamesHistory((answers || []).slice(0, 20));
 
       const userAnswers = answers || [];
       const totalGames = new Set(userAnswers.map((a: any) => a.game_id)).size;
@@ -174,8 +164,8 @@ export default function ProfilePage() {
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
                   <Trophy className="w-5 h-5 text-violet-400" />
                   <div>
-                    <div className="text-xs text-white/40 uppercase">Vitórias</div>
-                    <div className="font-bold text-white">{stats?.wins || 0}</div>
+                    <div className="text-xs text-white/40 uppercase">Respostas Certas</div>
+                    <div className="font-bold text-white">{stats?.correctAnswers || 0}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
@@ -231,8 +221,8 @@ export default function ProfilePage() {
               <div className="text-xs text-white/40 uppercase">Jogos Totais</div>
             </div>
             <div className="glass-panel p-4 text-center">
-              <div className="text-3xl font-bold text-violet-400 mb-1">{stats?.wins || 0}</div>
-              <div className="text-xs text-white/40 uppercase">Vitórias</div>
+              <div className="text-3xl font-bold text-violet-400 mb-1">{stats?.correctAnswers || 0}</div>
+              <div className="text-xs text-white/40 uppercase">Respostas Certas</div>
             </div>
             <div className="glass-panel p-4 text-center">
               <div className="text-3xl font-bold text-pink-400 mb-1">{stats?.totalPoints || 0}</div>

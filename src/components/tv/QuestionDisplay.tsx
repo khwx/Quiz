@@ -183,7 +183,7 @@ export default function QuestionDisplay({ question, timeLeft, totalTime, status,
                             <div className="relative w-full h-full flex items-center justify-center">
                                 <img 
                                     src={finalUrl} 
-                                    alt="Question Media"
+                                    alt="Imagem da Pergunta"
                                     className="max-h-full max-w-full object-contain shadow-2xl"
                                     onError={(e) => {
                                         (e.target as HTMLImageElement).style.display = 'none';

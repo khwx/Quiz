@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Globe, Languages, History, FlaskConical, Music, Sparkles, Cpu, Palette, Map, Film, Trophy, Star, Crown, Rocket, ArrowLeft, Flag, Zap, PawPrint, Utensils, Check } from "lucide-react";
+import { Globe, History, FlaskConical, Map, Trophy, Flag, Zap, PawPrint, Utensils, Check, Crown, Cpu, Film, Music, Palette, Sparkles, ArrowLeft } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
 
 const getCategoryStyles = (color: string) => {
@@ -59,28 +59,36 @@ export default function CategoriesPage() {
   useEffect(() => {
     async function fetchCounts() {
       setCountsLoading(true);
-      const { supabase } = await import('@/lib/supabase');
-      
-      const { data } = await supabase.from('questions').select('category, age_rating');
-      
-      const counts: Record<string, number> = {};
-      const ageMap: Record<string, number> = { "kids": 8, "teens": 12, "adults": 18 };
-      const targetAge = ageMap[ageGroup];
-      
-      data?.forEach(q => {
-        const cat = q.category;
-        if (ageGroup === "adults" || q.age_rating >= targetAge) {
-          if (!cat.includes("Bandeiras")) {
-            counts[cat] = (counts[cat] || 0) + 1;
+      try {
+        const { supabase } = await import('@/lib/supabase');
+        
+        const { data, error } = await supabase.from('questions').select('category, age_rating');
+        
+        if (error) throw error;
+        
+        const counts: Record<string, number> = {};
+        const ageMap: Record<string, number> = { "kids": 8, "teens": 12, "adults": 18 };
+        const targetAge = ageMap[ageGroup];
+        
+        data?.forEach(q => {
+          const cat = q.category;
+          if (ageGroup === "adults" || q.age_rating >= targetAge) {
+            if (!cat.includes("Bandeiras")) {
+              counts[cat] = (counts[cat] || 0) + 1;
+            }
           }
-        }
-      });
-      
-      const bandeirasCount = data?.filter(q => q.category === "Bandeiras").length || 0;
-      counts["Bandeiras"] = bandeirasCount;
-      
-      setCategoryCounts(Object.entries(counts).map(([name, count]) => ({ name, count })));
-      setCountsLoading(false);
+        });
+        
+        const bandeirasCount = data?.filter(q => q.category === "Bandeiras").length || 0;
+        counts["Bandeiras"] = bandeirasCount;
+        
+        setCategoryCounts(Object.entries(counts).map(([name, count]) => ({ name, count })));
+      } catch (err) {
+        console.error("Erro ao carregar contagens:", err);
+        setCatError("Erro ao carregar categorias");
+      } finally {
+        setCountsLoading(false);
+      }
     }
     
     fetchCounts();

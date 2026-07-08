@@ -15,8 +15,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "QUIZVERSE | Family Quiz Game",
-  description: "Play together on the big screen! The ultimate family quiz experience.",
+  title: "QUIZVERSE | Jogo de Quiz em Família",
+  description: "Joga juntos no ecrã grande! A experiência de quiz em família definitiva.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Users, Plus, Copy, Check, QrCode, Trophy, Crown, Loader2, ArrowRight, Trash2, UserPlus } from "lucide-react";
+import { Users, Plus, Copy, Check, QrCode, Trophy, Crown, Loader2, UserPlus } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
@@ -53,12 +53,18 @@ export default function TeamsPage() {
   };
 
   const loadTeams = async () => {
-    const { data } = await supabase
-      .from("teams")
-      .select("*, team_members(*)")
-      .eq("is_active", true)
-      .order("created_at", { ascending: false });
-    setTeams(data || []);
+    try {
+      const { data, error } = await supabase
+        .from("teams")
+        .select("*, team_members(*)")
+        .eq("is_active", true)
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      setTeams(data || []);
+    } catch (err) {
+      console.error("Erro ao carregar equipas:", err);
+      setError("Erro ao carregar equipas");
+    }
   };
 
   const createTeam = async () => {
@@ -272,7 +278,7 @@ export default function TeamsPage() {
             >
               <Plus className="w-8 h-8 mx-auto mb-3 text-violet-400" />
               <div className="font-bold text-white">Criar Equipa</div>
-              <div className="text-white/50 text-sm">Start a new team</div>
+              <div className="text-white/50 text-sm">Começar uma nova equipa</div>
             </button>
             <button
               onClick={() => { setJoinMode(true); setCreateMode(false); }}
@@ -280,7 +286,7 @@ export default function TeamsPage() {
             >
               <QrCode className="w-8 h-8 mx-auto mb-3 text-pink-400" />
               <div className="font-bold text-white">Entrar em Equipa</div>
-              <div className="text-white/50 text-sm">Join with code</div>
+              <div className="text-white/50 text-sm">Entrar com código</div>
             </button>
           </div>
         )}

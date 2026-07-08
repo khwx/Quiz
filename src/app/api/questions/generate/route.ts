@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
 
   if (!rateLimitResult.success) {
     return NextResponse.json(
-      { error: "Too many requests. Please try again later.", resetIn: rateLimitResult.resetIn },
+      { error: "Demasiados pedidos. Tenta novamente mais tarde.", resetIn: rateLimitResult.resetIn },
       { status: 429, headers: { "Retry-After": String(Math.ceil(rateLimitResult.resetIn / 1000)) } }
     );
   }
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const validationErrors = validateGeneratePayload(payload);
 
     if (validationErrors.length > 0) {
-      return NextResponse.json({ error: "Validation failed", details: validationErrors }, { status: 400 });
+      return NextResponse.json({ error: "Validação falhou", details: validationErrors }, { status: 400 });
     }
 
     const { prompt, count = 5, ageRating = "adults" } = payload;
@@ -28,6 +28,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ questions, provider });
   } catch (error: any) {
     console.error("[API] Error:", error);
-    return NextResponse.json({ error: "Failed to generate questions", details: error.message }, { status: 500 });
+    return NextResponse.json({ error: "Falha ao gerar perguntas", details: error.message }, { status: 500 });
   }
 }

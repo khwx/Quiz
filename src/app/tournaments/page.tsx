@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Crown, Users, Loader2, Calendar, Clock, Medal, Target, ArrowRight, Play, Flag } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Medal, Target, Play, Flag } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ConfirmModal from "@/components/ConfirmModal";
@@ -69,14 +69,20 @@ export default function TournamentsPage() {
   };
 
   const loadTournaments = async () => {
-    const { data } = await supabase
-      .from("tournaments")
-      .select("*, tournament_teams(count)")
-      .order("created_at", { ascending: false });
-    
-    const allData = data || [];
-    setTournaments(allData); // Show ALL tournaments
-    setActiveTournaments(allData.filter(t => t.status === 'LOBBY'));
+    try {
+      const { data, error } = await supabase
+        .from("tournaments")
+        .select("*, tournament_teams(count)")
+        .order("created_at", { ascending: false });
+      
+      if (error) throw error;
+      const allData = data || [];
+      setTournaments(allData);
+      setActiveTournaments(allData.filter(t => t.status === 'LOBBY'));
+    } catch (err) {
+      console.error("Erro ao carregar torneios:", err);
+      setError("Erro ao carregar torneios");
+    }
   };
 
   const createTournament = async () => {
@@ -132,7 +138,7 @@ export default function TournamentsPage() {
         .single();
 
       if (findError || !tournament) {
-        setError("Torneio não encontrado ou já started");
+        setError("Torneio não encontrado ou já iniciado");
         setSaving(false);
         return;
       }
@@ -267,7 +273,7 @@ export default function TournamentsPage() {
             >
               <Plus className="w-8 h-8 mx-auto mb-3 text-amber-400" />
               <div className="font-bold text-white">Criar Torneio</div>
-              <div className="text-white/50 text-sm">Start a championship</div>
+              <div className="text-white/50 text-sm">Começar um campeonato</div>
             </button>
             <button
               onClick={() => { setJoinMode(true); setCreateMode(false); }}
@@ -275,7 +281,7 @@ export default function TournamentsPage() {
             >
               <Flag className="w-8 h-8 mx-auto mb-3 text-orange-400" />
               <div className="font-bold text-white">Entrar em Torneio</div>
-              <div className="text-white/50 text-sm">Join with code</div>
+              <div className="text-white/50 text-sm">Entrar com código</div>
             </button>
           </div>
         )}

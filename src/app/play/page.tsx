@@ -132,7 +132,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     try {
       const { data, error: pinError } = await supabase.from('games').select('id').eq('pin', pin).single();
       if (pinError || !data) {
-        showToast("Pin invalido ou jogo nao encontrado!", "error");
+        showToast("Pin inválido ou jogo não encontrado!", "error");
         return;
       }
       await joinGame(data.id, name);
@@ -157,7 +157,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
     const player = players.find(p => p.name === name);
     if (!player) {
-      showToast("Jogador nao encontrado. Atualiza a pagina.", "error");
+      showToast("Jogador não encontrado. Atualiza a página.", "error");
       setHasAnswered(false);
       setSelectedOption(null);
       return;
@@ -233,7 +233,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
             </div>
             <div className="text-center">
               <h2 className="text-3xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>ENTROU!</h2>
-              <p className="text-white/60">Ola {name}! O jogo vai comecar!</p>
+              <p className="text-white/60">Olá {name}! O jogo vai começar!</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
@@ -415,7 +415,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               <>
                 <div className="text-white opacity-50"><Loader2 className="w-20 h-20 animate-spin" /></div>
                 <h2 className="text-4xl font-black text-white italic">DEMASIADO LENTO!</h2>
-                <p className="text-white/60 text-lg font-bold uppercase tracking-widest">Nao chegaste a responder...</p>
+                <p className="text-white/60 text-lg font-bold uppercase tracking-widest">Não chegaste a responder...</p>
               </>
             ) : isCorrect ? (
               <>
@@ -458,7 +458,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               </div>
             )}
 
-            <p className="text-white/40 text-sm mt-4 animate-pulse">Aguarda pela proxima pergunta</p>
+            <p className="text-white/40 text-sm mt-4 animate-pulse">Aguarda pela próxima pergunta</p>
           </motion.div>
 
           <button
@@ -485,11 +485,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           </motion.div>
           <div>
             <h2 className="text-4xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>Fim do Jogo!</h2>
-            <p className="text-white/50">Ve a classificacao na TV</p>
+            <p className="text-white/50">Ve a classificação na TV</p>
           </div>
           {players.length > 0 && (
             <div className="glass-panel p-6 w-full max-w-sm">
-              <h3 className="text-sm text-white/40 uppercase tracking-widest mb-3">Classificacao Final</h3>
+              <h3 className="text-sm text-white/40 uppercase tracking-widest mb-3">Classificação Final</h3>
               {players.sort((a: any, b: any) => (b.score || 0) - (a.score || 0)).slice(0, 5).map((p: any, idx: number) => (
                 <div key={p.id} className={`flex items-center gap-3 py-2 ${p.name === name ? 'text-pink-400 font-bold' : 'text-white/60'}`}>
                   <span className="text-lg w-8 text-center">{idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `#${idx + 1}`}</span>
@@ -525,7 +525,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         <div className="glass-panel p-6 space-y-6">
           <div>
             <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 block">
-              Codigo do Jogo
+              Código do Jogo
             </label>
             <input
               type="tel"
