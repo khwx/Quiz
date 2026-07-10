@@ -1,26 +1,26 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Globe, History, FlaskConical, Map, Trophy, Flag, Zap, PawPrint, Utensils, Check, Crown, Cpu, Film, Music, Palette, Sparkles, ArrowLeft } from "lucide-react";
+import { Globe, History, FlaskConical, Map, Trophy, Flag, Zap, PawPrint, Utensils, Check, Crown, Cpu, Film, Music, Palette, Sparkles, ArrowLeft, Users, Clock } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
 
 const getCategoryStyles = (color: string) => {
-  const colors: Record<string, { bg: string; text: string; hover: string }> = {
-    emerald: { bg: "bg-emerald-500/20", text: "text-emerald-400", hover: "bg-emerald-500 group-hover:text-white" },
-    green: { bg: "bg-green-500/20", text: "text-green-400", hover: "bg-green-500 group-hover:text-white" },
-    amber: { bg: "bg-amber-500/20", text: "text-amber-400", hover: "bg-amber-500 group-hover:text-white" },
-    cyan: { bg: "bg-cyan-500/20", text: "text-cyan-400", hover: "bg-cyan-500 group-hover:text-white" },
-    violet: { bg: "bg-violet-500/20", text: "text-violet-400", hover: "bg-violet-500 group-hover:text-white" },
-    rose: { bg: "bg-rose-500/20", text: "text-rose-400", hover: "bg-rose-500 group-hover:text-white" },
-    pink: { bg: "bg-pink-500/20", text: "text-pink-400", hover: "bg-pink-500 group-hover:text-white" },
-    orange: { bg: "bg-orange-500/20", text: "text-orange-400", hover: "bg-orange-500 group-hover:text-white" },
-    purple: { bg: "bg-purple-500/20", text: "text-purple-400", hover: "bg-purple-500 group-hover:text-white" },
-    fuchsia: { bg: "bg-fuchsia-500/20", text: "text-fuchsia-400", hover: "bg-fuchsia-500 group-hover:text-white" },
-    yellow: { bg: "bg-yellow-500/20", text: "text-yellow-400", hover: "bg-yellow-500 group-hover:text-white" },
-    red: { bg: "bg-red-500/20", text: "text-red-400", hover: "bg-red-500 group-hover:text-white" },
+  const colors: Record<string, { bg: string; text: string; border: string }> = {
+    emerald: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", border: "border-[#4CAF50]/30" },
+    green: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", border: "border-[#4CAF50]/30" },
+    amber: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", border: "border-[#FFB0CD]/30" },
+    cyan: { bg: "bg-[#deb7ff]/15", text: "text-[#deb7ff]", border: "border-[#deb7ff]/30" },
+    violet: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", border: "border-[#d0bcff]/30" },
+    rose: { bg: "bg-[#FF6B6B]/15", text: "text-[#FF6B6B]", border: "border-[#FF6B6B]/30" },
+    pink: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", border: "border-[#FFB0CD]/30" },
+    orange: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", border: "border-[#FFD700]/30" },
+    purple: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", border: "border-[#d0bcff]/30" },
+    fuchsia: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", border: "border-[#FFB0CD]/30" },
+    yellow: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", border: "border-[#FFD700]/30" },
+    red: { bg: "bg-[#FF6B6B]/15", text: "text-[#FF6B6B]", border: "border-[#FF6B6B]/30" },
   };
   return colors[color] || colors.violet;
 };
@@ -108,7 +108,6 @@ export default function CategoriesPage() {
       setCatError("Seleciona pelo menos uma categoria!");
       return;
     }
-    // Navigate to TV page with selected categories
     const params = new URLSearchParams();
     params.set('categories', selectedCategories.join(','));
     params.set('age', ageGroup);
@@ -122,64 +121,83 @@ export default function CategoriesPage() {
 
   const totalSelected = selectedCategories.length;
 
+  const ageGroups = [
+    { id: "kids", label: "Crianças", age: "7-12", icon: "👶" },
+    { id: "teens", label: "Adolescentes", age: "13-17", icon: "🧑" },
+    { id: "adults", label: "Adultos", age: "18+", icon: "🧑‍💼" }
+  ];
+
   return (
     <main className="min-h-screen relative overflow-x-hidden pb-32">
-      {/* Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-violet-600/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-pink-600/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
       </div>
 
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-950/50 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors">
+          <Link href="/" className="flex items-center gap-2 text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors">
             <ArrowLeft className="w-5 h-5" />
-            <span>Voltar</span>
+            <span className="text-sm">Voltar</span>
           </Link>
-          <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Categorias</h1>
+          <h1 className="text-lg font-bold text-[#e3e0f9]">Categorias</h1>
           <div className="w-10" />
         </div>
       </header>
 
       <div className="relative z-10 max-w-4xl mx-auto p-6">
-        {/* Age Groups Filter */}
-        <section className="mb-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Filtrar por Idade</h2>
+        <motion.section 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6"
+        >
+          <h2 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+            <Users className="w-5 h-5 text-[#d0bcff]" />
+            Filtrar por Idade
+          </h2>
           <div className="flex flex-wrap gap-3">
-            {[
-              { id: "kids", label: "Crianças", age: "7-12" },
-              { id: "teens", label: "Adolescentes", age: "13-17" },
-              { id: "adults", label: "Adultos", age: "18+" }
-            ].map((age) => (
-              <button
+            {ageGroups.map((age) => (
+              <motion.button
                 key={age.id}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setAgeGroup(age.id)}
-                className={`px-6 py-3 rounded-xl transition-all ${
+                className={`flex items-center gap-3 px-5 py-3 rounded-xl transition-all ${
                   ageGroup === age.id 
-                    ? 'bg-violet-500/20 border border-violet-400 text-violet-400' 
-                    : 'bg-white/5 border border-white/10 text-white/60 hover:text-white hover:border-violet-400/50'
+                    ? 'bg-[#d0bcff]/15 border border-[#d0bcff]/30 text-[#d0bcff]' 
+                    : 'bg-white/5 border border-white/10 text-[#e3e0f9]/60 hover:text-[#e3e0f9] hover:border-white/20'
                 }`}
               >
-                {age.label}
-                <span className="text-white/40 ml-2 text-sm">({age.age})</span>
-              </button>
+                <span className="text-xl">{age.icon}</span>
+                <div className="text-left">
+                  <div className="font-bold text-sm">{age.label}</div>
+                  <div className="text-[10px] opacity-60">{age.age}</div>
+                </div>
+              </motion.button>
             ))}
           </div>
-        </section>
+        </motion.section>
 
-        {/* Selection Info */}
-        {totalSelected > 0 && (
-          <div className="mb-4 p-4 bg-pink-500/20 border border-pink-500/30 rounded-xl">
-            <p className="text-pink-300">
-              {totalSelected} categoria{totalSelected !== 1 ? 's' : ''} selecionada{totalSelected !== 1 ? 's' : ''}
-            </p>
-          </div>
-        )}
+        <AnimatePresence>
+          {totalSelected > 0 && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mb-4 p-4 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl"
+            >
+              <p className="text-[#FFB0CD] font-bold">
+                {totalSelected} categoria{totalSelected !== 1 ? 's' : ''} selecionada{totalSelected !== 1 ? 's' : ''}
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-        {/* Categories Grid */}
         <section>
-          <h2 className="text-lg font-semibold text-white mb-4">Todas as Categorias</h2>
+          <h2 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+            <Globe className="w-5 h-5 text-[#d0bcff]" />
+            Todas as Categorias
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {CATEGORIES.map((cat, i) => {
               const styles = getCategoryStyles(cat.color);
@@ -191,27 +209,40 @@ export default function CategoriesPage() {
                   key={cat.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * i }}
+                  transition={{ delay: 0.03 * i }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => toggleCategory(cat.name)}
-                  className={`glass-panel p-5 flex flex-col items-start transition-all duration-300 cursor-pointer group ${
+                  className={`bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border p-5 flex flex-col items-start transition-all duration-300 cursor-pointer ${
                     isSelected 
-                      ? 'border-pink-400/50 shadow-[0_0_25px_rgba(236,72,153,0.25)]' 
-                      : 'hover:border-violet-400/50 hover:shadow-[0_0_25px_rgba(139,92,246,0.15)]'
+                      ? `border-[#FFB0CD]/50 shadow-[0_0_25px_rgba(255,176,205,0.15)]` 
+                      : 'border-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(208,188,255,0.1)]'
                   }`}
                 >
-                  <div className={`${styles.bg} p-3 rounded-xl mb-3 ${styles.text} ${styles.hover} transition-colors duration-300`}>
+                  <div className={`${styles.bg} p-3 rounded-xl mb-3 ${styles.text} border ${styles.border}`}>
                     <cat.icon className="w-6 h-6" />
                   </div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-lg font-semibold text-white">{cat.name}</h3>
-                    {isSelected && <Check className="w-5 h-5 text-pink-400" />}
+                    <h3 className="text-base font-bold text-[#e3e0f9]">{cat.name}</h3>
+                    <AnimatePresence>
+                      {isSelected && (
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          exit={{ scale: 0 }}
+                          className="w-5 h-5 rounded-full bg-[#FFB0CD] flex items-center justify-center"
+                        >
+                          <Check className="w-3 h-3 text-[#121223]" />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <p className="text-white/50 text-sm mb-3">{cat.desc}</p>
+                  <p className="text-[#e3e0f9]/50 text-sm mb-3">{cat.desc}</p>
                   <div className="mt-auto flex items-center justify-between w-full">
-                    <span className="text-white/40 text-xs">
+                    <span className="text-[#e3e0f9]/40 text-xs">
                       {countsLoading ? (
                         <span className="inline-flex items-center gap-1">
-                          <span className="w-3 h-3 border border-white/20 border-t-white/60 rounded-full animate-spin" />
+                          <span className="w-3 h-3 border border-white/20 border-t-[#d0bcff] rounded-full animate-spin" />
                           a carregar...
                         </span>
                       ) : (
@@ -225,38 +256,49 @@ export default function CategoriesPage() {
           </div>
         </section>
 
-        {/* Play Button */}
         <section className="mt-8">
-          {catError && (
-            <div className="mb-3 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
-              {catError}
-            </div>
-          )}
-          <button
+          <AnimatePresence>
+            {catError && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="mb-3 p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm text-center"
+              >
+                {catError}
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <motion.button
+            whileHover={{ scale: totalSelected > 0 ? 1.02 : 1 }}
+            whileTap={{ scale: totalSelected > 0 ? 0.98 : 1 }}
             onClick={handlePlay}
             disabled={totalSelected === 0}
-            className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${
+            className={`w-full py-4 rounded-2xl font-bold text-lg transition-all ${
               totalSelected > 0
-                ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:brightness-110'
-                : 'bg-white/10 text-white/30 cursor-not-allowed'
+                ? 'bg-[#d0bcff] text-[#3c0091] shadow-[0_0_30px_rgba(208,188,255,0.3)]'
+                : 'bg-white/10 text-[#e3e0f9]/30 cursor-not-allowed'
             }`}
           >
             {totalSelected > 0 ? `Jogar com ${totalSelected} Categorias` : 'Seleciona uma Categoria'}
-          </button>
+          </motion.button>
         </section>
 
-        {/* Custom Topic - disabled for now */}
         <section className="mt-6">
-          <div className="glass-panel p-6 opacity-50">
-            <p className="text-white/60 mb-4">Tema personalizado brevemente disponível!</p>
+          <div className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 opacity-50">
+            <div className="flex items-center gap-2 text-[#e3e0f9]/60 mb-4">
+              <Sparkles className="w-5 h-5 text-[#d0bcff]" />
+              <p className="font-bold">Tema personalizado</p>
+            </div>
+            <p className="text-[#e3e0f9]/40 mb-4 text-sm">Brevemente disponível!</p>
             <div className="flex gap-3">
               <input
                 type="text"
                 placeholder="Ex: Anime, Videojogos..."
-                className="flex-1 glass-input"
+                className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#d0bcff]/50"
                 disabled
               />
-              <button className="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-xl opacity-50 cursor-not-allowed" disabled>
+              <button className="px-6 py-3 bg-[#d0bcff]/30 text-[#e3e0f9]/50 font-bold rounded-xl cursor-not-allowed" disabled>
                 Criar
               </button>
             </div>

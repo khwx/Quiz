@@ -1,17 +1,20 @@
 "use client";
 
 import { use, useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { Loader2 } from "lucide-react";
 import { useGame } from "@/context/GameContext";
-import { Gamepad2, CheckCircle2, Loader2, Trophy, Wifi, Rocket, ArrowLeft, LogOut, Flag, Lightbulb, Clock, Image as ImageIcon, Users } from "lucide-react";
-import { supabase } from "@/lib/supabase";
 import { useSound } from "@/hooks/useSound";
 import { useToast } from "@/hooks/useToast";
 import ToastContainer from "@/components/Toast";
 import ReportModal from "@/components/ReportModal";
 import ConfirmModal from "@/components/ConfirmModal";
 import MobileNav from "@/components/MobileNav";
-import StreakBadge from "@/components/mobile/StreakBadge";
+import LobbyJoinView from "@/components/mobile/LobbyJoinView";
+import QuestionView from "@/components/mobile/QuestionView";
+import RevealView from "@/components/mobile/RevealView";
+import FinalView from "@/components/mobile/FinalView";
+import { supabase } from "@/lib/supabase";
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
   const resolvedParams = use(searchParams);
@@ -70,12 +73,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   useEffect(() => {
     if (!timerActive) return;
     const interval = setInterval(() => {
-      setTimeLeft(prev => {
+      setTimeLeft((prev) => {
         if (prev <= 1) {
           setTimerActive(false);
           return 0;
         }
-        if (prev <= 5) playSound('tick');
+        if (prev <= 5) playSound("tick");
         return prev - 1;
       });
     }, 1000);
@@ -114,13 +117,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         const timerDur = gameSettings?.timer_duration || 20;
         const points = Math.max(10, Math.floor(((timerDur - timeTaken) / timerDur) * 100));
         setEarnedPoints(points);
-        setStreak(prev => prev + 1);
-        playSound('correct');
+        setStreak((prev) => prev + 1);
+        playSound("correct");
         setTimeout(() => setEarnedPoints(null), 2000);
       } else {
         setEarnedPoints(0);
         setStreak(0);
-        playSound('wrong');
+        playSound("wrong");
         setTimeout(() => setEarnedPoints(null), 2000);
       }
     }
@@ -130,7 +133,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     if (!pin || !name) return;
     setIsJoining(true);
     try {
-      const { data, error: pinError } = await supabase.from('games').select('id').eq('pin', pin).single();
+      const { data, error: pinError } = await supabase.from("games").select("id").eq("pin", pin).single();
       if (pinError || !data) {
         showToast("Pin inválido ou jogo não encontrado!", "error");
         return;
@@ -153,9 +156,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     }
     setHasAnswered(true);
     setSelectedOption(index);
-    playSound('tick');
+    playSound("tick");
 
-    const player = players.find(p => p.name === name);
+    const player = players.find((p) => p.name === name);
     if (!player) {
       showToast("Jogador não encontrado. Atualiza a página.", "error");
       setHasAnswered(false);
@@ -174,8 +177,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           playerId: player.id,
           questionId: currentQuestionId,
           chosenOption: index,
-          timeTaken
-        })
+          timeTaken,
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
@@ -188,411 +191,131 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
   const handleLeave = async () => {
     if (gameId) {
-      const player = players.find(p => p.name === name);
-      if (player) await supabase.from('players').delete().eq('id', player.id);
+      const player = players.find((p) => p.name === name);
+      if (player) await supabase.from("players").delete().eq("id", player.id);
     }
     setHasJoined(false);
     setGameId(null);
-    window.location.href = '/';
+    window.location.href = "/";
   };
 
   const handleReport = async (reason: string) => {
     if (!currentQuestionId) return;
-    const { data: q } = await supabase.from('questions').select('metadata').eq('id', currentQuestionId).single();
+    const { data: q } = await supabase.from("questions").select("metadata").eq("id", currentQuestionId).single();
     const currentReports = q?.metadata?.reports || [];
-    await supabase.from('questions').update({
-      metadata: { reports: [...currentReports, { reason, reporter: name, date: new Date().toISOString() }] }
-    }).eq('id', currentQuestionId);
+    await supabase
+      .from("questions")
+      .update({
+        metadata: { reports: [...currentReports, { reason, reporter: name, date: new Date().toISOString() }] },
+      })
+      .eq("id", currentQuestionId);
     showToast("Obrigado! Pergunta reportada.", "success");
   };
 
-  const optionColors = [
-    "bg-red-500 active:bg-red-600 border-red-700",
-    "bg-blue-500 active:bg-blue-600 border-blue-700",
-    "bg-yellow-500 active:bg-yellow-600 border-yellow-700",
-    "bg-green-500 active:bg-green-600 border-green-700"
-  ];
-  const optionLetters = ["A", "B", "C", "D"];
-
-  const hint = questionData?.metadata?.hint;
-  const flagCode = questionData?.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
-    questionData?.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
-  const isFlagQuestion = questionData?.category?.toLowerCase().includes("bandeira") || flagCode;
-
-  if (hasJoined) {
-    if (status === "LOBBY" || status === "STARTING") {
-      return (
-        <main className="min-h-screen relative overflow-x-hidden flex items-center justify-center">
-          <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-            <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
-            <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
-          </div>
-          <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="relative z-10 glass-panel w-full max-w-sm flex flex-col items-center gap-6 m-6 p-8">
-            <div className="bg-emerald-500/20 p-6 rounded-full">
-              <CheckCircle2 className="w-20 h-20 text-emerald-400" />
-            </div>
-            <div className="text-center">
-              <h2 className="text-3xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>ENTROU!</h2>
-              <p className="text-white/60">Olá {name}! O jogo vai começar!</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/10 rounded-full">
-                <Wifi className="w-4 h-4 text-emerald-400" />
-                <span className="text-sm text-emerald-400">Conectado</span>
-              </div>
-              {players.length > 0 && (
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full">
-                  <Users className="w-4 h-4 text-white/50" />
-                  <span className="text-sm text-white/50">{players.length} jogador{players.length !== 1 ? 'es' : ''}</span>
-                </div>
-              )}
-            </div>
-            <div className="flex flex-col items-center gap-1 text-white/30 text-sm">
-              <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Aguarda pelo anfitrião...</span>
-            </div>
-            <button onClick={() => setLeaveConfirmOpen(true)} className="flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 rounded-full hover:bg-red-500/20 transition-colors">
-              <LogOut className="w-4 h-4" />
-              <span className="text-sm">Sair</span>
-            </button>
-          </motion.div>
-          <ToastContainer toasts={toasts} onDismiss={dismiss} />
-          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
-        </main>
-      );
-    }
-
-    if (status === "QUESTION" && questionData) {
-      return (
-        <main className="min-h-screen flex flex-col bg-slate-950">
-          {/* Timer bar */}
-          <div className="w-full h-2 bg-slate-800">
-            <motion.div
-              animate={{ width: `${(timeLeft / (gameSettings?.timer_duration || 20)) * 100}%` }}
-              transition={{ ease: "linear", duration: 1 }}
-              className={`h-full ${timeLeft <= 5 ? 'bg-red-500' : 'bg-pink-500'}`}
-            />
-          </div>
-
-          {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3">
-            <span className="text-xs font-bold text-white/40 uppercase tracking-widest">
-              {questionData.category?.replace(/_/g, ' ')}
-            </span>
-            {gameSettings?.question_ids && (
-              <span className="text-xs font-bold text-pink-300/60 uppercase tracking-widest">
-                {currentQuestionIndex}/{gameSettings.question_ids.length}
-              </span>
-            )}
-            <div className="flex items-center gap-2">
-              <Clock className={`w-4 h-4 ${timeLeft <= 5 ? 'text-red-400 animate-pulse' : 'text-white/40'}`} />
-              <span className={`text-lg font-black font-mono ${timeLeft <= 5 ? 'text-red-400' : 'text-white'}`}>
-                {timeLeft}
-              </span>
-            </div>
-          </div>
-
-          {/* Image area for flags */}
-          {isFlagQuestion && (
-            <div className="flex justify-center px-4 mb-2">
-              <div className="w-40 h-28 bg-black/30 rounded-xl overflow-hidden border-2 border-white/10 flex items-center justify-center">
-                {flagCode ? (
-                  <img src={`/flags/${flagCode}.svg`} alt="Bandeira" className="max-h-full max-w-full object-contain" />
-                ) : questionData.image_url ? (
-                  <img src={questionData.image_url} alt="Bandeira" className="max-h-full max-w-full object-contain" />
-                ) : (
-                  <ImageIcon className="w-8 h-8 text-white/20" />
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Question text */}
-          <div className="px-4 py-3 text-center">
-            <h2 className="text-xl font-black text-white leading-tight">
-              {questionData.text}
-            </h2>
-          </div>
-
-          {/* Hint button */}
-          {hint && !hasAnswered && (
-            <div className="flex justify-center mb-2">
-              <button
-                onClick={() => setShowHint(!showHint)}
-                className="flex items-center gap-2 px-4 py-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 rounded-full text-sm transition-colors border border-amber-500/20"
-              >
-                <Lightbulb className="w-4 h-4" />
-                {showHint ? 'Esconder Dica' : 'Ver Dica'}
-              </button>
-            </div>
-          )}
-
-          {/* Hint display */}
-          <AnimatePresence>
-            {showHint && hint && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                className="overflow-hidden"
-              >
-                <div className="mx-4 mb-3 p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl">
-                  <p className="text-amber-300 text-sm font-medium">{hint}</p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Options */}
-          <div className="flex-1 px-4 pb-4 grid grid-cols-1 gap-3 content-center">
-            {questionData.options?.map((option: string, idx: number) => (
-              <motion.button
-                key={idx}
-                onClick={() => handleAnswer(idx)}
-                disabled={hasAnswered}
-                whileTap={!hasAnswered ? { scale: 0.97 } : {}}
-                className={`
-                  ${optionColors[idx]}
-                  ${selectedOption === idx ? 'ring-4 ring-white scale-[0.97]' : ''}
-                  ${hasAnswered ? 'opacity-50 cursor-not-allowed' : ''}
-                  relative overflow-hidden
-                  p-4 rounded-2xl border-b-4 shadow-lg
-                  flex items-center gap-4
-                  transition-all duration-100
-                `}
-              >
-                <div className="bg-black/20 w-10 h-10 rounded-lg flex items-center justify-center text-xl font-black text-white/80 shrink-0">
-                  {optionLetters[idx]}
-                </div>
-                <span className="text-lg font-bold text-white/90 text-left flex-1 whitespace-normal break-words">{option}</span>
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Waiting indicator */}
-          {hasAnswered && (
-            <div className="px-4 pb-4 flex items-center justify-center gap-2 text-white/50">
-              <Loader2 className="w-5 h-5 animate-spin" />
-              <span className="text-sm">Aguarda...</span>
-            </div>
-          )}
-
-          {/* Report button */}
-          <button
-            onClick={() => setReportOpen(true)}
-            className="fixed bottom-4 right-4 flex items-center gap-1 px-3 py-2 bg-white/10 hover:bg-white/20 text-white/50 rounded-full text-xs transition-colors z-40"
-          >
-            <Flag className="w-3 h-3" />
-            Reportar
-          </button>
-          <ToastContainer toasts={toasts} onDismiss={dismiss} />
-          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
-          <AnimatePresence>
-            {streak >= 2 && <StreakBadge streak={streak} />}
-          </AnimatePresence>
-        </main>
-      );
-    }
-
-    // Fallback: waiting for question data
-    if (status === "QUESTION" && !questionData) {
-      return (
-        <main className="min-h-screen flex items-center justify-center">
-          <Loader2 className="w-12 h-12 animate-spin text-violet-400" />
-        </main>
-      );
-    }
-
-    if (status === "REVEAL") {
-      const isCorrect = selectedOption === correctOption;
-      const hasNoSelection = selectedOption === null;
-      const correctText = questionData?.options?.[correctOption ?? -1];
-
-      return (
-        <main className={`min-h-screen flex flex-col items-center justify-center p-6 text-center transition-colors duration-500 ${hasNoSelection ? "bg-gray-900" : isCorrect ? "bg-green-600" : "bg-red-600"}`}>
-          <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="flex flex-col items-center gap-4">
-            {hasNoSelection ? (
-              <>
-                <div className="text-white opacity-50"><Loader2 className="w-20 h-20 animate-spin" /></div>
-                <h2 className="text-4xl font-black text-white italic">DEMASIADO LENTO!</h2>
-                <p className="text-white/60 text-lg font-bold uppercase tracking-widest">Não chegaste a responder...</p>
-              </>
-            ) : isCorrect ? (
-              <>
-                <motion.div animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="bg-white/20 p-6 rounded-full">
-                  <Trophy className="w-16 h-16 text-yellow-300" />
-                </motion.div>
-                <h2 className="text-5xl font-black text-white italic tracking-tighter">BOA!!!</h2>
-                {earnedPoints !== null && earnedPoints > 0 && (
-                  <motion.div initial={{ scale: 0, y: 20 }} animate={{ scale: 1, y: 0 }} className="text-3xl font-black text-yellow-300">
-                    +{earnedPoints} pts
-                  </motion.div>
-                )}
-                <p className="text-white/80 text-lg font-bold uppercase tracking-widest">Acertaste em cheio!</p>
-              </>
-            ) : (
-              <>
-                <div className={`p-6 rounded-3xl border-b-8 shadow-xl ${optionColors[selectedOption || 0]}`}>
-                  <span className="text-5xl font-black text-white/90">{optionLetters[selectedOption || 0]}</span>
-                </div>
-                <h2 className="text-5xl font-black text-white italic tracking-tighter">ERRADO...</h2>
-                {earnedPoints !== null && earnedPoints === 0 && (
-                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-2xl font-bold text-white/60">
-                    +0 pts
-                  </motion.div>
-                )}
-                {correctText && (
-                  <p className="text-white/80 text-lg font-bold">Resposta certa: {correctText}</p>
-                )}
-              </>
-            )}
-
-            {/* Show hint on reveal */}
-            {hint && (
-              <div className="mt-4 p-3 bg-white/10 rounded-xl border border-white/20 max-w-sm">
-                <div className="flex items-center gap-2 mb-1">
-                  <Lightbulb className="w-4 h-4 text-amber-300" />
-                  <span className="text-amber-300 text-xs font-bold uppercase">Dica</span>
-                </div>
-                <p className="text-white/70 text-sm">{hint}</p>
-              </div>
-            )}
-
-            <p className="text-white/40 text-sm mt-4 animate-pulse">Aguarda pela próxima pergunta</p>
-          </motion.div>
-
-          <button
-            onClick={() => setReportOpen(true)}
-            className="fixed bottom-4 right-4 flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white/60 rounded-full text-sm transition-colors"
-          >
-            <Flag className="w-4 h-4" /> Reportar
-          </button>
-          <ToastContainer toasts={toasts} onDismiss={dismiss} />
-          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
-        </main>
-      );
-    }
-
+  // Not joined yet - show join form
+  if (!hasJoined) {
     return (
-      <main className="min-h-screen flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-yellow-500/10 blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-500/10 blur-[100px]" />
-        </div>
-        <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="relative z-10 flex flex-col items-center gap-6">
-          <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-            <Trophy className="w-24 h-24 text-yellow-500" />
-          </motion.div>
-          <div>
-            <h2 className="text-4xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>Fim do Jogo!</h2>
-            <p className="text-white/50">Ve a classificação na TV</p>
-          </div>
-          {players.length > 0 && (
-            <div className="glass-panel p-6 w-full max-w-sm">
-              <h3 className="text-sm text-white/40 uppercase tracking-widest mb-3">Classificação Final</h3>
-              {players.sort((a: any, b: any) => (b.score || 0) - (a.score || 0)).slice(0, 5).map((p: any, idx: number) => (
-                <div key={p.id} className={`flex items-center gap-3 py-2 ${p.name === name ? 'text-pink-400 font-bold' : 'text-white/60'}`}>
-                  <span className="text-lg w-8 text-center">{idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `#${idx + 1}`}</span>
-                  <span className="flex-1 text-left">{p.name}</span>
-                  <span className="font-mono">{p.score || 0}</span>
-                </div>
-              ))}
-            </div>
-          )}
-          <button onClick={() => window.location.href = '/'} className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-colors">
-            Voltar ao Início
-          </button>
-        </motion.div>
+      <>
+        <LobbyJoinView
+          pin={pin}
+          name={name}
+          isJoining={isJoining}
+          hasJoined={hasJoined}
+          players={players}
+          onPinChange={setPin}
+          onNameChange={setName}
+          onJoin={handleJoin}
+          onLeave={handleLeave}
+        />
+        <MobileNav />
+        <ToastContainer toasts={toasts} onDismiss={dismiss} />
+        <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+        <ConfirmModal
+          isOpen={leaveConfirmOpen}
+          onClose={() => setLeaveConfirmOpen(false)}
+          onConfirm={handleLeave}
+          title="Sair do Jogo?"
+          message="Tens a certeza que queres sair?"
+          confirmLabel="Sair"
+          danger
+        />
+        <div className="h-20 md:hidden" />
+      </>
+    );
+  }
+
+  // Joined - show lobby waiting
+  if (status === "LOBBY" || status === "STARTING") {
+    return (
+      <>
+        <LobbyJoinView
+          pin={pin}
+          name={name}
+          isJoining={isJoining}
+          hasJoined={hasJoined}
+          players={players}
+          onPinChange={setPin}
+          onNameChange={setName}
+          onJoin={handleJoin}
+          onLeave={() => setLeaveConfirmOpen(true)}
+        />
+        <ToastContainer toasts={toasts} onDismiss={dismiss} />
+        <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+      </>
+    );
+  }
+
+  // Question phase
+  if (status === "QUESTION" && questionData) {
+    return (
+      <>
+        <QuestionView
+          questionData={questionData}
+          timeLeft={timeLeft}
+          timerDuration={gameSettings?.timer_duration || 20}
+          hasAnswered={hasAnswered}
+          selectedOption={selectedOption}
+          streak={streak}
+          onAnswer={handleAnswer}
+          onReport={() => setReportOpen(true)}
+        />
+        <ToastContainer toasts={toasts} onDismiss={dismiss} />
+        <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+      </>
+    );
+  }
+
+  // Waiting for question data
+  if (status === "QUESTION" && !questionData) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-12 h-12 animate-spin text-violet-400" />
       </main>
     );
   }
 
+  // Reveal phase
+  if (status === "REVEAL") {
+    return (
+      <>
+        <RevealView
+          selectedOption={selectedOption}
+          correctOption={correctOption}
+          questionData={questionData}
+          earnedPoints={earnedPoints}
+          onReport={() => setReportOpen(true)}
+        />
+        <ToastContainer toasts={toasts} onDismiss={dismiss} />
+        <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
+      </>
+    );
+  }
+
+  // Final phase
   return (
-    <main className="min-h-screen relative overflow-x-hidden">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
-      </div>
-
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10 w-full max-w-sm mx-auto p-6">
-        <div className="flex items-center gap-4 mb-8 justify-center">
-          <div className="p-4 bg-gradient-to-r from-violet-600 to-pink-600 rounded-2xl shadow-lg shadow-pink-500/20">
-            <Gamepad2 className="w-10 h-10 text-white" />
-          </div>
-          <h1 className="text-4xl font-black text-white" style={{ fontFamily: 'Space Grotesk' }}>QUIZ<span className="text-pink-500">VERSE</span></h1>
-        </div>
-
-        <div className="glass-panel p-6 space-y-6">
-          <div>
-            <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 block">
-              Código do Jogo
-            </label>
-            <input
-              type="tel"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              placeholder="000000"
-              value={pin}
-              onChange={(e) => setPin(e.target.value.replace(/\D/g, ''))}
-              className="w-full glass-input text-center text-3xl font-mono tracking-[0.3em] uppercase"
-              maxLength={6}
-            />
-          </div>
-
-          <div>
-            <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 block">
-              O Teu Nome
-            </label>
-            <input
-              type="text"
-              placeholder="Como te queres chamar?"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full glass-input text-xl"
-            />
-          </div>
-
-          <button
-            onClick={handleJoin}
-            disabled={isJoining || !pin || !name}
-            className={`w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl font-bold transition-all ${
-              isJoining || !pin || !name
-                ? 'bg-white/5 text-white/30 cursor-not-allowed'
-                : 'bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-[0.98] active:scale-[0.95]'
-            }`}
-          >
-            {isJoining ? (
-              <Loader2 className="w-6 h-6 animate-spin" />
-            ) : (
-              <>
-                <Rocket className="w-5 h-5" />
-                ENTRAR NO JOGO
-              </>
-            )}
-          </button>
-        </div>
-
-        <div className="mt-8 text-center">
-          <button onClick={() => window.history.back()} className="flex items-center gap-2 text-white/40 hover:text-white/60 transition-colors mx-auto">
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">Voltar</span>
-          </button>
-        </div>
-      </motion.div>
-
-      <MobileNav />
-          <ToastContainer toasts={toasts} onDismiss={dismiss} />
-          <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
-          <ConfirmModal
-            isOpen={leaveConfirmOpen}
-            onClose={() => setLeaveConfirmOpen(false)}
-            onConfirm={handleLeave}
-            title="Sair do Jogo?"
-            message="Tens a certeza que queres sair?"
-            confirmLabel="Sair"
-            danger
-          />
-      <div className="h-20 md:hidden" />
-    </main>
+    <>
+      <FinalView players={players} playerName={name} />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
+    </>
   );
 }

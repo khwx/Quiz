@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Rocket, Mail, Lock, Eye, EyeOff, Globe, Gamepad2, ArrowRight, User, Facebook, CheckCircle2 } from "lucide-react";
+import { Rocket, Mail, Lock, Eye, EyeOff, ArrowRight, User, CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 export default function LoginPage() {
@@ -71,149 +71,108 @@ export default function LoginPage() {
     }
   };
 
-  const handleDiscordLogin = async () => {
-    setIsLoading(true);
-    setError("");
-    
-    try {
-      const { error: discordError } = await supabase.auth.signInWithOAuth({
-        provider: "discord",
-        options: {
-          redirectTo: `${window.location.origin}/profile`,
-        }
-      });
-      
-      if (discordError) throw discordError;
-    } catch (err: any) {
-      setError(err.message || "Erro ao entrar com Discord");
-      setIsLoading(false);
-    }
-  };
-
-  const handleFacebookLogin = async () => {
-    setIsLoading(true);
-    setError("");
-    
-    try {
-      const { error: facebookError } = await supabase.auth.signInWithOAuth({
-        provider: "facebook",
-        options: {
-          redirectTo: `${window.location.origin}/profile`,
-        }
-      });
-      
-      if (facebookError) throw facebookError;
-    } catch (err: any) {
-      setError(err.message || "Erro ao entrar com Facebook");
-      setIsLoading(false);
-    }
-  };
-
   return (
-    <main className="min-h-screen relative overflow-hidden flex items-center justify-center p-6">
-      {/* Cosmic Background */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-screen" 
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920")' }} 
-        />
-        <div className="absolute inset-0 bg-gradient-to-tr from-violet-950/90 via-purple-950/60 to-slate-950/90" />
-        <div className="absolute top-0 left-0 w-full h-[512px] bg-violet-500/10 blur-[100px] rounded-full -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[512px] bg-pink-500/10 blur-[120px] rounded-full translate-y-1/3 translate-x-1/3" />
+    <main className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-0 bg-[#0c0c1d]">
+        <div className="absolute inset-0 nebula-bg" />
+        <div className="absolute inset-0 star-field" />
       </div>
 
-      {/* Main Glass Container */}
+      <header className="fixed top-0 w-full z-50 flex items-center justify-center px-6 h-20">
+        <Link href="/">
+          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] tracking-widest uppercase">
+            QuizVerse
+          </h1>
+        </Link>
+      </header>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative z-10 w-full max-w-md glass-panel p-8"
+        transition={{ duration: 0.5 }}
+        className="relative z-10 w-full max-w-md bg-[#1e1e30]/80 backdrop-blur-xl rounded-[2rem] p-8 border border-[#d0bcff]/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]"
       >
-        {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500 mb-2" style={{ fontFamily: 'Space Grotesk' }}>
-            QUIZVERSE
-          </h1>
-          <p className="text-white/50 text-sm">
-            {isLogin ? "Bem-vindo de volta!" : "Começa a tua aventura"}
-          </p>
-        </header>
-
-        {/* Tab Toggle */}
-        <div className="flex p-1 bg-white/5 rounded-lg mb-6 border border-white/10">
-          <button 
+        <div className="relative flex bg-white/5 rounded-2xl p-1 mb-8">
+          <motion.div
+            layout
+            className="absolute inset-y-1 w-[calc(50%-4px)] bg-[#d0bcff]/20 border border-[#d0bcff]/30 rounded-xl"
+            animate={{ x: isLogin ? 0 : "100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          />
+          <button
             onClick={() => setIsLogin(true)}
-            className={`flex-1 py-3 text-center rounded-md text-sm font-medium transition-all ${
-              isLogin 
-                ? "bg-violet-500/15 text-violet-400 border border-violet-400/30 shadow-[0_0_10px_rgba(139,92,246,0.1)]" 
-                : "text-white/40 hover:text-white"
-            }`}
+            className="relative z-10 flex-1 py-3 text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-                Entrar
+            <span className={isLogin ? "text-[#d0bcff]" : "text-white/50 hover:text-white"}>Entrar</span>
           </button>
-          <button 
+          <button
             onClick={() => setIsLogin(false)}
-            className={`flex-1 py-3 text-center rounded-md text-sm font-medium transition-all ${
-              !isLogin 
-                ? "bg-violet-500/15 text-violet-400 border border-violet-400/30 shadow-[0_0_10px_rgba(139,92,246,0.1)]" 
-                : "text-white/40 hover:text-white"
-            }`}
+            className="relative z-10 flex-1 py-3 text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-            Criar Conta
+            <span className={!isLogin ? "text-[#d0bcff]" : "text-white/50 hover:text-white"}>Registar</span>
           </button>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-5">
-          {!isLogin && (
-            <div>
-              <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 ml-1 block">
-                Nome de Utilizador
-              </label>
-              <div className="relative group">
-                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors pointer-events-none z-10" />
-                <input
-                  type="text"
-                  placeholder="O teu nome"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full glass-input pl-12 pr-4"
-                />
-              </div>
-            </div>
-          )}
+          <AnimatePresence mode="wait">
+            {!isLogin && (
+              <motion.div
+                key="name"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="overflow-hidden"
+              >
+                <label className="block text-[10px] font-medium text-[#cbc3d7] uppercase tracking-widest mb-2 ml-1">
+                  Nome de Utilizador
+                </label>
+                <div className="relative group">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#958ea0] group-focus-within:text-[#d0bcff] transition-colors pointer-events-none z-10" />
+                  <input
+                    type="text"
+                    placeholder="O teu nome"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-[#0c0c1d]/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-[#958ea0] focus:outline-none focus:border-[#d0bcff]/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
+                  />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <div>
-            <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 ml-1 block">
-              Email
+            <label className="block text-[10px] font-medium text-[#cbc3d7] uppercase tracking-widest mb-2 ml-1">
+              Endereço de Email
             </label>
             <div className="relative group">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-violet-400 transition-colors pointer-events-none z-10" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#958ea0] group-focus-within:text-[#d0bcff] transition-colors pointer-events-none z-10" />
               <input
                 type="email"
-                placeholder="teu@email.com"
+                placeholder="astronauta@quizverse.gal"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full glass-input pl-12 pr-4"
+                className="w-full bg-[#0c0c1d]/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-[#958ea0] focus:outline-none focus:border-[#d0bcff]/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="text-xs font-medium text-white/40 uppercase tracking-widest mb-2 ml-1 block">
-              Password
+            <label className="block text-[10px] font-medium text-[#cbc3d7] uppercase tracking-widest mb-2 ml-1">
+              Código de Acesso
             </label>
             <div className="relative group">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30 group-focus-within:text-pink-400 transition-colors pointer-events-none z-10" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#958ea0] group-focus-within:text-[#FFB0CD] transition-colors pointer-events-none z-10" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full glass-input pl-12 pr-12"
+                className="w-full bg-[#0c0c1d]/40 border border-white/10 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-[#958ea0] focus:outline-none focus:border-[#d0bcff]/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#958ea0] hover:text-white transition-colors"
               >
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
@@ -232,92 +191,103 @@ export default function LoginPage() {
                     redirectTo: `${window.location.origin}/login`,
                   });
                   if (resetError) throw resetError;
-                  setSuccess("Email de recuperação enviado! Verifica a tua caixa de entrada.");
+                  setSuccess("Email de recuperação enviado!");
                 } catch (err: any) {
                   setError(err.message || "Erro ao enviar email de recuperação");
                 }
-              }} className="text-xs text-pink-400 hover:text-pink-300 transition-colors">
-                Esqueceste-te da password?
+              }} className="text-xs font-semibold text-[#d0bcff]/80 hover:text-[#d0bcff] transition-colors uppercase tracking-wider">
+                Recuperar Trajectória
               </button>
             </div>
           )}
 
-          {error && (
-            <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
-              {error}
-            </div>
-          )}
+          <AnimatePresence>
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="p-3 bg-[#ffb4ab]/10 border border-[#ffb4ab]/30 rounded-xl text-[#ffb4ab] text-sm"
+              >
+                {error}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          {success && (
-            <div className="p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-sm flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 shrink-0" />
-              {success}
-            </div>
-          )}
+          <AnimatePresence>
+            {success && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="p-3 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-[#4CAF50] text-sm flex items-center gap-2"
+              >
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                {success}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          <button
+          <motion.button
             type="submit"
             disabled={isLoading || !email || !password || (!isLogin && !name)}
-            className={`w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold transition-all ${
+            whileHover={{ scale: isLoading ? 1 : 1.02 }}
+            whileTap={{ scale: isLoading ? 1 : 0.98 }}
+            className={`w-full relative group overflow-hidden rounded-xl p-[2px] transition-transform ${
               isLoading || !email || !password || (!isLogin && !name)
-                ? "bg-white/5 text-white/30 cursor-not-allowed"
-                : "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:scale-[0.98] active:scale-[0.95]"
+                ? "opacity-50 cursor-not-allowed"
+                : ""
             }`}
           >
-            {isLoading ? (
-              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            ) : (
-              <>
-                {isLogin ? "Entrar" : "Criar Conta"}
-                <Rocket className="w-5 h-5" />
-              </>
-            )}
-          </button>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] group-hover:from-[#d0bcff] group-hover:to-[#FFB0CD]" />
+            <div className="relative bg-[#0c0c1d]/10 rounded-[10px] flex items-center justify-center gap-3 py-4 text-white font-bold tracking-widest uppercase">
+              {isLoading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <>
+                  <span>{isLogin ? "Entrar na Galáxia" : "Criar Conta"}</span>
+                  <Rocket className="w-5 h-5" />
+                </>
+              )}
+            </div>
+          </motion.button>
         </form>
 
-        {/* Divider */}
-        <div className="mt-8 mb-6 flex items-center">
-          <div className="flex-grow border-t border-white/10" />
-          <span className="mx-4 text-white/30 text-xs uppercase tracking-widest">ou entra com</span>
-          <div className="flex-grow border-t border-white/10" />
+        <div className="flex items-center gap-4 py-4 mt-4">
+          <div className="h-[1px] flex-1 bg-white/10" />
+          <span className="text-[10px] font-bold text-[#958ea0] uppercase tracking-[0.2em]">OU ACEDER VIA</span>
+          <div className="h-[1px] flex-1 bg-white/10" />
         </div>
 
-        {/* Social Login */}
-        <div className="grid grid-cols-3 gap-3">
-          <button 
-            onClick={handleGoogleLogin}
-            disabled={isLoading}
-            className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60 disabled:opacity-50"
-          >
-            <Globe className="w-5 h-5" />
-            Google
-          </button>
-          <button 
-            onClick={handleFacebookLogin}
-            disabled={isLoading}
-            className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60 disabled:opacity-50"
-          >
-            <Facebook className="w-5 h-5" />
-            Facebook
-          </button>
-          <button 
-            onClick={handleDiscordLogin}
-            disabled={isLoading}
-            className="flex items-center justify-center gap-2 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-violet-400/40 hover:text-violet-400 transition-all text-sm text-white/60 disabled:opacity-50"
-          >
-            <Gamepad2 className="w-5 h-5" />
-            Discord
-          </button>
-        </div>
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={handleGoogleLogin}
+          disabled={isLoading}
+          className="w-full flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-xl py-4 text-sm font-medium hover:bg-white/10 transition-all duration-300 disabled:opacity-50"
+        >
+          <svg className="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335" />
+          </svg>
+          <span className="tracking-wide text-white/80">Continuar com Google</span>
+        </motion.button>
 
-        {/* Back to Home */}
         <div className="mt-8 text-center">
-          <Link href="/" className="flex items-center justify-center gap-2 text-white/40 hover:text-white/60 transition-colors text-sm">
+          <Link href="/" className="flex items-center justify-center gap-2 text-[#958ea0] hover:text-white/60 transition-colors text-sm">
             <ArrowRight className="w-4 h-4 rotate-180" />
             Voltar ao Início
           </Link>
         </div>
       </motion.div>
+
+      <footer className="fixed bottom-0 w-full pb-8 text-center z-10">
+        <p className="text-[10px] text-[#958ea0]/60 uppercase tracking-widest">
+          Protocolo Seguro QuizVerse © 2024
+        </p>
+      </footer>
     </main>
   );
 }
