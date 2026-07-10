@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Medal, Target, Play, Flag } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ConfirmModal from "@/components/ConfirmModal";
@@ -25,11 +25,11 @@ const statusLabels: Record<string, string> = {
   FINISHED: "Finalizado",
 };
 
-const statusColors: Record<string, string> = {
-  LOBBY: "text-blue-400",
-  QUALIFYING: "text-yellow-400",
-  FINAL: "text-orange-400",
-  FINISHED: "text-green-400",
+const statusConfig: Record<string, { bg: string; text: string; dot: string }> = {
+  LOBBY: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", dot: "bg-[#d0bcff]" },
+  QUALIFYING: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", dot: "bg-[#FFD700]" },
+  FINAL: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", dot: "bg-[#FFB0CD]" },
+  FINISHED: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", dot: "bg-[#4CAF50]" },
 };
 
 export default function TournamentsPage() {
@@ -37,7 +37,6 @@ export default function TournamentsPage() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
   const [tournaments, setTournaments] = useState<any[]>([]);
-  const [activeTournaments, setActiveTournaments] = useState<any[]>([]);
   const [createMode, setCreateMode] = useState(false);
   const [joinMode, setJoinMode] = useState(false);
   const [tournamentName, setTournamentName] = useState("");
@@ -78,7 +77,6 @@ export default function TournamentsPage() {
       if (error) throw error;
       const allData = data || [];
       setTournaments(allData);
-      setActiveTournaments(allData.filter(t => t.status === 'LOBBY'));
     } catch (err) {
       console.error("Erro ao carregar torneios:", err);
       setError("Erro ao carregar torneios");
@@ -168,252 +166,286 @@ export default function TournamentsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-violet-400" />
+      <div className="min-h-screen flex items-center justify-center bg-[#121223]">
+        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
       </div>
     );
   }
 
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
-      {/* Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-amber-600/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-orange-600/10 blur-[150px]" />
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[#121223]">
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#FFD700]/5 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/5 blur-[150px]" />
       </div>
 
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-950/50 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/profile" className="text-xl font-bold text-white/60 hover:text-white transition-colors">
-            ←
+          <Link href="/profile" className="flex items-center gap-2 text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors">
+            <ArrowLeft className="w-5 h-5" />
           </Link>
-          <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Torneios</h1>
+          <h1 className="text-lg font-bold text-[#e3e0f9]">Torneios</h1>
           <div className="w-10" />
         </div>
       </header>
 
       <div className="relative z-10 max-w-4xl mx-auto p-6 space-y-6">
-        {/* My Tournament Card */}
-        {myTournament && (
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="glass-panel p-6 border-2 border-amber-500/30"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Trophy className="w-5 h-5 text-amber-400" />
-                  <h2 className="text-2xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>{myTournament.name}</h2>
+        <AnimatePresence mode="wait">
+          {myTournament && (
+            <motion.section 
+              key="my-tournament"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-[#FFD700]/30 p-6"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Trophy className="w-5 h-5 text-[#FFD700]" />
+                    <h2 className="text-2xl font-bold text-[#e3e0f9]">{myTournament.name}</h2>
+                  </div>
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold ${statusConfig[myTournament.status]?.bg} ${statusConfig[myTournament.status]?.text}`}>
+                    <div className={`w-2 h-2 rounded-full ${statusConfig[myTournament.status]?.dot}`} />
+                    {statusLabels[myTournament.status]}
+                  </div>
                 </div>
-                <p className={`text-sm ${statusColors[myTournament.status]}`}>
-                  {statusLabels[myTournament.status]}
-                </p>
               </div>
-            </div>
 
-            {/* Share Code */}
-            <div className="bg-white/5 rounded-xl p-4">
-              <div className="text-xs text-white/40 uppercase mb-2">Código do Torneio</div>
-              <div className="flex items-center gap-3">
-                <div className="flex-1 font-mono text-3xl tracking-widest text-amber-400">
-                  {myTournament.pin}
+              <div className="bg-white/5 rounded-xl p-4 mb-4">
+                <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2">Código do Torneio</div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 font-mono text-3xl tracking-widest text-[#FFD700]">
+                    {myTournament.pin}
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => copyToClipboard(myTournament.pin)}
+                    className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                  >
+                    {copied ? (
+                      <Check className="w-5 h-5 text-[#4CAF50]" />
+                    ) : (
+                      <Copy className="w-5 h-5 text-[#e3e0f9]/60" />
+                    )}
+                  </motion.button>
                 </div>
-                <button
-                  onClick={() => copyToClipboard(myTournament.pin)}
-                  className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                <div className="bg-white/5 rounded-xl p-3 text-center">
+                  <Users className="w-5 h-5 mx-auto mb-1 text-[#d0bcff]" />
+                  <div className="text-[#e3e0f9] font-bold">{myTournament.tournament_teams?.length || 0}/{myTournament.max_teams}</div>
+                  <div className="text-[#e3e0f9]/40 text-xs">Equipas</div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-3 text-center">
+                  <Target className="w-5 h-5 mx-auto mb-1 text-[#FFB0CD]" />
+                  <div className="text-[#e3e0f9] font-bold">{myTournament.settings?.questions || 10}</div>
+                  <div className="text-[#e3e0f9]/40 text-xs">Perguntas</div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-3 text-center">
+                  <Clock className="w-5 h-5 mx-auto mb-1 text-[#FFD700]" />
+                  <div className="text-[#e3e0f9] font-bold">{myTournament.settings?.timer || 20}s</div>
+                  <div className="text-[#e3e0f9]/40 text-xs">Tempo</div>
+                </div>
+              </div>
+
+              {myTournament.status === 'LOBBY' && (
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setStartConfirmOpen(true)}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#FFD700] text-[#121223] rounded-xl font-bold"
                 >
-                  {copied ? (
-                    <span className="text-green-400">Copiado!</span>
-                  ) : (
-                    <span className="text-white/60">Copiar</span>
-                  )}
-                </button>
-              </div>
-            </div>
+                  <Play className="w-5 h-5" />
+                  Iniciar Torneio
+                </motion.button>
+              )}
+            </motion.section>
+          )}
 
-            {/* Tournament Info */}
-            <div className="grid grid-cols-3 gap-4 mt-4">
-              <div className="bg-white/5 rounded-lg p-3 text-center">
-                <Users className="w-5 h-5 mx-auto mb-1 text-violet-400" />
-                <div className="text-white text-sm">{myTournament.tournament_teams?.length || 0}/{myTournament.max_teams}</div>
-                <div className="text-white/40 text-xs">Equipas</div>
-              </div>
-              <div className="bg-white/5 rounded-lg p-3 text-center">
-                <Target className="w-5 h-5 mx-auto mb-1 text-pink-400" />
-                <div className="text-white text-sm">{myTournament.settings?.questions || 10}</div>
-                <div className="text-white/40 text-xs">Perguntas</div>
-              </div>
-              <div className="bg-white/5 rounded-lg p-3 text-center">
-                <Clock className="w-5 h-5 mx-auto mb-1 text-amber-400" />
-                <div className="text-white text-sm">{myTournament.settings?.timer || 20}s</div>
-                <div className="text-white/40 text-xs">Tempo</div>
-              </div>
-            </div>
-
-{myTournament.status === 'LOBBY' && (
-              <button
-                onClick={() => setStartConfirmOpen(true)}
-                className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl font-bold text-white"
+          {!myTournament && (
+            <motion.div
+              key="actions"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => { setCreateMode(true); setJoinMode(false); }}
+                className="bg-[#1e1e30]/80 backdrop-blur-xl border border-white/10 p-6 text-center rounded-2xl hover:border-[#FFD700]/30 transition-all"
               >
-                <Play className="w-5 h-5" />
-                Iniciar Torneio
-              </button>
-            )}
-          </motion.section>
-        )}
-
-        {/* Create/Join Buttons */}
-        {!myTournament && (
-          <div className="grid grid-cols-2 gap-4">
-            <button
-              onClick={() => { setCreateMode(true); setJoinMode(false); }}
-              className="glass-panel p-6 text-center hover:border-amber-400/50 transition-all"
-            >
-              <Plus className="w-8 h-8 mx-auto mb-3 text-amber-400" />
-              <div className="font-bold text-white">Criar Torneio</div>
-              <div className="text-white/50 text-sm">Começar um campeonato</div>
-            </button>
-            <button
-              onClick={() => { setJoinMode(true); setCreateMode(false); }}
-              className="glass-panel p-6 text-center hover:border-orange-400/50 transition-all"
-            >
-              <Flag className="w-8 h-8 mx-auto mb-3 text-orange-400" />
-              <div className="font-bold text-white">Entrar em Torneio</div>
-              <div className="text-white/50 text-sm">Entrar com código</div>
-            </button>
-          </div>
-        )}
-
-        {/* Create Tournament Form */}
-        {createMode && !myTournament && (
-          <motion.section 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="glass-panel p-6"
-          >
-            <h3 className="text-lg font-bold text-white mb-4">Novo Torneio</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="text-xs text-white/40 uppercase mb-2 ml-1 block">Nome do Torneio</label>
-                <input
-                  type="text"
-                  placeholder="Campeonato Quizverse"
-                  value={tournamentName}
-                  onChange={(e) => setTournamentName(e.target.value)}
-                  className="w-full glass-input"
-                />
-              </div>
-
-              {error && (
-                <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
-                  {error}
+                <div className="w-12 h-12 rounded-xl bg-[#FFD700]/15 flex items-center justify-center mx-auto mb-3">
+                  <Plus className="w-6 h-6 text-[#FFD700]" />
                 </div>
-              )}
-
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setCreateMode(false)}
-                  className="flex-1 py-4 bg-white/5 rounded-xl text-white/60"
-                >
-                  Cancelar
-                </button>
-                <button
-                  onClick={createTournament}
-                  disabled={saving || !tournamentName}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl font-bold text-white disabled:opacity-50"
-                >
-                  {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Criar"}
-                </button>
-              </div>
-            </div>
-          </motion.section>
-        )}
-
-        {/* Join Tournament Form */}
-        {joinMode && !myTournament && (
-          <motion.section 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="glass-panel p-6"
-          >
-            <h3 className="text-lg font-bold text-white mb-4">Entrar em Torneio</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="text-xs text-white/40 uppercase mb-2 ml-1 block">Código do Torneio</label>
-                <input
-                  type="text"
-                  placeholder="ABCD12"
-                  value={tournamentPin}
-                  onChange={(e) => setTournamentPin(e.target.value.toUpperCase())}
-                  className="w-full glass-input font-mono text-2xl tracking-widest text-center"
-                  maxLength={6}
-                />
-              </div>
-
-              {error && (
-                <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
-                  {error}
+                <div className="font-bold text-[#e3e0f9]">Criar Torneio</div>
+                <div className="text-[#e3e0f9]/50 text-sm">Começar um campeonato</div>
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => { setJoinMode(true); setCreateMode(false); }}
+                className="bg-[#1e1e30]/80 backdrop-blur-xl border border-white/10 p-6 text-center rounded-2xl hover:border-[#FFB0CD]/30 transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#FFB0CD]/15 flex items-center justify-center mx-auto mb-3">
+                  <Flag className="w-6 h-6 text-[#FFB0CD]" />
                 </div>
-              )}
+                <div className="font-bold text-[#e3e0f9]">Entrar em Torneio</div>
+                <div className="text-[#e3e0f9]/50 text-sm">Entrar com código</div>
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setJoinMode(false)}
-                  className="flex-1 py-4 bg-white/5 rounded-xl text-white/60"
-                >
-                  Cancelar
-                </button>
-                <button
-                  onClick={joinTournament}
-                  disabled={saving || !tournamentPin}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl font-bold text-white disabled:opacity-50"
-                >
-                  {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
-                </button>
+        <AnimatePresence>
+          {createMode && !myTournament && (
+            <motion.section 
+              key="create-form"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6"
+            >
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Novo Torneio</h3>
+              
+              <div className="space-y-4">
+                <div>
+                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">Nome do Torneio</label>
+                  <input
+                    type="text"
+                    placeholder="Campeonato QuizVerse"
+                    value={tournamentName}
+                    onChange={(e) => setTournamentName(e.target.value)}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#d0bcff]/50 transition-all"
+                  />
+                </div>
+
+                {error && (
+                  <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
+                    {error}
+                  </div>
+                )}
+
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setCreateMode(false)}
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                  >
+                    Cancelar
+                  </button>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={createTournament}
+                    disabled={saving || !tournamentName}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#FFD700] text-[#121223] rounded-xl font-bold disabled:opacity-50"
+                  >
+                    {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Criar"}
+                  </motion.button>
+                </div>
               </div>
-            </div>
-          </motion.section>
-        )}
+            </motion.section>
+          )}
 
-        {/* Active Tournaments List */}
+          {joinMode && !myTournament && (
+            <motion.section 
+              key="join-form"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6"
+            >
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Entrar em Torneio</h3>
+              
+              <div className="space-y-4">
+                <div>
+                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">Código do Torneio</label>
+                  <input
+                    type="text"
+                    placeholder="ABCD12"
+                    value={tournamentPin}
+                    onChange={(e) => setTournamentPin(e.target.value.toUpperCase())}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-[#e3e0f9] text-center font-mono text-2xl tracking-widest placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#FFB0CD]/50 transition-all"
+                    maxLength={6}
+                  />
+                </div>
+
+                {error && (
+                  <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
+                    {error}
+                  </div>
+                )}
+
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setJoinMode(false)}
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                  >
+                    Cancelar
+                  </button>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={joinTournament}
+                    disabled={saving || !tournamentPin}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#FFB0CD] text-[#640039] rounded-xl font-bold disabled:opacity-50"
+                  >
+                    {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
+
         {tournaments.length > 0 && !myTournament && (
           <section>
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-amber-400" />
+            <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-[#FFD700]" />
               Torneios Ativos
             </h3>
             <div className="space-y-3">
               {tournaments.map((tournament) => (
-                <div 
+                <motion.div 
                   key={tournament.id}
-                  className="glass-panel p-4 flex items-center justify-between"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-4 flex items-center justify-between hover:border-white/20 transition-colors"
                 >
                   <div>
-                    <div className="font-bold text-white">{tournament.name}</div>
-                    <div className="text-white/40 text-sm flex items-center gap-2">
-                      <span className={statusColors[tournament.status]}>{statusLabels[tournament.status]}</span>
+                    <div className="font-bold text-[#e3e0f9]">{tournament.name}</div>
+                    <div className="text-[#e3e0f9]/40 text-sm flex items-center gap-2">
+                      <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs ${statusConfig[tournament.status]?.bg} ${statusConfig[tournament.status]?.text}`}>
+                        <div className={`w-1.5 h-1.5 rounded-full ${statusConfig[tournament.status]?.dot}`} />
+                        {statusLabels[tournament.status]}
+                      </div>
                       <span>•</span>
                       <span>{tournament.tournament_teams?.length || 0}/{tournament.max_teams} equipas</span>
                     </div>
                   </div>
-                  <div className="font-mono text-amber-400">{tournament.pin}</div>
-                </div>
+                  <div className="font-mono text-[#FFD700] font-bold">{tournament.pin}</div>
+                </motion.div>
               ))}
             </div>
           </section>
         )}
 
-        {/* Empty State */}
         {tournaments.length === 0 && !myTournament && !createMode && !joinMode && (
-          <div className="glass-panel p-8 text-center">
-            <Trophy className="w-16 h-16 mx-auto mb-4 text-white/20" />
-            <h3 className="text-xl font-bold text-white mb-2">Sem Torneios Ativos</h3>
-            <p className="text-white/50 mb-6">Cria o primeiro torneo ou entra num com código</p>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center mx-auto mb-4">
+              <Trophy className="w-8 h-8 text-[#FFD700]/40" />
+            </div>
+            <h3 className="text-xl font-bold text-[#e3e0f9] mb-2">Sem Torneios Ativos</h3>
+            <p className="text-[#e3e0f9]/50 mb-6">Cria o primeiro torneo ou entra num com código</p>
+          </motion.div>
         )}
       </div>
 
