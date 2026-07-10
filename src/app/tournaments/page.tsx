@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ConfirmModal from "@/components/ConfirmModal";
@@ -16,6 +16,65 @@ function generatePin(length: number = 6): string {
     pin += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return pin;
+}
+
+// Animated tournament card with hover effects
+function TournamentCard({ tournament, onClick }: { tournament: any; onClick?: () => void }) {
+  const teamCount = tournament.tournament_teams?.length || 0;
+  const fillPercentage = (teamCount / tournament.max_teams) * 100;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onClick}
+      className="glass-panel rounded-2xl border border-white/10 p-5 hover:border-white/20 transition-all cursor-pointer group"
+    >
+      <div className="flex items-start justify-between mb-3">
+        <div className="flex-1">
+          <div className="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">
+            {tournament.name}
+          </div>
+          <div className="flex items-center gap-2 mt-1">
+            <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${statusConfig[tournament.status]?.bg} ${statusConfig[tournament.status]?.text}`}>
+              <motion.div
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className={`w-2 h-2 rounded-full ${statusConfig[tournament.status]?.dot}`}
+              />
+              {statusLabels[tournament.status]}
+            </div>
+          </div>
+        </div>
+        <div className="font-mono text-xl font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-lg">
+          {tournament.pin}
+        </div>
+      </div>
+
+      {/* Team capacity bar */}
+      <div className="mt-4">
+        <div className="flex justify-between text-xs text-on-surface-variant/60 mb-1.5">
+          <span className="flex items-center gap-1">
+            <Users className="w-3 h-3" />
+            Equipas
+          </span>
+          <span className="font-bold text-on-surface">
+            {teamCount}/{tournament.max_teams}
+          </span>
+        </div>
+        <div className="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${fillPercentage}%` }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="h-full rounded-full bg-gradient-to-r from-primary to-secondary"
+          />
+        </div>
+      </div>
+    </motion.div>
+  );
 }
 
 const statusLabels: Record<string, string> = {
@@ -409,26 +468,11 @@ export default function TournamentsPage() {
               Torneios Ativos
             </h3>
             <div className="space-y-3">
-              {tournaments.map((tournament) => (
-                <motion.div 
+              {tournaments.map((tournament, i) => (
+                <TournamentCard
                   key={tournament.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-4 flex items-center justify-between hover:border-white/20 transition-colors"
-                >
-                  <div>
-                    <div className="font-bold text-[#e3e0f9]">{tournament.name}</div>
-                    <div className="text-[#e3e0f9]/40 text-sm flex items-center gap-2">
-                      <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs ${statusConfig[tournament.status]?.bg} ${statusConfig[tournament.status]?.text}`}>
-                        <div className={`w-1.5 h-1.5 rounded-full ${statusConfig[tournament.status]?.dot}`} />
-                        {statusLabels[tournament.status]}
-                      </div>
-                      <span>•</span>
-                      <span>{tournament.tournament_teams?.length || 0}/{tournament.max_teams} equipas</span>
-                    </div>
-                  </div>
-                  <div className="font-mono text-[#FFD700] font-bold">{tournament.pin}</div>
-                </motion.div>
+                  tournament={tournament}
+                />
               ))}
             </div>
           </section>

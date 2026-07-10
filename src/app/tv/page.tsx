@@ -73,6 +73,26 @@ export default function TVHost() {
     triggerReveal,
   } = useQuestionFlowTimer(timerDuration, currentQuestions);
 
+  // Auto-skip: advance to REVEAL when all players have answered
+  useEffect(() => {
+    if (status !== "QUESTION") return;
+    const currentQ = currentQuestions[currentQuestionIndex - 1];
+    if (!currentQ?.id) return;
+
+    const elapsedMs = Date.now() - questionStartTimeRef.current;
+    if (elapsedMs < 3000) return;
+
+    const currentQuestionId = String(currentQ.id);
+    const validAnswers = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
+    const answeredPlayerIds = new Set(validAnswers.map(a => String(a.player_id)));
+    const allPlayerIds = new Set(players.map(p => String(p.id)));
+
+    if (allPlayerIds.size > 0 && answeredPlayerIds.size >= allPlayerIds.size) {
+      console.log("🎯 Todos responderam! Avançando para REVEAL...");
+      triggerReveal();
+    }
+  }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, questionStartTimeRef, triggerReveal]);
+
   const [reportOpen, setReportOpen] = useState(false);
   const [memoryConfirmOpen, setMemoryConfirmOpen] = useState(false);
 
