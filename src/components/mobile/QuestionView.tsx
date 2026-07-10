@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Loader2, Clock, Flag, Lightbulb, Image as ImageIcon } from "lucide-react";
+import { Clock, Flag, Lightbulb, Image as ImageIcon } from "lucide-react";
 import StreakBadge from "@/components/mobile/StreakBadge";
 
 interface QuestionViewProps {
@@ -16,10 +16,10 @@ interface QuestionViewProps {
 }
 
 const optionColors = [
-  "bg-red-500 active:bg-red-600 border-red-700",
-  "bg-blue-500 active:bg-blue-600 border-blue-700",
-  "bg-yellow-500 active:bg-yellow-600 border-yellow-700",
-  "bg-green-500 active:bg-green-600 border-green-700",
+  "bg-[#FF6B6B] active:bg-[#FF6B6B]/80 border-b-[#CC4444]",
+  "bg-[#4A90D9] active:bg-[#4A90D9]/80 border-b-[#3A70B0]",
+  "bg-[#FFB0CD] active:bg-[#FFB0CD]/80 border-b-[#DD8AAA]",
+  "bg-[#4CAF50] active:bg-[#4CAF50]/80 border-b-[#3A8A3E]",
 ];
 const optionLetters = ["A", "B", "C", "D"];
 
@@ -41,24 +41,24 @@ export default function QuestionView({
     questionData?.category?.toLowerCase().includes("bandeira") || flagCode;
 
   return (
-    <main className="min-h-screen flex flex-col bg-slate-950">
+    <main className="min-h-screen flex flex-col bg-[#121223]">
       {/* Timer bar */}
-      <div className="w-full h-2 bg-slate-800">
+      <div className="w-full h-2 bg-[#1e1e30]">
         <motion.div
           animate={{ width: `${(timeLeft / timerDuration) * 100}%` }}
           transition={{ ease: "linear", duration: 1 }}
-          className={`h-full ${timeLeft <= 5 ? "bg-red-500" : "bg-pink-500"}`}
+          className={`h-full ${timeLeft <= 5 ? "bg-[#FF6B6B]" : "bg-[#FFB0CD]"}`}
         />
       </div>
 
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3">
-        <span className="text-xs font-bold text-white/40 uppercase tracking-widest">
+        <span className="text-[10px] font-bold text-[#e3e0f9]/40 uppercase tracking-widest">
           {questionData.category?.replace(/_/g, " ")}
         </span>
         <div className="flex items-center gap-2">
-          <Clock className={`w-4 h-4 ${timeLeft <= 5 ? "text-red-400 animate-pulse" : "text-white/40"}`} />
-          <span className={`text-lg font-black font-mono ${timeLeft <= 5 ? "text-red-400" : "text-white"}`}>
+          <Clock className={`w-4 h-4 ${timeLeft <= 5 ? "text-[#FF6B6B] animate-pulse" : "text-[#e3e0f9]/40"}`} />
+          <span className={`text-lg font-black font-mono ${timeLeft <= 5 ? "text-[#FF6B6B]" : "text-[#e3e0f9]"}`}>
             {timeLeft}
           </span>
         </div>
@@ -81,13 +81,13 @@ export default function QuestionView({
 
       {/* Question text */}
       <div className="px-4 py-3 text-center">
-        <h2 className="text-xl font-black text-white leading-tight">{questionData.text}</h2>
+        <h2 className="text-xl font-black text-[#e3e0f9] leading-tight">{questionData.text}</h2>
       </div>
 
       {/* Hint button */}
       {hint && !hasAnswered && (
         <div className="flex justify-center mb-2">
-          <button className="flex items-center gap-2 px-4 py-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 rounded-full text-sm transition-colors border border-amber-500/20">
+          <button className="flex items-center gap-2 px-4 py-2 bg-[#FFD700]/10 hover:bg-[#FFD700]/20 text-[#FFD700] rounded-full text-sm transition-colors border border-[#FFD700]/20">
             <Lightbulb className="w-4 h-4" />
             Ver Dica
           </button>
@@ -104,7 +104,7 @@ export default function QuestionView({
             whileTap={!hasAnswered ? { scale: 0.97 } : {}}
             className={`
               ${optionColors[idx]}
-              ${selectedOption === idx ? "ring-4 ring-white scale-[0.97]" : ""}
+              ${selectedOption === idx ? "ring-4 ring-[#e3e0f9] scale-[0.97]" : ""}
               ${hasAnswered ? "opacity-50 cursor-not-allowed" : ""}
               relative overflow-hidden
               p-4 rounded-2xl border-b-4 shadow-lg
@@ -124,8 +124,8 @@ export default function QuestionView({
 
       {/* Waiting indicator */}
       {hasAnswered && (
-        <div className="px-4 pb-4 flex items-center justify-center gap-2 text-white/50">
-          <Loader2 className="w-5 h-5 animate-spin" />
+        <div className="px-4 pb-4 flex items-center justify-center gap-2 text-[#e3e0f9]/50">
+          <div className="w-5 h-5 border-2 border-[#e3e0f9]/30 border-t-[#d0bcff] rounded-full animate-spin" />
           <span className="text-sm">Aguarda...</span>
         </div>
       )}
@@ -133,7 +133,7 @@ export default function QuestionView({
       {/* Report button */}
       <button
         onClick={onReport}
-        className="fixed bottom-4 right-4 flex items-center gap-1 px-3 py-2 bg-white/10 hover:bg-white/20 text-white/50 rounded-full text-xs transition-colors z-40"
+        className="fixed bottom-4 right-4 flex items-center gap-1 px-3 py-2 bg-white/10 hover:bg-white/20 text-[#e3e0f9]/50 rounded-full text-xs transition-colors z-40"
       >
         <Flag className="w-3 h-3" />
         Reportar
