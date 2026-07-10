@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal } from "lucide-react";
+import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
@@ -133,9 +133,14 @@ export default function ProfilePage() {
             ← Voltar
           </Link>
           <h1 className="text-lg font-bold text-[#e3e0f9]">Perfil</h1>
-          <button onClick={handleLogout} className="text-[#e3e0f9]/60 hover:text-[#FFB0CD] transition-colors">
-            <LogOut className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-3">
+            <Link href="/stats" className="text-[#e3e0f9]/60 hover:text-[#d0bcff] transition-colors">
+              <BarChart3 className="w-5 h-5" />
+            </Link>
+            <button onClick={handleLogout} className="text-[#e3e0f9]/60 hover:text-[#FFB0CD] transition-colors">
+              <LogOut className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </header>
 

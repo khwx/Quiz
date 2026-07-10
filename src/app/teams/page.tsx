@@ -1,10 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Users, Plus, Copy, Check, QrCode, Trophy, Crown, Loader2, UserPlus } from "lucide-react";
+import {
+  Users,
+  Plus,
+  Copy,
+  Check,
+  QrCode,
+  Trophy,
+  Crown,
+  Loader2,
+  UserPlus,
+  ChevronLeft,
+  Shield,
+  Zap,
+} from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
@@ -26,7 +39,6 @@ export default function TeamsPage() {
   const [joinMode, setJoinMode] = useState(false);
   const [teamName, setTeamName] = useState("");
   const [teamPin, setTeamPin] = useState("");
-  const [playerPin, setPlayerPin] = useState("");
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -38,13 +50,15 @@ export default function TeamsPage() {
 
   const checkUser = async () => {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
+      const {
+        data: { user: currentUser },
+      } = await supabase.auth.getUser();
+      if (!currentUser) {
         router.push("/login");
         return;
       }
-      setUser(user);
-      await loadTeams();
+      setUser(currentUser);
+      await loadTeams(currentUser.id);
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -52,7 +66,7 @@ export default function TeamsPage() {
     }
   };
 
-  const loadTeams = async () => {
+  const loadTeams = async (userId?: string) => {
     try {
       const { data, error } = await supabase
         .from("teams")
@@ -61,6 +75,13 @@ export default function TeamsPage() {
         .order("created_at", { ascending: false });
       if (error) throw error;
       setTeams(data || []);
+
+      if (userId) {
+        const my = data?.find((t: any) =>
+          t.team_members?.some((m: any) => m.user_id === userId)
+        );
+        setMyTeam(my || null);
+      }
     } catch (err) {
       console.error("Erro ao carregar equipas:", err);
       setError("Erro ao carregar equipas");
@@ -77,7 +98,7 @@ export default function TeamsPage() {
 
     try {
       const pin = generatePin();
-      
+
       const { data: team, error: teamError } = await supabase
         .from("teams")
         .insert({
@@ -103,7 +124,7 @@ export default function TeamsPage() {
       setMyTeam(team);
       setTeamName("");
       setCreateMode(false);
-      await loadTeams();
+      await loadTeams(user.id);
     } catch (err: any) {
       setError(err.message || "Erro ao criar equipa");
     } finally {
@@ -133,7 +154,10 @@ export default function TeamsPage() {
         return;
       }
 
-      if (team.team_members && team.team_members[0]?.count >= team.max_members) {
+      if (
+        team.team_members &&
+        team.team_members[0]?.count >= team.max_members
+      ) {
         setError("Equipa cheia");
         setSaving(false);
         return;
@@ -152,7 +176,7 @@ export default function TeamsPage() {
       setMyTeam(team);
       setTeamPin("");
       setJoinMode(false);
-      await loadTeams();
+      await loadTeams(user.id);
     } catch (err: any) {
       setError(err.message || "Erro ao entrar na equipa");
     } finally {
@@ -169,7 +193,7 @@ export default function TeamsPage() {
         .eq("user_id", user.id);
 
       setMyTeam(null);
-      await loadTeams();
+      await loadTeams(user.id);
     } catch (error) {
       console.error("Error leaving team:", error);
     }
@@ -183,229 +207,274 @@ export default function TeamsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-violet-400" />
+      <div className="min-h-screen flex items-center justify-center bg-[#121223]">
+        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
       </div>
     );
   }
 
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
-      {/* Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-violet-600/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-pink-600/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
       </div>
 
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-950/50 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/profile" className="text-xl font-bold text-white/60 hover:text-white transition-colors">
-            ←
+          <Link href="/profile" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+            <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Equipas</h1>
+          <h1 className="text-lg font-bold text-[#e3e0f9]">Equipas</h1>
           <div className="w-10" />
         </div>
       </header>
 
       <div className="relative z-10 max-w-4xl mx-auto p-6 space-y-6">
-        {/* My Team Card */}
         {myTeam && (
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-panel p-6 border-2 border-violet-500/30"
+            className="glass-panel p-6 border-2 border-primary/30"
           >
             <div className="flex justify-between items-start mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Crown className="w-5 h-5 text-yellow-400" />
-                  <h2 className="text-2xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>{myTeam.name}</h2>
+                  <Crown className="w-5 h-5 text-[#FFD700]" />
+                  <h2 className="text-2xl font-bold text-[#e3e0f9]">{myTeam.name}</h2>
                 </div>
-                <p className="text-white/50 text-sm">A tua equipa</p>
+                <p className="text-[#e3e0f9]/50 text-sm">A tua equipa</p>
               </div>
-              <button 
+              <button
                 onClick={() => leaveTeam(myTeam.id)}
-                className="text-pink-400 hover:text-pink-300 text-sm"
+                className="text-[#FFB0CD] hover:text-[#FFB0CD]/80 text-sm"
               >
                 Sair
               </button>
             </div>
 
-            {/* Share Code */}
             <div className="bg-white/5 rounded-xl p-4">
-              <div className="text-xs text-white/40 uppercase mb-2">Código para amigos</div>
+              <div className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 tracking-wider font-bold">
+                Código para amigos
+              </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 font-mono text-3xl tracking-widest text-violet-400">
+                <div className="flex-1 font-mono text-3xl tracking-widest text-[#d0bcff]">
                   {myTeam.pin}
                 </div>
-                <button
+                <motion.button
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => copyToClipboard(myTeam.pin)}
                   className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                 >
-                  {copied ? <Check className="w-5 h-5 text-green-400" /> : <Copy className="w-5 h-5" />}
-                </button>
+                  {copied ? (
+                    <Check className="w-5 h-5 text-[#4CAF50]" />
+                  ) : (
+                    <Copy className="w-5 h-5 text-[#e3e0f9]" />
+                  )}
+                </motion.button>
               </div>
             </div>
 
-            {/* Members */}
             <div className="mt-4">
-              <div className="text-xs text-white/40 uppercase mb-2">Membros</div>
+              <div className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 tracking-wider font-bold">
+                Membros
+              </div>
               <div className="flex flex-wrap gap-2">
-                <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg">
-                  <UserPlus className="w-4 h-4 text-violet-400" />
-                  <span className="text-white text-sm">Tu</span>
+                <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg border border-white/10">
+                  <UserPlus className="w-4 h-4 text-[#d0bcff]" />
+                  <span className="text-[#e3e0f9] text-sm">Tu</span>
                 </div>
               </div>
             </div>
 
-            <button
+            <motion.button
+              whileTap={{ scale: 0.98 }}
               onClick={() => router.push(`/host?team=${myTeam.id}`)}
-              className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-white"
+              className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-xl font-bold text-[#3c0091] shadow-[0_0_20px_rgba(208,188,255,0.3)]"
             >
               <Trophy className="w-5 h-5" />
               Criar Jogo em Equipa
-            </button>
+            </motion.button>
           </motion.section>
         )}
 
-        {/* Create/Join Buttons */}
         {!myTeam && (
           <div className="grid grid-cols-2 gap-4">
-            <button
-              onClick={() => { setCreateMode(true); setJoinMode(false); }}
-              className="glass-panel p-6 text-center hover:border-violet-400/50 transition-all"
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                setCreateMode(true);
+                setJoinMode(false);
+              }}
+              className="glass-panel p-6 text-center hover:border-[#d0bcff]/50 transition-all"
             >
-              <Plus className="w-8 h-8 mx-auto mb-3 text-violet-400" />
-              <div className="font-bold text-white">Criar Equipa</div>
-              <div className="text-white/50 text-sm">Começar uma nova equipa</div>
-            </button>
-            <button
-              onClick={() => { setJoinMode(true); setCreateMode(false); }}
-              className="glass-panel p-6 text-center hover:border-pink-400/50 transition-all"
+              <div className="w-12 h-12 rounded-xl bg-[#d0bcff]/20 flex items-center justify-center mx-auto mb-3">
+                <Plus className="w-6 h-6 text-[#d0bcff]" />
+              </div>
+              <div className="font-bold text-[#e3e0f9]">Criar Equipa</div>
+              <div className="text-[#e3e0f9]/50 text-sm mt-1">
+                Começar uma nova equipa
+              </div>
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                setJoinMode(true);
+                setCreateMode(false);
+              }}
+              className="glass-panel p-6 text-center hover:border-[#FFB0CD]/50 transition-all"
             >
-              <QrCode className="w-8 h-8 mx-auto mb-3 text-pink-400" />
-              <div className="font-bold text-white">Entrar em Equipa</div>
-              <div className="text-white/50 text-sm">Entrar com código</div>
-            </button>
+              <div className="w-12 h-12 rounded-xl bg-[#FFB0CD]/20 flex items-center justify-center mx-auto mb-3">
+                <QrCode className="w-6 h-6 text-[#FFB0CD]" />
+              </div>
+              <div className="font-bold text-[#e3e0f9]">Entrar em Equipa</div>
+              <div className="text-[#e3e0f9]/50 text-sm mt-1">Entrar com código</div>
+            </motion.button>
           </div>
         )}
 
-        {/* Create Team Form */}
-        {createMode && !myTeam && (
-          <motion.section 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="glass-panel p-6"
-          >
-            <h3 className="text-lg font-bold text-white mb-4">Nova Equipa</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="text-xs text-white/40 uppercase mb-2 ml-1 block">Nome da Equipa</label>
-                <input
-                  type="text"
-                  placeholder="Os QuizMasters"
-                  value={teamName}
-                  onChange={(e) => setTeamName(e.target.value)}
-                  className="w-full glass-input"
-                />
-              </div>
+        <AnimatePresence>
+          {createMode && !myTeam && (
+            <motion.section
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="glass-panel p-6 overflow-hidden"
+            >
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Nova Equipa</h3>
 
-              {error && (
-                <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
-                  {error}
+              <div className="space-y-4">
+                <div>
+                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 ml-1 block tracking-wider font-bold">
+                    Nome da Equipa
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Os QuizMasters"
+                    value={teamName}
+                    onChange={(e) => setTeamName(e.target.value)}
+                    className="w-full glass-input"
+                  />
                 </div>
-              )}
 
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setCreateMode(false)}
-                  className="flex-1 py-4 bg-white/5 rounded-xl text-white/60"
-                >
-                  Cancelar
-                </button>
-                <button
-                  onClick={createTeam}
-                  disabled={saving || !teamName}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl font-bold text-white disabled:opacity-50"
-                >
-                  {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Criar"}
-                </button>
-              </div>
-            </div>
-          </motion.section>
-        )}
+                {error && (
+                  <div className="p-3 bg-[#FF6B6B]/20 border border-[#FF6B6B]/30 rounded-lg text-[#FF6B6B] text-sm">
+                    {error}
+                  </div>
+                )}
 
-        {/* Join Team Form */}
-        {joinMode && !myTeam && (
-          <motion.section 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="glass-panel p-6"
-          >
-            <h3 className="text-lg font-bold text-white mb-4">Entrar em Equipa</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="text-xs text-white/40 uppercase mb-2 ml-1 block">Código da Equipa</label>
-                <input
-                  type="text"
-                  placeholder="ABCD12"
-                  value={teamPin}
-                  onChange={(e) => setTeamPin(e.target.value.toUpperCase())}
-                  className="w-full glass-input font-mono text-2xl tracking-widest text-center"
-                  maxLength={6}
-                />
-              </div>
-
-              {error && (
-                <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
-                  {error}
+                <div className="flex gap-3">
+                  <motion.button
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setCreateMode(false)}
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 border border-white/10"
+                  >
+                    Cancelar
+                  </motion.button>
+                  <motion.button
+                    whileTap={{ scale: 0.98 }}
+                    onClick={createTeam}
+                    disabled={saving || !teamName}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-xl font-bold text-[#3c0091] disabled:opacity-50"
+                  >
+                    {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Criar"}
+                  </motion.button>
                 </div>
-              )}
-
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setJoinMode(false)}
-                  className="flex-1 py-4 bg-white/5 rounded-xl text-white/60"
-                >
-                  Cancelar
-                </button>
-                <button
-                  onClick={joinTeam}
-                  disabled={saving || !teamPin}
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-pink-600 to-rose-600 rounded-xl font-bold text-white disabled:opacity-50"
-                >
-                  {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
-                </button>
               </div>
-            </div>
-          </motion.section>
-        )}
+            </motion.section>
+          )}
 
-        {/* Active Teams List */}
+          {joinMode && !myTeam && (
+            <motion.section
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="glass-panel p-6 overflow-hidden"
+            >
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Entrar em Equipa</h3>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 ml-1 block tracking-wider font-bold">
+                    Código da Equipa
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ABCD12"
+                    value={teamPin}
+                    onChange={(e) => setTeamPin(e.target.value.toUpperCase())}
+                    className="w-full glass-input font-mono text-2xl tracking-widest text-center"
+                    maxLength={6}
+                  />
+                </div>
+
+                {error && (
+                  <div className="p-3 bg-[#FF6B6B]/20 border border-[#FF6B6B]/30 rounded-lg text-[#FF6B6B] text-sm">
+                    {error}
+                  </div>
+                )}
+
+                <div className="flex gap-3">
+                  <motion.button
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setJoinMode(false)}
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 border border-white/10"
+                  >
+                    Cancelar
+                  </motion.button>
+                  <motion.button
+                    whileTap={{ scale: 0.98 }}
+                    onClick={joinTeam}
+                    disabled={saving || !teamPin}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#FFB0CD] to-[#FF6B6B] rounded-xl font-bold text-white disabled:opacity-50"
+                  >
+                    {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
+
         {teams.length > 0 && !myTeam && (
-          <section>
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <Users className="w-5 h-5" />
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-[#d0bcff]" />
               Equipas Ativas
             </h3>
             <div className="space-y-3">
-              {teams.map((team) => (
-                <div 
+              {teams.map((team, idx) => (
+                <motion.div
                   key={team.id}
-                  className="glass-panel p-4 flex items-center justify-between"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + idx * 0.05 }}
+                  className="glass-panel p-4 flex items-center justify-between hover:border-white/20 transition-colors"
                 >
-                  <div>
-                    <div className="font-bold text-white">{team.name}</div>
-                    <div className="text-white/40 text-sm">{team.team_members?.length || 0}/{team.max_members} membros</div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#d0bcff]/20 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-[#d0bcff]" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-[#e3e0f9]">{team.name}</div>
+                      <div className="text-[#e3e0f9]/40 text-sm">
+                        {team.team_members?.length || 0}/{team.max_members} membros
+                      </div>
+                    </div>
                   </div>
-                  <div className="font-mono text-violet-400">{team.pin}</div>
-                </div>
+                  <div className="font-mono text-[#d0bcff] text-sm tracking-wider">
+                    {team.pin}
+                  </div>
+                </motion.div>
               ))}
             </div>
-          </section>
+          </motion.section>
         )}
       </div>
 

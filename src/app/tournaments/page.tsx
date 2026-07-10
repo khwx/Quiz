@@ -22,6 +22,7 @@ function generatePin(length: number = 6): string {
 function TournamentCard({ tournament, onClick }: { tournament: any; onClick?: () => void }) {
   const teamCount = tournament.tournament_teams?.length || 0;
   const fillPercentage = (teamCount / tournament.max_teams) * 100;
+  const teamNames = tournament.tournament_teams?.map((tt: any) => tt.teams?.name).filter(Boolean) || [];
 
   return (
     <motion.div
@@ -52,6 +53,17 @@ function TournamentCard({ tournament, onClick }: { tournament: any; onClick?: ()
           {tournament.pin}
         </div>
       </div>
+
+      {/* Registered teams */}
+      {teamNames.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {teamNames.map((name: string, i: number) => (
+            <span key={i} className="px-2 py-0.5 bg-white/5 rounded-full text-xs text-on-surface-variant/70">
+              {name}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Team capacity bar */}
       <div className="mt-4">
@@ -105,6 +117,8 @@ export default function TournamentsPage() {
   const [error, setError] = useState("");
   const [myTournament, setMyTournament] = useState<any>(null);
   const [startConfirmOpen, setStartConfirmOpen] = useState(false);
+  const [myTeams, setMyTeams] = useState<any[]>([]);
+  const [selectedTeamId, setSelectedTeamId] = useState<string>("");
 
   useEffect(() => {
     checkUser();
@@ -118,7 +132,7 @@ export default function TournamentsPage() {
         return;
       }
       setUser(user);
-      await loadTournaments();
+      await Promise.all([loadTournaments(), loadMyTeams(user.id)]);
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -126,16 +140,41 @@ export default function TournamentsPage() {
     }
   };
 
+  const loadMyTeams = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from("team_members")
+        .select("team_id, teams(id, name, pin)")
+        .eq("user_id", userId);
+      if (error) throw error;
+      const teams = (data || []).map((m: any) => m.teams).filter(Boolean);
+      setMyTeams(teams);
+      if (teams.length === 1) setSelectedTeamId(teams[0].id);
+    } catch (err) {
+      console.error("Erro ao carregar equipas:", err);
+    }
+  };
+
   const loadTournaments = async () => {
     try {
       const { data, error } = await supabase
         .from("tournaments")
-        .select("*, tournament_teams(count)")
+        .select("*, tournament_teams(*, teams(id, name, pin))")
         .order("created_at", { ascending: false });
       
       if (error) throw error;
       const allData = data || [];
       setTournaments(allData);
+
+      // Check if current user is already in a tournament
+      if (user) {
+        const myTournamentData = allData.find((t: any) =>
+          t.tournament_teams?.some((tt: any) =>
+            tt.teams && myTeams.some((mt: any) => mt.id === tt.team_id)
+          )
+        );
+        if (myTournamentData) setMyTournament(myTournamentData);
+      }
     } catch (err) {
       console.error("Erro ao carregar torneios:", err);
       setError("Erro ao carregar torneios");
@@ -161,15 +200,28 @@ export default function TournamentsPage() {
           max_teams: 8,
           status: "LOBBY",
           settings: { timer: 20, questions: 10 },
+          created_by: user.id,
         })
         .select()
         .single();
 
       if (tournamentError) throw tournamentError;
 
-      setMyTournament(tournament);
+      // Auto-register user's team if they selected one
+      if (selectedTeamId) {
+        const { error: ttError } = await supabase
+          .from("tournament_teams")
+          .insert({
+            tournament_id: tournament.id,
+            team_id: selectedTeamId,
+          });
+        if (ttError) console.error("Erro ao registar equipa:", ttError);
+      }
+
+      setMyTournament({ ...tournament, tournament_teams: [] });
       setTournamentName("");
       setCreateMode(false);
+      setSelectedTeamId("");
       await loadTournaments();
     } catch (err: any) {
       setError(err.message || "Erro ao criar torneo");
@@ -183,13 +235,17 @@ export default function TournamentsPage() {
       setError("Código do torneo é obrigatório");
       return;
     }
+    if (!selectedTeamId) {
+      setError("Selecciona uma equipa para entrar no torneio");
+      return;
+    }
     setSaving(true);
     setError("");
 
     try {
       const { data: tournament, error: findError } = await supabase
         .from("tournaments")
-        .select("*, tournament_teams(count)")
+        .select("*, tournament_teams(*, teams(id, name, pin))")
         .eq("pin", tournamentPin.toUpperCase())
         .eq("status", "LOBBY")
         .single();
@@ -200,15 +256,37 @@ export default function TournamentsPage() {
         return;
       }
 
-      if (tournament.tournament_teams && tournament.tournament_teams[0]?.count >= tournament.max_teams) {
+      const teamCount = tournament.tournament_teams?.length || 0;
+      if (teamCount >= tournament.max_teams) {
         setError("Torneio cheio");
         setSaving(false);
         return;
       }
 
+      // Check if team is already in this tournament
+      const alreadyJoined = tournament.tournament_teams?.some(
+        (tt: any) => tt.team_id === selectedTeamId
+      );
+      if (alreadyJoined) {
+        setError("A tua equipa já está neste torneio");
+        setSaving(false);
+        return;
+      }
+
+      // Actually insert into tournament_teams
+      const { error: insertError } = await supabase
+        .from("tournament_teams")
+        .insert({
+          tournament_id: tournament.id,
+          team_id: selectedTeamId,
+        });
+
+      if (insertError) throw insertError;
+
       setMyTournament(tournament);
       setTournamentPin("");
       setJoinMode(false);
+      setSelectedTeamId("");
       await loadTournaments();
     } catch (err: any) {
       setError(err.message || "Erro ao entrar no torneo");
@@ -310,6 +388,24 @@ export default function TournamentsPage() {
                 </div>
               </div>
 
+              {/* Registered Teams */}
+              {myTournament.tournament_teams && myTournament.tournament_teams.length > 0 && (
+                <div className="bg-white/5 rounded-xl p-4 mb-4">
+                  <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-3">Equipas Registadas</div>
+                  <div className="space-y-2">
+                    {myTournament.tournament_teams.map((tt: any, i: number) => (
+                      <div key={tt.id || i} className="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[#e3e0f9]/30 text-sm font-bold">#{i + 1}</span>
+                          <span className="text-[#e3e0f9] font-medium">{tt.teams?.name || "Equipa"}</span>
+                        </div>
+                        <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {myTournament.status === 'LOBBY' && (
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -383,6 +479,28 @@ export default function TournamentsPage() {
                   />
                 </div>
 
+                {myTeams.length > 0 && (
+                  <div>
+                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
+                    <select
+                      value={selectedTeamId}
+                      onChange={(e) => setSelectedTeamId(e.target.value)}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#d0bcff]/50 transition-all"
+                    >
+                      <option value="">Sem equipa (só anfitrião)</option>
+                      {myTeams.map((team) => (
+                        <option key={team.id} value={team.id}>{team.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                {myTeams.length === 0 && (
+                  <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm">
+                    Cria uma equipa primeiro em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button> para participar no torneio.
+                  </div>
+                )}
+
                 {error && (
                   <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
                     {error}
@@ -433,6 +551,28 @@ export default function TournamentsPage() {
                   />
                 </div>
 
+                {myTeams.length > 0 && (
+                  <div>
+                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
+                    <select
+                      value={selectedTeamId}
+                      onChange={(e) => setSelectedTeamId(e.target.value)}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#FFB0CD]/50 transition-all"
+                    >
+                      <option value="">Selecciona uma equipa</option>
+                      {myTeams.map((team) => (
+                        <option key={team.id} value={team.id}>{team.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                {myTeams.length === 0 && (
+                  <div className="p-3 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl text-[#FFB0CD] text-sm">
+                    Precisas de ter uma equipa para entrar num torneio. Cria em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button>.
+                  </div>
+                )}
+
                 {error && (
                   <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
                     {error}
@@ -450,7 +590,7 @@ export default function TournamentsPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={joinTournament}
-                    disabled={saving || !tournamentPin}
+                    disabled={saving || !tournamentPin || !selectedTeamId}
                     className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#FFB0CD] text-[#640039] rounded-xl font-bold disabled:opacity-50"
                   >
                     {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
@@ -502,7 +642,12 @@ export default function TournamentsPage() {
             .update({ status: 'QUALIFYING' })
             .eq('id', myTournament.id);
           setMyTournament({ ...myTournament, status: 'QUALIFYING' });
-          window.open(`/tv?tournament=${myTournament.id}`, '_blank');
+          // Find user's team in this tournament
+          const userTeamEntry = myTournament.tournament_teams?.find((tt: any) =>
+            myTeams.some((mt: any) => mt.id === tt.team_id)
+          );
+          const teamParam = userTeamEntry ? `&team=${userTeamEntry.team_id}` : '';
+          window.open(`/tv?tournament=${myTournament.id}${teamParam}`, '_blank');
         }}
         title="Iniciar Torneio?"
         message="Tens a certeza que queres iniciar o torneio?"
