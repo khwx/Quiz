@@ -14,15 +14,15 @@ describe('Points Calculation', () => {
     expect(points).toBeGreaterThan(900);
   });
 
-  it('should give ~500 points at halfway', () => {
+  it('should give ~750 points at halfway (50% base + 25% time bonus)', () => {
     const points = calculatePoints(10, 20);
-    expect(points).toBeGreaterThanOrEqual(490);
-    expect(points).toBeLessThanOrEqual(510);
+    expect(points).toBe(750);
   });
 
-  it('should give ~0 points at time up', () => {
+  it('should give ~500 points at time up (50% base, ~0% time bonus)', () => {
     const points = calculatePoints(19.9, 20);
-    expect(points).toBeLessThan(50);
+    expect(points).toBeGreaterThanOrEqual(500);
+    expect(points).toBeLessThanOrEqual(510);
   });
 
   it('should return 0 for invalid time', () => {
