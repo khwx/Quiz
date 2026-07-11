@@ -341,9 +341,9 @@ export default function AdminPage() {
 
     const RoleBadge = ({ role }: { role: string }) => {
         const colors: Record<string, string> = {
-            admin: "bg-red-500/20 text-red-400 border-red-500/30",
-            moderator: "bg-orange-500/20 text-orange-400 border-orange-500/30",
-            host: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+            admin: "bg-[#FF6B6B]/20 text-[#FF6B6B] border-[#FF6B6B]/30",
+            moderator: "bg-[#FFD700]/20 text-[#FFD700] border-[#FFD700]/30",
+            host: "bg-[#d0bcff]/20 text-[#d0bcff] border-[#d0bcff]/30",
         };
         const labels: Record<string, string> = {
             admin: "Administrador",

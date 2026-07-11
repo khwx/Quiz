@@ -167,12 +167,12 @@ export default function TournamentsPage() {
         .order("created_at", { ascending: false });
       
       if (error) throw error;
-      const allData = data || [];
+      const allData = (data || []) as TournamentWithTeams[];
       setTournaments(allData);
 
       // Check if current user is already in a tournament
       if (user) {
-        const myTournamentData = allData.find((t) =>
+        const myTournamentData = allData.find((t: any) =>
           t.tournament_teams?.some((tt: any) =>
             tt.teams && myTeams.some((mt) => mt.id === tt.team_id)
           )
@@ -248,19 +248,20 @@ export default function TournamentsPage() {
     setError("");
 
     try {
-      const { data: tournament, error: findError } = await supabase
+      const { data: tournamentData, error: findError } = await supabase
         .from("tournaments")
         .select("*, tournament_teams(*, teams(id, name, pin))")
         .eq("pin", tournamentPin.toUpperCase())
         .eq("status", "LOBBY")
         .single();
 
-      if (findError || !tournament) {
+      if (findError || !tournamentData) {
         setError("Torneio não encontrado ou já iniciado");
         setSaving(false);
         return;
       }
 
+      const tournament = tournamentData as TournamentWithTeams;
       const teamCount = tournament.tournament_teams?.length || 0;
       if (teamCount >= tournament.max_teams) {
         setError("Torneio cheio");
@@ -270,7 +271,7 @@ export default function TournamentsPage() {
 
       // Check if team is already in this tournament
       const alreadyJoined = tournament.tournament_teams?.some(
-        (tt: any) => tt.team_id === selectedTeamId
+        (tt) => tt.team_id === selectedTeamId
       );
       if (alreadyJoined) {
         setError("A tua equipa já está neste torneio");
@@ -649,7 +650,7 @@ export default function TournamentsPage() {
             .eq('id', myTournament.id);
           setMyTournament({ ...myTournament, status: 'QUALIFYING' } as TournamentWithTeams);
           // Find user's team in this tournament
-          const userTeamEntry = myTournament.tournament_teams?.find((tt: any) =>
+          const userTeamEntry = myTournament.tournament_teams?.find((tt) =>
             myTeams.some((mt) => mt.id === tt.team_id)
           );
           const teamParam = userTeamEntry ? `&team=${userTeamEntry.team_id}` : '';
