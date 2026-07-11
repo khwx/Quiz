@@ -141,7 +141,7 @@ function AccuracyChart({ data }: { data: number[] }) {
 export default function StatsPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<import("@supabase/supabase-js").User | null>(null);
   const [quickStats, setQuickStats] = useState<QuickStats>({
     accuracy: 0,
     missionsCompleted: 0,

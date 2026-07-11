@@ -8,6 +8,8 @@ import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Cop
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ConfirmModal from "@/components/ConfirmModal";
+import type { TournamentWithTeams, Team } from "@/types";
+import type { User } from "@supabase/supabase-js";
 
 function generatePin(length: number = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -19,10 +21,10 @@ function generatePin(length: number = 6): string {
 }
 
 // Animated tournament card with hover effects
-function TournamentCard({ tournament, onClick }: { tournament: any; onClick?: () => void }) {
+function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTeams; onClick?: () => void }) {
   const teamCount = tournament.tournament_teams?.length || 0;
   const fillPercentage = (teamCount / tournament.max_teams) * 100;
-  const teamNames = tournament.tournament_teams?.map((tt: any) => tt.teams?.name).filter(Boolean) || [];
+  const teamNames = tournament.tournament_teams?.map((tt) => tt.teams?.name).filter(Boolean) || [];
 
   return (
     <motion.div
@@ -57,7 +59,7 @@ function TournamentCard({ tournament, onClick }: { tournament: any; onClick?: ()
       {/* Registered teams */}
       {teamNames.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
-          {teamNames.map((name: string, i: number) => (
+          {teamNames.map((name, i) => (
             <span key={i} className="px-2 py-0.5 bg-white/5 rounded-full text-xs text-on-surface-variant/70">
               {name}
             </span>
@@ -106,8 +108,8 @@ const statusConfig: Record<string, { bg: string; text: string; dot: string }> = 
 export default function TournamentsPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
-  const [tournaments, setTournaments] = useState<any[]>([]);
+  const [user, setUser] = useState<User | null>(null);
+  const [tournaments, setTournaments] = useState<TournamentWithTeams[]>([]);
   const [createMode, setCreateMode] = useState(false);
   const [joinMode, setJoinMode] = useState(false);
   const [tournamentName, setTournamentName] = useState("");
@@ -115,9 +117,9 @@ export default function TournamentsPage() {
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [myTournament, setMyTournament] = useState<any>(null);
+  const [myTournament, setMyTournament] = useState<TournamentWithTeams | null>(null);
   const [startConfirmOpen, setStartConfirmOpen] = useState(false);
-  const [myTeams, setMyTeams] = useState<any[]>([]);
+  const [myTeams, setMyTeams] = useState<Team[]>([]);
   const [selectedTeamId, setSelectedTeamId] = useState<string>("");
 
   useEffect(() => {
@@ -147,7 +149,9 @@ export default function TournamentsPage() {
         .select("team_id, teams(id, name, pin)")
         .eq("user_id", userId);
       if (error) throw error;
-      const teams = (data || []).map((m: any) => m.teams).filter(Boolean);
+      const teams = (data || [])
+        .map((m: any) => m.teams?.[0])
+        .filter(Boolean) as Team[];
       setMyTeams(teams);
       if (teams.length === 1) setSelectedTeamId(teams[0].id);
     } catch (err) {
@@ -170,7 +174,7 @@ export default function TournamentsPage() {
       if (user) {
         const myTournamentData = allData.find((t: any) =>
           t.tournament_teams?.some((tt: any) =>
-            tt.teams && myTeams.some((mt: any) => mt.id === tt.team_id)
+            tt.teams && myTeams.some((mt) => mt.id === tt.team_id)
           )
         );
         if (myTournamentData) setMyTournament(myTournamentData);
@@ -182,6 +186,7 @@ export default function TournamentsPage() {
   };
 
   const createTournament = async () => {
+    if (!user) return;
     if (!tournamentName.trim()) {
       setError("Nome do torneo é obrigatório");
       return;
@@ -200,7 +205,7 @@ export default function TournamentsPage() {
           max_teams: 8,
           status: "LOBBY",
           settings: { timer: 20, questions: 10 },
-          created_by: user.id,
+          created_by: user!.id,
         })
         .select()
         .single();
@@ -393,7 +398,7 @@ export default function TournamentsPage() {
                 <div className="bg-white/5 rounded-xl p-4 mb-4">
                   <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-3">Equipas Registadas</div>
                   <div className="space-y-2">
-                    {myTournament.tournament_teams.map((tt: any, i: number) => (
+                    {myTournament.tournament_teams.map((tt, i) => (
                       <div key={tt.id || i} className="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
                         <div className="flex items-center gap-2">
                           <span className="text-[#e3e0f9]/30 text-sm font-bold">#{i + 1}</span>
@@ -637,14 +642,15 @@ export default function TournamentsPage() {
         isOpen={startConfirmOpen}
         onClose={() => setStartConfirmOpen(false)}
         onConfirm={async () => {
+          if (!myTournament) return;
           await supabase
             .from('tournaments')
             .update({ status: 'QUALIFYING' })
             .eq('id', myTournament.id);
-          setMyTournament({ ...myTournament, status: 'QUALIFYING' });
+          setMyTournament({ ...myTournament, status: 'QUALIFYING' } as any);
           // Find user's team in this tournament
-          const userTeamEntry = myTournament.tournament_teams?.find((tt: any) =>
-            myTeams.some((mt: any) => mt.id === tt.team_id)
+          const userTeamEntry = myTournament.tournament_teams?.find((tt) =>
+            myTeams.some((mt) => mt.id === tt.team_id)
           );
           const teamParam = userTeamEntry ? `&team=${userTeamEntry.team_id}` : '';
           window.open(`/tv?tournament=${myTournament.id}${teamParam}`, '_blank');

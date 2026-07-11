@@ -7,13 +7,15 @@ import { useRouter } from "next/navigation";
 import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import type { Profile, Answer, PlayerStats } from "@/types";
+import type { User } from "@supabase/supabase-js";
 
 export default function ProfilePage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("stats");
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
-  const [stats, setStats] = useState<any>(null);
+  const [user, setUser] = useState<(import("@supabase/supabase-js").User & { name?: string; avatar?: string }) | null>(null);
+  const [stats, setStats] = useState<PlayerStats | null>(null);
   const [gamesHistory, setGamesHistory] = useState<any[]>([]);
 
   useEffect(() => {
@@ -53,9 +55,9 @@ export default function ProfilePage() {
       setGamesHistory((answers || []).slice(0, 20));
 
       const userAnswers = answers || [];
-      const totalGames = new Set(userAnswers.map((a: any) => a.game_id)).size;
-      const correctAnswers = userAnswers.filter((a: any) => a.is_correct).length;
-      const totalPoints = userAnswers.reduce((sum: number, a: any) => sum + (a.points || 0), 0);
+      const totalGames = new Set(userAnswers.map((a) => a.game_id)).size;
+      const correctAnswers = userAnswers.filter((a) => a.is_correct).length;
+      const totalPoints = userAnswers.reduce((sum, a) => sum + (a.points || 0), 0);
       const accuracy = userAnswers.length > 0 
         ? Math.round((correctAnswers / userAnswers.length) * 100) 
         : 0;
@@ -65,7 +67,7 @@ export default function ProfilePage() {
         email: currentUser.email,
         name: currentUser.user_metadata?.name || profile?.username || "Player",
         avatar: profile?.avatar || "🎮",
-        ...profile,
+        ...(profile || {}),
       });
 
       setStats({
@@ -88,14 +90,14 @@ export default function ProfilePage() {
   };
 
   const achievements = [
-    { id: 1, name: "Primeira Vitória", icon: "🏆", earned: stats?.wins >= 1, description: "Ganha o teu primeiro jogo" },
-    { id: 2, name: "3 Vitórias", icon: "🔥", earned: stats?.wins >= 3, description: "Ganha 3 jogos" },
-    { id: 3, name: "10 Vitórias", icon: "💎", earned: stats?.wins >= 10, description: "Ganha 10 jogos" },
+    { id: 1, name: "Primeira Vitória", icon: "🏆", earned: (stats?.wins ?? 0) >= 1, description: "Ganha o teu primeiro jogo" },
+    { id: 2, name: "3 Vitórias", icon: "🔥", earned: (stats?.wins ?? 0) >= 3, description: "Ganha 3 jogos" },
+    { id: 3, name: "10 Vitórias", icon: "💎", earned: (stats?.wins ?? 0) >= 10, description: "Ganha 10 jogos" },
     { id: 4, name: "Perfeito", icon: "🌟", earned: stats?.accuracy === 100, description: "100% de taxa de acerto" },
-    { id: 5, name: "Velocista", icon: "⚡", earned: stats?.totalGames >= 5, description: "Joga 5 jogos" },
-    { id: 6, name: "Mestre", icon: "🎓", earned: stats?.wins >= 20, description: "Ganha 20 jogos" },
-    { id: 7, name: "Especialista", icon: "🚩", earned: stats?.totalGames >= 50, description: "Joga 50 jogos" },
-    { id: 8, name: "Lendário", icon: "👑", earned: stats?.wins >= 50, description: "Ganha 50 jogos" },
+    { id: 5, name: "Velocista", icon: "⚡", earned: (stats?.totalGames ?? 0) >= 5, description: "Joga 5 jogos" },
+    { id: 6, name: "Mestre", icon: "🎓", earned: (stats?.wins ?? 0) >= 20, description: "Ganha 20 jogos" },
+    { id: 7, name: "Especialista", icon: "🚩", earned: (stats?.totalGames ?? 0) >= 50, description: "Joga 50 jogos" },
+    { id: 8, name: "Lendário", icon: "👑", earned: (stats?.wins ?? 0) >= 50, description: "Ganha 50 jogos" },
   ];
 
   const tabs = [
@@ -298,7 +300,7 @@ export default function ProfilePage() {
                 </div>
               ) : (() => {
                 const gameMap = new Map<string, { correct: number; total: number; points: number; date: string }>();
-                gamesHistory.forEach((g: any) => {
+                gamesHistory.forEach((g) => {
                   const id = g.game_id;
                   if (!gameMap.has(id)) {
                     gameMap.set(id, { correct: 0, total: 0, points: 0, date: g.created_at });

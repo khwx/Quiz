@@ -5,6 +5,7 @@ import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import { generateQuestions } from "@/lib/ai-service";
 import { CATEGORIES } from "@/hooks/useGameSetup";
+import type { Question, Answer } from "@/types";
 
 export function useQuestionManagement(
   topic: string[],
@@ -13,10 +14,10 @@ export function useQuestionManagement(
   questionCount: number,
   timerDuration: number,
   round: number,
-  setCurrentAnswers: (answers: any[]) => void
+  setCurrentAnswers: (answers: Answer[]) => void
 ) {
   const { gameId, status, updateStatus, gameSettings } = useGame();
-  const [currentQuestions, setCurrentQuestions] = useState<any[]>([]);
+  const [currentQuestions, setCurrentQuestions] = useState<Question[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [questionSource, setQuestionSource] = useState<"DB" | "AI" | null>(null);
   const [availableCount, setAvailableCount] = useState<number | null>(null);
@@ -82,7 +83,7 @@ export function useQuestionManagement(
           await supabase.from("answers").delete().eq("game_id", gameId);
         }
 
-        let questionsToUse: any[] = [];
+        let questionsToUse: Question[] = [];
         const selectedDbNames = customTopic
           ? [customTopic]
           : topic.map((t) => CATEGORIES.find((c) => c.name === t)?.dbName || t);
@@ -112,11 +113,11 @@ export function useQuestionManagement(
           setQuestionSource("AI");
           const dbAgeRating = targetAge;
           const perCategory = Math.ceil(questionCount / selectedDbNames.length);
-          const allInserted: any[] = [];
+          const allInserted: { text: string; image_url: string | null; options: string[]; correct_option: number; category: string; age_rating: number }[] = [];
 
           for (const catName of selectedDbNames) {
             const aiQuestions = await generateQuestions(catName, perCategory, ageGroup);
-            const questionsToInsert = aiQuestions.map((q: any) => ({
+            const questionsToInsert = aiQuestions.map((q: { text: string; image_url?: string; options: string[]; correct_option: number }) => ({
               text: q.text.trim().charAt(0).toUpperCase() + q.text.trim().slice(1),
               image_url: q.image_url || null,
               options: q.options,

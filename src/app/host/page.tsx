@@ -222,7 +222,7 @@ export default function HostPage() {
                                 <p className="text-sm mt-2">Partilha o código {gamePin}</p>
                             </div>
                         ) : (
-                            players.map((player: any, i: number) => (
+                            players.map((player, i: number) => (
                                 <motion.div
                                     key={player.id}
                                     initial={{ opacity: 0, scale: 0.9 }}
@@ -324,7 +324,7 @@ export default function HostPage() {
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                         onClick={() => {
-                                            const nextId = gameSettings.question_ids[currentQuestionIndex];
+                                            const nextId = gameSettings.question_ids![currentQuestionIndex];
                                             nextQuestion(nextId);
                                         }}
                                         className="w-full flex flex-col items-center gap-4 px-16 py-8 bg-[#d0bcff] text-[#3c0091] rounded-2xl shadow-[0_0_30px_rgba(208,188,255,0.3)]"

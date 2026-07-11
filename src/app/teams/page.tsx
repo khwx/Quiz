@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import type { TeamWithMembers } from "@/types";
+import type { User } from "@supabase/supabase-js";
 
 function generatePin(length: number = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -33,8 +35,8 @@ function generatePin(length: number = 6): string {
 export default function TeamsPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
-  const [teams, setTeams] = useState<any[]>([]);
+  const [user, setUser] = useState<User | null>(null);
+  const [teams, setTeams] = useState<TeamWithMembers[]>([]);
   const [createMode, setCreateMode] = useState(false);
   const [joinMode, setJoinMode] = useState(false);
   const [teamName, setTeamName] = useState("");
@@ -42,7 +44,7 @@ export default function TeamsPage() {
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [myTeam, setMyTeam] = useState<any>(null);
+  const [myTeam, setMyTeam] = useState<TeamWithMembers | null>(null);
 
   useEffect(() => {
     checkUser();
@@ -74,10 +76,10 @@ export default function TeamsPage() {
         .eq("is_active", true)
         .order("created_at", { ascending: false });
       if (error) throw error;
-      setTeams(data || []);
+      setTeams((data || []) as TeamWithMembers[]);
 
       if (userId) {
-        const my = data?.find((t: any) =>
+        const my = (data as any[])?.find((t: any) =>
           t.team_members?.some((m: any) => m.user_id === userId)
         );
         setMyTeam(my || null);
@@ -89,6 +91,7 @@ export default function TeamsPage() {
   };
 
   const createTeam = async () => {
+    if (!user) return;
     if (!teamName.trim()) {
       setError("Nome da equipa é obrigatório");
       return;
@@ -133,6 +136,7 @@ export default function TeamsPage() {
   };
 
   const joinTeam = async () => {
+    if (!user) return;
     if (!teamPin.trim()) {
       setError("Código da equipa é obrigatório");
       return;
@@ -185,6 +189,7 @@ export default function TeamsPage() {
   };
 
   const leaveTeam = async (teamId: string) => {
+    if (!user) return;
     try {
       await supabase
         .from("team_members")

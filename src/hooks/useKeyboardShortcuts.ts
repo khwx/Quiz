@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useGame } from "@/context/GameContext";
+import { useEffect } from "react";
+import type { GameStatus } from "@/context/GameContext";
+import type { Question } from "@/types";
 
 export function useKeyboardShortcuts(
   status: string,
-  currentQuestions: any[],
+  currentQuestions: Question[],
   currentQuestionIndex: number,
   nextQuestion: (questionId: string, correctOption: number) => Promise<void>,
-  updateStatus: (status: any) => Promise<void>,
+  updateStatus: (status: GameStatus) => Promise<void>,
   setTimeLeft: (n: number) => void,
   onReport: () => void,
   onMemoryClearClose: () => void
@@ -23,7 +24,7 @@ export function useKeyboardShortcuts(
         if (status === "REVEAL") {
           const nextQ = currentQuestions[currentQuestionIndex];
           if (nextQ) {
-            nextQuestion(nextQ.id, nextQ.correct_option);
+            nextQuestion(nextQ.id, nextQ.correct_option ?? 0);
           } else {
             updateStatus("STARTING");
           }

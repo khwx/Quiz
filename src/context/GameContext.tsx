@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { getRandomAvatar } from '@/lib/avatars';
 import { getRandomColor } from '@/lib/colors';
+import type { Player, GameSettings } from '@/types';
 
 export type GameStatus = 'LOBBY' | 'STARTING' | 'QUESTION' | 'REVEAL' | 'LEADERBOARD' | 'FINAL' | 'PODIUM';
 
@@ -12,14 +13,14 @@ interface GameState {
     status: GameStatus;
     currentQuestionIndex: number;
     currentQuestionId: string | null;
-    players: any[];
-    gameSettings: any;
-    currentQuestion: any;
+    players: Player[];
+    gameSettings: GameSettings;
+    currentQuestion: { id: string; correct_option: number } | null;
 }
 
 interface GameContextType extends GameState {
     setGameId: (id: string | null) => void;
-    setPlayers: (players: any[]) => void;
+    setPlayers: (players: Player[]) => void;
     updateStatus: (status: GameStatus) => Promise<void>;
     nextQuestion: (questionId?: string, correctOption?: number) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
@@ -46,13 +47,13 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         const channel = supabase
             .channel(`game-${gameState.gameId}`)
             .on('postgres_changes', { event: '*', schema: 'public', table: 'games', filter: `id=eq.${gameState.gameId}` }, (payload) => {
-                const data = payload.new as any;
+                const data = payload.new as Record<string, unknown>;
                 setGameState(prev => ({
                     ...prev,
-                    status: data.status,
-                    currentQuestionIndex: data.current_question_index,
-                    currentQuestionId: data.settings?.current_question_id || null,
-                    gameSettings: data.settings || {}
+                    status: data.status as GameStatus,
+                    currentQuestionIndex: data.current_question_index as number,
+                    currentQuestionId: (data.settings as GameSettings)?.current_question_id as string || null,
+                    gameSettings: (data.settings as GameSettings) || {}
                 }));
             })
             .on('postgres_changes', { event: '*', schema: 'public', table: 'players', filter: `game_id=eq.${gameState.gameId}` }, (payload) => {
@@ -76,7 +77,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         if (id) fetchPlayers(id);
     };
 
-    const setPlayers = (players: any[]) => {
+    const setPlayers = (players: Player[]) => {
         setGameState(prev => ({ ...prev, players }));
     };
 

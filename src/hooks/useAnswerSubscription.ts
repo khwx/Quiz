@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useGame } from "@/context/GameContext";
+import type { Answer } from "@/types";
 
 export function useAnswerSubscription() {
   const { gameId, players } = useGame();
-  const [currentAnswers, setCurrentAnswers] = useState<any[]>([]);
+  const [currentAnswers, setCurrentAnswers] = useState<Answer[]>([]);
   const currentQuestionIdsRef = useRef<string[]>([]);
 
   const updateQuestionIds = (questionIds: string[]) => {
@@ -33,7 +34,7 @@ export function useAnswerSubscription() {
           }
           setCurrentAnswers((prev) => {
             if (prev.some((a) => a.id === newAnswer.id)) return prev;
-            return [...prev, newAnswer];
+            return [...prev, newAnswer as Answer];
           });
         }
       )

@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useGame } from "@/context/GameContext";
 import { useSound } from "@/hooks/useSound";
+import type { Question } from "@/types";
 
-export function useQuestionFlowTimer(timerDuration: number, currentQuestions: any[]) {
+export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Question[]) {
   const { status, currentQuestionIndex, updateStatus, nextQuestion } = useGame();
   const [timeLeft, setTimeLeft] = useState(timerDuration);
   const [timeUntilNext, setTimeUntilNext] = useState(20);

@@ -13,6 +13,7 @@ import MobileNav from "@/components/MobileNav";
 import LobbyJoinView from "@/components/mobile/LobbyJoinView";
 import QuestionView from "@/components/mobile/QuestionView";
 import RevealView from "@/components/mobile/RevealView";
+import type { Question } from "@/types";
 import FinalView from "@/components/mobile/FinalView";
 import { supabase } from "@/lib/supabase";
 

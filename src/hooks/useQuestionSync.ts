@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useGame } from "@/context/GameContext";
+import type { Question } from "@/types";
 
 export function useQuestionSync() {
   const { gameId, currentQuestionId, currentQuestionIndex, status } = useGame();
-  const [questionData, setQuestionData] = useState<any>(null);
+  const [questionData, setQuestionData] = useState<Question | null>(null);
   const [correctOption, setCorrectOption] = useState<number | null>(null);
 
   const fetchQuestion = useCallback(async () => {
