@@ -139,6 +139,9 @@ export default function ProfilePage() {
             <Link href="/stats" className="text-[#e3e0f9]/60 hover:text-[#d0bcff] transition-colors">
               <BarChart3 className="w-5 h-5" />
             </Link>
+            <Link href="/profile/edit" className="text-[#e3e0f9]/60 hover:text-[#d0bcff] transition-colors text-sm font-bold">
+              Editar
+            </Link>
             <button onClick={handleLogout} className="text-[#e3e0f9]/60 hover:text-[#FFB0CD] transition-colors">
               <LogOut className="w-5 h-5" />
             </button>
