@@ -184,14 +184,11 @@ export async function generateQuestionsWithFallback(prompt: string, count: numbe
 
   for (const provider of providers) {
     try {
-      console.log(`[AI] Trying ${provider.name}...`);
       const jsonStr = await provider.fn();
       const questions = JSON.parse(jsonStr);
       const normalized = normalizeQuestions(questions, prompt);
-      console.log(`[AI] ${provider.name} succeeded!`);
       return { questions: normalized, provider: provider.name };
     } catch (error: any) {
-      console.warn(`[AI] ${provider.name} failed: ${error.message}`);
       lastError = error;
     }
   }

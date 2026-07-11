@@ -92,7 +92,6 @@ export default function TVHost() {
     const allPlayerIds = new Set(players.map(p => String(p.id)));
 
     if (allPlayerIds.size > 0 && answeredPlayerIds.size >= allPlayerIds.size) {
-      console.log("🎯 Todos responderam! Avançando para REVEAL...");
       triggerReveal();
     }
   }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, questionStartTimeRef, triggerReveal]);

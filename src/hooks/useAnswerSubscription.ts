@@ -38,9 +38,7 @@ export function useAnswerSubscription() {
           });
         }
       )
-      .subscribe((status) => {
-        console.log(`📡 Answer Subscription Status: ${status}`);
-      });
+      .subscribe(() => {});
 
     const pollInterval = setInterval(async () => {
       const questionIds = currentQuestionIdsRef.current;

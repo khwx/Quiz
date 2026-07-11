@@ -25,8 +25,6 @@ export async function POST(req: NextRequest) {
 
     const { gameId, playerId, questionId, chosenOption, timeTaken } = payload;
 
-    console.log("🖥️ [API/answer] Received:", { gameId, playerId, questionId, chosenOption, timeTaken });
-
     const { data: game, error: gameError } = await supabase
       .from("games")
       .select("settings")
@@ -77,11 +75,8 @@ export async function POST(req: NextRequest) {
     }).select();
 
     if (insertError) {
-      console.error("❌ [API/answer] Insert failed:", insertError);
       return NextResponse.json({ error: insertError.message }, { status: 500 });
     }
-
-    console.log("✅ [API/answer] Answer saved:", insertedAnswer);
 
     if (points > 0) {
       const { data: player } = await supabase.from('players').select('score').eq('id', playerId).single();

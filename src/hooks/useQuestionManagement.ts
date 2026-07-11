@@ -67,7 +67,6 @@ export function useQuestionManagement(
     const startRound = async () => {
       if (status !== "STARTING") return;
       if (isStartingRef.current) {
-        console.log("⚠️ startRound already running, skipping...");
         return;
       }
       isStartingRef.current = true;

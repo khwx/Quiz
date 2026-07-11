@@ -54,7 +54,7 @@ export default function CastButton() {
     const handleCastClick = () => {
         if (isApiAvailable && window.cast && window.cast.framework) {
             window.cast.framework.CastContext.getInstance().requestSession()
-                .then(() => console.log("Session Request Success"))
+                .then(() => {})
                 .catch((err: any) => {
                     if (err !== 'cancel') console.error("Session Request Failed", err);
                 });

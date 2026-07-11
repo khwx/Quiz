@@ -13,9 +13,8 @@ export function useSound() {
                 audioContextRef.current.resume();
             }
             setSoundEnabled(true);
-            console.log('🔊 Som ativado!');
         } catch (e) {
-            console.log('Audio unlock failed:', e);
+            // Silent fail
         }
     }, []);
 
@@ -23,7 +22,6 @@ export function useSound() {
     useEffect(() => {
         const unlock = () => {
             unlockAudio();
-            console.log('👆 Unlock via interação');
         };
         document.addEventListener('click', unlock, { once: true });
         document.addEventListener('touchstart', unlock, { once: true });
@@ -103,7 +101,7 @@ export function useSound() {
                     return;
             }
         } catch (e) {
-            console.log('Play sound error:', e);
+            // Silent fail
         }
     }, [getAudioContext]);
 

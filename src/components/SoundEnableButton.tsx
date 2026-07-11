@@ -37,9 +37,8 @@ export default function SoundEnableButton() {
             sessionStorage.setItem("soundEnabled", "true");
             setSoundEnabled(true);
             setShow(false);
-            console.log("🔊 Som ativado!");
         } catch (e) {
-            console.log("Erro ao ativar som:", e);
+            // Silent fail
         }
     };
 
