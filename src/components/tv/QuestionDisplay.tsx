@@ -21,10 +21,10 @@ interface QuestionDisplayProps {
 }
 
 const optionColors = [
-  "bg-red-500 border-red-700",
-  "bg-blue-500 border-blue-700",
-  "bg-yellow-500 border-yellow-700",
-  "bg-green-500 border-green-700",
+  "bg-[#FF6B6B] border-b-[#CC4444]",
+  "bg-[#4A90D9] border-b-[#3A70B0]",
+  "bg-[#FFB0CD] border-b-[#DD8AAA]",
+  "bg-[#4CAF50] border-b-[#3A8A3E]",
 ];
 
 const optionLetters = ["A", "B", "C", "D"];

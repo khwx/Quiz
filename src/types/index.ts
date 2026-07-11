@@ -191,6 +191,13 @@ export interface GameHistoryEntry {
 
 // --- Derived / UI Types ---
 
+export interface AnswerSummary {
+  game_id: string;
+  is_correct: boolean;
+  points: number;
+  created_at: string;
+}
+
 export interface LeaderboardEntry {
   player: Player;
   score: number;

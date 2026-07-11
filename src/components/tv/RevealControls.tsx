@@ -32,51 +32,57 @@ export default function RevealControls({
       animate={{ y: 0, opacity: 1 }}
       className="w-full max-w-4xl flex flex-col sm:flex-row gap-3 sm:justify-center sm:items-center mt-6 px-4"
     >
-      <button
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={onReport}
-        className="flex items-center justify-center gap-2 px-4 py-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 rounded-xl border border-amber-500/30 transition-all text-sm"
+        className="flex items-center justify-center gap-2 px-4 py-3 bg-[#FFD700]/10 hover:bg-[#FFD700]/20 text-[#FFD700] rounded-xl border border-[#FFD700]/30 transition-all text-sm font-bold"
       >
         <Flag className="w-4 h-4" /> Reportar
-      </button>
+      </motion.button>
 
       <div className="flex flex-col items-center gap-2">
-        <button
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
           onClick={hasNextQuestion ? onNextQuestion : onNewRound}
-          className="btn-quiz btn-primary flex items-center justify-center gap-2 flex-1 sm:flex-none py-3"
+          className="flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] text-[#3c0091] font-bold rounded-xl shadow-[0_0_20px_rgba(208,188,255,0.3)] transition-all"
         >
           {hasNextQuestion ? (
             <>
-              Próxima Pergunta <ArrowRight />
+              Próxima Pergunta <ArrowRight className="w-5 h-5" />
             </>
           ) : (
             <>
-              Nova Volta <ArrowRight />
+              Nova Volta <ArrowRight className="w-5 h-5" />
             </>
           )}
-        </button>
+        </motion.button>
         <div className="flex flex-col items-center gap-2">
           <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full transition-all duration-1000 ease-linear"
+              className="h-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-full transition-all duration-1000 ease-linear"
               style={{ width: `${(timeUntilNext / 20) * 100}%` }}
             />
           </div>
-          <div className="flex items-center gap-2 text-white/50 text-sm">
+          <div className="flex items-center gap-2 text-[#e3e0f9]/50 text-sm">
             <Timer className="w-4 h-4" />
-            <span className="font-mono font-bold text-white">{timeUntilNext}s</span>
+            <span className="font-mono font-bold text-[#e3e0f9]">{timeUntilNext}s</span>
           </div>
         </div>
       </div>
 
-      <button
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={onEditTopic}
-        className="btn-quiz btn-secondary flex items-center justify-center gap-2 py-3"
+        className="flex items-center justify-center gap-2 px-6 py-3 bg-[#FFB0CD]/10 hover:bg-[#FFB0CD]/20 text-[#FFB0CD] rounded-xl border border-[#FFB0CD]/30 transition-all font-bold"
       >
         Escolher Outro Tema
-      </button>
+      </motion.button>
 
       <div className="flex justify-center w-full mt-2">
-        <span className="text-white/20 text-xs font-mono">[ESPAÇO] avançar  [R] reportar</span>
+        <span className="text-[#e3e0f9]/20 text-xs font-mono">[ESPAÇO] avançar  [R] reportar</span>
       </div>
     </motion.div>
   );

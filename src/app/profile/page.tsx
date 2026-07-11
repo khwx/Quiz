@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
-import type { Profile, Answer, PlayerStats } from "@/types";
+import type { Profile, AnswerSummary, PlayerStats } from "@/types";
 import type { User } from "@supabase/supabase-js";
 
 export default function ProfilePage() {
@@ -16,7 +16,7 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<(import("@supabase/supabase-js").User & { name?: string; avatar?: string }) | null>(null);
   const [stats, setStats] = useState<PlayerStats | null>(null);
-  const [gamesHistory, setGamesHistory] = useState<any[]>([]);
+  const [gamesHistory, setGamesHistory] = useState<AnswerSummary[]>([]);
 
   useEffect(() => {
     loadUserData();

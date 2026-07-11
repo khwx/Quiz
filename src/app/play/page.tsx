@@ -28,7 +28,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [correctOption, setCorrectOption] = useState<number | null>(null);
   const [startTime, setStartTime] = useState<number>(Date.now());
-  const [questionData, setQuestionData] = useState<any>(null);
+  const [questionData, setQuestionData] = useState<Question | null>(null);
   const [showHint, setShowHint] = useState(false);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerActive, setTimerActive] = useState(false);

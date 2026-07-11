@@ -79,8 +79,8 @@ export default function TeamsPage() {
       setTeams((data || []) as TeamWithMembers[]);
 
       if (userId) {
-        const my = (data as any[])?.find((t: any) =>
-          t.team_members?.some((m: any) => m.user_id === userId)
+        const my = (data as TeamWithMembers[])?.find((t) =>
+          t.team_members?.some((m) => m.user_id === userId)
         );
         setMyTeam(my || null);
       }

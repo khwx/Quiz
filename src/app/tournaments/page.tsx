@@ -24,7 +24,7 @@ function generatePin(length: number = 6): string {
 function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTeams; onClick?: () => void }) {
   const teamCount = tournament.tournament_teams?.length || 0;
   const fillPercentage = (teamCount / tournament.max_teams) * 100;
-  const teamNames = tournament.tournament_teams?.map((tt) => tt.teams?.name).filter(Boolean) || [];
+  const teamNames = tournament.tournament_teams?.map((tt: any) => tt.teams?.name).filter(Boolean) || [];
 
   return (
     <motion.div
@@ -150,7 +150,7 @@ export default function TournamentsPage() {
         .eq("user_id", userId);
       if (error) throw error;
       const teams = (data || [])
-        .map((m: any) => m.teams?.[0])
+        .map((m) => m.teams?.[0])
         .filter(Boolean) as Team[];
       setMyTeams(teams);
       if (teams.length === 1) setSelectedTeamId(teams[0].id);
@@ -172,7 +172,7 @@ export default function TournamentsPage() {
 
       // Check if current user is already in a tournament
       if (user) {
-        const myTournamentData = allData.find((t: any) =>
+        const myTournamentData = allData.find((t) =>
           t.tournament_teams?.some((tt: any) =>
             tt.teams && myTeams.some((mt) => mt.id === tt.team_id)
           )
@@ -647,9 +647,9 @@ export default function TournamentsPage() {
             .from('tournaments')
             .update({ status: 'QUALIFYING' })
             .eq('id', myTournament.id);
-          setMyTournament({ ...myTournament, status: 'QUALIFYING' } as any);
+          setMyTournament({ ...myTournament, status: 'QUALIFYING' } as TournamentWithTeams);
           // Find user's team in this tournament
-          const userTeamEntry = myTournament.tournament_teams?.find((tt) =>
+          const userTeamEntry = myTournament.tournament_teams?.find((tt: any) =>
             myTeams.some((mt) => mt.id === tt.team_id)
           );
           const teamParam = userTeamEntry ? `&team=${userTeamEntry.team_id}` : '';
