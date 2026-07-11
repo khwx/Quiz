@@ -56,10 +56,10 @@ export default function LobbyView({
     <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start relative">
       {usedCount > 0 && (
         <div className="absolute -top-10 right-0">
-          <button
-            onClick={onClearMemory}
-            className="px-4 py-2 bg-white/5 hover:bg-red-500/20 text-white/60 hover:text-red-400 rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
-          >
+            <button
+              onClick={onClearMemory}
+              className="px-4 py-2 bg-white/5 hover:bg-[#FF6B6B]/20 text-white/60 hover:text-[#FF6B6B] rounded-lg text-sm transition-all flex items-center gap-2 border border-white/10"
+            >
             Limpar Memória ({usedCount})
           </button>
         </div>
@@ -77,10 +77,10 @@ export default function LobbyView({
         className="flex flex-col gap-4 lg:gap-8"
       >
         <div className="flex items-center gap-4 mb-2">
-          <div className="p-3 lg:p-4 bg-gradient-to-r from-violet-500 to-pink-500 rounded-2xl">
-            <Users className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+          <div className="p-3 lg:p-4 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-2xl">
+            <Users className="w-8 h-8 lg:w-10 lg:h-10 text-[#3c0091]" />
           </div>
-          <span className="text-sm font-bold text-violet-400 uppercase tracking-widest">QuizVerse TV</span>
+          <span className="text-sm font-bold text-[#d0bcff] uppercase tracking-widest">QuizVerse TV</span>
         </div>
 
         <div>
@@ -105,7 +105,7 @@ export default function LobbyView({
 
         <div className="flex flex-col gap-2">
           <span className="text-white/40 uppercase font-bold tracking-widest text-sm">Código do Jogo</span>
-          <div className="text-5xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500 tracking-widest font-mono">
+          <div className="text-5xl sm:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] tracking-widest font-mono">
             {pin}
           </div>
         </div>
@@ -119,10 +119,10 @@ export default function LobbyView({
         <div className="p-4 sm:p-8 border-b border-white/10">
           <div className="flex items-center justify-between mb-4 lg:mb-8">
             <div className="flex items-center gap-3">
-              <Users className="text-pink-500 w-6 h-6 lg:w-8 lg:h-8" />
-              <h2 className="text-xl lg:text-3xl font-bold text-white">Jogadores</h2>
+              <Users className="text-[#FFB0CD] w-6 h-6 lg:w-8 lg:h-8" />
+              <h2 className="text-xl lg:text-3xl font-bold text-[#e3e0f9]">Jogadores</h2>
             </div>
-            <span className="bg-pink-500 text-white px-4 py-1 rounded-full font-bold">{players.length}</span>
+            <span className="bg-[#FFB0CD] text-[#3c0091] px-4 py-1 rounded-full font-bold">{players.length}</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 flex-grow overflow-y-auto max-h-[200px] lg:max-h-[400px]">
