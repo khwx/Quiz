@@ -510,6 +510,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Jogar</h4>
               <ul className="space-y-2">
+                <li><Link href="/modes" className="text-white/40 hover:text-white text-sm transition-colors">Modos de Jogo</Link></li>
                 <li><Link href="/host" className="text-white/40 hover:text-white text-sm transition-colors">Criar Jogo</Link></li>
                 <li><Link href="/play" className="text-white/40 hover:text-white text-sm transition-colors">Entrar no Jogo</Link></li>
                 <li><Link href="/categories" className="text-white/40 hover:text-white text-sm transition-colors">Categorias</Link></li>
@@ -528,6 +529,7 @@ export default function Home() {
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">App</h4>
               <ul className="space-y-2">
                 <li><Link href="/notifications" className="text-white/40 hover:text-white text-sm transition-colors">Notificações</Link></li>
+                <li><Link href="/achievements" className="text-white/40 hover:text-white text-sm transition-colors">Conquistas</Link></li>
                 <li><Link href="/history" className="text-white/40 hover:text-white text-sm transition-colors">Histórico</Link></li>
                 <li><Link href="/stats" className="text-white/40 hover:text-white text-sm transition-colors">Estatísticas</Link></li>
                 <li><Link href="/settings" className="text-white/40 hover:text-white text-sm transition-colors">Definições</Link></li>
