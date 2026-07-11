@@ -520,13 +520,24 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><Link href="/teams" className="text-white/40 hover:text-white text-sm transition-colors">Equipas</Link></li>
                 <li><Link href="/tournaments" className="text-white/40 hover:text-white text-sm transition-colors">Torneios</Link></li>
+                <li><Link href="/leaderboard" className="text-white/40 hover:text-white text-sm transition-colors">Ranking</Link></li>
                 <li><Link href="/profile" className="text-white/40 hover:text-white text-sm transition-colors">Perfil</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">App</h4>
+              <ul className="space-y-2">
+                <li><Link href="/notifications" className="text-white/40 hover:text-white text-sm transition-colors">Notificações</Link></li>
+                <li><Link href="/history" className="text-white/40 hover:text-white text-sm transition-colors">Histórico</Link></li>
+                <li><Link href="/stats" className="text-white/40 hover:text-white text-sm transition-colors">Estatísticas</Link></li>
+                <li><Link href="/settings" className="text-white/40 hover:text-white text-sm transition-colors">Definições</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Suporte</h4>
               <ul className="space-y-2">
                 <li><Link href="/tutorial" className="text-white/40 hover:text-white text-sm transition-colors">Como Jogar</Link></li>
+                <li><Link href="/help" className="text-white/40 hover:text-white text-sm transition-colors">Ajuda</Link></li>
                 <li><Link href="/admin" className="text-white/40 hover:text-white text-sm transition-colors">Admin</Link></li>
               </ul>
             </div>

@@ -56,13 +56,21 @@ function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTea
         </div>
       </div>
 
-      {/* Registered teams */}
+      {/* Registered teams with scores */}
       {teamNames.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {teamNames.map((name, i) => (
-            <span key={i} className="px-2 py-0.5 bg-white/5 rounded-full text-xs text-on-surface-variant/70">
-              {name}
-            </span>
+        <div className="mt-3 space-y-1">
+          {tournament.tournament_teams
+            ?.sort((a, b) => (b.score || 0) - (a.score || 0))
+            .map((tt, i) => (
+            <div key={i} className="flex items-center justify-between px-2">
+              <div className="flex items-center gap-1.5">
+                <span className="text-on-surface-variant/40 text-xs">{i + 1}.</span>
+                <span className="text-on-surface-variant/70 text-xs">{tt.teams?.name}</span>
+              </div>
+              {tt.score !== undefined && tt.score > 0 && (
+                <span className="text-amber-400 text-xs font-bold">{tt.score} pts</span>
+              )}
+            </div>
           ))}
         </div>
       )}
@@ -399,13 +407,35 @@ export default function TournamentsPage() {
                 <div className="bg-white/5 rounded-xl p-4 mb-4">
                   <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-3">Equipas Registadas</div>
                   <div className="space-y-2">
-                    {myTournament.tournament_teams.map((tt, i) => (
+                    {myTournament.tournament_teams
+                      .sort((a, b) => (b.score || 0) - (a.score || 0))
+                      .map((tt, i) => (
                       <div key={tt.id || i} className="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
                         <div className="flex items-center gap-2">
                           <span className="text-[#e3e0f9]/30 text-sm font-bold">#{i + 1}</span>
                           <span className="text-[#e3e0f9] font-medium">{tt.teams?.name || "Equipa"}</span>
                         </div>
-                        <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
+                        <div className="flex items-center gap-3">
+                          {tt.score !== undefined && tt.score > 0 && (
+                            <span className="text-[#FFD700] font-bold text-sm">{tt.score} pts</span>
+                          )}
+                          <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
+                          {myTournament.status === 'LOBBY' && (
+                            <button
+                              onClick={async () => {
+                                await supabase.from("tournament_teams").delete().eq("id", tt.id);
+                                setMyTournament({
+                                  ...myTournament,
+                                  tournament_teams: myTournament.tournament_teams.filter((t) => t.id !== tt.id),
+                                });
+                              }}
+                              className="text-[#FF6B6B] hover:text-[#FF6B6B]/80 text-xs p-1"
+                              title="Expulsar equipa"
+                            >
+                              ✕
+                            </button>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -422,6 +452,53 @@ export default function TournamentsPage() {
                   <Play className="w-5 h-5" />
                   Iniciar Torneio
                 </motion.button>
+              )}
+
+              {myTournament.status === 'QUALIFYING' && (
+                <div className="space-y-3">
+                  <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm text-center">
+                    Torneio em curso — abre o TV para jogar
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={async () => {
+                      await supabase.from('tournaments').update({ status: 'FINAL' }).eq('id', myTournament.id);
+                      setMyTournament({ ...myTournament, status: 'FINAL' });
+                    }}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#FFB0CD] text-[#640039] rounded-xl font-bold"
+                  >
+                    <Zap className="w-5 h-5" />
+                    Avançar para Final
+                  </motion.button>
+                </div>
+              )}
+
+              {myTournament.status === 'FINAL' && (
+                <div className="space-y-3">
+                  <div className="p-3 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl text-[#FFB0CD] text-sm text-center">
+                    Final em curso
+                  </div>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={async () => {
+                      await supabase.from('tournaments').update({ status: 'FINISHED' }).eq('id', myTournament.id);
+                      setMyTournament({ ...myTournament, status: 'FINISHED' });
+                    }}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold"
+                  >
+                    <Flag className="w-5 h-5" />
+                    Finalizar Torneio
+                  </motion.button>
+                </div>
+              )}
+
+              {myTournament.status === 'FINISHED' && (
+                <div className="p-4 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-center">
+                  <Trophy className="w-8 h-8 mx-auto mb-2 text-[#4CAF50]" />
+                  <div className="text-[#4CAF50] font-bold">Torneio Finalizado!</div>
+                </div>
               )}
             </motion.section>
           )}
@@ -614,7 +691,27 @@ export default function TournamentsPage() {
               Torneios Ativos
             </h3>
             <div className="space-y-3">
-              {tournaments.map((tournament, i) => (
+              {tournaments.filter((t) => t.status !== "FINISHED").map((tournament) => (
+                <TournamentCard
+                  key={tournament.id}
+                  tournament={tournament}
+                />
+              ))}
+              {tournaments.filter((t) => t.status !== "FINISHED").length === 0 && (
+                <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio ativo</p>
+              )}
+            </div>
+          </section>
+        )}
+
+        {tournaments.some((t) => t.status === "FINISHED") && !myTournament && (
+          <section>
+            <h3 className="text-lg font-bold text-[#e3e0f9]/60 mb-4 flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-[#e3e0f9]/30" />
+              Torneios Finalizados
+            </h3>
+            <div className="space-y-3 opacity-60">
+              {tournaments.filter((t) => t.status === "FINISHED").map((tournament) => (
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}

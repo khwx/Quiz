@@ -1,17 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Flag, RotateCcw, Palette, Sparkles } from "lucide-react";
+import { Flag, RotateCcw, Palette, Sparkles, Users, Share2, Copy, Check } from "lucide-react";
+import { useState } from "react";
 import Podium from "@/components/tv/Podium";
+import type { Player } from "@/types";
+
+interface TeamResult {
+  name: string;
+  score: number;
+  members: string[];
+}
 
 interface PodiumViewProps {
-  players: any[];
+  players: Player[];
+  teamResults?: TeamResult[];
   onRestart: () => void;
   onEditTopic: () => void;
   onReport: () => void;
 }
 
-export default function PodiumView({ players, onRestart, onEditTopic, onReport }: PodiumViewProps) {
+export default function PodiumView({ players, teamResults, onRestart, onEditTopic, onReport }: PodiumViewProps) {
+  const sortedTeams = teamResults?.sort((a, b) => b.score - a.score) || [];
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async () => {
+    const top3 = players.sort((a, b) => b.score - a.score).slice(0, 3);
+    let text = "🏆 QuizVerse - Resultados\n\n";
+    top3.forEach((p, i) => {
+      const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : "🥉";
+      text += `${medal} ${p.name} — ${p.score} pts\n`;
+    });
+    if (sortedTeams.length > 0) {
+      text += "\n👥 Equipas:\n";
+      sortedTeams.forEach((t, i) => {
+        text += `#${i + 1} ${t.name} — ${t.score} pts\n`;
+      });
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "QuizVerse Resultados", text });
+      } catch {}
+    } else {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center gap-8">
       <motion.div
@@ -21,6 +58,42 @@ export default function PodiumView({ players, onRestart, onEditTopic, onReport }
       >
         <Podium players={players} onRestart={onRestart} />
       </motion.div>
+
+      {sortedTeams.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="w-full max-w-md"
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <Users className="w-5 h-5 text-[#d0bcff]" />
+            <h3 className="text-lg font-bold text-[#d0bcff]">Resultados por Equipa</h3>
+          </div>
+          <div className="space-y-2">
+            {sortedTeams.map((team, i) => (
+              <div key={i} className={`flex items-center justify-between p-3 rounded-xl ${
+                i === 0 ? "bg-[#FFD700]/10 border border-[#FFD700]/30" :
+                i === 1 ? "bg-[#C0C0C0]/10 border border-[#C0C0C0]/30" :
+                "bg-white/5 border border-white/10"
+              }`}>
+                <div className="flex items-center gap-3">
+                  <span className={`text-lg font-bold ${
+                    i === 0 ? "text-[#FFD700]" : i === 1 ? "text-[#C0C0C0]" : "text-white/40"
+                  }`}>
+                    #{i + 1}
+                  </span>
+                  <div>
+                    <div className="text-white font-bold">{team.name}</div>
+                    <div className="text-white/40 text-xs">{team.members.join(", ")}</div>
+                  </div>
+                </div>
+                <span className="text-[#FFD700] font-bold">{team.score} pts</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
 
       <div className="flex flex-wrap justify-center gap-4">
         <motion.button
@@ -49,6 +122,15 @@ export default function PodiumView({ players, onRestart, onEditTopic, onReport }
         >
           <Sparkles className="w-5 h-5" />
           Feedback
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleShare}
+          className="flex items-center gap-2 px-6 py-3 bg-green-500/10 hover:bg-green-500/20 text-green-400 rounded-xl border border-green-500/30 transition-all font-bold"
+        >
+          {copied ? <Check className="w-5 h-5" /> : <Share2 className="w-5 h-5" />}
+          {copied ? "Copiado!" : "Partilhar"}
         </motion.button>
       </div>
     </div>

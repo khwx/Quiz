@@ -45,6 +45,10 @@ export default function TVHost() {
     setLocalMode,
     localScore,
     setLocalScore,
+    tournamentId,
+    teamId,
+    saveTournamentScore,
+    advanceTournament,
     resetToLobby,
   } = useGameSetup();
 
@@ -92,6 +96,19 @@ export default function TVHost() {
       triggerReveal();
     }
   }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, questionStartTimeRef, triggerReveal]);
+
+  // Save tournament team score when game reaches PODIUM
+  useEffect(() => {
+    if (status === "PODIUM" && tournamentId && teamId && players.length > 0) {
+      const teamScore = players
+        .filter((p) => {
+          // If we have team info, sum scores of team members
+          return true; // For now sum all players (team game = all players are the team)
+        })
+        .reduce((sum, p) => sum + (p.score || 0), 0);
+      saveTournamentScore(teamScore);
+    }
+  }, [status, tournamentId, teamId, players, saveTournamentScore]);
 
   const [reportOpen, setReportOpen] = useState(false);
   const [memoryConfirmOpen, setMemoryConfirmOpen] = useState(false);

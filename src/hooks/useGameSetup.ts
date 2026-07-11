@@ -16,6 +16,8 @@ export function useGameSetup() {
   const [questionCount, setQuestionCount] = useState(5);
   const [localMode, setLocalMode] = useState(false);
   const [localScore, setLocalScore] = useState(0);
+  const [tournamentId, setTournamentId] = useState<string | null>(null);
+  const [teamId, setTeamId] = useState<string | null>(null);
 
   useEffect(() => {
     const connectToGame = async () => {
@@ -23,6 +25,11 @@ export function useGameSetup() {
       const queryGameId = urlParams.get("gameId");
       const queryCategories = urlParams.get("categories");
       const queryAge = urlParams.get("age");
+      const queryTournament = urlParams.get("tournament");
+      const queryTeam = urlParams.get("team");
+
+      if (queryTournament) setTournamentId(queryTournament);
+      if (queryTeam) setTeamId(queryTeam);
 
       if (queryCategories) {
         const cats = queryCategories.split(",");
@@ -44,9 +51,13 @@ export function useGameSetup() {
 
       if (!gameId) {
         const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+        const insertData: Record<string, unknown> = { pin: newPin, status: "LOBBY" };
+        if (queryTournament) insertData.tournament_id = queryTournament;
+        if (queryTeam) insertData.team_id = queryTeam;
+
         const { data } = await supabase
           .from("games")
-          .insert([{ pin: newPin, status: "LOBBY" }])
+          .insert([insertData])
           .select()
           .single();
 
@@ -68,6 +79,31 @@ export function useGameSetup() {
 
     connectToGame();
   }, []);
+
+  const saveTournamentScore = useCallback(async (finalScore: number) => {
+    if (!tournamentId || !teamId) return;
+    try {
+      await supabase
+        .from("tournament_teams")
+        .update({ score: finalScore })
+        .eq("tournament_id", tournamentId)
+        .eq("team_id", teamId);
+    } catch (e) {
+      console.error("Failed to save tournament score:", e);
+    }
+  }, [tournamentId, teamId]);
+
+  const advanceTournament = useCallback(async (newStatus: string) => {
+    if (!tournamentId) return;
+    try {
+      await supabase
+        .from("tournaments")
+        .update({ status: newStatus })
+        .eq("id", tournamentId);
+    } catch (e) {
+      console.error("Failed to advance tournament:", e);
+    }
+  }, [tournamentId]);
 
   const resetToLobby = useCallback(() => {
     setGameId(null);
@@ -94,6 +130,10 @@ export function useGameSetup() {
     setLocalMode,
     localScore,
     setLocalScore,
+    tournamentId,
+    teamId,
+    saveTournamentScore,
+    advanceTournament,
     resetToLobby,
   };
 }

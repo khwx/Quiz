@@ -188,6 +188,36 @@ export default function TeamsPage() {
     }
   };
 
+  const refreshMyTeam = async () => {
+    if (!myTeam?.id) return;
+    const { data } = await supabase
+      .from("teams")
+      .select("*, team_members(*, profiles(id, username, avatar))")
+      .eq("id", myTeam.id)
+      .single();
+    if (data) setMyTeam(data as TeamWithMembers);
+  };
+
+  // Realtime: refresh team members when someone joins/leaves
+  useEffect(() => {
+    if (!myTeam?.id) return;
+
+    const channel = supabase
+      .channel(`team-members-${myTeam.id}`)
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "team_members", filter: `team_id=eq.${myTeam.id}` },
+        () => {
+          refreshMyTeam();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [myTeam?.id]);
+
   const leaveTeam = async (teamId: string) => {
     if (!user) return;
     try {
