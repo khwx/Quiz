@@ -7,8 +7,7 @@ import { useRouter } from "next/navigation";
 import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
-import type { Profile, AnswerSummary, PlayerStats } from "@/types";
-import type { User } from "@supabase/supabase-js";
+import type { AnswerSummary, PlayerStats } from "@/types";
 
 export default function ProfilePage() {
   const router = useRouter();

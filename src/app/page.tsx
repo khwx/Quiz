@@ -20,9 +20,7 @@ import {
   Trophy,
   Users,
   Sparkles,
-  ChevronDown,
   Star,
-  Timer,
   Brain,
   Target,
 } from "lucide-react";

@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Clock, Brain, Database, Volume2, VolumeX, Flag } from "lucide-react";
 import { speak, stopSpeaking, isSpeaking } from "@/lib/tts";
+import type { Question, Player, Answer } from "@/types";
 
 interface QuestionDisplayProps {
-  question: any;
+  question: Question;
   timeLeft: number;
   totalTime: number;
   status: string;
-  players?: any[];
-  answers?: any[];
+  players?: Player[];
+  answers?: Answer[];
   questionSource?: "DB" | "AI" | null;
   onTimerClick?: () => void;
   localMode?: boolean;
@@ -71,7 +72,7 @@ export default function QuestionDisplay({
       {/* Header Bar */}
       <div className="w-full flex items-center justify-between mb-8 px-4">
         <div className="flex items-center gap-3">
-          <span className="bg-white/5 backdrop-blur-md px-6 py-2 rounded-full font-black uppercase tracking-tighter text-violet-400 border border-white/10 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+          <span className="bg-white/5 backdrop-blur-md px-6 py-2 rounded-full font-black uppercase tracking-tighter text-[#d0bcff] border border-white/10 shadow-[0_0_15px_rgba(208,188,255,0.2)]">
             Arena: {(question.category || "Geral").replace(/_/g, " ").toLowerCase().replace(/\b\w/g, (l: string) => l.toUpperCase())}
           </span>
           {questionNumber && totalQuestions && (
@@ -109,7 +110,7 @@ export default function QuestionDisplay({
             }}
             className={`p-3 rounded-full border transition-all ${
               ttsEnabled
-                ? "bg-violet-500/20 border-violet-500/50 text-violet-300 hover:bg-violet-500/30"
+                ? "bg-[#d0bcff]/20 border-[#d0bcff]/50 text-[#d0bcff] hover:bg-[#d0bcff]/30"
                 : "bg-gray-500/20 border-gray-500/50 text-gray-400"
             }`}
             title={ttsEnabled ? "Ler questão em voz alta" : "TTS desativado"}

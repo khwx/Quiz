@@ -209,10 +209,10 @@ export default function TVHost() {
     return (
       <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-violet-600/20 blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-pink-600/20 blur-[100px]" />
+          <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#d0bcff]/20 blur-[100px]" />
+          <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-[#FFB0CD]/20 blur-[100px]" />
         </div>
-        <Loader2 className="w-12 h-12 animate-spin text-violet-400 relative z-10" />
+        <Loader2 className="w-12 h-12 animate-spin text-[#d0bcff] relative z-10" />
       </div>
     );
   }
@@ -224,9 +224,9 @@ export default function TVHost() {
       <SoundEnableButton />
 
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-violet-600/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-pink-600/10 rounded-full blur-[150px]" />
-        <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-purple-500/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-[#d0bcff]/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-[#FFB0CD]/10 rounded-full blur-[150px]" />
+        <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-[#FFD700]/5 rounded-full blur-[120px]" />
       </div>
 
       {(status === "LOBBY" || status === "STARTING") && (

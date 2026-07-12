@@ -4,10 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
 import { Users, Play, Loader2, ArrowRight, Zap, GraduationCap } from "lucide-react";
 import { CATEGORIES } from "@/hooks/useGameSetup";
+import type { Player } from "@/types";
 
 interface LobbyViewProps {
   pin: string;
-  players: any[];
+  players: Player[];
   topic: string[];
   customTopic: string;
   ageGroup: string;
@@ -154,7 +155,7 @@ export default function LobbyView({
             {/* AGE GROUP SELECTOR */}
             <div className="space-y-3">
               <label className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-                <GraduationCap className="w-4 h-4 text-violet-500" /> Nível da Arena
+                <GraduationCap className="w-4 h-4 text-[#d0bcff]" /> Nível da Arena
               </label>
               <div className="grid grid-cols-4 gap-3">
                 {[
@@ -168,7 +169,7 @@ export default function LobbyView({
                     onClick={() => onAgeGroupChange(age.id)}
                     className={`py-3 rounded-2xl text-xs font-bold transition-all border-2 flex flex-col items-center gap-1 ${
                       ageGroup === age.id
-                        ? "bg-violet-600 border-violet-400 text-white shadow-[0_0_15px_rgba(139,92,246,0.5)] scale-105"
+                        ? "bg-[#d0bcff] border-[#d0bcff] text-[#121223] shadow-[0_0_15px_rgba(208,188,255,0.5)] scale-105"
                         : "bg-white/5 border-white/5 text-gray-400 hover:border-white/10"
                     }`}
                   >
@@ -274,7 +275,7 @@ export default function LobbyView({
                     onClick={() => onQuestionCountChange(count)}
                     className={`py-2 rounded-xl text-sm font-bold transition-all border-2 ${
                       questionCount === count
-                        ? "bg-violet-500 border-violet-500 text-white shadow-lg"
+                        ? "bg-[#d0bcff] border-[#d0bcff] text-[#121223] shadow-lg"
                         : "bg-transparent border-white/10 text-gray-400 hover:border-white/30"
                     }`}
                   >

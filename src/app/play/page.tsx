@@ -69,7 +69,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     if (status === "REVEAL") {
       setStreak(0);
     }
-  }, [status, currentQuestionIndex, currentQuestionId, fetchQuestion]);
+  }, [status, currentQuestionIndex, currentQuestionId, fetchQuestion, gameSettings]);
 
   useEffect(() => {
     if (!timerActive) return;
@@ -290,7 +290,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   if (status === "QUESTION" && !questionData) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-12 h-12 animate-spin text-violet-400" />
+        <Loader2 className="w-12 h-12 animate-spin text-[#d0bcff]" />
       </main>
     );
   }

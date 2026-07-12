@@ -1,6 +1,6 @@
 "use client";
 
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function SoundEnableButton() {

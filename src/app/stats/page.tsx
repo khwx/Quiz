@@ -9,11 +9,6 @@ import {
   Target,
   CheckSquare,
   Clock,
-  TrendingUp,
-  TrendingDown,
-  Minus,
-  Trophy,
-  Lock,
   CheckCircle2,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";

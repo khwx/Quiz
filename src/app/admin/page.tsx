@@ -360,7 +360,7 @@ export default function AdminPage() {
     if (!isAuthenticated) {
         return (
             <div className="min-h-screen flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-violet-400 border-t-transparent rounded-full animate-spin" />
+                <div className="w-8 h-8 border-2 border-[#d0bcff] border-t-transparent rounded-full animate-spin" />
             </div>
         );
     }
@@ -368,17 +368,17 @@ export default function AdminPage() {
     return (
         <main className="min-h-screen relative overflow-x-hidden pb-20">
             <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-violet-600/10 blur-[150px]" />
-                <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-pink-600/10 blur-[150px]" />
+                <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
+                <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
             </div>
 
-            <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/10">
+            <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
                 <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
                     <Link href="/" className="text-xl font-bold text-white/60 hover:text-white transition-colors">
                         ←
                     </Link>
                     <div className="flex items-center gap-3">
-                        <Shield className="w-6 h-6 text-violet-400" />
+                        <Shield className="w-6 h-6 text-[#d0bcff]" />
                         <h1 className="text-xl font-bold text-white" style={{ fontFamily: 'Space Grotesk' }}>Admin</h1>
                     </div>
                     <div className="flex items-center gap-2 text-white/60 text-sm">
@@ -390,7 +390,7 @@ export default function AdminPage() {
 
             <div className="relative z-10 max-w-7xl mx-auto p-6 space-y-6">
                 <div className="flex gap-2 overflow-x-auto pb-2">
-                    <button onClick={() => { setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-violet-500/15 text-violet-400 border border-violet-400/30 text-sm font-medium whitespace-nowrap">
+                    <button onClick={() => { setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-[#d0bcff]/15 text-[#d0bcff] border border-[#d0bcff]/30 text-sm font-medium whitespace-nowrap">
                         <Database className="w-4 h-4 inline mr-2" />
                         Perguntas ({questions.length})
                     </button>
@@ -406,7 +406,7 @@ export default function AdminPage() {
                         <Users className="w-4 h-4 inline mr-2" />
                         Equipa
                     </button>
-                    <button onClick={() => { setShowCreateForm(true); resetForm(); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-400/30 text-sm font-medium whitespace-nowrap">
+                    <button onClick={() => { setShowCreateForm(true); resetForm(); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-[#4CAF50]/15 text-[#4CAF50] border border-[#4CAF50]/30 text-sm font-medium whitespace-nowrap">
                         <Plus className="w-4 h-4 inline mr-2" />
                         Nova Pergunta
                     </button>
@@ -415,7 +415,7 @@ export default function AdminPage() {
                 {showAddAdmin && (
                     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass-panel p-6">
                         <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                            <ShieldCheck className="w-5 h-5 text-violet-400" />
+                            <ShieldCheck className="w-5 h-5 text-[#d0bcff]" />
                             Gestão de Equipa
                         </h2>
                         
@@ -450,7 +450,7 @@ export default function AdminPage() {
                                     <option value="admin">Administrador</option>
                                     <option value="host">Anfitrião</option>
                                 </select>
-                                <button onClick={addAdmin} className="px-6 py-3 bg-violet-600 text-white rounded-xl font-medium">
+                                <button onClick={addAdmin} className="px-6 py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold">
                                     Adicionar
                                 </button>
                             </div>
@@ -474,7 +474,7 @@ export default function AdminPage() {
                             <div className="text-xs text-white/40 uppercase">Reportadas</div>
                         </div>
                         <div className="glass-panel p-4 text-center">
-                            <div className="text-3xl font-bold text-violet-400">{duplicateGroups.length}</div>
+                            <div className="text-3xl font-bold text-[#d0bcff]">{duplicateGroups.length}</div>
                             <div className="text-xs text-white/40 uppercase">Duplicados</div>
                         </div>
                     </section>
@@ -482,11 +482,11 @@ export default function AdminPage() {
 
                 {!showDuplicates && !showReported && !showAddAdmin && (
                     <section className="flex gap-2 overflow-x-auto pb-2">
-                        <button onClick={() => { setSelectedCategory("all"); setCurrentPage(1); }} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === "all" ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
+                        <button onClick={() => { setSelectedCategory("all"); setCurrentPage(1); }} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === "all" ? "bg-[#d0bcff]/20 text-[#d0bcff]" : "bg-white/5 text-white/60"}`}>
                             Todas
                         </button>
                         {stats.map(s => (
-                            <button key={s.category} onClick={() => { setSelectedCategory(s.category); setCurrentPage(1); }} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === s.category ? "bg-violet-500/20 text-violet-400" : "bg-white/5 text-white/60"}`}>
+                            <button key={s.category} onClick={() => { setSelectedCategory(s.category); setCurrentPage(1); }} className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedCategory === s.category ? "bg-[#d0bcff]/20 text-[#d0bcff]" : "bg-white/5 text-white/60"}`}>
                                 {s.category} ({s.count})
                             </button>
                         ))}
@@ -595,7 +595,7 @@ export default function AdminPage() {
                 {!showDuplicates && !showReported && !showAddAdmin && (
                     <section className="space-y-3">
                         {loading ? (
-                            <div className="text-center py-12"><div className="w-8 h-8 border-2 border-violet-400 border-t-transparent rounded-full animate-spin mx-auto" /></div>
+                            <div className="text-center py-12"><div className="w-8 h-8 border-2 border-[#d0bcff] border-t-transparent rounded-full animate-spin mx-auto" /></div>
                         ) : filteredQuestions.length === 0 ? (
                             <div className="glass-panel p-8 text-center text-white/50">Nenhuma pergunta encontrada</div>
                         ) : (
