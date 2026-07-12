@@ -13,20 +13,27 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   const questionStartTimeRef = useRef<number>(0);
   const { playSound } = useSound();
 
+  // Use refs for values used in effects to prevent unnecessary re-runs
+  const currentQuestionsRef = useRef(currentQuestions);
+  currentQuestionsRef.current = currentQuestions;
+  const timerDurationRef = useRef(timerDuration);
+  timerDurationRef.current = timerDuration;
+
   const triggerReveal = useCallback(() => {
     shouldRevealRef.current = true;
     updateStatus("REVEAL");
   }, [updateStatus]);
 
   const resetTimer = useCallback(() => {
-    setTimeLeft(timerDuration);
+    setTimeLeft(timerDurationRef.current);
     shouldRevealRef.current = false;
     questionStartTimeRef.current = Date.now();
-  }, [timerDuration]);
+  }, []);
 
+  // Timer effect — only re-runs when status or currentQuestionIndex changes
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    const currentQ = currentQuestions[currentQuestionIndex - 1];
+    const currentQ = currentQuestionsRef.current[currentQuestionIndex - 1];
 
     if (status === "QUESTION" && currentQ?.id) {
       resetTimer();
@@ -54,7 +61,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [status, currentQuestionIndex, currentQuestions, playSound, updateStatus, resetTimer]);
+  }, [status, currentQuestionIndex, playSound, updateStatus, resetTimer]);
 
   useEffect(() => {
     if (status === "QUESTION") {
@@ -64,15 +71,13 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
   const nextQuestionRef = useRef(nextQuestion);
   const updateStatusRef = useRef(updateStatus);
-  const currentQuestionsRef = useRef(currentQuestions);
   const currentQuestionIndexRef = useRef(currentQuestionIndex);
 
   useEffect(() => {
     nextQuestionRef.current = nextQuestion;
     updateStatusRef.current = updateStatus;
-    currentQuestionsRef.current = currentQuestions;
     currentQuestionIndexRef.current = currentQuestionIndex;
-  }, [nextQuestion, updateStatus, currentQuestions, currentQuestionIndex]);
+  }, [nextQuestion, updateStatus, currentQuestionIndex]);
 
   useEffect(() => {
     if (status !== "REVEAL") {

@@ -1045,6 +1045,176 @@
     }
   },
   {
+    "id": "e4bad82b-5b7d-48d2-bbdb-189ac5152cde",
+    "text": "Quem pintou a Mona Lisa?",
+    "image_url": null,
+    "options": [
+      "Caravaggio",
+      "Rafael",
+      "Leonardo da Vinci",
+      "Michelangelo"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "19821d48-e263-4776-943c-59207e8ac5a7",
+    "text": "Qual o rio mais longo da Ásia?",
+    "image_url": null,
+    "options": [
+      "Rio Yangtzé",
+      "Rio Ganges",
+      "Rio Amarelo",
+      "Rio Mekong"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "10b8751b-6044-499d-99b3-8dc24fa3e0f5",
+    "text": "Em que ano foi publicado 'Dom Quixote'?",
+    "image_url": null,
+    "options": [
+      "1635",
+      "1625",
+      "1615",
+      "1605"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "bbe76435-1fbf-4e22-9e47-4335485048db",
+    "text": "Quem compôs a 'Sinfonia nº 5'?",
+    "image_url": null,
+    "options": [
+      "Johann Sebastian Bach",
+      "Ludwig van Beethoven",
+      "Pyotr Ilyich Tchaikovsky",
+      "Wolfgang Amadeus Mozart"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "e96352f8-c3b7-4b29-81d0-22c337b45acf",
+    "text": "Qual o maior planeta do nosso sistema solar?",
+    "image_url": null,
+    "options": [
+      "Netuno",
+      "Urano",
+      "Saturno",
+      "Júpiter"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "72825923-9086-4df4-8c74-4e8b745dd3b2",
+    "text": "Quem escreveu 'O Alquimista'?",
+    "image_url": null,
+    "options": [
+      "Graciliano Ramos",
+      "Machado de Assis",
+      "Jorge Amado",
+      "Paulo Coelho"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "6cabc015-4095-4594-b375-3bee0b86b4e3",
+    "text": "Em que ano terminou a Segunda Guerra Mundial?",
+    "image_url": null,
+    "options": [
+      "1947",
+      "1946",
+      "1945",
+      "1944"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "346406bb-15a4-4b6c-83c9-e00c9f3c6dc7",
+    "text": "Qual a capital da Austrália?",
+    "image_url": null,
+    "options": [
+      "Sydney",
+      "Melbourne",
+      "Canberra",
+      "Perth"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "87d1b3da-0114-498b-a257-a94e188f4d12",
+    "text": "Quem foi o primeiro homem a caminhar na Lua?",
+    "image_url": null,
+    "options": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "John Glenn",
+      "Alan Shepard"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
+    "id": "b0bc5298-b3f5-499d-b913-42addd5d8eb1",
+    "text": "Qual o nome do famoso pintor de 'A Noite Estrelada'?",
+    "image_url": null,
+    "options": [
+      "Pablo Picasso",
+      "Paul Gauguin",
+      "Claude Monet",
+      "Vincent van Gogh"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-06T19:25:36.245283+00:00",
+    "metadata": {}
+  },
+  {
     "id": "9bf61cdf-378a-4a42-9984-4bff7abfb316",
     "text": "Quem pintou 'A Noite Estrelada'?",
     "image_url": null,
@@ -4237,6 +4407,25 @@
     }
   },
   {
+    "id": "82e4a307-607a-4793-8d5e-170337c1d871",
+    "text": "Qual é o rio mais longo da América do Sul?",
+    "image_url": null,
+    "options": [
+      "Amazonas",
+      "Orinoco",
+      "Paraná",
+      "Magdalena"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Passa pelo Brasil e Peru"
+    }
+  },
+  {
     "id": "4e406770-847a-4e1e-96fb-76be5ff65cc9",
     "text": "Qual é a empresa de Elon Musk?",
     "image_url": null,
@@ -5339,6 +5528,44 @@
     }
   },
   {
+    "id": "cbb86e45-fb6e-49fc-afb4-cc35eaeabcba",
+    "text": "Em que oceano estão as Ilhas Maldivas?",
+    "image_url": null,
+    "options": [
+      "Índico",
+      "Pacífico",
+      "Atlântico",
+      "Ártico"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Sudoeste da Índia"
+    }
+  },
+  {
+    "id": "fcd95238-8254-452a-b18e-0f9f114d48ec",
+    "text": "Qual é o ponto mais baixo da Terra?",
+    "image_url": null,
+    "options": [
+      "Mar Morto",
+      "Depressão da Bácia",
+      "Vale da Morte",
+      "Caspian"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "-430 metros abaixo do nível do mar"
+    }
+  },
+  {
     "id": "54e1d898-0cd3-4658-ba4c-62a3aaf60343",
     "text": "Quanto é 9x9? (calcule)",
     "image_url": null,
@@ -5355,6 +5582,538 @@
     "created_at": "2026-06-30T17:36:05.013616+00:00",
     "metadata": {
       "hint": "A resposta correta e: 81"
+    }
+  },
+  {
+    "id": "28e1078d-af04-4ba5-b878-cad5a4310570",
+    "text": "Qual é o maior lago da África?",
+    "image_url": null,
+    "options": [
+      "Victória",
+      "Chade",
+      "Tanganica",
+      "Niassa"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Fronteira de Tanzânia e Uganda"
+    }
+  },
+  {
+    "id": "9c7e3369-3bd4-4d2e-b9b0-0e4ba2fb789c",
+    "text": "Em que país está o Deserto do Atacama?",
+    "image_url": null,
+    "options": [
+      "Chile",
+      "Peru",
+      "Bolívia",
+      "Argentina"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Mais seco do mundo"
+    }
+  },
+  {
+    "id": "a42f72e4-164c-4b03-9ab0-cd2bb365abd2",
+    "text": "Qual é o país com mais fronteiras terrestres?",
+    "image_url": null,
+    "options": [
+      "China",
+      "Rússia",
+      "Brasil",
+      "Alemanha"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Faz fronteira com 14 países"
+    }
+  },
+  {
+    "id": "fe5f753e-49a3-497b-92a0-4ecd1ccd2f02",
+    "text": "Qual é o menor estado dos EUA?",
+    "image_url": null,
+    "options": [
+      "Havaí",
+      "Delaware",
+      "Connecticut",
+      "Rhode Island"
+    ],
+    "correct_option": 3,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Menor que o Distrito Federal"
+    }
+  },
+  {
+    "id": "236f8527-bac7-4621-b23a-97ab18360278",
+    "text": "Qual é o mar interior mais salgado do mundo?",
+    "image_url": null,
+    "options": [
+      "Mar Morto",
+      "Mar Cáspio",
+      "Mar Aral",
+      "Grande Lago Salgado"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Entre Israel e Jordânia"
+    }
+  },
+  {
+    "id": "4fa2e00f-45a5-492e-a544-cc17b7c8c1b9",
+    "text": "Quem escreveu 'Dom Casmurro'?",
+    "image_url": null,
+    "options": [
+      "Machado de Assis",
+      "José de Alencar",
+      "Graciliano Ramos",
+      "Euclides da Cunha"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Romano realista brasileiro"
+    }
+  },
+  {
+    "id": "84bb2c56-a7c1-4586-8d6a-0e18fa24d181",
+    "text": "Qual é a moeda oficial do Japão?",
+    "image_url": null,
+    "options": [
+      "Iene",
+      "Won",
+      "Yuan",
+      "Baht"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Símbolo: ¥"
+    }
+  },
+  {
+    "id": "4dce3043-55f7-49dd-8296-e954a84d7c46",
+    "text": "Quem pintou o teto da Capela Sistina?",
+    "image_url": null,
+    "options": [
+      "Leonardo da Vinci",
+      "Michelangelo",
+      "Rafael",
+      "Tiziano"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Artista renascentista italiano"
+    }
+  },
+  {
+    "id": "b8385b4e-e22b-4ef3-acfd-bfacf9f25590",
+    "text": "Em que ano foi a queda do Muro de Berlim?",
+    "image_url": null,
+    "options": [
+      "1989",
+      "1991",
+      "1987",
+      "1990"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Fim da Guerra Fria"
+    }
+  },
+  {
+    "id": "244bbe14-f3f0-4471-a15d-f7109211c2de",
+    "text": "Qual é o idioma mais falado no mundo como língua materna?",
+    "image_url": null,
+    "options": [
+      "Espanhol",
+      "Inglês",
+      "Chinês",
+      "Hindi"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Mais de 900 milhões de nativos"
+    }
+  },
+  {
+    "id": "925a05fd-f77a-4303-9371-f0e1605d348c",
+    "text": "Quem descobriu a penicilina?",
+    "image_url": null,
+    "options": [
+      "Alexander Fleming",
+      "Louis Pasteur",
+      "Robert Koch",
+      "Edward Jenner"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Bactériologista escocês"
+    }
+  },
+  {
+    "id": "ab8eec4e-6f09-4ea6-81bf-6133a15176b2",
+    "text": "Qual é o maior oceano do planeta?",
+    "image_url": null,
+    "options": [
+      "Atlântico",
+      "Índico",
+      "Ártico",
+      "Pacífico"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Cobre mais de 30% da Terra"
+    }
+  },
+  {
+    "id": "d73f2044-4512-4852-9c31-56a10b34540a",
+    "text": "Em que país nasceu Mozart?",
+    "image_url": null,
+    "options": [
+      "Alemanha",
+      "Áustria",
+      "Itália",
+      "França"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Cidade de Salzburgo"
+    }
+  },
+  {
+    "id": "ebac0595-ba5a-423a-8458-215da8a59ac0",
+    "text": "O que significa CPU?",
+    "image_url": null,
+    "options": [
+      "Central Processing Unit",
+      "Computer Personal Unit",
+      "Central Process Utility",
+      "Core Processing Unit"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "O 'cérebro' do computador"
+    }
+  },
+  {
+    "id": "da3ce1b6-2e2c-4f8d-b7e1-e3a10f393177",
+    "text": "Qual empresa criou o sistema operacional Android?",
+    "image_url": null,
+    "options": [
+      "Apple",
+      "Microsoft",
+      "Google",
+      "Samsung"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Também dona do YouTube"
+    }
+  },
+  {
+    "id": "578d188d-f955-4d0a-9cf8-07e5b94dbeff",
+    "text": "O que é HTML?",
+    "image_url": null,
+    "options": [
+      "HyperText Markup Language",
+      "High Transfer Machine Language",
+      "Home Tool Markup Language",
+      "Hyperlink Text Management Language"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "Linguagem de marcação para web"
+    }
+  },
+  {
+    "id": "b5919691-5f41-412c-9c47-38fb168420d8",
+    "text": "Qual foi o primeiro vídeo a atingir 1 bilhão de visualizações no YouTube?",
+    "image_url": null,
+    "options": [
+      "Gangnam Style",
+      "Baby Shark",
+      "Despacito",
+      "See You Again"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.589331+00:00",
+    "metadata": {
+      "hint": "PSY, 2012"
+    }
+  },
+  {
+    "id": "83a751b0-9949-47a2-a627-8a059f9f0433",
+    "text": "O que significa RAM em computadores?",
+    "image_url": null,
+    "options": [
+      "Random Access Memory",
+      "Read Access Memory",
+      "Run Access Memory",
+      "Random Allocation Memory"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Memória volátil"
+    }
+  },
+  {
+    "id": "ca207549-5567-466b-a14a-d421b9843ef9",
+    "text": "Qual linguagem de programação foi criada pelo Google?",
+    "image_url": null,
+    "options": [
+      "Java",
+      "Python",
+      "Go",
+      "C#"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Also known as Golang"
+    }
+  },
+  {
+    "id": "e6dbe05d-6f2f-42c3-a41e-95ea891abd14",
+    "text": "Quanto é 20% de 150?",
+    "image_url": null,
+    "options": [
+      "30",
+      "25",
+      "35",
+      "40"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "10% de 150 = 15, então 20% = 30"
+    }
+  },
+  {
+    "id": "4a6fba80-f34d-4ec8-bd92-584df27adf0f",
+    "text": "Qual é a raíz quadrada de 144?",
+    "image_url": null,
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "12 × 12 = 144"
+    }
+  },
+  {
+    "id": "34b65d61-2e2a-41a7-9501-24b5ae7326ef",
+    "text": "Se um triângulo tem dois ângulos de 45° e 90°, qual é o terceiro ângulo?",
+    "image_url": null,
+    "options": [
+      "30°",
+      "45°",
+      "60°",
+      "90°"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Soma dos ângulos internos é 180°"
+    }
+  },
+  {
+    "id": "d29432de-5629-483a-8cb5-03133df45c7d",
+    "text": "Quantas notas tem uma escala diatônica?",
+    "image_url": null,
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Do Ré Mi Fa Sol Lá Si"
+    }
+  },
+  {
+    "id": "f36a3976-bf34-4a48-bc02-bca284f76fd2",
+    "text": "Qual instrumento é conhecido como 'rei dos instrumentos'?",
+    "image_url": null,
+    "options": [
+      "Violino",
+      "Piano",
+      "Órgão",
+      "Harpa"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Tem teclas e pedais"
+    }
+  },
+  {
+    "id": "3139616e-cb6c-4dab-bf70-fcfff4b95d92",
+    "text": "Quem compôs a 'Sinfonía N.º 9'?",
+    "image_url": null,
+    "options": [
+      "Beethoven",
+      "Mozart",
+      "Bach",
+      "Chopin"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Inclui o 'Hino à Alegria'"
+    }
+  },
+  {
+    "id": "308f7ed0-f6f4-49db-a687-6ebc63eb3a1f",
+    "text": "Qual é a duração mínima de uma nota semicolcheia?",
+    "image_url": null,
+    "options": [
+      "1/2 tempo",
+      "1/4 tempo",
+      "1/8 tempo",
+      "1/16 tempo"
+    ],
+    "correct_option": 3,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Metade da semicolcheia"
+    }
+  },
+  {
+    "id": "14a066b1-b7d2-40f7-b992-e3028f7d9f6b",
+    "text": "Qual é a capital do Catar?",
+    "image_url": null,
+    "options": [
+      "Doha",
+      "Riade",
+      "Dubai",
+      "Kuwait City"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Sede da Copa do Mundo de 2022"
+    }
+  },
+  {
+    "id": "7d9ee99c-60a1-46ff-87f1-bc4a7036e72e",
+    "text": "Qual é a capital de Oman?",
+    "image_url": null,
+    "options": [
+      "Mascate",
+      "Dubai",
+      "Riade",
+      "Doha"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "No sudeste da Península Arábiga"
     }
   },
   {
@@ -5450,6 +6209,44 @@
     "created_at": "2026-07-02T02:40:44.501583+00:00",
     "metadata": {
       "hint": "Série Core i3, i5, i7, i9"
+    }
+  },
+  {
+    "id": "6aed3027-47db-407c-81e4-cf977fb8f674",
+    "text": "Qual é a capital da Letônia?",
+    "image_url": null,
+    "options": [
+      "Riga",
+      "Tallinn",
+      "Vilnius",
+      "Helsinquia"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Na costa do Mar Báltico"
+    }
+  },
+  {
+    "id": "ed0238e4-9f95-42ec-a5ef-fa80f6f7b8d0",
+    "text": "Qual é a capital de Malta?",
+    "image_url": null,
+    "options": [
+      "Valletta",
+      "Venice",
+      "Marrakesh",
+      "Tunis"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:07:38.829169+00:00",
+    "metadata": {
+      "hint": "Ilha no Mediterrâneo"
     }
   },
   {
@@ -8645,6 +9442,31 @@
     }
   },
   {
+    "id": "3e61b213-5621-4ecc-916a-722877680f73",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/ba.svg",
+    "options": [
+      "Ilhas Caimao",
+      "Tuvalu",
+      "Bosnia-Herzegovina",
+      "Ruanda"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "reports": [
+        {
+          "date": "2026-07-10T21:10:10.883Z",
+          "reason": "só tem IM o texto devia ser outro ?\n",
+          "reporter": "346418"
+        }
+      ]
+    }
+  },
+  {
     "id": "934e60e3-d901-4b89-b43a-d069e8ed9dd1",
     "text": "Em que ano terminou a Segunda Guerra Mundial?",
     "image_url": null,
@@ -8702,22 +9524,28 @@
     }
   },
   {
-    "id": "76c96df0-af99-48ef-8bb8-f6a18fe900f9",
+    "id": "c936b6ea-b5ad-4a4b-ad78-62b2a8bd2cb1",
     "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/ax.svg",
+    "image_url": "/flags/io.svg",
     "options": [
-      "AX",
-      "Ilhas Marshall",
-      "Paraguai",
-      "Chipre"
+      "Tonga",
+      "Madagascar",
+      "Território Britânico do Oceano Índico",
+      "Belgica"
     ],
-    "correct_option": 0,
+    "correct_option": 2,
     "category": "Bandeiras",
-    "age_rating": 8,
+    "age_rating": 16,
     "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
     "metadata": {
-      "hint": "A resposta correta e: AX"
+      "reports": [
+        {
+          "date": "2026-07-10T21:12:33.026Z",
+          "reason": "Texto confuso",
+          "reporter": "346418"
+        }
+      ]
     }
   },
   {
@@ -8851,44 +9679,6 @@
     "created_at": "2026-07-02T10:27:52.329791+00:00",
     "metadata": {
       "hint": "A resposta correta e: Franca"
-    }
-  },
-  {
-    "id": "28820d71-7b1d-44bd-af19-2358cb2eb9d6",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/gs.svg",
-    "options": [
-      "GS",
-      "Maldivas",
-      "Noruega",
-      "Siria"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: GS"
-    }
-  },
-  {
-    "id": "ff0f9d0c-fe8d-4150-9e98-8d67a0f38307",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/vi.svg",
-    "options": [
-      "Equador",
-      "Venezuela",
-      "VI",
-      "Guiana"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: VI"
     }
   },
   {
@@ -9120,44 +9910,6 @@
     }
   },
   {
-    "id": "878f2ae7-97fb-4e8f-a66a-5170bd892765",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/as.svg",
-    "options": [
-      "AS",
-      "Marrocos",
-      "Singapura",
-      "Iemen"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: AS"
-    }
-  },
-  {
-    "id": "a9eab1b8-e2bd-427a-998a-761323f411a6",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/bl.svg",
-    "options": [
-      "Cuba",
-      "BL",
-      "Islandia",
-      "Madagascar"
-    ],
-    "correct_option": 1,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: BL"
-    }
-  },
-  {
     "id": "d991c0b7-c042-41e7-886d-257973b0177a",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/ao.svg",
@@ -9196,25 +9948,6 @@
     }
   },
   {
-    "id": "503aaf9e-6f51-4d20-99ff-3b9dda2383c7",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/bv.svg",
-    "options": [
-      "BV",
-      "Bangladesh",
-      "Emirados Arabes Unidos",
-      "Palau"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: BV"
-    }
-  },
-  {
     "id": "b92bccc5-1e7a-4595-b8ea-4eeef0c6674b",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/bb.svg",
@@ -9250,63 +9983,6 @@
     "created_at": "2026-07-02T10:27:52.329791+00:00",
     "metadata": {
       "hint": "A resposta correta e: Australia"
-    }
-  },
-  {
-    "id": "3e61b213-5621-4ecc-916a-722877680f73",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/ba.svg",
-    "options": [
-      "Ilhas Caimao",
-      "Tuvalu",
-      "Bosnia-Herzegovina",
-      "Ruanda"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: Bosnia-Herzegovina"
-    }
-  },
-  {
-    "id": "e828d6e3-40f4-4393-82cc-b77a70f6817e",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/bq.svg",
-    "options": [
-      "BQ",
-      "Mianmar",
-      "Estonia",
-      "Anguilla"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: BQ"
-    }
-  },
-  {
-    "id": "f9cfac15-c418-413f-8cab-070c873720eb",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/aq.svg",
-    "options": [
-      "Sao Vicente e Granadinas",
-      "Holanda",
-      "Guine Equatorial",
-      "AQ"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: AQ"
     }
   },
   {
@@ -9364,6 +10040,158 @@
     "created_at": "2026-07-02T10:27:52.329791+00:00",
     "metadata": {
       "hint": "A resposta correta e: Albania"
+    }
+  },
+  {
+    "id": "76c96df0-af99-48ef-8bb8-f6a18fe900f9",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/ax.svg",
+    "options": [
+      "Ilhas Åland",
+      "Ilhas Marshall",
+      "Paraguai",
+      "Chipre"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: AX"
+    }
+  },
+  {
+    "id": "28820d71-7b1d-44bd-af19-2358cb2eb9d6",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/gs.svg",
+    "options": [
+      "Geórgia do Sul e Sandwich do Sul",
+      "Maldivas",
+      "Noruega",
+      "Siria"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: GS"
+    }
+  },
+  {
+    "id": "ff0f9d0c-fe8d-4150-9e98-8d67a0f38307",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/vi.svg",
+    "options": [
+      "Equador",
+      "Venezuela",
+      "Ilhas Virgens Americanas",
+      "Guiana"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: VI"
+    }
+  },
+  {
+    "id": "878f2ae7-97fb-4e8f-a66a-5170bd892765",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/as.svg",
+    "options": [
+      "Samoa Americana",
+      "Marrocos",
+      "Singapura",
+      "Iemen"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: AS"
+    }
+  },
+  {
+    "id": "a9eab1b8-e2bd-427a-998a-761323f411a6",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/bl.svg",
+    "options": [
+      "Cuba",
+      "São Bartolomeu",
+      "Islandia",
+      "Madagascar"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: BL"
+    }
+  },
+  {
+    "id": "503aaf9e-6f51-4d20-99ff-3b9dda2383c7",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/bv.svg",
+    "options": [
+      "Ilha Bouvet",
+      "Bangladesh",
+      "Emirados Arabes Unidos",
+      "Palau"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: BV"
+    }
+  },
+  {
+    "id": "e828d6e3-40f4-4393-82cc-b77a70f6817e",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/bq.svg",
+    "options": [
+      "Holanda Caraíbica",
+      "Mianmar",
+      "Estonia",
+      "Anguilla"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: BQ"
+    }
+  },
+  {
+    "id": "f9cfac15-c418-413f-8cab-070c873720eb",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/aq.svg",
+    "options": [
+      "Sao Vicente e Granadinas",
+      "Holanda",
+      "Guine Equatorial",
+      "Antártida"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: AQ"
     }
   },
   {
@@ -9614,25 +10442,6 @@
     }
   },
   {
-    "id": "1784863b-dbee-45d5-bd2e-e2e8ed3676a2",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/fk.svg",
-    "options": [
-      "FK",
-      "Uruguai",
-      "Malasia",
-      "Bermudas"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.329791+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: FK"
-    }
-  },
-  {
     "id": "f5c5ac40-b11c-44b2-8222-ba3c8b7ee780",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/es.svg",
@@ -9649,25 +10458,6 @@
     "created_at": "2026-07-02T10:27:52.329791+00:00",
     "metadata": {
       "hint": "A resposta correta e: Espanha"
-    }
-  },
-  {
-    "id": "1fdc4dc1-be19-49db-81e5-6804113b3602",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/cf.svg",
-    "options": [
-      "CF",
-      "Chipre",
-      "Jordania",
-      "Ilhas Caimao"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: CF"
     }
   },
   {
@@ -9766,25 +10556,6 @@
     }
   },
   {
-    "id": "f34c71b9-c4d1-437b-b2c4-d3a70465f038",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/ck.svg",
-    "options": [
-      "Timor-Leste",
-      "CK",
-      "Suriname",
-      "Finlandia"
-    ],
-    "correct_option": 1,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: CK"
-    }
-  },
-  {
     "id": "4c992760-3aba-42e2-9bc4-d0bc7f6dfb32",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/cu.svg",
@@ -9801,25 +10572,6 @@
     "created_at": "2026-07-02T10:27:52.441383+00:00",
     "metadata": {
       "hint": "A resposta correta e: Cuba"
-    }
-  },
-  {
-    "id": "f6047081-9665-4915-825e-e80330f2a175",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/eh.svg",
-    "options": [
-      "Cazaquistao",
-      "Letonia",
-      "Gabao",
-      "EH"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: EH"
     }
   },
   {
@@ -9858,44 +10610,6 @@
     "created_at": "2026-07-02T10:27:52.441383+00:00",
     "metadata": {
       "hint": "A resposta correta e: Costa Rica"
-    }
-  },
-  {
-    "id": "df7c91da-a7dd-458d-8296-47fe34b32041",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/cx.svg",
-    "options": [
-      "Bahamas",
-      "CX",
-      "Anguilla",
-      "Nepal"
-    ],
-    "correct_option": 1,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: CX"
-    }
-  },
-  {
-    "id": "75da62cd-639c-442b-83a1-20b12f3bff00",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/cw.svg",
-    "options": [
-      "Libia",
-      "Quiribati",
-      "Uzbequisto",
-      "CW"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: CW"
     }
   },
   {
@@ -10051,6 +10765,82 @@
     }
   },
   {
+    "id": "df7c91da-a7dd-458d-8296-47fe34b32041",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/cx.svg",
+    "options": [
+      "Bahamas",
+      "Ilha do Natal",
+      "Anguilla",
+      "Nepal"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: CX"
+    }
+  },
+  {
+    "id": "1fdc4dc1-be19-49db-81e5-6804113b3602",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/cf.svg",
+    "options": [
+      "República Centro-Africana",
+      "Chipre",
+      "Jordania",
+      "Ilhas Caimao"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: CF"
+    }
+  },
+  {
+    "id": "f34c71b9-c4d1-437b-b2c4-d3a70465f038",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/ck.svg",
+    "options": [
+      "Timor-Leste",
+      "Ilhas Cook",
+      "Suriname",
+      "Finlandia"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: CK"
+    }
+  },
+  {
+    "id": "f6047081-9665-4915-825e-e80330f2a175",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/eh.svg",
+    "options": [
+      "Cazaquistao",
+      "Letonia",
+      "Gabao",
+      "Saara Ocidental"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: EH"
+    }
+  },
+  {
     "id": "784f0338-021b-4c93-8ea6-84e54cdbb462",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/cy.svg",
@@ -10067,25 +10857,6 @@
     "created_at": "2026-07-02T10:27:52.441383+00:00",
     "metadata": {
       "hint": "A resposta correta e: Chipre"
-    }
-  },
-  {
-    "id": "26abb4e7-3c88-4c78-a278-1a29fcadc19f",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/cc.svg",
-    "options": [
-      "Malawi",
-      "Libia",
-      "Tanzania",
-      "CC"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: CC"
     }
   },
   {
@@ -10184,25 +10955,6 @@
     }
   },
   {
-    "id": "927bcb9b-32aa-4be6-bb7e-cef176cef2f8",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/cd.svg",
-    "options": [
-      "CD",
-      "Gana",
-      "Mauricia",
-      "Mali"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: CD"
-    }
-  },
-  {
     "id": "12a5bb63-5912-4cb0-be92-72a64a76afef",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/et.svg",
@@ -10219,25 +10971,6 @@
     "created_at": "2026-07-02T10:27:52.441383+00:00",
     "metadata": {
       "hint": "A resposta correta e: Etiopia"
-    }
-  },
-  {
-    "id": "e5299073-bceb-465d-b98a-a93874721c03",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/dj.svg",
-    "options": [
-      "DJ",
-      "Indonesia",
-      "Republica Tcheca",
-      "Jamaica"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: DJ"
     }
   },
   {
@@ -10355,44 +11088,6 @@
     }
   },
   {
-    "id": "8ac72d21-9d4e-40fc-ac74-18b1daad7a7f",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/gf.svg",
-    "options": [
-      "Serra Leoa",
-      "GF",
-      "Mongolia",
-      "Vietname"
-    ],
-    "correct_option": 1,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: GF"
-    }
-  },
-  {
-    "id": "6b6a2ea3-34cf-41c0-8ced-842210662fcd",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/gg.svg",
-    "options": [
-      "Estados Unidos",
-      "Koweit",
-      "Estonia",
-      "GG"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: GG"
-    }
-  },
-  {
     "id": "3673af0d-c728-43eb-9b6f-0983b194577b",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/in.svg",
@@ -10504,25 +11199,6 @@
     "created_at": "2026-07-02T10:27:52.441383+00:00",
     "metadata": {
       "hint": "A resposta correta e: Gana"
-    }
-  },
-  {
-    "id": "c1301f94-0750-4716-905d-6cb02e70421d",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/hm.svg",
-    "options": [
-      "HM",
-      "Eritreia",
-      "Estados Unidos",
-      "Angola"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.441383+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: HM"
     }
   },
   {
@@ -10735,22 +11411,98 @@
     }
   },
   {
-    "id": "959b2382-b7ae-4b68-83de-2471a66b8656",
+    "id": "c1301f94-0750-4716-905d-6cb02e70421d",
     "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/im.svg",
+    "image_url": "/flags/hm.svg",
     "options": [
-      "Taiwan",
-      "Mongolia",
-      "IM",
-      "Afeganistao"
+      "Ilha Heard e Ilhas McDonald",
+      "Eritreia",
+      "Estados Unidos",
+      "Angola"
     ],
-    "correct_option": 2,
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: HM"
+    }
+  },
+  {
+    "id": "927bcb9b-32aa-4be6-bb7e-cef176cef2f8",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/cd.svg",
+    "options": [
+      "República Democrática do Congo",
+      "Gana",
+      "Mauricia",
+      "Mali"
+    ],
+    "correct_option": 0,
     "category": "Bandeiras",
     "age_rating": 16,
     "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
     "metadata": {
-      "hint": "A resposta correta e: IM"
+      "hint": "A resposta correta e: CD"
+    }
+  },
+  {
+    "id": "e5299073-bceb-465d-b98a-a93874721c03",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/dj.svg",
+    "options": [
+      "Djibuti",
+      "Indonesia",
+      "Republica Tcheca",
+      "Jamaica"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: DJ"
+    }
+  },
+  {
+    "id": "8ac72d21-9d4e-40fc-ac74-18b1daad7a7f",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/gf.svg",
+    "options": [
+      "Serra Leoa",
+      "Guiana Francesa",
+      "Mongolia",
+      "Vietname"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: GF"
+    }
+  },
+  {
+    "id": "6b6a2ea3-34cf-41c0-8ced-842210662fcd",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/gg.svg",
+    "options": [
+      "Estados Unidos",
+      "Koweit",
+      "Estonia",
+      "Guernsey"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: GG"
     }
   },
   {
@@ -10884,25 +11636,6 @@
     "created_at": "2026-07-02T10:27:52.520197+00:00",
     "metadata": {
       "hint": "A resposta correta e: Guine Equatorial"
-    }
-  },
-  {
-    "id": "c936b6ea-b5ad-4a4b-ad78-62b2a8bd2cb1",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/io.svg",
-    "options": [
-      "Tonga",
-      "Madagascar",
-      "IO",
-      "Belgica"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: IO"
     }
   },
   {
@@ -11134,25 +11867,6 @@
     }
   },
   {
-    "id": "311c1a88-daa6-4f5d-b2db-4a104ec1afe8",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/kp.svg",
-    "options": [
-      "Monaco",
-      "Niger",
-      "Mianmar",
-      "KP"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: KP"
-    }
-  },
-  {
     "id": "7ade953d-4989-4c3c-be11-79a81df07559",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/lt.svg",
@@ -11210,44 +11924,6 @@
     }
   },
   {
-    "id": "1ca62205-dcff-44c4-b701-8752f11de325",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/mp.svg",
-    "options": [
-      "Canada",
-      "Portugal",
-      "MP",
-      "Tunisia"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: MP"
-    }
-  },
-  {
-    "id": "d4e6dc88-c8e4-47e4-ba9f-eedbd6d59d74",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/mf.svg",
-    "options": [
-      "MF",
-      "Egito",
-      "Haiti",
-      "Suriname"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: MF"
-    }
-  },
-  {
     "id": "78372502-95a7-4397-8ec0-2ee94ace3923",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/mc.svg",
@@ -11302,44 +11978,6 @@
     "created_at": "2026-07-02T10:27:52.520197+00:00",
     "metadata": {
       "hint": "A resposta correta e: Mali"
-    }
-  },
-  {
-    "id": "31164b8d-ae43-4f5b-93c8-2d9631546e7a",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/li.svg",
-    "options": [
-      "Nigeria",
-      "Eslovaquia",
-      "LI",
-      "Togo"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: LI"
-    }
-  },
-  {
-    "id": "3721e8fa-4b45-4e39-bf28-208d68646f85",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/mq.svg",
-    "options": [
-      "Cabo Verde",
-      "Irlanda",
-      "MQ",
-      "Moldavia"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: MQ"
     }
   },
   {
@@ -11419,6 +12057,107 @@
     }
   },
   {
+    "id": "d4e6dc88-c8e4-47e4-ba9f-eedbd6d59d74",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/mf.svg",
+    "options": [
+      "São Martinho (parte francesa)",
+      "Egito",
+      "Haiti",
+      "Suriname"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: MF"
+    }
+  },
+  {
+    "id": "311c1a88-daa6-4f5d-b2db-4a104ec1afe8",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/kp.svg",
+    "options": [
+      "Monaco",
+      "Niger",
+      "Mianmar",
+      "Coreia do Norte"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: KP"
+    }
+  },
+  {
+    "id": "1ca62205-dcff-44c4-b701-8752f11de325",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/mp.svg",
+    "options": [
+      "Canada",
+      "Portugal",
+      "Ilhas Marianas do Norte",
+      "Tunisia"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: MP"
+    }
+  },
+  {
+    "id": "31164b8d-ae43-4f5b-93c8-2d9631546e7a",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/li.svg",
+    "options": [
+      "Nigeria",
+      "Eslovaquia",
+      "Liechtenstein",
+      "Togo"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: LI"
+    }
+  },
+  {
+    "id": "3721e8fa-4b45-4e39-bf28-208d68646f85",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/mq.svg",
+    "options": [
+      "Cabo Verde",
+      "Irlanda",
+      "Martinica",
+      "Moldavia"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "reports": [
+        {
+          "date": "2026-07-11T22:01:03.449Z",
+          "reason": "Texto confuso",
+          "reporter": "169264"
+        }
+      ]
+    }
+  },
+  {
     "id": "813ae5dc-aa88-4203-845a-260232ee0564",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/mg.svg",
@@ -11495,25 +12234,6 @@
     }
   },
   {
-    "id": "584629d7-f499-41c8-bdc4-b0a145502de4",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/kg.svg",
-    "options": [
-      "KG",
-      "Bahamas",
-      "Romenia",
-      "Antigua e Barbuda"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: KG"
-    }
-  },
-  {
     "id": "0326da8e-91e9-40b2-b745-bdeabc7f8864",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/mk.svg",
@@ -11552,25 +12272,6 @@
     }
   },
   {
-    "id": "1e79a909-aee4-4e31-939c-2c30df626b77",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/ms.svg",
-    "options": [
-      "Mexico",
-      "MS",
-      "Guine Equatorial",
-      "Ilhas Caimao"
-    ],
-    "correct_option": 1,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.520197+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: MS"
-    }
-  },
-  {
     "id": "a5917fbb-d638-4737-a2d0-6ae4a6528def",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/lr.svg",
@@ -11587,25 +12288,6 @@
     "created_at": "2026-07-02T10:27:52.520197+00:00",
     "metadata": {
       "hint": "A resposta correta e: Liberia"
-    }
-  },
-  {
-    "id": "35670bce-cd3e-4d19-ad3d-6abb934c1f04",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/je.svg",
-    "options": [
-      "JE",
-      "Bermudas",
-      "Nauru",
-      "Italia"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: JE"
     }
   },
   {
@@ -11644,25 +12326,6 @@
     "created_at": "2026-07-02T10:27:52.620218+00:00",
     "metadata": {
       "hint": "A resposta correta e: Nepal"
-    }
-  },
-  {
-    "id": "773862e0-bd48-421d-9998-96c1a40e458b",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/pn.svg",
-    "options": [
-      "Papua Nova Guine",
-      "Bangladesh",
-      "Republica Tcheca",
-      "PN"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: PN"
     }
   },
   {
@@ -11799,25 +12462,6 @@
     }
   },
   {
-    "id": "d818fa5c-55e1-4bf2-b18b-1681b8457b7f",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/nu.svg",
-    "options": [
-      "NU",
-      "Qatar",
-      "Republica do Congo",
-      "Cabo Verde"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: NU"
-    }
-  },
-  {
     "id": "1095a1da-4eb4-4b7a-a8f7-171dd281cba2",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/pk.svg",
@@ -11872,25 +12516,6 @@
     "created_at": "2026-07-02T10:27:52.620218+00:00",
     "metadata": {
       "hint": "A resposta correta e: Polonia"
-    }
-  },
-  {
-    "id": "91d41ead-2a36-40f3-8e20-ce18306bdeea",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/pf.svg",
-    "options": [
-      "Barem",
-      "Suica",
-      "PF",
-      "Peru"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: PF"
     }
   },
   {
@@ -12046,25 +12671,6 @@
     }
   },
   {
-    "id": "e57c930f-49e2-4a4a-b37f-27b897624526",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/pm.svg",
-    "options": [
-      "Niger",
-      "Jamaica",
-      "Bulgaria",
-      "PM"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: PM"
-    }
-  },
-  {
     "id": "cb83b45b-44a8-45c3-848d-280dec30012a",
     "text": "O que é Hexagono lados?",
     "image_url": null,
@@ -12103,22 +12709,117 @@
     }
   },
   {
-    "id": "d3f99fb9-9a35-4945-900a-7be2a0147c96",
+    "id": "584629d7-f499-41c8-bdc4-b0a145502de4",
     "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/re.svg",
+    "image_url": "/flags/kg.svg",
     "options": [
-      "Arabia Saudita",
-      "RE",
-      "Barem",
-      "Maldivas"
+      "Quirguistão",
+      "Bahamas",
+      "Romenia",
+      "Antigua e Barbuda"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: KG"
+    }
+  },
+  {
+    "id": "1e79a909-aee4-4e31-939c-2c30df626b77",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/ms.svg",
+    "options": [
+      "Mexico",
+      "Montserrat",
+      "Guine Equatorial",
+      "Ilhas Caimao"
     ],
     "correct_option": 1,
     "category": "Bandeiras",
     "age_rating": 16,
     "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: MS"
+    }
+  },
+  {
+    "id": "773862e0-bd48-421d-9998-96c1a40e458b",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/pn.svg",
+    "options": [
+      "Papua Nova Guine",
+      "Bangladesh",
+      "Republica Tcheca",
+      "Ilha Pitcairn"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
     "created_at": "2026-07-02T10:27:52.620218+00:00",
     "metadata": {
-      "hint": "A resposta correta e: RE"
+      "hint": "A resposta correta e: PN"
+    }
+  },
+  {
+    "id": "d818fa5c-55e1-4bf2-b18b-1681b8457b7f",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/nu.svg",
+    "options": [
+      "Niue",
+      "Qatar",
+      "Republica do Congo",
+      "Cabo Verde"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: NU"
+    }
+  },
+  {
+    "id": "91d41ead-2a36-40f3-8e20-ce18306bdeea",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/pf.svg",
+    "options": [
+      "Barem",
+      "Suica",
+      "Polinésia Francesa",
+      "Peru"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: PF"
+    }
+  },
+  {
+    "id": "e57c930f-49e2-4a4a-b37f-27b897624526",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/pm.svg",
+    "options": [
+      "Niger",
+      "Jamaica",
+      "Bulgaria",
+      "São Pedro e Miquelon"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: PM"
     }
   },
   {
@@ -12214,25 +12915,6 @@
     "created_at": "2026-07-02T10:27:52.620218+00:00",
     "metadata": {
       "hint": "A resposta correta e: Romenia"
-    }
-  },
-  {
-    "id": "1305cbd2-b421-4ab9-b1b9-30e63a2859da",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/nf.svg",
-    "options": [
-      "NF",
-      "Botsuana",
-      "Lituania",
-      "Chipre"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: NF"
     }
   },
   {
@@ -12464,25 +13146,6 @@
     }
   },
   {
-    "id": "ee52cf7f-08de-441f-aeb1-1796481d15dc",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/tc.svg",
-    "options": [
-      "TC",
-      "Tailandia",
-      "Seicheles",
-      "Benim"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.620218+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: TC"
-    }
-  },
-  {
     "id": "428789a0-2771-4672-8e44-25bd73b9d028",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/so.svg",
@@ -12575,25 +13238,6 @@
     "created_at": "2026-07-02T10:27:52.840856+00:00",
     "metadata": {
       "hint": "A resposta correta e: Seicheles"
-    }
-  },
-  {
-    "id": "5c7b28c0-c360-455e-8606-d363d32098b1",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/sh.svg",
-    "options": [
-      "SH",
-      "Nigeria",
-      "Hong Kong",
-      "Argentina"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: SH"
     }
   },
   {
@@ -12711,44 +13355,6 @@
     }
   },
   {
-    "id": "ad28c6f0-c44f-4ec3-ae91-f729aff14314",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/tk.svg",
-    "options": [
-      "TK",
-      "Cuba",
-      "Dominica",
-      "India"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: TK"
-    }
-  },
-  {
-    "id": "c5153080-ca0d-4daf-838b-67c0ae2b2b87",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/um.svg",
-    "options": [
-      "Indonesia",
-      "UM",
-      "Suazilandia",
-      "Tajiquistao"
-    ],
-    "correct_option": 1,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: UM"
-    }
-  },
-  {
     "id": "092c8c55-376d-4136-9fd1-02ede2374566",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/se.svg",
@@ -12787,6 +13393,82 @@
     }
   },
   {
+    "id": "c5153080-ca0d-4daf-838b-67c0ae2b2b87",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/um.svg",
+    "options": [
+      "Indonesia",
+      "Ilhas Menores Distantes dos Estados Unidos",
+      "Suazilandia",
+      "Tajiquistao"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: UM"
+    }
+  },
+  {
+    "id": "d3f99fb9-9a35-4945-900a-7be2a0147c96",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/re.svg",
+    "options": [
+      "Arabia Saudita",
+      "Reunião",
+      "Barem",
+      "Maldivas"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: RE"
+    }
+  },
+  {
+    "id": "ee52cf7f-08de-441f-aeb1-1796481d15dc",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/tc.svg",
+    "options": [
+      "Ilhas Turks e Caicos",
+      "Tailandia",
+      "Seicheles",
+      "Benim"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: TC"
+    }
+  },
+  {
+    "id": "ad28c6f0-c44f-4ec3-ae91-f729aff14314",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/tk.svg",
+    "options": [
+      "Tokelau",
+      "Cuba",
+      "Dominica",
+      "India"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: TK"
+    }
+  },
+  {
     "id": "8996e511-04cc-4e70-9a41-d743b635e848",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/tj.svg",
@@ -12806,25 +13488,6 @@
     }
   },
   {
-    "id": "f80ba2a4-35fd-4c62-93ad-85067c5769ad",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/sx.svg",
-    "options": [
-      "SX",
-      "Santa Lucia",
-      "Antigua e Barbuda",
-      "Monaco"
-    ],
-    "correct_option": 0,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: SX"
-    }
-  },
-  {
     "id": "de742201-21e5-4771-ad52-09f10eb7cb59",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/tt.svg",
@@ -12841,63 +13504,6 @@
     "created_at": "2026-07-02T10:27:52.840856+00:00",
     "metadata": {
       "hint": "A resposta correta e: Trinidad e Tobago"
-    }
-  },
-  {
-    "id": "9482ec37-8dcd-41d8-bfd3-3da2ebf7cefc",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/tf.svg",
-    "options": [
-      "Liberia",
-      "Tanzania",
-      "Haiti",
-      "TF"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: TF"
-    }
-  },
-  {
-    "id": "aae1a8ff-4355-40a5-811a-11f582ae51a7",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/ss.svg",
-    "options": [
-      "Uruguai",
-      "Aruba",
-      "SS",
-      "Republica Tcheca"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: SS"
-    }
-  },
-  {
-    "id": "cdcf6634-9063-4ee3-bb96-015e9387f049",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/sj.svg",
-    "options": [
-      "Franca",
-      "Islandia",
-      "SJ",
-      "Alemanha"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: SJ"
     }
   },
   {
@@ -12955,25 +13561,6 @@
     "created_at": "2026-07-02T10:27:52.840856+00:00",
     "metadata": {
       "hint": "A resposta correta e: Andorra"
-    }
-  },
-  {
-    "id": "446ab9c4-8b8e-47db-8c5a-cd6ddd9fc57b",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/yt.svg",
-    "options": [
-      "Oma",
-      "Sao Vicente e Granadinas",
-      "YT",
-      "Suica"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 8,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: YT"
     }
   },
   {
@@ -13186,44 +13773,6 @@
     }
   },
   {
-    "id": "00fff16f-3d9d-4fab-942c-3e5a2eb78a75",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/wf.svg",
-    "options": [
-      "Zimbabue",
-      "Uganda",
-      "Finlandia",
-      "WF"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 12,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: WF"
-    }
-  },
-  {
-    "id": "b309dccb-da9f-436b-8398-600f85c3372c",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/fm.svg",
-    "options": [
-      "Azerbaijao",
-      "Malasia",
-      "Seicheles",
-      "FM"
-    ],
-    "correct_option": 3,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: FM"
-    }
-  },
-  {
     "id": "5d0c6689-fb71-473e-91d5-b740163f3c85",
     "text": "De que pais e esta bandeira?",
     "image_url": "/flags/cz.svg",
@@ -13278,25 +13827,6 @@
     "created_at": "2026-07-02T10:27:52.840856+00:00",
     "metadata": {
       "hint": "A resposta correta e: Venezuela"
-    }
-  },
-  {
-    "id": "622afe43-0850-407f-882c-3066d6c3866e",
-    "text": "De que pais e esta bandeira?",
-    "image_url": "/flags/vg.svg",
-    "options": [
-      "Siria",
-      "Burundi",
-      "VG",
-      "Macau"
-    ],
-    "correct_option": 2,
-    "category": "Bandeiras",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-07-02T10:27:52.840856+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: VG"
     }
   },
   {
@@ -13449,6 +13979,120 @@
     "created_at": "2026-07-02T10:27:52.840856+00:00",
     "metadata": {
       "hint": "A resposta correta e: Africa do Sul"
+    }
+  },
+  {
+    "id": "cdcf6634-9063-4ee3-bb96-015e9387f049",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/sj.svg",
+    "options": [
+      "Franca",
+      "Islandia",
+      "Svalbard e Jan Mayen",
+      "Alemanha"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: SJ"
+    }
+  },
+  {
+    "id": "f80ba2a4-35fd-4c62-93ad-85067c5769ad",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/sx.svg",
+    "options": [
+      "São Martinho (parte holandesa)",
+      "Santa Lucia",
+      "Antigua e Barbuda",
+      "Monaco"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: SX"
+    }
+  },
+  {
+    "id": "aae1a8ff-4355-40a5-811a-11f582ae51a7",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/ss.svg",
+    "options": [
+      "Uruguai",
+      "Aruba",
+      "Sudão do Sul",
+      "Republica Tcheca"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: SS"
+    }
+  },
+  {
+    "id": "446ab9c4-8b8e-47db-8c5a-cd6ddd9fc57b",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/yt.svg",
+    "options": [
+      "Oma",
+      "Sao Vicente e Granadinas",
+      "Mayotte",
+      "Suica"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: YT"
+    }
+  },
+  {
+    "id": "00fff16f-3d9d-4fab-942c-3e5a2eb78a75",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/wf.svg",
+    "options": [
+      "Zimbabue",
+      "Uganda",
+      "Finlandia",
+      "Wallis e Futuna"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: WF"
+    }
+  },
+  {
+    "id": "b309dccb-da9f-436b-8398-600f85c3372c",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/fm.svg",
+    "options": [
+      "Azerbaijao",
+      "Malasia",
+      "Seicheles",
+      "Micronésia"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: FM"
     }
   },
   {
@@ -13775,6 +14419,25 @@
     }
   },
   {
+    "id": "208a629f-4872-49b3-b7d1-c6157df18848",
+    "text": "Qual es la capital de Malta?",
+    "image_url": null,
+    "options": [
+      "Valletta",
+      "Venice",
+      "Marrakesh",
+      "Tunis"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-10T21:16:01.620516+00:00",
+    "metadata": {
+      "hint": "Isla en el Mediterráneo"
+    }
+  },
+  {
     "id": "d4756498-ca18-466e-a5f9-21967c028253",
     "text": "Quem foi o primeiro homem a voar em avião?",
     "image_url": null,
@@ -13813,6 +14476,88 @@
     }
   },
   {
+    "id": "26abb4e7-3c88-4c78-a278-1a29fcadc19f",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/cc.svg",
+    "options": [
+      "Malawi",
+      "Libia",
+      "Tanzania",
+      "Ilhas Cocos (Keeling)"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: CC"
+    }
+  },
+  {
+    "id": "75da62cd-639c-442b-83a1-20b12f3bff00",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/cw.svg",
+    "options": [
+      "Libia",
+      "Quiribati",
+      "Uzbequisto",
+      "Curaçao"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.441383+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: CW"
+    }
+  },
+  {
+    "id": "1305cbd2-b421-4ab9-b1b9-30e63a2859da",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/nf.svg",
+    "options": [
+      "Ilha Norfolk",
+      "Botsuana",
+      "Lituania",
+      "Chipre"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: NF"
+    }
+  },
+  {
+    "id": "35670bce-cd3e-4d19-ad3d-6abb934c1f04",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/je.svg",
+    "options": [
+      "Jersey",
+      "Bermudas",
+      "Nauru",
+      "Italia"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.620218+00:00",
+    "metadata": {
+      "reports": [
+        {
+          "date": "2026-07-11T21:59:53.312Z",
+          "reason": "Texto confuso",
+          "reporter": "169264"
+        }
+      ]
+    }
+  },
+  {
     "id": "cc8c80fd-5245-4cc6-8346-bc6fa1cd02bb",
     "text": "Qual o nome do maior deserto do mundo?",
     "image_url": null,
@@ -13847,14 +14592,118 @@
     "country_code": "PT",
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
-      "hint": "Direitos relacionados com bem-estar social",
       "reports": [
         {
           "date": "2026-04-28T13:19:26.644Z",
           "reason": "não faz sentido",
           "reporter": "testeaaa"
+        },
+        {
+          "date": "2026-07-06T19:19:08.287Z",
+          "reason": "Texto confuso",
+          "reporter": "803522"
+        },
+        {
+          "date": "2026-07-09T21:33:32.958Z",
+          "reason": "Texto confuso",
+          "reporter": "367717"
         }
       ]
+    }
+  },
+  {
+    "id": "1784863b-dbee-45d5-bd2e-e2e8ed3676a2",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/fk.svg",
+    "options": [
+      "Ilhas Malvinas",
+      "Uruguai",
+      "Malasia",
+      "Bermudas"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.329791+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: FK"
+    }
+  },
+  {
+    "id": "5c7b28c0-c360-455e-8606-d363d32098b1",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/sh.svg",
+    "options": [
+      "Santa Helena, Ascensão e Tristão da Cunha",
+      "Nigeria",
+      "Hong Kong",
+      "Argentina"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: SH"
+    }
+  },
+  {
+    "id": "9482ec37-8dcd-41d8-bfd3-3da2ebf7cefc",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/tf.svg",
+    "options": [
+      "Liberia",
+      "Tanzania",
+      "Haiti",
+      "Terras Austrais e Antárticas Francesas"
+    ],
+    "correct_option": 3,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: TF"
+    }
+  },
+  {
+    "id": "959b2382-b7ae-4b68-83de-2471a66b8656",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/im.svg",
+    "options": [
+      "Taiwan",
+      "Mongolia",
+      "Ilha de Man",
+      "Afeganistao"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.520197+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: IM"
+    }
+  },
+  {
+    "id": "622afe43-0850-407f-882c-3066d6c3866e",
+    "text": "De que pais e esta bandeira?",
+    "image_url": "/flags/vg.svg",
+    "options": [
+      "Siria",
+      "Burundi",
+      "Ilhas Virgens Britânicas",
+      "Macau"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-02T10:27:52.840856+00:00",
+    "metadata": {
+      "hint": "A resposta correta e: VG"
     }
   },
   {
@@ -14481,7 +15330,42 @@
     "country_code": "PT",
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
-      "hint": "A resposta correta e: Relacionados"
+      "reports": [
+        {
+          "date": "2026-07-06T19:17:10.665Z",
+          "reason": "Texto confuso",
+          "reporter": "803522"
+        }
+      ]
+    }
+  },
+  {
+    "id": "54b202ae-4331-49c8-9fcd-62ecfaed57da",
+    "text": "Globalizacao efeitos?",
+    "image_url": null,
+    "options": [
+      "Regionais",
+      "Locais",
+      "Nacionais",
+      "Globais"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-06-30T17:36:04.76481+00:00",
+    "metadata": {
+      "reports": [
+        {
+          "date": "2026-07-06T19:16:25.517Z",
+          "reason": "Texto confuso",
+          "reporter": "803522"
+        },
+        {
+          "date": "2026-07-10T20:30:53.594Z",
+          "reason": "Texto confuso"
+        }
+      ]
     }
   },
   {
@@ -14501,25 +15385,6 @@
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
       "hint": "A resposta correta e: Governo do povo"
-    }
-  },
-  {
-    "id": "54b202ae-4331-49c8-9fcd-62ecfaed57da",
-    "text": "Globalizacao efeitos?",
-    "image_url": null,
-    "options": [
-      "Regionais",
-      "Locais",
-      "Nacionais",
-      "Globais"
-    ],
-    "correct_option": 3,
-    "category": "CULTURA_GERAL",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-06-30T17:36:04.76481+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: Globais"
     }
   },
   {
@@ -14557,11 +15422,15 @@
     "country_code": "PT",
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
-      "hint": "Patrimónios Mundiais UNESCO em Portugal",
       "reports": [
         {
           "date": "2026-04-28T13:26:21.349Z",
           "reason": "both"
+        },
+        {
+          "date": "2026-07-06T19:15:35.148Z",
+          "reason": "Pergunta com erro",
+          "reporter": "803522"
         }
       ]
     }
@@ -15980,25 +16849,6 @@
     }
   },
   {
-    "id": "b6e4adc7-3179-4b65-891c-1b18e270360e",
-    "text": "O que é O que e Git?",
-    "image_url": null,
-    "options": [
-      "Sistema de controle de versoes",
-      "Um jogo",
-      "Um programa",
-      "Um codigo"
-    ],
-    "correct_option": 0,
-    "category": "TECNOLOGIA",
-    "age_rating": 16,
-    "country_code": "PT",
-    "created_at": "2026-06-30T17:36:04.76481+00:00",
-    "metadata": {
-      "hint": "A resposta correta e: Sistema de controle de versoes"
-    }
-  },
-  {
     "id": "9fef7fb9-615f-4f40-9efc-2dc2aae8bade",
     "text": "O que e Cloud Computing?",
     "image_url": null,
@@ -16110,6 +16960,31 @@
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
       "hint": "A resposta correta é: Uma rede de computadores"
+    }
+  },
+  {
+    "id": "b6e4adc7-3179-4b65-891c-1b18e270360e",
+    "text": "O que é O que e Git?",
+    "image_url": null,
+    "options": [
+      "Sistema de controle de versoes",
+      "Um jogo",
+      "Um programa",
+      "Um codigo"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-06-30T17:36:04.76481+00:00",
+    "metadata": {
+      "reports": [
+        {
+          "date": "2026-07-06T19:30:19.598Z",
+          "reason": "Texto confuso",
+          "reporter": "tt"
+        }
+      ]
     }
   },
   {

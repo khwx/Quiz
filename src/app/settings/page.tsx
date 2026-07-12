@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, Settings, Gamepad2, Palette, Volume2, RotateCcw } from "lucide-react";
@@ -8,13 +8,61 @@ import { ArrowLeft, Settings, Gamepad2, Palette, Volume2, RotateCcw } from "luci
 type Difficulty = "Recruta" | "Piloto" | "Comandante";
 type Theme = "nebula" | "blackhole" | "supernova";
 
+interface GameSettings {
+  timer: number;
+  difficulty: Difficulty;
+  theme: Theme;
+  particles: boolean;
+  volume: number;
+  haptics: boolean;
+}
+
+const DEFAULTS: GameSettings = {
+  timer: 30,
+  difficulty: "Recruta",
+  theme: "nebula",
+  particles: true,
+  volume: 75,
+  haptics: true,
+};
+
+function loadSettings(): GameSettings {
+  if (typeof window === "undefined") return DEFAULTS;
+  try {
+    const raw = localStorage.getItem("quizverse_settings");
+    if (raw) return { ...DEFAULTS, ...JSON.parse(raw) };
+  } catch { /* ignore */ }
+  return DEFAULTS;
+}
+
+function saveSettings(s: GameSettings) {
+  try {
+    localStorage.setItem("quizverse_settings", JSON.stringify(s));
+  } catch { /* ignore */ }
+}
+
 export default function SettingsPage() {
-  const [timer, setTimer] = useState(30);
-  const [difficulty, setDifficulty] = useState<Difficulty>("Recruta");
-  const [theme, setTheme] = useState<Theme>("nebula");
-  const [particles, setParticles] = useState(true);
-  const [volume, setVolume] = useState(75);
-  const [haptics, setHaptics] = useState(true);
+  const [settings, setSettings] = useState<GameSettings>(DEFAULTS);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    setSettings(loadSettings());
+  }, []);
+
+  const update = <K extends keyof GameSettings>(key: K, value: GameSettings[K]) => {
+    const next = { ...settings, [key]: value };
+    setSettings(next);
+    saveSettings(next);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 1500);
+  };
+
+  const resetAll = () => {
+    setSettings(DEFAULTS);
+    saveSettings(DEFAULTS);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 1500);
+  };
 
   const themes: { id: Theme; name: string; gradient: string }[] = [
     { id: "nebula", name: "Nebulosa Rosa", gradient: "from-pink-500/30 to-purple-600/30" },
@@ -65,15 +113,15 @@ export default function SettingsPage() {
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <label className="text-sm text-on-surface font-medium">Cronómetro de Missão</label>
-                <span className="text-primary font-bold">{timer}s</span>
+                <span className="text-primary font-bold">{settings.timer}s</span>
               </div>
               <input
                 type="range"
                 min={15}
                 max={60}
                 step={15}
-                value={timer}
-                onChange={(e) => setTimer(Number(e.target.value))}
+                value={settings.timer}
+                onChange={(e) => update("timer", Number(e.target.value))}
                 className="w-full h-2 bg-surface-container-low rounded-full appearance-none cursor-pointer
                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5
                   [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
@@ -94,9 +142,9 @@ export default function SettingsPage() {
                 {(["Recruta", "Piloto", "Comandante"] as Difficulty[]).map((d) => (
                   <button
                     key={d}
-                    onClick={() => setDifficulty(d)}
+                    onClick={() => update("difficulty", d)}
                     className={`py-2 text-xs font-bold rounded-md transition-all ${
-                      difficulty === d
+                      settings.difficulty === d
                         ? "bg-secondary-container/20 text-secondary border border-secondary/30"
                         : "text-on-surface-variant hover:bg-white/5"
                     }`}
@@ -130,12 +178,12 @@ export default function SettingsPage() {
                 {themes.map((t) => (
                   <button
                     key={t.id}
-                    onClick={() => setTheme(t.id)}
+                    onClick={() => update("theme", t.id)}
                     className={`flex-shrink-0 w-28 cursor-pointer group transition-transform active:scale-95`}
                   >
                     <div
                       className={`w-full aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                        theme === t.id
+                        settings.theme === t.id
                           ? "border-primary shadow-[0_0_15px_rgba(208,188,255,0.3)]"
                           : "border-outline-variant/30"
                       }`}
@@ -156,14 +204,14 @@ export default function SettingsPage() {
                 <p className="text-[11px] text-on-surface-variant">Animações de fundo espaciais</p>
               </div>
               <button
-                onClick={() => setParticles(!particles)}
+                onClick={() => update("particles", !settings.particles)}
                 className={`w-12 h-6 rounded-full relative transition-colors ${
-                  particles ? "bg-primary-container" : "bg-surface-variant"
+                  settings.particles ? "bg-primary-container" : "bg-surface-variant"
                 }`}
               >
                 <div
                   className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${
-                    particles ? "translate-x-6" : "translate-x-1"
+                    settings.particles ? "translate-x-6" : "translate-x-1"
                   }`}
                 />
               </button>
@@ -189,14 +237,14 @@ export default function SettingsPage() {
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <label className="text-sm text-on-surface font-medium">Sons da Nave</label>
-                <span className="text-tertiary text-xs">{volume}%</span>
+                <span className="text-tertiary text-xs">{settings.volume}%</span>
               </div>
               <input
                 type="range"
                 min={0}
                 max={100}
-                value={volume}
-                onChange={(e) => setVolume(Number(e.target.value))}
+                value={settings.volume}
+                onChange={(e) => update("volume", Number(e.target.value))}
                 className="w-full h-1.5 bg-surface-container-low rounded-full appearance-none cursor-pointer opacity-80
                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
                   [&::-webkit-slider-thumb]:bg-tertiary [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
@@ -207,14 +255,14 @@ export default function SettingsPage() {
             <div className="flex justify-between items-center py-2">
               <label className="text-sm text-on-surface font-medium">Feedback Tátil</label>
               <button
-                onClick={() => setHaptics(!haptics)}
+                onClick={() => update("haptics", !settings.haptics)}
                 className={`w-12 h-6 rounded-full relative transition-colors ${
-                  haptics ? "bg-primary-container" : "bg-surface-variant"
+                  settings.haptics ? "bg-primary-container" : "bg-surface-variant"
                 }`}
               >
                 <div
                   className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${
-                    haptics ? "translate-x-6" : "translate-x-1"
+                    settings.haptics ? "translate-x-6" : "translate-x-1"
                   }`}
                 />
               </button>
@@ -222,11 +270,24 @@ export default function SettingsPage() {
           </div>
         </motion.section>
 
+        {/* Saved indicator */}
+        {saved && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            className="text-center text-sm text-primary font-bold"
+          >
+            Guardado!
+          </motion.div>
+        )}
+
         {/* Reset Button */}
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
+          onClick={resetAll}
           className="w-full py-4 glass-panel rounded-xl text-error font-bold tracking-wider hover:bg-error-container/10 transition-colors active:scale-[0.98] mt-8 flex items-center justify-center gap-2"
         >
           <RotateCcw className="w-4 h-4" />

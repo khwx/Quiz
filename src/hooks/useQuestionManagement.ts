@@ -24,6 +24,13 @@ export function useQuestionManagement(
   const usedQuestionIdsRef = useRef<string[]>([]);
   const isStartingRef = useRef(false);
 
+  // Reset the starting guard when status leaves STARTING
+  useEffect(() => {
+    if (status !== "STARTING") {
+      isStartingRef.current = false;
+    }
+  }, [status]);
+
   useEffect(() => {
     try {
       const savedIds = localStorage.getItem("usedQuestionIds");

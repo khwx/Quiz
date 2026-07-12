@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Loader2 } from "lucide-react";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
@@ -78,6 +78,11 @@ export default function TVHost() {
   } = useQuestionFlowTimer(timerDuration, currentQuestions);
 
   // Auto-skip: advance to REVEAL when all players have answered
+  const currentAnswersRef = useRef(currentAnswers);
+  currentAnswersRef.current = currentAnswers;
+  const playersRef = useRef(players);
+  playersRef.current = players;
+
   useEffect(() => {
     if (status !== "QUESTION") return;
     const currentQ = currentQuestions[currentQuestionIndex - 1];
@@ -87,14 +92,14 @@ export default function TVHost() {
     if (elapsedMs < 3000) return;
 
     const currentQuestionId = String(currentQ.id);
-    const validAnswers = currentAnswers.filter(a => String(a.question_id) === currentQuestionId);
+    const validAnswers = currentAnswersRef.current.filter(a => String(a.question_id) === currentQuestionId);
     const answeredPlayerIds = new Set(validAnswers.map(a => String(a.player_id)));
-    const allPlayerIds = new Set(players.map(p => String(p.id)));
+    const allPlayerIds = new Set(playersRef.current.map(p => String(p.id)));
 
     if (allPlayerIds.size > 0 && answeredPlayerIds.size >= allPlayerIds.size) {
       triggerReveal();
     }
-  }, [currentAnswers, players, status, currentQuestionIndex, currentQuestions, questionStartTimeRef, triggerReveal]);
+  }, [status, currentQuestionIndex, currentQuestions, questionStartTimeRef, triggerReveal]);
 
   // Save tournament team score when game reaches PODIUM
   useEffect(() => {
