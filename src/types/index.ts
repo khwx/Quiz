@@ -70,7 +70,7 @@ export interface Question {
   text: string;
   image_url?: string | null;
   options: string[];
-  correct_option: number;
+  correct_option?: number;
   category?: string;
   age_rating?: number;
   country_code?: string;

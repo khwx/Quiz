@@ -200,7 +200,7 @@ export default function QuestionDisplay({
               question.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
               question.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
 
-            if (!flagCode && question.category?.toLowerCase().includes("bandeira")) {
+            if (!flagCode && question.category?.toLowerCase().includes("bandeira") && question.correct_option != null) {
               const correctCountry = question.options[question.correct_option]
                 ?.toLowerCase()
                 .trim()
@@ -240,7 +240,7 @@ export default function QuestionDisplay({
                   <Flag className="w-16 h-16 text-white/20" />
                   <span className="text-gray-500 italic text-xl">Bandeira não encontrada</span>
                   <span className="text-white font-black text-4xl uppercase opacity-20">
-                    {question.options[question.correct_option]}
+                    {question.correct_option != null ? question.options[question.correct_option] : ""}
                   </span>
                 </div>
               );
@@ -257,7 +257,7 @@ export default function QuestionDisplay({
                     if (parent) {
                       const msg = document.createElement("div");
                       msg.className = "text-white font-black text-4xl opacity-20 uppercase";
-                      msg.innerText = question.options[question.correct_option];
+                      msg.innerText = question.correct_option != null ? question.options[question.correct_option] : "";
                       parent.appendChild(msg);
                     }
                   }}
