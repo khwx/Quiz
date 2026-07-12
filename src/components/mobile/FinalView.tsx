@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
+import type { Player } from "@/types";
 
 interface FinalViewProps {
-  players: any[];
+  players: Player[];
   playerName: string;
 }
 
@@ -35,9 +36,9 @@ export default function FinalView({ players, playerName }: FinalViewProps) {
               Classificação Final
             </h3>
             {players
-              .sort((a: any, b: any) => (b.score || 0) - (a.score || 0))
+              .sort((a, b) => (b.score || 0) - (a.score || 0))
               .slice(0, 5)
-              .map((p: any, idx: number) => (
+              .map((p, idx) => (
                 <div
                   key={p.id}
                   className={`flex items-center gap-3 py-2 ${

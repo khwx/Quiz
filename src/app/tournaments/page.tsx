@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 import ConfirmModal from "@/components/ConfirmModal";
 import type { TournamentWithTeams, Team } from "@/types";
 import type { User } from "@supabase/supabase-js";
@@ -24,7 +26,7 @@ function generatePin(length: number = 6): string {
 function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTeams; onClick?: () => void }) {
   const teamCount = tournament.tournament_teams?.length || 0;
   const fillPercentage = (teamCount / tournament.max_teams) * 100;
-  const teamNames = tournament.tournament_teams?.map((tt: any) => tt.teams?.name).filter(Boolean) || [];
+  const teamNames = tournament.tournament_teams?.map((tt) => tt.teams?.name).filter(Boolean) || [];
 
   return (
     <motion.div
@@ -115,6 +117,7 @@ const statusConfig: Record<string, { bg: string; text: string; dot: string }> = 
 
 export default function TournamentsPage() {
   const router = useRouter();
+  const { toasts, show: showToast, dismiss } = useToast();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
   const [tournaments, setTournaments] = useState<TournamentWithTeams[]>([]);
@@ -180,8 +183,8 @@ export default function TournamentsPage() {
 
       // Check if current user is already in a tournament
       if (user) {
-        const myTournamentData = allData.find((t: any) =>
-          t.tournament_teams?.some((tt: any) =>
+        const myTournamentData = allData.find((t) =>
+          t.tournament_teams?.some((tt) =>
             tt.teams && myTeams.some((mt) => mt.id === tt.team_id)
           )
         );
@@ -228,7 +231,7 @@ export default function TournamentsPage() {
             tournament_id: tournament.id,
             team_id: selectedTeamId,
           });
-        if (ttError) console.error("Erro ao registar equipa:", ttError);
+        if (ttError) showToast("Erro ao registar equipa no torneio.", "error");
       }
 
       setMyTournament({ ...tournament, tournament_teams: [] });
@@ -758,6 +761,7 @@ export default function TournamentsPage() {
         confirmLabel="Iniciar"
       />
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
       <div className="h-20 md:hidden" />
     </main>
   );

@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 import type { TeamWithMembers } from "@/types";
 import type { User } from "@supabase/supabase-js";
 
@@ -34,6 +36,7 @@ function generatePin(length: number = 6): string {
 
 export default function TeamsPage() {
   const router = useRouter();
+  const { toasts, show: showToast, dismiss } = useToast();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
   const [teams, setTeams] = useState<TeamWithMembers[]>([]);
@@ -230,7 +233,7 @@ export default function TeamsPage() {
       setMyTeam(null);
       await loadTeams(user.id);
     } catch (error) {
-      console.error("Error leaving team:", error);
+      showToast("Erro ao sair da equipa.", "error");
     }
   };
 
@@ -514,6 +517,7 @@ export default function TeamsPage() {
       </div>
 
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
       <div className="h-20 md:hidden" />
     </main>
   );

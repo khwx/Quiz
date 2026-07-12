@@ -61,8 +61,8 @@ export default function ToastContainer({
   toasts,
   onDismiss,
 }: {
-  toasts: Array<{ id: string | number; message: string; type?: string }>;
-  onDismiss: (id: any) => void;
+  toasts: Array<{ id: number; message: string; type?: string }>;
+  onDismiss: (id: number) => void;
 }) {
   return (
     <div className="fixed top-4 right-4 z-[200] space-y-2 max-w-sm">

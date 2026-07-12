@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 import { getRandomAvatar } from '@/lib/avatars';
 import { getRandomColor } from '@/lib/colors';
@@ -39,14 +39,24 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         currentQuestion: null,
     });
 
-    // Supabase subscription logic here in a real app
+    const fetchPlayersVersionRef = useRef(0);
+
+    const fetchPlayers = useCallback(async (id: string) => {
+        const version = ++fetchPlayersVersionRef.current;
+        const { data } = await supabase.from('players').select('*').eq('game_id', id);
+        if (data && version === fetchPlayersVersionRef.current) {
+            setGameState(prev => ({ ...prev, players: data }));
+        }
+    }, []);
+
     useEffect(() => {
         if (!gameState.gameId) return;
 
-        // Simulate Realtime for now or subscribe to Supabase
+        const currentGameId = gameState.gameId;
+
         const channel = supabase
-            .channel(`game-${gameState.gameId}`)
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'games', filter: `id=eq.${gameState.gameId}` }, (payload) => {
+            .channel(`game-${currentGameId}`)
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'games', filter: `id=eq.${currentGameId}` }, (payload) => {
                 const data = payload.new as Record<string, unknown>;
                 setGameState(prev => ({
                     ...prev,
@@ -56,21 +66,15 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
                     gameSettings: (data.settings as GameSettings) || {}
                 }));
             })
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'players', filter: `game_id=eq.${gameState.gameId}` }, (payload) => {
-                // Refresh players list
-                fetchPlayers(gameState.gameId!);
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'players', filter: `game_id=eq.${currentGameId}` }, () => {
+                fetchPlayers(currentGameId);
             })
             .subscribe();
 
         return () => {
             supabase.removeChannel(channel);
         };
-    }, [gameState.gameId]);
-
-    const fetchPlayers = async (id: string) => {
-        const { data } = await supabase.from('players').select('*').eq('game_id', id);
-        if (data) setGameState(prev => ({ ...prev, players: data }));
-    };
+    }, [gameState.gameId, fetchPlayers]);
 
     const setGameId = (id: string | null) => {
         setGameState(prev => ({ ...prev, gameId: id }));
@@ -92,7 +96,6 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         let nextId = questionId;
         let nextCorrectOption = correctOption;
 
-        // Fallback: If no ID provided (Host Control), try to find it in settings playlist
         if (!nextId && gameState.gameSettings?.question_ids) {
             if (gameState.gameSettings.question_ids[nextIndex - 1]) {
                 nextId = gameState.gameSettings.question_ids[nextIndex - 1];
@@ -114,7 +117,6 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         const avatar = getRandomAvatar();
         const color = getRandomColor();
 
-        // Get current auth user (if logged in)
         const { data: { user } } = await supabase.auth.getUser();
 
         const { data, error } = await supabase.from('players').insert([
@@ -129,7 +131,6 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         ]).select();
 
         if (error) {
-            console.error("Erro ao entrar no jogo:", error.message);
             throw error;
         }
 
@@ -148,7 +149,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 export const useGame = () => {
     const context = useContext(GameContext);
     if (context === undefined) {
-        throw new Error('useGame must be used within a GameProvider');
+        throw new Error("useGame must be used within a GameProvider");
     }
     return context;
 };

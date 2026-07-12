@@ -44,7 +44,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     if (!currentQuestionId) return;
     const { data } = await supabase
       .from("questions")
-      .select("id, text, options, image_url, category, metadata, age_rating")
+      .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
       .eq("id", currentQuestionId)
       .single();
     if (data) {
@@ -296,7 +296,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }
 
   // Reveal phase
-  if (status === "REVEAL") {
+  if (status === "REVEAL" && questionData) {
     return (
       <>
         <RevealView

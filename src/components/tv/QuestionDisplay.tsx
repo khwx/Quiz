@@ -355,7 +355,7 @@ export default function QuestionDisplay({
       </div>
 
       {/* Hint on REVEAL */}
-      {status === "REVEAL" && question.metadata?.hint && (
+      {status === "REVEAL" && (question.metadata?.hint as string) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -364,7 +364,7 @@ export default function QuestionDisplay({
           <div className="flex items-center gap-2 mb-1">
             <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Dica</span>
           </div>
-          <p className="text-amber-200/80 text-sm">{question.metadata.hint}</p>
+          <p className="text-amber-200/80 text-sm">{question.metadata?.hint as string}</p>
         </motion.div>
       )}
 

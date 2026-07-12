@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Gamepad2, CheckCircle2, Loader2, Wifi, Rocket, ArrowLeft, LogOut, Users } from "lucide-react";
+import type { Player } from "@/types";
 
 interface LobbyJoinViewProps {
   pin: string;
   name: string;
   isJoining: boolean;
   hasJoined: boolean;
-  players: any[];
+  players: Player[];
   onPinChange: (value: string) => void;
   onNameChange: (value: string) => void;
   onJoin: () => void;

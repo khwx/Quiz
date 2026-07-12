@@ -14,7 +14,7 @@ export function useQuestionSync() {
     if (!currentQuestionId) return;
     const { data } = await supabase
       .from("questions")
-      .select("id, text, options, image_url, category, metadata, age_rating")
+      .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
       .eq("id", currentQuestionId)
       .single();
     if (data) {

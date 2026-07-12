@@ -3,9 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, Flag, Lightbulb, Image as ImageIcon } from "lucide-react";
 import StreakBadge from "@/components/mobile/StreakBadge";
+import type { Question } from "@/types";
 
 interface QuestionViewProps {
-  questionData: any;
+  questionData: Question;
   timeLeft: number;
   timerDuration: number;
   hasAnswered: boolean;
@@ -33,7 +34,7 @@ export default function QuestionView({
   onAnswer,
   onReport,
 }: QuestionViewProps) {
-  const hint = questionData?.metadata?.hint;
+  const hint = questionData?.metadata?.hint as string | undefined;
   const flagCode =
     questionData?.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
     questionData?.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];

@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Trophy, Flag, Lightbulb } from "lucide-react";
+import type { Question } from "@/types";
 
 interface RevealViewProps {
   selectedOption: number | null;
   correctOption: number | null;
-  questionData: any;
+  questionData: Question;
   earnedPoints: number | null;
   onReport: () => void;
 }
@@ -29,7 +30,7 @@ export default function RevealView({
   const isCorrect = selectedOption === correctOption;
   const hasNoSelection = selectedOption === null;
   const correctText = questionData?.options?.[correctOption ?? -1];
-  const hint = questionData?.metadata?.hint;
+  const hint = questionData?.metadata?.hint as string | undefined;
 
   return (
     <main
