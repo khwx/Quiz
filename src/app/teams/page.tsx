@@ -75,7 +75,7 @@ export default function TeamsPage() {
     try {
       const { data, error } = await supabase
         .from("teams")
-        .select("*, team_members(*)")
+        .select("*, team_members(*, profiles(id, username, avatar))")
         .eq("is_active", true)
         .order("created_at", { ascending: false });
       if (error) throw error;
@@ -223,18 +223,18 @@ export default function TeamsPage() {
 
   const leaveTeam = async (teamId: string) => {
     if (!user) return;
-    try {
-      await supabase
-        .from("team_members")
-        .delete()
-        .eq("team_id", teamId)
-        .eq("user_id", user.id);
+    const { error } = await supabase
+      .from("team_members")
+      .delete()
+      .eq("team_id", teamId)
+      .eq("user_id", user.id);
 
-      setMyTeam(null);
-      await loadTeams(user.id);
-    } catch (error) {
+    if (error) {
       showToast("Erro ao sair da equipa.", "error");
+      return;
     }
+    setMyTeam(null);
+    await loadTeams(user.id);
   };
 
   const copyToClipboard = (text: string) => {
@@ -284,7 +284,11 @@ export default function TeamsPage() {
                 <p className="text-[#e3e0f9]/50 text-sm">A tua equipa</p>
               </div>
               <button
-                onClick={() => leaveTeam(myTeam.id)}
+                onClick={() => {
+                  if (confirm("Tens a certeza que queres sair desta equipa?")) {
+                    leaveTeam(myTeam.id);
+                  }
+                }}
                 className="text-[#FFB0CD] hover:text-[#FFB0CD]/80 text-sm"
               >
                 Sair

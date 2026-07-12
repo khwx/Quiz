@@ -137,6 +137,25 @@ export default function TournamentsPage() {
     checkUser();
   }, []);
 
+  // Real-time updates for tournaments
+  useEffect(() => {
+    const channel = supabase
+      .channel("tournaments-realtime")
+      .on("postgres_changes", { event: "*", schema: "public", table: "tournament_teams" }, () => {
+        loadTournaments();
+      })
+      .on("postgres_changes", { event: "UPDATE", schema: "public", table: "tournaments" }, (payload) => {
+        setTournaments((prev) =>
+          prev.map((t) => (t.id === payload.new.id ? { ...t, ...payload.new } as TournamentWithTeams : t))
+        );
+      })
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
   const checkUser = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
@@ -145,7 +164,26 @@ export default function TournamentsPage() {
         return;
       }
       setUser(user);
-      await Promise.all([loadTournaments(), loadMyTeams(user.id)]);
+
+      // Load tournaments and teams in parallel, then detect myTournament
+      const [tournamentsData] = await Promise.all([
+        loadTournaments(),
+        loadMyTeams(user.id),
+      ]);
+
+      // Detect user's tournament after both loads complete
+      if (tournamentsData && user) {
+        const { data: teamMembers } = await supabase
+          .from("team_members")
+          .select("team_id")
+          .eq("user_id", user.id);
+        const myTeamIds = new Set((teamMembers || []).map((m) => m.team_id));
+
+        const myTournamentData = tournamentsData.find((t) =>
+          t.tournament_teams?.some((tt) => myTeamIds.has(tt.team_id))
+        );
+        if (myTournamentData) setMyTournament(myTournamentData);
+      }
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -170,7 +208,7 @@ export default function TournamentsPage() {
     }
   };
 
-  const loadTournaments = async () => {
+  const loadTournaments = async (): Promise<TournamentWithTeams[] | null> => {
     try {
       const { data, error } = await supabase
         .from("tournaments")
@@ -180,19 +218,11 @@ export default function TournamentsPage() {
       if (error) throw error;
       const allData = (data || []) as TournamentWithTeams[];
       setTournaments(allData);
-
-      // Check if current user is already in a tournament
-      if (user) {
-        const myTournamentData = allData.find((t) =>
-          t.tournament_teams?.some((tt) =>
-            tt.teams && myTeams.some((mt) => mt.id === tt.team_id)
-          )
-        );
-        if (myTournamentData) setMyTournament(myTournamentData);
-      }
+      return allData;
     } catch (err) {
       console.error("Erro ao carregar torneios:", err);
       setError("Erro ao carregar torneios");
+      return null;
     }
   };
 
@@ -423,7 +453,7 @@ export default function TournamentsPage() {
                             <span className="text-[#FFD700] font-bold text-sm">{tt.score} pts</span>
                           )}
                           <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
-                          {myTournament.status === 'LOBBY' && (
+                          {myTournament.status === 'LOBBY' && user?.id === myTournament.created_by && (
                             <button
                               onClick={async () => {
                                 await supabase.from("tournament_teams").delete().eq("id", tt.id);

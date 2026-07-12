@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Flag, RotateCcw, Palette, Sparkles, Users, Share2, Copy, Check } from "lucide-react";
+import { Flag, RotateCcw, Palette, Sparkles, Users, Share2, Copy, Check, Trophy } from "lucide-react";
 import { useState } from "react";
 import Podium from "@/components/tv/Podium";
 import type { Player } from "@/types";
@@ -18,9 +18,11 @@ interface PodiumViewProps {
   onRestart: () => void;
   onEditTopic: () => void;
   onReport: () => void;
+  onAdvanceTournament?: () => void;
+  tournamentStatus?: string;
 }
 
-export default function PodiumView({ players, teamResults, onRestart, onEditTopic, onReport }: PodiumViewProps) {
+export default function PodiumView({ players, teamResults, onRestart, onEditTopic, onReport, onAdvanceTournament, tournamentStatus }: PodiumViewProps) {
   const sortedTeams = teamResults?.sort((a, b) => b.score - a.score) || [];
   const [copied, setCopied] = useState(false);
 
@@ -96,6 +98,17 @@ export default function PodiumView({ players, teamResults, onRestart, onEditTopi
       )}
 
       <div className="flex flex-wrap justify-center gap-4">
+        {onAdvanceTournament && tournamentStatus && tournamentStatus !== "FINAL" && tournamentStatus !== "FINISHED" && (
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onAdvanceTournament}
+            className="flex items-center gap-2 px-6 py-3 bg-[#FFD700]/20 hover:bg-[#FFD700]/30 text-[#FFD700] rounded-xl border border-[#FFD700]/30 transition-all font-bold"
+          >
+            <Trophy className="w-5 h-5" />
+            Avançar Torneio
+          </motion.button>
+        )}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

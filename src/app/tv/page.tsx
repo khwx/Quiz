@@ -314,6 +314,13 @@ export default function TVHost() {
           }}
           onEditTopic={resetToLobby}
           onReport={() => setReportOpen(true)}
+          onAdvanceTournament={tournamentId ? () => {
+            const nextStatus = round >= 2 ? "FINAL" : "QUALIFYING";
+            advanceTournament(nextStatus);
+            setRound((r) => r + 1);
+            updateStatus("STARTING");
+          } : undefined}
+          tournamentStatus={tournamentId ? (round >= 2 ? "FINAL" : "QUALIFYING") : undefined}
         />
       )}
 

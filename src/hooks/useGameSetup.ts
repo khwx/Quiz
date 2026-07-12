@@ -28,7 +28,19 @@ export function useGameSetup() {
       const queryTournament = urlParams.get("tournament");
       const queryTeam = urlParams.get("team");
 
-      if (queryTournament) setTournamentId(queryTournament);
+      if (queryTournament) {
+        setTournamentId(queryTournament);
+        // Fetch tournament settings and apply them
+        const { data: tData } = await supabase
+          .from("tournaments")
+          .select("settings")
+          .eq("id", queryTournament)
+          .single();
+        if (tData?.settings) {
+          if (tData.settings.timer) setTimerDuration(tData.settings.timer);
+          if (tData.settings.questions) setQuestionCount(tData.settings.questions);
+        }
+      }
       if (queryTeam) setTeamId(queryTeam);
 
       if (queryCategories) {
