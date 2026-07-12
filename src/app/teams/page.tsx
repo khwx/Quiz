@@ -315,13 +315,24 @@ export default function TeamsPage() {
 
             <div className="mt-4">
               <div className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 tracking-wider font-bold">
-                Membros
+                Membros ({myTeam.team_members?.length || 0}/{myTeam.max_members})
               </div>
               <div className="flex flex-wrap gap-2">
-                <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg border border-white/10">
-                  <UserPlus className="w-4 h-4 text-[#d0bcff]" />
-                  <span className="text-[#e3e0f9] text-sm">Tu</span>
-                </div>
+                {myTeam.team_members?.map((member) => (
+                  <div key={member.id} className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg border border-white/10">
+                    <span className="text-lg">{member.profiles?.avatar || "🧑‍🚀"}</span>
+                    <span className="text-[#e3e0f9] text-sm">{member.profiles?.username || "Jogador"}</span>
+                    {member.role === "host" && (
+                      <Crown className="w-3 h-3 text-[#FFB0CD]" />
+                    )}
+                  </div>
+                ))}
+                {(!myTeam.team_members || myTeam.team_members.length === 0) && (
+                  <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg border border-white/10">
+                    <UserPlus className="w-4 h-4 text-[#d0bcff]" />
+                    <span className="text-[#e3e0f9] text-sm">Tu</span>
+                  </div>
+                )}
               </div>
             </div>
 

@@ -77,7 +77,7 @@ export default function ProfileEditPage() {
           className="flex flex-col items-center space-y-4"
         >
           <div className="relative group">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-3 border-[#d0bcff] shadow-[0_0_30px_rgba(208,188,255,0.4)] relative">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-[3px] border-[#d0bcff] shadow-[0_0_30px_rgba(208,188,255,0.4)] relative">
               <div className="w-full h-full bg-[#1e1e30] flex items-center justify-center">
                 <Rocket className="w-12 h-12 text-[#d0bcff]" />
               </div>

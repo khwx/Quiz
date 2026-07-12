@@ -285,7 +285,7 @@ export default function LoginPage() {
 
       <footer className="fixed bottom-0 w-full pb-8 text-center z-10">
         <p className="text-[10px] text-[#958ea0]/60 uppercase tracking-widest">
-          Protocolo Seguro QuizVerse © 2024
+          Protocolo Seguro QuizVerse © 2026
         </p>
       </footer>
     </main>
