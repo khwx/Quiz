@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target } from "lucide-react";
+import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Swords } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
 import { useToast } from "@/hooks/useToast";
+import TournamentBracket from "@/components/tv/TournamentBracket";
 import type { TournamentWithTeams } from "@/types";
 
 export default function TournamentDetailPage() {
@@ -167,6 +168,73 @@ export default function TournamentDetailPage() {
             <p className="text-[#e3e0f9]/50">Nenhuma equipa inscrita ainda.</p>
           </motion.div>
         )}
+
+        {/* Tournament Bracket */}
+        {sortedTeams.length >= 2 && tournament.status !== "LOBBY" && (() => {
+          const teamCount = sortedTeams.length;
+          const totalRounds = Math.ceil(Math.log2(teamCount));
+          const matchesPerRound = [];
+          let matchId = 0;
+
+          for (let round = 1; round <= totalRounds; round++) {
+            const teamsInRound = Math.pow(2, totalRounds - round + 1);
+            const matchesInRound = teamsInRound / 2;
+            matchesPerRound.push(matchesInRound);
+          }
+
+          const bracketMatches = [];
+          for (let round = 1; round <= totalRounds; round++) {
+            const matchesInRound = matchesPerRound[round - 1];
+            for (let pos = 0; pos < matchesInRound; pos++) {
+              const team1Idx = round === 1 ? pos * 2 : undefined;
+              const team2Idx = round === 1 ? pos * 2 + 1 : undefined;
+
+              bracketMatches.push({
+                id: `match-${matchId++}`,
+                round,
+                position: pos,
+                team1: team1Idx !== undefined ? {
+                  id: sortedTeams[team1Idx]?.teams?.name || `team-${team1Idx}`,
+                  name: sortedTeams[team1Idx]?.teams?.name || "TBD",
+                  score: sortedTeams[team1Idx]?.score,
+                  eliminated: sortedTeams[team1Idx]?.eliminated,
+                } : undefined,
+                team2: team2Idx !== undefined ? {
+                  id: sortedTeams[team2Idx]?.teams?.name || `team-${team2Idx}`,
+                  name: sortedTeams[team2Idx]?.teams?.name || "TBD",
+                  score: sortedTeams[team2Idx]?.score,
+                  eliminated: sortedTeams[team2Idx]?.eliminated,
+                } : undefined,
+                isBye: false,
+              });
+            }
+          }
+
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="glass-panel rounded-2xl p-6"
+            >
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
+                <Swords className="w-5 h-5 text-[#FFB0CD]" />
+                Bracket do Torneio
+              </h3>
+              <TournamentBracket
+                teams={sortedTeams.map((tt) => ({
+                  id: tt.teams?.name || tt.id,
+                  name: tt.teams?.name || "Equipa",
+                  score: tt.score,
+                  eliminated: tt.eliminated,
+                }))}
+                currentRound={tournament.current_round || 1}
+                totalRounds={totalRounds}
+                matches={bracketMatches}
+              />
+            </motion.div>
+          );
+        })()}
 
         {/* Tournament Info */}
         <motion.div
