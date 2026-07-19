@@ -11,6 +11,26 @@ export default function HostPage() {
     const [loading, setLoading] = useState(false);
     const [gamePin, setGamePin] = useState<string>("");
     const [showSettings, setShowSettings] = useState(false);
+    const [categories, setCategories] = useState<{ name: string; dbName: string }[]>([]);
+    const [selectedCategories, setSelectedCategories] = useState<string[]>(["Cultura Geral"]);
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            const { data } = await supabase.from("questions").select("category").not("category", "is", null);
+            if (data) {
+                const unique = Array.from(new Set(data.map(q => q.category))).sort();
+                setCategories(unique.map(c => ({ name: c.replace(/_/g, " "), dbName: c })));
+            }
+        };
+        fetchCategories();
+    }, []);
+
+    useEffect(() => {
+        if (gameSettings?.topic) {
+            const cats = Array.isArray(gameSettings.topic) ? gameSettings.topic : [gameSettings.topic];
+            setSelectedCategories(cats);
+        }
+    }, [gameSettings?.topic]);
 
     useEffect(() => {
         if (!gameId) return;
@@ -23,7 +43,9 @@ export default function HostPage() {
 
     const handleCreateGame = async () => {
         setLoading(true);
-        const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+        const pinArray = new Uint32Array(1);
+        crypto.getRandomValues(pinArray);
+        const newPin = String(100000 + (pinArray[0] % 900000));
         const { data } = await supabase
             .from("games")
             .insert([{ pin: newPin, status: "LOBBY" }])
@@ -46,6 +68,18 @@ export default function HostPage() {
         if (gamePin) {
             navigator.clipboard.writeText(gamePin);
         }
+    };
+
+    const toggleCategory = async (dbName: string) => {
+        if (!gameId) return;
+        const newSelected = selectedCategories.includes(dbName)
+            ? selectedCategories.filter(c => c !== dbName)
+            : [...selectedCategories, dbName];
+        setSelectedCategories(newSelected);
+        await supabase
+            .from("games")
+            .update({ settings: { ...gameSettings, topic: newSelected } })
+            .eq("id", gameId);
     };
 
     const getStatusLabel = () => {
@@ -136,6 +170,7 @@ export default function HostPage() {
                         <button 
                             onClick={copyPin}
                             className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                            aria-label="Copiar código"
                             title="Copiar código"
                         >
                             <Share2 className="w-5 h-5 text-[#e3e0f9]/60" />
@@ -192,10 +227,10 @@ export default function HostPage() {
                                                 <Clock className="w-4 h-4 text-[#FFB0CD]" />
                                                 <span><strong className="text-[#e3e0f9]">{gameSettings.timer_duration || 20}s</strong> por pergunta</span>
                                             </div>
-                                            <div className="flex items-center gap-2 text-[#e3e0f9]/60">
-                                                <Zap className="w-4 h-4 text-[#FFD700]" />
-                                                <span>Pergunta <strong className="text-[#e3e0f9]">{currentQuestionIndex + 1}</strong>/{gameSettings.question_ids.length}</span>
-                                            </div>
+                                         <div className="flex items-center gap-2 text-[#e3e0f9]/60">
+                                             <Zap className="w-4 h-4 text-[#FFD700]" />
+                                             <span>Modo Buzzer: <strong className="text-[#e3e0f9]">{gameSettings?.buzzer_mode ? "ON" : "OFF"}</strong></span>
+                                         </div>
                                             <div className="flex items-center gap-2 text-[#e3e0f9]/60">
                                                 <Users className="w-4 h-4 text-[#4CAF50]" />
                                                 <span><strong className="text-[#e3e0f9]">{players.length}</strong> jogadores</span>
@@ -242,6 +277,93 @@ export default function HostPage() {
                         )}
                     </div>
                 </section>
+
+                <section className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6">
+                    <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-lg bg-[#FFB0CD]/20 flex items-center justify-center">
+                            <Users className="w-4 h-4 text-[#FFB0CD]" />
+                        </div>
+                        Convidar Amigos
+                    </h3>
+                    <div className="flex gap-3">
+                        <input
+                            type="text"
+                            placeholder="Username do amigo..."
+                            id="invite-username"
+                            className="flex-1 glass-input"
+                        />
+                        <button
+                            onClick={async () => {
+                                const input = document.getElementById("invite-username") as HTMLInputElement;
+                                const username = input.value.trim();
+                                if (!username) return;
+
+                                const { data: { user } } = await supabase.auth.getUser();
+                                if (!user) {
+                                    alert("Precisas de estar autenticado");
+                                    return;
+                                }
+
+                                const { data: profile } = await supabase
+                                    .from("profiles")
+                                    .select("id")
+                                    .eq("username", username)
+                                    .single();
+
+                                if (!profile) {
+                                    alert("Utilizador não encontrado");
+                                    return;
+                                }
+
+                                await fetch("/api/invites", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({
+                                        fromUserId: user.id,
+                                        toUserId: profile.id,
+                                        gameId,
+                                        gamePin,
+                                    }),
+                                });
+
+                                input.value = "";
+                                alert("Convite enviado!");
+                            }}
+                            className="px-6 py-3 bg-[#FFB0CD] text-[#121223] rounded-xl font-bold"
+                        >
+                            Convidar
+                        </button>
+                    </div>
+                </section>
+
+                {categories.length > 0 && (
+                    <section className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6">
+                        <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-lg bg-[#4CAF50]/20 flex items-center justify-center">
+                                <Zap className="w-4 h-4 text-[#4CAF50]" />
+                            </div>
+                            Categorias
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                            {categories.map((cat) => {
+                                const isSelected = selectedCategories.includes(cat.dbName);
+                                return (
+                                    <button
+                                        key={cat.dbName}
+                                        onClick={() => toggleCategory(cat.dbName)}
+                                        className={`px-4 py-2 rounded-full text-sm font-bold transition-all border-2 ${
+                                            isSelected
+                                                ? "bg-[#d0bcff] border-[#d0bcff] text-[#121223] shadow-[0_0_15px_rgba(208,188,255,0.3)]"
+                                                : "bg-white/5 border-white/5 text-gray-400 hover:border-white/10"
+                                        }`}
+                                    >
+                                        {cat.name}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </section>
+                )}
 
                 <section className="flex flex-col items-center justify-center py-12">
                     <AnimatePresence mode="wait">

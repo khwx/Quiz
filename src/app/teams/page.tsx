@@ -27,9 +27,11 @@ import type { User } from "@supabase/supabase-js";
 
 function generatePin(length: number = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const array = new Uint32Array(length);
+  crypto.getRandomValues(array);
   let pin = "";
   for (let i = 0; i < length; i++) {
-    pin += chars.charAt(Math.floor(Math.random() * chars.length));
+    pin += chars[array[i] % chars.length];
   }
   return pin;
 }
@@ -216,9 +218,9 @@ export default function TeamsPage() {
       )
       .subscribe();
 
-    return () => {
-      supabase.removeChannel(channel);
-    };
+        return () => {
+          supabase.removeChannel(channel).catch(() => {});
+        };
   }, [myTeam?.id]);
 
   const leaveTeam = async (teamId: string) => {

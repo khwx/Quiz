@@ -16,8 +16,10 @@ export function useGameSetup() {
   const [questionCount, setQuestionCount] = useState(5);
   const [localMode, setLocalMode] = useState(false);
   const [localScore, setLocalScore] = useState(0);
+  const [localLives, setLocalLives] = useState(3);
   const [tournamentId, setTournamentId] = useState<string | null>(null);
   const [teamId, setTeamId] = useState<string | null>(null);
+  const [blindMode, setBlindMode] = useState(false);
 
   useEffect(() => {
     const connectToGame = async () => {
@@ -39,6 +41,7 @@ export function useGameSetup() {
         if (tData?.settings) {
           if (tData.settings.timer) setTimerDuration(tData.settings.timer);
           if (tData.settings.questions) setQuestionCount(tData.settings.questions);
+          if (tData.settings.blind_mode) setBlindMode(tData.settings.blind_mode);
         }
       }
       if (queryTeam) setTeamId(queryTeam);
@@ -62,7 +65,9 @@ export function useGameSetup() {
       }
 
       if (!gameId) {
-        const newPin = Math.floor(100000 + Math.random() * 900000).toString();
+        const pinArray = new Uint32Array(1);
+        crypto.getRandomValues(pinArray);
+        const newPin = String(100000 + (pinArray[0] % 900000));
         const insertData: Record<string, unknown> = { pin: newPin, status: "LOBBY" };
         if (queryTournament) insertData.tournament_id = queryTournament;
         if (queryTeam) insertData.team_id = queryTeam;
@@ -142,8 +147,12 @@ export function useGameSetup() {
     setLocalMode,
     localScore,
     setLocalScore,
+    localLives,
+    setLocalLives,
     tournamentId,
     teamId,
+    blindMode,
+    setBlindMode,
     saveTournamentScore,
     advanceTournament,
     resetToLobby,

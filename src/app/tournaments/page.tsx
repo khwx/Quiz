@@ -15,9 +15,11 @@ import type { User } from "@supabase/supabase-js";
 
 function generatePin(length: number = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const array = new Uint32Array(length);
+  crypto.getRandomValues(array);
   let pin = "";
   for (let i = 0; i < length; i++) {
-    pin += chars.charAt(Math.floor(Math.random() * chars.length));
+    pin += chars[array[i] % chars.length];
   }
   return pin;
 }
@@ -125,13 +127,14 @@ export default function TournamentsPage() {
   const [joinMode, setJoinMode] = useState(false);
   const [tournamentName, setTournamentName] = useState("");
   const [tournamentPin, setTournamentPin] = useState("");
+  const [selectedTeamId, setSelectedTeamId] = useState<string>("");
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [myTournament, setMyTournament] = useState<TournamentWithTeams | null>(null);
   const [startConfirmOpen, setStartConfirmOpen] = useState(false);
   const [myTeams, setMyTeams] = useState<Team[]>([]);
-  const [selectedTeamId, setSelectedTeamId] = useState<string>("");
+  const [blindMode, setBlindMode] = useState(false);
 
   useEffect(() => {
     checkUser();
@@ -152,7 +155,7 @@ export default function TournamentsPage() {
       .subscribe();
 
     return () => {
-      supabase.removeChannel(channel);
+      supabase.removeChannel(channel).catch(() => {});
     };
   }, []);
 
@@ -245,7 +248,7 @@ export default function TournamentsPage() {
           pin: pin,
           max_teams: 8,
           status: "LOBBY",
-          settings: { timer: 20, questions: 10 },
+           settings: { timer: 20, questions: 10, blind_mode: blindMode },
           created_by: user!.id,
         })
         .select()
@@ -611,25 +614,38 @@ export default function TournamentsPage() {
                   </div>
                 )}
 
-                {myTeams.length === 0 && (
-                  <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm">
-                    Cria uma equipa primeiro em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button> para participar no torneio.
-                  </div>
-                )}
+                  {myTeams.length === 0 && (
+                    <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm">
+                      Cria uma equipa primeiro em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button> para participar no torneio.
+                    </div>
+                  )}
 
-                {error && (
+                  <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
+                    <span className="text-sm text-[#e3e0f9]">Modo Cego</span>
+                    <div className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={blindMode}
+                        onChange={(e) => setBlindMode(e.target.checked)}
+                        className="sr-only peer"
+                      />
+                      <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#d0bcff]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#d0bcff]"></div>
+                    </div>
+                  </label>
+
+                  {error && (
                   <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
                     {error}
                   </div>
                 )}
 
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setCreateMode(false)}
-                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
-                  >
-                    Cancelar
-                  </button>
+                 <div className="flex gap-3">
+                   <button
+                     onClick={() => { setCreateMode(false); setBlindMode(false); }}
+                     className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                   >
+                     Cancelar
+                   </button>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

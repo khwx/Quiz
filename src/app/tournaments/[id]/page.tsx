@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2 } from "lucide-react";
+import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
@@ -183,6 +183,37 @@ export default function TournamentDetailPage() {
             <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Estado</span>
             <p className="text-lg font-bold text-[#FFD700]">{statusLabels[tournament.status] || tournament.status}</p>
           </div>
+        </motion.div>
+
+        {/* Tournament Settings */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="glass-panel rounded-2xl p-6"
+        >
+          <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
+            <Target className="w-5 h-5 text-[#FFB0CD]" />
+            Definições
+          </h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white/5 rounded-xl p-3 text-center">
+              <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Tempo por Pergunta</span>
+              <p className="text-xl font-bold text-white">{tournament.settings?.timer || 20}s</p>
+            </div>
+            <div className="bg-white/5 rounded-xl p-3 text-center">
+              <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Perguntas</span>
+              <p className="text-xl font-bold text-white">{tournament.settings?.questions || 10}</p>
+            </div>
+          </div>
+          {tournament.settings?.blind_mode && (
+            <div className="mt-4 p-3 bg-[#d0bcff]/10 border border-[#d0bcff]/30 rounded-xl text-[#d0bcff] text-sm flex items-center gap-2">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.292-4.292M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Modo Cego ativado — o anfitrião não vê as respostas dos jogadores
+            </div>
+          )}
         </motion.div>
       </div>
 

@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChevronLeft, Rocket, Trophy, Users, Award, Bell, Settings, Check, X } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 
 interface Notification {
   id: string;
@@ -13,54 +17,7 @@ interface Notification {
   description: string;
   time: string;
   read: boolean;
-  actionLabel?: string;
-  onAction?: () => void;
 }
-
-const MOCK_NOTIFICATIONS: Notification[] = [
-  {
-    id: "1",
-    type: "tournament",
-    title: "Novo Torneio: Nebula Championship",
-    description: "A competição começou! Desafia os melhores pilotos da galáxia e ganha itens exclusivos.",
-    time: "Agora",
-    read: false,
-    actionLabel: "Participar",
-  },
-  {
-    id: "2",
-    type: "reward",
-    title: "Recompensa Estelar: +500 Coins",
-    description: "Ganhaste 500 Stellar Coins por completar a missão diária!",
-    time: "Há 2h",
-    read: false,
-  },
-  {
-    id: "3",
-    type: "friend",
-    title: "Pedido de Amizade: Pilot_X",
-    description: "Quer adicionar-te à tripulação estelar.",
-    time: "Há 3h",
-    read: false,
-    actionLabel: "Aceitar",
-  },
-  {
-    id: "4",
-    type: "achievement",
-    title: "Conquista Desbloqueada: Explorador de Nebulosas",
-    description: "Completaste 50 jogos em diferentes categorias!",
-    time: "Ontem",
-    read: true,
-  },
-  {
-    id: "5",
-    type: "system",
-    title: "Atualização do Núcleo v2.4",
-    description: "Otimizações de performance aplicadas aos motores de propulsão.",
-    time: "Há 2 dias",
-    read: true,
-  },
-];
 
 const TYPE_CONFIG = {
   tournament: { icon: Rocket, color: "text-[#d0bcff]", bg: "bg-[#d0bcff]/10", border: "border-[#d0bcff]/20" },
@@ -71,8 +28,46 @@ const TYPE_CONFIG = {
 };
 
 export default function NotificationsPage() {
-  const [notifications, setNotifications] = useState(MOCK_NOTIFICATIONS);
+  const router = useRouter();
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   const [filter, setFilter] = useState<"all" | "unread">("all");
+  const [loading, setLoading] = useState(true);
+  const { toasts, show: showToast, dismiss } = useToast();
+
+  useEffect(() => {
+    loadNotifications();
+  }, []);
+
+  const loadNotifications = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        router.push("/login");
+        return;
+      }
+
+      const { data } = await supabase
+        .from("notifications")
+        .select("*")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false });
+
+      const realNotifications = (data || []).map((n) => ({
+        id: n.id,
+        type: n.type as Notification["type"],
+        title: n.title,
+        description: n.description || "",
+        time: new Date(n.created_at).toLocaleDateString("pt-PT", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }),
+        read: n.read,
+      }));
+
+      setNotifications(realNotifications);
+    } catch {
+      showToast("Erro ao carregar notificações.", "error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const filtered = filter === "unread" ? notifications.filter((n) => !n.read) : notifications;
   const today = filtered.filter((n) => n.time === "Agora" || n.time.startsWith("Há"));
@@ -82,7 +77,8 @@ export default function NotificationsPage() {
     setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
   };
 
-  const dismissNotification = (id: string) => {
+  const dismissNotification = async (id: string) => {
+    await supabase.from("notifications").update({ read: true }).eq("id", id);
     setNotifications((prev) => prev.filter((n) => n.id !== id));
   };
 
@@ -153,11 +149,6 @@ export default function NotificationsPage() {
                       <p className="text-[10px] text-[#e3e0f9]/30 mt-1">{notification.time}</p>
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
-                      {notification.actionLabel && (
-                        <button className="px-4 py-2 bg-[#d0bcff] text-[#3c0091] rounded-full text-sm font-bold hover:opacity-90 active:scale-95 transition-all shadow-[0_0_15px_rgba(208,188,255,0.4)]">
-                          {notification.actionLabel}
-                        </button>
-                      )}
                       <button
                         onClick={() => dismissNotification(notification.id)}
                         className="p-2 text-[#e3e0f9]/30 hover:text-[#FF6B6B] transition-colors opacity-0 group-hover:opacity-100"

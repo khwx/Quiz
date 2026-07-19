@@ -7,6 +7,8 @@ import { ChevronLeft, Camera, Rocket, FileText, Volume2, Bell, LogOut } from "lu
 import MobileNav from "@/components/MobileNav";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 
 const THEME_COLORS = [
   { name: "Nébula", color: "#d0bcff" },
@@ -42,10 +44,27 @@ export default function ProfileEditPage() {
   const [haptics, setHaptics] = useState(true);
   const [missionReminders, setMissionReminders] = useState(true);
   const [rankingAlerts, setRankingAlerts] = useState(false);
+  const { toasts, show: showToast, dismiss } = useToast();
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     router.push("/login");
+  };
+
+  const handleSave = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) throw new Error("Não autenticado");
+      const { error } = await supabase
+        .from("profiles")
+        .upsert({ id: user.id, username, bio: bio || "", theme_color: THEME_COLORS[selectedTheme]?.color || "#d0bcff" })
+        .select()
+        .single();
+      if (error) throw error;
+      showToast("Perfil guardado!", "success");
+    } catch {
+      showToast("Erro ao guardar perfil.", "error");
+    }
   };
 
   return (
@@ -63,7 +82,7 @@ export default function ProfileEditPage() {
             <ChevronLeft className="w-4 h-4" />
           </Link>
           <h1 className="text-lg font-bold text-[#e3e0f9]">Editar Perfil</h1>
-          <button className="text-sm text-[#d0bcff] font-bold uppercase tracking-widest">
+          <button onClick={handleSave} className="text-sm text-[#d0bcff] font-bold uppercase tracking-widest">
             Guardar
           </button>
         </div>
@@ -221,6 +240,7 @@ export default function ProfileEditPage() {
       </div>
 
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
       <div className="h-20 md:hidden" />
     </main>
   );

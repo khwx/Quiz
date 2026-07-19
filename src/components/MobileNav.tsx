@@ -3,13 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Home, Grid3X3, Gamepad2, Trophy, User } from "lucide-react";
+import { Home, Grid3X3, Gamepad2, Trophy, Users, User, ShoppingCart } from "lucide-react";
 
 const NAV_ITEMS = [
   { href: "/", icon: Home, label: "Início" },
   { href: "/categories", icon: Grid3X3, label: "Categorias" },
   { href: "/play", icon: Gamepad2, label: "Jogar" },
   { href: "/leaderboard", icon: Trophy, label: "Ranking" },
+  { href: "/friends", icon: Users, label: "Amigos" },
+  { href: "/shop", icon: ShoppingCart, label: "Loja" },
   { href: "/profile", icon: User, label: "Perfil" },
 ];
 

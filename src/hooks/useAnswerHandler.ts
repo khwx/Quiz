@@ -63,13 +63,17 @@ export function useAnswerHandler(playerName: string) {
   const handleCorrectAnswer = useCallback(
     (timerDuration: number, startTime: number) => {
       const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
-      const points = Math.max(10, Math.floor(((timerDuration - timeTaken) / timerDuration) * 100));
+      const timeRatio = Math.max(0, timerDuration - timeTaken) / timerDuration;
+      const basePoints = Math.round(600 + (400 * timeRatio));
+      const newStreak = streak + 1;
+      const multiplier = newStreak >= 5 ? 2 : newStreak >= 3 ? 1.5 : 1;
+      const points = Math.round(basePoints * multiplier);
       setEarnedPoints(points);
-      setStreak((prev) => prev + 1);
+      setStreak(newStreak);
       playSound("correct");
       setTimeout(() => setEarnedPoints(null), 2000);
     },
-    [playSound]
+    [playSound, streak]
   );
 
   const handleWrongAnswer = useCallback(() => {

@@ -16,7 +16,7 @@ const MODES = [
     color: "#d0bcff",
     bgGlow: "bg-[#d0bcff]/20",
     buttonGradient: "from-[#FFD700] to-[#d0bcff]",
-    href: "/play",
+    href: "/play?solo=1",
   },
   {
     id: "team",

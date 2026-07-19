@@ -9,7 +9,10 @@ import LiveLeaderboard from "@/components/tv/LiveLeaderboard";
 import LobbyView from "@/components/tv/LobbyView";
 import RevealControls from "@/components/tv/RevealControls";
 import PodiumView from "@/components/tv/PodiumView";
+import TVChat from "@/components/tv/TVChat";
+import TVReactions from "@/components/tv/TVReactions";
 import SoundEnableButton from "@/components/SoundEnableButton";
+import SoundControls from "@/components/SoundControls";
 import ToastContainer from "@/components/Toast";
 import ReportModal from "@/components/ReportModal";
 import ConfirmModal from "@/components/ConfirmModal";
@@ -22,7 +25,7 @@ import { useQuestionManagement } from "@/hooks/useQuestionManagement";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 
 export default function TVHost() {
-  const { gameId, status, updateStatus, players, currentQuestionIndex, nextQuestion, setPlayers } = useGame();
+  const { gameId, status, updateStatus, players, currentQuestionIndex, nextQuestion, setPlayers, gameSettings } = useGame();
   const { playSound } = useSound();
   const { toasts, show: showToast, dismiss } = useToast();
 
@@ -45,12 +48,32 @@ export default function TVHost() {
     setLocalMode,
     localScore,
     setLocalScore,
+    localLives,
+    setLocalLives,
     tournamentId,
     teamId,
+    blindMode,
+    setBlindMode,
     saveTournamentScore,
     advanceTournament,
     resetToLobby,
   } = useGameSetup();
+
+  const [buzzerMode, setBuzzerMode] = useState(false);
+  const [hotseatMode, setHotseatMode] = useState(false);
+  const [hotseatPlayers, setHotseatPlayers] = useState<string[]>([]);
+  const [currentHotseatIndex, setCurrentHotseatIndex] = useState(0);
+  const [hotseatScores, setHotseatScores] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    if (gameSettings?.buzzer_mode !== undefined) {
+      setBuzzerMode(gameSettings.buzzer_mode);
+    }
+    if (gameSettings?.hotseat_mode !== undefined) {
+      setHotseatMode(gameSettings.hotseat_mode);
+      setHotseatPlayers(gameSettings.hotseat_players || []);
+    }
+  }, [gameSettings?.buzzer_mode, gameSettings?.hotseat_mode, gameSettings?.hotseat_players]);
 
   const { currentAnswers, setCurrentAnswers, updateQuestionIds } = useAnswerSubscription();
 
@@ -96,19 +119,36 @@ export default function TVHost() {
     const answeredPlayerIds = new Set(validAnswers.map(a => String(a.player_id)));
     const allPlayerIds = new Set(playersRef.current.map(p => String(p.id)));
 
+    const buzzerMode = gameSettings?.buzzer_mode === true;
+
+    if (buzzerMode && validAnswers.length > 0) {
+      const firstAnswer = validAnswers[0];
+      const buzzerPlayer = playersRef.current.find(p => String(p.id) === String(firstAnswer.player_id));
+      if (buzzerPlayer) {
+        showToast(`${buzzerPlayer.name} buzzed in!`, "success");
+      }
+      setTimeout(() => triggerReveal(), 1500);
+      return;
+    }
+
     if (allPlayerIds.size > 0 && answeredPlayerIds.size >= allPlayerIds.size) {
       triggerReveal();
     }
-  }, [status, currentQuestionIndex, currentQuestions, questionStartTimeRef, triggerReveal]);
+  }, [status, currentQuestionIndex, currentQuestions, currentAnswers, questionStartTimeRef, triggerReveal, gameSettings?.buzzer_mode, showToast]);
 
   // Save tournament team score when game reaches PODIUM
   useEffect(() => {
     if (status === "PODIUM" && tournamentId && teamId && players.length > 0) {
+      const memberIds = new Set(
+        (players[0]?.team_members || [])
+          .filter((m) => String(m.team_id) === String(teamId))
+          .map((m) => String(m.user_id))
+      );
+      if (memberIds.size === 0) {
+        players.forEach((p) => memberIds.add(String(p.user_id || p.id)));
+      }
       const teamScore = players
-        .filter((p) => {
-          // If we have team info, sum scores of team members
-          return true; // For now sum all players (team game = all players are the team)
-        })
+        .filter((p) => memberIds.has(String(p.user_id || p.id)))
         .reduce((sum, p) => sum + (p.score || 0), 0);
       saveTournamentScore(teamScore);
     }
@@ -116,6 +156,17 @@ export default function TVHost() {
 
   const [reportOpen, setReportOpen] = useState(false);
   const [memoryConfirmOpen, setMemoryConfirmOpen] = useState(false);
+  const [revealStartTime, setRevealStartTime] = useState<number | null>(null);
+  const [canAdvanceFromReveal, setCanAdvanceFromReveal] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().then(() => setIsFullscreen(true)).catch(() => {});
+    } else {
+      document.exitFullscreen().then(() => setIsFullscreen(false)).catch(() => {});
+    }
+  }, []);
 
   useKeyboardShortcuts(
     status,
@@ -123,7 +174,7 @@ export default function TVHost() {
     currentQuestionIndex,
     nextQuestion,
     updateStatus,
-    setTimeLeft,
+    triggerReveal,
     () => setReportOpen(true),
     () => {
       setReportOpen(false);
@@ -132,10 +183,13 @@ export default function TVHost() {
   );
 
   useEffect(() => {
-    if (status === "STARTING") {
-      setCurrentAnswers([]);
+    if (status === "REVEAL") {
+      setRevealStartTime(Date.now());
+      setCanAdvanceFromReveal(false);
+      const timer = setTimeout(() => setCanAdvanceFromReveal(true), 3000);
+      return () => clearTimeout(timer);
     }
-  }, [status, setCurrentAnswers]);
+  }, [status]);
 
   useEffect(() => {
     if (status === "QUESTION") {
@@ -146,27 +200,59 @@ export default function TVHost() {
           if (data && data.length > 0) setPlayers(data);
         };
         syncPlayers();
-        setTimeout(syncPlayers, 1500);
+        const timeout = setTimeout(syncPlayers, 1500);
+
+        return () => clearTimeout(timeout);
       }
     }
-  }, [currentQuestionIndex, round, status]);
+  }, [currentQuestionIndex, round, status, gameId, setPlayers, setCurrentAnswers]);
 
   const handleLocalAnswer = useCallback(
     (optionIndex: number) => {
       if (status !== "QUESTION") return;
       const currentQ = currentQuestions[currentQuestionIndex - 1];
-      if (!currentQ || localScore >= questionCount) return;
+      if (!currentQ) return;
+
+      if (hotseatMode && hotseatPlayers.length > 0) {
+        const currentPlayer = hotseatPlayers[currentHotseatIndex];
+        if (optionIndex === currentQ.correct_option) {
+          const timerDurationVal = timerDuration || 20;
+          const timeRatio = Math.max(0, timerDurationVal - timeLeft) / timerDurationVal;
+          const points = Math.round(600 + (400 * timeRatio));
+          setHotseatScores((prev) => ({ ...prev, [currentPlayer]: (prev[currentPlayer] || 0) + points }));
+          playSound?.("correct");
+        } else {
+          playSound?.("wrong");
+        }
+
+        if (currentHotseatIndex < hotseatPlayers.length - 1) {
+          setCurrentHotseatIndex((prev) => prev + 1);
+        } else {
+          setCurrentHotseatIndex(0);
+          triggerReveal();
+        }
+        return;
+      }
+
+      if (localScore >= questionCount) return;
 
       if (optionIndex === currentQ.correct_option) {
-        const points = Math.max(10, Math.floor((timeLeft / timerDuration) * 100));
+        const timerDurationVal = timerDuration || 20;
+        const timeRatio = Math.max(0, timerDurationVal - timeLeft) / timerDurationVal;
+        const points = Math.round(600 + (400 * timeRatio));
         setLocalScore((prev) => prev + points);
         playSound?.("correct");
       } else {
+        const newLives = Math.max(0, localLives - 1);
+        setLocalLives(newLives);
         playSound?.("wrong");
+        if (newLives === 0) {
+          showToast("Ficaste sem vidas!", "error");
+        }
       }
       updateStatus("REVEAL");
     },
-    [status, currentQuestions, currentQuestionIndex, localScore, questionCount, timeLeft, timerDuration, playSound, updateStatus, setLocalScore]
+    [status, currentQuestions, currentQuestionIndex, localScore, questionCount, timeLeft, timerDuration, localLives, playSound, updateStatus, setLocalLives, showToast, hotseatMode, hotseatPlayers, currentHotseatIndex, triggerReveal]
   );
 
   const handleReportQuestion = useCallback(
@@ -196,6 +282,7 @@ export default function TVHost() {
   );
 
   const advanceFromReveal = useCallback(() => {
+    if (!canAdvanceFromReveal) return;
     const nextQ = currentQuestions[currentQuestionIndex];
     if (nextQ) {
       nextQuestion(nextQ.id, nextQ.correct_option);
@@ -203,7 +290,7 @@ export default function TVHost() {
       setRound((r) => r + 1);
       updateStatus("STARTING");
     }
-  }, [currentQuestions, currentQuestionIndex, nextQuestion, updateStatus, setRound]);
+  }, [currentQuestions, currentQuestionIndex, nextQuestion, updateStatus, setRound, canAdvanceFromReveal]);
 
   if (loading) {
     return (
@@ -221,7 +308,22 @@ export default function TVHost() {
 
   return (
     <main className="min-h-screen relative overflow-hidden p-4 sm:p-8 lg:p-12 flex flex-col items-center justify-center">
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={toggleFullscreen}
+          aria-label={isFullscreen ? "Sair do ecrã inteiro" : "Ecrã inteiro"}
+          title={isFullscreen ? "Sair do ecrã inteiro" : "Ecrã inteiro"}
+          className="p-2 bg-white/10 hover:bg-white/20 rounded-lg text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors"
+        >
+          {isFullscreen ? (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          ) : (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+          )}
+        </button>
+      </div>
       <SoundEnableButton />
+      <SoundControls />
 
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-[#d0bcff]/10 rounded-full blur-[150px]" />
@@ -257,6 +359,48 @@ export default function TVHost() {
           onTimerDurationChange={setTimerDuration}
           onQuestionCountChange={setQuestionCount}
           onLocalModeToggle={() => setLocalMode(!localMode)}
+          onBuzzerModeToggle={async () => {
+            const newMode = !buzzerMode;
+            setBuzzerMode(newMode);
+            if (gameId) {
+              await supabase
+                .from("games")
+                .update({ settings: { ...gameSettings, buzzer_mode: newMode } })
+                .eq("id", gameId);
+            }
+          }}
+          onHotseatModeToggle={async () => {
+            const newMode = !hotseatMode;
+            setHotseatMode(newMode);
+            if (gameId) {
+              await supabase
+                .from("games")
+                .update({ settings: { ...gameSettings, hotseat_mode: newMode, hotseat_players: hotseatMode ? [] : hotseatPlayers } })
+                .eq("id", gameId);
+            }
+          }}
+          hotseatMode={hotseatMode}
+          hotseatPlayers={hotseatPlayers}
+          onHotseatPlayerAdd={async (name: string) => {
+            const newPlayers = [...hotseatPlayers, name];
+            setHotseatPlayers(newPlayers);
+            if (gameId) {
+              await supabase
+                .from("games")
+                .update({ settings: { ...gameSettings, hotseat_players: newPlayers } })
+                .eq("id", gameId);
+            }
+          }}
+          onHotseatPlayerRemove={async (name: string) => {
+            const newPlayers = hotseatPlayers.filter((p) => p !== name);
+            setHotseatPlayers(newPlayers);
+            if (gameId) {
+              await supabase
+                .from("games")
+                .update({ settings: { ...gameSettings, hotseat_players: newPlayers } })
+                .eq("id", gameId);
+            }
+          }}
           onStart={() => updateStatus("STARTING")}
           onClearMemory={() => setMemoryConfirmOpen(true)}
         />
@@ -267,6 +411,21 @@ export default function TVHost() {
           <div className="text-xs text-green-300 font-bold uppercase tracking-widest">Pontuação</div>
           <div className="text-3xl font-black text-white">{localScore}</div>
         </div>
+      )}
+
+      {status === "QUESTION" && (
+        <button
+          onClick={() => {
+            setCurrentAnswers([]);
+            triggerReveal();
+          }}
+          className="absolute top-4 right-4 z-50 flex items-center gap-2 px-4 py-2 bg-[#FF6B6B]/20 hover:bg-[#FF6B6B]/30 text-[#FF6B6B] rounded-xl border border-[#FF6B6B]/30 transition-all text-sm font-bold"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+          </svg>
+          Saltar
+        </button>
       )}
 
       {(status === "QUESTION" || status === "REVEAL") && currentQ && (
@@ -283,6 +442,11 @@ export default function TVHost() {
           onLocalAnswer={handleLocalAnswer}
           questionNumber={currentQuestionIndex}
           totalQuestions={currentQuestions.length}
+          localLives={localLives}
+          blindMode={blindMode}
+          buzzerMode={buzzerMode}
+          hotseatMode={hotseatMode}
+          currentHotseatPlayer={hotseatMode && hotseatPlayers[currentHotseatIndex] ? hotseatPlayers[currentHotseatIndex] : undefined}
         />
       )}
 
@@ -325,6 +489,8 @@ export default function TVHost() {
       )}
 
       <ToastContainer toasts={toasts} onDismiss={dismiss} />
+      <TVChat gameId={gameId!} />
+      <TVReactions gameId={gameId!} />
       <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReportQuestion} />
       <ConfirmModal
         isOpen={memoryConfirmOpen}

@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Trophy, Globe, Medal, ChevronLeft, Star } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 
 interface LeaderboardPlayer {
   rank: number;
@@ -21,6 +23,7 @@ const GLOW_CLASSES = {
 };
 
 export default function LeaderboardPage() {
+  const { toasts, show: showToast, dismiss } = useToast();
   const [players, setPlayers] = useState<LeaderboardPlayer[]>([]);
   const [userRank, setUserRank] = useState<LeaderboardPlayer | null>(null);
   const [totalPlayers, setTotalPlayers] = useState(0);
@@ -36,7 +39,7 @@ export default function LeaderboardPage() {
           setTotalPlayers(data.totalPlayers || 0);
         }
       } catch {
-        // Fall back to empty
+        showToast("Erro ao carregar classificação.", "error");
       } finally {
         setLoading(false);
       }
@@ -267,6 +270,7 @@ export default function LeaderboardPage() {
       </div>
 
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
       <div className="h-20 md:hidden" />
     </main>
   );

@@ -24,6 +24,7 @@ interface GameContextType extends GameState {
     updateStatus: (status: GameStatus) => Promise<void>;
     nextQuestion: (questionId?: string, correctOption?: number) => Promise<void>;
     joinGame: (gameId: string, playerName: string) => Promise<void>;
+    joinSpectator: (gameId: string) => Promise<void>;
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -72,7 +73,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
             .subscribe();
 
         return () => {
-            supabase.removeChannel(channel);
+            supabase.removeChannel(channel).catch(() => {});
         };
     }, [gameState.gameId, fetchPlayers]);
 
@@ -94,20 +95,19 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         const nextIndex = gameState.currentQuestionIndex + 1;
 
         let nextId = questionId;
-        let nextCorrectOption = correctOption;
 
         if (!nextId && gameState.gameSettings?.question_ids) {
-            if (gameState.gameSettings.question_ids[nextIndex - 1]) {
-                nextId = gameState.gameSettings.question_ids[nextIndex - 1];
-            }
+            nextId = gameState.gameSettings.question_ids[nextIndex - 1];
         }
+
+        if (!nextId) return;
 
         await supabase.from('games').update({
             current_question_index: nextIndex,
             settings: {
                 ...gameState.gameSettings,
                 current_question_id: nextId,
-                current_correct_option: nextCorrectOption !== undefined ? nextCorrectOption : gameState.gameSettings?.current_correct_option
+                current_correct_option: correctOption !== undefined ? correctOption : gameState.gameSettings?.current_correct_option
             },
             status: 'QUESTION'
         }).eq('id', gameState.gameId);
@@ -126,7 +126,9 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
                 score: 0,
                 avatar: avatar,
                 color: color,
-                user_id: user?.id || null
+                user_id: user?.id || null,
+                lives: 3,
+                eliminated: false
             }
         ]).select();
 
@@ -139,8 +141,12 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         }
     };
 
+    const joinSpectator = async (gameId: string) => {
+        setGameId(gameId);
+    };
+
     return (
-        <GameContext.Provider value={{ ...gameState, setGameId, setPlayers, updateStatus, nextQuestion, joinGame }}>
+        <GameContext.Provider value={{ ...gameState, setGameId, setPlayers, updateStatus, nextQuestion, joinGame, joinSpectator }}>
             {children}
         </GameContext.Provider>
     );

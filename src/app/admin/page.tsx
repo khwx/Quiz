@@ -13,9 +13,11 @@ interface Question {
     id: string;
     text: string;
     category: string;
+    difficulty?: number;
     options: string[];
     correct_option: number;
     image_url?: string;
+    age_rating?: number;
     metadata?: {
         reports?: { reason: string; date: string }[];
     };
@@ -121,11 +123,17 @@ export default function AdminPage() {
     const [showDuplicates, setShowDuplicates] = useState(false);
     const [showReported, setShowReported] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [selectedDifficulty, setSelectedDifficulty] = useState<string>("all");
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [editId, setEditId] = useState<string | null>(null);
+    const [showCategories, setShowCategories] = useState(false);
+    const [newCategoryName, setNewCategoryName] = useState("");
+    const [showImportCSV, setShowImportCSV] = useState(false);
+    const [importResults, setImportResults] = useState<{ success: number; errors: string[] } | null>(null);
     const [formData, setFormData] = useState({
         text: "",
         category: "CULTURA_GERAL",
+        difficulty: 2,
         age_rating: 12,
         options: ["", "", "", ""],
         correct_option: 0,
@@ -254,10 +262,32 @@ export default function AdminPage() {
         loadData();
     };
 
+    const exportToCSV = () => {
+        const headers = ["ID", "Texto", "Categoria", "Dificuldade", "Idade", "Resposta Correta", "Opções"];
+        const rows = questions.map(q => [
+            q.id,
+            `"${q.text.replace(/"/g, '""')}"`,
+            q.category,
+            q.difficulty || 2,
+            q.age_rating || 18,
+            q.options[q.correct_option] || "",
+            `"${(q.options || []).join(" | ").replace(/"/g, '""')}"`,
+        ]);
+        const csv = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+        const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `quizverse_questions_${new Date().toISOString().split("T")[0]}.csv`;
+        link.click();
+        URL.revokeObjectURL(url);
+    };
+
     const resetForm = () => {
         setFormData({
             text: "",
             category: "CULTURA_GERAL",
+            difficulty: 2,
             age_rating: 12,
             options: ["", "", "", ""],
             correct_option: 0,
@@ -265,12 +295,150 @@ export default function AdminPage() {
         setEditId(null);
     };
 
+    const handleAddCategory = async () => {
+        if (!newCategoryName.trim()) return;
+        const cat = newCategoryName.trim().toUpperCase().replace(/\s+/g, "_");
+        await supabase.from("questions").update({ category: cat }).eq("category", newCategoryName.trim());
+        setNewCategoryName("");
+        loadData();
+    };
+
+    const parseCSV = (csvText: string): string[][] => {
+        const lines: string[][] = [];
+        let currentLine: string[] = [];
+        let currentField = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < csvText.length; i++) {
+            const char = csvText[i];
+            const nextChar = csvText[i + 1];
+
+            if (inQuotes) {
+                if (char === '"' && nextChar === '"') {
+                    currentField += '"';
+                    i++;
+                } else if (char === '"') {
+                    inQuotes = false;
+                } else {
+                    currentField += char;
+                }
+            } else {
+                if (char === '"') {
+                    inQuotes = true;
+                } else if (char === ',') {
+                    currentLine.push(currentField);
+                    currentField = "";
+                } else if (char === '\n' || (char === '\r' && nextChar === '\n')) {
+                    currentLine.push(currentField);
+                    if (currentLine.some(f => f.trim() !== "")) {
+                        lines.push(currentLine);
+                    }
+                    currentLine = [];
+                    currentField = "";
+                    if (char === '\r') i++;
+                } else {
+                    currentField += char;
+                }
+            }
+        }
+
+        if (currentField || currentLine.length > 0) {
+            currentLine.push(currentField);
+            if (currentLine.some(f => f.trim() !== "")) {
+                lines.push(currentLine);
+            }
+        }
+
+        return lines;
+    };
+
+    const handleImportCSV = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        setImportResults(null);
+        const text = await file.text();
+        const rows = parseCSV(text);
+
+        if (rows.length < 2) {
+            setImportResults({ success: 0, errors: ["Ficheiro CSV vazio ou inválido"] });
+            return;
+        }
+
+        const headers = rows[0].map(h => h.toLowerCase().trim());
+        const textIdx = headers.findIndex(h => h.includes("texto") || h.includes("text"));
+        const catIdx = headers.findIndex(h => h.includes("categoria") || h.includes("category"));
+        const diffIdx = headers.findIndex(h => h.includes("dificuldade") || h.includes("difficulty"));
+        const ageIdx = headers.findIndex(h => h.includes("idade") || h.includes("age") || h.includes("rating"));
+        const correctIdx = headers.findIndex(h => h.includes("correta") || h.includes("correct"));
+        const optionsIdx = headers.findIndex(h => h.includes("opções") || h.includes("options") || h.includes("opcoes"));
+
+        if (textIdx === -1 || optionsIdx === -1 || correctIdx === -1) {
+            setImportResults({ success: 0, errors: ["CSV deve conter colunas: Texto, Opções, Resposta Correta"] });
+            return;
+        }
+
+        let success = 0;
+        const errors: string[] = [];
+
+        for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            if (row.length < 3) continue;
+
+            const text = row[textIdx]?.trim();
+            const category = catIdx >= 0 ? (row[catIdx]?.trim() || "CULTURA_GERAL") : "CULTURA_GERAL";
+            const difficulty = diffIdx >= 0 ? parseInt(row[diffIdx]?.trim() || "2") : 2;
+            const ageRating = ageIdx >= 0 ? parseInt(row[ageIdx]?.trim() || "18") : 18;
+            const correctText = row[correctIdx]?.trim();
+            const optionsStr = row[optionsIdx]?.trim() || "";
+            const options = optionsStr.split("|").map(o => o.trim()).filter(o => o.length > 0);
+
+            if (!text || options.length < 2) {
+                errors.push(`Linha ${i + 1}: texto ou opções em falta`);
+                continue;
+            }
+
+            const correctOption = options.findIndex(o => o.toLowerCase() === correctText.toLowerCase());
+            if (correctOption === -1) {
+                errors.push(`Linha ${i + 1}: resposta correta "${correctText}" não encontrada nas opções`);
+                continue;
+            }
+
+            try {
+                const { error } = await supabase.from("questions").insert({
+                    text,
+                    category: category.toUpperCase().replace(/\s+/g, "_"),
+                    difficulty: isNaN(difficulty) ? 2 : Math.max(1, Math.min(3, difficulty)),
+                    age_rating: isNaN(ageRating) ? 18 : ageRating,
+                    options,
+                    correct_option: correctOption,
+                });
+
+                if (error) {
+                    errors.push(`Linha ${i + 1}: ${error.message}`);
+                } else {
+                    success++;
+                }
+            } catch (err: any) {
+                errors.push(`Linha ${i + 1}: ${err.message}`);
+            }
+        }
+
+        setImportResults({ success, errors });
+        if (success > 0) {
+            showToast(`Importadas ${success} perguntas com sucesso!`, "success");
+            loadData();
+        }
+        e.target.value = "";
+    };
+
     const startEdit = (q: Question & { age_rating?: number }) => {
         setFormData({
             text: q.text,
             category: q.category,
+            difficulty: q.difficulty || 2,
             age_rating: q.age_rating || 12,
-            options: q.options.length === 4 ? q.options : ["", "", "", ""],
+            options: q.options,
             correct_option: q.correct_option,
         });
         setEditId(q.id);
@@ -287,6 +455,7 @@ export default function AdminPage() {
             const payload = {
                 text: formData.text.trim(),
                 category: formData.category,
+                difficulty: formData.difficulty,
                 age_rating: formData.age_rating,
                 options: formData.options,
                 correct_option: formData.correct_option,
@@ -333,6 +502,7 @@ export default function AdminPage() {
 
     const filteredQuestions = questions.filter(q => {
         if (selectedCategory !== "all" && q.category !== selectedCategory) return false;
+        if (selectedDifficulty !== "all" && q.difficulty !== Number(selectedDifficulty)) return false;
         if (searchQuery && !normalizeText(q.text).includes(normalizeText(searchQuery))) return false;
         return true;
     });
@@ -390,25 +560,45 @@ export default function AdminPage() {
 
             <div className="relative z-10 max-w-7xl mx-auto p-6 space-y-6">
                 <div className="flex gap-2 overflow-x-auto pb-2">
-                    <button onClick={() => { setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-[#d0bcff]/15 text-[#d0bcff] border border-[#d0bcff]/30 text-sm font-medium whitespace-nowrap">
+                    <button onClick={() => { setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); setShowCategories(false); setShowImportCSV(false); }} className="px-6 py-3 rounded-xl bg-[#d0bcff]/15 text-[#d0bcff] border border-[#d0bcff]/30 text-sm font-medium whitespace-nowrap">
                         <Database className="w-4 h-4 inline mr-2" />
                         Perguntas ({questions.length})
                     </button>
-                    <button onClick={() => { setShowDuplicates(true); setShowReported(false); setShowAddAdmin(false); handleScanDuplicates(); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                    <button onClick={() => { setShowDuplicates(true); setShowReported(false); setShowAddAdmin(false); setShowCategories(false); setShowImportCSV(false); handleScanDuplicates(); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
                         <Filter className="w-4 h-4 inline mr-2" />
                         Duplicados
                     </button>
-                    <button onClick={() => { setShowReported(true); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                    <button onClick={() => { setShowReported(true); setShowDuplicates(false); setShowAddAdmin(false); setShowCategories(false); setShowImportCSV(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
                         <AlertTriangle className="w-4 h-4 inline mr-2" />
                         Reportadas ({reportedQuestions.length})
                     </button>
-                    <button onClick={() => { setShowAddAdmin(true); setShowReported(false); setShowDuplicates(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                    <button onClick={() => { setShowAddAdmin(true); setShowReported(false); setShowDuplicates(false); setShowCategories(false); setShowImportCSV(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
                         <Users className="w-4 h-4 inline mr-2" />
                         Equipa
                     </button>
-                    <button onClick={() => { setShowCreateForm(true); resetForm(); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); }} className="px-6 py-3 rounded-xl bg-[#4CAF50]/15 text-[#4CAF50] border border-[#4CAF50]/30 text-sm font-medium whitespace-nowrap">
+                    <button onClick={() => { setShowCategories(!showCategories); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); setShowImportCSV(false); }} className="px-6 py-3 rounded-xl bg-white/5 text-white/60 border border-white/10 text-sm font-medium hover:text-white whitespace-nowrap">
+                        <Filter className="w-4 h-4 inline mr-2" />
+                        Categorias
+                    </button>
+                    <button onClick={() => { setShowCreateForm(true); resetForm(); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); setShowCategories(false); setShowImportCSV(false); }} className="px-6 py-3 rounded-xl bg-[#4CAF50]/15 text-[#4CAF50] border border-[#4CAF50]/30 text-sm font-medium whitespace-nowrap">
                         <Plus className="w-4 h-4 inline mr-2" />
                         Nova Pergunta
+                    </button>
+                    <button onClick={() => { setShowImportCSV(true); setImportResults(null); setShowReported(false); setShowDuplicates(false); setShowAddAdmin(false); setShowCategories(false); }} className="px-6 py-3 rounded-xl bg-[#4CAF50]/15 text-[#4CAF50] border border-[#4CAF50]/30 text-sm font-medium hover:bg-[#4CAF50]/25 whitespace-nowrap">
+                        <Plus className="w-4 h-4 inline mr-2" />
+                        Importar CSV
+                    </button>
+                    <button onClick={exportToCSV} className="px-6 py-3 rounded-xl bg-[#FFD700]/15 text-[#FFD700] border border-[#FFD700]/30 text-sm font-medium hover:bg-[#FFD700]/25 whitespace-nowrap">
+                        <Database className="w-4 h-4 inline mr-2" />
+                        Exportar CSV
+                    </button>
+                    <button onClick={exportToCSV} className="px-6 py-3 rounded-xl bg-[#FFD700]/15 text-[#FFD700] border border-[#FFD700]/30 text-sm font-medium hover:bg-[#FFD700]/25 whitespace-nowrap">
+                        <Database className="w-4 h-4 inline mr-2" />
+                        Exportar CSV
+                    </button>
+                    <button onClick={() => { setShowImportCSV(true); setImportResults(null); }} className="px-6 py-3 rounded-xl bg-[#4CAF50]/15 text-[#4CAF50] border border-[#4CAF50]/30 text-sm font-medium hover:bg-[#4CAF50]/25 whitespace-nowrap">
+                        <Plus className="w-4 h-4 inline mr-2" />
+                        Importar CSV
                     </button>
                 </div>
 
@@ -459,7 +649,77 @@ export default function AdminPage() {
                     </motion.section>
                 )}
 
-                {!showDuplicates && !showReported && !showAddAdmin && (
+                {showCategories && (
+                    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass-panel p-6">
+                        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <Filter className="w-5 h-5 text-[#d0bcff]" />
+                            Gestão de Categorias
+                        </h2>
+                        <div className="flex gap-3 mb-4">
+                            <input
+                                type="text"
+                                placeholder="Nova categoria..."
+                                value={newCategoryName}
+                                onChange={e => setNewCategoryName(e.target.value)}
+                                className="flex-1 glass-input"
+                            />
+                            <button onClick={handleAddCategory} className="px-6 py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold">
+                                Adicionar
+                            </button>
+                        </div>
+                        <div className="space-y-2">
+                            {stats.map(s => (
+                                <div key={s.category} className="flex items-center justify-between bg-white/5 p-3 rounded-lg">
+                                    <span className="text-white font-medium">{s.category}</span>
+                                    <span className="text-white/40 text-sm">{s.count} perguntas</span>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.section>
+                )}
+
+                {showImportCSV && (
+                    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="glass-panel p-6">
+                        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <Database className="w-5 h-5 text-[#4CAF50]" />
+                            Importar Perguntas (CSV)
+                        </h2>
+                        <p className="text-sm text-white/60 mb-4">
+                            Ficheiro CSV com colunas: Texto, Categoria, Dificuldade, Idade, Resposta Correta, Opções (separadas por |).
+                            Usa o mesmo formato do export.
+                        </p>
+                        <div className="flex flex-col gap-4">
+                            <input
+                                type="file"
+                                accept=".csv,text/csv"
+                                onChange={handleImportCSV}
+                                className="block w-full text-sm text-white/60 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-[#d0bcff] file:text-[#121223] hover:file:bg-[#d0bcff]/80"
+                            />
+                            {importResults && (
+                                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                                    <div className="text-green-400 font-bold mb-2">
+                                        ✅ {importResults.success} perguntas importadas
+                                    </div>
+                                    {importResults.errors.length > 0 && (
+                                        <div className="mt-2">
+                                            <div className="text-red-400 font-bold mb-1">Erros:</div>
+                                            <ul className="text-sm text-white/60 space-y-1 max-h-40 overflow-y-auto">
+                                                {importResults.errors.slice(0, 20).map((err, idx) => (
+                                                    <li key={idx}>• {err}</li>
+                                                ))}
+                                                {importResults.errors.length > 20 && (
+                                                    <li>... e mais {importResults.errors.length - 20} erros</li>
+                                                )}
+                                            </ul>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    </motion.section>
+                )}
+
+                {!showDuplicates && !showReported && !showAddAdmin && !showCategories && !showImportCSV && (
                     <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="glass-panel p-4 text-center">
                             <div className="text-3xl font-bold text-white">{questions.length}</div>
@@ -492,6 +752,18 @@ export default function AdminPage() {
                         ))}
                     </section>
                 )}
+
+                <section className="flex gap-2 overflow-x-auto pb-2">
+                    {["all", "1", "2", "3"].map((d) => (
+                        <button
+                            key={d}
+                            onClick={() => { setSelectedDifficulty(d); setCurrentPage(1); }}
+                            className={`px-4 py-2 rounded-lg text-sm whitespace-nowrap ${selectedDifficulty === d ? "bg-[#FFB0CD]/20 text-[#FFB0CD]" : "bg-white/5 text-white/60"}`}
+                        >
+                            {d === "all" ? "Todas Dificuldades" : d === "1" ? "Fácil" : d === "2" ? "Médio" : "Difícil"}
+                        </button>
+                    ))}
+                </section>
 
                 {showCreateForm && (
                     <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass-panel p-6 border border-emerald-500/30">
@@ -528,16 +800,15 @@ export default function AdminPage() {
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="text-sm text-white/60 mb-1 block">Idade</label>
+                                    <label className="text-sm text-white/60 mb-1 block">Dificuldade</label>
                                     <select
-                                        value={formData.age_rating}
-                                        onChange={e => setFormData({ ...formData, age_rating: Number(e.target.value) })}
+                                        value={formData.difficulty}
+                                        onChange={e => setFormData({ ...formData, difficulty: Number(e.target.value) })}
                                         className="w-full glass-input"
                                     >
-                                        <option value={8}>8 (7-9 anos)</option>
-                                        <option value={12}>12 (10-14 anos)</option>
-                                        <option value={16}>16 (15-17 anos)</option>
-                                        <option value={18}>18 (Adultos)</option>
+                                        <option value={1}>Fácil</option>
+                                        <option value={2}>Médio</option>
+                                        <option value={3}>Difícil</option>
                                     </select>
                                 </div>
                             </div>
@@ -615,6 +886,9 @@ export default function AdminPage() {
                                         <p className="text-white font-medium mb-1">{q.text}</p>
                                         <div className="flex gap-2 text-xs text-white/40">
                                             <span className="bg-white/10 px-2 py-1 rounded">{q.category}</span>
+                                            <span className="bg-white/10 px-2 py-1 rounded">
+                                                {q.difficulty === 1 ? "Fácil" : q.difficulty === 3 ? "Difícil" : "Médio"}
+                                            </span>
                                             <span className="bg-white/10 px-2 py-1 rounded">Resposta: {q.options[q.correct_option]}</span>
                                             {q.metadata?.reports && q.metadata.reports.length > 0 && (
                                                 <span className="bg-red-500/20 text-red-400 px-2 py-1 rounded">{q.metadata.reports.length} reportes</span>

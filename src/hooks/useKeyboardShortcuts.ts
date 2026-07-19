@@ -10,7 +10,7 @@ export function useKeyboardShortcuts(
   currentQuestionIndex: number,
   nextQuestion: (questionId: string, correctOption: number) => Promise<void>,
   updateStatus: (status: GameStatus) => Promise<void>,
-  setTimeLeft: (n: number) => void,
+  triggerReveal: () => void,
   onReport: () => void,
   onMemoryClearClose: () => void
 ) {
@@ -29,7 +29,7 @@ export function useKeyboardShortcuts(
             updateStatus("STARTING");
           }
         } else if (status === "QUESTION") {
-          setTimeLeft(0);
+          triggerReveal();
         }
       }
       if (e.key === "r" || e.key === "R") {
@@ -44,5 +44,5 @@ export function useKeyboardShortcuts(
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [status, currentQuestionIndex, currentQuestions, nextQuestion, updateStatus]);
+  }, [status, currentQuestionIndex, currentQuestions, nextQuestion, updateStatus, triggerReveal]);
 }

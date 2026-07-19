@@ -2,13 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Rocket, Settings, RotateCcw, Map } from "lucide-react";
+import { Rocket, Settings, RotateCcw, Map, Clock, Share2, Copy, Check } from "lucide-react";
 import { useGame } from "@/context/GameContext";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function ResultsPage() {
   const { players, gameId } = useGame();
   const router = useRouter();
+  const [shared, setShared] = useState(false);
 
   const sortedPlayers = [...players].sort((a, b) => (b.score || 0) - (a.score || 0));
   const top3 = sortedPlayers.slice(0, 3);
@@ -21,6 +23,22 @@ export default function ResultsPage() {
   const totalScore = sortedPlayers.reduce((s, p) => s + (p.score || 0), 0);
   const topScore = sortedPlayers[0]?.score || 0;
   const avgScore = sortedPlayers.length > 0 ? Math.round(totalScore / sortedPlayers.length) : 0;
+
+  const shareResults = async () => {
+    const winner = sortedPlayers[0];
+    const text = `🎮 QuizVerse - Resultados\n👑 Vencedor: ${winner?.name || "N/A"} com ${(winner?.score || 0).toLocaleString()} pts\n📊 ${sortedPlayers.length} jogadores\n🏆 Total: ${totalScore.toLocaleString()} pts`;
+    const url = typeof window !== "undefined" ? window.location.origin : "https://quizverse.app";
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "QuizVerse Resultados", text, url });
+      } catch {}
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      setShared(true);
+      setTimeout(() => setShared(false), 2000);
+    }
+  };
 
   const stats = [
     { icon: "timer", label: "Jogadores", value: String(sortedPlayers.length), color: "text-primary" },
@@ -191,6 +209,49 @@ export default function ResultsPage() {
 
         {/* Action Buttons */}
         <div className="space-y-4">
+          {gameId && (
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              onClick={shareResults}
+              className="w-full py-4 rounded-xl glass-panel text-on-surface font-bold text-lg border-primary/50 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            >
+              {shared ? <Check className="w-5 h-5 text-green-400" /> : <Share2 className="w-5 h-5" />}
+              {shared ? "Copiado!" : "Partilhar Resultados"}
+            </motion.button>
+          )}
+          {gameId && (
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85 }}
+              onClick={async () => {
+                await fetch("/api/game/reset", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ gameId }),
+                });
+                router.push(`/tv?gameId=${gameId}`);
+              }}
+              className="w-full py-4 rounded-xl glass-panel text-on-surface font-bold text-lg border-primary/50 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            >
+              <RotateCcw className="w-5 h-5" />
+              Revanche
+            </motion.button>
+          )}
+          {gameId && (
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85 }}
+              onClick={() => router.push(`/replay?gameId=${gameId}`)}
+              className="w-full py-4 rounded-xl glass-panel text-on-surface font-bold text-lg border-secondary/50 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            >
+              <Clock className="w-5 h-5" />
+              Ver Replay
+            </motion.button>
+          )}
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

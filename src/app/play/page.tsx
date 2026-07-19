@@ -1,8 +1,8 @@
 "use client";
 
-import { use, useState, useEffect, useCallback } from "react";
+import { use, useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react";
+import { Loader2, Eye } from "lucide-react";
 import { useGame } from "@/context/GameContext";
 import { useSound } from "@/hooks/useSound";
 import { useToast } from "@/hooks/useToast";
@@ -13,13 +13,18 @@ import MobileNav from "@/components/MobileNav";
 import LobbyJoinView from "@/components/mobile/LobbyJoinView";
 import QuestionView from "@/components/mobile/QuestionView";
 import RevealView from "@/components/mobile/RevealView";
+import MobileChat from "@/components/mobile/MobileChat";
+import ReactionBar from "@/components/mobile/ReactionBar";
 import type { Question } from "@/types";
 import FinalView from "@/components/mobile/FinalView";
+import SpectatorView from "@/components/mobile/SpectatorView";
 import { supabase } from "@/lib/supabase";
+import { GAME_CONSTANTS } from "@/lib/constants";
 
-export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string }> }) {
+export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string; spectator?: string }> }) {
   const resolvedParams = use(searchParams);
-  const { gameId, joinGame, status, currentQuestionIndex, currentQuestionId, players, setGameId, gameSettings } = useGame();
+  const isSpectator = resolvedParams.spectator === "1";
+  const { gameId, joinGame, joinSpectator, status, currentQuestionIndex, currentQuestionId, players, setGameId, gameSettings } = useGame();
   const [pin, setPin] = useState(resolvedParams.pin || "");
   const [name, setName] = useState("");
   const [isJoining, setIsJoining] = useState(false);
@@ -30,61 +35,76 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [startTime, setStartTime] = useState<number>(Date.now());
   const [questionData, setQuestionData] = useState<Question | null>(null);
   const [showHint, setShowHint] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(20);
+  const [timeLeft, setTimeLeft] = useState<number>(GAME_CONSTANTS.DEFAULT_TIMER);
   const [timerActive, setTimerActive] = useState(false);
   const [earnedPoints, setEarnedPoints] = useState<number | null>(null);
   const [streak, setStreak] = useState(0);
+  const [questionLoadError, setQuestionLoadError] = useState(false);
+  const [fiftyFiftyUsed, setFiftyFiftyUsed] = useState(false);
+  const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
+  const submittingRef = useRef(false);
+  const clientPlayerId = `guest-${Math.random().toString(36).slice(2, 9)}`;
 
   const { playSound } = useSound();
   const { toasts, show: showToast, dismiss } = useToast();
   const [reportOpen, setReportOpen] = useState(false);
   const [leaveConfirmOpen, setLeaveConfirmOpen] = useState(false);
+  const [spectatorPin, setSpectatorPin] = useState(resolvedParams.pin || "");
+  const [isSpectatorJoining, setIsSpectatorJoining] = useState(false);
 
-  const fetchQuestion = useCallback(async () => {
-    if (!currentQuestionId) return;
-    const { data } = await supabase
-      .from("questions")
-      .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
-      .eq("id", currentQuestionId)
-      .single();
-    if (data) {
-      setQuestionData(data);
-      setShowHint(false);
+  const handleJoin = async () => {
+    if (!pin || !name) return;
+    setIsJoining(true);
+    try {
+      const { data, error: pinError } = await supabase.from("games").select("id").eq("pin", pin).single();
+      if (pinError || !data) {
+        showToast("Pin inválido ou jogo não encontrado!", "error");
+        return;
+      }
+      await joinGame(data.id, name);
+      setHasJoined(true);
+    } catch (err: any) {
+      console.error("Erro ao entrar:", err);
+      showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
+    } finally {
+      setIsJoining(false);
     }
-  }, [currentQuestionId]);
+  };
 
-  useEffect(() => {
-    if (status === "QUESTION" && currentQuestionId) {
-      setHasAnswered(false);
-      setSelectedOption(null);
-      setCorrectOption(null);
-      setStartTime(Date.now());
-      setTimerActive(true);
-      setTimeLeft(gameSettings?.timer_duration || 20);
-      fetchQuestion();
+  const handleSpectatorJoin = async () => {
+    if (!spectatorPin) return;
+    setIsSpectatorJoining(true);
+    try {
+      const { data, error: pinError } = await supabase.from("games").select("id").eq("pin", spectatorPin).single();
+      if (pinError || !data) {
+        showToast("Pin inválido ou jogo não encontrado!", "error");
+        return;
+      }
+      await joinSpectator(data.id);
+      setHasJoined(true);
+    } catch (err: any) {
+      console.error("Erro ao entrar como espectador:", err);
+      showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
+    } finally {
+      setIsSpectatorJoining(false);
     }
-    if (status !== "QUESTION") {
-      setTimerActive(false);
-    }
-    if (status === "REVEAL") {
-      setStreak(0);
-    }
-  }, [status, currentQuestionIndex, currentQuestionId, fetchQuestion, gameSettings]);
+  };
 
-  useEffect(() => {
-    if (!timerActive) return;
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          setTimerActive(false);
-          return 0;
-        }
-        if (prev <= 5) playSound("tick");
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [timerActive, playSound]);
+  const handleLeave = async () => {
+    if (gameId) {
+      const player = players.find((p) => p.name === name);
+      if (player) await supabase.from("players").delete().eq("id", player.id);
+    }
+    setHasJoined(false);
+    setGameId(null);
+    window.location.href = "/";
+  };
+
+  const handleSpectatorLeave = () => {
+    setHasJoined(false);
+    setGameId(null);
+    window.location.href = "/";
+  };
 
   useEffect(() => {
     if (status === "REVEAL" && currentQuestionId) {
@@ -113,11 +133,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
   useEffect(() => {
     if (correctOption !== null && selectedOption !== null) {
-      if (selectedOption === correctOption) {
-        const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
-        const timerDur = gameSettings?.timer_duration || 20;
-        const points = Math.max(10, Math.floor(((timerDur - timeTaken) / timerDur) * 100));
-        setEarnedPoints(points);
+    if (selectedOption === correctOption) {
+      const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
+      const timerDur = gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER;
+      const timeRatio = Math.max(0, timerDur - timeTaken) / timerDur;
+      const points = Math.round(600 + (400 * timeRatio));
+      setEarnedPoints(points);
         setStreak((prev) => prev + 1);
         playSound("correct");
         setTimeout(() => setEarnedPoints(null), 2000);
@@ -150,11 +171,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   };
 
   const handleAnswer = async (index: number) => {
-    if (hasAnswered) return;
+    if (submittingRef.current) return;
     if (!currentQuestionId) {
       showToast("Aguarde, a sincronizar...", "info");
       return;
     }
+    submittingRef.current = true;
     setHasAnswered(true);
     setSelectedOption(index);
     playSound("tick");
@@ -162,6 +184,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     const player = players.find((p) => p.name === name);
     if (!player) {
       showToast("Jogador não encontrado. Atualiza a página.", "error");
+      submittingRef.current = false;
       setHasAnswered(false);
       setSelectedOption(null);
       return;
@@ -183,22 +206,33 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
+      
+      if (data.eliminated) {
+        showToast("Ficaste sem vidas! Estás eliminado!", "error");
+        playSound("wrong");
+      }
     } catch (err: any) {
       showToast("Erro ao enviar resposta: " + err.message, "error");
+      submittingRef.current = false;
       setHasAnswered(false);
       setSelectedOption(null);
     }
   };
 
-  const handleLeave = async () => {
-    if (gameId) {
-      const player = players.find((p) => p.name === name);
-      if (player) await supabase.from("players").delete().eq("id", player.id);
-    }
-    setHasJoined(false);
-    setGameId(null);
-    window.location.href = "/";
-  };
+  const handleFiftyFifty = useCallback(() => {
+    if (fiftyFiftyUsed || !questionData || !correctOption) return;
+    
+    const wrongOptions = questionData.options
+      .map((_, idx) => idx)
+      .filter((idx) => idx !== correctOption);
+    
+    const shuffled = wrongOptions.sort(() => Math.random() - 0.5);
+    const toEliminate = shuffled.slice(0, 2);
+    
+    setEliminatedOptions(toEliminate);
+    setFiftyFiftyUsed(true);
+    playSound?.("tick");
+  }, [fiftyFiftyUsed, questionData, correctOption, playSound]);
 
   const handleReport = async (reason: string) => {
     if (!currentQuestionId) return;
@@ -212,6 +246,72 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       .eq("id", currentQuestionId);
     showToast("Obrigado! Pergunta reportada.", "success");
   };
+
+  // Spectator mode
+  if (isSpectator) {
+    if (!hasJoined) {
+      return (
+        <>
+          <main className="min-h-screen flex flex-col items-center justify-center gap-6 p-6">
+            <div className="w-16 h-16 rounded-full bg-[#d0bcff]/10 flex items-center justify-center mb-2">
+              <Eye className="w-8 h-8 text-[#d0bcff]" />
+            </div>
+            <h1 className="text-2xl font-bold text-white text-center">Modo Espectador</h1>
+            <p className="text-white/50 text-center text-sm max-w-xs">
+              Introduz o PIN do jogo para assistir em tempo real.
+            </p>
+            <div className="w-full max-w-xs space-y-3">
+              <input
+                type="text"
+                placeholder="PIN do jogo"
+                value={spectatorPin}
+                onChange={(e) => setSpectatorPin(e.target.value.toUpperCase())}
+                onKeyDown={(e) => e.key === "Enter" && handleSpectatorJoin()}
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-center text-2xl font-mono tracking-widest placeholder-white/20 focus:outline-none focus:border-[#d0bcff]"
+                maxLength={6}
+              />
+              <button
+                onClick={handleSpectatorJoin}
+                disabled={!spectatorPin || isSpectatorJoining}
+                className="w-full py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                {isSpectatorJoining ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    A ligar...
+                  </>
+                ) : (
+                  <>
+                    <Eye className="w-5 h-5" />
+                    Assistir
+                  </>
+                )}
+              </button>
+            </div>
+          </main>
+          <MobileNav />
+          <ToastContainer toasts={toasts} onDismiss={dismiss} />
+        </>
+      );
+    }
+
+    if (status === "LOBBY" || status === "STARTING" || status === "QUESTION" || status === "REVEAL" || status === "LEADERBOARD" || status === "PODIUM" || status === "FINAL") {
+      return (
+        <>
+          <SpectatorView pin={spectatorPin} onLeave={handleSpectatorLeave} />
+          <MobileChat gameId={gameId!} playerId="spectator" playerName="Espectador" />
+          <MobileNav />
+          <ToastContainer toasts={toasts} onDismiss={dismiss} />
+        </>
+      );
+    }
+
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+      </main>
+    );
+  }
 
   // Not joined yet - show join form
   if (!hasJoined) {
@@ -260,6 +360,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           onJoin={handleJoin}
           onLeave={() => setLeaveConfirmOpen(true)}
         />
+        <MobileChat gameId={gameId!} playerId={clientPlayerId} playerName={name || "Anónimo"} />
         <ToastContainer toasts={toasts} onDismiss={dismiss} />
         <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
       </>
@@ -268,18 +369,29 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
   // Question phase
   if (status === "QUESTION" && questionData) {
+    const currentPlayer = players.find((p) => p.name === name);
+    const playerLives = currentPlayer?.lives ?? 3;
+    const isEliminated = currentPlayer?.eliminated ?? false;
     return (
       <>
         <QuestionView
           questionData={questionData}
           timeLeft={timeLeft}
-          timerDuration={gameSettings?.timer_duration || 20}
+          timerDuration={gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER}
           hasAnswered={hasAnswered}
           selectedOption={selectedOption}
           streak={streak}
+          lives={playerLives}
+          eliminated={isEliminated}
           onAnswer={handleAnswer}
           onReport={() => setReportOpen(true)}
+          onFiftyFifty={handleFiftyFifty}
+          fiftyFiftyUsed={fiftyFiftyUsed}
+          eliminatedOptions={eliminatedOptions}
+          buzzerMode={gameSettings?.buzzer_mode === true}
         />
+        <MobileChat gameId={gameId!} playerId={currentPlayer?.id || clientPlayerId} playerName={name} />
+        <ReactionBar gameId={gameId!} playerName={name} />
         <ToastContainer toasts={toasts} onDismiss={dismiss} />
         <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
       </>
@@ -289,14 +401,29 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   // Waiting for question data
   if (status === "QUESTION" && !questionData) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
+      <main className="min-h-screen flex flex-col items-center justify-center gap-4">
         <Loader2 className="w-12 h-12 animate-spin text-[#d0bcff]" />
+        {questionLoadError ? (
+          <>
+            <p className="text-[#e3e0f9]/50 text-sm">Erro ao carregar pergunta.</p>
+            <button
+              onClick={() => { setQuestionLoadError(false); fetchQuestion(); }}
+              className="px-6 py-2 bg-[#d0bcff]/20 hover:bg-[#d0bcff]/30 text-[#d0bcff] rounded-xl font-bold text-sm border border-[#d0bcff]/30"
+            >
+              Tentar Novamente
+            </button>
+          </>
+        ) : (
+          <p className="text-[#e3e0f9]/30 text-sm">A carregar pergunta...</p>
+        )}
+        <MobileChat gameId={gameId!} playerId={clientPlayerId} playerName={name || "Anónimo"} />
       </main>
     );
   }
 
   // Reveal phase
   if (status === "REVEAL" && questionData) {
+    const currentPlayer = players.find((p) => p.name === name);
     return (
       <>
         <RevealView
@@ -306,6 +433,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           earnedPoints={earnedPoints}
           onReport={() => setReportOpen(true)}
         />
+        <MobileChat gameId={gameId!} playerId={currentPlayer?.id || clientPlayerId} playerName={name} />
         <ToastContainer toasts={toasts} onDismiss={dismiss} />
         <ReportModal isOpen={reportOpen} onClose={() => setReportOpen(false)} onSubmit={handleReport} />
       </>
@@ -313,9 +441,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }
 
   // Final phase
+  const currentPlayer = players.find((p) => p.name === name);
   return (
     <>
       <FinalView players={players} playerName={name} />
+      <MobileChat gameId={gameId!} playerId={currentPlayer?.id || clientPlayerId} playerName={name} />
       <ToastContainer toasts={toasts} onDismiss={dismiss} />
     </>
   );

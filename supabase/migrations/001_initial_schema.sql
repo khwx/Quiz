@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS players (
   color TEXT DEFAULT '#FF6B6B',
   is_host BOOLEAN DEFAULT false,
   user_id UUID,
+  lives INTEGER DEFAULT 3,
+  eliminated BOOLEAN DEFAULT false,
   joined_at TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -38,10 +40,12 @@ CREATE TABLE IF NOT EXISTS questions (
   options JSONB NOT NULL,
   correct_option INTEGER NOT NULL,
   category TEXT,
+  difficulty INTEGER DEFAULT 2 CHECK (difficulty BETWEEN 1 AND 3),
   age_rating INTEGER DEFAULT 18,
   country_code TEXT DEFAULT 'PT',
   metadata JSONB DEFAULT '{}'::jsonb,
   hint TEXT,
+  explanation TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -67,6 +71,8 @@ CREATE TABLE IF NOT EXISTS profiles (
   avatar TEXT DEFAULT '🎮',
   email TEXT,
   role TEXT DEFAULT 'user' CHECK (role IN ('admin','moderator','host','user')),
+  xp INTEGER DEFAULT 0,
+  level INTEGER DEFAULT 1,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -121,7 +127,7 @@ CREATE TABLE IF NOT EXISTS tournaments (
   status TEXT DEFAULT 'LOBBY',
   max_teams INTEGER DEFAULT 8,
   current_round INTEGER DEFAULT 0,
-  settings JSONB DEFAULT '{"timer":20,"questions":10}'::jsonb,
+  settings JSONB DEFAULT '{"timer":20,"questions":10,"blind_mode":false}'::jsonb,
   created_by UUID,
   starts_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ DEFAULT NOW()
@@ -254,3 +260,19 @@ CREATE POLICY "Public Create TournamentRounds" ON tournament_rounds FOR INSERT W
 -- Game History
 CREATE POLICY "Public Read GameHistory" ON game_history FOR SELECT USING (true);
 CREATE POLICY "Public Insert GameHistory" ON game_history FOR INSERT WITH CHECK (true);
+
+-- Notifications
+CREATE TABLE IF NOT EXISTS notifications (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL,
+  type TEXT DEFAULT 'system',
+  title TEXT NOT NULL,
+  description TEXT,
+  read BOOLEAN DEFAULT false,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE POLICY "Users can read own notifications" ON notifications FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "Users can update own notifications" ON notifications FOR UPDATE USING (auth.uid() = user_id);
+CREATE POLICY "System can insert notifications" ON notifications FOR INSERT WITH CHECK (true);
+CREATE POLICY "Users can delete own notifications" ON notifications FOR DELETE USING (auth.uid() = user_id);

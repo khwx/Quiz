@@ -14802,6 +14802,101 @@
     }
   },
   {
+    "id": "2455f746-fb18-477e-a5f4-7ce39d35385d",
+    "text": "Qual é a função de um firewall em rede de computadores?",
+    "image_url": null,
+    "options": [
+      "Aumentar velocidade",
+      "Bloquear acesso não autorizado",
+      "Armazenar dados",
+      "Converter sinais"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Protege a rede contra invasões"
+    }
+  },
+  {
+    "id": "db756de7-59a4-4fc5-810f-6ee2f1545653",
+    "text": "Qual linguagem de programação é conhecida pelo uso de chaves {}?",
+    "image_url": null,
+    "options": [
+      "Python",
+      "Java",
+      "HTML",
+      "CSS"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Linguagem orientada a objetos"
+    }
+  },
+  {
+    "id": "17d656fa-7625-4dda-85e2-efeb620f46c9",
+    "text": "O que significa HTTP?",
+    "image_url": null,
+    "options": [
+      "HyperText Transfer Protocol",
+      "High Transfer Text Protocol",
+      "Hyper Transfer Text Process",
+      "Host Transfer Protocol"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Protocolo de comunicação da web"
+    }
+  },
+  {
+    "id": "12dad667-3211-469f-aba3-038ef7434276",
+    "text": "Qual é o dispositivo que converte sinal analógico para digital?",
+    "image_url": null,
+    "options": [
+      "Modem",
+      "Router",
+      "Conversor A/D",
+      "Switch"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Analog-to-Digital Converter"
+    }
+  },
+  {
+    "id": "6b873cda-5dfe-4f8c-9de4-ef0e2a85f259",
+    "text": "Qual é a unidade de medida da capacidade de armazenamento?",
+    "image_url": null,
+    "options": [
+      "Bit",
+      "Byte",
+      "Kilobyte",
+      "Megabyte"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "8 bits = 1 byte"
+    }
+  },
+  {
     "id": "b0edb2ff-b720-48e3-a152-206bc608c052",
     "text": "O que é O que e o Carnaval?",
     "image_url": null,
@@ -14973,6 +15068,766 @@
     }
   },
   {
+    "id": "a10647ee-5739-45f6-985f-b3b1a70cee68",
+    "text": "O que é um cookie em navegadores web?",
+    "image_url": null,
+    "options": [
+      "Vírus",
+      "Arquivo pequeno de dados",
+      "Extensão",
+      "Plugin"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Armazena preferências do usuário"
+    }
+  },
+  {
+    "id": "dabe7187-4c7c-417e-b8f4-d4a18b9c7727",
+    "text": "Qual empresa desenvolveu o sistema operacional Linux?",
+    "image_url": null,
+    "options": [
+      "Microsoft",
+      "Apple",
+      "Linus Torvalds",
+      "IBM"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Criado por um programador finlandês"
+    }
+  },
+  {
+    "id": "eeb02f88-d4e9-4d53-8488-cbff40e484ed",
+    "text": "Qual é a função do DNS na internet?",
+    "image_url": null,
+    "options": [
+      "Traduzir nomes de domínio para IPs",
+      "Aumentar velocidade",
+      "Bloquear vírus",
+      "Armazenar emails"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Como uma agenda telefônica da internet"
+    }
+  },
+  {
+    "id": "cf4ea5d5-420f-41b8-b69d-a6e925612ff2",
+    "text": "O que significa SSD em computadores?",
+    "image_url": null,
+    "options": [
+      "Solid State Drive",
+      "Super Speed Drive",
+      "Secure Storage Device",
+      "System Storage Drive"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Armazenamento sem partes móveis"
+    }
+  },
+  {
+    "id": "ebfd6452-72e7-40a4-9e58-527123cd8289",
+    "text": "Qual linguagem é usada para estilizar páginas web?",
+    "image_url": null,
+    "options": [
+      "HTML",
+      "JavaScript",
+      "CSS",
+      "Python"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Cascading Style Sheets"
+    }
+  },
+  {
+    "id": "08c30314-d71e-410e-b927-6d87b4a71dfd",
+    "text": "Qual é a capital da França?",
+    "image_url": null,
+    "options": [
+      "Marselha",
+      "Lyon",
+      "Paris",
+      "Toulouse"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Cidade da Luz"
+    }
+  },
+  {
+    "id": "3122535a-f970-4fe1-855c-94584bbdcbf6",
+    "text": "Qual é a capital da China?",
+    "image_url": null,
+    "options": [
+      "Xangai",
+      "Guangzhou",
+      "Pequim",
+      "Shenzhen"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Centro político e cultural"
+    }
+  },
+  {
+    "id": "267f932d-40e0-48c0-9b1b-43b1b049fe1f",
+    "text": "Qual é a idade mínima para ser presidente da República em Portugal?",
+    "image_url": null,
+    "options": [
+      "18",
+      "25",
+      "35",
+      "40"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Maioridade civil mais 5 anos"
+    }
+  },
+  {
+    "id": "2b189873-140b-4083-9ae2-811f67cb0402",
+    "text": "Quantos membros tem o Conselho de Estado em Portugal?",
+    "image_url": null,
+    "options": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Órgão consultivo do Presidente da República"
+    }
+  },
+  {
+    "id": "44a87a76-eb29-41b0-a7a4-fddf8b8699a6",
+    "text": "Qual é a função do Tribunal Constitucional em Portugal?",
+    "image_url": null,
+    "options": [
+      "Julgar crimes",
+      "Fiscalizar a constitucionalidade das leis",
+      "Eleger o Presidente",
+      "Governar o país"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.035746+00:00",
+    "metadata": {
+      "hint": "Tribunal especializado em matéria constitucional"
+    }
+  },
+  {
+    "id": "021e682b-9305-498e-858f-72558e5f1a0c",
+    "text": "Qual é o sistema eleitoral usado para eleger a Assembleia da República em Portugal?",
+    "image_url": null,
+    "options": [
+      "Uninominal",
+      "Proporcional",
+      "Misto",
+      "Majoritário"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Método de D'Hondt para distribuição de lugares"
+    }
+  },
+  {
+    "id": "504b1055-308b-4118-b577-387d09d6b203",
+    "text": "Qual é a organização que reúne os países de língua portuguesa?",
+    "image_url": null,
+    "options": [
+      "Comunidade Hispânica",
+      "Organização dos Estados Americanos",
+      "Comunidade dos Países de Língua Portuguesa",
+      "União Africana"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "CPLP - sigla em francês"
+    }
+  },
+  {
+    "id": "87429f4c-85dd-4e57-9f13-1a7d7aa6d34f",
+    "text": "Qual é o direito que permite ao Presidente da República recusar promulgar uma lei?",
+    "image_url": null,
+    "options": [
+      "Direito de veto",
+      "Direito de reclamação",
+      "Direito de emenda",
+      "Direito de iniciativa"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Poder de veto presidencial"
+    }
+  },
+  {
+    "id": "52edbcdb-e2ba-45d8-9dbd-272b296d4186",
+    "text": "Qual é a diferença entre uma república presidencial e uma parlamentar?",
+    "image_url": null,
+    "options": [
+      "No presidencial, o presidente é-chefe de governo",
+      "No presidencial, há duas voltas",
+      "No parlamentar, o primeiro-ministro é-chefe de governo",
+      "nenhuma"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "No parlamentar, o governo depende do parlamento"
+    }
+  },
+  {
+    "id": "b77748d0-ceba-48dc-82d6-1b8232393bed",
+    "text": "Qual é o órgão responsável pelas eleições em Portugal?",
+    "image_url": null,
+    "options": [
+      "Presidente da República",
+      "Assembleia da República",
+      "Tribunal Constitucional",
+      "Comissão Nacional de Eleições"
+    ],
+    "correct_option": 3,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "CNE"
+    }
+  },
+  {
+    "id": "5cf5da38-92b5-499c-843c-d420e39b0176",
+    "text": "Qual é o partido político mais antigo de Portugal ainda ativo?",
+    "image_url": null,
+    "options": [
+      "PSD",
+      "PCP",
+      "PS",
+      "CDS-PP"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Partido Comunista Português"
+    }
+  },
+  {
+    "id": "07073258-c96e-46e0-8064-66e79b8b7a8a",
+    "text": "Qual é o molho típico português para acompanhar bacalhau?",
+    "image_url": null,
+    "options": [
+      "Molho à campanha",
+      "Molho verde",
+      "Molho de alho",
+      "Molho de iogurte"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Salsa, coentros, alho e azeite"
+    }
+  },
+  {
+    "id": "da70cb4e-6164-4280-bc87-ebfd3abd223a",
+    "text": "Qual é o doce tradicional português feito com ovos e açúcar?",
+    "image_url": null,
+    "options": [
+      "Bolo de arroz",
+      "Pão-de-ló",
+      "Pastel de nata",
+      "Toucinho do céu"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Doce de conventos"
+    }
+  },
+  {
+    "id": "66076ead-8588-444d-976a-0b95f6df9833",
+    "text": "Qual é a fruta típica da região do Algarve?",
+    "image_url": null,
+    "options": [
+      "Manga",
+      "Abacaxi",
+      "Figo",
+      "Maracujá"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Seco ao sol"
+    }
+  },
+  {
+    "id": "108f40ce-e89d-4389-b581-3f1400586937",
+    "text": "Qual é o queijo típico da serra da Estrela?",
+    "image_url": null,
+    "options": [
+      "Queijo da serra",
+      "Queijo flamengo",
+      "Queijo tipo",
+      "Requeijão"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Queijo de ovelha curado em pano"
+    }
+  },
+  {
+    "id": "b765705e-55dc-45a8-903f-52a3444de615",
+    "text": "Qual é a bebida nacional de Argentina?",
+    "image_url": null,
+    "options": [
+      "Mate",
+      "Coca-cola",
+      "Vinho",
+      "Cerveja"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Infusão de erva-mate"
+    }
+  },
+  {
+    "id": "7b96c5ac-9a36-426a-95bb-7e1ed3eb2eca",
+    "text": "Qual é o tempero essencial na cozinha portuguesa?",
+    "image_url": null,
+    "options": [
+      "Coentros",
+      "Salsa",
+      "Alecrim",
+      "Louro"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Erva aromática muito usada"
+    }
+  },
+  {
+    "id": "84bb9c05-47f4-4e74-80b4-a383b1d77e04",
+    "text": "Qual é o prático típico da Madeira feito com peixe espada e banana?",
+    "image_url": null,
+    "options": [
+      "Espada com banana",
+      "Peixe grelhado",
+      "Bolo do caco",
+      "Milho frito"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Peixe preto típico da Madeira"
+    }
+  },
+  {
+    "id": "7c787444-2b26-4dd9-9e1b-1939ff09b325",
+    "text": "Qual é o molho italiano feito com manjericão, alho, pinoli, queijo e azeite?",
+    "image_url": null,
+    "options": [
+      "Pesto",
+      "Bolognese",
+      "Carbonara",
+      "Matriciana"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "Molho genovês"
+    }
+  },
+  {
+    "id": "d28067a9-ef33-4924-a07e-fe8126925eaa",
+    "text": "Qual é o país que consome mais chocolate per capita?",
+    "image_url": null,
+    "options": [
+      "Suíça",
+      "Alemanha",
+      "Bélgica",
+      "Estados Unidos"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.242184+00:00",
+    "metadata": {
+      "hint": "País alpino famoso pelo chocolate"
+    }
+  },
+  {
+    "id": "19e4e944-322e-4450-bde0-9ad425eda78c",
+    "text": "Qual é o fruto típico da região nordeste do Brasil?",
+    "image_url": null,
+    "options": [
+      "Caju",
+      "Maracujá",
+      "Acajá",
+      "Cocão"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Fruto do pé de cajueiro"
+    }
+  },
+  {
+    "id": "4092263b-e281-482c-be34-5342d90b3478",
+    "text": "Qual é a bebida tradicional japonesa feita de arroz fermentado?",
+    "image_url": null,
+    "options": [
+      "Saquê",
+      "Shochu",
+      "Uísque",
+      "Chá"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Bebida alcoólica transparente"
+    }
+  },
+  {
+    "id": "61c3d2a1-f2c7-4437-bff2-92ff05a878b5",
+    "text": "Qual é o país que produz mais vinho no mundo?",
+    "image_url": null,
+    "options": [
+      "França",
+      "Itália",
+      "Espanha",
+      "Estados Unidos"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "País mediterrâneo com lunga tradição vinícola"
+    }
+  },
+  {
+    "id": "f14e2f83-111d-498a-94bf-9e6e028e57ec",
+    "text": "Quantos jogadores tem uma equipe de handebol em campo?",
+    "image_url": null,
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "6 jogadores de linha + 1 goleiro"
+    }
+  },
+  {
+    "id": "ffbebe86-afa2-40d2-bcc3-928add6019a8",
+    "text": "Qual é o esporte que usa uma bola laranja e um cesto elevado?",
+    "image_url": null,
+    "options": [
+      "Futebol",
+      "Vôlei",
+      "Basquete",
+      "Tênis"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Cesto a 3,05 metros do chão"
+    }
+  },
+  {
+    "id": "b45042a4-7628-4eae-a3a8-db524660f107",
+    "text": "Qual é o número de buracos em um campo padrão de golfe?",
+    "image_url": null,
+    "options": [
+      "9",
+      "12",
+      "18",
+      "24"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Jogo de 18 buracos"
+    }
+  },
+  {
+    "id": "895a6677-669a-4aa1-a1a1-f875692d9311",
+    "text": "Qual é o tempo de uma partida oficial de futebol profissional?",
+    "image_url": null,
+    "options": [
+      "60 minutos",
+      "80 minutos",
+      "90 minutos",
+      "120 minutos"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Dois tempos de 45 minutos"
+    }
+  },
+  {
+    "id": "6161596c-c636-4909-8f6d-9d08a6fa3318",
+    "text": "Qual é o esporte que usa uma raquete e uma pena voadora?",
+    "image_url": null,
+    "options": [
+      "Tênis",
+      "Squash",
+      "Badminton",
+      "Pingue-pongue"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Objeto cônico de plumas"
+    }
+  },
+  {
+    "id": "294f3978-a277-4cbc-847d-510d2ae63de6",
+    "text": "Qual é o número de jogadores de uma equipe de rugby em campo?",
+    "image_url": null,
+    "options": [
+      "11",
+      "13",
+      "15",
+      "17"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Rugby union"
+    }
+  },
+  {
+    "id": "e15dfcb2-6f69-4182-84d9-9fa3d1fff837",
+    "text": "Qual é o esporte que acontece em um velódromo?",
+    "image_url": null,
+    "options": [
+      "Ciclismo",
+      "Corrida",
+      "Natação",
+      "Boxe"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Pista ciclística oval"
+    }
+  },
+  {
+    "id": "f922fda5-ccd0-4406-b991-f8d270224484",
+    "text": "Qual é o número de sets necessários para vencer no vôlei de praia?",
+    "image_url": null,
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Melhor de 3 sets"
+    }
+  },
+  {
+    "id": "5ee5dc29-1d5c-4357-9667-d1f85f7f4b75",
+    "text": "Qual é o esporte que usa um taco e uma bola branca em uma mesa verde?",
+    "image_url": null,
+    "options": [
+      "Snooker",
+      "Sinuca",
+      "Bilhar",
+      "Polo"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Jogo de bilhar"
+    }
+  },
+  {
+    "id": "cc83fe21-63cd-475c-96f3-385d3927dc41",
+    "text": "Qual é o esporte que usa um bastão e uma bola dura em um campo de grama?",
+    "image_url": null,
+    "options": [
+      "Hóquei no gelo",
+      "Beisebol",
+      "Críquete",
+      "Tênis"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Jogo com bola e bastão"
+    }
+  },
+  {
+    "id": "ff7a6cbe-f649-4d4f-8fd3-19cd2fe10f9f",
+    "text": "Qual é o esporte de combate que usa kimono e faixa colorida?",
+    "image_url": null,
+    "options": [
+      "Boxe",
+      "Judô",
+      "Taekwondo",
+      "Karatê"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Arte marcial japonesa"
+    }
+  },
+  {
+    "id": "2f855b51-7dc9-44a8-9ca0-3293827392b2",
+    "text": "Qual é o esporte que envolve remar em embarcações estreitas e longas?",
+    "image_url": null,
+    "options": [
+      "Canoagem",
+      "Remo",
+      "Vela",
+      "Stand up paddle"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.321668+00:00",
+    "metadata": {
+      "hint": "Embarcações com remos"
+    }
+  },
+  {
     "id": "93f8d308-cbb1-4524-a079-b73af3c32047",
     "text": "Qual é a capital da Austrália?",
     "image_url": null,
@@ -14989,6 +15844,234 @@
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
       "hint": "A resposta correta e: Canberra"
+    }
+  },
+  {
+    "id": "21da781c-384e-4901-9f10-ecc9f30787e3",
+    "text": "Quem dirigiu 'Parasita', o primeiro filme não de língua inglesa a ganhar o Oscar de Melhor Filme?",
+    "image_url": null,
+    "options": [
+      "Bong Joon-ho",
+      "Park Chan-wook",
+      "Lee Chang-dong",
+      "Quentin Tarantino"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Diretor sul-coreano"
+    }
+  },
+  {
+    "id": "08887869-1aad-48b7-bf0b-2b0738c66b87",
+    "text": "Qual foi o primeiro filme da Pixar Animation Studios?",
+    "image_url": null,
+    "options": [
+      "Toy Story",
+      "Procurando Nemo",
+      "Os Incríveis",
+      "Cars"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Lançado em 1995"
+    }
+  },
+  {
+    "id": "9b9e9da4-4f80-488d-892c-a9f1788f1410",
+    "text": "Qual é o filme que tem a famosa linha de diálogo 'Hasta la vista, baby'?",
+    "image_url": null,
+    "options": [
+      "Terminator 2",
+      "Terminator",
+      "True Lies",
+      "Judgment Day"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Arnold Schwarzenegger"
+    }
+  },
+  {
+    "id": "cae02bed-fa82-4da1-9b1e-289552a9dc96",
+    "text": "Qual foi o primeiro filme a usar tecnologia de captura de movimento para personagens reais?",
+    "image_url": null,
+    "options": [
+      "O Senhor dos Anéis: As Duas Torres",
+      "Avatar",
+      "O Rei Leão",
+      "King Kong"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Personagem Gollum"
+    }
+  },
+  {
+    "id": "3d4e2c68-e060-4a79-8d30-6e19a0e2d83a",
+    "text": "Qual é o filme que iniciou a série 'Star Wars'?",
+    "image_url": null,
+    "options": [
+      "O Império Contra-ataca",
+      "Uma Nova Esperança",
+      "O Retorno de Jedi",
+      "A Ameaça Fantasma"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Episódio IV"
+    }
+  },
+  {
+    "id": "ccb0fa68-2761-4d8a-bc10-fb7206ea2663",
+    "text": "Qual é o filme que ganhou o Oscar de Melhor Filme em 2020?",
+    "image_url": null,
+    "options": [
+      "Parasita",
+      "Nomadland",
+      "Mank",
+      "Minari"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Diretor sul-coreano"
+    }
+  },
+  {
+    "id": "830cb768-d0fb-42b2-8e4d-299402ead10e",
+    "text": "Quem escreveu a trilha sonora de 'Missão Impossível'?",
+    "image_url": null,
+    "options": [
+      "Hans Zimmer",
+      "John Williams",
+      "Ennio Morricone",
+      "Lalo Schifrin"
+    ],
+    "correct_option": 3,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Tema icônico de 5 notas"
+    }
+  },
+  {
+    "id": "253e73c7-7787-4f1c-af1e-355eac5e42bc",
+    "text": "Qual é o filme de animação da Disney que apresenta um rena chamado Sven?",
+    "image_url": null,
+    "options": [
+      "Frozen",
+      "Frozen II",
+      "Tangled",
+      "Moana"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Princesa Elsa e Anna"
+    }
+  },
+  {
+    "id": "c362f560-449b-4090-91ad-d694e5b168b1",
+    "text": "Qual é o filme que apresenta um tubarão branco gigante assediando uma cidade costeira?",
+    "image_url": null,
+    "options": [
+      "Tubarão",
+      "Tubarão 2",
+      "Tubarão 3",
+      "Tubarão 4"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Steven Spielberg, 1975"
+    }
+  },
+  {
+    "id": "f7c5ab31-1302-463a-a698-b8c76ae30ab8",
+    "text": "Qual é o filme que apresenta um homem que vive em uma ilha deserta e faz amizade com uma bola de vôlei?",
+    "image_url": null,
+    "options": [
+      "Náufrago",
+      "Cast Away",
+      "Ilha do Tesouro",
+      "Vida de Pi"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Tom Hanks como protagonista"
+    }
+  },
+  {
+    "id": "b987d6c8-f606-49b2-9128-9b5ea278d973",
+    "text": "Qual é o filme de animação que apresenta um peixe procurando seu filho perdido no oceano?",
+    "image_url": null,
+    "options": [
+      "Procurando Nemo",
+      "Procurando Dory",
+      "Shrek",
+      "Valente"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Peixe palhaço chamado Marlin"
+    }
+  },
+  {
+    "id": "440b4978-912a-43c2-aef2-72ee17a5a143",
+    "text": "Qual é o filme que conta a história de um menino que faz amizade com um extraterrestre?",
+    "image_url": null,
+    "options": [
+      "E.T. o Extraterrestre",
+      "Star Wars",
+      "Encontro Imediato",
+      "Próximo"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T20:41:33.405611+00:00",
+    "metadata": {
+      "hint": "Steven Spielberg, 1982"
     }
   },
   {
@@ -15011,6 +16094,519 @@
     }
   },
   {
+    "id": "81e9da21-b866-4251-a5c2-cc455632ee4c",
+    "text": "Qual é a função de um roteador em uma rede de computadores?",
+    "image_url": null,
+    "options": [
+      "Aumentar velocidade de internet",
+      "Encaminhar pacotes de dados entre redes",
+      "Armazenar arquivos",
+      "Converter sinais analógicos para digitais"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Dispositivo de rede que direciona tráfego"
+    }
+  },
+  {
+    "id": "348c2b21-7192-437e-9466-834b757c40a3",
+    "text": "O que significa a sigla RAM em computadores?",
+    "image_url": null,
+    "options": [
+      "Read Access Memory",
+      "Random Access Memory",
+      "Run Access Memory",
+      "Remote Access Memory"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Memória volátil do computador"
+    }
+  },
+  {
+    "id": "1b64350f-72a0-4f97-8b8f-bc5de8c20ea9",
+    "text": "Qual empresa criou o sistema operacional Windows?",
+    "image_url": null,
+    "options": [
+      "Apple",
+      "Google",
+      "Microsoft",
+      "IBM"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Fundada por Bill Gates e Paul Allen"
+    }
+  },
+  {
+    "id": "1e8b87d9-6fe2-4c94-b509-3523ee64d4b2",
+    "text": "Qual é a linguagem de programação usada para desenvolver aplicativos iOS nativos?",
+    "image_url": null,
+    "options": [
+      "Java",
+      "Kotlin",
+      "Swift",
+      "Python"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Linguagem desenvolvida pela Apple"
+    }
+  },
+  {
+    "id": "b486bf9d-6633-4a58-8796-d2e476904b3e",
+    "text": "Qual é o dispositivo que protege uma rede contra acessos não autorizados?",
+    "image_url": null,
+    "options": [
+      "Modem",
+      "Roteador",
+      "Firewall",
+      "Switch"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Sistema de segurança de rede"
+    }
+  },
+  {
+    "id": "f0d90a25-84f3-4a63-968e-53b28a8287e8",
+    "text": "Qual é o poder que tem a competência para interpretar a Constituição em Portugal?",
+    "image_url": null,
+    "options": [
+      "Presidente da República",
+      "Assembleia da República",
+      "Tribunal Constitucional",
+      "Governo"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Tribunal especializado em matéria constitucional"
+    }
+  },
+  {
+    "id": "7ea76013-1545-49b6-bb59-96379031fa24",
+    "text": "Qual é a função do Parlamento Europeu?",
+    "image_url": null,
+    "options": [
+      "Legislar em conjunto com o Conselho da UE",
+      "Gerir o orçamento da UE sozinho",
+      "Eleger o Presidente da Comissão Europeia",
+      "Controlar exclusivamente a política externa da UE"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Um dos dois ramos do poder legislativo da União Europeia"
+    }
+  },
+  {
+    "id": "b63751d7-e6ec-4d92-b615-30ddb466923c",
+    "text": "Qual é a diferença entre uma democracia direta e uma representativa?",
+    "image_url": null,
+    "options": [
+      "Na direta, os cidadãos votam em leis diretamente",
+      "Na representativa, há apenas um partido político",
+      "Na direta, não há eleições",
+      "Na representativa, o voto é secreto"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Na democracia direta, o povo decide diretamente sobre as leis"
+    }
+  },
+  {
+    "id": "230f7ce3-d870-4cb7-a82b-31b7582294d8",
+    "text": "Qual é o princípio da separação dos poderes?",
+    "image_url": null,
+    "options": [
+      "Dividir o poder entre Executivo, Legislativo e Judiciário",
+      "Centralizar todo o poder nas mãos do Presidente",
+      "Dar todo o poder ao povo",
+      "Eliminar as eleições"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Conceito clássico de Montesquieu"
+    }
+  },
+  {
+    "id": "ac32aee7-dd44-4e0d-9caa-ce0e2d2ec46c",
+    "text": "Qual é a função do Banco Central Europeu?",
+    "image_url": null,
+    "options": [
+      "Gerir o euro e definir a política monetária da zona do euro",
+      "Gerir apenas o orçamento da UE",
+      "Controlar exclusivamente as fronteiras da UE",
+      "Eleger o Parlamento Europeu"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Instituição responsável pela estabilidade dos preços na zona do euro"
+    }
+  },
+  {
+    "id": "060b71e5-56a9-4986-acca-c1e145adcac0",
+    "text": "Qual é o prato típico português feito com arroz, frango e chouriço?",
+    "image_url": null,
+    "options": [
+      "Arroz de pato",
+      "Arroz de cabidela",
+      "Arroz de frango",
+      "Arroz de marisco"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Arroz cremoso com frango e chouriço"
+    }
+  },
+  {
+    "id": "dc5a2dc0-22f0-47ba-a590-e93b4d2c3d1b",
+    "text": "Qual é o doce tradicional português feito com amêndoas e açúcar?",
+    "image_url": null,
+    "options": [
+      "Bolo de arroz",
+      "Pão-de-ló",
+      "Pastel de nata",
+      "Toucinho do céu"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Doce de amêndoa típico do Algarve"
+    }
+  },
+  {
+    "id": "7a7ec597-4c62-42b9-b6e0-480a8c1f3ae0",
+    "text": "Qual é a bebida típica da Galiza (Espanha) feita de uva?",
+    "image_url": null,
+    "options": [
+      "Vinho",
+      "Cerveja",
+      "Sidra",
+      "Licor"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Bebida fermentada de maçã ou pêra"
+    }
+  },
+  {
+    "id": "b854abdf-821a-471d-a600-86963da090b4",
+    "text": "Qual é o queijo típico português da ilha de São Miguel (Açores)?",
+    "image_url": null,
+    "options": [
+      "Queijo da ilha",
+      "Queijo flamengo",
+      "Queijo tipo",
+      "Queijo São Jorge"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Queijo de vaca curado em folha de milho"
+    }
+  },
+  {
+    "id": "f4d8554e-7776-4a03-961b-91fc32a3b042",
+    "text": "Qual é o fruto típico da região mediterrânea usado para fazer azeite?",
+    "image_url": null,
+    "options": [
+      "Maçã",
+      "Pêra",
+      "Uva",
+      "Azeitona"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.037943+00:00",
+    "metadata": {
+      "hint": "Fruto da oliveira"
+    }
+  },
+  {
+    "id": "05b6751a-71bf-47c9-9dda-c316f5039541",
+    "text": "Qual é o número de jogadores de uma equipe de vôlei de praia em campo?",
+    "image_url": null,
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Dupla de jogadores"
+    }
+  },
+  {
+    "id": "0cf71121-a4d3-4ba2-b3b0-b82ccdd12646",
+    "text": "Qual é o esporte que usa uma bola oval e dois traves em forma de H?",
+    "image_url": null,
+    "options": [
+      "Futebol",
+      "Rugby",
+      "Futebol americano",
+      "Tênis"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Esporte com jogadas e avanço territorial"
+    }
+  },
+  {
+    "id": "7c44925c-57df-425a-9b0b-fdaf75d3e29b",
+    "text": "Qual é o tempo de um round no boxe profissional?",
+    "image_url": null,
+    "options": [
+      "1 minuto",
+      "2 minutos",
+      "3 minutos",
+      "4 minutos"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Três minutos de luta"
+    }
+  },
+  {
+    "id": "cbe0ebfd-e3c8-4e57-b2d4-10a0c95905f6",
+    "text": "Qual é o esporte que envolve deslizar sobre neve usando uma prancha fixa aos pés?",
+    "image_url": null,
+    "options": [
+      "Esqui alpino",
+      "Snowboard",
+      "Trenó",
+      "Patinação no gelo"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Praticado em montanhas nevadas"
+    }
+  },
+  {
+    "id": "37c8b603-f068-48c0-9e65-a12bb5f6ea87",
+    "text": "Qual é o esporte que usa um arco e flechas para acertar em um alvo?",
+    "image_url": null,
+    "options": [
+      "Tiro com arco",
+      "Tiro com pistola",
+      "Tiro com rifle",
+      "Esgrima"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Prática que exige concentração e precisão"
+    }
+  },
+  {
+    "id": "05525ecf-fdaf-47b3-ba0b-f029f79b75da",
+    "text": "Quem dirigiu o filme 'Interestelar'?",
+    "image_url": null,
+    "options": [
+      "Steven Spielberg",
+      "Christopher Nolan",
+      "George Lucas",
+      "James Cameron"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Diretor de 'Batman: O Cavaleiro das Trevas'"
+    }
+  },
+  {
+    "id": "e2f294ba-ebaf-4b18-a48c-d25dcd83e5a7",
+    "text": "Qual é o filme que apresenta um homem que vira homem-formiga após ser encolhido?",
+    "image_url": null,
+    "options": [
+      "Homem-Aranha",
+      "Homem de Ferro",
+      "Homem-Formiga",
+      "Capitão América"
+    ],
+    "correct_option": 2,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Paul Rudd como protagonista"
+    }
+  },
+  {
+    "id": "a88c04ca-e29f-4fba-8e71-cfd5b1fe45c5",
+    "text": "Qual é o filme de animação que apresenta um peixe com perda de memória de curto prazo?",
+    "image_url": null,
+    "options": [
+      "Procurando Nemo",
+      "Procurando Dory",
+      "Shrek",
+      "Valente"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Peixe azul chamado Dory"
+    }
+  },
+  {
+    "id": "38acf0f9-0b81-497d-bce0-7fe591a4730e",
+    "text": "Qual é o filme que apresenta um grupo de super-heróis liderados por Nick Fury?",
+    "image_url": null,
+    "options": [
+      "Liga da Justiça",
+      "Vingadores",
+      "X-Men",
+      "Esquadrão Suicida"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Equipe de super-heróis da Marvel"
+    }
+  },
+  {
+    "id": "fc227086-175f-40e3-a4df-844361a84dff",
+    "text": "Qual é o filme que conta a história de um menino que descobre que é um bruxo?",
+    "image_url": null,
+    "options": [
+      "O Senhor dos Anéis",
+      "Harry Potter",
+      "As Crônicas de Nárnia",
+      "Percy Jackson"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Escola de bruxaria de Hogwarts"
+    }
+  },
+  {
+    "id": "f7630515-3d8c-4c49-841d-1ce88721d66e",
+    "text": "Qual é o rio mais longo do mundo?",
+    "image_url": null,
+    "options": [
+      "Nilo",
+      "Amazonas",
+      "Yangtzé",
+      "Mississipi"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Cobre mais de 6.600 km de extensão"
+    }
+  },
+  {
+    "id": "db08d575-5cd5-4a8b-92f7-76f91f624d0a",
+    "text": "Qual é o maior deserto do mundo?",
+    "image_url": null,
+    "options": [
+      "Saara",
+      "Arábico",
+      "Gobi",
+      "Kalahari"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Localizado no norte de África"
+    }
+  },
+  {
     "id": "b3a6ad4f-7812-4d7f-b19b-0dd1de0e6204",
     "text": "Em que ano terminou a II Guerra Mundial?",
     "image_url": null,
@@ -15027,6 +16623,139 @@
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
       "hint": "A resposta correta e: 1945"
+    }
+  },
+  {
+    "id": "0232877d-b31a-434f-ad8a-98f9a77c051f",
+    "text": "Qual é a montanha mais alta do mundo?",
+    "image_url": null,
+    "options": [
+      "Everest",
+      "K2",
+      "Kangchenjunga",
+      "Lhotse"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Localizada na fronteira entre Nepal e China"
+    }
+  },
+  {
+    "id": "09d62bd7-1304-40a1-89a7-1d101e878698",
+    "text": "Qual é o oceano maior do mundo?",
+    "image_url": null,
+    "options": [
+      "Atlântico",
+      "Índico",
+      "Ártico",
+      "Pacífico"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Separa a Ásia e as Américas"
+    }
+  },
+  {
+    "id": "ee5a8306-9575-4b72-84c0-508a65572aa5",
+    "text": "Qual é o país com o maior número de línguas oficiais?",
+    "image_url": null,
+    "options": [
+      "Índia",
+      "África do Sul",
+      "Suíça",
+      "Canadá"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.218808+00:00",
+    "metadata": {
+      "hint": "Onze línguas oficiais reconhecidas"
+    }
+  },
+  {
+    "id": "a6be9299-1c9c-475c-bdb8-a780505a4e3b",
+    "text": "Quem foi o primeiro homem a caminhar na Lua?",
+    "image_url": null,
+    "options": [
+      "Yuri Gagarin",
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Michael Collins"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Comandante da missão Apollo 11"
+    }
+  },
+  {
+    "id": "c5bf47e3-404b-495b-bc29-badbb2f9deeb",
+    "text": "Qual foi o império que construiu Machu Picchu?",
+    "image_url": null,
+    "options": [
+      "Asteca",
+      "Maia",
+      "Inca",
+      "Olmeca"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Civilização andina do século XV"
+    }
+  },
+  {
+    "id": "494fd710-5921-4b1e-9421-f9f2a0b73250",
+    "text": "Qual foi a guerra que durou de 1939 a 1945?",
+    "image_url": null,
+    "options": [
+      "Guerra Civil Espanhola",
+      "Guerra Fria",
+      "Segunda Guerra Mundial",
+      "Primeira Guerra Mundial"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Conflito global envolvendo as principais potências mundiais"
+    }
+  },
+  {
+    "id": "73387835-b996-4e6f-8de6-d996a8e93b7d",
+    "text": "Qual foi a revolução que terminou com a monarquia absoluta na França?",
+    "image_url": null,
+    "options": [
+      "Revolução Francesa",
+      "Revolução Industrial",
+      "Revolução Russa",
+      "Revolução Americana"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Começou em 1789 com a tomada da Bastilha"
     }
   },
   {
@@ -15049,6 +16778,367 @@
     }
   },
   {
+    "id": "5a0f1997-aed4-49c0-8922-6eb214c2b06f",
+    "text": "Qual é o documento que declarou a independência dos Estados Unidos?",
+    "image_url": null,
+    "options": [
+      "Declaração dos Direitos do Homem e do Cidadão",
+      "Declaração de Independência",
+      "Carta Magna",
+      "Constituição dos Estados Unidos"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Assinada em 4 de julho de 1776"
+    }
+  },
+  {
+    "id": "14fdd2d4-b9cd-4c73-aa8b-f335c70a1127",
+    "text": "Qual é o maior lago do mundo por área superficial?",
+    "image_url": null,
+    "options": [
+      "Mar Cáspio",
+      "Lago Superior",
+      "Lago Vitória",
+      "Lago Baikal"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Localizado entre Europa e Ásia"
+    }
+  },
+  {
+    "id": "16666277-028e-4fec-8bd3-400607cb539f",
+    "text": "Qual é o rio que passa pelo Grand Canyon?",
+    "image_url": null,
+    "options": [
+      "Rio Colorado",
+      "Rio Mississipi",
+      "Rio Amazonas",
+      "Rio Nilo"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Escavou o Grand Canyon ao longo de milhões de anos"
+    }
+  },
+  {
+    "id": "ab5f8467-63e1-44a4-b921-2536031313a2",
+    "text": "Qual é a maior ilha do mundo?",
+    "image_url": null,
+    "options": [
+      "Groelândia",
+      "Nova Guiné",
+      "Borneo",
+      "Madagáscar"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Território autônomo da Dinamarca"
+    }
+  },
+  {
+    "id": "01dd9670-4393-468b-8ec0-efc810b143e2",
+    "text": "Qual é o deserto mais quente do mundo?",
+    "image_url": null,
+    "options": [
+      "Saara",
+      "Dasht-e Lut",
+      "Sonora",
+      "Kalahari"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Localizado no Irã, com temperaturas recordes"
+    }
+  },
+  {
+    "id": "4826c2d8-68b9-4724-807a-4778270e4902",
+    "text": "Qual é a faixa de montanhas mais longa do mundo?",
+    "image_url": null,
+    "options": [
+      "Andes",
+      "Himalaias",
+      "Montanhas Rochosas",
+      "Alpes"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Estende-se por sete países da América do Sul"
+    }
+  },
+  {
+    "id": "53064c48-2b2f-4cde-afb8-e0fd582d6f45",
+    "text": "Qual é o movimento artístico que valoriza a expressão emocional e o uso intenso de cor?",
+    "image_url": null,
+    "options": [
+      "Impressionismo",
+      "Expressionismo",
+      "Cubismo",
+      "Surrealismo"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Movimento artístico alemão do início do século XX"
+    }
+  },
+  {
+    "id": "c3fb1727-2ae1-40ad-808e-545311dc5ee4",
+    "text": "Qual é o instrumento de cordas que se toca com um arco e tem quatro cordas?",
+    "image_url": null,
+    "options": [
+      "Guitarra",
+      "Violino",
+      "Violoncelo",
+      "Contrabaixo"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Instrumento de soprano da família das cordas"
+    }
+  },
+  {
+    "id": "fc3c226b-ef72-41f3-8fb0-c3c98119af98",
+    "text": "Qual é o estilo arquitetônico caracterizado por arcos ogivais e vitrais?",
+    "image_url": null,
+    "options": [
+      "Românico",
+      "Gótico",
+      "Renascimento",
+      "Barroco"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Estilo arquitetônico da Idade Média"
+    }
+  },
+  {
+    "id": "a8e6d2ce-17ee-40d2-9991-02f0db4d95be",
+    "text": "Qual é o livro que contém as 95 teses de Martinho Lutero?",
+    "image_url": null,
+    "options": [
+      "Bíblia",
+      "Catecismo",
+      "95 Teses",
+      "None"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Início da Reforma Protestante"
+    }
+  },
+  {
+    "id": "be5aedd0-2acb-49b1-a3ec-a2bc103db210",
+    "text": "Qual é o estilo de pintura que usa pontos de cor pura para criar imagens?",
+    "image_url": null,
+    "options": [
+      "Impressionismo",
+      "Pointilismo",
+      "Expressionismo",
+      "Cubismo"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.311444+00:00",
+    "metadata": {
+      "hint": "Técnica desenvolvida por Georges Seurat"
+    }
+  },
+  {
+    "id": "64001839-23eb-4ee1-b0d7-5bd360b97957",
+    "text": "Qual é a partícula subatômica com carga positiva localizada no núcleo do átomo?",
+    "image_url": null,
+    "options": [
+      "Elétron",
+      "Nêutron",
+      "Próton",
+      "Fóton"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Número atômico indica a quantidade desta partícula"
+    }
+  },
+  {
+    "id": "a5bf5918-e319-4646-9d83-29fcbe81d7f7",
+    "text": "Qual é o gás que constituye a maior parte da atmosfera terrestre?",
+    "image_url": null,
+    "options": [
+      "Oxigênio",
+      "Nitrogênio",
+      "Dióxido de carbono",
+      "Argônio"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Composta por aproximadamente 78% de nitrogênio"
+    }
+  },
+  {
+    "id": "52756ad6-cf98-4c50-82d0-54786a5994c1",
+    "text": "Qual é o processo pelo qual as plantas liberam vapor d'água para a atmosfera?",
+    "image_url": null,
+    "options": [
+      "Fotossíntese",
+      "Respiração",
+      "Transpiração",
+      "Germinação"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Ocorre principalmente através dos estômatos foliares"
+    }
+  },
+  {
+    "id": "d731f87b-c1d9-4a1d-8a49-735aa41dccf8",
+    "text": "Qual é a lei que descreve a relação entre o volume e a pressão de um gás a temperatura constante?",
+    "image_url": null,
+    "options": [
+      "Lei de Charles",
+      "Lei de Boyle-Mariotte",
+      "Lei de Gay-Lussac",
+      "Lei de Avogadro"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "P × V = constante"
+    }
+  },
+  {
+    "id": "2fe0e817-0835-41e1-9745-10d2b2acbe7a",
+    "text": "Qual é o instrumento usado para medir a intensidade de um terremoto?",
+    "image_url": null,
+    "options": [
+      "Termômetro",
+      "Barômetro",
+      "Sismógrafo",
+      "Anemômetro"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Escala Richter mede a magnitude do terremoto"
+    }
+  },
+  {
+    "id": "5543f28a-b31e-452b-bab7-e888af2639db",
+    "text": "Qual é o resultado de 12 ÷ 4?",
+    "image_url": null,
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Quatro cabe em doze exatamente três vezes"
+    }
+  },
+  {
+    "id": "05d5f7c0-2613-4243-a7ab-4f2f2e87e188",
+    "text": "Qual é a fórmula para calcular a área de um retângulo?",
+    "image_url": null,
+    "options": [
+      "l + l",
+      "l × L",
+      "l × L × 2",
+      "l / L"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Base vezes altura"
+    }
+  },
+  {
+    "id": "ee230d5e-cea1-4fac-b1d5-ab300a37607e",
+    "text": "Qual é o resultado de 5²?",
+    "image_url": null,
+    "options": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Cinco multiplicado por si mesmo"
+    }
+  },
+  {
     "id": "a44637c3-dcf4-4920-a509-5c14d5f49d64",
     "text": "Quantos dias tem um ano comum?",
     "image_url": null,
@@ -15065,6 +17155,25 @@
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
       "hint": "A resposta correta e: 365"
+    }
+  },
+  {
+    "id": "7773a577-50a3-4e00-8780-14d77a52c2c6",
+    "text": "Qual é o número que vem depois de 9 na sequência dos números naturais?",
+    "image_url": null,
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Número natural que segue o nove"
     }
   },
   {
@@ -15087,6 +17196,120 @@
     }
   },
   {
+    "id": "498c309e-00df-4268-924c-a4185ee92a9c",
+    "text": "Qual é o resultado de 0! (fatorial de zero)?",
+    "image_url": null,
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Indefinido"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Por definição matemática, fatorial de zero é igual a um"
+    }
+  },
+  {
+    "id": "e920af10-5b82-4127-9dd0-527f8e8fac95",
+    "text": "Qual é o animal terrestre mais rápido do mundo?",
+    "image_url": null,
+    "options": [
+      "Guepardo",
+      "Leão",
+      "Tigre",
+      "Veado"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Atinge até 120 km/h em curtos sprints"
+    }
+  },
+  {
+    "id": "20af1609-e508-4850-9d1a-c56f14f3ac72",
+    "text": "Qual é o maior mamífero do mundo?",
+    "image_url": null,
+    "options": [
+      "Elefante africano",
+      "Baleia azul",
+      "Girafa",
+      "Rinoceronte"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Mamífero marinho que pode atingir 30 metros de comprimento"
+    }
+  },
+  {
+    "id": "101a0bee-5027-4308-a350-d5dfee18caef",
+    "text": "Qual é o animal que tem a memória mais longa do mundo?",
+    "image_url": null,
+    "options": [
+      "Elefante",
+      "Golfinho",
+      "Chimpanzé",
+      "Cavalo"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Lembranças podem durar décadas"
+    }
+  },
+  {
+    "id": "6be2df16-6308-4938-81ae-d6c9ec887cc4",
+    "text": "Qual é o animal que pode ficar meses sem beber água?",
+    "image_url": null,
+    "options": [
+      "Camelo",
+      "Girafa",
+      "Elefante",
+      "Leão"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Adaptado para sobrevivência em desertos"
+    }
+  },
+  {
+    "id": "328400cb-e0af-415b-9814-cfd5931ce322",
+    "text": "Qual é o animal que tem a língua mais longa proporcionalmente ao seu corpo?",
+    "image_url": null,
+    "options": [
+      "Girafa",
+      "Chameleão",
+      "Sapo",
+      "Peixe"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.401278+00:00",
+    "metadata": {
+      "hint": "Língua usada para alcançar folhas em árvores altas"
+    }
+  },
+  {
     "id": "d2c43508-7423-47af-8b91-1d88851cd0eb",
     "text": "Quantos países fazem parte da União Europeia?",
     "image_url": null,
@@ -15103,6 +17326,196 @@
     "created_at": "2026-06-30T17:36:04.76481+00:00",
     "metadata": {
       "hint": "A resposta correta e: 27"
+    }
+  },
+  {
+    "id": "81c40cbe-8146-4bac-8c4a-02b513be37ba",
+    "text": "Qual é o instrumento de percussão que consiste em duas placas de metal que se chocam?",
+    "image_url": null,
+    "options": [
+      "Tambor",
+      "Prato",
+      "Xilofone",
+      "Triângulo"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Produz som metálico agudo e sustentado"
+    }
+  },
+  {
+    "id": "a6b91124-1901-4973-ac06-9c70140348bf",
+    "text": "Qual é o gênero musical que se originou na Jamaica nos anos 1960?",
+    "image_url": null,
+    "options": [
+      "Rock",
+      "Reggae",
+      "Hip hop",
+      "Samba"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Bob Marley é considerado o rei do reggae"
+    }
+  },
+  {
+    "id": "469e508e-66ef-4bf3-baea-e349d2f75cd2",
+    "text": "Qual é o instrumento de cordas que se toca com um plectro (palheta) e tem seis cordas?",
+    "image_url": null,
+    "options": [
+      "Violino",
+      "Guitarra",
+      "Harpa",
+      "Banjo"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Instrumento popular em diversos estilos musicais"
+    }
+  },
+  {
+    "id": "a238f9fe-4536-4477-ae31-242123e6e8b6",
+    "text": "Qual é o tipo de voz feminina mais aguda na música clássica?",
+    "image_url": null,
+    "options": [
+      "Contralto",
+      "Mezzo-soprano",
+      "Soprano",
+      "Baixo"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Voz feminina com registro mais agudo"
+    }
+  },
+  {
+    "id": "89e568ae-bf8c-44d6-bbaa-367cb58d04c4",
+    "text": "Qual é o instrumento de sopro que usa uma haste simples (soliço)?",
+    "image_url": null,
+    "options": [
+      "Flauta",
+      "Clarinete",
+      "Oboé",
+      "Fagote"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Instrumento de madeira da família madeireira"
+    }
+  },
+  {
+    "id": "0db0ed7d-acb9-4425-97af-4ba6f1acbbbb",
+    "text": "Qual é o país cuja bandeira tem uma folha de bordo vermelha no centro?",
+    "image_url": null,
+    "options": [
+      "Estados Unidos",
+      "Canadá",
+      "Austrália",
+      "Nova Zelândia"
+    ],
+    "correct_option": 1,
+    "category": "Bandeiras",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Símbolo nacional do Canadá"
+    }
+  },
+  {
+    "id": "76872d26-0092-42fa-9083-3b78e51ea820",
+    "text": "Qual é o país cuja bandeira tem um sol amarelo com oito raios e um condor em voo?",
+    "image_url": null,
+    "options": [
+      "Chile",
+      "Peru",
+      "Equador",
+      "Colômbia"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Símbolo da liberdade e da independência"
+    }
+  },
+  {
+    "id": "1f8e2020-c554-4f55-a41f-02b97980852a",
+    "text": "Qual é o país cuja bandeira tem um dragão dourado no centro?",
+    "image_url": null,
+    "options": [
+      "China",
+      "Japão",
+      "Coreia do Sul",
+      "Vietname"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Símbolo de poder, sabedoria e boa sorte"
+    }
+  },
+  {
+    "id": "86b974b7-d155-46a0-b5ef-46ee3b0f32a2",
+    "text": "Qual é o país cuja bandeira tem uma lua crescente branca e uma estrela em um fundo vermelho?",
+    "image_url": null,
+    "options": [
+      "Turquia",
+      "Tunísia",
+      "Marrocos",
+      "Argélia"
+    ],
+    "correct_option": 0,
+    "category": "Bandeiras",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Símbolo do Islã"
+    }
+  },
+  {
+    "id": "b9f9b18a-1043-4128-88fb-61926b282968",
+    "text": "Qual é o país cuja bandeira tem três faixas verticais iguais de azul, branco e vermelho?",
+    "image_url": null,
+    "options": [
+      "Holanda",
+      "Luxemburgo",
+      "França",
+      "Rússia"
+    ],
+    "correct_option": 2,
+    "category": "Bandeiras",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-07-12T22:31:26.476691+00:00",
+    "metadata": {
+      "hint": "Bandeira tricolor que inspirou muitas outras"
     }
   },
   {

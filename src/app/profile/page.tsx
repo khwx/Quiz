@@ -7,13 +7,22 @@ import { useRouter } from "next/navigation";
 import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 import type { AnswerSummary, PlayerStats } from "@/types";
 
 export default function ProfilePage() {
   const router = useRouter();
+  const { toasts, show: showToast, dismiss } = useToast();
   const [activeTab, setActiveTab] = useState("stats");
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<(import("@supabase/supabase-js").User & { name?: string; avatar?: string }) | null>(null);
+  const [user, setUser] = useState<{
+    id: string;
+    email?: string;
+    name?: string;
+    avatar?: string;
+  } | null>(null);
+  const [profile, setProfile] = useState<{ xp: number; level: number; username?: string; avatar?: string } | null>(null);
   const [stats, setStats] = useState<PlayerStats | null>(null);
   const [gamesHistory, setGamesHistory] = useState<AnswerSummary[]>([]);
 
@@ -32,9 +41,11 @@ export default function ProfilePage() {
 
       const { data: profile } = await supabase
         .from("profiles")
-        .select("*")
+        .select("xp, level")
         .eq("id", currentUser.id)
         .single();
+
+      setProfile(profile || { xp: 0, level: 1 });
 
       const { data: userPlayers } = await supabase
         .from("players")
@@ -61,13 +72,18 @@ export default function ProfilePage() {
         ? Math.round((correctAnswers / userAnswers.length) * 100) 
         : 0;
 
+      const profileData = profile ? { ...(profile as any) } : null;
+      
       setUser({
         id: currentUser.id,
         email: currentUser.email,
-        name: currentUser.user_metadata?.name || profile?.username || "Player",
-        avatar: profile?.avatar || "🎮",
-        ...(profile || {}),
+        name: currentUser.user_metadata?.name || profileData?.username || "Player",
+        avatar: profileData?.avatar || "🎮",
       });
+
+      if (profileData) {
+        setProfile({ xp: profileData.xp || 0, level: profileData.level || 1, username: profileData.username, avatar: profileData.avatar });
+      }
 
       setStats({
         totalGames,
@@ -76,8 +92,8 @@ export default function ProfilePage() {
         accuracy,
         wins: correctAnswers,
       });
-    } catch (error) {
-      console.error("Error loading user:", error);
+    } catch {
+      showToast("Erro ao carregar o perfil.", "error");
     } finally {
       setLoading(false);
     }
@@ -169,9 +185,23 @@ export default function ProfilePage() {
               </div>
             </motion.div>
 
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl font-bold text-[#e3e0f9] mb-1">{user.name}</h2>
-              <p className="text-[#e3e0f9]/50 mb-4">{user.email}</p>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl font-bold text-[#e3e0f9] mb-1">{user.name}</h2>
+                <p className="text-[#e3e0f9]/50 mb-2">{user.email}</p>
+                {profile && (
+                  <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+                    <span className="text-xs font-bold text-[#d0bcff] bg-[#d0bcff]/10 px-3 py-1 rounded-full">
+                      Nível {profile.level}
+                    </span>
+                    <div className="w-24 h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-full"
+                        style={{ width: `${Math.min(100, (profile.xp % (profile.level * 100)) / (profile.level * 100) * 100)}%` }}
+                      />
+                    </div>
+                    <span className="text-xs text-[#e3e0f9]/60">{profile.xp} XP</span>
+                  </div>
+                )}
 
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
                 <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
@@ -357,6 +387,7 @@ export default function ProfilePage() {
       </div>
 
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
       <div className="h-20 md:hidden" />
     </main>
   );

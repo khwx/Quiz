@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Clock, Brain, Database, Volume2, VolumeX, Flag } from "lucide-react";
+import { Clock, Brain, Database, Volume2, VolumeX, Flag, Heart } from "lucide-react";
 import { speak, stopSpeaking, isSpeaking } from "@/lib/tts";
 import type { Question, Player, Answer } from "@/types";
 
@@ -19,6 +19,11 @@ interface QuestionDisplayProps {
   onLocalAnswer?: (optionIndex: number) => void;
   questionNumber?: number;
   totalQuestions?: number;
+  localLives?: number;
+  blindMode?: boolean;
+  buzzerMode?: boolean;
+  hotseatMode?: boolean;
+  currentHotseatPlayer?: string;
 }
 
 const optionColors = [
@@ -43,6 +48,11 @@ export default function QuestionDisplay({
   onLocalAnswer,
   questionNumber,
   totalQuestions,
+  localLives = 3,
+  blindMode = false,
+  buzzerMode = false,
+  hotseatMode = false,
+  currentHotseatPlayer,
 }: QuestionDisplayProps) {
   const progress = (timeLeft / totalTime) * 100;
   const [ttsEnabled, setTtsEnabled] = useState(true);
@@ -80,6 +90,17 @@ export default function QuestionDisplay({
               {questionNumber}/{totalQuestions}
             </span>
           )}
+          {question.difficulty != null && (
+            <span className={`backdrop-blur-md px-4 py-2 rounded-full font-black text-xs border ${
+              question.difficulty === 1
+                ? "bg-green-500/10 text-green-300 border-green-500/20"
+                : question.difficulty === 3
+                  ? "bg-red-500/10 text-red-300 border-red-500/20"
+                  : "bg-yellow-500/10 text-yellow-300 border-yellow-500/20"
+            }`}>
+              {question.difficulty === 1 ? "Fácil" : question.difficulty === 2 ? "Médio" : "Difícil"}
+            </span>
+          )}
           {questionSource && (
             <div
               className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider ${
@@ -90,6 +111,13 @@ export default function QuestionDisplay({
             >
               {questionSource === "AI" ? <Brain size={14} /> : <Database size={14} />}
               {questionSource === "AI" ? "IA" : "BD"}
+            </div>
+          )}
+          {localMode && (
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <Heart key={i} className={`w-5 h-5 ${i < localLives ? "text-[#FF6B6B] fill-[#FF6B6B]" : "text-white/10"}`} />
+              ))}
             </div>
           )}
         </div>
@@ -130,24 +158,31 @@ export default function QuestionDisplay({
           <div className="flex flex-wrap gap-2 justify-end">
             {players.map((player) => {
               const hasAnswered = answers.some((a) => String(a.player_id) === String(player.id));
+              const isFirstAnswer = buzzerMode && hasAnswered && answers[0] && String(answers[0].player_id) === String(player.id);
               return hasAnswered ? (
                 <motion.div
                   key={player.id}
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  className="bg-green-500/20 text-green-300 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner"
-                  title={player.name}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner ${
+                    isFirstAnswer
+                      ? "bg-[#FFD700]/30 text-[#FFD700] border-2 border-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.5)]"
+                      : "bg-green-500/20 text-green-300"
+                  }`}
+                  title={isFirstAnswer ? `${player.name} (Buzzer!)` : player.name}
                 >
                   {player.avatar || "🎮"}
                 </motion.div>
               ) : (
-                <div
+                <motion.div
                   key={player.id}
-                  className="bg-gray-700/30 text-gray-500 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner"
-                  title={player.name + " (Ainda não respondeu)"}
+                  animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                  className="bg-gray-700/30 text-gray-400 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner border-2 border-dashed border-gray-500/50"
+                  title={player.name + " (A pensar...)"}
                 >
                   {player.avatar || "..."}
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -270,11 +305,25 @@ export default function QuestionDisplay({
         <div className="h-12 sm:h-24"></div>
       )}
 
+      {/* Hotseat player indicator */}
+      {hotseatMode && currentHotseatPlayer && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-4 px-6 py-3 bg-[#FFD700]/20 border-2 border-[#FFD700]/40 rounded-full inline-flex items-center gap-3 mx-auto"
+        >
+          <span className="text-[#FFD700] text-sm font-bold uppercase tracking-widest">Vez de:</span>
+          <span className="text-white font-black text-lg">{currentHotseatPlayer}</span>
+        </motion.div>
+      )}
+
       {/* Question Text */}
       <motion.h2
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="text-4xl md:text-6xl font-black text-center text-white mb-12 leading-tight drop-shadow-lg"
+        aria-live="polite"
+        aria-atomic="true"
       >
         {question.text}
       </motion.h2>
@@ -284,14 +333,16 @@ export default function QuestionDisplay({
         {question.options.map((option: string, idx: number) => {
           const isCorrect = idx === question.correct_option;
           const isReveal = status === "REVEAL";
+          const showCorrect = isReveal && isCorrect && !blindMode;
+          const showWrong = isReveal && !isCorrect && !blindMode;
 
           return (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 50 }}
               animate={{
-                opacity: isReveal && !isCorrect ? 0.3 : 1,
-                scale: isReveal && isCorrect ? 1.05 : 1,
+                opacity: showCorrect || showWrong ? (isReveal && !isCorrect ? 0.3 : 1) : 1,
+                scale: showCorrect ? 1.05 : 1,
                 y: 0,
               }}
               transition={{ delay: idx * 0.1 }}
@@ -300,8 +351,8 @@ export default function QuestionDisplay({
                 glass-panel relative overflow-hidden
                 p-6 rounded-xl border-b-4 shadow-2xl transform transition-all
                 flex items-center gap-4
-                ${isReveal && isCorrect ? "border-green-400 shadow-[0_0_15px_rgba(74,222,128,0.3)]" : ""}
-                ${isReveal && !isCorrect ? "grayscale opacity-50" : ""}
+                ${showCorrect ? "border-green-400 shadow-[0_0_15px_rgba(74,222,128,0.3)]" : ""}
+                ${showWrong ? "grayscale opacity-50" : ""}
                 ${localMode && status === "QUESTION" ? "cursor-pointer hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-1 active:scale-95" : ""}
               `}
             >
@@ -314,7 +365,7 @@ export default function QuestionDisplay({
                   {option}
                 </span>
 
-                {isReveal && (
+                {isReveal && !blindMode && (
                   <div className="flex flex-wrap gap-4 mt-4 justify-start">
                     {answers
                       .filter((a) => Number(a.chosen_option) === idx)
@@ -342,7 +393,7 @@ export default function QuestionDisplay({
                 )}
               </div>
 
-              {isReveal && isCorrect && (
+              {showCorrect && (
                 <div className="absolute top-4 right-4 bg-white text-green-600 rounded-full p-2 shadow-lg z-10">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />
@@ -365,6 +416,20 @@ export default function QuestionDisplay({
             <span className="text-amber-300 text-sm font-bold uppercase tracking-widest">Dica</span>
           </div>
           <p className="text-amber-200/80 text-sm">{question.metadata?.hint as string}</p>
+        </motion.div>
+      )}
+
+      {/* Explanation on REVEAL */}
+      {status === "REVEAL" && (question.metadata?.explanation as string) && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-4 p-4 bg-[#d0bcff]/10 border border-[#d0bcff]/20 rounded-xl max-w-2xl"
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-[#d0bcff] text-sm font-bold uppercase tracking-widest">Explicação</span>
+          </div>
+          <p className="text-[#e3e0f9]/80 text-sm">{question.metadata?.explanation as string}</p>
         </motion.div>
       )}
 

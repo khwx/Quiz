@@ -484,6 +484,13 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
+                href="/play?solo=1"
+                className="flex items-center gap-3 px-8 py-4 bg-white/5 text-white font-semibold rounded-2xl border border-white/20 hover:bg-white/10 transition-all"
+              >
+                <Play className="w-5 h-5" />
+                Modo Solo
+              </Link>
+              <Link
                 href="/tutorial"
                 className="flex items-center gap-3 px-8 py-4 bg-white/5 text-white font-semibold rounded-2xl border border-white/20 hover:bg-white/10 transition-all"
               >

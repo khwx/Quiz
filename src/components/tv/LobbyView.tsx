@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
-import { Users, Play, Loader2, ArrowRight, Zap, GraduationCap } from "lucide-react";
+import { Users, Play, Loader2, ArrowRight, Zap, GraduationCap, Share2, Check } from "lucide-react";
 import { CATEGORIES } from "@/hooks/useGameSetup";
 import type { Player } from "@/types";
 
@@ -19,6 +20,9 @@ interface LobbyViewProps {
   isGenerating: boolean;
   status: string;
   usedCount: number;
+  buzzerMode?: boolean;
+  hotseatMode?: boolean;
+  hotseatPlayers?: string[];
   onTopicToggle: (topicName: string) => void;
   onTopicChange: (topics: string[]) => void;
   onCustomTopicChange: (value: string) => void;
@@ -26,6 +30,10 @@ interface LobbyViewProps {
   onTimerDurationChange: (seconds: number) => void;
   onQuestionCountChange: (count: number) => void;
   onLocalModeToggle: () => void;
+  onBuzzerModeToggle?: () => void;
+  onHotseatModeToggle?: () => void;
+  onHotseatPlayerAdd?: (name: string) => void;
+  onHotseatPlayerRemove?: (name: string) => void;
   onStart: () => void;
   onClearMemory: () => void;
 }
@@ -43,16 +51,38 @@ export default function LobbyView({
   isGenerating,
   status,
   usedCount,
-  onTopicToggle,
-  onTopicChange,
-  onCustomTopicChange,
+  buzzerMode = false,
+  hotseatMode = false,
+  hotseatPlayers = [],
+  onClearMemory,
   onAgeGroupChange,
   onTimerDurationChange,
   onQuestionCountChange,
   onLocalModeToggle,
+  onBuzzerModeToggle,
+  onHotseatModeToggle,
+  onHotseatPlayerAdd,
+  onHotseatPlayerRemove,
   onStart,
-  onClearMemory,
+  onTopicToggle,
+  onTopicChange,
+  onCustomTopicChange,
 }: LobbyViewProps) {
+  const [shared, setShared] = useState(false);
+  const [hotseatName, setHotseatName] = useState("");
+
+  const shareGame = async () => {
+    const url = `${typeof window !== "undefined" ? window.location.origin : "https://quizverse.app"}/play?pin=${pin}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "QuizVerse", text: `Entra no jogo com o PIN ${pin}`, url });
+      } catch {}
+    } else {
+      await navigator.clipboard.writeText(url);
+      setShared(true);
+      setTimeout(() => setShared(false), 2000);
+    }
+  };
   return (
     <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start relative">
       {usedCount > 0 && (
@@ -102,6 +132,13 @@ export default function LobbyView({
             size={180}
             level="H"
           />
+          <button
+            onClick={shareGame}
+            className="absolute -bottom-3 -right-3 p-3 bg-[#d0bcff] hover:bg-[#d0bcff]/80 rounded-full text-[#121223] shadow-lg transition-colors"
+            title="Partilhar convite"
+          >
+            {shared ? <Check className="w-5 h-5" /> : <Share2 className="w-5 h-5" />}
+          </button>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -285,28 +322,128 @@ export default function LobbyView({
               </div>
             </div>
 
-            {/* LOCAL MODE TOGGLE */}
-            <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                  <span className="text-xl">👆</span>
-                </div>
-                <div>
-                  <div className="font-bold text-white">Modo Local</div>
-                  <div className="text-xs text-gray-400">Responde no ecran</div>
-                </div>
-              </div>
-              <button
-                onClick={onLocalModeToggle}
-                className={`w-14 h-8 rounded-full transition-all ${localMode ? "bg-green-500" : "bg-gray-600"}`}
-              >
-                <div
-                  className={`w-6 h-6 bg-white rounded-full shadow transform transition-transform ${
-                    localMode ? "translate-x-7" : "translate-x-1"
-                  }`}
-                />
-              </button>
-            </div>
+             {/* LOCAL MODE TOGGLE */}
+             <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/10">
+               <div className="flex items-center gap-3">
+                 <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                   <span className="text-xl">👆</span>
+                 </div>
+                 <div>
+                   <div className="font-bold text-white">Modo Local</div>
+                   <div className="text-xs text-gray-400">Responde no ecran</div>
+                 </div>
+               </div>
+               <button
+                 onClick={onLocalModeToggle}
+                 className={`w-14 h-8 rounded-full transition-all ${localMode ? "bg-green-500" : "bg-gray-600"}`}
+               >
+                 <div
+                   className={`w-6 h-6 bg-white rounded-full shadow transform transition-transform ${
+                     localMode ? "translate-x-7" : "translate-x-1"
+                   }`}
+                 />
+               </button>
+             </div>
+
+             {/* BUZZER MODE TOGGLE */}
+             {onBuzzerModeToggle && (
+               <div className="flex items-center justify-between bg-white/5 rounded-xl p-4 border border-white/10">
+                 <div className="flex items-center gap-3">
+                   <div className="w-10 h-10 rounded-full bg-[#FFD700]/20 flex items-center justify-center">
+                     <Zap className="w-5 h-5 text-[#FFD700]" />
+                   </div>
+                   <div>
+                     <div className="font-bold text-white">Modo Buzzer</div>
+                     <div className="text-xs text-gray-400">Primeiro a responder ganha</div>
+                   </div>
+                 </div>
+                 <button
+                   onClick={onBuzzerModeToggle}
+                   className={`w-14 h-8 rounded-full transition-all ${buzzerMode ? "bg-[#FFD700]" : "bg-gray-600"}`}
+                 >
+                   <div
+                     className={`w-6 h-6 bg-white rounded-full shadow transform transition-transform ${
+                       buzzerMode ? "translate-x-7" : "translate-x-1"
+                     }`}
+                   />
+                 </button>
+               </div>
+             )}
+
+             {/* HOTSEAT MODE TOGGLE */}
+             {onHotseatModeToggle && (
+               <div className="flex flex-col gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                 <div className="flex items-center justify-between">
+                   <div className="flex items-center gap-3">
+                     <div className="w-10 h-10 rounded-full bg-[#FF6B6B]/20 flex items-center justify-center">
+                       <Users className="w-5 h-5 text-[#FF6B6B]" />
+                     </div>
+                     <div>
+                       <div className="font-bold text-white">Modo Hotseat</div>
+                       <div className="text-xs text-gray-400">Passa o dispositivo entre jogadores</div>
+                     </div>
+                   </div>
+                   <button
+                     onClick={onHotseatModeToggle}
+                     className={`w-14 h-8 rounded-full transition-all ${hotseatMode ? "bg-[#FF6B6B]" : "bg-gray-600"}`}
+                   >
+                     <div
+                       className={`w-6 h-6 bg-white rounded-full shadow transform transition-transform ${
+                         hotseatMode ? "translate-x-7" : "translate-x-1"
+                       }`}
+                     />
+                   </button>
+                 </div>
+                 {hotseatMode && (
+                   <div className="flex flex-col gap-2">
+                     <div className="flex gap-2">
+                       <input
+                         type="text"
+                         placeholder="Nome do jogador..."
+                         value={hotseatName}
+                         onChange={(e) => setHotseatName(e.target.value)}
+                         onKeyDown={(e) => {
+                           if (e.key === "Enter" && hotseatName.trim() && onHotseatPlayerAdd) {
+                             onHotseatPlayerAdd(hotseatName.trim());
+                             setHotseatName("");
+                           }
+                         }}
+                         className="flex-1 bg-black/20 border border-white/10 rounded-xl px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF6B6B] transition-colors"
+                       />
+                       <button
+                         onClick={() => {
+                           if (hotseatName.trim() && onHotseatPlayerAdd) {
+                             onHotseatPlayerAdd(hotseatName.trim());
+                             setHotseatName("");
+                           }
+                         }}
+                         className="px-4 py-2 bg-[#FF6B6B] text-white rounded-xl font-bold text-sm"
+                       >
+                         Adicionar
+                       </button>
+                     </div>
+                     {hotseatPlayers.length > 0 && (
+                       <div className="flex flex-wrap gap-2">
+                         {hotseatPlayers.map((name, idx) => (
+                           <span
+                             key={idx}
+                             className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-sm text-white"
+                           >
+                             {name}
+                             <button
+                               onClick={() => onHotseatPlayerRemove?.(name)}
+                               className="text-white/40 hover:text-white text-xs"
+                             >
+                               ×
+                             </button>
+                           </span>
+                         ))}
+                       </div>
+                     )}
+                   </div>
+                 )}
+               </div>
+             )}
 
             <button
               onClick={onStart}

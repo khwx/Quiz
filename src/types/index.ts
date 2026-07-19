@@ -13,6 +13,8 @@ export interface Profile {
   role: UserRole;
   email?: string;
   bio?: string;
+  xp: number;
+  level: number;
   total_games: number;
   total_wins: number;
   total_points: number;
@@ -22,7 +24,7 @@ export interface Profile {
 
 // --- Games ---
 
-export type GameStatus = "LOBBY" | "QUESTION" | "REVEAL" | "PODIUM" | "FINISHED";
+export type GameStatus = "LOBBY" | "STARTING" | "QUESTION" | "REVEAL" | "LEADERBOARD" | "FINAL" | "PODIUM";
 
 export interface GameSettings {
   language?: string;
@@ -36,6 +38,9 @@ export interface GameSettings {
   question_ids?: string[];
   current_question_id?: string;
   current_correct_option?: number;
+  buzzer_mode?: boolean;
+  hotseat_mode?: boolean;
+  hotseat_players?: string[];
 }
 
 export interface Game {
@@ -61,6 +66,14 @@ export interface Player {
   is_host: boolean;
   user_id?: string;
   joined_at: string;
+  lives?: number;
+  eliminated?: boolean;
+  team_members?: Array<{
+    team_id: string;
+    user_id?: string;
+    role?: string;
+    profiles?: { username?: string; avatar?: string };
+  }>;
 }
 
 // --- Questions ---
@@ -72,10 +85,12 @@ export interface Question {
   options: string[];
   correct_option?: number;
   category?: string;
+  difficulty?: number;
   age_rating?: number;
   country_code?: string;
   metadata?: Record<string, unknown>;
   hint?: string;
+  explanation?: string;
   created_at?: string;
 }
 
@@ -130,6 +145,7 @@ export type TournamentStatus = "LOBBY" | "QUALIFYING" | "FINAL" | "FINISHED";
 export interface TournamentSettings {
   timer?: number;
   questions?: number;
+  blind_mode?: boolean;
 }
 
 export interface Tournament {

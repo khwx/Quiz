@@ -31,6 +31,7 @@ export default function RevealView({
   const hasNoSelection = selectedOption === null;
   const correctText = questionData?.options?.[correctOption ?? -1];
   const hint = questionData?.metadata?.hint as string | undefined;
+  const explanation = questionData?.metadata?.explanation as string | undefined;
 
   return (
     <main
@@ -87,6 +88,17 @@ export default function RevealView({
               <span className="text-[#FFD700] text-xs font-bold uppercase">Dica</span>
             </div>
             <p className="text-[#e3e0f9]/70 text-sm">{hint}</p>
+          </div>
+        )}
+
+        {/* Show explanation on reveal */}
+        {explanation && (
+          <div className="mt-3 p-3 bg-[#d0bcff]/10 rounded-xl border border-[#d0bcff]/20 max-w-sm">
+            <div className="flex items-center gap-2 mb-1">
+              <Lightbulb className="w-4 h-4 text-[#d0bcff]" />
+              <span className="text-[#d0bcff] text-xs font-bold uppercase">Explicação</span>
+            </div>
+            <p className="text-[#e3e0f9]/70 text-sm">{explanation}</p>
           </div>
         )}
 

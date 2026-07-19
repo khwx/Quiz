@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,12 +13,8 @@ import {
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
-
-interface QuickStats {
-  accuracy: number;
-  missionsCompleted: number;
-  flightTime: string;
-}
+import ToastContainer from "@/components/Toast";
+import { useToast } from "@/hooks/useToast";
 
 interface CategoryStat {
   name: string;
@@ -37,23 +33,11 @@ interface Achievement {
   unlocked: boolean;
 }
 
-const categories: CategoryStat[] = [
-  { name: "Cultura Geral", icon: "🌍", accuracy: 88, color: "primary" },
-  { name: "História", icon: "📜", accuracy: 76, color: "secondary" },
-  { name: "Ciência", icon: "🔬", accuracy: 92, color: "tertiary" },
-  { name: "Geografia", icon: "🗺️", accuracy: 84, color: "primary" },
-  { name: "Tecnologia", icon: "💻", accuracy: 95, color: "secondary" },
-  { name: "Desporto", icon: "⚽", accuracy: 72, color: "tertiary" },
-];
-
-const achievements: Achievement[] = [
-  { id: 1, name: "Primeiro Voo", icon: "🚀", description: "Completa a tua primeira missão", progress: 1, target: 1, unlocked: true },
-  { id: 2, name: "Explorador", icon: "🔭", description: "Joga 10 missões", progress: 7, target: 10, unlocked: false },
-  { id: 3, name: "Mestre do Conhecimento", icon: "🧠", description: "Alcança 90% de precisão", progress: 85, target: 90, unlocked: false },
-  { id: 4, name: "Velocista Estelar", icon: "⚡", description: "Responde em menos de 5 segundos", progress: 3, target: 5, unlocked: false },
-  { id: 5, name: "Colecionador", icon: "🎯", description: "Joga todas as categorias", progress: 4, target: 6, unlocked: false },
-  { id: 6, name: "Lenda Cósmica", icon: "👑", description: "Alcança o nível 50", progress: 23, target: 50, unlocked: false },
-];
+interface QuickStats {
+  accuracy: number;
+  missionsCompleted: number;
+  flightTime: string;
+}
 
 // Simple SVG chart component
 function AccuracyChart({ data }: { data: number[] }) {
@@ -135,6 +119,7 @@ function AccuracyChart({ data }: { data: number[] }) {
 
 export default function StatsPage() {
   const router = useRouter();
+  const { toasts, show: showToast, dismiss } = useToast();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<import("@supabase/supabase-js").User | null>(null);
   const [quickStats, setQuickStats] = useState<QuickStats>({
@@ -143,6 +128,16 @@ export default function StatsPage() {
     flightTime: "0h 0m",
   });
   const [chartData, setChartData] = useState<number[]>([]);
+  const [categoryStats, setCategoryStats] = useState<CategoryStat[]>([]);
+  const [achievements, setAchievements] = useState<Achievement[]>([]);
+
+  const sortedCategories = useMemo(() => {
+    return [...categoryStats].sort((a, b) => b.accuracy - a.accuracy);
+  }, [categoryStats]);
+
+  const sortedAchievements = useMemo(() => {
+    return [...achievements].sort((a, b) => Number(b.unlocked) - Number(a.unlocked));
+  }, [achievements]);
 
   useEffect(() => {
     loadStats();
@@ -159,7 +154,6 @@ export default function StatsPage() {
 
       setUser(currentUser);
 
-      // Fetch user's answers
       const { data: players } = await supabase
         .from("players")
         .select("id")
@@ -170,7 +164,7 @@ export default function StatsPage() {
       if (playerIds.length > 0) {
         const { data: answers } = await supabase
           .from("answers")
-          .select("game_id, is_correct, points, created_at")
+          .select("game_id, is_correct, points, created_at, question_id")
           .in("player_id", playerIds)
           .order("created_at", { ascending: false });
 
@@ -179,16 +173,102 @@ export default function StatsPage() {
         const correctAnswers = userAnswers.filter(a => a.is_correct).length;
         const totalGames = new Set(userAnswers.map(a => a.game_id)).size;
         
-        // Calculate accuracy
         const accuracy = totalAnswers > 0 
           ? Math.round((correctAnswers / totalAnswers) * 100) 
           : 0;
 
-        // Generate chart data (simulated last 7 missions)
-        const chartValues = Array.from({ length: 7 }, (_, i) => {
-          const base = accuracy;
-          return Math.min(100, Math.max(50, base + (Math.random() - 0.5) * 20));
+        const chartValues = userAnswers.slice(0, 7).reverse().map((a) => a.is_correct ? 80 + Math.min(20, (a.points || 0) / 50) : 20 + Math.random() * 20);
+
+        // Fetch categories from questions linked to answers
+        const questionIds = userAnswers.map(a => a.question_id).filter(Boolean);
+        const { data: questions } = await supabase
+          .from("questions")
+          .select("id, category")
+          .in("id", questionIds);
+
+        const questionCategoryMap = new Map((questions || []).map(q => [q.id, q.category]));
+        const categoryStatsMap = new Map<string, { correct: number; total: number }>();
+        
+        userAnswers.forEach(a => {
+          const cat = questionCategoryMap.get(a.question_id) || "Outros";
+          const entry = categoryStatsMap.get(cat) || { correct: 0, total: 0 };
+          entry.total += 1;
+          if (a.is_correct) entry.correct += 1;
+          categoryStatsMap.set(cat, entry);
         });
+
+        const categoriesData: CategoryStat[] = Array.from(categoryStatsMap.entries())
+          .map(([name, stats]) => ({
+            name,
+            icon: "📝",
+            accuracy: stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0,
+            color: "primary",
+          }))
+          .sort((a, b) => b.accuracy - a.accuracy)
+          .slice(0, 6);
+
+        setCategoryStats(categoriesData);
+
+        // Real achievements based on data
+        const uniqueCategories = categoryStatsMap.size;
+        const unlockedAchievements: Achievement[] = [
+          {
+            id: 1,
+            name: "Primeiro Voo",
+            icon: "🚀",
+            description: "Completa a tua primeira missão",
+            progress: Math.min(totalGames, 1),
+            target: 1,
+            unlocked: totalGames >= 1,
+          },
+          {
+            id: 2,
+            name: "Explorador",
+            icon: "🔭",
+            description: "Joga 10 missões",
+            progress: Math.min(totalGames, 10),
+            target: 10,
+            unlocked: totalGames >= 10,
+          },
+          {
+            id: 3,
+            name: "Mestre do Conhecimento",
+            icon: "🧠",
+            description: "Alcança 90% de precisão",
+            progress: Math.min(accuracy, 90),
+            target: 90,
+            unlocked: accuracy >= 90,
+          },
+          {
+            id: 4,
+            name: "Colecionador",
+            icon: "🎯",
+            description: `Joga ${Math.max(uniqueCategories, 6)} categorias`,
+            progress: Math.min(uniqueCategories, 6),
+            target: 6,
+            unlocked: uniqueCategories >= 6,
+          },
+          {
+            id: 5,
+            name: "Dedicado",
+            icon: "🔥",
+            description: "Responde a 100 perguntas",
+            progress: Math.min(totalAnswers, 100),
+            target: 100,
+            unlocked: totalAnswers >= 100,
+          },
+          {
+            id: 6,
+            name: "Lenda Cósmica",
+            icon: "👑",
+            description: "Alcança 100% de precisão",
+            progress: accuracy,
+            target: 100,
+            unlocked: accuracy === 100 && totalAnswers > 0,
+          },
+        ];
+
+        setAchievements(unlockedAchievements);
 
         setQuickStats({
           accuracy,
@@ -197,8 +277,8 @@ export default function StatsPage() {
         });
         setChartData(chartValues);
       }
-    } catch (error) {
-      console.error("Error loading stats:", error);
+    } catch {
+      showToast("Erro ao carregar estatísticas.", "error");
     } finally {
       setLoading(false);
     }
@@ -343,7 +423,7 @@ export default function StatsPage() {
           </h3>
           
           <div className="glass-panel rounded-xl p-4 space-y-4">
-            {categories.map((cat, i) => (
+            {sortedCategories.map((cat, i) => (
               <motion.div
                 key={cat.name}
                 initial={{ opacity: 0, x: -20 }}
@@ -370,6 +450,11 @@ export default function StatsPage() {
                 </div>
               </motion.div>
             ))}
+            {categoryStats.length === 0 && (
+              <p className="text-on-surface-variant/50 text-sm text-center py-4">
+                Joga para veres as tuas categorias
+              </p>
+            )}
           </div>
         </motion.section>
 
@@ -385,7 +470,7 @@ export default function StatsPage() {
           </h3>
 
           <div className="grid grid-cols-2 gap-3">
-            {achievements.map((achievement, i) => (
+            {sortedAchievements.map((achievement, i) => (
               <motion.div
                 key={achievement.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -436,6 +521,7 @@ export default function StatsPage() {
       </main>
 
       <MobileNav />
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
       <div className="h-20 md:hidden" />
 
       {/* Background effects */}

@@ -40,37 +40,8 @@ export function useAnswerSubscription() {
       )
       .subscribe(() => {});
 
-    const pollInterval = setInterval(async () => {
-      const questionIds = currentQuestionIdsRef.current;
-      if (questionIds.length === 0) return;
-
-      const { data: polledAnswers, error } = await supabase
-        .from("answers")
-        .select("*")
-        .eq("game_id", gameId)
-        .in("question_id", questionIds);
-
-      if (error) {
-        console.error("❌ Polling Error:", error);
-        return;
-      }
-
-      if (polledAnswers && polledAnswers.length > 0) {
-        setCurrentAnswers((prev) => {
-          const newAnswers = polledAnswers.filter(
-            (pa) => !prev.some((existing) => existing.id === pa.id)
-          );
-          if (newAnswers.length > 0) {
-            return [...prev, ...newAnswers];
-          }
-          return prev;
-        });
-      }
-    }, 1500);
-
     return () => {
       supabase.removeChannel(channel);
-      clearInterval(pollInterval);
     };
   }, [gameId]);
 
