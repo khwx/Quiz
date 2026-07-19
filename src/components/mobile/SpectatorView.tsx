@@ -1,7 +1,6 @@
 "use client";
 
 import { useGame } from "@/context/GameContext";
-import { useSound } from "@/hooks/useSound";
 import { supabase } from "@/lib/supabase";
 import { GAME_CONSTANTS } from "@/lib/constants";
 import { useEffect, useState, useCallback } from "react";
@@ -12,9 +11,8 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
   const { gameId, status, currentQuestionIndex, players, gameSettings, joinSpectator } = useGame();
   const [questionData, setQuestionData] = useState<Question | null>(null);
   const [answers, setAnswers] = useState<Answer[]>([]);
-  const [timeLeft, setTimeLeft] = useState(GAME_CONSTANTS.DEFAULT_TIMER);
+  const [timeLeft, setTimeLeft] = useState<number>(GAME_CONSTANTS.DEFAULT_TIMER);
   const [correctOption, setCorrectOption] = useState<number | null>(null);
-  const { playSound } = useSound();
 
   useEffect(() => {
     if (!gameId) return;
@@ -37,10 +35,19 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
 
   useEffect(() => {
     if (status === "QUESTION") {
-      fetchQuestion();
-      setTimeLeft(gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER);
+      (async () => {
+        await fetchQuestion();
+      })();
     }
   }, [status, currentQuestionIndex, fetchQuestion, gameSettings]);
+
+  useEffect(() => {
+    if (status === "QUESTION") {
+      setTimeout(() => {
+        setTimeLeft(gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER);
+      }, 0);
+    }
+  }, [status, currentQuestionIndex, gameSettings]);
 
   useEffect(() => {
     if (status === "QUESTION" && gameId) {
@@ -117,7 +124,6 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
     return undefined;
   };
 
-  const timerDuration = gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER;
   const currentQid = gameSettings?.current_question_id || gameSettings?.question_ids?.[currentQuestionIndex - 1];
   const questionAnswers = answers.filter((a) => String(a.question_id) === String(currentQid));
 
@@ -217,21 +223,21 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
                 {questionData.options.map((opt, idx) => {
                   const answerCount = questionAnswers.filter((a) => a.chosen_option === idx).length;
                   const isCorrect = idx === correctOption;
-                  const hasReveal = status === "REVEAL";
+                  const showResults = correctOption !== null;
                   return (
                     <div
                       key={idx}
                       className={`p-3 rounded-xl text-sm font-medium transition-all ${
-                        hasReveal && isCorrect
+                        showResults && isCorrect
                           ? "bg-green-500/20 border-2 border-green-500/50 text-green-300"
-                          : hasReveal && answerCount > 0
+                          : showResults && answerCount > 0
                             ? "bg-white/5 border border-white/10 text-white/60"
                             : "bg-white/5 border border-white/10 text-white/40"
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <span>{opt}</span>
-                        {hasReveal && answerCount > 0 && (
+                        {showResults && answerCount > 0 && (
                           <span className="text-xs font-bold">{answerCount}</span>
                         )}
                       </div>

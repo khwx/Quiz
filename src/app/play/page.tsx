@@ -71,24 +71,37 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     }
   };
 
-  const handleSpectatorJoin = async () => {
-    if (!spectatorPin) return;
-    setIsSpectatorJoining(true);
-    try {
-      const { data, error: pinError } = await supabase.from("games").select("id").eq("pin", spectatorPin).single();
-      if (pinError || !data) {
-        showToast("Pin inválido ou jogo não encontrado!", "error");
-        return;
-      }
-      await joinSpectator(data.id);
-      setHasJoined(true);
-    } catch (err: any) {
-      console.error("Erro ao entrar como espectador:", err);
-      showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
-    } finally {
-      setIsSpectatorJoining(false);
+   const handleSpectatorJoin = async () => {
+     if (!spectatorPin) return;
+     setIsSpectatorJoining(true);
+     try {
+       const { data, error: pinError } = await supabase.from("games").select("id").eq("pin", spectatorPin).single();
+       if (pinError || !data) {
+         showToast("Pin inválido ou jogo não encontrado!", "error");
+         return;
+       }
+       await joinSpectator(data.id);
+       setHasJoined(true);
+     } catch (err: any) {
+       console.error("Erro ao entrar como espectador:", err);
+       showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
+     } finally {
+       setIsSpectatorJoining(false);
+     }
+   };
+
+  const fetchQuestion = useCallback(async () => {
+    if (!currentQuestionId) return;
+    const { data } = await supabase
+      .from("questions")
+      .select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty")
+      .eq("id", currentQuestionId)
+      .single();
+    if (data) {
+      setQuestionData(data);
+      setShowHint(false);
     }
-  };
+  }, [currentQuestionId]);
 
   const handleLeave = async () => {
     if (gameId) {
@@ -150,25 +163,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       }
     }
   }, [correctOption, selectedOption, playSound, startTime]);
-
-  const handleJoin = async () => {
-    if (!pin || !name) return;
-    setIsJoining(true);
-    try {
-      const { data, error: pinError } = await supabase.from("games").select("id").eq("pin", pin).single();
-      if (pinError || !data) {
-        showToast("Pin inválido ou jogo não encontrado!", "error");
-        return;
-      }
-      await joinGame(data.id, name);
-      setHasJoined(true);
-    } catch (err: any) {
-      console.error("Erro ao entrar:", err);
-      showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
-    } finally {
-      setIsJoining(false);
-    }
-  };
 
   const handleAnswer = async (index: number) => {
     if (submittingRef.current) return;
