@@ -234,3 +234,24 @@ export interface PlayerStats {
   accuracy: number;
   wins: number;
 }
+
+// --- Power-ups ---
+
+export type PowerUpType = "fifty_fifty" | "skip" | "extra_hint" | "double_points" | "guarantee";
+
+export interface PowerUp {
+  type: PowerUpType;
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
+  used: boolean;
+}
+
+export interface PowerUpInventory {
+  fifty_fifty: boolean;
+  skip: boolean;
+  extra_hint: boolean;
+  double_points: boolean;
+  guarantee: boolean;
+}
