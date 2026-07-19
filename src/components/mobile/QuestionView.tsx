@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Flag, Lightbulb, Image as ImageIcon, Heart, Zap, SkipForward, Shield, Sparkles } from "lucide-react";
+import { Clock, Flag, Lightbulb, Image as ImageIcon, Heart, Zap } from "lucide-react";
 import StreakBadge from "@/components/mobile/StreakBadge";
 import type { Question } from "@/types";
 
@@ -21,15 +21,6 @@ interface QuestionViewProps {
   fiftyFiftyUsed?: boolean;
   eliminatedOptions?: number[];
   buzzerMode?: boolean;
-  onSkip?: () => void;
-  skipUsed?: boolean;
-  onExtraHint?: () => void;
-  extraHintUsed?: boolean;
-  onDoublePoints?: () => void;
-  doublePointsUsed?: boolean;
-  onGuarantee?: () => void;
-  guaranteeUsed?: boolean;
-  doublePointsActive?: boolean;
 }
 
 const optionColors = [
@@ -55,15 +46,6 @@ export default function QuestionView({
   fiftyFiftyUsed = false,
   eliminatedOptions = [],
   buzzerMode = false,
-  onSkip,
-  skipUsed = false,
-  onExtraHint,
-  extraHintUsed = false,
-  onDoublePoints,
-  doublePointsUsed = false,
-  onGuarantee,
-  guaranteeUsed = false,
-  doublePointsActive = false,
 }: QuestionViewProps) {
   const hint = questionData?.metadata?.hint as string | undefined;
   const [showHint, setShowHint] = useState(false);
@@ -159,61 +141,16 @@ export default function QuestionView({
         </div>
       )}
 
-      {/* Power-ups bar */}
-      {!hasAnswered && (
-        <div className="flex justify-center gap-2 px-4 mb-3">
-          {onFiftyFifty && !fiftyFiftyUsed && (
-            <button
-              onClick={onFiftyFifty}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#d0bcff]/10 hover:bg-[#d0bcff]/20 text-[#d0bcff] rounded-full text-xs font-bold transition-colors border border-[#d0bcff]/20"
-            >
-              <Zap className="w-3.5 h-3.5" />
-              50:50
-            </button>
-          )}
-          {onSkip && !skipUsed && (
-            <button
-              onClick={onSkip}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 text-[#FF6B6B] rounded-full text-xs font-bold transition-colors border border-[#FF6B6B]/20"
-            >
-              <SkipForward className="w-3.5 h-3.5" />
-              Pular
-            </button>
-          )}
-          {onExtraHint && !extraHintUsed && (
-            <button
-              onClick={onExtraHint}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FFB0CD]/10 hover:bg-[#FFB0CD]/20 text-[#FFB0CD] rounded-full text-xs font-bold transition-colors border border-[#FFB0CD]/20"
-            >
-              <Lightbulb className="w-3.5 h-3.5" />
-              Dica+
-            </button>
-          )}
-          {onDoublePoints && !doublePointsUsed && (
-            <button
-              onClick={onDoublePoints}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FFD700]/10 hover:bg-[#FFD700]/20 text-[#FFD700] rounded-full text-xs font-bold transition-colors border border-[#FFD700]/20"
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              x2
-            </button>
-          )}
-          {onGuarantee && !guaranteeUsed && (
-            <button
-              onClick={onGuarantee}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#4CAF50]/10 hover:bg-[#4CAF50]/20 text-[#4CAF50] rounded-full text-xs font-bold transition-colors border border-[#4CAF50]/20"
-            >
-              <Shield className="w-3.5 h-3.5" />
-              Garantir
-            </button>
-          )}
-        </div>
-      )}
-      {doublePointsActive && !hasAnswered && (
-        <div className="flex justify-center mb-2">
-          <span className="px-3 py-1 bg-[#FFD700]/20 rounded-full text-xs font-bold text-[#FFD700] border border-[#FFD700]/30">
-            x2 Pontos Ativo!
-          </span>
+      {/* 50:50 Power-up */}
+      {onFiftyFifty && !fiftyFiftyUsed && !hasAnswered && (
+        <div className="flex justify-center mb-3">
+          <button
+            onClick={onFiftyFifty}
+            className="flex items-center gap-2 px-4 py-2 bg-[#d0bcff]/10 hover:bg-[#d0bcff]/20 text-[#d0bcff] rounded-full text-sm transition-colors border border-[#d0bcff]/20"
+          >
+            <Zap className="w-4 h-4" />
+            50:50
+          </button>
         </div>
       )}
 

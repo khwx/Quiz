@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Validação falhou", details: validationErrors }, { status: 400 });
     }
 
-    const { gameId, playerId, questionId, chosenOption, timeTaken, doublePoints } = payload;
+    const { gameId, playerId, questionId, chosenOption, timeTaken } = payload;
 
     const { data: game, error: gameError } = await supabase
       .from("games")
@@ -78,9 +78,6 @@ export async function POST(req: NextRequest) {
         basePoints += 200;
       } else if (buzzerMode && !isBuzzer) {
         basePoints = 0;
-      }
-      if (doublePoints) {
-        basePoints *= 2;
       }
       points = basePoints;
     }

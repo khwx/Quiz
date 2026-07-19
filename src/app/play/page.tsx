@@ -42,12 +42,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [questionLoadError, setQuestionLoadError] = useState(false);
   const [fiftyFiftyUsed, setFiftyFiftyUsed] = useState(false);
   const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
-  const [skipUsed, setSkipUsed] = useState(false);
-  const [extraHintUsed, setExtraHintUsed] = useState(false);
-  const [doublePointsUsed, setDoublePointsUsed] = useState(false);
-  const [guaranteeUsed, setGuaranteeUsed] = useState(false);
-  const [doublePointsActive, setDoublePointsActive] = useState(false);
-  const [guaranteeActive, setGuaranteeActive] = useState(false);
   const submittingRef = useRef(false);
   const clientPlayerId = `guest-${Math.random().toString(36).slice(2, 9)}`;
 
@@ -151,20 +145,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }, [status, currentQuestionId, gameId]);
 
   useEffect(() => {
-    if (status === "QUESTION") {
-      setFiftyFiftyUsed(false);
-      setEliminatedOptions([]);
-      setSkipUsed(false);
-      setExtraHintUsed(false);
-      setDoublePointsUsed(false);
-      setGuaranteeUsed(false);
-      setDoublePointsActive(false);
-      setGuaranteeActive(false);
-      setShowHint(false);
-    }
-  }, [status, currentQuestionIndex]);
-
-  useEffect(() => {
     if (correctOption !== null && selectedOption !== null) {
     if (selectedOption === correctOption) {
       const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
@@ -216,16 +196,10 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           questionId: currentQuestionId,
           chosenOption: index,
           timeTaken,
-          doublePoints: doublePointsActive,
         }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
-      
-      if (doublePointsActive) {
-        setDoublePointsActive(false);
-        showToast("Pontos duplicados aplicados!", "success");
-      }
       
       if (data.eliminated) {
         showToast("Ficaste sem vidas! Estás eliminado!", "error");
@@ -253,44 +227,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     setFiftyFiftyUsed(true);
     playSound?.("tick");
   }, [fiftyFiftyUsed, questionData, correctOption, playSound]);
-
-  const handleSkip = useCallback(() => {
-    if (skipUsed || hasAnswered) return;
-    setSkipUsed(true);
-    playSound?.("tick");
-    showToast("Pergunta pulada!", "info");
-    setTimeout(() => {
-      handleAnswer(-1);
-    }, 500);
-  }, [skipUsed, hasAnswered, playSound, showToast]);
-
-  const handleExtraHint = useCallback(() => {
-    if (extraHintUsed || hasAnswered) return;
-    setExtraHintUsed(true);
-    setShowHint(true);
-    playSound?.("tick");
-    showToast("Dica extra ativada!", "success");
-  }, [extraHintUsed, hasAnswered, playSound, showToast]);
-
-  const handleDoublePoints = useCallback(() => {
-    if (doublePointsUsed || hasAnswered) return;
-    setDoublePointsUsed(true);
-    setDoublePointsActive(true);
-    playSound?.("tick");
-    showToast("Pontos duplicados ativados!", "success");
-  }, [doublePointsUsed, hasAnswered, playSound, showToast]);
-
-  const handleGuarantee = useCallback(() => {
-    if (guaranteeUsed || hasAnswered || !questionData) return;
-    setGuaranteeUsed(true);
-    setGuaranteeActive(true);
-    const correctIdx = questionData.correct_option;
-    if (correctIdx != null) {
-      handleAnswer(correctIdx);
-    }
-    playSound?.("tick");
-    showToast("Resposta garantida ativada!", "success");
-  }, [guaranteeUsed, hasAnswered, questionData, playSound, showToast, handleAnswer]);
 
   const handleReport = async (reason: string) => {
     if (!currentQuestionId) return;
@@ -447,15 +383,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           fiftyFiftyUsed={fiftyFiftyUsed}
           eliminatedOptions={eliminatedOptions}
           buzzerMode={gameSettings?.buzzer_mode === true}
-          onSkip={handleSkip}
-          skipUsed={skipUsed}
-          onExtraHint={handleExtraHint}
-          extraHintUsed={extraHintUsed}
-          onDoublePoints={handleDoublePoints}
-          doublePointsUsed={doublePointsUsed}
-          onGuarantee={handleGuarantee}
-          guaranteeUsed={guaranteeUsed}
-          doublePointsActive={doublePointsActive}
         />
         <MobileChat gameId={gameId!} playerId={currentPlayer?.id || clientPlayerId} playerName={name} />
         <ReactionBar gameId={gameId!} playerName={name} />

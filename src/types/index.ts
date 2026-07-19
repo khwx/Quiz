@@ -31,7 +31,7 @@ export interface GameSettings {
   mode?: string;
   timer?: number;
   timer_duration?: number;
-  topic?: string | string[];
+  topic?: string;
   question_count?: number;
   round?: number;
   age_group?: string;
@@ -233,25 +233,4 @@ export interface PlayerStats {
   totalPoints: number;
   accuracy: number;
   wins: number;
-}
-
-// --- Power-ups ---
-
-export type PowerUpType = "fifty_fifty" | "skip" | "extra_hint" | "double_points" | "guarantee";
-
-export interface PowerUp {
-  type: PowerUpType;
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  used: boolean;
-}
-
-export interface PowerUpInventory {
-  fifty_fifty: boolean;
-  skip: boolean;
-  extra_hint: boolean;
-  double_points: boolean;
-  guarantee: boolean;
 }

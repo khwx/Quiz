@@ -1,4 +1,5 @@
 import { useCallback, useRef, useEffect, useState } from 'react';
+import { createAudioContext } from '@/lib/audio';
 
 type SoundType = 'tick' | 'correct' | 'wrong' | 'win' | 'streak' | 'lose_life';
 
@@ -10,11 +11,11 @@ export function useSound() {
 
     const unlockAudio = useCallback(() => {
         try {
-            audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-            if (audioContextRef.current?.state === 'suspended') {
-                audioContextRef.current.resume();
+            const ctx = createAudioContext();
+            if (ctx) {
+                audioContextRef.current = ctx;
+                setSoundEnabled(true);
             }
-            setSoundEnabled(true);
         } catch (e) {
             // Silent fail
         }
@@ -34,9 +35,9 @@ export function useSound() {
 
     const getAudioContext = useCallback(() => {
         if (!audioContextRef.current) {
-            audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+            audioContextRef.current = createAudioContext();
         }
-        if (audioContextRef.current.state === 'suspended') {
+        if (audioContextRef.current && audioContextRef.current.state === 'suspended') {
             audioContextRef.current.resume();
         }
         return audioContextRef.current;

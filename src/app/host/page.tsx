@@ -1,76 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
-import { Play, ArrowRight, Trophy, Users, RefreshCw, Monitor, Rocket, Wifi, Gamepad2, Share2, Clock, HelpCircle, Zap, Settings, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { Play, ArrowRight, Trophy, Users, RefreshCw, Monitor, Rocket, Wifi, Gamepad2, Share2, Clock, HelpCircle, Zap, Settings, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface GameTemplate {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  config: {
-    categories?: string[];
-    timer?: number;
-    questionCount?: number;
-    buzzerMode?: boolean;
-    hotseatMode?: boolean;
-  };
-}
-
-const DEFAULT_TEMPLATES: GameTemplate[] = [
-  {
-    id: "rapido",
-    name: "Rápido",
-    description: "5 perguntas, 15s, Cultura Geral",
-    icon: "⚡",
-    color: "#FFD700",
-    config: { categories: ["Cultura Geral"], timer: 15, questionCount: 5 },
-  },
-  {
-    id: "classico",
-    name: "Clássico",
-    description: "10 perguntas, 20s, todas categorias",
-    icon: "🎯",
-    color: "#d0bcff",
-    config: { timer: 20, questionCount: 10 },
-  },
-  {
-    id: "party",
-    name: "Party",
-    description: "8 perguntas, 20s, Modo Buzzer",
-    icon: "🎉",
-    color: "#FFB0CD",
-    config: { timer: 20, questionCount: 8, buzzerMode: true },
-  },
-  {
-    id: "educacao",
-    name: "Educação",
-    description: "15 perguntas, 30s, Ciência e História",
-    icon: "📚",
-    color: "#4CAF50",
-    config: { categories: ["CIENCIA", "HISTORIA"], timer: 30, questionCount: 15 },
-  },
-  {
-    id: "intenso",
-    name: "Intenso",
-    description: "20 perguntas, 10s, Modo Buzzer",
-    icon: "🔥",
-    color: "#FF6B6B",
-    config: { timer: 10, questionCount: 20, buzzerMode: true },
-  },
-  {
-    id: "duo",
-    name: "Duo",
-    description: "10 perguntas, 20s, Modo Hotseat",
-    icon: "👥",
-    color: "#4A90D9",
-    config: { timer: 20, questionCount: 10, hotseatMode: true },
-  },
-];
 
 export default function HostPage() {
     const { gameId, status, players, nextQuestion, updateStatus, setGameId, currentQuestionIndex, gameSettings } = useGame();
@@ -145,31 +79,6 @@ export default function HostPage() {
         await supabase
             .from("games")
             .update({ settings: { ...gameSettings, topic: newSelected } })
-            .eq("id", gameId);
-    };
-
-    const applyTemplate = async (template: GameTemplate) => {
-        if (!gameId) return;
-        const newSettings = { ...gameSettings };
-        if (template.config.categories) {
-            newSettings.topic = template.config.categories;
-            setSelectedCategories(template.config.categories);
-        }
-        if (template.config.timer) {
-            newSettings.timer_duration = template.config.timer;
-        }
-        if (template.config.questionCount) {
-            newSettings.question_count = template.config.questionCount;
-        }
-        if (template.config.buzzerMode !== undefined) {
-            newSettings.buzzer_mode = template.config.buzzerMode;
-        }
-        if (template.config.hotseatMode !== undefined) {
-            newSettings.hotseat_mode = template.config.hotseatMode;
-        }
-        await supabase
-            .from("games")
-            .update({ settings: newSettings })
             .eq("id", gameId);
     };
 
@@ -452,34 +361,6 @@ export default function HostPage() {
                                     </button>
                                 );
                             })}
-                        </div>
-                    </section>
-                )}
-
-                {status === "LOBBY" && (
-                    <section className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6">
-                        <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-[#FFB0CD]/20 flex items-center justify-center">
-                                <Sparkles className="w-4 h-4 text-[#FFB0CD]" />
-                            </div>
-                            Templates Rápidos
-                        </h3>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                            {DEFAULT_TEMPLATES.map((template) => (
-                                <motion.button
-                                    key={template.id}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    onClick={() => applyTemplate(template)}
-                                    className="text-left p-4 rounded-xl border border-white/10 hover:border-white/20 transition-all bg-white/5 hover:bg-white/10"
-                                >
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <span className="text-xl">{template.icon}</span>
-                                        <span className="font-bold text-[#e3e0f9] text-sm">{template.name}</span>
-                                    </div>
-                                    <p className="text-xs text-[#e3e0f9]/50">{template.description}</p>
-                                </motion.button>
-                            ))}
                         </div>
                     </section>
                 )}
