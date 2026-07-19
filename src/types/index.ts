@@ -31,7 +31,7 @@ export interface GameSettings {
   mode?: string;
   timer?: number;
   timer_duration?: number;
-  topic?: string;
+  topic?: string | string[];
   question_count?: number;
   round?: number;
   age_group?: string;
