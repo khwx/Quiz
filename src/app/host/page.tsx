@@ -8,7 +8,7 @@ import { Play, ArrowRight, Trophy, Users, RefreshCw, Monitor, Rocket, Wifi, Game
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function HostPage() {
-    const { gameId, status, players, nextQuestion, updateStatus, setGameId, currentQuestionIndex, gameSettings } = useGame();
+    const { gameId, status, players, nextQuestion, updateStatus, setGameId, setPlayers, currentQuestionIndex, gameSettings } = useGame();
     const [loading, setLoading] = useState(false);
     const [gamePin, setGamePin] = useState<string>("");
     const [showSettings, setShowSettings] = useState(false);
@@ -41,6 +41,18 @@ export default function HostPage() {
         };
         fetchPin();
     }, [gameId]);
+
+    useEffect(() => {
+        if ((status === GameStatus.LOBBY || status === GameStatus.STARTING) && gameId) {
+            const syncPlayers = async () => {
+                const { data } = await supabase.from("players").select("*").eq("game_id", gameId);
+                if (data) setPlayers(data);
+            };
+            syncPlayers();
+            const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
+            return () => clearInterval(interval);
+        }
+    }, [status, gameId, setPlayers]);
 
     const handleCreateGame = async () => {
         setLoading(true);

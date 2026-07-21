@@ -198,7 +198,7 @@ export default function TVHost() {
       if (gameId) {
         const syncPlayers = async () => {
           const { data } = await supabase.from("players").select("*").eq("game_id", gameId);
-          if (data && data.length > 0) setPlayers(data);
+          if (data) setPlayers(data);
         };
         syncPlayers();
         const timeout = setTimeout(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
@@ -207,6 +207,18 @@ export default function TVHost() {
       }
     }
   }, [currentQuestionIndex, round, status, gameId, setPlayers, setCurrentAnswers]);
+
+  useEffect(() => {
+    if ((status === GameStatus.LOBBY || status === GameStatus.STARTING) && gameId) {
+      const syncPlayers = async () => {
+        const { data } = await supabase.from("players").select("*").eq("game_id", gameId);
+        if (data) setPlayers(data);
+      };
+      syncPlayers();
+      const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
+      return () => clearInterval(interval);
+    }
+  }, [status, gameId, setPlayers]);
 
   const handleLocalAnswer = useCallback(
     (optionIndex: number) => {
