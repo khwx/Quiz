@@ -94,12 +94,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
    };
 
   const fetchQuestion = useCallback(async () => {
+    log.info("fetchQuestion called", { currentQuestionId, gameId });
     let questionId = currentQuestionId;
     if (!questionId && gameId) {
       const { data } = await supabase.from("games").select("settings, current_question_index").eq("id", gameId).single();
       questionId = data?.settings?.current_question_id || null;
       if (!questionId && data?.settings?.question_ids && data.current_question_index != null) {
-        questionId = data.settings.question_ids[data.current_question_index] || null;
+        const idx = (typeof data.current_question_index === 'number' ? data.current_question_index : parseInt(data.current_question_index)) - 1;
+        questionId = data.settings.question_ids[idx] || null;
       }
     }
     if (!questionId) return;
@@ -115,14 +117,18 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       return;
     }
     if (data) {
+      log.info("Question fetched successfully", { questionId });
       setQuestionData(data);
       setShowHint(false);
       setQuestionLoadError(false);
+    } else {
+      log.warn("Question not found in DB", { questionId });
     }
   }, [currentQuestionId, gameId]);
 
   useEffect(() => {
     if (status === GameStatus.QUESTION) {
+      log.info("Question phase detected, fetching question", { currentQuestionId, gameId });
       fetchQuestion();
     }
   }, [status, currentQuestionId, gameSettings, fetchQuestion]);
