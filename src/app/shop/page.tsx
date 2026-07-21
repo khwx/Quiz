@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/useToast";
 import ToastContainer from "@/components/Toast";
 import MobileNav from "@/components/MobileNav";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("ShopPage");
 
 interface Reward {
   id: string;
@@ -58,7 +61,7 @@ export default function ShopPage() {
         }
       }
     } catch (e) {
-      console.error("Failed to load shop:", e);
+      log.error("Failed to load shop", { error: String(e) });
     } finally {
       setLoading(false);
     }

@@ -6,7 +6,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { GAME_CONSTANTS, GameStatus, TournamentStatus, UserRole } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
 import MobileNav from "@/components/MobileNav";
+
+const log = createContextLogger("TournamentsPage");
 import ToastContainer from "@/components/Toast";
 import { useToast } from "@/hooks/useToast";
 import ConfirmModal from "@/components/ConfirmModal";
@@ -104,17 +108,17 @@ function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTea
 }
 
 const statusLabels: Record<string, string> = {
-  LOBBY: "Aguardando",
-  QUALIFYING: "Qualificação",
-  FINAL: "Final",
-  FINISHED: "Finalizado",
+  [TournamentStatus.LOBBY]: "Aguardando",
+  [TournamentStatus.QUALIFYING]: "Qualificação",
+  [TournamentStatus.FINAL]: "Final",
+  [TournamentStatus.FINISHED]: "Finalizado",
 };
 
 const statusConfig: Record<string, { bg: string; text: string; dot: string }> = {
-  LOBBY: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", dot: "bg-[#d0bcff]" },
-  QUALIFYING: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", dot: "bg-[#FFD700]" },
-  FINAL: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", dot: "bg-[#FFB0CD]" },
-  FINISHED: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", dot: "bg-[#4CAF50]" },
+  [TournamentStatus.LOBBY]: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", dot: "bg-[#d0bcff]" },
+  [TournamentStatus.QUALIFYING]: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", dot: "bg-[#FFD700]" },
+  [TournamentStatus.FINAL]: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", dot: "bg-[#FFB0CD]" },
+  [TournamentStatus.FINISHED]: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", dot: "bg-[#4CAF50]" },
 };
 
 export default function TournamentsPage() {
@@ -188,7 +192,7 @@ export default function TournamentsPage() {
         if (myTournamentData) setMyTournament(myTournamentData);
       }
     } catch (error) {
-      console.error("Error:", error);
+      log.error("Error loading tournament data", { error: String(error) });
     } finally {
       setLoading(false);
     }
@@ -207,7 +211,7 @@ export default function TournamentsPage() {
       setMyTeams(teams);
       if (teams.length === 1) setSelectedTeamId(teams[0].id);
     } catch (err) {
-      console.error("Erro ao carregar equipas:", err);
+      log.error("Erro ao carregar equipas", { error: err.message || String(err) });
     }
   };
 
@@ -223,7 +227,7 @@ export default function TournamentsPage() {
       setTournaments(allData);
       return allData;
     } catch (err) {
-      console.error("Erro ao carregar torneios:", err);
+      log.error("Erro ao carregar torneios", { error: err.message || String(err) });
       setError("Erro ao carregar torneios");
       return null;
     }
@@ -247,7 +251,7 @@ export default function TournamentsPage() {
           name: tournamentName,
           pin: pin,
           max_teams: 8,
-          status: "LOBBY",
+          status: TournamentStatus.LOBBY,
            settings: { timer: 20, questions: 10, blind_mode: blindMode },
           created_by: user!.id,
         })
@@ -296,7 +300,7 @@ export default function TournamentsPage() {
         .from("tournaments")
         .select("*, tournament_teams(*, teams(id, name, pin))")
         .eq("pin", tournamentPin.toUpperCase())
-        .eq("status", "LOBBY")
+        .eq("status", TournamentStatus.LOBBY)
         .single();
 
       if (findError || !tournamentData) {
@@ -348,7 +352,7 @@ export default function TournamentsPage() {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
   };
 
   if (loading) {
@@ -456,7 +460,7 @@ export default function TournamentsPage() {
                             <span className="text-[#FFD700] font-bold text-sm">{tt.score} pts</span>
                           )}
                           <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
-                          {myTournament.status === 'LOBBY' && user?.id === myTournament.created_by && (
+                          {myTournament.status === TournamentStatus.LOBBY && user?.id === myTournament.created_by && (
                             <button
                               onClick={async () => {
                                 await supabase.from("tournament_teams").delete().eq("id", tt.id);
@@ -478,7 +482,7 @@ export default function TournamentsPage() {
                 </div>
               )}
 
-              {myTournament.status === 'LOBBY' && (
+              {myTournament.status === TournamentStatus.LOBBY && (
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -490,7 +494,7 @@ export default function TournamentsPage() {
                 </motion.button>
               )}
 
-              {myTournament.status === 'QUALIFYING' && (
+              {myTournament.status === TournamentStatus.QUALIFYING && (
                 <div className="space-y-3">
                   <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm text-center">
                     Torneio em curso — abre o TV para jogar
@@ -499,8 +503,8 @@ export default function TournamentsPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={async () => {
-                      await supabase.from('tournaments').update({ status: 'FINAL' }).eq('id', myTournament.id);
-                      setMyTournament({ ...myTournament, status: 'FINAL' });
+                      await supabase.from('tournaments').update({ status: TournamentStatus.FINAL }).eq('id', myTournament.id);
+                      setMyTournament({ ...myTournament, status: TournamentStatus.FINAL });
                     }}
                     className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#FFB0CD] text-[#640039] rounded-xl font-bold"
                   >
@@ -510,7 +514,7 @@ export default function TournamentsPage() {
                 </div>
               )}
 
-              {myTournament.status === 'FINAL' && (
+              {myTournament.status === TournamentStatus.FINAL && (
                 <div className="space-y-3">
                   <div className="p-3 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl text-[#FFB0CD] text-sm text-center">
                     Final em curso
@@ -519,8 +523,8 @@ export default function TournamentsPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={async () => {
-                      await supabase.from('tournaments').update({ status: 'FINISHED' }).eq('id', myTournament.id);
-                      setMyTournament({ ...myTournament, status: 'FINISHED' });
+                      await supabase.from('tournaments').update({ status: TournamentStatus.FINISHED }).eq('id', myTournament.id);
+                      setMyTournament({ ...myTournament, status: TournamentStatus.FINISHED });
                     }}
                     className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold"
                   >
@@ -530,7 +534,7 @@ export default function TournamentsPage() {
                 </div>
               )}
 
-              {myTournament.status === 'FINISHED' && (
+              {myTournament.status === TournamentStatus.FINISHED && (
                 <div className="p-4 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-center">
                   <Trophy className="w-8 h-8 mx-auto mb-2 text-[#4CAF50]" />
                   <div className="text-[#4CAF50] font-bold">Torneio Finalizado!</div>
@@ -740,27 +744,27 @@ export default function TournamentsPage() {
               Torneios Ativos
             </h3>
             <div className="space-y-3">
-              {tournaments.filter((t) => t.status !== "FINISHED").map((tournament) => (
+              {tournaments.filter((t) => t.status !== TournamentStatus.FINISHED).map((tournament) => (
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}
                 />
               ))}
-              {tournaments.filter((t) => t.status !== "FINISHED").length === 0 && (
+              {tournaments.filter((t) => t.status !== TournamentStatus.FINISHED).length === 0 && (
                 <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio ativo</p>
               )}
             </div>
           </section>
         )}
 
-        {tournaments.some((t) => t.status === "FINISHED") && !myTournament && (
+        {tournaments.some((t) => t.status === TournamentStatus.FINISHED) && !myTournament && (
           <section>
             <h3 className="text-lg font-bold text-[#e3e0f9]/60 mb-4 flex items-center gap-2">
               <Trophy className="w-5 h-5 text-[#e3e0f9]/30" />
               Torneios Finalizados
             </h3>
             <div className="space-y-3 opacity-60">
-              {tournaments.filter((t) => t.status === "FINISHED").map((tournament) => (
+              {tournaments.filter((t) => t.status === TournamentStatus.FINISHED).map((tournament) => (
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}
@@ -792,9 +796,9 @@ export default function TournamentsPage() {
           if (!myTournament) return;
           await supabase
             .from('tournaments')
-            .update({ status: 'QUALIFYING' })
+            .update({ status: TournamentStatus.QUALIFYING })
             .eq('id', myTournament.id);
-          setMyTournament({ ...myTournament, status: 'QUALIFYING' } as TournamentWithTeams);
+          setMyTournament({ ...myTournament, status: TournamentStatus.QUALIFYING } as TournamentWithTeams);
           // Find user's team in this tournament
           const userTeamEntry = myTournament.tournament_teams?.find((tt) =>
             myTeams.some((mt) => mt.id === tt.team_id)

@@ -41,7 +41,7 @@ export default function ProfilePage() {
 
       const { data: profile } = await supabase
         .from("profiles")
-        .select("xp, level")
+        .select("xp, level, username, avatar")
         .eq("id", currentUser.id)
         .single();
 
@@ -72,7 +72,7 @@ export default function ProfilePage() {
         ? Math.round((correctAnswers / userAnswers.length) * 100) 
         : 0;
 
-      const profileData = profile ? { ...(profile as any) } : null;
+      const profileData = profile;
       
       setUser({
         id: currentUser.id,

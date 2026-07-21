@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, Settings, Gamepad2, Palette, Volume2, RotateCcw } from "lucide-react";
+import { GAME_CONSTANTS } from "@/lib/constants";
 
 type Difficulty = "Recruta" | "Piloto" | "Comandante";
 type Theme = "nebula" | "blackhole" | "supernova";
@@ -54,14 +55,14 @@ export default function SettingsPage() {
     setSettings(next);
     saveSettings(next);
     setSaved(true);
-    setTimeout(() => setSaved(false), 1500);
+    setTimeout(() => setSaved(false), GAME_CONSTANTS.REVEAL_DELAY_MS);
   };
 
   const resetAll = () => {
     setSettings(DEFAULTS);
     saveSettings(DEFAULTS);
     setSaved(true);
-    setTimeout(() => setSaved(false), 1500);
+    setTimeout(() => setSaved(false), GAME_CONSTANTS.REVEAL_DELAY_MS);
   };
 
   const themes: { id: Theme; name: string; gradient: string }[] = [

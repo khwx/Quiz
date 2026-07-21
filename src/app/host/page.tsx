@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
+import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
 import { Play, ArrowRight, Trophy, Users, RefreshCw, Monitor, Rocket, Wifi, Gamepad2, Share2, Clock, HelpCircle, Zap, Settings, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -82,24 +83,24 @@ export default function HostPage() {
             .eq("id", gameId);
     };
 
-    const getStatusLabel = () => {
+const getStatusLabel = () => {
         switch(status) {
-            case "LOBBY": return "Sala de Espera";
-            case "STARTING": return "A Iniciar...";
-            case "QUESTION": return "Pergunta em Curso";
-            case "REVEAL": return "A Revelar Resposta";
-            case "PODIUM": return "Pódio";
+            case GameStatus.LOBBY: return "Sala de Espera";
+            case GameStatus.STARTING: return "A Iniciar...";
+            case GameStatus.QUESTION: return "Pergunta em Curso";
+            case GameStatus.REVEAL: return "A Revelar Resposta";
+            case GameStatus.PODIUM: return "Pódio";
             default: return status;
         }
     };
 
     const getStatusColor = () => {
         switch(status) {
-            case "LOBBY": return { bg: "bg-[#d0bcff]/20", dot: "bg-[#d0bcff]", text: "text-[#d0bcff]" };
-            case "STARTING": return { bg: "bg-[#FFB0CD]/20", dot: "bg-[#FFB0CD]", text: "text-[#FFB0CD]" };
-            case "QUESTION": return { bg: "bg-[#deb7ff]/20", dot: "bg-[#deb7ff] animate-pulse", text: "text-[#deb7ff]" };
-            case "REVEAL": return { bg: "bg-[#4CAF50]/20", dot: "bg-[#4CAF50]", text: "text-[#4CAF50]" };
-            case "PODIUM": return { bg: "bg-[#FFD700]/20", dot: "bg-[#FFD700]", text: "text-[#FFD700]" };
+            case GameStatus.LOBBY: return { bg: "bg-[#d0bcff]/20", dot: "bg-[#d0bcff]", text: "text-[#d0bcff]" };
+            case GameStatus.STARTING: return { bg: "bg-[#FFB0CD]/20", dot: "bg-[#FFB0CD]", text: "text-[#FFB0CD]" };
+            case GameStatus.QUESTION: return { bg: "bg-[#deb7ff]/20", dot: "bg-[#deb7ff] animate-pulse", text: "text-[#deb7ff]" };
+            case GameStatus.REVEAL: return { bg: "bg-[#4CAF50]/20", dot: "bg-[#4CAF50]", text: "text-[#4CAF50]" };
+            case GameStatus.PODIUM: return { bg: "bg-[#FFD700]/20", dot: "bg-[#FFD700]", text: "text-[#FFD700]" };
             default: return { bg: "bg-[#d0bcff]/20", dot: "bg-[#d0bcff]", text: "text-[#d0bcff]" };
         }
     };
@@ -191,7 +192,7 @@ export default function HostPage() {
 
             <div className="relative z-10 max-w-4xl mx-auto p-6">
                 <AnimatePresence mode="wait">
-                    {status === "LOBBY" && gameSettings?.question_ids && (
+                    {status === GameStatus.LOBBY && gameSettings?.question_ids && (
                         <motion.div 
                             key="settings-summary"
                             initial={{ opacity: 0, y: 10 }}
@@ -367,7 +368,7 @@ export default function HostPage() {
 
                 <section className="flex flex-col items-center justify-center py-12">
                     <AnimatePresence mode="wait">
-                        {status === "LOBBY" && (
+                        {status === GameStatus.LOBBY && (
                             <motion.div
                                 key="lobby-control"
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -378,7 +379,7 @@ export default function HostPage() {
                                 <motion.button
                                     whileHover={{ scale: players.length > 0 ? 1.02 : 1 }}
                                     whileTap={{ scale: players.length > 0 ? 0.98 : 1 }}
-                                    onClick={() => updateStatus("STARTING")}
+                                    onClick={() => updateStatus(GameStatus.STARTING)}
                                     disabled={players.length === 0}
                                     className={`flex flex-col items-center gap-4 px-16 py-8 rounded-2xl transition-all ${
                                         players.length > 0
@@ -399,7 +400,7 @@ export default function HostPage() {
                             </motion.div>
                         )}
 
-                        {status === "STARTING" && (
+                        {status === GameStatus.STARTING && (
                             <motion.div
                                 key="starting-control"
                                 initial={{ opacity: 0 }}
@@ -415,7 +416,7 @@ export default function HostPage() {
                             </motion.div>
                         )}
 
-                        {status === "QUESTION" && (
+                        {status === GameStatus.QUESTION && (
                             <motion.div
                                 key="question-control"
                                 initial={{ opacity: 0 }}
@@ -433,7 +434,7 @@ export default function HostPage() {
                             </motion.div>
                         )}
 
-                        {status === "REVEAL" && (
+                        {status === GameStatus.REVEAL && (
                             <motion.div
                                 key="reveal-control"
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -460,7 +461,7 @@ export default function HostPage() {
                                     <motion.button
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
-                                        onClick={() => updateStatus("PODIUM")}
+onClick={() => updateStatus(GameStatus.PODIUM)}
                                         className="w-full flex flex-col items-center gap-4 px-16 py-8 bg-[#FFD700] text-[#121223] rounded-2xl shadow-[0_0_30px_rgba(255,215,0,0.3)]"
                                     >
                                         <Trophy className="w-12 h-12" />
@@ -470,7 +471,7 @@ export default function HostPage() {
                             </motion.div>
                         )}
 
-                        {status === "PODIUM" && (
+                        {status === GameStatus.PODIUM && (
                             <motion.div
                                 key="podium-control"
                                 initial={{ opacity: 0, scale: 0.9 }}

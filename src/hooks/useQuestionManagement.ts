@@ -5,7 +5,10 @@ import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import { generateQuestions } from "@/lib/ai-service";
 import { CATEGORIES } from "@/hooks/useGameSetup";
-import type { Question, Answer } from "@/types";
+import { GameStatus } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("useQuestionManagement");
 
 export function useQuestionManagement(
   topic: string[],
@@ -26,7 +29,7 @@ export function useQuestionManagement(
 
   // Reset the starting guard when status leaves STARTING
   useEffect(() => {
-    if (status !== "STARTING") {
+    if (status !== GameStatus.STARTING) {
       isStartingRef.current = false;
     }
   }, [status]);
@@ -38,7 +41,7 @@ export function useQuestionManagement(
         usedQuestionIdsRef.current = JSON.parse(savedIds);
       }
     } catch (e) {
-      console.error("Failed to parse used questions from memory", e);
+      log.error("Failed to parse used questions from memory", { error: String(e) });
     }
   }, []);
 
@@ -72,7 +75,7 @@ export function useQuestionManagement(
 
   useEffect(() => {
     const startRound = async () => {
-      if (status !== "STARTING") return;
+      if (status !== GameStatus.STARTING) return;
       if (isStartingRef.current) {
         return;
       }
@@ -168,7 +171,7 @@ export function useQuestionManagement(
           try {
             localStorage.setItem("usedQuestionIds", JSON.stringify(newUsedIds));
           } catch (e) {
-            console.error("Failed to save used questions to memory", e);
+            log.error("Failed to save used questions to memory", { error: String(e) });
           }
 
           const questionIds = questionsToUse.map((q) => q.id);
@@ -183,13 +186,13 @@ export function useQuestionManagement(
                 timer_duration: timerDuration,
               },
               current_question_index: 1,
-              status: "QUESTION",
+              status: GameStatus.QUESTION,
             })
             .eq("id", gameId);
         }
       } catch (err) {
-        console.error("Question loading failed:", err);
-        updateStatus("LOBBY");
+        log.error("Question loading failed", { error: err instanceof Error ? err.message : String(err) });
+        updateStatus(GameStatus.LOBBY);
       } finally {
         setIsGenerating(false);
         isStartingRef.current = false;

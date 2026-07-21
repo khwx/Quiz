@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import type { GameStatus } from "@/context/GameContext";
 import type { Question } from "@/types";
+import { GameStatus as GameStatusConst } from "@/lib/constants";
 
 export function useKeyboardShortcuts(
   status: string,
@@ -21,19 +22,19 @@ export function useKeyboardShortcuts(
 
       if (e.code === "Space" || e.key === " ") {
         e.preventDefault();
-        if (status === "REVEAL") {
+        if (status === GameStatusConst.REVEAL) {
           const nextQ = currentQuestions[currentQuestionIndex];
           if (nextQ) {
             nextQuestion(nextQ.id, nextQ.correct_option ?? 0);
           } else {
-            updateStatus("STARTING");
+            updateStatus(GameStatusConst.STARTING);
           }
-        } else if (status === "QUESTION") {
+        } else if (status === GameStatusConst.QUESTION) {
           triggerReveal();
         }
       }
       if (e.key === "r" || e.key === "R") {
-        if (status === "QUESTION" || status === "REVEAL") {
+        if (status === GameStatusConst.QUESTION || status === GameStatusConst.REVEAL) {
           onReport();
         }
       }

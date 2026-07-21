@@ -8,6 +8,9 @@ import { useToast } from "@/hooks/useToast";
 import ToastContainer from "@/components/Toast";
 import MobileNav from "@/components/MobileNav";
 import { supabase } from "@/lib/supabase";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("FriendsPage");
 
 interface Friend {
   id: string;
@@ -62,7 +65,7 @@ export default function FriendsPage() {
         setFriends(friendsWithProfiles);
       }
     } catch (e) {
-      console.error("Failed to load friends:", e);
+      log.error("Failed to load friends", { error: String(e) });
     } finally {
       setLoading(false);
     }
@@ -78,7 +81,7 @@ export default function FriendsPage() {
         .limit(10);
       setSearchResults(data || []);
     } catch (e) {
-      console.error("Search failed:", e);
+      log.error("Search failed", { error: String(e) });
     }
   };
 

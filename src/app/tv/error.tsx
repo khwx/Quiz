@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { RefreshCcw, Home } from "lucide-react";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("TVPage");
 
 export default function TVError({
   error,
@@ -12,7 +15,7 @@ export default function TVError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("TV page error:", error);
+    log.error("TV page error", { error: error.message, digest: error.digest });
   }, [error]);
 
   return (

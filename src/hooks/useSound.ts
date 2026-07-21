@@ -1,7 +1,6 @@
 import { useCallback, useRef, useEffect, useState } from 'react';
 import { createAudioContext } from '@/lib/audio';
-
-type SoundType = 'tick' | 'correct' | 'wrong' | 'win' | 'streak' | 'lose_life';
+import { SOUND_TYPES, SOUND_CONFIG, type SoundType } from '@/lib/constants';
 
 export function useSound() {
     const audioContextRef = useRef<AudioContext | null>(null);
@@ -46,7 +45,9 @@ export function useSound() {
     const playTone = useCallback((freq: number, duration: number, type: OscillatorType = 'sine', volume = 0.3) => {
         try {
             const ctx = getAudioContext();
-            const osc = ctx.createOscillator();
+            if (!ctx) return;
+            const audioCtx = ctx;
+            const osc = audioCtx.createOscillator();
             const gain = ctx.createGain();
             osc.type = type;
             osc.frequency.setValueAtTime(freq, ctx.currentTime);
@@ -61,32 +62,13 @@ export function useSound() {
 
     const playSound = useCallback((type: SoundType) => {
         if (!soundEnabled) return;
-        switch (type) {
-            case 'tick':
-                playTone(880, 0.08, 'sine', 0.15);
-                break;
-            case 'correct':
-                playTone(523, 0.1, 'sine', 0.25);
-                setTimeout(() => playTone(659, 0.1, 'sine', 0.25), 80);
-                setTimeout(() => playTone(784, 0.2, 'sine', 0.3), 160);
-                break;
-            case 'wrong':
-                playTone(300, 0.15, 'sawtooth', 0.2);
-                setTimeout(() => playTone(250, 0.2, 'sawtooth', 0.15), 120);
-                break;
-            case 'win':
-                [523, 659, 784, 1047].forEach((freq, i) => {
-                    setTimeout(() => playTone(freq, 0.25, 'sine', 0.3), i * 120);
-                });
-                break;
-            case 'streak':
-                playTone(1200, 0.1, 'sine', 0.2);
-                setTimeout(() => playTone(1400, 0.15, 'sine', 0.25), 80);
-                break;
-            case 'lose_life':
-                playTone(400, 0.1, 'triangle', 0.2);
-                setTimeout(() => playTone(300, 0.2, 'triangle', 0.15), 100);
-                break;
+        const config = SOUND_CONFIG[type];
+        if (Array.isArray(config)) {
+            config.forEach((note) => {
+                setTimeout(() => playTone(note.freq, note.duration, note.type, note.volume), note.delay ?? 0);
+            });
+        } else if (config && "freq" in config) {
+            playTone(config.freq, config.duration, config.type, config.volume);
         }
     }, [soundEnabled, playTone]);
 
@@ -96,9 +78,9 @@ export function useSound() {
             const ctx = audioContextRef.current;
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(220, ctx.currentTime);
-            gain.gain.setValueAtTime(0.05 * masterVolume, ctx.currentTime);
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(SOUND_CONFIG.bgMusic.freq, ctx.currentTime);
+            gain.gain.setValueAtTime(SOUND_CONFIG.bgMusic.volume * masterVolume, ctx.currentTime);
             osc.connect(gain);
             gain.connect(ctx.destination);
             osc.start();

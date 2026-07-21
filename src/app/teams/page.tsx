@@ -19,7 +19,11 @@ import {
   Zap,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { GAME_CONSTANTS, UserRole } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
 import MobileNav from "@/components/MobileNav";
+
+const log = createContextLogger("TeamsPage");
 import ToastContainer from "@/components/Toast";
 import { useToast } from "@/hooks/useToast";
 import type { TeamWithMembers } from "@/types";
@@ -67,7 +71,7 @@ export default function TeamsPage() {
       setUser(currentUser);
       await loadTeams(currentUser.id);
     } catch (error) {
-      console.error("Error:", error);
+      log.error("Error loading teams", { error: String(error) });
     } finally {
       setLoading(false);
     }
@@ -90,7 +94,7 @@ export default function TeamsPage() {
         setMyTeam(my || null);
       }
     } catch (err) {
-      console.error("Erro ao carregar equipas:", err);
+      log.error("Erro ao carregar equipas", { error: err.message || String(err) });
       setError("Erro ao carregar equipas");
     }
   };
@@ -124,7 +128,7 @@ export default function TeamsPage() {
         .insert({
           team_id: team.id,
           user_id: user.id,
-          role: "host",
+          role: UserRole.HOST,
         });
 
       if (memberError) throw memberError;
@@ -177,7 +181,7 @@ export default function TeamsPage() {
         .insert({
           team_id: team.id,
           user_id: user.id,
-          role: "member",
+          role: UserRole.MEMBER,
         });
 
       if (memberError) throw memberError;
@@ -242,7 +246,7 @@ export default function TeamsPage() {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
   };
 
   if (loading) {

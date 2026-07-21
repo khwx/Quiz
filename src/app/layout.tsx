@@ -5,6 +5,7 @@ import { GameProvider } from "@/context/GameContext";
 import { Analytics } from "@vercel/analytics/react";
 import OfflineIndicator from "@/components/OfflineIndicator";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { APP_URL } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "QUIZVERSE | Jogo de Quiz em Família",
     description: "A experiência de quiz em família definitiva! Joga no ecrã grande com os teus amigos.",
-    url: "https://quiz-two-zeta-67.vercel.app",
+    url: APP_URL,
     siteName: "QuizVerse",
     locale: "pt_PT",
     type: "website",

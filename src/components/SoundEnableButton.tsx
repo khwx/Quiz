@@ -2,13 +2,14 @@
 
 import { Volume2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { unlockAudio } from "@/lib/audio";
+import { GAME_CONSTANTS } from "@/lib/constants";
 
 export default function SoundEnableButton() {
     const [soundEnabled, setSoundEnabled] = useState(false);
     const [show, setShow] = useState(true);
 
     useEffect(() => {
-        // Check if sound was already enabled in this session
         const wasEnabled = sessionStorage.getItem("soundEnabled") === "true";
         if (wasEnabled) {
             setSoundEnabled(true);
@@ -18,22 +19,7 @@ export default function SoundEnableButton() {
 
     const enableSound = async () => {
         try {
-            // Try to create and resume audio context
-            const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
-            if (AudioContext) {
-                const ctx = new AudioContext();
-                if (ctx.state === "suspended") {
-                    await ctx.resume();
-                }
-                // Play a silent sound to fully unlock audio
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-                gain.gain.value = 0;
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-                osc.start();
-                osc.stop(ctx.currentTime + 0.1);
-            }
+            await unlockAudio();
             sessionStorage.setItem("soundEnabled", "true");
             setSoundEnabled(true);
             setShow(false);
@@ -42,13 +28,12 @@ export default function SoundEnableButton() {
         }
     };
 
-    // Auto-hide after 5 seconds if user hasn't clicked
     useEffect(() => {
         const timer = setTimeout(() => {
             if (!soundEnabled) {
                 setShow(false);
             }
-        }, 8000);
+        }, GAME_CONSTANTS.SOUND_PROMPT_AUTOHIDE_MS);
         return () => clearTimeout(timer);
     }, [soundEnabled]);
 

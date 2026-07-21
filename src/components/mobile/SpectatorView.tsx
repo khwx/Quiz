@@ -2,7 +2,7 @@
 
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
-import { GAME_CONSTANTS } from "@/lib/constants";
+import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
 import { useEffect, useState, useCallback } from "react";
 import type { Question, Answer } from "@/types";
 import { Eye, Users, Trophy, Clock } from "lucide-react";
@@ -108,13 +108,13 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
   }, [status, gameSettings, currentQuestionIndex, correctOption]);
 
   const statusLabel: Record<string, string> = {
-    LOBBY: "Lobby",
-    STARTING: "A iniciar...",
-    QUESTION: "Pergunta",
-    REVEAL: "Revelação",
-    LEADERBOARD: "Classificação",
-    FINAL: "Final",
-    PODIUM: "Pódio",
+    [GameStatus.LOBBY]: "Lobby",
+    [GameStatus.STARTING]: "A iniciar...",
+    [GameStatus.QUESTION]: "Pergunta",
+    [GameStatus.REVEAL]: "Revelação",
+    [GameStatus.LEADERBOARD]: "Classificação",
+    [GameStatus.FINAL]: "Final",
+    [GameStatus.PODIUM]: "Pódio",
   };
 
   const getDifficultyLabel = (d?: number) => {
@@ -159,7 +159,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
               <div className="text-xs text-[#d0bcff]/70 uppercase tracking-widest font-bold">Fase</div>
               <div className="text-lg font-black text-[#d0bcff]">{statusLabel[status] || status}</div>
             </div>
-            {status === "QUESTION" && (
+{status === GameStatus.QUESTION && (
               <div className="px-4 py-2 bg-[#FF6B6B]/10 rounded-xl">
                 <div className="text-xs text-[#FF6B6B]/70 uppercase tracking-widest font-bold">Pergunta</div>
                 <div className="text-lg font-black text-white">
@@ -178,7 +178,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
           )}
         </div>
 
-        {status === "LOBBY" || status === "STARTING" ? (
+        {status === GameStatus.LOBBY || status === GameStatus.STARTING ? (
           <div className="glass-panel p-8 text-center">
             <Users className="w-12 h-12 text-white/20 mx-auto mb-4" />
             <h2 className="text-xl font-bold text-white mb-2">A aguardar início...</h2>
@@ -200,7 +200,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
           </div>
         ) : null}
 
-        {status === "QUESTION" && questionData && (
+        {status === GameStatus.QUESTION && questionData && (
           <div className="space-y-4">
             <div className="glass-panel p-6">
               {questionData.category && (
@@ -249,7 +249,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
           </div>
         )}
 
-        {status === "REVEAL" && questionData && (
+        {status === GameStatus.REVEAL && questionData && (
           <div className="glass-panel p-6">
             <h3 className="text-lg font-bold text-white mb-3">Resultados</h3>
             <div className="space-y-2">
@@ -286,7 +286,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
           </div>
         )}
 
-        {(status === "LEADERBOARD" || status === "PODIUM" || status === "FINAL") && (
+        {(status === GameStatus.LEADERBOARD || status === GameStatus.PODIUM || status === GameStatus.FINAL) && (
           <div className="glass-panel p-6">
             <div className="flex items-center gap-2 mb-4">
               <Trophy className="w-5 h-5 text-[#d0bcff]" />
@@ -315,7 +315,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
           </div>
         )}
 
-        {!gameId && status === "LOBBY" && (
+        {!gameId && status === GameStatus.LOBBY && (
           <div className="glass-panel p-8 text-center">
             <Eye className="w-12 h-12 text-white/20 mx-auto mb-4" />
             <h2 className="text-xl font-bold text-white mb-2">A ligar ao jogo...</h2>

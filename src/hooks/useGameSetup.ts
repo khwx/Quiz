@@ -3,6 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("useGameSetup");
 
 export function useGameSetup() {
   const { gameId, setGameId, status, updateStatus, gameSettings } = useGame();
@@ -88,7 +91,7 @@ export function useGameSetup() {
           yesterday.setDate(yesterday.getDate() - 1);
           await supabase.from("games").delete().lt("created_at", yesterday.toISOString());
         } catch (e) {
-          console.error("Failed to clean up old rooms:", e);
+          log.error("Failed to clean up old rooms", { error: String(e) });
         }
       }
       setLoading(false);
@@ -106,7 +109,7 @@ export function useGameSetup() {
         .eq("tournament_id", tournamentId)
         .eq("team_id", teamId);
     } catch (e) {
-      console.error("Failed to save tournament score:", e);
+      log.error("Failed to save tournament score", { error: String(e) });
     }
   }, [tournamentId, teamId]);
 
@@ -118,7 +121,7 @@ export function useGameSetup() {
         .update({ status: newStatus })
         .eq("id", tournamentId);
     } catch (e) {
-      console.error("Failed to advance tournament:", e);
+      log.error("Failed to advance tournament", { error: String(e) });
     }
   }, [tournamentId]);
 

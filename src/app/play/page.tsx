@@ -19,7 +19,10 @@ import type { Question } from "@/types";
 import FinalView from "@/components/mobile/FinalView";
 import SpectatorView from "@/components/mobile/SpectatorView";
 import { supabase } from "@/lib/supabase";
-import { GAME_CONSTANTS } from "@/lib/constants";
+import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("PlayPage");
 
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string; spectator?: string }> }) {
   const resolvedParams = use(searchParams);
@@ -64,7 +67,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       await joinGame(data.id, name);
       setHasJoined(true);
     } catch (err: any) {
-      console.error("Erro ao entrar:", err);
+      log.error("Erro ao entrar", { error: err.message || String(err) });
       showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
     } finally {
       setIsJoining(false);
@@ -83,7 +86,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
        await joinSpectator(data.id);
        setHasJoined(true);
      } catch (err: any) {
-       console.error("Erro ao entrar como espectador:", err);
+       log.error("Erro ao entrar como espectador", { error: err.message || String(err) });
        showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
      } finally {
        setIsSpectatorJoining(false);
@@ -154,12 +157,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setEarnedPoints(points);
         setStreak((prev) => prev + 1);
         playSound("correct");
-        setTimeout(() => setEarnedPoints(null), 2000);
+        setTimeout(() => setEarnedPoints(null), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
       } else {
         setEarnedPoints(0);
         setStreak(0);
         playSound("wrong");
-        setTimeout(() => setEarnedPoints(null), 2000);
+        setTimeout(() => setEarnedPoints(null), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
       }
     }
   }, [correctOption, selectedOption, playSound, startTime]);
@@ -289,7 +292,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       );
     }
 
-    if (status === "LOBBY" || status === "STARTING" || status === "QUESTION" || status === "REVEAL" || status === "LEADERBOARD" || status === "PODIUM" || status === "FINAL") {
+    if (status === GameStatus.LOBBY || status === GameStatus.STARTING || status === GameStatus.QUESTION || status === GameStatus.REVEAL || status === GameStatus.PODIUM || status === GameStatus.FINAL) {
       return (
         <>
           <SpectatorView pin={spectatorPin} onLeave={handleSpectatorLeave} />
@@ -340,7 +343,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }
 
   // Joined - show lobby waiting
-  if (status === "LOBBY" || status === "STARTING") {
+  if (status === GameStatus.LOBBY || status === GameStatus.STARTING) {
     return (
       <>
         <LobbyJoinView
@@ -362,7 +365,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }
 
   // Question phase
-  if (status === "QUESTION" && questionData) {
+  if (status === GameStatus.QUESTION && questionData) {
     const currentPlayer = players.find((p) => p.name === name);
     const playerLives = currentPlayer?.lives ?? 3;
     const isEliminated = currentPlayer?.eliminated ?? false;
@@ -393,7 +396,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }
 
   // Waiting for question data
-  if (status === "QUESTION" && !questionData) {
+  if (status === GameStatus.QUESTION && !questionData) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4">
         <Loader2 className="w-12 h-12 animate-spin text-[#d0bcff]" />
@@ -416,7 +419,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }
 
   // Reveal phase
-  if (status === "REVEAL" && questionData) {
+  if (status === GameStatus.REVEAL && questionData) {
     const currentPlayer = players.find((p) => p.name === name);
     return (
       <>

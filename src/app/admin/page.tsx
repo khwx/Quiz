@@ -8,6 +8,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/useToast";
 import ToastContainer from "@/components/Toast";
+import { UserRole } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("AdminPage");
 
 interface Question {
     id: string;
@@ -111,7 +115,7 @@ export default function AdminPage() {
     const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
     const [adminUsers, setAdminUsers] = useState<AdminUser[]>([]);
     const [newAdminEmail, setNewAdminEmail] = useState("");
-    const [newAdminRole, setNewAdminRole] = useState("moderator");
+    const [newAdminRole, setNewAdminRole] = useState<UserRole>(UserRole.MODERATOR);
     const [showAddAdmin, setShowAddAdmin] = useState(false);
     
     const [questions, setQuestions] = useState<Question[]>([]);
@@ -159,9 +163,9 @@ export default function AdminPage() {
             .eq("id", user.id)
             .single();
 
-        const userRole = profile?.role || 'user';
+        const userRole = profile?.role || UserRole.MEMBER;
         
-        if (userRole !== 'admin' && userRole !== 'moderator') {
+        if (userRole !== UserRole.ADMIN && userRole !== UserRole.MODERATOR) {
             showToast("Não tens permissão para aceder ao painel de administração.", "error");
             router.push("/");
             return;
@@ -182,7 +186,7 @@ export default function AdminPage() {
         const { data } = await supabase
             .from("profiles")
             .select("*")
-            .in("role", ["admin", "moderator"]);
+            .in("role", [UserRole.ADMIN, UserRole.MODERATOR]);
         setAdminUsers(data || []);
     };
 
@@ -220,7 +224,7 @@ export default function AdminPage() {
         
         await supabase
             .from("profiles")
-            .update({ role: "user" })
+            .update({ role: UserRole.MEMBER })
             .eq("id", userId);
         
         loadAdminUsers();
@@ -249,7 +253,7 @@ export default function AdminPage() {
             
             setStats(statsData);
         } catch (error) {
-            console.error("Error loading data:", error);
+            log.error("Error loading data", { error: String(error) });
         } finally {
             setLoading(false);
         }
@@ -511,14 +515,14 @@ export default function AdminPage() {
 
     const RoleBadge = ({ role }: { role: string }) => {
         const colors: Record<string, string> = {
-            admin: "bg-[#FF6B6B]/20 text-[#FF6B6B] border-[#FF6B6B]/30",
-            moderator: "bg-[#FFD700]/20 text-[#FFD700] border-[#FFD700]/30",
-            host: "bg-[#d0bcff]/20 text-[#d0bcff] border-[#d0bcff]/30",
+            [UserRole.ADMIN]: "bg-[#FF6B6B]/20 text-[#FF6B6B] border-[#FF6B6B]/30",
+            [UserRole.MODERATOR]: "bg-[#FFD700]/20 text-[#FFD700] border-[#FFD700]/30",
+            [UserRole.HOST]: "bg-[#d0bcff]/20 text-[#d0bcff] border-[#d0bcff]/30",
         };
         const labels: Record<string, string> = {
-            admin: "Administrador",
-            moderator: "Moderador",
-            host: "Anfitrião",
+            [UserRole.ADMIN]: "Administrador",
+            [UserRole.MODERATOR]: "Moderador",
+            [UserRole.HOST]: "Anfitrião",
         };
         return (
             <span className={`px-2 py-1 text-xs rounded border ${colors[role] || "bg-gray-500/20 text-gray-400"}`}>
@@ -635,10 +639,10 @@ export default function AdminPage() {
                             <h3 className="text-sm text-white/60 mb-3">Adicionar Membro</h3>
                             <div className="flex gap-3">
                                 <input type="email" placeholder="Email do utilizador" value={newAdminEmail} onChange={e => setNewAdminEmail(e.target.value)} className="flex-1 glass-input" />
-                                <select value={newAdminRole} onChange={e => setNewAdminRole(e.target.value)} className="glass-input">
-                                    <option value="moderator">Moderador</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="host">Anfitrião</option>
+                                <select value={newAdminRole} onChange={e => setNewAdminRole(e.target.value as UserRole)} className="glass-input">
+                                    <option value={UserRole.MODERATOR}>Moderador</option>
+                                    <option value={UserRole.ADMIN}>Administrador</option>
+                                    <option value={UserRole.HOST}>Anfitrião</option>
                                 </select>
                                 <button onClick={addAdmin} className="px-6 py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold">
                                     Adicionar

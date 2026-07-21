@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { RefreshCcw, Home } from "lucide-react";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("ProfilePage");
 
 export default function ProfileError({
   error,
@@ -12,7 +15,7 @@ export default function ProfileError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("Profile page error:", error);
+    log.error("Profile page error", { error: error.message, digest: error.digest });
   }, [error]);
 
   return (

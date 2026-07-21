@@ -5,6 +5,7 @@ import { Flag, RotateCcw, Palette, Sparkles, Users, Share2, Copy, Check, Trophy 
 import { useState } from "react";
 import Podium from "@/components/tv/Podium";
 import type { Player } from "@/types";
+import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
 
 interface TeamResult {
   name: string;
@@ -47,7 +48,7 @@ export default function PodiumView({ players, teamResults, onRestart, onEditTopi
     } else {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
     }
   };
 
@@ -98,7 +99,7 @@ export default function PodiumView({ players, teamResults, onRestart, onEditTopi
       )}
 
       <div className="flex flex-wrap justify-center gap-4">
-        {onAdvanceTournament && tournamentStatus && tournamentStatus !== "FINAL" && tournamentStatus !== "FINISHED" && (
+        {onAdvanceTournament && tournamentStatus && tournamentStatus !== GameStatus.FINAL && tournamentStatus !== "FINISHED" && (
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

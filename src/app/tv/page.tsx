@@ -23,6 +23,7 @@ import { useAnswerSubscription } from "@/hooks/useAnswerSubscription";
 import { useQuestionFlowTimer } from "@/hooks/useQuestionFlowTimer";
 import { useQuestionManagement } from "@/hooks/useQuestionManagement";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
+import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
 
 export default function TVHost() {
   const { gameId, status, updateStatus, players, currentQuestionIndex, nextQuestion, setPlayers, gameSettings } = useGame();
@@ -127,7 +128,7 @@ export default function TVHost() {
       if (buzzerPlayer) {
         showToast(`${buzzerPlayer.name} buzzed in!`, "success");
       }
-      setTimeout(() => triggerReveal(), 1500);
+      setTimeout(() => triggerReveal(), GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
       return;
     }
 
@@ -183,16 +184,16 @@ export default function TVHost() {
   );
 
   useEffect(() => {
-    if (status === "REVEAL") {
+    if (status === GameStatus.REVEAL) {
       setRevealStartTime(Date.now());
       setCanAdvanceFromReveal(false);
-      const timer = setTimeout(() => setCanAdvanceFromReveal(true), 3000);
+      const timer = setTimeout(() => setCanAdvanceFromReveal(true), GAME_CONSTANTS.AUTO_SKIP_DELAY);
       return () => clearTimeout(timer);
     }
   }, [status]);
 
   useEffect(() => {
-    if (status === "QUESTION") {
+    if (status === GameStatus.QUESTION) {
       setCurrentAnswers([]);
       if (gameId) {
         const syncPlayers = async () => {
@@ -200,7 +201,7 @@ export default function TVHost() {
           if (data && data.length > 0) setPlayers(data);
         };
         syncPlayers();
-        const timeout = setTimeout(syncPlayers, 1500);
+        const timeout = setTimeout(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
 
         return () => clearTimeout(timeout);
       }
@@ -209,7 +210,7 @@ export default function TVHost() {
 
   const handleLocalAnswer = useCallback(
     (optionIndex: number) => {
-      if (status !== "QUESTION") return;
+if (status !== GameStatus.QUESTION) return;
       const currentQ = currentQuestions[currentQuestionIndex - 1];
       if (!currentQ) return;
 
@@ -250,7 +251,7 @@ export default function TVHost() {
           showToast("Ficaste sem vidas!", "error");
         }
       }
-      updateStatus("REVEAL");
+      updateStatus(GameStatus.REVEAL);
     },
     [status, currentQuestions, currentQuestionIndex, localScore, questionCount, timeLeft, timerDuration, localLives, playSound, updateStatus, setLocalLives, showToast, hotseatMode, hotseatPlayers, currentHotseatIndex, triggerReveal]
   );
@@ -331,7 +332,7 @@ export default function TVHost() {
         <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-[#FFD700]/5 rounded-full blur-[120px]" />
       </div>
 
-      {(status === "LOBBY" || status === "STARTING") && (
+      {(status === GameStatus.LOBBY || status === GameStatus.STARTING) && (
         <LobbyView
           pin={pin}
           players={players}
@@ -401,7 +402,7 @@ export default function TVHost() {
                 .eq("id", gameId);
             }
           }}
-          onStart={() => updateStatus("STARTING")}
+          onStart={() => updateStatus(GameStatus.STARTING)}
           onClearMemory={() => setMemoryConfirmOpen(true)}
         />
       )}
@@ -413,7 +414,7 @@ export default function TVHost() {
         </div>
       )}
 
-      {status === "QUESTION" && (
+      {status === GameStatus.QUESTION && (
         <button
           onClick={() => {
             setCurrentAnswers([]);
@@ -428,7 +429,7 @@ export default function TVHost() {
         </button>
       )}
 
-      {(status === "QUESTION" || status === "REVEAL") && currentQ && (
+      {(status === GameStatus.QUESTION || status === GameStatus.REVEAL) && currentQ && (
         <QuestionDisplay
           question={currentQ}
           timeLeft={timeLeft}
@@ -450,9 +451,9 @@ export default function TVHost() {
         />
       )}
 
-      {status === "REVEAL" && currentQ && <LiveLeaderboard players={players} />}
+      {status === GameStatus.REVEAL && currentQ && <LiveLeaderboard players={players} />}
 
-      {status === "REVEAL" && currentQ && (
+      {status === GameStatus.REVEAL && currentQ && (
         <RevealControls
           currentQuestionIndex={currentQuestionIndex}
           totalQuestions={currentQuestions.length}
@@ -461,30 +462,30 @@ export default function TVHost() {
           onNextQuestion={advanceFromReveal}
           onNewRound={() => {
             setRound((r) => r + 1);
-            updateStatus("STARTING");
+            updateStatus(GameStatus.STARTING);
           }}
           onEditTopic={resetToLobby}
           onReport={() => setReportOpen(true)}
         />
       )}
 
-      {status === "PODIUM" && (
+      {status === GameStatus.PODIUM && (
         <PodiumView
           players={players}
           onRestart={() => {
             setRound((r) => r + 1);
             setCurrentAnswers([]);
-            updateStatus("STARTING");
+            updateStatus(GameStatus.STARTING);
           }}
           onEditTopic={resetToLobby}
           onReport={() => setReportOpen(true)}
           onAdvanceTournament={tournamentId ? () => {
-            const nextStatus = round >= 2 ? "FINAL" : "QUALIFYING";
+            const nextStatus = round >= 2 ? GameStatus.FINAL : GameStatus.QUALIFYING;
             advanceTournament(nextStatus);
             setRound((r) => r + 1);
-            updateStatus("STARTING");
+            updateStatus(GameStatus.STARTING);
           } : undefined}
-          tournamentStatus={tournamentId ? (round >= 2 ? "FINAL" : "QUALIFYING") : undefined}
+          tournamentStatus={tournamentId ? (round >= 2 ? GameStatus.FINAL : GameStatus.QUALIFYING) : undefined}
         />
       )}
 

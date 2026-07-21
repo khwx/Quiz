@@ -3,6 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, X, MessageCircle } from "lucide-react";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("TVChat");
+import { UserRole } from "@/lib/constants";
 
 interface ChatMessage {
   id: string;
@@ -34,7 +38,7 @@ export default function TVChat({ gameId }: TVChatProps) {
           setMessages(data.messages);
         }
       } catch (e) {
-        console.error("Failed to fetch messages:", e);
+        log.error("Failed to fetch messages", { error: String(e) });
       } finally {
         setLoading(false);
       }
@@ -70,7 +74,7 @@ export default function TVChat({ gameId }: TVChatProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           gameId,
-          playerId: "host",
+          playerId: UserRole.HOST,
           playerName: "Anfitrião",
           message: newMessage.trim(),
         }),
@@ -86,7 +90,7 @@ export default function TVChat({ gameId }: TVChatProps) {
         channel.close();
       }
     } catch (e) {
-      console.error("Failed to send message:", e);
+      log.error("Failed to send message", { error: String(e) });
     }
   };
 

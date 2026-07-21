@@ -1,6 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Groq from "groq-sdk";
 import { getCachedQuestions, setCachedQuestions } from "./cache";
+import { FLAG_CDN_BASE } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("ai-service");
 
 const GEMINI_MODEL = "gemini-1.5-flash";
 const GROQ_MODEL = "llama-3.3-70b-versatile";
@@ -41,7 +45,7 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
     - CADA pergunta deve ter uma image_url com a bandeira
     - CADA pergunta deve ser sobre um PAÍS DIFERENTE
     - NÃO repetires o mesmo país em perguntas diferentes
-    - Formato: https://flagcdn.com/w320/{codigo}.png
+    - Formato: ${FLAG_CDN_BASE}/{codigo}.png
     - Códigos válidos: pt, br, es, fr, de, it, uk, us, jp, cn, in, ru, mx, ca, au, ar, kr, nl, be, ch
     - O image_url deve corresponder ao país CORRETO na resposta
   ` : "";
@@ -89,7 +93,7 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
         "options": ["Opção A específica", "Opção B específica", "Opção C específica", "Opção D específica"],
         "correct_option": 0,
         "category": "${prompt}",
-        "explanation": "Curiosidade ou explicação breve"${isFlags ? ',\n        "image_url": "https://flagcdn.com/w320/pt.png" (OBRIGATÓRIO para bandeiras!)' : ''}
+        "explanation": "Curiosidade ou explicação breve"${isFlags ? ',\n        "image_url": "${FLAG_CDN_BASE}/pt.png" (OBRIGATÓRIO para bandeiras!)' : ''}
       }
     ]
     ${isFlags ? '\nIMPORTANTE: Para perguntas de bandeiras, TODAS as perguntas devem ter image_url!' : ''}
@@ -134,7 +138,7 @@ async function tryGemini(fullPrompt: string, attempt: number = 0): Promise<strin
   } catch (error: any) {
     if (attempt < MAX_RETRIES) {
       const delay = getRetryDelay(attempt);
-      console.warn(`[AI] Gemini attempt ${attempt + 1} failed, retrying in ${delay}ms...`);
+      log.warn(`Gemini attempt ${attempt + 1} failed, retrying in ${delay}ms`);
       await sleep(delay);
       return tryGemini(fullPrompt, attempt + 1);
     }
@@ -163,7 +167,7 @@ async function tryGroq(fullPrompt: string, attempt: number = 0): Promise<string>
   } catch (error: any) {
     if (attempt < MAX_RETRIES) {
       const delay = getRetryDelay(attempt);
-      console.warn(`[AI] Groq attempt ${attempt + 1} failed, retrying in ${delay}ms...`);
+      log.warn(`Groq attempt ${attempt + 1} failed, retrying in ${delay}ms`);
       await sleep(delay);
       return tryGroq(fullPrompt, attempt + 1);
     }

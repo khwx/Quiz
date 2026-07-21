@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Clock, Brain, Database, Volume2, VolumeX, Flag, Heart } from "lucide-react";
 import { speak, stopSpeaking, isSpeaking } from "@/lib/tts";
 import type { Question, Player, Answer } from "@/types";
+import { GameStatus } from "@/lib/constants";
 
 interface QuestionDisplayProps {
   question: Question;
@@ -332,7 +333,7 @@ export default function QuestionDisplay({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {question.options.map((option: string, idx: number) => {
           const isCorrect = idx === question.correct_option;
-          const isReveal = status === "REVEAL";
+          const isReveal = status === GameStatus.REVEAL;
           const showCorrect = isReveal && isCorrect && !blindMode;
           const showWrong = isReveal && !isCorrect && !blindMode;
 
@@ -346,14 +347,14 @@ export default function QuestionDisplay({
                 y: 0,
               }}
               transition={{ delay: idx * 0.1 }}
-              onClick={() => localMode && status === "QUESTION" && onLocalAnswer?.(idx)}
+              onClick={() => localMode && status === GameStatus.QUESTION && onLocalAnswer?.(idx)}
               className={`
                 glass-panel relative overflow-hidden
                 p-6 rounded-xl border-b-4 shadow-2xl transform transition-all
                 flex items-center gap-4
                 ${showCorrect ? "border-green-400 shadow-[0_0_15px_rgba(74,222,128,0.3)]" : ""}
                 ${showWrong ? "grayscale opacity-50" : ""}
-                ${localMode && status === "QUESTION" ? "cursor-pointer hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-1 active:scale-95" : ""}
+                ${localMode && status === GameStatus.QUESTION ? "cursor-pointer hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-1 active:scale-95" : ""}
               `}
             >
               <div className="bg-surface-variant w-12 h-12 rounded-full flex items-center justify-center text-xl font-black text-on-surface-variant shrink-0">
@@ -406,7 +407,7 @@ export default function QuestionDisplay({
       </div>
 
       {/* Hint on REVEAL */}
-      {status === "REVEAL" && (question.metadata?.hint as string) && (
+      {status === GameStatus.REVEAL && (question.metadata?.hint as string) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -420,7 +421,7 @@ export default function QuestionDisplay({
       )}
 
       {/* Explanation on REVEAL */}
-      {status === "REVEAL" && (question.metadata?.explanation as string) && (
+      {status === GameStatus.REVEAL && (question.metadata?.explanation as string) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

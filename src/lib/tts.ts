@@ -1,7 +1,11 @@
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("tts");
+
 export function speak(text: string, lang: string = 'pt-PT'): Promise<void> {
   return new Promise((resolve, reject) => {
     if (!('speechSynthesis' in window)) {
-      console.warn('Speech synthesis not supported');
+      log.warn("Speech synthesis not supported");
       resolve();
       return;
     }
@@ -16,7 +20,7 @@ export function speak(text: string, lang: string = 'pt-PT'): Promise<void> {
 
     utterance.onend = () => resolve();
     utterance.onerror = (e) => {
-      console.warn('TTS error:', e);
+      log.warn("TTS error", { error: String(e) });
       resolve();
     };
 

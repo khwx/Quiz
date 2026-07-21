@@ -68,6 +68,13 @@ export interface Player {
   joined_at: string;
   lives?: number;
   eliminated?: boolean;
+  current_streak?: number;
+  max_streak?: number;
+  category_stats?: Record<string, { correct: number; total: number }>;
+  buzzer_wins?: number;
+  buzzer_attempts?: number;
+  buzzer_losses?: number;
+  total_questions?: number;
   team_members?: Array<{
     team_id: string;
     user_id?: string;
@@ -105,6 +112,12 @@ export interface Answer {
   time_taken: number;
   is_correct: boolean;
   points: number;
+  streak_at_answer?: number;
+  category_bonus?: number;
+  time_bonus?: number;
+  streak_bonus?: number;
+  difficulty_multiplier?: number;
+  buzzer_bonus?: number;
   created_at: string;
 }
 
@@ -203,6 +216,97 @@ export interface GameHistoryEntry {
   total_questions: number;
   duration_seconds?: number;
   finished_at: string;
+}
+
+// --- Enhanced Scoring & Analytics ---
+
+export interface CategoryMultipliers {
+  [category: string]: number;
+}
+
+export interface DifficultyConfig {
+  easy: { basePoints: number; timeBonus: number; multiplier: number };
+  medium: { basePoints: number; timeBonus: number; multiplier: number };
+  hard: { basePoints: number; timeBonus: number; multiplier: number };
+  expert: { basePoints: number; timeBonus: number; multiplier: number };
+}
+
+export interface StreakData {
+  currentStreak: number;
+  maxStreak: number;
+  lastCorrectAt?: string;
+  categoryStreaks: Record<string, number>;
+}
+
+export interface Achievement {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  category: string;
+  requirement: {
+    type: 'streak' | 'category_mastery' | 'speed_demon' | 'accuracy' | 'buzzer_master' | 'perfect_game' | 'comeback_king';
+    value: number;
+    category?: string;
+  };
+  reward: {
+    type: 'badge' | 'xp_bonus' | 'title' | 'avatar_frame';
+    value: string | number;
+  };
+  unlockedAt?: string;
+  progress?: number;
+}
+
+export interface PlayerPerformanceMetrics {
+  byCategory: Record<string, {
+    totalQuestions: number;
+    correctAnswers: number;
+    accuracy: number;
+    averageTime: number;
+    bestStreak: number;
+    difficultyBreakdown: Record<string, { correct: number; total: number }>;
+  }>;
+  byDifficulty: Record<string, {
+    totalQuestions: number;
+    correctAnswers: number;
+    accuracy: number;
+    averageTime: number;
+  }>;
+  overall: {
+    totalQuestions: number;
+    correctAnswers: number;
+    accuracy: number;
+    averageTime: number;
+    currentStreak: number;
+    maxStreak: number;
+    perfectGames: number;
+    comebackWins: number;
+  };
+  recentTrend: 'improving' | 'stable' | 'declining';
+  strongCategories: string[];
+  weakCategories: string[];
+}
+
+export interface BuzzPerformance {
+  wins: number;
+  losses: number;
+  skips: number;
+  winRate: number;
+  efficiency: number;
+  skew: 'strong' | 'weak' | 'neutral';
+  streakBonus: number;
+  recommended: 'USE_BUZZER_MORE' | 'USE_BUZZER_LESS' | 'ADAPTIVE';
+}
+
+export interface GameAnalytics {
+  playerId: string;
+  gameId: string;
+  performanceMetrics: PlayerPerformanceMetrics;
+  buzzPerformance: BuzzPerformance;
+  achievements: Achievement[];
+  streakData: StreakData;
+  categoryMultipliers: CategoryMultipliers;
+  difficultyConfig: DifficultyConfig;
 }
 
 // --- Derived / UI Types ---

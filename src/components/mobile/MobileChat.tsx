@@ -3,6 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, X } from "lucide-react";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("MobileChat");
 
 interface ChatMessage {
   id: string;
@@ -37,7 +40,7 @@ export default function MobileChat({ gameId, playerId, playerName }: MobileChatP
           setMessages(data.messages);
         }
       } catch (e) {
-        console.error("Failed to fetch messages:", e);
+        log.error("Failed to fetch messages", { error: String(e) });
       } finally {
         setLoading(false);
       }
@@ -87,7 +90,7 @@ export default function MobileChat({ gameId, playerId, playerName }: MobileChatP
         channel.close();
       }
     } catch (e) {
-      console.error("Failed to send message:", e);
+      log.error("Failed to send message", { error: String(e) });
     } finally {
       setSending(false);
     }

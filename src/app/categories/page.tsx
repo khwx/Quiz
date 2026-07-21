@@ -6,6 +6,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Globe, History, FlaskConical, Map, Trophy, Flag, Zap, PawPrint, Utensils, Check, Crown, Cpu, Film, Music, Palette, Sparkles, ArrowLeft, Users } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("CategoriesPage");
 
 const getCategoryStyles = (color: string) => {
   const colors: Record<string, { bg: string; text: string; border: string }> = {
@@ -84,7 +87,7 @@ export default function CategoriesPage() {
         
         setCategoryCounts(Object.entries(counts).map(([name, count]) => ({ name, count })));
       } catch (err) {
-        console.error("Erro ao carregar contagens:", err);
+        log.error("Erro ao carregar contagens", { error: err.message || String(err) });
         setCatError("Erro ao carregar categorias");
       } finally {
         setCountsLoading(false);

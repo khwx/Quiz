@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronLeft, Copy, Users, Trophy, Swords, Shield, Crown, UserMinus, CheckCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { GAME_CONSTANTS, UserRole } from "@/lib/constants";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
 import { useToast } from "@/hooks/useToast";
@@ -45,7 +46,7 @@ export default function TeamDetailPage() {
     if (!team?.pin) return;
     navigator.clipboard.writeText(team.pin);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
   };
 
   if (loading) {
@@ -134,14 +135,14 @@ export default function TeamDetailPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {members.map((member) => (
               <div key={member.id} className="glass-panel rounded-xl p-4 flex items-center gap-3 relative overflow-hidden">
-                {member.role === "host" && <div className="absolute top-0 left-0 w-1 h-full bg-[#FFB0CD]" />}
+                {member.role === UserRole.HOST && <div className="absolute top-0 left-0 w-1 h-full bg-[#FFB0CD]" />}
                 <div className="w-12 h-12 rounded-full bg-[#1e1e30] border-2 border-white/10 flex items-center justify-center">
                   <span className="text-lg">{member.profiles?.avatar || "🧑‍🚀"}</span>
                 </div>
                 <div className="flex-1">
                   <p className="font-bold text-white">{member.profiles?.username || "Jogador"}</p>
-                  <p className={`text-xs ${member.role === "host" ? "text-[#FFB0CD]" : "text-[#e3e0f9]/50"}`}>
-                    {member.role === "host" ? "Líder da Tripulação" : "Membro"}
+                  <p className={`text-xs ${member.role === UserRole.HOST ? "text-[#FFB0CD]" : "text-[#e3e0f9]/50"}`}>
+                    {member.role === UserRole.HOST ? "Líder da Tripulação" : "Membro"}
                   </p>
                 </div>
               </div>

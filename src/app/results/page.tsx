@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Rocket, Settings, RotateCcw, Map, Clock, Share2, Copy, Check } from "lucide-react";
 import { useGame } from "@/context/GameContext";
 import { useRouter } from "next/navigation";
+import { GAME_CONSTANTS, APP_URL } from "@/lib/constants";
 import { useState } from "react";
 
 export default function ResultsPage() {
@@ -27,7 +28,7 @@ export default function ResultsPage() {
   const shareResults = async () => {
     const winner = sortedPlayers[0];
     const text = `🎮 QuizVerse - Resultados\n👑 Vencedor: ${winner?.name || "N/A"} com ${(winner?.score || 0).toLocaleString()} pts\n📊 ${sortedPlayers.length} jogadores\n🏆 Total: ${totalScore.toLocaleString()} pts`;
-    const url = typeof window !== "undefined" ? window.location.origin : "https://quizverse.app";
+    const url = typeof window !== "undefined" ? window.location.origin : APP_URL;
 
     if (navigator.share) {
       try {
@@ -36,7 +37,7 @@ export default function ResultsPage() {
     } else {
       await navigator.clipboard.writeText(`${text}\n${url}`);
       setShared(true);
-      setTimeout(() => setShared(false), 2000);
+      setTimeout(() => setShared(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
     }
   };
 

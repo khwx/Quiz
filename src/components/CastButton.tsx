@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { Cast } from 'lucide-react';
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("CastButton");
 
 export default function CastButton() {
     const [isApiAvailable, setIsApiAvailable] = useState(false);
@@ -15,7 +18,6 @@ export default function CastButton() {
 
         // 2. Setup Callback
         window.__onGCastApiAvailable = (isAvailable) => {
-            // console.log("Cast API Available:", isAvailable);
             if (isAvailable) {
                 initializeCast();
             }
@@ -46,7 +48,7 @@ export default function CastButton() {
                     }
                 );
             } catch (e) {
-                console.error("Cast Init Error:", e);
+                log.error("Cast Init Error", { error: String(e) });
             }
         }
     }, []);
@@ -56,10 +58,10 @@ export default function CastButton() {
             window.cast.framework.CastContext.getInstance().requestSession()
                 .then(() => {})
                 .catch((err: any) => {
-                    if (err !== 'cancel') console.error("Session Request Failed", err);
+                    if (err !== 'cancel') log.error("Session Request Failed", { error: String(err) });
                 });
         } else {
-            console.warn("Google Cast not available. Ensure the extension is installed.");
+            log.warn("Google Cast not available. Ensure the extension is installed.");
         }
     };
 

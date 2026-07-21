@@ -6,6 +6,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Users, Play, Loader2, ArrowRight, Zap, GraduationCap, Share2, Check } from "lucide-react";
 import { CATEGORIES } from "@/hooks/useGameSetup";
 import type { Player } from "@/types";
+import { GAME_CONSTANTS, APP_URL } from "@/lib/constants";
 
 interface LobbyViewProps {
   pin: string;
@@ -72,7 +73,7 @@ export default function LobbyView({
   const [hotseatName, setHotseatName] = useState("");
 
   const shareGame = async () => {
-    const url = `${typeof window !== "undefined" ? window.location.origin : "https://quizverse.app"}/play?pin=${pin}`;
+    const url = `${typeof window !== "undefined" ? window.location.origin : APP_URL}/play?pin=${pin}`;
     if (navigator.share) {
       try {
         await navigator.share({ title: "QuizVerse", text: `Entra no jogo com o PIN ${pin}`, url });
@@ -80,7 +81,7 @@ export default function LobbyView({
     } else {
       await navigator.clipboard.writeText(url);
       setShared(true);
-      setTimeout(() => setShared(false), 2000);
+      setTimeout(() => setShared(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
     }
   };
   return (
@@ -128,7 +129,7 @@ export default function LobbyView({
 
         <div className="glass-panel p-4 lg:p-6 w-fit relative">
           <QRCodeSVG
-            value={`${typeof window !== "undefined" ? window.location.origin : "https://quizverse.app"}/play?pin=${pin}`}
+            value={`${typeof window !== "undefined" ? window.location.origin : APP_URL}/play?pin=${pin}`}
             size={180}
             level="H"
           />

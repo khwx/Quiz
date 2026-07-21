@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { rateLimit, getRateLimitKey } from "@/lib/rate-limit";
 import { validateGeneratePayload } from "@/lib/validation";
 import { generateQuestionsWithFallback } from "@/lib/ai-service-fallback";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("API/questions/generate");
 
 export async function POST(req: NextRequest) {
   const rateLimitKey = getRateLimitKey(req, "generate");
@@ -27,7 +30,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ questions, provider });
   } catch (error: any) {
-    console.error("[API] Error:", error);
+    log.error("Error generating questions", { prompt: payload?.prompt }, error);
     return NextResponse.json({ error: "Falha ao gerar perguntas", details: error.message }, { status: 500 });
   }
 }

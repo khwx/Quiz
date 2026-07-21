@@ -1,11 +1,15 @@
+import { GEO_SERVICE_URL } from "@/lib/constants";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("geo-service");
+
 export async function getCountryCode() {
     try {
-        // Usando um serviço gratuito de IP Geolocation
-        const response = await fetch('https://ipapi.co/json/');
+        const response = await fetch(GEO_SERVICE_URL);
         const data = await response.json();
-        return data.country_code || 'PT'; // PT por defeito
+        return data.country_code || 'PT';
     } catch (error) {
-        console.error("Erro ao obter geolocalização:", error);
+        log.error("Erro ao obter geolocalização", { error: String(error) });
         return 'PT';
     }
 }

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useGame } from "@/context/GameContext";
 import { useSound } from "@/hooks/useSound";
 import type { Question } from "@/types";
+import { GameStatus } from "@/lib/constants";
 
 export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Question[]) {
   const { status, currentQuestionIndex, updateStatus, nextQuestion } = useGame();
@@ -21,7 +22,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
   const triggerReveal = useCallback(() => {
     shouldRevealRef.current = true;
-    updateStatus("REVEAL");
+    updateStatus(GameStatus.REVEAL);
   }, [updateStatus]);
 
   const resetTimer = useCallback(() => {
@@ -35,7 +36,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
     let timer: NodeJS.Timeout;
     const currentQ = currentQuestionsRef.current[currentQuestionIndex - 1];
 
-    if (status === "QUESTION" && currentQ?.id) {
+    if (status === GameStatus.QUESTION && currentQ?.id) {
       resetTimer();
 
       timer = setInterval(() => {
@@ -50,7 +51,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
           if (newValue <= 0) {
             clearInterval(timer);
-            updateStatus("REVEAL");
+            updateStatus(GameStatus.REVEAL);
             return 0;
           }
           return newValue;
@@ -64,7 +65,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   }, [status, currentQuestionIndex, playSound, updateStatus, resetTimer]);
 
   useEffect(() => {
-    if (status === "QUESTION") {
+    if (status === GameStatus.QUESTION) {
       setTimeUntilNext(20);
     }
   }, [status, currentQuestionIndex]);
@@ -80,7 +81,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   }, [nextQuestion, updateStatus, currentQuestionIndex]);
 
   useEffect(() => {
-    if (status !== "REVEAL") {
+    if (status !== GameStatus.REVEAL) {
       setTimeUntilNext(20);
       return;
     }

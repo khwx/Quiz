@@ -35,7 +35,7 @@ export function validateString(value: unknown, fieldName: string, minLength = 1,
   return null;
 }
 
-export function validateAnswerPayload(payload: any): string[] {
+export function validateAnswerPayload(payload: Record<string, unknown>): string[] {
   const errors: string[] = [];
 
   const gameIdError = validateUUID(payload.gameId, "gameId");
@@ -53,10 +53,29 @@ export function validateAnswerPayload(payload: any): string[] {
   const timeTakenError = validateNumber(payload.timeTaken, "timeTaken", 0, 300);
   if (timeTakenError) errors.push(timeTakenError);
 
+  // Optional fields for enhanced features
+  if (payload.streakData !== undefined) {
+    if (typeof payload.streakData !== 'object') {
+      errors.push("streakData deve ser um objeto");
+    }
+  }
+
+  if (payload.achievementProgress !== undefined) {
+    if (!Array.isArray(payload.achievementProgress)) {
+      errors.push("achievementProgress deve ser um array");
+    }
+  }
+
+  if (payload.categoryPerformance !== undefined) {
+    if (typeof payload.categoryPerformance !== 'object') {
+      errors.push("categoryPerformance deve ser um objeto");
+    }
+  }
+
   return errors;
 }
 
-export function validateGeneratePayload(payload: any): string[] {
+export function validateGeneratePayload(payload: Record<string, unknown>): string[] {
   const errors: string[] = [];
 
   const promptError = validateString(payload.prompt, "prompt", 1, 200);

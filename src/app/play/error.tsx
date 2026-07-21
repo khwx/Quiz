@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { RefreshCcw, Home } from "lucide-react";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("PlayPage");
 
 export default function PlayError({
   error,
@@ -12,7 +15,7 @@ export default function PlayError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("Play page error:", error);
+    log.error("Play page error", { error: error.message, digest: error.digest });
   }, [error]);
 
   return (

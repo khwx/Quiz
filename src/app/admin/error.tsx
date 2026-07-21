@@ -3,6 +3,9 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { RefreshCcw, Home } from "lucide-react";
+import { createContextLogger } from "@/lib/logger";
+
+const log = createContextLogger("AdminPage");
 
 export default function AdminError({
   error,
@@ -12,7 +15,7 @@ export default function AdminError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("Admin page error:", error);
+    log.error("Admin page error", { error: error.message, digest: error.digest });
   }, [error]);
 
   return (
