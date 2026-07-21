@@ -46,6 +46,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [fiftyFiftyUsed, setFiftyFiftyUsed] = useState(false);
   const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
   const submittingRef = useRef(false);
+  const questionDataRef = useRef(questionData);
+  questionDataRef.current = questionData;
   const clientPlayerId = `guest-${Math.random().toString(36).slice(2, 9)}`;
 
   const { playSound } = useSound();
@@ -132,6 +134,29 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       fetchQuestion();
     }
   }, [status, currentQuestionId, gameSettings, fetchQuestion]);
+
+  useEffect(() => {
+    if ((status === GameStatus.LOBBY || status === GameStatus.STARTING || status === GameStatus.QUESTION) && gameId) {
+      const syncGameState = async () => {
+        const { data } = await supabase.from("games").select("status, settings, current_question_index").eq("id", gameId).single();
+        if (!data) return;
+        const newStatus = data.status as GameStatus;
+        const newQuestionId = data.settings?.current_question_id || null;
+        if (newStatus === GameStatus.QUESTION && !questionDataRef.current && newQuestionId) {
+          log.info("Polling detected question, fetching", { questionId: newQuestionId });
+          const { data: qData } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty").eq("id", newQuestionId).single();
+          if (qData) {
+            setQuestionData(qData);
+            setShowHint(false);
+            setQuestionLoadError(false);
+          }
+        }
+      };
+      syncGameState();
+      const interval = setInterval(syncGameState, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
+      return () => clearInterval(interval);
+    }
+  }, [status, gameId]);
 
   const handleLeave = async () => {
     if (gameId) {
