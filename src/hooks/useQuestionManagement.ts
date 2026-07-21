@@ -7,6 +7,7 @@ import { generateQuestions } from "@/lib/ai-service";
 import { CATEGORIES } from "@/hooks/useGameSetup";
 import { GameStatus } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
+import type { Answer, Question } from "@/types";
 
 const log = createContextLogger("useQuestionManagement");
 

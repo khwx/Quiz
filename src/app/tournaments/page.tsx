@@ -210,7 +210,7 @@ export default function TournamentsPage() {
         .filter(Boolean) as Team[];
       setMyTeams(teams);
       if (teams.length === 1) setSelectedTeamId(teams[0].id);
-    } catch (err) {
+    } catch (err: any) {
       log.error("Erro ao carregar equipas", { error: err.message || String(err) });
     }
   };
@@ -226,7 +226,7 @@ export default function TournamentsPage() {
       const allData = (data || []) as TournamentWithTeams[];
       setTournaments(allData);
       return allData;
-    } catch (err) {
+    } catch (err: any) {
       log.error("Erro ao carregar torneios", { error: err.message || String(err) });
       setError("Erro ao carregar torneios");
       return null;

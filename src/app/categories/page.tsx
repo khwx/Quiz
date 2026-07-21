@@ -86,7 +86,7 @@ export default function CategoriesPage() {
         counts["Bandeiras"] = bandeirasCount;
         
         setCategoryCounts(Object.entries(counts).map(([name, count]) => ({ name, count })));
-      } catch (err) {
+      } catch (err: any) {
         log.error("Erro ao carregar contagens", { error: err.message || String(err) });
         setCatError("Erro ao carregar categorias");
       } finally {

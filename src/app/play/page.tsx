@@ -106,6 +106,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     }
   }, [currentQuestionId]);
 
+  useEffect(() => {
+    if (status === GameStatus.QUESTION) {
+      fetchQuestion();
+    }
+  }, [status, currentQuestionId, fetchQuestion]);
+
   const handleLeave = async () => {
     if (gameId) {
       const player = players.find((p) => p.name === name);

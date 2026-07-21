@@ -93,7 +93,7 @@ export default function TeamsPage() {
         );
         setMyTeam(my || null);
       }
-    } catch (err) {
+    } catch (err: any) {
       log.error("Erro ao carregar equipas", { error: err.message || String(err) });
       setError("Erro ao carregar equipas");
     }
