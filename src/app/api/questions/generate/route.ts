@@ -17,8 +17,9 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  let payload: any = null;
   try {
-    const payload = await req.json();
+    payload = await req.json();
     const validationErrors = validateGeneratePayload(payload);
 
     if (validationErrors.length > 0) {
