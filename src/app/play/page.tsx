@@ -94,23 +94,38 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
    };
 
   const fetchQuestion = useCallback(async () => {
-    if (!currentQuestionId) return;
-    const { data } = await supabase
+    let questionId = currentQuestionId;
+    if (!questionId && gameId) {
+      const { data } = await supabase.from("games").select("settings, current_question_index").eq("id", gameId).single();
+      questionId = data?.settings?.current_question_id || null;
+      if (!questionId && data?.settings?.question_ids && data.current_question_index != null) {
+        questionId = data.settings.question_ids[data.current_question_index] || null;
+      }
+    }
+    if (!questionId) return;
+    log.info("Fetching question", { questionId });
+    const { data, error } = await supabase
       .from("questions")
       .select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty")
-      .eq("id", currentQuestionId)
+      .eq("id", questionId)
       .single();
+    if (error) {
+      log.error("Failed to fetch question", { questionId, error: error.message });
+      setQuestionLoadError(true);
+      return;
+    }
     if (data) {
       setQuestionData(data);
       setShowHint(false);
+      setQuestionLoadError(false);
     }
-  }, [currentQuestionId]);
+  }, [currentQuestionId, gameId]);
 
   useEffect(() => {
     if (status === GameStatus.QUESTION) {
       fetchQuestion();
     }
-  }, [status, currentQuestionId, fetchQuestion]);
+  }, [status, currentQuestionId, gameSettings, fetchQuestion]);
 
   const handleLeave = async () => {
     if (gameId) {
