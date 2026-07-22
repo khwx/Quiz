@@ -46,8 +46,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [fiftyFiftyUsed, setFiftyFiftyUsed] = useState(false);
   const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
   const submittingRef = useRef(false);
-  const questionDataRef = useRef(questionData);
-  questionDataRef.current = questionData;
   const clientPlayerId = `guest-${Math.random().toString(36).slice(2, 9)}`;
 
   const { playSound } = useSound();
@@ -96,18 +94,27 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
    };
 
   const fetchQuestion = useCallback(async () => {
-    log.info("fetchQuestion called", { currentQuestionId, gameId });
     let questionId = currentQuestionId;
     if (!questionId && gameId) {
-      const { data } = await supabase.from("games").select("settings, current_question_index").eq("id", gameId).single();
-      questionId = data?.settings?.current_question_id || null;
-      if (!questionId && data?.settings?.question_ids && data.current_question_index != null) {
-        const idx = (typeof data.current_question_index === 'number' ? data.current_question_index : parseInt(data.current_question_index)) - 1;
-        questionId = data.settings.question_ids[idx] || null;
+      const { data: gameData, error: gameError } = await supabase
+        .from("games")
+        .select("settings, current_question_index")
+        .eq("id", gameId)
+        .single();
+      if (gameError) {
+        log.error("Failed to fetch game settings", { gameId, error: gameError.message });
+        return;
+      }
+      questionId = gameData?.settings?.current_question_id || null;
+      if (!questionId && gameData?.settings?.question_ids && gameData.current_question_index != null) {
+        const idx = (typeof gameData.current_question_index === 'number' ? gameData.current_question_index : parseInt(gameData.current_question_index)) - 1;
+        questionId = gameData.settings.question_ids[idx] || null;
       }
     }
-    if (!questionId) return;
-    log.info("Fetching question", { questionId });
+    if (!questionId) {
+      log.warn("No questionId available to fetch", { currentQuestionId, gameId });
+      return;
+    }
     const { data, error } = await supabase
       .from("questions")
       .select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty")
@@ -119,18 +126,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       return;
     }
     if (data) {
-      log.info("Question fetched successfully", { questionId });
       setQuestionData(data);
       setShowHint(false);
       setQuestionLoadError(false);
-    } else {
-      log.warn("Question not found in DB", { questionId });
     }
   }, [currentQuestionId, gameId]);
 
   useEffect(() => {
     if (status === GameStatus.QUESTION) {
-      log.info("Question phase detected, fetching question", { currentQuestionId, gameId });
       fetchQuestion();
     }
   }, [status, currentQuestionId, gameSettings, fetchQuestion]);
@@ -138,18 +141,23 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   useEffect(() => {
     if ((status === GameStatus.LOBBY || status === GameStatus.STARTING || status === GameStatus.QUESTION) && gameId) {
       const syncGameState = async () => {
-        const { data } = await supabase.from("games").select("status, settings, current_question_index").eq("id", gameId).single();
-        if (!data) return;
-        const newStatus = data.status as GameStatus;
-        const newQuestionId = data.settings?.current_question_id || null;
-        if (newStatus === GameStatus.QUESTION && !questionDataRef.current && newQuestionId) {
-          log.info("Polling detected question, fetching", { questionId: newQuestionId });
-          const { data: qData } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty").eq("id", newQuestionId).single();
-          if (qData) {
-            setQuestionData(qData);
-            setShowHint(false);
-            setQuestionLoadError(false);
+        try {
+          const { data, error } = await supabase.from("games").select("settings, current_question_index, status").eq("id", gameId).single();
+          if (error || !data) return;
+          const gameStatus = data.status as GameStatus;
+          const questionId = data.settings?.current_question_id || null;
+          if (gameStatus === GameStatus.QUESTION && questionId) {
+            const { data: qData } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty").eq("id", questionId).single();
+            if (qData) {
+              setQuestionData(qData);
+              setShowHint(false);
+              setQuestionLoadError(false);
+            } else if (!data.settings?.question_ids?.includes(questionId)) {
+              log.warn("Question ID not found in questions table", { questionId });
+            }
           }
+        } catch (err: any) {
+          log.error("Polling sync failed", { error: err.message });
         }
       };
       syncGameState();
