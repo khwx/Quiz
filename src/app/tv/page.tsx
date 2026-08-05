@@ -206,7 +206,7 @@ export default function TVHost() {
         return () => clearTimeout(timeout);
       }
     }
-  }, [currentQuestionIndex, round, status, gameId, setPlayers, setCurrentAnswers]);
+  }, [currentQuestionIndex, round, status, gameId]);
 
   useEffect(() => {
     if ((status === GameStatus.LOBBY || status === GameStatus.STARTING) && gameId) {
@@ -218,7 +218,7 @@ export default function TVHost() {
       const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
       return () => clearInterval(interval);
     }
-  }, [status, gameId, setPlayers]);
+  }, [status, gameId]);
 
   const handleLocalAnswer = useCallback(
     (optionIndex: number) => {

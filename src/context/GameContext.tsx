@@ -77,43 +77,56 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         };
     }, [gameState.gameId, fetchPlayers]);
 
-    const setGameId = (id: string | null) => {
+    const setGameId = useCallback((id: string | null) => {
         setGameState(prev => ({ ...prev, gameId: id }));
         if (id) fetchPlayers(id);
-    };
+    }, [fetchPlayers]);
 
-    const setPlayers = (players: Player[]) => {
+    const setPlayers = useCallback((players: Player[]) => {
         setGameState(prev => ({ ...prev, players }));
-    };
+    }, []);
 
-    const updateStatus = async (status: GameStatus) => {
-        if (!gameState.gameId) return;
-        await supabase.from('games').update({ status }).eq('id', gameState.gameId);
-    };
+    const updateStatus = useCallback(async (status: GameStatus) => {
+        setGameState(prev => {
+            if (!prev.gameId) return prev;
+            supabase.from('games').update({ status }).eq('id', prev.gameId);
+            return { ...prev, status };
+        });
+    }, []);
 
-    const nextQuestion = async (questionId?: string, correctOption?: number) => {
-        const nextIndex = gameState.currentQuestionIndex + 1;
+    const nextQuestion = useCallback(async (questionId?: string, correctOption?: number) => {
+        setGameState(prev => {
+            if (!prev.gameId) return prev;
+            const nextIndex = prev.currentQuestionIndex + 1;
+            let nextId = questionId;
+            if (!nextId && prev.gameSettings?.question_ids) {
+                nextId = prev.gameSettings.question_ids[nextIndex - 1];
+            }
+            if (!nextId) return prev;
+            supabase.from('games').update({
+                current_question_index: nextIndex,
+                settings: {
+                    ...prev.gameSettings,
+                    current_question_id: nextId,
+                    current_correct_option: correctOption !== undefined ? correctOption : prev.gameSettings?.current_correct_option
+                },
+                status: 'QUESTION'
+            }).eq('id', prev.gameId);
+            return {
+                ...prev,
+                currentQuestionIndex: nextIndex,
+                currentQuestionId: nextId,
+                status: 'QUESTION',
+                gameSettings: {
+                    ...prev.gameSettings,
+                    current_question_id: nextId,
+                    current_correct_option: correctOption !== undefined ? correctOption : prev.gameSettings?.current_correct_option
+                }
+            };
+        });
+    }, []);
 
-        let nextId = questionId;
-
-        if (!nextId && gameState.gameSettings?.question_ids) {
-            nextId = gameState.gameSettings.question_ids[nextIndex - 1];
-        }
-
-        if (!nextId) return;
-
-        await supabase.from('games').update({
-            current_question_index: nextIndex,
-            settings: {
-                ...gameState.gameSettings,
-                current_question_id: nextId,
-                current_correct_option: correctOption !== undefined ? correctOption : gameState.gameSettings?.current_correct_option
-            },
-            status: 'QUESTION'
-        }).eq('id', gameState.gameId);
-    };
-
-    const joinGame = async (gameId: string, playerName: string) => {
+    const joinGame = useCallback(async (gameId: string, playerName: string) => {
         const avatar = getRandomAvatar();
         const color = getRandomColor();
 
@@ -139,11 +152,11 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         if (data) {
             setGameId(gameId);
         }
-    };
+    }, [setGameId]);
 
-    const joinSpectator = async (gameId: string) => {
+    const joinSpectator = useCallback(async (gameId: string) => {
         setGameId(gameId);
-    };
+    }, [setGameId]);
 
     return (
         <GameContext.Provider value={{ ...gameState, setGameId, setPlayers, updateStatus, nextQuestion, joinGame, joinSpectator }}>

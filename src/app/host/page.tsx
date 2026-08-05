@@ -52,7 +52,7 @@ export default function HostPage() {
             const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
             return () => clearInterval(interval);
         }
-    }, [status, gameId, setPlayers]);
+    }, [status, gameId]);
 
     const handleCreateGame = async () => {
         setLoading(true);

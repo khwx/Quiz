@@ -19,6 +19,8 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   currentQuestionsRef.current = currentQuestions;
   const timerDurationRef = useRef(timerDuration);
   timerDurationRef.current = timerDuration;
+  const playSoundRef = useRef(playSound);
+  playSoundRef.current = playSound;
 
   const triggerReveal = useCallback(() => {
     shouldRevealRef.current = true;
@@ -47,7 +49,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
         setTimeLeft((prev) => {
           const newValue = prev - 1;
-          if (newValue <= 5 && newValue > 0) playSound("tick");
+          if (newValue <= 5 && newValue > 0) playSoundRef.current("tick");
 
           if (newValue <= 0) {
             clearInterval(timer);
@@ -62,7 +64,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [status, currentQuestionIndex, playSound, updateStatus, resetTimer]);
+  }, [status, currentQuestionIndex, updateStatus, resetTimer]);
 
   useEffect(() => {
     if (status === GameStatus.QUESTION) {
