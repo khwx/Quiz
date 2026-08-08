@@ -102,6 +102,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     const updateStatus = useCallback(async (status: GameStatus) => {
         const gameId = gameStateRef.current?.gameId;
         if (!gameId) return;
+        setGameState(prev => ({ ...prev, status }));
         await supabase.from('games').update({ status }).eq('id', gameId);
     }, []);
 
@@ -114,6 +115,17 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
             nextId = current.gameSettings.question_ids[nextIndex - 1];
         }
         if (!nextId) return;
+        setGameState(prev => ({
+            ...prev,
+            currentQuestionIndex: nextIndex,
+            currentQuestionId: nextId,
+            status: 'QUESTION',
+            gameSettings: {
+                ...prev.gameSettings,
+                current_question_id: nextId,
+                current_correct_option: correctOption !== undefined ? correctOption : prev.gameSettings?.current_correct_option
+            }
+        }));
         await supabase.from('games').update({
             current_question_index: nextIndex,
             settings: {
