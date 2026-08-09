@@ -140,7 +140,10 @@ export function useQuestionManagement(
 
           const { error: insertError } = await supabase.from("questions").insert(allInserted).select();
           if (insertError) {
+            console.error("[useQuestionManagement] Failed to insert AI questions:", { error: insertError.message, code: insertError.code, count: allInserted.length });
             log.error("Failed to insert AI-generated questions", { error: insertError.message, count: allInserted.length });
+          } else {
+            console.log("[useQuestionManagement] Questions inserted successfully:", allInserted.length);
           }
 
           let finalQuery = supabase

@@ -72,12 +72,16 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
             .channel(`game-${currentGameId}`)
             .on('postgres_changes', { event: '*', schema: 'public', table: 'games', filter: `id=eq.${currentGameId}` }, (payload) => {
                 const data = payload.new as Record<string, unknown>;
+                const newStatus = data.status as GameStatus;
+                const settings = data.settings as GameSettings;
+                const newQuestionId = settings?.current_question_id as string || null;
+                console.log("[GameContext] Realtime update:", { newStatus, newQuestionId, hasSettings: !!settings, questionIds: settings?.question_ids });
                 setGameState(prev => ({
                     ...prev,
-                    status: data.status as GameStatus,
+                    status: newStatus,
                     currentQuestionIndex: data.current_question_index as number,
-                    currentQuestionId: (data.settings as GameSettings)?.current_question_id as string || null,
-                    gameSettings: (data.settings as GameSettings) || {}
+                    currentQuestionId: newQuestionId,
+                    gameSettings: settings || {}
                 }));
             })
             .on('postgres_changes', { event: '*', schema: 'public', table: 'players', filter: `game_id=eq.${currentGameId}` }, () => {

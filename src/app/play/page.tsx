@@ -94,6 +94,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
    };
 
   const fetchQuestion = useCallback(async () => {
+    log.info("fetchQuestion called", { currentQuestionId, gameId, gameSettings, currentQuestionIndex, questionData: !!questionData, questionLoadError });
     let questionId = currentQuestionId;
     if (!questionId && gameSettings?.current_question_id) {
       questionId = gameSettings.current_question_id;
@@ -122,17 +123,23 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       log.warn("No questionId available to fetch", { currentQuestionId, gameId, gameSettings, currentQuestionIndex });
       return;
     }
+    log.info("Fetching question from DB", { questionId });
+    console.log("[PlayPage] Fetching question:", questionId);
     const { data, error } = await supabase
       .from("questions")
       .select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty")
       .eq("id", questionId)
       .single();
     if (error) {
+      console.error("[PlayPage] Failed to fetch question:", { questionId, error: error.message, code: error.code });
       log.error("Failed to fetch question", { questionId, error: error.message });
       setQuestionLoadError(true);
       return;
     }
+    console.log("[PlayPage] Question fetched successfully:", { questionId, hasText: !!data?.text });
+    log.info("Question fetched successfully", { questionId, hasText: !!data.text });
     if (data) {
+      log.info("Question fetched successfully", { questionId, hasText: !!data.text });
       setQuestionData(data);
       setShowHint(false);
       setQuestionLoadError(false);
@@ -140,6 +147,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }, [currentQuestionId, gameId, gameSettings, currentQuestionIndex]);
 
   useEffect(() => {
+    log.info("useEffect status change", { status });
+    console.log("[PlayPage] useEffect status change:", status);
     if (status === GameStatus.QUESTION) {
       fetchQuestion();
     }
