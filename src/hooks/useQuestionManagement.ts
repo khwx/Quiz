@@ -138,7 +138,10 @@ export function useQuestionManagement(
             allInserted.push(...questionsToInsert);
           }
 
-          await supabase.from("questions").insert(allInserted).select();
+          const { error: insertError } = await supabase.from("questions").insert(allInserted).select();
+          if (insertError) {
+            log.error("Failed to insert AI-generated questions", { error: insertError.message, count: allInserted.length });
+          }
 
           let finalQuery = supabase
             .from("questions")
@@ -176,7 +179,7 @@ export function useQuestionManagement(
           }
 
           const questionIds = questionsToUse.map((q) => q.id);
-          await supabase
+          const updateResult = await supabase
             .from("games")
             .update({
               settings: {
@@ -190,6 +193,17 @@ export function useQuestionManagement(
               status: GameStatus.QUESTION,
             })
             .eq("id", gameId);
+          if (updateResult.error) {
+            log.error("Failed to update game with question data", { error: updateResult.error.message, gameId });
+          }
+        } else {
+          log.error("No questions available after generation attempt", {
+            questionCount,
+            questionSource,
+            selectedDbNames,
+            targetAge,
+          });
+          updateStatus(GameStatus.LOBBY);
         }
       } catch (err) {
         log.error("Question loading failed", { error: err instanceof Error ? err.message : String(err) });
