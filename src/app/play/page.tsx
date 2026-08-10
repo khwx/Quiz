@@ -123,22 +123,15 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       log.warn("No questionId available to fetch", { currentQuestionId, gameId, gameSettings, currentQuestionIndex });
       return;
     }
-    log.info("Fetching question from DB", { questionId });
-    console.log("[PlayPage] Fetching question:", questionId);
     const { data, error } = await supabase
       .from("questions")
-      .select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty")
+      .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
       .eq("id", questionId);
     if (error) {
-      console.error("[PlayPage] fetchQuestion query ERROR:", { questionId, error: error.message, code: error.code });
       log.error("Failed to fetch question", { questionId, error: error.message });
       setQuestionLoadError(true);
       return;
     }
-    console.log("[PlayPage] Question fetched successfully:", { questionId, hasText: !!data?.text });
-    log.info("Question fetched successfully", { questionId, hasText: !!data.text });
-    if (data) {
-      log.info("Question fetched successfully", { questionId, hasText: !!data.text });
       setQuestionData(data);
       setShowHint(false);
       setQuestionLoadError(false);
@@ -162,7 +155,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           const gameStatus = data.status as GameStatus;
           const questionId = data.settings?.current_question_id || null;
           if (gameStatus === GameStatus.QUESTION && questionId && !questionData) {
-            const { data: qData, error: qError } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty").eq("id", questionId).single();
+            const { data: qData, error: qError } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating").eq("id", questionId).single();
             if (qData) {
               setQuestionData(qData);
               setShowHint(false);
