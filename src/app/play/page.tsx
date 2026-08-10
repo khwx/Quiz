@@ -128,10 +128,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     const { data, error } = await supabase
       .from("questions")
       .select("id, text, options, correct_option, image_url, category, metadata, age_rating, difficulty")
-      .eq("id", questionId)
-      .single();
+      .eq("id", questionId);
     if (error) {
-      console.error("[PlayPage] Failed to fetch question:", { questionId, error: error.message, code: error.code });
+      console.error("[PlayPage] fetchQuestion query ERROR:", { questionId, error: error.message, code: error.code });
       log.error("Failed to fetch question", { questionId, error: error.message });
       setQuestionLoadError(true);
       return;
