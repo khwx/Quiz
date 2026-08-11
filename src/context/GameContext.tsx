@@ -57,7 +57,10 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
     const fetchPlayers = useCallback(async (id: string) => {
         const version = ++fetchPlayersVersionRef.current;
-        const { data } = await supabase.from('players').select('*').eq('game_id', id);
+        const { data, error } = await supabase.from('players').select('*').eq('game_id', id);
+        if (error) {
+            console.error("[GameContext] fetchPlayers error:", { gameId: id, error: error.message });
+        }
         if (data && version === fetchPlayersVersionRef.current) {
             setGameState(prev => ({ ...prev, players: data }));
         }

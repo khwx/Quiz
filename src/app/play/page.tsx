@@ -255,13 +255,24 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     setSelectedOption(index);
     playSound("tick");
 
-    const player = players.find((p) => p.name === name);
+    let player = players.find((p) => p.name === name);
     if (!player) {
-      showToast("Jogador não encontrado. Atualiza a página.", "error");
-      submittingRef.current = false;
-      setHasAnswered(false);
-      setSelectedOption(null);
-      return;
+      const { data: fallbackPlayer, error: fallbackError } = await supabase
+        .from("players")
+        .select("*")
+        .eq("game_id", gameId)
+        .eq("name", name)
+        .maybeSingle();
+      if (fallbackError || !fallbackPlayer) {
+        console.error("[PlayPage] Player not found:", { name, gameId, fallbackError: fallbackError?.message });
+        showToast("Jogador não encontrado. Atualiza a página.", "error");
+        submittingRef.current = false;
+        setHasAnswered(false);
+        setSelectedOption(null);
+        return;
+      }
+      setPlayers([fallbackPlayer]);
+      player = fallbackPlayer;
     }
 
     const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
@@ -272,7 +283,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           gameId,
-          playerId: player.id,
+          playerId: player!.id,
           questionId: currentQuestionId,
           chosenOption: index,
           timeTaken,
