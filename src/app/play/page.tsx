@@ -27,7 +27,7 @@ const log = createContextLogger("PlayPage");
 export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string; spectator?: string }> }) {
   const resolvedParams = use(searchParams);
   const isSpectator = resolvedParams.spectator === "1";
-  const { gameId, joinGame, joinSpectator, status, currentQuestionIndex, currentQuestionId, players, setGameId, gameSettings } = useGame();
+  const { gameId, joinGame, joinSpectator, status, currentQuestionIndex, currentQuestionId, players, setGameId, setPlayers, gameSettings } = useGame();
   const [pin, setPin] = useState(resolvedParams.pin || "");
   const [name, setName] = useState("");
   const [isJoining, setIsJoining] = useState(false);
@@ -167,6 +167,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           }
         } catch (err: any) {
           log.error("Polling sync failed", { error: err.message });
+        }
+        try {
+          const { data: playerData, error: playerError } = await supabase.from("players").select("*").eq("game_id", gameId);
+          if (!playerError && playerData && playerData.length > 0) {
+            setPlayers(playerData);
+          }
+        } catch (err: any) {
+          log.error("Player polling sync failed", { error: err.message });
         }
       };
       syncGameState();
