@@ -94,7 +94,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
    };
 
   const fetchQuestion = useCallback(async () => {
-    log.info("fetchQuestion called", { currentQuestionId, gameId, gameSettings, currentQuestionIndex, questionData: !!questionData, questionLoadError });
     let questionId = currentQuestionId;
     if (!questionId && gameSettings?.current_question_id) {
       questionId = gameSettings.current_question_id;
@@ -126,12 +125,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     const { data, error } = await supabase
       .from("questions")
       .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
-      .eq("id", questionId);
+      .eq("id", questionId)
+      .single();
     if (error) {
       log.error("Failed to fetch question", { questionId, error: error.message });
       setQuestionLoadError(true);
       return;
     }
+    if (data) {
       setQuestionData(data);
       setShowHint(false);
       setQuestionLoadError(false);
@@ -139,8 +140,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }, [currentQuestionId, gameId, gameSettings, currentQuestionIndex]);
 
   useEffect(() => {
-    log.info("useEffect status change", { status });
-    console.log("[PlayPage] useEffect status change:", status);
     if (status === GameStatus.QUESTION) {
       fetchQuestion();
     }

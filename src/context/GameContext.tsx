@@ -75,7 +75,6 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
                 const newStatus = data.status as GameStatus;
                 const settings = data.settings as GameSettings;
                 const newQuestionId = settings?.current_question_id as string || null;
-                console.log("[GameContext] Realtime update:", { newStatus, newQuestionId, hasSettings: !!settings, questionIds: settings?.question_ids });
                 setGameState(prev => ({
                     ...prev,
                     status: newStatus,
