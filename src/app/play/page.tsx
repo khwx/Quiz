@@ -136,6 +136,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setQuestionData(data);
       setShowHint(false);
       setQuestionLoadError(false);
+      setHasAnswered(false);
+      setSelectedOption(null);
+      setEliminatedOptions([]);
+      setEarnedPoints(null);
+      setStreak(0);
     }
   }, [currentQuestionId, gameId, gameSettings, currentQuestionIndex]);
 
