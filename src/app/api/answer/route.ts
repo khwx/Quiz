@@ -158,9 +158,6 @@ export async function POST(req: NextRequest) {
         .from('players')
         .update({
           score: newScore,
-          current_streak: newStreak,
-          max_streak: newMaxStreak,
-          category_stats: newCategoryStats,
         })
         .eq('id', playerId);
 
@@ -232,7 +229,6 @@ export async function POST(req: NextRequest) {
         .update({
           lives: newLives,
           eliminated: isEliminated,
-          current_streak: 0,
         })
         .eq('id', playerId);
 
@@ -245,11 +241,6 @@ export async function POST(req: NextRequest) {
         newCategoryStats[questionCategory] = { correct: 0, total: 0 };
       }
       newCategoryStats[questionCategory].total += 1;
-
-      await supabase
-        .from('players')
-        .update({ category_stats: newCategoryStats })
-        .eq('id', playerId);
 
       return NextResponse.json({
         success: true,
