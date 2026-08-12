@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
 
     const { data: questionData } = await supabase
       .from("questions")
-      .select("category, age_rating, difficulty, timer")
+      .select("category, age_rating")
       .eq("id", questionId)
       .single();
 
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
 
     const { data: playerStreakData } = await supabase
       .from('players')
-      .select('current_streak, max_streak, category_stats, buzzer_wins, buzzer_attempts, buzzer_losses, total_questions')
+      .select('*')
       .eq('id', playerId)
       .single();
 
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
 
     const questionCategory = questionData?.category || 'CULTURA_GERAL';
     const ageRating = questionData?.age_rating || 10;
-    const timerDuration = questionData?.timer || 30;
+    const timerDuration = 30;
 
     const catStats = categoryStats[questionCategory] || { correct: 0, total: 0 };
 
@@ -134,12 +134,6 @@ export async function POST(req: NextRequest) {
       time_taken: timeTaken,
       is_correct: isCorrect,
       points,
-      streak_at_answer: isCorrect ? currentStreak + 1 : 0,
-      category_bonus: categoryBonus,
-      time_bonus: timeBonus,
-      streak_bonus: streakBonus,
-      difficulty_multiplier: difficultyMultiplier,
-      buzzer_bonus: buzzerBonus,
     });
 
     if (insertError) {
@@ -185,7 +179,7 @@ export async function POST(req: NextRequest) {
 
       const { data: updatedPlayer } = await supabase
         .from('players')
-        .select('score, lives, eliminated, current_streak, max_streak, category_stats, buzzer_wins, buzzer_attempts, buzzer_losses, total_questions')
+        .select('*')
         .eq('id', playerId)
         .single();
 
