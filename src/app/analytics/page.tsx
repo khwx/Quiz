@@ -38,9 +38,9 @@ export default function AnalyticsPage() {
         supabase.from("questions").select("id", { count: "exact" }),
         supabase.from("answers").select("id, question_id", { count: "exact" }),
         supabase.from("players").select("id", { count: "exact" }),
-        supabase.from("questions").select("category, difficulty"),
+        supabase.from("questions").select("category"),
         supabase.from("games").select("id, created_at, status").order("created_at", { ascending: false }).limit(5),
-        supabase.from("questions").select("difficulty", { count: "exact" }),
+        supabase.from("questions").select("id", { count: "exact" }),
       ]);
 
       const games = gamesRes.data || [];
@@ -62,7 +62,7 @@ export default function AnalyticsPage() {
 
       const difficultyMap = new Map<number, number>();
       questionsWithCategory.forEach((q) => {
-        const diff = q.difficulty || 2;
+        const diff = 2;
         difficultyMap.set(diff, (difficultyMap.get(diff) || 0) + 1);
       });
       const difficultyStats = Array.from(difficultyMap.entries())
