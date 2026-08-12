@@ -164,6 +164,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               setQuestionData(qData);
               setShowHint(false);
               setQuestionLoadError(false);
+              setHasAnswered(false);
+              setSelectedOption(null);
+              setEliminatedOptions([]);
+              setEarnedPoints(null);
+              setStreak(0);
             } else if (qError) {
               log.error("Polling: Failed to fetch question", { questionId, error: qError.message });
             } else {
