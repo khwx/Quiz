@@ -153,6 +153,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setStreak(0);
       setShowHint(false);
       setFiftyFiftyUsed(false);
+      submittingRef.current = false;
     }
   }, [currentQuestionId, status]);
 
@@ -165,6 +166,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setStreak(0);
       setShowHint(false);
       setFiftyFiftyUsed(false);
+      submittingRef.current = false;
     }
   }, [questionData?.id, status]);
 
@@ -326,17 +328,18 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
       
-      if (data.eliminated) {
-        showToast("Ficaste sem vidas! Estás eliminado!", "error");
-        playSound("wrong");
-      }
-    } catch (err: any) {
-      showToast("Erro ao enviar resposta: " + err.message, "error");
-      submittingRef.current = false;
-      setHasAnswered(false);
-      setSelectedOption(null);
+    submittingRef.current = false;
+    if (data.eliminated) {
+      showToast("Ficaste sem vidas! Estás eliminado!", "error");
+      playSound("wrong");
     }
-  };
+  } catch (err: any) {
+    showToast("Erro ao enviar resposta: " + err.message, "error");
+    submittingRef.current = false;
+    setHasAnswered(false);
+    setSelectedOption(null);
+  }
+};
 
   const handleFiftyFifty = useCallback(() => {
     if (fiftyFiftyUsed || !questionData || !correctOption) return;
