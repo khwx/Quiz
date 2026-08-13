@@ -5,7 +5,7 @@ type RateLimiterStore = {
 const store: RateLimiterStore = {};
 
 const WINDOW_MS = 60 * 1000;
-const MAX_REQUESTS = 30;
+const MAX_REQUESTS = 100;
 
 export function rateLimit(key: string): { success: boolean; remaining: number; resetIn: number } {
   const now = Date.now();

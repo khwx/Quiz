@@ -165,46 +165,54 @@ export async function POST(req: NextRequest) {
         log.warn("Score update failed", { playerId });
       }
 
+      // Non-blocking: XP update (don't wait for completion to respond to player)
       if (player?.user_id) {
         const xpGained = Math.round(points / 10);
-        const { data: profile } = await supabase.from('profiles').select('xp, level').eq('id', player.user_id).single();
-        const newXp = (profile?.xp || 0) + xpGained;
-        const xpForNextLevel = (profile?.level || 1) * 100;
-        const newLevel = newXp >= xpForNextLevel ? (profile?.level || 1) + 1 : (profile?.level || 1);
-        await supabase.from('profiles').update({ xp: newXp, level: newLevel }).eq('id', player.user_id);
+        (async () => {
+          try {
+            const { data: profile } = await supabase.from('profiles').select('xp, level').eq('id', player.user_id).single();
+            const newXp = (profile?.xp || 0) + xpGained;
+            const xpForNextLevel = (profile?.level || 1) * 100;
+            const newLevel = newXp >= xpForNextLevel ? (profile?.level || 1) + 1 : (profile?.level || 1);
+            await supabase.from('profiles').update({ xp: newXp, level: newLevel }).eq('id', player.user_id);
+          } catch (e: any) {
+            log.warn("XP update failed", { userId: player.user_id, error: e.message });
+          }
+        })();
       }
 
-      const { data: updatedPlayer } = await supabase
-        .from('players')
-        .select('*')
-        .eq('id', playerId)
-        .single();
-
+      // Non-blocking: Achievement unlock (don't wait for completion)
       const newlyUnlocked = checkNewAchievements(
-        updatedPlayer?.category_stats || {},
-        updatedPlayer?.current_streak || 0,
-        updatedPlayer?.max_streak || 0,
+        newCategoryStats,
+        newStreak,
+        newMaxStreak,
         isCorrect,
         isBuzzer,
         new Set()
       );
 
-      for (const achId of newlyUnlocked) {
-        await supabase.from('achievements').insert({
-          player_id: playerId,
-          achievement_id: achId,
-          game_id: gameId,
-          unlocked_at: new Date().toISOString(),
-        });
-      }
+      newlyUnlocked.forEach((achId) => {
+        (async () => {
+          try {
+            await supabase.from('achievements').insert({
+              player_id: playerId,
+              achievement_id: achId,
+              game_id: gameId,
+              unlocked_at: new Date().toISOString(),
+            });
+          } catch (e: any) {
+            log.warn("Achievement unlock failed", { playerId, achievementId: achId, error: e.message });
+          }
+        })();
+      });
 
       return NextResponse.json({
         success: true,
         isCorrect,
         points,
         isBuzzer,
-        streak: updatedPlayer?.current_streak || 0,
-        maxStreak: updatedPlayer?.max_streak || 0,
+        streak: newStreak,
+        maxStreak: newMaxStreak,
         categoryBonus,
         timeBonus,
         streakBonus,
@@ -213,7 +221,7 @@ export async function POST(req: NextRequest) {
         totalPoints: points,
         newAchievements: newlyUnlocked,
         categoryMastery: calculateCategoryMastery(
-          updatedPlayer?.category_stats || {},
+          newCategoryStats,
           questionCategory
         ),
         breakdown: enhancedScore?.breakdown || null,
