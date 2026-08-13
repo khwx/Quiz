@@ -327,9 +327,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
-      
-    submittingRef.current = false;
-    if (data.eliminated) {
+      submittingRef.current = false;
+      if (data.eliminated) {
       showToast("Ficaste sem vidas! Estás eliminado!", "error");
       playSound("wrong");
     }
