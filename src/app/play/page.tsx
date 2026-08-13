@@ -157,6 +157,18 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }, [currentQuestionId, status]);
 
   useEffect(() => {
+    if (questionData?.id && status === GameStatus.QUESTION) {
+      setHasAnswered(false);
+      setSelectedOption(null);
+      setEliminatedOptions([]);
+      setEarnedPoints(null);
+      setStreak(0);
+      setShowHint(false);
+      setFiftyFiftyUsed(false);
+    }
+  }, [questionData?.id, status]);
+
+  useEffect(() => {
     if (status === GameStatus.QUESTION) {
       fetchQuestion();
     }
