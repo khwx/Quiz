@@ -22,6 +22,7 @@ interface Question {
     correct_option: number;
     image_url?: string;
     age_rating?: number;
+    explanation?: string;
     metadata?: {
         reports?: { reason: string; date: string }[];
     };
@@ -141,6 +142,7 @@ export default function AdminPage() {
         age_rating: 12,
         options: ["", "", "", ""],
         correct_option: 0,
+        explanation: "",
     });
     const [saving, setSaving] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -295,6 +297,7 @@ export default function AdminPage() {
             age_rating: 12,
             options: ["", "", "", ""],
             correct_option: 0,
+            explanation: "",
         });
         setEditId(null);
     };
@@ -444,6 +447,7 @@ export default function AdminPage() {
             age_rating: q.age_rating || 12,
             options: q.options,
             correct_option: q.correct_option,
+            explanation: q.explanation || "",
         });
         setEditId(q.id);
         setShowCreateForm(true);
@@ -463,6 +467,7 @@ export default function AdminPage() {
                 age_rating: formData.age_rating,
                 options: formData.options,
                 correct_option: formData.correct_option,
+                explanation: formData.explanation.trim() || null,
             };
             if (editId) {
                 await supabase.from("questions").update(payload).eq("id", editId);
@@ -846,6 +851,16 @@ export default function AdminPage() {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-xs text-white/50 uppercase tracking-wider font-medium">Explicação (opcional)</label>
+                                <textarea
+                                    value={formData.explanation}
+                                    onChange={e => setFormData({ ...formData, explanation: e.target.value })}
+                                    placeholder="Breve explicação ou curiosidade mostrada após a resposta"
+                                    rows={2}
+                                    className="glass-input w-full resize-none"
+                                />
                             </div>
                             <div className="flex gap-3 justify-end pt-2">
                                 <button onClick={() => { setShowCreateForm(false); resetForm(); }} className="px-6 py-3 bg-white/5 text-white/60 rounded-xl">

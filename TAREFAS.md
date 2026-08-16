@@ -35,15 +35,15 @@ Tudo implementado e funcional!
 
 ---
 
-## 🎯 FASE 2: Jogar com Amigos (PRÓXIMO)
+## 🎯 FASE 2: Jogar com Amigos (EM CURSO)
 
-### Sistema de Equipas 🔴 (POR IMPLEMENTAR)
-- [ ] Criar equipas de 2-4 jogadores
-- [ ] Cada equipa responde em conjunto
-- [ ] Pontuação coletiva por equipa
-- [ ] Ecrã de ranking por equipas
+### Sistema de Equipas 🟢 (COMPLETO)
+- [x] Criar equipas de 2-4 jogadores
+- [x] Cada equipa responde em conjunto
+- [x] Pontuação coletiva por equipa (`teams.total_score` atualizada em tempo real)
+- [x] Ecrã de ranking por equipas (`/teams/ranking`)
 
-### Código Único por Jogador 🔴 (POR IMPLEMENTAR)
+### Código Único por Jogador 🔴 (PRÓXIMO)
 - [ ] Cada jogador recebe código/link único para convites
 - [ ] Tracking individual de pontuações
 - [ ] Histórico pessoal
@@ -64,8 +64,8 @@ Tudo implementado e funcional!
 ## 📋 ORDEM DE TRABALHO
 
 1️⃣ **COMPLETO ✅**: Login + Perfil com estatísticas
-2️⃣ **PRÓXIMO**: Sistema de equipas
-3️⃣ **FUTURO**: Código único por jogador  
+2️⃣ **COMPLETO ✅**: Sistema de equipas (Equipas, respostas em conjunto, pontuação coletiva e ranking)
+3️⃣ **PRÓXIMO**: Código único por jogador  
 4️⃣ **FUTURO**: Torneios
 
 ---

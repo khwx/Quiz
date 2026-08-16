@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Flag, Lightbulb } from "lucide-react";
+import { Trophy, Flag, Lightbulb, SkipForward } from "lucide-react";
 import type { Question } from "@/types";
 
 interface RevealViewProps {
@@ -9,6 +9,7 @@ interface RevealViewProps {
   correctOption: number | null;
   questionData: Question;
   earnedPoints: number | null;
+  skipped?: boolean;
   onReport: () => void;
 }
 
@@ -25,22 +26,33 @@ export default function RevealView({
   correctOption,
   questionData,
   earnedPoints,
+  skipped = false,
   onReport,
 }: RevealViewProps) {
   const isCorrect = selectedOption === correctOption;
   const hasNoSelection = selectedOption === null;
+  const isSkipped = skipped && selectedOption === null;
   const correctText = questionData?.options?.[correctOption ?? -1];
   const hint = questionData?.metadata?.hint as string | undefined;
-  const explanation = questionData?.metadata?.explanation as string | undefined;
+  const explanation = questionData?.explanation as string | undefined;
 
   return (
     <main
       className={`min-h-screen flex flex-col items-center justify-center p-6 text-center transition-colors duration-500 ${
-        hasNoSelection ? "bg-[#121223]" : isCorrect ? "bg-[#4CAF50]" : "bg-[#FF6B6B]"
+        hasNoSelection || isSkipped ? "bg-[#121223]" : isCorrect ? "bg-[#4CAF50]" : "bg-[#FF6B6B]"
       }`}
     >
       <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="flex flex-col items-center gap-4">
-        {hasNoSelection ? (
+        {isSkipped ? (
+          <>
+            <div className="text-[#e3e0f9] opacity-60">
+              <SkipForward className="w-16 h-16" />
+            </div>
+            <h2 className="text-4xl font-black text-[#e3e0f9] italic">SALTASTE!</h2>
+            <p className="text-[#e3e0f9]/60 text-lg font-bold uppercase tracking-widest">Não ganhas pontos nesta</p>
+            {correctText && <p className="text-[#e3e0f9]/80 text-lg font-bold">Resposta certa: {correctText}</p>}
+          </>
+        ) : hasNoSelection ? (
           <>
             <div className="text-[#e3e0f9] opacity-50">
               <div className="w-20 h-20 border-4 border-[#e3e0f9]/30 border-t-[#d0bcff] rounded-full animate-spin" />

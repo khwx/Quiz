@@ -165,6 +165,34 @@ export async function POST(req: NextRequest) {
         log.warn("Score update failed", { playerId });
       }
 
+      // Non-blocking: Team score update (collective score)
+      if (player?.user_id) {
+        (async () => {
+          try {
+            const { data: teamMember } = await supabase
+              .from('team_members')
+              .select('team_id')
+              .eq('user_id', player.user_id)
+              .maybeSingle();
+
+            if (teamMember?.team_id) {
+              const { data: teamData } = await supabase
+                .from('teams')
+                .select('total_score')
+                .eq('id', teamMember.team_id)
+                .single();
+              const currentTeamScore = teamData?.total_score || 0;
+              await supabase
+                .from('teams')
+                .update({ total_score: currentTeamScore + points })
+                .eq('id', teamMember.team_id);
+            }
+          } catch (teamErr) {
+            log.warn("Team score update failed", { error: String(teamErr) });
+          }
+        })();
+      }
+
       // Non-blocking: XP update (don't wait for completion to respond to player)
       if (player?.user_id) {
         const xpGained = Math.round(points / 10);
@@ -175,8 +203,8 @@ export async function POST(req: NextRequest) {
             const xpForNextLevel = (profile?.level || 1) * 100;
             const newLevel = newXp >= xpForNextLevel ? (profile?.level || 1) + 1 : (profile?.level || 1);
             await supabase.from('profiles').update({ xp: newXp, level: newLevel }).eq('id', player.user_id);
-          } catch (e: any) {
-            log.warn("XP update failed", { userId: player.user_id, error: e.message });
+          } catch {
+            log.warn("XP update failed", { userId: player.user_id });
           }
         })();
       }
@@ -200,8 +228,8 @@ export async function POST(req: NextRequest) {
               game_id: gameId,
               unlocked_at: new Date().toISOString(),
             });
-          } catch (e: any) {
-            log.warn("Achievement unlock failed", { playerId, achievementId: achId, error: e.message });
+          } catch {
+            log.warn("Achievement unlock failed", { playerId, achievementId: achId });
           }
         })();
       });

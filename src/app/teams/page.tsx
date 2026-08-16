@@ -394,6 +394,28 @@ export default function TeamsPage() {
           </div>
         )}
 
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+        >
+          <Link
+            href="/teams/ranking"
+            className="glass-panel p-5 flex items-center justify-between hover:border-[#d0bcff]/40 transition-all group block"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFD700]/20 to-[#d0bcff]/20 flex items-center justify-center border border-[#FFD700]/30 group-hover:scale-105 transition-transform">
+                <Trophy className="w-6 h-6 text-[#FFD700]" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-base">Ranking de Equipas</h3>
+                <p className="text-xs text-[#e3e0f9]/60">Ver classificação coletiva e pódio</p>
+              </div>
+            </div>
+            <span className="text-[#d0bcff] font-bold text-sm group-hover:translate-x-1 transition-transform">Ver Ranking →</span>
+          </Link>
+        </motion.div>
+
         <AnimatePresence>
           {createMode && !myTeam && (
             <motion.section

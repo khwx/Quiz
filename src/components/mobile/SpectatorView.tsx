@@ -24,7 +24,7 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
     if (!qid) return;
     const { data } = await supabase
       .from("questions")
-      .select("id, text, options, correct_option, image_url, category, metadata")
+      .select("id, text, options, correct_option, image_url, category, metadata, explanation")
       .eq("id", qid)
       .single();
     if (data) {

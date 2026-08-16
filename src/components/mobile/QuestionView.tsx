@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Flag, Lightbulb, Image as ImageIcon, Heart, Zap } from "lucide-react";
+import { Clock, Flag, Lightbulb, Image as ImageIcon, Heart, Zap, SkipForward, Snowflake } from "lucide-react";
 import StreakBadge from "@/components/mobile/StreakBadge";
 import type { Question } from "@/types";
 
@@ -19,6 +19,11 @@ interface QuestionViewProps {
   onReport: () => void;
   onFiftyFifty?: () => void;
   fiftyFiftyUsed?: boolean;
+  onSkip?: () => void;
+  skipUsed?: boolean;
+  onFreeze?: () => void;
+  freezeUsed?: boolean;
+  frozen?: boolean;
   eliminatedOptions?: number[];
   buzzerMode?: boolean;
 }
@@ -44,6 +49,11 @@ export default function QuestionView({
   onReport,
   onFiftyFifty,
   fiftyFiftyUsed = false,
+  onSkip,
+  skipUsed = false,
+  onFreeze,
+  freezeUsed = false,
+  frozen = false,
   eliminatedOptions = [],
   buzzerMode = false,
 }: QuestionViewProps) {
@@ -143,7 +153,7 @@ export default function QuestionView({
 
       {/* 50:50 Power-up */}
       {onFiftyFifty && !fiftyFiftyUsed && !hasAnswered && (
-        <div className="flex justify-center mb-3">
+        <div className="flex justify-center gap-2 mb-3 flex-wrap">
           <button
             onClick={onFiftyFifty}
             className="flex items-center gap-2 px-4 py-2 bg-[#d0bcff]/10 hover:bg-[#d0bcff]/20 text-[#d0bcff] rounded-full text-sm transition-colors border border-[#d0bcff]/20"
@@ -151,6 +161,33 @@ export default function QuestionView({
             <Zap className="w-4 h-4" />
             50:50
           </button>
+          {onSkip && !skipUsed && (
+            <button
+              onClick={onSkip}
+              className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-[#e3e0f9]/80 rounded-full text-sm transition-colors border border-white/10"
+            >
+              <SkipForward className="w-4 h-4" />
+              Saltar
+            </button>
+          )}
+          {onFreeze && !freezeUsed && (
+            <button
+              onClick={onFreeze}
+              className="flex items-center gap-2 px-4 py-2 bg-[#4A90D9]/10 hover:bg-[#4A90D9]/20 text-[#7FB5E6] rounded-full text-sm transition-colors border border-[#4A90D9]/20"
+            >
+              <Snowflake className="w-4 h-4" />
+              Congelar
+            </button>
+          )}
+        </div>
+      )}
+
+      {frozen && (
+        <div className="flex justify-center mb-2">
+          <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#4A90D9]/15 text-[#7FB5E6] text-xs font-bold uppercase tracking-wider">
+            <Snowflake className="w-3 h-3" />
+            Tempo Congelado
+          </span>
         </div>
       )}
 

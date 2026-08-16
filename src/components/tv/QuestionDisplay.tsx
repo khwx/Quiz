@@ -421,7 +421,7 @@ export default function QuestionDisplay({
       )}
 
       {/* Explanation on REVEAL */}
-      {status === GameStatus.REVEAL && (question.metadata?.explanation as string) && (
+      {status === GameStatus.REVEAL && (question.explanation as string) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -430,7 +430,7 @@ export default function QuestionDisplay({
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[#d0bcff] text-sm font-bold uppercase tracking-widest">Explicação</span>
           </div>
-          <p className="text-[#e3e0f9]/80 text-sm">{question.metadata?.explanation as string}</p>
+          <p className="text-[#e3e0f9]/80 text-sm">{question.explanation as string}</p>
         </motion.div>
       )}
 

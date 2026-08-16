@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChevronLeft, Rocket, FlaskConical, Brain, Globe, Palette, History } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
 interface GameHistoryItem {
@@ -25,24 +27,128 @@ const CATEGORY_ICONS: Record<string, { icon: any; color: string }> = {
   "default": { icon: Rocket, color: "#d0bcff" },
 };
 
-const MOCK_HISTORY: GameHistoryItem[] = [
-  { id: "1", category: "CULTURA_GERAL", date: "12 Out 2023", score: 2850, accuracy: 94, icon: Globe, color: "#d0bcff" },
-  { id: "2", category: "CIENCIA", date: "08 Out 2023", score: 3120, accuracy: 98, icon: FlaskConical, color: "#4CAF50" },
-  { id: "3", category: "MATEMATICA", date: "02 Out 2023", score: 1950, accuracy: 82, icon: Brain, color: "#FFB0CD" },
-  { id: "4", category: "HISTORIA", date: "28 Set 2023", score: 4400, accuracy: 100, icon: History, color: "#FFD700" },
-  { id: "5", category: "ARTE", date: "15 Set 2023", score: 1200, accuracy: 65, icon: Palette, color: "#deb7ff" },
-];
-
 const FILTERS = ["Tudo", "Vitórias", "Recentes"];
 
-export default function HistoryPage() {
-  const [activeFilter, setActiveFilter] = useState("Tudo");
-  const [history] = useState(MOCK_HISTORY);
+function formatDate(iso: string): string {
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "—";
+  return d.toLocaleDateString("pt-PT", { day: "2-digit", month: "short", year: "numeric" });
+}
 
-  const filtered = history.filter((item) => {
-    if (activeFilter === "Vitórias") return item.accuracy >= 80;
-    return true;
-  });
+function modeCategory(categories: string[]): string {
+  if (categories.length === 0) return "CULTURA_GERAL";
+  const counts = new Map<string, number>();
+  for (const c of categories) counts.set(c, (counts.get(c) || 0) + 1);
+  let best = categories[0];
+  let bestCount = 0;
+  for (const [cat, count] of counts) {
+    if (count > bestCount) {
+      best = cat;
+      bestCount = count;
+    }
+  }
+  return best;
+}
+
+export default function HistoryPage() {
+  const router = useRouter();
+  const [activeFilter, setActiveFilter] = useState("Tudo");
+  const [history, setHistory] = useState<GameHistoryItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadHistory();
+  }, []);
+
+  const loadHistory = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        router.push("/login");
+        return;
+      }
+
+      const { data: players } = await supabase
+        .from("players")
+        .select("id")
+        .eq("user_id", user.id);
+
+      const playerIds = players?.map((p) => p.id) || [];
+      if (playerIds.length === 0) {
+        setLoading(false);
+        return;
+      }
+
+      const { data: answers } = await supabase
+        .from("answers")
+        .select("game_id, is_correct, points, created_at, question_id")
+        .in("player_id", playerIds)
+        .order("created_at", { ascending: false })
+        .limit(500);
+
+      const userAnswers = answers || [];
+      if (userAnswers.length === 0) {
+        setLoading(false);
+        return;
+      }
+
+      const questionIds = Array.from(new Set(userAnswers.map((a) => a.question_id).filter(Boolean)));
+      const { data: questions } = await supabase
+        .from("questions")
+        .select("id, category")
+        .in("id", questionIds);
+      const questionCategoryMap = new Map((questions || []).map((q) => [q.id, q.category]));
+
+      const gamesMap = new Map<string, { points: number; total: number; correct: number; date: string; categories: string[] }>();
+      for (const a of userAnswers) {
+        const gameId = a.game_id as string;
+        const entry = gamesMap.get(gameId) || { points: 0, total: 0, correct: 0, date: a.created_at, categories: [] as string[] };
+        entry.points += a.points || 0;
+        entry.total += 1;
+        if (a.is_correct) entry.correct += 1;
+        if (a.created_at > entry.date) entry.date = a.created_at;
+        const cat = questionCategoryMap.get(a.question_id);
+        if (cat) entry.categories.push(cat);
+        gamesMap.set(gameId, entry);
+      }
+
+      const items: GameHistoryItem[] = Array.from(gamesMap.entries())
+        .map(([gameId, e]) => {
+          const accuracy = e.total > 0 ? Math.round((e.correct / e.total) * 100) : 0;
+          const category = modeCategory(e.categories);
+          const config = CATEGORY_ICONS[category] || CATEGORY_ICONS.default;
+          return {
+            id: gameId,
+            category,
+            date: formatDate(e.date),
+            score: e.points,
+            accuracy,
+            icon: config.icon,
+            color: config.color,
+          };
+        })
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+      setHistory(items);
+    } catch {
+      // keep empty on error
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filtered = useMemo(() => {
+    if (activeFilter === "Vitórias") return history.filter((item) => item.accuracy >= 80);
+    return history;
+  }, [activeFilter, history]);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-[#121223]">
+        <div className="w-8 h-8 border-2 border-[#d0bcff]/30 border-t-[#d0bcff] rounded-full animate-spin" />
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
@@ -132,16 +238,9 @@ export default function HistoryPage() {
         {filtered.length === 0 && (
           <div className="text-center py-16">
             <History className="w-12 h-12 text-[#e3e0f9]/20 mx-auto mb-4" />
-            <p className="text-[#e3e0f9]/50">Sem jogos neste filtro</p>
+            <p className="text-[#e3e0f9]/50">Ainda não tens missões registadas</p>
           </div>
         )}
-
-        <div className="flex justify-center mt-8">
-          <button className="flex items-center gap-2 px-6 py-3 glass-panel rounded-full text-[#d0bcff] text-sm font-bold active:scale-95 transition-all">
-            Ver mais missões
-            <ChevronLeft className="w-4 h-4 rotate-[-90deg]" />
-          </button>
-        </div>
       </div>
 
       <MobileNav />

@@ -12,6 +12,7 @@ import ConfirmModal from "@/components/ConfirmModal";
 import MobileNav from "@/components/MobileNav";
 import LobbyJoinView from "@/components/mobile/LobbyJoinView";
 import QuestionView from "@/components/mobile/QuestionView";
+import SoloGame from "@/components/mobile/SoloGame";
 import RevealView from "@/components/mobile/RevealView";
 import MobileChat from "@/components/mobile/MobileChat";
 import ReactionBar from "@/components/mobile/ReactionBar";
@@ -19,14 +20,16 @@ import type { Question } from "@/types";
 import FinalView from "@/components/mobile/FinalView";
 import SpectatorView from "@/components/mobile/SpectatorView";
 import { supabase } from "@/lib/supabase";
+import { triggerHaptic } from "@/lib/haptics";
 import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
 
 const log = createContextLogger("PlayPage");
 
-export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string; spectator?: string }> }) {
+export default function MobilePlay({ searchParams }: { searchParams: Promise<{ pin?: string; spectator?: string; solo?: string }> }) {
   const resolvedParams = use(searchParams);
   const isSpectator = resolvedParams.spectator === "1";
+  const isSolo = resolvedParams.solo === "1";
   const { gameId, joinGame, joinSpectator, status, currentQuestionIndex, currentQuestionId, players, setGameId, setPlayers, gameSettings } = useGame();
   const [pin, setPin] = useState(resolvedParams.pin || "");
   const [name, setName] = useState("");
@@ -44,7 +47,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   const [streak, setStreak] = useState(0);
   const [questionLoadError, setQuestionLoadError] = useState(false);
   const [fiftyFiftyUsed, setFiftyFiftyUsed] = useState(false);
+  const [skipUsed, setSkipUsed] = useState(false);
+  const [freezeUsed, setFreezeUsed] = useState(false);
+  const [frozen, setFrozen] = useState(false);
   const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
+  const localTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const frozenRef = useRef(false);
   const submittingRef = useRef(false);
   const clientPlayerId = `guest-${Math.random().toString(36).slice(2, 9)}`;
 
@@ -124,7 +132,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     }
     const { data, error } = await supabase
       .from("questions")
-      .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
+      .select("id, text, options, correct_option, image_url, category, metadata, age_rating, explanation")
       .eq("id", questionId)
       .single();
     if (error) {
@@ -153,6 +161,10 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setStreak(0);
       setShowHint(false);
       setFiftyFiftyUsed(false);
+      setSkipUsed(false);
+      setFreezeUsed(false);
+      setFrozen(false);
+      frozenRef.current = false;
       submittingRef.current = false;
     }
   }, [currentQuestionId, status]);
@@ -166,7 +178,12 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setStreak(0);
       setShowHint(false);
       setFiftyFiftyUsed(false);
+      setSkipUsed(false);
+      setFreezeUsed(false);
+      setFrozen(false);
+      frozenRef.current = false;
       submittingRef.current = false;
+      setStartTime(Date.now());
     }
   }, [questionData?.id, status]);
 
@@ -175,6 +192,33 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       fetchQuestion();
     }
   }, [status, currentQuestionId, currentQuestionIndex, gameSettings, fetchQuestion]);
+
+  // Local countdown for the player's timer display (synced to question start)
+  useEffect(() => {
+    if (status !== GameStatus.QUESTION) return;
+    const duration = gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER;
+    setTimeLeft(duration);
+    setFrozen(false);
+    frozenRef.current = false;
+    if (localTimerRef.current) clearInterval(localTimerRef.current);
+    localTimerRef.current = setInterval(() => {
+      setTimeLeft((prev) => (frozenRef.current ? prev : Math.max(0, prev - 1)));
+    }, 1000);
+    return () => {
+      if (localTimerRef.current) clearInterval(localTimerRef.current);
+    };
+  }, [status, currentQuestionId, gameSettings?.timer_duration]);
+
+  const handleFreeze = useCallback(() => {
+    if (freezeUsed || status !== GameStatus.QUESTION) return;
+    setFreezeUsed(true);
+    setFrozen(true);
+    frozenRef.current = true;
+    setTimeout(() => {
+      setFrozen(false);
+      frozenRef.current = false;
+    }, 5000);
+  }, [freezeUsed, status]);
 
   useEffect(() => {
     if ((status === GameStatus.LOBBY || status === GameStatus.STARTING || status === GameStatus.QUESTION) && gameId) {
@@ -185,7 +229,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           const gameStatus = data.status as GameStatus;
           const questionId = data.settings?.current_question_id || null;
           if (gameStatus === GameStatus.QUESTION && questionId && !questionData) {
-            const { data: qData, error: qError } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating").eq("id", questionId).single();
+            const { data: qData, error: qError } = await supabase.from("questions").select("id, text, options, correct_option, image_url, category, metadata, age_rating, explanation").eq("id", questionId).single();
             if (qData) {
               setQuestionData(qData);
               setShowHint(false);
@@ -270,11 +314,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setEarnedPoints(points);
         setStreak((prev) => prev + 1);
         playSound("correct");
+        triggerHaptic("correct");
         setTimeout(() => setEarnedPoints(null), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
       } else {
         setEarnedPoints(0);
         setStreak(0);
         playSound("wrong");
+        triggerHaptic("wrong");
         setTimeout(() => setEarnedPoints(null), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
       }
     }
@@ -332,12 +378,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       showToast("Ficaste sem vidas! Estás eliminado!", "error");
       playSound("wrong");
     }
-  } catch (err: any) {
-    showToast("Erro ao enviar resposta: " + err.message, "error");
-    submittingRef.current = false;
-    setHasAnswered(false);
-    setSelectedOption(null);
-  }
+   } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : "Erro desconhecido";
+      showToast("Erro ao enviar resposta: " + errorMessage, "error");
+      submittingRef.current = false;
+      setHasAnswered(false);
+      setSelectedOption(null);
+    }
 };
 
   const handleFiftyFifty = useCallback(() => {
@@ -355,6 +402,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     playSound?.("tick");
   }, [fiftyFiftyUsed, questionData, correctOption, playSound]);
 
+  const handleSkip = useCallback(() => {
+    if (skipUsed || hasAnswered || !questionData) return;
+    setSkipUsed(true);
+    setHasAnswered(true);
+    playSound?.("tick");
+  }, [skipUsed, hasAnswered, questionData, playSound]);
+
   const handleReport = async (reason: string) => {
     if (!currentQuestionId) return;
     const { data: q } = await supabase.from("questions").select("metadata").eq("id", currentQuestionId).single();
@@ -367,6 +421,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       .eq("id", currentQuestionId);
     showToast("Obrigado! Pergunta reportada.", "success");
   };
+
+  // Solo practice mode — self-contained game, no host required
+  if (isSolo) {
+    return <SoloGame />;
+  }
 
   // Spectator mode
   if (isSpectator) {
@@ -508,6 +567,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           onReport={() => setReportOpen(true)}
           onFiftyFifty={handleFiftyFifty}
           fiftyFiftyUsed={fiftyFiftyUsed}
+          onSkip={handleSkip}
+          skipUsed={skipUsed}
+          onFreeze={handleFreeze}
+          freezeUsed={freezeUsed}
+          frozen={frozen}
           eliminatedOptions={eliminatedOptions}
           buzzerMode={gameSettings?.buzzer_mode === true}
         />
@@ -552,6 +616,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           correctOption={correctOption}
           questionData={questionData}
           earnedPoints={earnedPoints}
+          skipped={skipUsed}
           onReport={() => setReportOpen(true)}
         />
         <MobileChat gameId={gameId!} playerId={currentPlayer?.id || clientPlayerId} playerName={name} />
