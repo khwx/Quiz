@@ -43,10 +43,12 @@ Tudo implementado e funcional!
 - [x] Pontuação coletiva por equipa (`teams.total_score` atualizada em tempo real)
 - [x] Ecrã de ranking por equipas (`/teams/ranking`)
 
-### Código Único por Jogador 🔴 (PRÓXIMO)
-- [ ] Cada jogador recebe código/link único para convites
-- [ ] Tracking individual de pontuações
-- [ ] Histórico pessoal
+### Código Único por Jogador 🟢 (COMPLETO)
+- [x] Cada jogador recebe código/link único para convites (`profiles.invite_code`, gerado no registo)
+- [x] Página de convite `/invite/[code]` com QR Code, link copiável e botão "Adicionar como amigo"
+- [x] Código visível no Perfil com botão "Copiar link"
+- [x] Tracking individual de pontuações (`game_history` + estatísticas no perfil)
+- [x] Histórico pessoal (tab "Histórico" no perfil)
 
 ---
 
@@ -65,8 +67,8 @@ Tudo implementado e funcional!
 
 1️⃣ **COMPLETO ✅**: Login + Perfil com estatísticas
 2️⃣ **COMPLETO ✅**: Sistema de equipas (Equipas, respostas em conjunto, pontuação coletiva e ranking)
-3️⃣ **PRÓXIMO**: Código único por jogador  
-4️⃣ **FUTURO**: Torneios
+3️⃣ **COMPLETO ✅**: Código único por jogador (código/link de convite + convites por código)
+4️⃣ **PRÓXIMO**: Torneios
 
 ---
 
@@ -86,7 +88,7 @@ Tudo implementado e funcional!
 
 ---
 
-*Última atualização: 22 Abril 2026* 🎉
+*Última atualização: 17 Agosto 2026* 🎉
 
 **O que achas de implementar agora?**
 

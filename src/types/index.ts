@@ -18,6 +18,7 @@ export interface Profile {
   total_games: number;
   total_wins: number;
   total_points: number;
+  invite_code?: string;
   created_at: string;
   updated_at: string;
 }

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3 } from "lucide-react";
+import { Trophy, Star, Coins, Flame, Activity, LogOut, Loader2, Target, Zap, Crown, Medal, BarChart3, Link2, Copy, Check } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
@@ -22,7 +22,8 @@ export default function ProfilePage() {
     name?: string;
     avatar?: string;
   } | null>(null);
-  const [profile, setProfile] = useState<{ xp: number; level: number; username?: string; avatar?: string } | null>(null);
+  const [profile, setProfile] = useState<{ xp: number; level: number; username?: string; avatar?: string; invite_code?: string } | null>(null);
+  const [copied, setCopied] = useState(false);
   const [stats, setStats] = useState<PlayerStats | null>(null);
   const [gamesHistory, setGamesHistory] = useState<AnswerSummary[]>([]);
 
@@ -41,7 +42,7 @@ export default function ProfilePage() {
 
       const { data: profile } = await supabase
         .from("profiles")
-        .select("xp, level, username, avatar")
+        .select("xp, level, username, avatar, invite_code")
         .eq("id", currentUser.id)
         .single();
 
@@ -82,7 +83,7 @@ export default function ProfilePage() {
       });
 
       if (profileData) {
-        setProfile({ xp: profileData.xp || 0, level: profileData.level || 1, username: profileData.username, avatar: profileData.avatar });
+        setProfile({ xp: profileData.xp || 0, level: profileData.level || 1, username: profileData.username, avatar: profileData.avatar, invite_code: profileData.invite_code });
       }
 
       setStats({
@@ -102,6 +103,19 @@ export default function ProfilePage() {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push("/");
+  };
+
+  const copyInviteLink = async () => {
+    if (!profile?.invite_code) return;
+    const link = `${window.location.origin}/invite/${profile.invite_code}`;
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopied(true);
+      showToast("Link de convite copiado!", "success");
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      showToast("Não foi possível copiar.", "error");
+    }
   };
 
   const achievements = [
@@ -229,6 +243,36 @@ export default function ProfilePage() {
             </div>
           </div>
         </motion.section>
+
+        {profile?.invite_code && (
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-[#d0bcff]/15 flex items-center justify-center">
+                <Link2 className="w-5 h-5 text-[#d0bcff]" />
+              </div>
+              <div>
+                <h3 className="font-bold text-[#e3e0f9]">O teu código de jogador</h3>
+                <p className="text-[11px] text-[#e3e0f9]/40">Partilha para os teus amigos te encontrarem e convidarem</p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <code className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-lg font-bold tracking-widest text-[#d0bcff] text-center sm:text-left">
+                {profile.invite_code}
+              </code>
+              <button
+                onClick={copyInviteLink}
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
+              >
+                {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                {copied ? "Copiado!" : "Copiar link"}
+              </button>
+            </div>
+          </motion.section>
+        )}
 
         <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
           {tabs.map((tab) => (
