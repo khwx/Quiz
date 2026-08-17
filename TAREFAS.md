@@ -52,14 +52,17 @@ Tudo implementado e funcional!
 
 ---
 
-## 🎯 FASE 3: Campeonatos (FUTURO)
+## 🎯 FASE 3: Campeonatos (EM CURSO)
 
-### Torneios 🔴 (POR IMPLEMENTAR)
-- [ ] Criar torneios com múltiplas rondas
-- [ ] Fase de qualificação + fase final
-- [ ] Classificações em tempo real
-- [ ] Prémios para top 3
-- [ ] Torneios públicos vs privados
+### Torneios 🟢 (COMPLETO)
+- [x] Criar torneios com PIN único (6 carateres)
+- [x] Registo de equipas no torneio (lobby + capacidade)
+- [x] Fases: LOBBY → QUALIFYING → FINAL → FINISHED
+- [x] Classificações em tempo real (realtime via Supabase)
+- [x] Ecrã de detalhe `/tournaments/[id]` com pódio e definições
+- [x] Modo Cego (anfitrião não vê respostas) e definições de timer/perguntas
+- [ ] Prémios/loot para o top 3 (PENDENTE)
+- [ ] Torneios públicos vs privados (PENDENTE)
 
 ---
 
@@ -68,7 +71,8 @@ Tudo implementado e funcional!
 1️⃣ **COMPLETO ✅**: Login + Perfil com estatísticas
 2️⃣ **COMPLETO ✅**: Sistema de equipas (Equipas, respostas em conjunto, pontuação coletiva e ranking)
 3️⃣ **COMPLETO ✅**: Código único por jogador (código/link de convite + convites por código)
-4️⃣ **PRÓXIMO**: Torneios
+4️⃣ **COMPLETO ✅**: Torneios (criação, registo de equipas, fases, classificações, ecrã de detalhe)
+5️⃣ **PRÓXIMO**: Login Social (Google/Facebook) ou melhorias de histórico no perfil
 
 ---
 

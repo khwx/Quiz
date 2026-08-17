@@ -748,6 +748,7 @@ export default function TournamentsPage() {
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}
+                  onClick={() => router.push(`/tournaments/${tournament.id}`)}
                 />
               ))}
               {tournaments.filter((t) => t.status !== TournamentStatus.FINISHED).length === 0 && (
@@ -768,6 +769,7 @@ export default function TournamentsPage() {
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}
+                  onClick={() => router.push(`/tournaments/${tournament.id}`)}
                 />
               ))}
             </div>

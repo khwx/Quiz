@@ -48,3 +48,11 @@
   - Prompt por categoria (mais específico) e `age_rating` aleatório; dedupe por `texto|category`; parâmetro `QUESTIONS_PER_CATEGORY`.
   - Fica pronto para gerar perguntas novas automaticamente assim que as API keys forem preenchidas no `.env`.
 - `add-fresh-batch.mjs` reutilizável para adicionar lotes curados manualmente em cada ciclo.
+
+## [2026-08-17] Ciclo de Manutenção Autónomo (2º ciclo)
+- **TAREFA DIÁRIA — Novas perguntas**: Executado `npm run daily` (pipeline `scripts/daily-questions.mjs`). Inseridas **4 novas perguntas** (as restantes 26 eram fallback já existentes e foram ignoradas por dedupe). Total na BD: **2.532 perguntas**.
+- **TAREFA SEMANAL — Verificação de duplicados**: Criado `scripts/weekly-dedupe.mjs` (remove duplicados exatos texto+categoria+opções, mantém o id mais baixo; reporta duplicados aproximados para revisão manual). Executado: **1 duplicado exato removido**. 24 grupos de duplicados aproximados detetados — esmagadoramente Bandeiras (texto genérico + imagens diferentes = falsos positivos, não removidos).
+- **MELHORIA DE UX**: Cartões de torneio na lista (`/tournaments`) agora são clicáveis e navegam para o detalhe `/tournaments/[id]` (antes não tinham ação de clique).
+- **TAREFAS.md**: Torneios marcados como COMPLETO (já estavam implementados: criação, registo de equipas, fases LOBBY/QUALIFYING/FINAL/FINISHED, classificações em tempo real e ecrã de detalhe). Próximo = Login Social ou histórico de perfil.
+- Pendente (manual, sem CLI Supabase): aplicar migrações 010 (invite_code), 011 (achievements), 012 (normalize categories) no Supabase.
+- Lint pendente de verificação; build pendente.
