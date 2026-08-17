@@ -34827,5 +34827,389 @@
     "metadata": {
       "hint": "A resposta correta e: Baixo"
     }
+  },
+  {
+    "text": "O que significa a sigla API na área da tecnologia?",
+    "options": [
+      "Advanced Programming Interface",
+      "Application Programming Interface",
+      "Automated Process Integration",
+      "Applied Protocol Interface"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Conjunto de regras que permite a comunicação entre programas"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual empresa criou o sistema Android?",
+    "options": [
+      "Apple",
+      "Microsoft",
+      "Google",
+      "Samsung"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Baseado no kernel Linux"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital da Irlanda do Norte?",
+    "options": [
+      "Dublin",
+      "Belfast",
+      "Cork",
+      "Galway"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Capital da província britânica"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos membros permanentes com direito de veto tem o Conselho de Segurança da ONU?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "EUA, Rússia, China, França e Reino Unido"
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é o NATO?",
+    "options": [
+      "Organização económica",
+      "Aliança militar de defesa coletiva",
+      "Tribunal internacional",
+      "Banco central europeu"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tratado do Atlântico Norte"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o prato tradicional português à base de bacalhau desfiado, batata e cebola?",
+    "options": [
+      "Bacalhau à Brás",
+      "Bacalhau com natas",
+      "Bacalhau à Gomes de Sá",
+      "Bacalhau assado"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Misturado com ovos mexidos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a bebida alcoólica destilada da cana-de-açúcar muito popular no Brasil?",
+    "options": [
+      "Cachaça",
+      "Rum",
+      "Tequila",
+      "Gin"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Base da caipirinha"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos anéis tem o símbolo dos Jogos Olímpicos?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Representam os cinco continentes"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o desporto em que se usa um puck de borracha?",
+    "options": [
+      "Futebol",
+      "Hóquei no gelo",
+      "Rugby",
+      "Críquete"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Muito popular no Canadá"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o nome do astromech droid companheiro de Luke Skywalker em Star Wars?",
+    "options": [
+      "R2-D2",
+      "C-3PO",
+      "BB-8",
+      "K-2SO"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Robô cilíndrico azul"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem dirigiu o filme Jurassic Park (1993)?",
+    "options": [
+      "James Cameron",
+      "Steven Spielberg",
+      "Ridley Scott",
+      "Peter Jackson"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Também realizou E.T."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o Brasil proclamou a sua independência?",
+    "options": [
+      "1808",
+      "1822",
+      "1889",
+      "1500"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Grito do Ipiranga"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual movimento artístico é associado a Salvador Dalí?",
+    "options": [
+      "Cubismo",
+      "Surrealismo",
+      "Futurismo",
+      "Dadaísmo"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Explora o inconsciente e os sonhos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem esculpiu a Pietà de São Pedro, no Vaticano?",
+    "options": [
+      "Michelangelo",
+      "Donatello",
+      "Bernini",
+      "Rodin"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Escultor renascentista italiano"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com mais fusos horários do mundo?",
+    "options": [
+      "Rússia",
+      "Estados Unidos",
+      "China",
+      "França"
+    ],
+    "correct_option": 3,
+    "category": "GEOGRAFIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Devido aos seus territórios ultramarinos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o estreito que separa a Europa de África?",
+    "options": [
+      "Estreito de Gibraltar",
+      "Bósforo",
+      "Dardanelos",
+      "Messina"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Liga o Atlântico ao Mediterrâneo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento químico com símbolo O?",
+    "options": [
+      "Ouro",
+      "Oxigénio",
+      "Osmio",
+      "Ónix"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Gás essencial à respiração"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a estrela mais próxima do Sistema Solar?",
+    "options": [
+      "Sirius",
+      "Proxima Centauri",
+      "Betelgeuse",
+      "Vega"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Está na constelação de Centauro"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o animal terrestre mais pesado do mundo?",
+    "options": [
+      "Elefante africano",
+      "Hipopótamo",
+      "Rinoceronte",
+      "Gorila"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pode passar de 6 toneladas"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual ave é conhecida por imitar a voz humana?",
+    "options": [
+      "Pardal",
+      "Papagaio",
+      "Pomba",
+      "Canário"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Muito comum como animal de estimação"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual instrumento tem cordas dedilhadas e é símbolo do fado português?",
+    "options": [
+      "Viola",
+      "Guitarra portuguesa",
+      "Cravo",
+      "Bandolim"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tem forma de pirilau"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem compôs a Sinfonia nº 5 (com o tema ta-ta-ta-tá)?",
+    "options": [
+      "Mozart",
+      "Beethoven",
+      "Bach",
+      "Chopin"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Compositor alemão surdo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país cuja bandeira tem um mapa da ilha em branco?",
+    "options": [
+      "Chipre",
+      "Grécia",
+      "Malta",
+      "Islândia"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Única bandeira com um mapa de si mesma"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país cuja bandeira tem uma suástica antiga substituída por um disco solar em 1945?",
+    "options": [
+      "Japão",
+      "Tailândia",
+      "Mongólia",
+      "Nepal"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Bandeira histórica siamesa"
+    },
+    "image_url": null
   }
 ]

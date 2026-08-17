@@ -37,3 +37,14 @@
 - `add-daily.mjs`: corrigido casing `Bandeiras`→`BANDEIRAS` e dedupe agora trata categoria em uppercase (evita reintroduzir variantes).
 - **MIGRAÇÃO 011** (achievements, bug 8.8) concluída e a compilar; falta aplicação manual no Supabase (igual à 010).
 - Build: OK. Lint: sem novos erros.
+
+## [2026-08-17] Ciclo de Manutenção Autónomo (Daily + Dedupe + Pipeline)
+- **TAREFA DIÁRIA — Novas perguntas**: Criado `add-fresh-batch.mjs` com lote curado de 32 perguntas (2-4 por categoria). Inseridas **24 novas perguntas** (8 detetadas como duplicados e ignoradas). Total na BD: **2.577 perguntas**.
+- **CORREÇÃO DE DADOS — Orfãos `Bandeiras`**: Encontradas 24 linhas com categoria `Bandeiras` (casing errado, órfãs — o app usa `BANDEIRAS`). Normalizadas para `BANDEIRAS` via update direto (passam a ser jogáveis).
+- **TAREFA SEMANAL — Verificação de duplicados**: Script de limpeza removeu **49 duplicados exatos** (texto+categoria+opções idênticos). Total após limpeza: **2.528 perguntas**.
+- **MELHORIA — Pipeline de geração diária** (`scripts/daily-questions.mjs`, usado por `npm run daily`):
+  - Agora carrega `.env` (dotenv) e lê as chaves corretas (`NEXT_PUBLIC_GEMINI_API_KEY`, `GROQ_API_KEY`).
+  - Geração por IA com **Gemini → fallback Groq** (igual à app) e fallback curado caso não haja chaves.
+  - Prompt por categoria (mais específico) e `age_rating` aleatório; dedupe por `texto|category`; parâmetro `QUESTIONS_PER_CATEGORY`.
+  - Fica pronto para gerar perguntas novas automaticamente assim que as API keys forem preenchidas no `.env`.
+- `add-fresh-batch.mjs` reutilizável para adicionar lotes curados manualmente em cada ciclo.
