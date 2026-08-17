@@ -20,7 +20,7 @@ interface GameHistoryItem {
 
 const CATEGORY_ICONS: Record<string, { icon: any; color: string }> = {
   "CULTURA_GERAL": { icon: Globe, color: "#d0bcff" },
-  "HISTORIA": { icon: History, color: "#FFD700" },
+  "HISTÓRIA": { icon: History, color: "#FFD700" },
   "CIENCIA": { icon: FlaskConical, color: "#4CAF50" },
   "MATEMATICA": { icon: Brain, color: "#FFB0CD" },
   "ARTE": { icon: Palette, color: "#deb7ff" },

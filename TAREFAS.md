@@ -76,6 +76,7 @@ Tudo implementado e funcional!
 - [x] Ícones sobrepostos nos inputs do login
 - [x] Botão "Ver Todas" nas categorias
 - [x] Autenticação no Supabase
+- [x] **Categorias com casing errado**: `História` devolvia 0 perguntas e `Bandeiras` só 12 — alinhado o app a `BANDEIRAS`/`HISTÓRIA` (ver migração 012)
 
 ---
 

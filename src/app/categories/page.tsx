@@ -31,9 +31,9 @@ const getCategoryStyles = (color: string) => {
 const CATEGORIES = [
   { name: "Cultura Geral", icon: Globe, color: "violet", desc: "Conhecimentos gerais", dbName: "CULTURA_GERAL" },
   { name: "Capitais do Mundo", icon: Zap, color: "emerald", desc: "Capitais e países", dbName: "CAPITAIS_DO_MUNDO" },
-  { name: "Bandeiras", icon: Flag, color: "green", desc: "Bandeiras de países", dbName: "Bandeiras" },
+  { name: "Bandeiras", icon: Flag, color: "green", desc: "Bandeiras de países", dbName: "BANDEIRAS" },
   { name: "Geografia", icon: Map, color: "green", desc: "Montanhas, rios e oceanos", dbName: "GEOGRAFIA" },
-  { name: "História", icon: History, color: "amber", desc: "Eventos históricos", dbName: "HISTORIA" },
+  { name: "História", icon: History, color: "amber", desc: "Eventos históricos", dbName: "HISTÓRIA" },
   { name: "Ciência", icon: FlaskConical, color: "cyan", desc: "Física, química e biologia", dbName: "CIENCIA" },
   { name: "Tecnologia", icon: Cpu, color: "violet", desc: "Informática e programação", dbName: "TECNOLOGIA" },
   { name: "Cinema", icon: Film, color: "rose", desc: "Filmes e atores", dbName: "CINEMA" },
@@ -76,14 +76,14 @@ export default function CategoriesPage() {
         data?.forEach(q => {
           const cat = q.category;
           if (ageGroup === "adults" || q.age_rating >= targetAge) {
-            if (!cat.includes("Bandeiras")) {
+            if (!cat.includes("BANDEIRAS")) {
               counts[cat] = (counts[cat] || 0) + 1;
             }
           }
         });
         
-        const bandeirasCount = data?.filter(q => q.category === "Bandeiras").length || 0;
-        counts["Bandeiras"] = bandeirasCount;
+        const bandeirasCount = data?.filter(q => q.category === "BANDEIRAS").length || 0;
+        counts["BANDEIRAS"] = bandeirasCount;
         
         setCategoryCounts(Object.entries(counts).map(([name, count]) => ({ name, count })));
       } catch (err: any) {

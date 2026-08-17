@@ -21,3 +21,19 @@
 - **DECISÃO**: código derivado do `id` do utilizador (garante unicidade a 100%, sem risco de colisão no trigger). Sem login social (fora de escopo).
 - **AÇÃO PENDENTE (manual)**: aplicar a migração 010 no Supabase (não há CLI/config nem service role key neste ambiente). Comando: `supabase db push` ou colar o SQL de `010_add_invite_code.sql` no SQL Editor. Sem a migração, a feature não ativa mas o app não quebra (a query simplesmente não devolve o código).
 - Lint: 0 erros (2 warnings de estilo pré-existentes). Build: OK.
+
+## [2026-08-17] Rotina Diária + Normalização de Categorias (FASE de Manutenção)
+- **TAREFA DIÁRIA — Novas perguntas**: Executado `add-daily.mjs`. Adicionadas **24 novas perguntas** (302 detetadas como duplicados). Total na BD: **2.553 perguntas**.
+- **TAREFA SEMANAL — Verificação de duplicados**: Script de deteção encontrou 354 pares candidatos (texto+categoria, case-insensitive). A esmagadora maioria (271+19) são perguntas de **Bandeiras** com texto genérico e imagens diferentes (falsos positivos). Duplicados reais (texto+opções idênticos): ~63.
+- **BUG CRÍTICO DE GAMEPLAY CORRIGIDO — Categorias com casing inconsistente**:
+  - A config de categorias do app usava `dbName: "Bandeiras"` e `dbName: "HISTORIA"`, mas os dados usam `BANDEIRAS` e `HISTÓRIA`.
+  - Impacto: a categoria **"História" devolvia 0 perguntas** e **"Bandeiras" só devolvia 12 de 78**.
+  - Corrigido em `useGameSetup.ts`, `useQuestionManagement.ts`, `categories/page.tsx` e `history/page.tsx` para usarem `BANDEIRAS` / `HISTÓRIA` (canónico dos dados).
+- **MIGRAÇÃO 012** (`supabase/migrations/012_normalize_categories.sql`):
+  - Normaliza linhas com casing errado (`Bandeiras`→`BANDEIRAS`, `HISTORIA`→`HISTÓRIA`).
+  - Adiciona políticas UPDATE/DELETE à tabela `questions` (manutenção).
+  - Remove duplicados exatos (texto+opções iguais), mantendo o id mais baixo — flags excluídas naturalmente (opções distintas).
+  - **AÇÃO PENDENTE (manual)**: aplicar a migração 012 no Supabase (SQL Editor). Sem isso, as 12 linhas `Bandeiras` ficam órfãs e o app (agora a usar `BANDEIRAS`) não as lê — serão normalizadas pela migração.
+- `add-daily.mjs`: corrigido casing `Bandeiras`→`BANDEIRAS` e dedupe agora trata categoria em uppercase (evita reintroduzir variantes).
+- **MIGRAÇÃO 011** (achievements, bug 8.8) concluída e a compilar; falta aplicação manual no Supabase (igual à 010).
+- Build: OK. Lint: sem novos erros.

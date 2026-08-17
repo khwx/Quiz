@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Rocket, Users, Target, Zap, Lock, CheckCircle } from "lucide-react";
+import { ChevronLeft, Lock, CheckCircle } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
+import { supabase } from "@/lib/supabase";
+import { ACHIEVEMENT_CATALOG, RARITY_POINTS } from "@/lib/achievements";
 
 interface Achievement {
   id: string;
@@ -27,26 +29,71 @@ const RARITY_CONFIG = {
 
 const CATEGORIES = ["Todas", "Vitórias", "Sequências", "Precisão", "Social"];
 
-const MOCK_ACHIEVEMENTS: Achievement[] = [
-  { id: "1", name: "Mestre do Vácuo", description: "Vence 50 quizzes sem errar.", icon: "🏆", rarity: "legendary", progress: 42, maxProgress: 50, unlocked: false, category: "Vitórias" },
-  { id: "2", name: "Velocidade de Dobra", description: "Responde 10 perguntas em <3s.", icon: "🚀", rarity: "epic", progress: 10, maxProgress: 10, unlocked: true, category: "Sequências" },
-  { id: "3", name: "Embaixador Estelar", description: "Convida 5 amigos.", icon: "👥", rarity: "rare", progress: 3, maxProgress: 5, unlocked: false, category: "Social" },
-  { id: "4", name: "Viajante Global", description: "Torneios em 5 fusos horários.", icon: "🌍", rarity: "common", progress: 0, maxProgress: 5, unlocked: false, category: "Social" },
-  { id: "5", name: "Primeira Estrela", description: "Ganha o teu primeiro jogo.", icon: "⭐", rarity: "common", progress: 1, maxProgress: 1, unlocked: true, category: "Vitórias" },
-  { id: "6", name: "Sequência Infinita", description: "10 vitórias consecutivas.", icon: "🔥", rarity: "epic", progress: 7, maxProgress: 10, unlocked: false, category: "Sequências" },
-  { id: "7", name: "Olho de Águia", description: "90% de precisão em 20 jogos.", icon: "🎯", rarity: "rare", progress: 14, maxProgress: 20, unlocked: false, category: "Precisão" },
-  { id: "8", name: "Lenda Viva", description: "100 vitórias totais.", icon: "👑", rarity: "legendary", progress: 67, maxProgress: 100, unlocked: false, category: "Vitórias" },
-];
-
 export default function AchievementsPage() {
   const [activeCategory, setActiveCategory] = useState("Todas");
+  const [achievements, setAchievements] = useState<Achievement[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) {
+          setAchievements(ACHIEVEMENT_CATALOG.map((a) => ({ ...a, progress: 0, maxProgress: 1, unlocked: false })));
+          setLoading(false);
+          return;
+        }
+
+        const { data: players } = await supabase
+          .from("players")
+          .select("id")
+          .eq("user_id", user.id);
+
+        const playerIds = (players || []).map((p) => p.id);
+
+        let unlockedIds = new Set<string>();
+        if (playerIds.length > 0) {
+          const { data: rows } = await supabase
+            .from("achievements")
+            .select("achievement_id")
+            .in("player_id", playerIds);
+          unlockedIds = new Set((rows || []).map((r) => r.achievement_id));
+        }
+
+        setAchievements(
+          ACHIEVEMENT_CATALOG.map((a) => ({
+            ...a,
+            progress: unlockedIds.has(a.id) ? 1 : 0,
+            maxProgress: 1,
+            unlocked: unlockedIds.has(a.id),
+          }))
+        );
+      } catch {
+        setAchievements(ACHIEVEMENT_CATALOG.map((a) => ({ ...a, progress: 0, maxProgress: 1, unlocked: false })));
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
 
   const filtered = activeCategory === "Todas"
-    ? MOCK_ACHIEVEMENTS
-    : MOCK_ACHIEVEMENTS.filter((a) => a.category === activeCategory);
+    ? achievements
+    : achievements.filter((a) => a.category === activeCategory);
 
-  const unlocked = MOCK_ACHIEVEMENTS.filter((a) => a.unlocked).length;
-  const total = MOCK_ACHIEVEMENTS.length;
+  const unlocked = achievements.filter((a) => a.unlocked).length;
+  const total = achievements.length;
+  const astroPoints = useMemo(
+    () => achievements.filter((a) => a.unlocked).reduce((sum, a) => sum + RARITY_POINTS[a.rarity], 0),
+    [achievements]
+  );
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-[#121223]">
+        <span className="text-[#d0bcff] animate-pulse">A carregar conquistas...</span>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
@@ -79,7 +126,7 @@ export default function AchievementsPage() {
           <div className="h-10 w-px bg-white/10" />
           <div>
             <p className="text-[10px] text-[#FFD700] uppercase tracking-wider font-bold">Pontos Astro</p>
-            <p className="text-xl font-bold text-[#e3e0f9]">2,450</p>
+            <p className="text-xl font-bold text-[#e3e0f9]">{astroPoints.toLocaleString("pt-PT")}</p>
           </div>
         </motion.div>
 

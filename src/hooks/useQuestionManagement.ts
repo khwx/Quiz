@@ -62,7 +62,7 @@ export function useQuestionManagement(
       }
       const ageMap: Record<string, number> = { "7-9": 8, "10-14": 12, "15-17": 16, adults: 16 };
       const targetAge = ageMap[ageGroup] || 16;
-      const isUniversal = dbNames.some((n) => n === "Bandeiras" || n === "CAPITAIS_DO_MUNDO");
+      const isUniversal = dbNames.some((n) => n === "BANDEIRAS" || n === "CAPITAIS_DO_MUNDO");
       let query = supabase
         .from("questions")
         .select("id", { count: "exact", head: true })
@@ -100,7 +100,7 @@ export function useQuestionManagement(
 
         let query = supabase.from("questions").select("*").in("category", selectedDbNames);
         const isUniversalTopic =
-          selectedDbNames.includes("Bandeiras") || selectedDbNames.includes("CAPITAIS_DO_MUNDO");
+          selectedDbNames.includes("BANDEIRAS") || selectedDbNames.includes("CAPITAIS_DO_MUNDO");
 
         if (!isUniversalTopic) {
           query = query.gte("age_rating", targetAge);
