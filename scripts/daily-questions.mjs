@@ -130,6 +130,16 @@ async function main() {
   console.log(`📅 Daily Question Generation — ${date}`);
   console.log(`🎯 Objetivo: ${PER_CATEGORY} pergunta(s) por categoria (${CATEGORIES.length * PER_CATEGORY} total)`);
 
+  const hasGemini = Boolean(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
+  const hasGroq = Boolean(process.env.GROQ_API_KEY);
+  if (!hasGemini && !hasGroq) {
+    console.warn('⚠️ AVISO: Nenhuma API key de IA definida (NEXT_PUBLIC_GEMINI_API_KEY / GROQ_API_KEY).');
+    console.warn('⚠️ Serão usadas apenas perguntas de fallback curadas — que provavelmente já existem na BD (0 novas).');
+    console.warn('⚠️ Define uma chave no .env para gerar perguntas novas com IA.');
+  } else {
+    console.log(`🤖 Provedores de IA: Gemini=${hasGemini ? 'on' : 'off'} · Groq=${hasGroq ? 'on' : 'off'}`);
+  }
+
   const existingPairs = await getExistingPairs();
   const newQuestions = [];
   let attempts = 0;

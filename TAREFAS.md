@@ -72,7 +72,8 @@ Tudo implementado e funcional!
 2️⃣ **COMPLETO ✅**: Sistema de equipas (Equipas, respostas em conjunto, pontuação coletiva e ranking)
 3️⃣ **COMPLETO ✅**: Código único por jogador (código/link de convite + convites por código)
 4️⃣ **COMPLETO ✅**: Torneios (criação, registo de equipas, fases, classificações, ecrã de detalhe)
-5️⃣ **PRÓXIMO**: Login Social (Google/Facebook) ou melhorias de histórico no perfil
+5️⃣ **COMPLETO ✅**: Login Social (Google + Facebook OAuth em `/login` — `handleOAuthLogin` parametrizado, build OK)
+6️⃣ **PRÓXIMO**: Melhorias de histórico no perfil ou prêmios/loot para top 3 em Torneios
 
 ---
 
@@ -81,6 +82,7 @@ Tudo implementado e funcional!
 - [x] Botão "Ver Todas" nas categorias
 - [x] Autenticação no Supabase
 - [x] **Categorias com casing errado**: `História` devolvia 0 perguntas e `Bandeiras` só 12 — alinhado o app a `BANDEIRAS`/`HISTÓRIA` (ver migração 012)
+- [x] **Typo de categoria `GEGRAFIA`**: 1 pergunta orfã com categoria `GEGRAFIA` (falta de 'O') normalizada para `GEOGRAFIA` (ver migração 013)
 
 ---
 

@@ -56,3 +56,11 @@
 - **TAREFAS.md**: Torneios marcados como COMPLETO (já estavam implementados: criação, registo de equipas, fases LOBBY/QUALIFYING/FINAL/FINISHED, classificações em tempo real e ecrã de detalhe). Próximo = Login Social ou histórico de perfil.
 - Pendente (manual, sem CLI Supabase): aplicar migrações 010 (invite_code), 011 (achievements), 012 (normalize categories) no Supabase.
 - Lint pendente de verificação; build pendente.
+
+## [2026-08-17] Ciclo de Manutenção — Login Social + Correção de Dados + Lint
+- **Login Social (Facebook)**: Implementado na página `/login` (`handleOAuthLogin` genérico para Google e Facebook). Dois botões OAuth lado a lado com ícones SVG respetivos. O provider é parametrizado para facilitar adição de novos provedores. `redirectTo` aponta para `/profile`.
+- **Lint + Build**: A página de login foi limada de erros. Removidos `any` types dos `catch` (usado `err: unknown` + `instanceof Error`) e variável `router` não usada. Removidos `data` não usados no destructuring. Página agora lint-clean (0 erros, 0 warnings). Build: OK.
+- **Correção de Dados — Typo `GEGRAFIA`**: Encontrada 1 linha com categoria `GEGRAFIA` (erro de digitação — faltando 'O'). Normalizada para `GEOGRAFIA` via update direto. Criada migração `013_normalize_geografia.sql` para registo/documentação.
+- **Migrações 002 + 003**: Adicionados `DROP POLICY IF EXISTS` antes de cada `CREATE POLICY` para tornar as migrações idempotentes (seguro re-aplicar sem erros de "policy already exists").
+- **TAREFA DIÁRIA — Novas perguntas**: Executado `npm run daily` (`scripts/daily-questions.mjs`). 0 novas perguntas (API keys de IA não definidas; todos os fallbacks já existiam na BD). Script alerta claramente quando não há chaves de IA configuradas.
+- **TAREFA SEMANAL — Verificação de duplicados**: Executado `scripts/weekly-dedupe.mjs`. Total na BD: 2.532 perguntas. 0 duplicados exatos removidos. 24 grupos de duplicados aproximados detectados — a maioria são Bandeiras com texto genérico + imagens diferentes (falsos positivos, não removidos).

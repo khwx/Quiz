@@ -11,18 +11,22 @@ CREATE TABLE IF NOT EXISTS chat_messages (
 
 ALTER TABLE chat_messages ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Anyone can view chat messages for their game" ON chat_messages;
 CREATE POLICY "Anyone can view chat messages for their game"
   ON chat_messages FOR SELECT
   USING (true);
 
+DROP POLICY IF EXISTS "Players can insert their own chat messages" ON chat_messages;
 CREATE POLICY "Players can insert their own chat messages"
   ON chat_messages FOR INSERT
   WITH CHECK (true);
 
+DROP POLICY IF EXISTS "Players can update their own chat messages" ON chat_messages;
 CREATE POLICY "Players can update their own chat messages"
   ON chat_messages FOR UPDATE
   USING (true);
 
+DROP POLICY IF EXISTS "Players can delete their own chat messages" ON chat_messages;
 CREATE POLICY "Players can delete their own chat messages"
   ON chat_messages FOR DELETE
   USING (true);
