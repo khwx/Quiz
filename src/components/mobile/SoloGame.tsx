@@ -63,7 +63,7 @@ export default function SoloGame() {
     (async () => {
       const { data, error } = await supabase
         .from("questions")
-        .select("id, text, options, correct_option, image_url, category, metadata, age_rating, explanation")
+        .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
         .limit(200);
       if (cancelled) return;
       if (error || !data || data.length === 0) {

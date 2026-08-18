@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock, Search, X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { GAME_CONSTANTS, GameStatus, TournamentStatus, UserRole } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
@@ -166,6 +166,19 @@ export default function TournamentsPage() {
   const [prizeSecond, setPrizeSecond] = useState("");
   const [prizeThird, setPrizeThird] = useState("");
   const [publicJoinTarget, setPublicJoinTarget] = useState<TournamentWithTeams | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [statusFilter, setStatusFilter] = useState<string>("all");
+
+  // Search + status filtering applied across all tournament sections
+  const filteredTournaments = tournaments.filter((t) => {
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch =
+      !q ||
+      t.name.toLowerCase().includes(q) ||
+      t.pin.toLowerCase().includes(q);
+    const matchesStatus = statusFilter === "all" || t.status === statusFilter;
+    return matchesSearch && matchesStatus;
+  });
 
   useEffect(() => {
     checkUser();
@@ -663,6 +676,50 @@ export default function TournamentsPage() {
           )}
         </AnimatePresence>
 
+        {/* Search + status filter */}
+        {!myTournament && !createMode && !joinMode && !publicJoinTarget && tournaments.length > 0 && (
+          <div className="space-y-3">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#e3e0f9]/40 pointer-events-none" />
+              <input
+                type="text"
+                placeholder="Pesquisar por nome ou código..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-10 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#d0bcff]/50 transition-all"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#e3e0f9]/40 hover:text-[#e3e0f9] transition-colors"
+                  aria-label="Limpar pesquisa"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {(["all", TournamentStatus.LOBBY, TournamentStatus.QUALIFYING, TournamentStatus.FINAL, TournamentStatus.FINISHED] as string[]).map((key) => {
+                const label = key === "all" ? "Todos" : statusLabels[key];
+                const active = statusFilter === key;
+                return (
+                  <button
+                    key={key}
+                    onClick={() => setStatusFilter(key)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                      active
+                        ? "bg-[#d0bcff] text-[#121223]"
+                        : "bg-white/5 text-[#e3e0f9]/50 hover:bg-white/10"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <AnimatePresence>
           {createMode && !myTournament && (
             <motion.section 
@@ -938,14 +995,14 @@ export default function TournamentsPage() {
           )}
         </AnimatePresence>
 
-        {tournaments.length > 0 && !myTournament && (
+        {filteredTournaments.length > 0 && !myTournament && (
           <section>
             <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
               <Globe className="w-5 h-5 text-[#4CAF50]" />
               Torneios Públicos
             </h3>
             <div className="space-y-3">
-              {tournaments
+              {filteredTournaments
                 .filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED)
                 .map((tournament) => (
                   <TournamentCard
@@ -955,21 +1012,21 @@ export default function TournamentsPage() {
                     onJoin={() => { setSelectedTeamId(myTeams[0]?.id || ""); setPublicJoinTarget(tournament); }}
                   />
                 ))}
-              {tournaments.filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
+              {filteredTournaments.filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
                 <p className="text-[#e3e0f9]/40 text-sm">Não há torneios públicos no momento. Cria um e torna-o público!</p>
               )}
             </div>
           </section>
         )}
 
-        {tournaments.length > 0 && !myTournament && (
+        {filteredTournaments.length > 0 && !myTournament && (
           <section>
             <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
               <Trophy className="w-5 h-5 text-[#FFD700]" />
               Torneios Ativos
             </h3>
             <div className="space-y-3">
-              {tournaments
+              {filteredTournaments
                 .filter((t) => !t.is_public && t.status !== TournamentStatus.FINISHED)
                 .map((tournament) => (
                 <TournamentCard
@@ -978,21 +1035,21 @@ export default function TournamentsPage() {
                   onClick={() => router.push(`/tournaments/${tournament.id}`)}
                 />
               ))}
-              {tournaments.filter((t) => !t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
+              {filteredTournaments.filter((t) => !t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
                 <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio ativo</p>
               )}
             </div>
           </section>
         )}
 
-        {tournaments.some((t) => t.status === TournamentStatus.FINISHED) && !myTournament && (
+        {filteredTournaments.some((t) => t.status === TournamentStatus.FINISHED) && !myTournament && (
           <section>
             <h3 className="text-lg font-bold text-[#e3e0f9]/60 mb-4 flex items-center gap-2">
               <Trophy className="w-5 h-5 text-[#e3e0f9]/30" />
               Torneios Finalizados
             </h3>
             <div className="space-y-3 opacity-60">
-              {tournaments.filter((t) => t.status === TournamentStatus.FINISHED).map((tournament) => (
+              {filteredTournaments.filter((t) => t.status === TournamentStatus.FINISHED).map((tournament) => (
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}
@@ -1003,7 +1060,7 @@ export default function TournamentsPage() {
           </section>
         )}
 
-        {tournaments.length === 0 && !myTournament && !createMode && !joinMode && (
+        {filteredTournaments.length === 0 && !myTournament && !createMode && !joinMode && (
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

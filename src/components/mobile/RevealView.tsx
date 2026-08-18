@@ -34,7 +34,7 @@ export default function RevealView({
   const isSkipped = skipped && selectedOption === null;
   const correctText = questionData?.options?.[correctOption ?? -1];
   const hint = questionData?.metadata?.hint as string | undefined;
-  const explanation = questionData?.explanation as string | undefined;
+  const explanation = (questionData?.explanation || (questionData?.metadata as Record<string, unknown> | undefined)?.explanation || (questionData?.metadata as Record<string, unknown> | undefined)?.curiosidade) as string | undefined;
 
   return (
     <main

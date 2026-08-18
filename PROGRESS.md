@@ -1,5 +1,20 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-18] Ciclo de Manutenção — Filtros/Pesquisa em Torneios + Robustez de Explicação
+- **MELHORIA (backlog) — Filtros e pesquisa na lista de torneios** (`src/app/tournaments/page.tsx`):
+  - Caixa de pesquisa que filtra torneios por **nome ou PIN** (case-insensitive) em todas as secções (Públicos, Ativos, Finalizados).
+  - Chips de filtro por **estado** (Todos / Aguardando / Qualificação / Final / Finalizado).
+  - Botão "limpar pesquisa" (X) e secção vazia "nenhum resultado" quando o filtro não devolve nada.
+  - UI só aparece quando há torneios e o utilizador não está a criar/entrar num torneio.
+- **ROBUSTEZ DE EXPLICAÇÃO** (mudanças pré-existentes não commitadas, agora integradas):
+  - `RevealView.tsx` e `QuestionDisplay.tsx` lêem a explicação com fallback para `metadata.explanation` / `metadata.curiosidade` quando a coluna `explanation` não existe na BD.
+  - `SoloGame.tsx` e `SpectatorView.tsx` deixam de selecionar a coluna `explanation` (evita erro 400 do PostgREST antes da migração 012 ser aplicada).
+  - Migração `supabase/migrations/012_add_explanation_to_questions.sql`: adiciona colunas `explanation` e `hint` à tabela `questions` (idempotente com `IF NOT EXISTS`).
+- **TAREFA DIÁRIA — Novas perguntas**: Executado `npm run daily`. 0 novas perguntas (API keys de IA não definidas; fallbacks já existem na BD). Script alerta claramente quando não há chaves de IA.
+- **TAREFA SEMANAL — Verificação de duplicados**: Executado `scripts/weekly-dedupe.mjs`. Total na BD: 2.531 perguntas. **0 duplicados exatos removidos**. 24 grupos de duplicados aproximados detetados — esmagadoramente Bandeiras com texto genérico + imagens diferentes (falsos positivos, não removidos).
+- **LINT**: sem novos erros (warnings/erros pré-existentes em `cache`/`tts`/`geo-service`/etc.). **BUILD: OK**.
+- **AÇÃO PENDENTE (manual)**: aplicar as migrações 010–015 no Supabase (SQL Editor) quando houver acesso (sem CLI/config).
+
 ## [2026-08-16] Sistema de Equipas Implementado
 - Criado ecrã de ranking por equipas (`/teams/ranking`) com pódio, contagem de membros, pins e pontuações coletivas.
 - Atualizado `/api/answer/route.ts` para somar pontos coletivos à tabela `teams.total_score` sempre que um membro da equipa responde corretamente.
