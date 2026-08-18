@@ -1,5 +1,19 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-18] Torneios em Destaque + Notificações (Backlog TAREFAS.md)
+- **MELHORIA — Torneios públicos em destaque com notificações**: implementada funcionalidade de destacar torneios públicos na página de descoberta e enviar notificações automáticas aos utilizadores.
+  - Migração `supabase/migrations/017_add_tournament_featured.sql`: adiciona coluna `is_featured BOOLEAN DEFAULT false` à tabela `tournaments` com índice parcial para featured públicos.
+  - Tipo `Tournament.is_featured?: boolean` adicionado em `src/types/index.ts`.
+  - Formulário de criação (`src/app/tournaments/page.tsx`): novo toggle "Destacar na Página Inicial" (ícone Star) — só aparece quando "Torneio Público" está ativo; guardado no insert como `is_featured`.
+  - Lista de torneios (`/tournaments`): nova secção "Em Destaque" no topo, antes de "Torneios Públicos", mostrando apenas torneios públicos featured em LOBBY/QUALIFYING/FINAL.
+  - Cartões de torneio (`TournamentCard`): badge dourado "Destaque" e borda dourada quando `is_featured === true`.
+  - Página de detalhe (`src/app/tournaments/[id]/page.tsx`): badge "Destaque" ao lado do badge "Público".
+  - **Notificações automáticas**: ao criar um torneio público featured, a função `sendFeaturedTournamentNotification` insere notificações do tipo `tournament` para todos os perfis (exceto o criador) com título "Novo Torneio em Destaque!" e descrição convidando a juntar-se.
+  - Sem a migração aplicada o app não quebra (coluna devolvida nula, featured tratado como false).
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily`. 0 novas (sem API keys; alerta emitido).
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. 2.532 perguntas, 1 exato removido, 25 grupos aproximados (Bandeiras, falsos positivos).
+- **LINT/BUILD/TESTS**: sem novos erros nas mudanças (erros/warnings pré-existentes mantidos); build OK; 15/15 testes passam.
+
 ## [2026-08-18] Ciclo de Manutenção — Whitelist de Torneios + Manutenção Diária/Semanal
 - **Melhoria — Torneios por convite (whitelist)**: implementada restrição de acesso a equipas específicas em torneios privados.
   - Migração `supabase/migrations/016_add_tournament_whitelist.sql`: adiciona coluna `whitelisted_team_ids UUID[]` (default `{}`) e índice GIN; idempotente com `IF NOT EXISTS`.

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock, Search, X, ShieldCheck } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock, Search, X, ShieldCheck, Star } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { GAME_CONSTANTS, GameStatus, TournamentStatus, UserRole } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
@@ -34,6 +34,7 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
   const fillPercentage = (teamCount / tournament.max_teams) * 100;
   const teamNames = tournament.tournament_teams?.map((tt) => tt.teams?.name).filter(Boolean) || [];
   const isPublicTournament = tournament.is_public === true;
+  const isFeaturedTournament = tournament.is_featured === true;
 
   return (
     <motion.div
@@ -42,14 +43,20 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="glass-panel rounded-2xl border border-white/10 p-5 hover:border-white/20 transition-all cursor-pointer group"
+      className={`glass-panel rounded-2xl p-5 hover:border-white/20 transition-all cursor-pointer group ${isFeaturedTournament ? "border-[#FFD700]/30 bg-[#FFD700]/5" : "border border-white/10"}`}
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <div className="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">
               {tournament.name}
             </div>
+            {isFeaturedTournament && (
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FFD700]/15 text-[#FFD700]" title="Torneio em Destaque">
+                <Star className="w-3 h-3" />
+                Destaque
+              </span>
+            )}
             <span
               className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
                 isPublicTournament ? "bg-[#4CAF50]/15 text-[#4CAF50]" : "bg-white/10 text-[#e3e0f9]/50"
@@ -171,6 +178,7 @@ export default function TournamentsPage() {
   const [myTeams, setMyTeams] = useState<Team[]>([]);
   const [blindMode, setBlindMode] = useState(false);
   const [isPublic, setIsPublic] = useState(false);
+  const [isFeatured, setIsFeatured] = useState(false);
   const [prizeFirst, setPrizeFirst] = useState("");
   const [prizeSecond, setPrizeSecond] = useState("");
   const [prizeThird, setPrizeThird] = useState("");
@@ -305,6 +313,7 @@ export default function TournamentsPage() {
           status: TournamentStatus.LOBBY,
            settings: { timer: 20, questions: 10, blind_mode: blindMode },
           is_public: isPublic,
+          is_featured: isFeatured,
           prizes: {
             first: prizeFirst.trim(),
             second: prizeSecond.trim(),
@@ -334,16 +343,50 @@ export default function TournamentsPage() {
       setCreateMode(false);
       setSelectedTeamId("");
       setIsPublic(false);
+      setIsFeatured(false);
       setPrizeFirst("");
       setPrizeSecond("");
       setPrizeThird("");
       setWhitelistEnabled(false);
       setWhitelistedTeams([]);
+
+      // Send notifications if tournament is featured
+      if (isFeatured) {
+        await sendFeaturedTournamentNotification(tournament.id, tournament.name);
+      }
+
       await loadTournaments();
     } catch (err: any) {
       setError(err.message || "Erro ao criar torneo");
     } finally {
       setSaving(false);
+    }
+  };
+
+  const sendFeaturedTournamentNotification = async (tournamentId: string, tournamentName: string) => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      // Get all users who have profiles (potential players)
+      const { data: profiles } = await supabase
+        .from("profiles")
+        .select("id")
+        .neq("id", user.id); // Don't notify the creator
+
+      if (profiles && profiles.length > 0) {
+        const notifications = profiles.map((profile) => ({
+          user_id: profile.id,
+          type: "tournament",
+          title: "Novo Torneio em Destaque!",
+          description: `${tournamentName} está agora em destaque na página de torneios. Junta-te já!`,
+          read: false,
+        }));
+
+        await supabase.from("notifications").insert(notifications);
+      }
+    } catch {
+      // Silently fail - notifications are non-critical
     }
   };
 
@@ -801,7 +844,7 @@ export default function TournamentsPage() {
                     </div>
                   </label>
 
-                  <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
+<label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
                     <span className="flex items-center gap-2 text-sm text-[#e3e0f9]">
                       {isPublic ? <Globe className="w-4 h-4 text-[#4CAF50]" /> : <Lock className="w-4 h-4 text-[#e3e0f9]/50" />}
                       Torneio Público
@@ -810,19 +853,37 @@ export default function TournamentsPage() {
                       <input
                         type="checkbox"
                         checked={isPublic}
-                        onChange={(e) => setIsPublic(e.target.checked)}
+                        onChange={(e) => { setIsPublic(e.target.checked); if (!e.target.checked) setIsFeatured(false); }}
                         className="sr-only peer"
                       />
                       <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4CAF50]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#4CAF50]"></div>
                     </div>
                   </label>
                   <p className="text-[#e3e0f9]/40 text-xs ml-1">
-                   {isPublic
-                     ? "Visível na lista pública — qualquer jogador pode entrar sem código."
-                     : "Apenas por convite com o código do torneio."}
-                 </p>
+                    {isPublic
+                      ? "Visível na lista pública — qualquer jogador pode entrar sem código."
+                      : "Apenas por convite com o código do torneio."}
+                  </p>
 
-                 {!isPublic && (
+                  {isPublic && (
+                    <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
+                      <span className="flex items-center gap-2 text-sm text-[#e3e0f9]">
+                        <Star className="w-4 h-4 text-[#FFD700]" />
+                        Destacar na Página Inicial
+                      </span>
+                      <div className="relative inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={isFeatured}
+                          onChange={(e) => setIsFeatured(e.target.checked)}
+                          className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FFD700]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#FFD700]"></div>
+                      </div>
+                    </label>
+                  )}
+
+                  {!isPublic && (
                    <div className="space-y-3 pt-2">
                      <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
                        <span className="text-sm text-[#e3e0f9]">Limitar a equipas convidadas</span>
@@ -912,13 +973,13 @@ export default function TournamentsPage() {
                   </div>
                 )}
 
-                 <div className="flex gap-3">
-                    <button
-                      onClick={() => { setCreateMode(false); setBlindMode(false); setIsPublic(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); setWhitelistEnabled(false); setWhitelistedTeams([]); }}
-                      className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
-                    >
-                     Cancelar
-                   </button>
+<div className="flex gap-3">
+                     <button
+                       onClick={() => { setCreateMode(false); setBlindMode(false); setIsPublic(false); setIsFeatured(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); setWhitelistEnabled(false); setWhitelistedTeams([]); }}
+                       className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                     >
+                      Cancelar
+                    </button>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -1069,27 +1130,53 @@ export default function TournamentsPage() {
         </AnimatePresence>
 
         {filteredTournaments.length > 0 && !myTournament && (
-          <section>
-            <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-              <Globe className="w-5 h-5 text-[#4CAF50]" />
-              Torneios Públicos
-            </h3>
-            <div className="space-y-3">
-              {filteredTournaments
-                .filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED)
-                .map((tournament) => (
-                  <TournamentCard
-                    key={tournament.id}
-                    tournament={tournament}
-                    onClick={() => router.push(`/tournaments/${tournament.id}`)}
-                    onJoin={() => { setSelectedTeamId(myTeams[0]?.id || ""); setPublicJoinTarget(tournament); }}
-                  />
-                ))}
-              {filteredTournaments.filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
-                <p className="text-[#e3e0f9]/40 text-sm">Não há torneios públicos no momento. Cria um e torna-o público!</p>
-              )}
-            </div>
-          </section>
+          <>
+            {/* Featured tournaments section */}
+            <section>
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+                <Star className="w-5 h-5 text-[#FFD700]" />
+                Em Destaque
+              </h3>
+              <div className="space-y-3">
+                {filteredTournaments
+                  .filter((t) => t.is_public && t.is_featured && t.status !== TournamentStatus.FINISHED)
+                  .map((tournament) => (
+                    <TournamentCard
+                      key={tournament.id}
+                      tournament={tournament}
+                      onClick={() => router.push(`/tournaments/${tournament.id}`)}
+                      onJoin={() => { setSelectedTeamId(myTeams[0]?.id || ""); setPublicJoinTarget(tournament); }}
+                    />
+                  ))}
+                {filteredTournaments.filter((t) => t.is_public && t.is_featured && t.status !== TournamentStatus.FINISHED).length === 0 && (
+                  <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio em destaque no momento.</p>
+                )}
+              </div>
+            </section>
+
+            {/* Public tournaments section */}
+            <section>
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-[#4CAF50]" />
+                Torneios Públicos
+              </h3>
+              <div className="space-y-3">
+                {filteredTournaments
+                  .filter((t) => t.is_public && !t.is_featured && t.status !== TournamentStatus.FINISHED)
+                  .map((tournament) => (
+                    <TournamentCard
+                      key={tournament.id}
+                      tournament={tournament}
+                      onClick={() => router.push(`/tournaments/${tournament.id}`)}
+                      onJoin={() => { setSelectedTeamId(myTeams[0]?.id || ""); setPublicJoinTarget(tournament); }}
+                    />
+                  ))}
+                {filteredTournaments.filter((t) => t.is_public && !t.is_featured && t.status !== TournamentStatus.FINISHED).length === 0 && (
+                  <p className="text-[#e3e0f9]/40 text-sm">Não há torneios públicos no momento. Cria um e torna-o público!</p>
+                )}
+              </div>
+            </section>
+          </>
         )}
 
         {filteredTournaments.length > 0 && !myTournament && (

@@ -100,8 +100,6 @@ Tudo implementado e funcional!
 *Última atualização: 18 Agosto 2026* 🎉
 
 ## 🎯 Próximas sugestões (backlog)
-- Notificações/emails para torneios públicos em destaque
-- Filtros e pesquisa na lista de torneios
 - Torneios por convite com lista de equipas permitidas (whitelist)
 
 **O que achas de implementar agora?**

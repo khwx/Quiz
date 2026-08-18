@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift, Globe, ShieldCheck } from "lucide-react";
+import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift, Globe, ShieldCheck, Star } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
@@ -161,6 +161,12 @@ export default function TournamentDetailPage() {
             <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#4CAF50]/20 text-[#4CAF50] align-middle">
               <Globe className="w-3 h-3" />
               Público
+            </span>
+          )}
+          {tournament.is_featured && (
+            <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFD700]/20 text-[#FFD700] align-middle">
+              <Star className="w-3 h-3" />
+              Destaque
             </span>
           )}
           {Array.isArray(tournament.whitelisted_team_ids) && tournament.whitelisted_team_ids.length > 0 && (
