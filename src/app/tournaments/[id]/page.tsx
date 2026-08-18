@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift, Globe } from "lucide-react";
+import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift, Globe, ShieldCheck } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
@@ -162,6 +162,12 @@ export default function TournamentDetailPage() {
               <Globe className="w-3 h-3" />
               Público
             </span>
+          )}
+          {Array.isArray(tournament.whitelisted_team_ids) && tournament.whitelisted_team_ids.length > 0 && (
+            <div className="mt-2 flex items-center justify-center gap-1.5 text-xs text-[#d0bcff]/80">
+              <ShieldCheck className="w-4 h-4 text-[#d0bcff]" />
+              Torneio por convite — apenas {tournament.whitelisted_team_ids.length} equipa(s) convidada(s)
+            </div>
           )}
           <p className="text-sm text-[#e3e0f9]/50 mt-3">
             {teamCount} / {maxTeams} equipas inscritas

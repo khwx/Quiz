@@ -1,5 +1,15 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-18] Ciclo de Manutenção — Whitelist de Torneios + Manutenção Diária/Semanal
+- **Melhoria — Torneios por convite (whitelist)**: implementada restrição de acesso a equipas específicas em torneios privados.
+  - Migração `supabase/migrations/016_add_tournament_whitelist.sql`: adiciona coluna `whitelisted_team_ids UUID[]` (default `{}`) e índice GIN; idempotente com `IF NOT EXISTS`.
+  - Tipo `Tournament.whitelisted_team_ids?: string[]` adicionado em `src/types/index.ts`.
+  - Formulário de criação (`src/app/tournaments/page.tsx`): toggle "Limitar a equipas convidadas" (apenas para privados); multi-select das equipas do utilizador; guardado no insert. Estados resetados no cancelamento e no sucesso.
+  - Guarda no `joinTournament` (lista) e indicador no detalhe (`ShieldCheck` badge); cartão da lista mostra badge "Invite" quando aplicável. Sem a migração aplicada o app não quebra (coluna devolvida nula).
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily`. 0 novas (sem API keys; alerta emitido).
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. 2.531 perguntas, 0 exatos removidos, 24 grupos aproximados (Bandeiras, falsos positivos).
+- **LINT/BUILD/TESTS**: sem novos erros nas mudanças; build OK; 15/15 testes passam.
+
 ## [2026-08-18] Ciclo de Manutenção — Filtros/Pesquisa em Torneios + Robustez de Explicação
 - **MELHORIA (backlog) — Filtros e pesquisa na lista de torneios** (`src/app/tournaments/page.tsx`):
   - Caixa de pesquisa que filtra torneios por **nome ou PIN** (case-insensitive) em todas as secções (Públicos, Ativos, Finalizados).

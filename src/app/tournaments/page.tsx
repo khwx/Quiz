@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock, Search, X } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock, Search, X, ShieldCheck } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { GAME_CONSTANTS, GameStatus, TournamentStatus, UserRole } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
@@ -58,6 +58,15 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
             >
               {isPublicTournament ? <Globe className="w-3 h-3" /> : <Lock className="w-3 h-3" />}
             </span>
+            {Array.isArray(tournament.whitelisted_team_ids) && tournament.whitelisted_team_ids.length > 0 && !isPublicTournament && (
+              <span
+                className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#d0bcff]/15 text-[#d0bcff]"
+                title="Torneio por convite (whitelist)"
+              >
+                <ShieldCheck className="w-3 h-3" />
+                Invite
+              </span>
+            )}
           </div>
           <div className="flex items-center gap-2 mt-1">
             <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${statusConfig[tournament.status]?.bg} ${statusConfig[tournament.status]?.text}`}>
@@ -168,6 +177,8 @@ export default function TournamentsPage() {
   const [publicJoinTarget, setPublicJoinTarget] = useState<TournamentWithTeams | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [whitelistEnabled, setWhitelistEnabled] = useState(false);
+  const [whitelistedTeams, setWhitelistedTeams] = useState<string[]>([]);
 
   // Search + status filtering applied across all tournament sections
   const filteredTournaments = tournaments.filter((t) => {
@@ -299,6 +310,7 @@ export default function TournamentsPage() {
             second: prizeSecond.trim(),
             third: prizeThird.trim(),
           },
+          whitelisted_team_ids: whitelistEnabled && !isPublic ? whitelistedTeams : null,
           created_by: user!.id,
         })
         .select()
@@ -325,6 +337,8 @@ export default function TournamentsPage() {
       setPrizeFirst("");
       setPrizeSecond("");
       setPrizeThird("");
+      setWhitelistEnabled(false);
+      setWhitelistedTeams([]);
       await loadTournaments();
     } catch (err: any) {
       setError(err.message || "Erro ao criar torneo");
@@ -363,6 +377,15 @@ export default function TournamentsPage() {
       const teamCount = tournament.tournament_teams?.length || 0;
       if (teamCount >= tournament.max_teams) {
         setError("Torneio cheio");
+        setSaving(false);
+        return;
+      }
+
+      // Whitelist guard: if the tournament restricts joining to specific teams,
+      // reject teams that are not in the whitelist.
+      const whitelist = tournament.whitelisted_team_ids;
+      if (Array.isArray(whitelist) && whitelist.length > 0 && !whitelist.includes(selectedTeamId)) {
+        setError("A tua equipa não está convidada para este torneio");
         setSaving(false);
         return;
       }
@@ -794,10 +817,60 @@ export default function TournamentsPage() {
                     </div>
                   </label>
                   <p className="text-[#e3e0f9]/40 text-xs ml-1">
-                    {isPublic
-                      ? "Visível na lista pública — qualquer jogador pode entrar sem código."
-                      : "Apenas por convite com o código do torneio."}
-                  </p>
+                   {isPublic
+                     ? "Visível na lista pública — qualquer jogador pode entrar sem código."
+                     : "Apenas por convite com o código do torneio."}
+                 </p>
+
+                 {!isPublic && (
+                   <div className="space-y-3 pt-2">
+                     <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
+                       <span className="text-sm text-[#e3e0f9]">Limitar a equipas convidadas</span>
+                       <div className="relative inline-flex items-center cursor-pointer">
+                         <input
+                           type="checkbox"
+                           checked={whitelistEnabled}
+                           onChange={(e) => { setWhitelistEnabled(e.target.checked); if (!e.target.checked) setWhitelistedTeams([]); }}
+                           className="sr-only peer"
+                         />
+                         <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#d0bcff]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#d0bcff]"></div>
+                       </div>
+                     </label>
+                     <p className="text-[#e3e0f9]/40 text-xs ml-1">
+                       {whitelistEnabled
+                         ? "Apenas as equipas seleccionadas abaixo podem entrar (mesmo com o código)."
+                         : "Qualquer equipa com o código pode entrar."}
+                     </p>
+                     {whitelistEnabled && myTeams.length > 0 && (
+                       <div className="space-y-2">
+                         {myTeams.map((team) => (
+                           <label key={team.id} className="flex items-center gap-3 p-2.5 bg-white/5 rounded-xl border border-white/5 cursor-pointer">
+                             <input
+                               type="checkbox"
+                               checked={whitelistedTeams.includes(team.id)}
+                               onChange={(e) => {
+                                 setWhitelistedTeams((prev) =>
+                                   e.target.checked
+                                     ? [...prev, team.id]
+                                     : prev.filter((t) => t !== team.id)
+                                 );
+                               }}
+                               className="rounded border-white/20 text-[#FFD700 focus:ring-[#d0bcff]/30"
+                             />
+                             <span className="text-[#e3e0f9]">{team.name}</span>
+                           </label>
+                         ))}
+                       </div>
+                     )}
+                     {whitelistEnabled && myTeams.length === 0 && (
+                       <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm">
+                         Cria uma equipa primeiro em{" "}
+                         <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button>
+                         {" "}para poderes convidá-la.
+                       </div>
+                     )}
+                   </div>
+                 )}
 
                   <div className="space-y-3">
                     <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest ml-1 block">Prémios do Top 3 (opcional)</label>
@@ -841,7 +914,7 @@ export default function TournamentsPage() {
 
                  <div className="flex gap-3">
                     <button
-                      onClick={() => { setCreateMode(false); setBlindMode(false); setIsPublic(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); }}
+                      onClick={() => { setCreateMode(false); setBlindMode(false); setIsPublic(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); setWhitelistEnabled(false); setWhitelistedTeams([]); }}
                       className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
                     >
                      Cancelar

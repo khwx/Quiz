@@ -179,6 +179,7 @@ export interface Tournament {
   settings: TournamentSettings;
   prizes?: TournamentPrizes;
   is_public?: boolean;
+  whitelisted_team_ids?: string[];
   created_by?: string;
   starts_at?: string;
   created_at: string;
