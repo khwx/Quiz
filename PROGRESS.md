@@ -96,3 +96,7 @@
 - **AÇÃO PENDENTE (manual)**: aplicar a migração 015 no Supabase (SQL Editor). Sem a migração, a coluna não existe mas o app não quebra (a query devolve `is_public` nulo e todos os torneios comportam-se como privados).
 - **LINT**: 0 novos erros (3 warnings/erros pré-existentes de `any` em catch de funções já existentes mantidos por consistência). **BUILD: OK**.
 - **TAREFAS.md**: item 8 marcado como COMPLETO; adicionado backlog de sugestões. Próximas sugestões: notificações para públicos, filtros/pesquisa, torneios por whitelist de equipas.
+
+## [2026-08-18] Ciclo de Manutenção — Perguntas Diárias + Dedupe Semanal
+- **TAREFA DIÁRIA — Novas perguntas**: Executado `npm run daily` (`scripts/daily-questions.mjs`). 0 novas perguntas (API keys de IA não definidas; todos os fallbacks já existiam na BD). Script alerta claramente quando não há chaves de IA configuradas.
+- **TAREFA SEMANAL — Verificação de duplicados**: Executado `scripts/weekly-dedupe.mjs`. Total na BD: 2.532 perguntas. **1 duplicado exato removido**. 25 grupos de duplicados aproximados detetados — esmagadoramente Bandeiras com texto genérico + imagens diferentes (falsos positivos, não removidos).
