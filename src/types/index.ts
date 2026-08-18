@@ -162,6 +162,12 @@ export interface TournamentSettings {
   blind_mode?: boolean;
 }
 
+export interface TournamentPrizes {
+  first?: string;
+  second?: string;
+  third?: string;
+}
+
 export interface Tournament {
   id: string;
   name: string;
@@ -171,6 +177,7 @@ export interface Tournament {
   max_teams: number;
   current_round: number;
   settings: TournamentSettings;
+  prizes?: TournamentPrizes;
   created_by?: string;
   starts_at?: string;
   created_at: string;

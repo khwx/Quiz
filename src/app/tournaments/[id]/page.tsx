@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target } from "lucide-react";
+import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
@@ -167,6 +167,50 @@ export default function TournamentDetailPage() {
             <p className="text-[#e3e0f9]/50">Nenhuma equipa inscrita ainda.</p>
           </motion.div>
         )}
+
+        {/* Prizes / Loot */}
+        {(() => {
+          const prizes = tournament.prizes || {};
+          const hasPrizes = prizes.first || prizes.second || prizes.third;
+          if (!hasPrizes) return null;
+          const prizeRows = [
+            { rank: 0, icon: <Crown className="w-5 h-5 text-[#FFD700]" />, color: "text-[#FFD700]", label: "1º Lugar", value: prizes.first },
+            { rank: 1, icon: <Medal className="w-5 h-5 text-[#C0C0C0]" />, color: "text-[#C0C0C0]", label: "2º Lugar", value: prizes.second },
+            { rank: 2, icon: <Medal className="w-5 h-5 text-[#CD7F32]" />, color: "text-[#CD7F32]", label: "3º Lugar", value: prizes.third },
+          ];
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="glass-panel rounded-2xl p-6"
+            >
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
+                <Gift className="w-5 h-5 text-[#FFD700]" />
+                Prémios do Top 3
+              </h3>
+              <div className="space-y-3">
+                {prizeRows.map((row) => {
+                  const winner = tournament.status === "FINISHED" ? sortedTeams[row.rank] : undefined;
+                  return (
+                    <div key={row.rank} className="flex items-center gap-3 p-3 rounded-xl bg-white/5">
+                      <span className={`font-bold ${row.color}`}>{row.label}</span>
+                      {row.icon}
+                      <div className="flex-1">
+                        <p className="text-[#e3e0f9] font-medium">{row.value || "—"}</p>
+                        {winner && (
+                          <p className={`text-xs ${row.color}`}>
+                            🏆 {winner.teams?.name || "Equipa"}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          );
+        })()}
 
         {/* Tournament Info */}
         <motion.div

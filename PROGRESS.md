@@ -57,6 +57,16 @@
 - Pendente (manual, sem CLI Supabase): aplicar migrações 010 (invite_code), 011 (achievements), 012 (normalize categories) no Supabase.
 - Lint pendente de verificação; build pendente.
 
+## [2026-08-18] Prémios/loot para o Top 3 em Torneios (FASE 3)
+- **TAREFA**: Implementar "Prémios/loot para o top 3 em Torneios" (próxima tarefa pendente de TAREFAS.md).
+- **MUDANÇAS**:
+  - Migração `supabase/migrations/014_add_tournament_prizes.sql`: adiciona coluna `prizes JSONB` à tabela `tournaments` (default `{first,second,third}` vazio) para guardar os prémios definidos pelo criador.
+  - Tipo `Tournament.prizes` (`TournamentPrizes`) adicionado em `src/types/index.ts`.
+  - Formulário de criação (`src/app/tournaments/page.tsx`): novos campos opcionais para definir o prémio de 1º, 2º e 3º lugar, guardados no insert do torneio.
+  - Ecrã de detalhe (`src/app/tournaments/[id]/page.tsx`): nova secção "Prémios do Top 3" que lista os prémios definidos; quando o torneio está `FINISHED`, mostra a equipa vencedora de cada lugar (pódio com loot).
+- **AÇÃO PENDENTE (manual)**: aplicar a migração 014 no Supabase (SQL Editor). Sem a migração, a coluna não existe mas o app não quebra (a query devolve `prizes` nulo e a secção não é renderizada).
+- Lint: sem novos erros (warnings/erros pré-existentes em `caches`/`tts`/etc.). Build: OK.
+
 ## [2026-08-18] Melhoria de Histórico no Perfil (FASE 3)
 - **TAREFA**: Melhorar o histórico de jogos no perfil (próxima tarefa de TAREFAS.md: "Melhorias de histórico no perfil").
 - **MUDANÇAS**:

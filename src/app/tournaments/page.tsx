@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { GAME_CONSTANTS, GameStatus, TournamentStatus, UserRole } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
@@ -139,6 +139,9 @@ export default function TournamentsPage() {
   const [startConfirmOpen, setStartConfirmOpen] = useState(false);
   const [myTeams, setMyTeams] = useState<Team[]>([]);
   const [blindMode, setBlindMode] = useState(false);
+  const [prizeFirst, setPrizeFirst] = useState("");
+  const [prizeSecond, setPrizeSecond] = useState("");
+  const [prizeThird, setPrizeThird] = useState("");
 
   useEffect(() => {
     checkUser();
@@ -253,6 +256,11 @@ export default function TournamentsPage() {
           max_teams: 8,
           status: TournamentStatus.LOBBY,
            settings: { timer: 20, questions: 10, blind_mode: blindMode },
+          prizes: {
+            first: prizeFirst.trim(),
+            second: prizeSecond.trim(),
+            third: prizeThird.trim(),
+          },
           created_by: user!.id,
         })
         .select()
@@ -275,6 +283,9 @@ export default function TournamentsPage() {
       setTournamentName("");
       setCreateMode(false);
       setSelectedTeamId("");
+      setPrizeFirst("");
+      setPrizeSecond("");
+      setPrizeThird("");
       await loadTournaments();
     } catch (err: any) {
       setError(err.message || "Erro ao criar torneo");
@@ -637,6 +648,40 @@ export default function TournamentsPage() {
                     </div>
                   </label>
 
+                  <div className="space-y-3">
+                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest ml-1 block">Prémios do Top 3 (opcional)</label>
+                    <div className="flex items-center gap-3">
+                      <Crown className="w-5 h-5 text-[#FFD700] shrink-0" />
+                      <input
+                        type="text"
+                        placeholder="1º Lugar — ex: Troféu de Ouro"
+                        value={prizeFirst}
+                        onChange={(e) => setPrizeFirst(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#FFD700]/50 transition-all"
+                      />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Medal className="w-5 h-5 text-[#C0C0C0] shrink-0" />
+                      <input
+                        type="text"
+                        placeholder="2º Lugar — ex: Medalha de Prata"
+                        value={prizeSecond}
+                        onChange={(e) => setPrizeSecond(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#C0C0C0]/50 transition-all"
+                      />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Medal className="w-5 h-5 text-[#CD7F32] shrink-0" />
+                      <input
+                        type="text"
+                        placeholder="3º Lugar — ex: Medalha de Bronze"
+                        value={prizeThird}
+                        onChange={(e) => setPrizeThird(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#CD7F32]/50 transition-all"
+                      />
+                    </div>
+                  </div>
+
                   {error && (
                   <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
                     {error}
@@ -644,10 +689,10 @@ export default function TournamentsPage() {
                 )}
 
                  <div className="flex gap-3">
-                   <button
-                     onClick={() => { setCreateMode(false); setBlindMode(false); }}
-                     className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
-                   >
+                    <button
+                      onClick={() => { setCreateMode(false); setBlindMode(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); }}
+                      className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                    >
                      Cancelar
                    </button>
                   <motion.button

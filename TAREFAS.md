@@ -61,7 +61,7 @@ Tudo implementado e funcional!
 - [x] Classificações em tempo real (realtime via Supabase)
 - [x] Ecrã de detalhe `/tournaments/[id]` com pódio e definições
 - [x] Modo Cego (anfitrião não vê respostas) e definições de timer/perguntas
-- [ ] Prémios/loot para o top 3 (PENDENTE)
+- [x] Prémios/loot para o top 3 (criador define prémios 1º/2º/3º na criação; ecrã de detalhe mostra os prémios e o vencedor de cada lugar quando FINISHED)
 - [ ] Torneios públicos vs privados (PENDENTE)
 
 ---
@@ -74,7 +74,8 @@ Tudo implementado e funcional!
 4️⃣ **COMPLETO ✅**: Torneios (criação, registo de equipas, fases, classificações, ecrã de detalhe)
 5️⃣ **COMPLETO ✅**: Login Social (Google + Facebook OAuth em `/login` — `handleOAuthLogin` parametrizado, build OK)
 6️⃣ **COMPLETO ✅**: Melhorias de histórico no perfil (accuracy %, tempo médio, barra visual, 15 jogos)
-7️⃣ **PRÓXIMO**: Prémios/loot para top 3 em Torneios ou Torneios públicos vs privados
+7️⃣ **COMPLETO ✅**: Prémios/loot para top 3 em Torneios (criador define prémios, ecrã de detalhe mostra pódio com prémios + vencedor)
+8️⃣ **PRÓXIMO**: Torneios públicos vs privados
 
 ---
 
