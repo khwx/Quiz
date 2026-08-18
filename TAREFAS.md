@@ -48,7 +48,7 @@ Tudo implementado e funcional!
 - [x] Página de convite `/invite/[code]` com QR Code, link copiável e botão "Adicionar como amigo"
 - [x] Código visível no Perfil com botão "Copiar link"
 - [x] Tracking individual de pontuações (`game_history` + estatísticas no perfil)
-- [x] Histórico pessoal (tab "Histórico" no perfil)
+- [x] Histórico pessoal (tab "Histórico" no perfil — melhorado com accuracy %, tempo médio e barra visual)
 
 ---
 
@@ -73,7 +73,8 @@ Tudo implementado e funcional!
 3️⃣ **COMPLETO ✅**: Código único por jogador (código/link de convite + convites por código)
 4️⃣ **COMPLETO ✅**: Torneios (criação, registo de equipas, fases, classificações, ecrã de detalhe)
 5️⃣ **COMPLETO ✅**: Login Social (Google + Facebook OAuth em `/login` — `handleOAuthLogin` parametrizado, build OK)
-6️⃣ **PRÓXIMO**: Melhorias de histórico no perfil ou prêmios/loot para top 3 em Torneios
+6️⃣ **COMPLETO ✅**: Melhorias de histórico no perfil (accuracy %, tempo médio, barra visual, 15 jogos)
+7️⃣ **PRÓXIMO**: Prémios/loot para top 3 em Torneios ou Torneios públicos vs privados
 
 ---
 
@@ -95,7 +96,7 @@ Tudo implementado e funcional!
 
 ---
 
-*Última atualização: 17 Agosto 2026* 🎉
+*Última atualização: 18 Agosto 2026* 🎉
 
 **O que achas de implementar agora?**
 

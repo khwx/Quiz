@@ -317,6 +317,9 @@ export interface AnswerSummary {
   is_correct: boolean;
   points: number;
   created_at: string;
+  question_id?: string;
+  chosen_option?: number;
+  time_taken?: number;
 }
 
 export interface LeaderboardEntry {

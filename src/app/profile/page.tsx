@@ -58,7 +58,7 @@ export default function ProfilePage() {
       const { data: answers } = playerIds.length > 0
         ? await supabase
             .from("answers")
-            .select("game_id, is_correct, points, created_at")
+            .select("game_id, is_correct, points, created_at, question_id, chosen_option, time_taken")
             .in("player_id", playerIds)
             .order("created_at", { ascending: false })
         : { data: [] };
@@ -367,7 +367,12 @@ export default function ProfilePage() {
               exit={{ opacity: 0, y: -10 }}
               className="space-y-3"
             >
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Os teus últimos jogos</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-[#e3e0f9]">Os teus últimos jogos</h3>
+                {gamesHistory.length > 0 && (
+                  <span className="text-xs text-[#e3e0f9]/40">{gamesHistory.length} respostas registadas</span>
+                )}
+              </div>
               {gamesHistory.length === 0 ? (
                 <div className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center">
                   <div className="text-4xl mb-4">🎮</div>
@@ -375,55 +380,101 @@ export default function ProfilePage() {
                   <p className="text-[#e3e0f9]/40 text-sm">Joga para veres o teu histórico aqui.</p>
                 </div>
               ) : (() => {
-                const gameMap = new Map<string, { correct: number; total: number; points: number; date: string }>();
+                const gameMap = new Map<string, {
+                  correct: number;
+                  total: number;
+                  points: number;
+                  date: string;
+                  avgTime: number;
+                  timeCount: number;
+                }>();
                 gamesHistory.forEach((g) => {
                   const id = g.game_id;
                   if (!gameMap.has(id)) {
-                    gameMap.set(id, { correct: 0, total: 0, points: 0, date: g.created_at });
+                    gameMap.set(id, { correct: 0, total: 0, points: 0, date: g.created_at, avgTime: 0, timeCount: 0 });
                   }
                   const entry = gameMap.get(id)!;
                   entry.total++;
                   if (g.is_correct) entry.correct++;
                   entry.points += g.points || 0;
+                  if (g.time_taken && g.time_taken > 0) {
+                    entry.avgTime += g.time_taken;
+                    entry.timeCount++;
+                  }
                 });
-                const gameList = Array.from(gameMap.entries()).map(([id, data]) => ({ id, ...data }));
-                return gameList.slice(0, 10).map((game, idx) => (
-                  <motion.div
-                    key={game.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-4 flex justify-between items-center hover:border-white/20 transition-colors"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold ${
-                        game.correct === game.total 
-                          ? 'bg-[#4CAF50]/20 text-[#4CAF50]' 
-                          : 'bg-[#d0bcff]/20 text-[#d0bcff]'
-                      }`}>
-                        {idx + 1}
-                      </div>
-                      <div>
-                        <div className="text-[#e3e0f9] font-bold">Jogo #{game.id?.slice(-6)}</div>
-                        <div className="text-[#e3e0f9]/40 text-sm">
-                          {new Date(game.date).toLocaleDateString('pt-PT')} · {game.correct}/{game.total} corretas
+                const gameList = Array.from(gameMap.entries()).map(([id, data]) => ({
+                  id,
+                  ...data,
+                  avgTime: data.timeCount > 0 ? Math.round(data.avgTime / data.timeCount) : 0,
+                }));
+                return gameList.slice(0, 15).map((game, idx) => {
+                  const accuracy = game.total > 0 ? Math.round((game.correct / game.total) * 100) : 0;
+                  const isPerfect = game.correct === game.total && game.total > 0;
+                  const isGood = accuracy >= 60 && !isPerfect;
+                  return (
+                    <motion.div
+                      key={game.id}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.04 }}
+                      className={`bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border p-4 hover:border-white/20 transition-all ${
+                        isPerfect ? 'border-[#4CAF50]/20' : 'border-white/10'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold ${
+                            isPerfect
+                              ? 'bg-[#4CAF50]/20 text-[#4CAF50]'
+                              : isGood
+                                ? 'bg-[#d0bcff]/20 text-[#d0bcff]'
+                                : 'bg-[#FF6B6B]/20 text-[#FF6B6B]'
+                          }`}>
+                            {isPerfect ? '★' : `#${idx + 1}`}
+                          </div>
+                          <div>
+                            <div className="text-[#e3e0f9] font-bold text-sm">Jogo #{game.id?.slice(-6)}</div>
+                            <div className="text-[#e3e0f9]/40 text-xs">
+                              {new Date(game.date).toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' })}
+                              {game.avgTime > 0 && ` · ${game.avgTime}s médio`}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-[#FFD700] font-bold">{game.points} pts</div>
                         </div>
                       </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-[#FFD700] font-bold">{game.points} pts</div>
-                      <div className={`text-sm font-medium ${
-                        game.correct === game.total 
-                          ? 'text-[#4CAF50]' 
-                          : game.correct > game.total / 2 
-                            ? 'text-[#FFB0CD]' 
-                            : 'text-[#FF6B6B]'
-                      }`}>
-                        {game.correct === game.total ? 'Perfeito!' : game.correct > game.total / 2 ? 'Bom jogo' : 'Pode melhorar'}
+
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-[10px] text-[#e3e0f9]/40">{game.correct}/{game.total} corretas</span>
+                            <span className={`text-[10px] font-bold ${
+                              isPerfect ? 'text-[#4CAF50]' : isGood ? 'text-[#d0bcff]' : 'text-[#FF6B6B]'
+                            }`}>{accuracy}%</span>
+                          </div>
+                          <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div
+                              className={`h-full rounded-full transition-all ${
+                                isPerfect ? 'bg-[#4CAF50]' : isGood ? 'bg-[#d0bcff]' : 'bg-[#FF6B6B]'
+                              }`}
+                              style={{ width: `${accuracy}%` }}
+                            />
+                          </div>
+                        </div>
+                        <div className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                          isPerfect
+                            ? 'text-[#4CAF50] bg-[#4CAF50]/10'
+                            : isGood
+                              ? 'text-[#d0bcff] bg-[#d0bcff]/10'
+                              : 'text-[#FF6B6B] bg-[#FF6B6B]/10'
+                        }`}>
+                          {isPerfect ? 'Perfeito!' : isGood ? 'Bom' : 'Fraco'}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ));
+                    </motion.div>
+                  );
+                });
               })()}
             </motion.section>
           )}

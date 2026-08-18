@@ -57,6 +57,15 @@
 - Pendente (manual, sem CLI Supabase): aplicar migrações 010 (invite_code), 011 (achievements), 012 (normalize categories) no Supabase.
 - Lint pendente de verificação; build pendente.
 
+## [2026-08-18] Melhoria de Histórico no Perfil (FASE 3)
+- **TAREFA**: Melhorar o histórico de jogos no perfil (próxima tarefa de TAREFAS.md: "Melhorias de histórico no perfil").
+- **MUDANÇAS**:
+  - Estendido tipo `AnswerSummary` com campos `question_id`, `chosen_option` e `time_taken` (tipos mais ricos para análise).
+  - Query do perfil agora busca `question_id, chosen_option, time_taken` além dos campos existentes.
+  - **Novo UI do histórico**: cada jogo mostra agora barra de progresso visual (accuracy %), tempo médio de resposta, indicador de performance (★ Perfeito / Bom / Fraco), data formatada, e contagem total de respostas registadas.
+  - Máximo de 15 jogos visíveis (antes eram 10), com cálculo de accuracy por jogo.
+- **LINT**: 0 erros novos (warnings pré-existentes). Build: OK.
+
 ## [2026-08-17] Ciclo de Manutenção — Login Social + Correção de Dados + Lint
 - **Login Social (Facebook)**: Implementado na página `/login` (`handleOAuthLogin` genérico para Google e Facebook). Dois botões OAuth lado a lado com ícones SVG respetivos. O provider é parametrizado para facilitar adição de novos provedores. `redirectTo` aponta para `/profile`.
 - **Lint + Build**: A página de login foi limada de erros. Removidos `any` types dos `catch` (usado `err: unknown` + `instanceof Error`) e variável `router` não usada. Removidos `data` não usados no destructuring. Página agora lint-clean (0 erros, 0 warnings). Build: OK.
