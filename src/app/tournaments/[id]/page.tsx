@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift } from "lucide-react";
+import { ChevronLeft, Trophy, Users, Crown, Medal, Loader2, Target, Gift, Globe } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 import ToastContainer from "@/components/Toast";
 import { useToast } from "@/hooks/useToast";
-import type { TournamentWithTeams } from "@/types";
+import type { TournamentWithTeams, Team } from "@/types";
 
 export default function TournamentDetailPage() {
   const params = useParams();
@@ -17,6 +17,9 @@ export default function TournamentDetailPage() {
   const tournamentId = params.id as string;
   const [tournament, setTournament] = useState<TournamentWithTeams | null>(null);
   const [loading, setLoading] = useState(true);
+  const [myTeams, setMyTeams] = useState<Team[]>([]);
+  const [selectedTeamId, setSelectedTeamId] = useState<string>("");
+  const [joining, setJoining] = useState(false);
   const { toasts, show: showToast, dismiss } = useToast();
 
   useEffect(() => {
@@ -39,6 +42,56 @@ export default function TournamentDetailPage() {
 
     if (tournamentId) fetchTournament();
   }, [tournamentId, showToast]);
+
+  useEffect(() => {
+    const loadMyTeams = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase
+        .from("team_members")
+        .select("team_id, teams(id, name, pin)")
+        .eq("user_id", user.id);
+      const teams = (data || []).map((m) => m.teams?.[0]).filter(Boolean) as Team[];
+      setMyTeams(teams);
+      if (teams.length === 1) setSelectedTeamId(teams[0].id);
+    };
+    loadMyTeams();
+  }, []);
+
+  const joinPublicTournament = async () => {
+    if (!tournament || !selectedTeamId) {
+      showToast("Selecciona uma equipa para entrar.", "error");
+      return;
+    }
+    setJoining(true);
+    try {
+      const alreadyJoined = tournament.tournament_teams?.some((tt) => tt.team_id === selectedTeamId);
+      if (alreadyJoined) {
+        showToast("A tua equipa já está neste torneio.", "error");
+        setJoining(false);
+        return;
+      }
+      const { error } = await supabase
+        .from("tournament_teams")
+        .insert({ tournament_id: tournament.id, team_id: selectedTeamId });
+      if (error) throw error;
+      showToast("Entraste no torneio!", "success");
+      const { data } = await supabase
+        .from("tournaments")
+        .select("*, tournament_teams(*, teams(id, name, pin))")
+        .eq("id", tournament.id)
+        .single();
+      if (data) setTournament(data as TournamentWithTeams);
+      setSelectedTeamId("");
+    } catch (err: unknown) {
+      showToast(err instanceof Error ? err.message : "Erro ao entrar no torneio.", "error");
+    } finally {
+      setJoining(false);
+    }
+  };
+
+  const alreadyJoined = (teamId: string) =>
+    tournament?.tournament_teams?.some((tt) => tt.team_id === teamId) ?? false;
 
   const statusLabels: Record<string, string> = {
     LOBBY: "A aguardar equipas",
@@ -104,6 +157,12 @@ export default function TournamentDetailPage() {
           }`}>
             {statusLabels[tournament.status] || tournament.status}
           </span>
+          {tournament.is_public && (
+            <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#4CAF50]/20 text-[#4CAF50] align-middle">
+              <Globe className="w-3 h-3" />
+              Público
+            </span>
+          )}
           <p className="text-sm text-[#e3e0f9]/50 mt-3">
             {teamCount} / {maxTeams} equipas inscritas
           </p>
@@ -114,6 +173,55 @@ export default function TournamentDetailPage() {
             />
           </div>
         </motion.div>
+
+        {/* Join public tournament */}
+        {tournament.is_public && tournament.status === "LOBBY" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-panel rounded-2xl p-6 border border-[#4CAF50]/30"
+          >
+            {myTeams.length === 0 ? (
+              <div className="text-center">
+                <p className="text-[#4CAF50] text-sm mb-3">Cria uma equipa para entrares neste torneio público.</p>
+                <button
+                  onClick={() => router.push("/teams")}
+                  className="px-6 py-3 bg-[#4CAF50] text-white rounded-xl font-bold"
+                >
+                  Ir para Equipas
+                </button>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Globe className="w-5 h-5 text-[#4CAF50]" />
+                  Entrar no Torneio Público
+                </h3>
+                <select
+                  value={selectedTeamId}
+                  onChange={(e) => setSelectedTeamId(e.target.value)}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#4CAF50]/50 transition-all"
+                >
+                  <option value="">Selecciona uma equipa</option>
+                  {myTeams.map((team) => (
+                    <option key={team.id} value={team.id} disabled={alreadyJoined(team.id)}>
+                      {team.name}{alreadyJoined(team.id) ? " (já inscrita)" : ""}
+                    </option>
+                  ))}
+                </select>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={joinPublicTournament}
+                  disabled={joining || !selectedTeamId || alreadyJoined(selectedTeamId)}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold disabled:opacity-50"
+                >
+                  {joining ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar no Torneio"}
+                </motion.button>
+              </div>
+            )}
+          </motion.div>
+        )}
 
         {/* Standings */}
         {sortedTeams.length > 0 && (

@@ -83,3 +83,16 @@
 - **Migrações 002 + 003**: Adicionados `DROP POLICY IF EXISTS` antes de cada `CREATE POLICY` para tornar as migrações idempotentes (seguro re-aplicar sem erros de "policy already exists").
 - **TAREFA DIÁRIA — Novas perguntas**: Executado `npm run daily` (`scripts/daily-questions.mjs`). 0 novas perguntas (API keys de IA não definidas; todos os fallbacks já existiam na BD). Script alerta claramente quando não há chaves de IA configuradas.
 - **TAREFA SEMANAL — Verificação de duplicados**: Executado `scripts/weekly-dedupe.mjs`. Total na BD: 2.532 perguntas. 0 duplicados exatos removidos. 24 grupos de duplicados aproximados detectados — a maioria são Bandeiras com texto genérico + imagens diferentes (falsos positivos, não removidos).
+
+## [2026-08-18] Torneios Públicos vs Privados (FASE 3 — item 8 da ordem de trabalho)
+- **TAREFA**: Implementar "Torneios públicos vs privados" (próxima tarefa pendente de TAREFAS.md).
+- **MUDANÇAS**:
+  - Migração `supabase/migrations/015_add_tournament_is_public.sql`: adiciona coluna `is_public BOOLEAN DEFAULT false` à tabela `tournaments`.
+  - Tipo `Tournament.is_public` adicionado em `src/types/index.ts`.
+  - Formulário de criação (`src/app/tournaments/page.tsx`): novo toggle "Torneio Público" (ícone Globo/Cadeado) que define `is_public` no insert; texto explicativo contextual.
+  - Lista de torneios (`/tournaments`): dividida em secções "Torneios Públicos" (descoberta, com botão "Entrar no Torneio Público" direto, sem PIN) e "Torneios Ativos" (privados, entrada por código). Cartões mostram badge Público/Privado.
+  - Fluxo de entrada pública: painel de seleção de equipa + "Entrar" sem necessitar de PIN (função `joinPublicTournament` na lista e no detalhe).
+  - Página de detalhe (`src/app/tournaments/[id]/page.tsx`): badge "Público", secção "Entrar no Torneio Público" com seleção de equipa e botão de entrada (estado LOBBY); desativa equipas já inscritas.
+- **AÇÃO PENDENTE (manual)**: aplicar a migração 015 no Supabase (SQL Editor). Sem a migração, a coluna não existe mas o app não quebra (a query devolve `is_public` nulo e todos os torneios comportam-se como privados).
+- **LINT**: 0 novos erros (3 warnings/erros pré-existentes de `any` em catch de funções já existentes mantidos por consistência). **BUILD: OK**.
+- **TAREFAS.md**: item 8 marcado como COMPLETO; adicionado backlog de sugestões. Próximas sugestões: notificações para públicos, filtros/pesquisa, torneios por whitelist de equipas.

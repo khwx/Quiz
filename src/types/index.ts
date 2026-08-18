@@ -178,6 +178,7 @@ export interface Tournament {
   current_round: number;
   settings: TournamentSettings;
   prizes?: TournamentPrizes;
+  is_public?: boolean;
   created_by?: string;
   starts_at?: string;
   created_at: string;

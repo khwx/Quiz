@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal } from "lucide-react";
+import { Trophy, Plus, Users, Loader2, Clock, Target, Play, Flag, ArrowLeft, Copy, Check, Zap, Timer, Sparkles, Crown, Medal, Globe, Lock } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { GAME_CONSTANTS, GameStatus, TournamentStatus, UserRole } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
@@ -29,10 +29,11 @@ function generatePin(length: number = 6): string {
 }
 
 // Animated tournament card with hover effects
-function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTeams; onClick?: () => void }) {
+function TournamentCard({ tournament, onClick, onJoin }: { tournament: TournamentWithTeams; onClick?: () => void; onJoin?: () => void }) {
   const teamCount = tournament.tournament_teams?.length || 0;
   const fillPercentage = (teamCount / tournament.max_teams) * 100;
   const teamNames = tournament.tournament_teams?.map((tt) => tt.teams?.name).filter(Boolean) || [];
+  const isPublicTournament = tournament.is_public === true;
 
   return (
     <motion.div
@@ -45,8 +46,18 @@ function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTea
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1">
-          <div className="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">
-            {tournament.name}
+          <div className="flex items-center gap-2">
+            <div className="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">
+              {tournament.name}
+            </div>
+            <span
+              className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
+                isPublicTournament ? "bg-[#4CAF50]/15 text-[#4CAF50]" : "bg-white/10 text-[#e3e0f9]/50"
+              }`}
+              title={isPublicTournament ? "Torneio Público" : "Torneio Privado"}
+            >
+              {isPublicTournament ? <Globe className="w-3 h-3" /> : <Lock className="w-3 h-3" />}
+            </span>
           </div>
           <div className="flex items-center gap-2 mt-1">
             <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold ${statusConfig[tournament.status]?.bg} ${statusConfig[tournament.status]?.text}`}>
@@ -102,6 +113,17 @@ function TournamentCard({ tournament, onClick }: { tournament: TournamentWithTea
             className="h-full rounded-full bg-gradient-to-r from-primary to-secondary"
           />
         </div>
+
+        {onJoin && (
+          <motion.button
+            whileTap={{ scale: 0.97 }}
+            onClick={(e) => { e.stopPropagation(); onJoin(); }}
+            className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#4CAF50] text-white rounded-xl font-bold text-sm"
+          >
+            <Globe className="w-4 h-4" />
+            Entrar no Torneio Público
+          </motion.button>
+        )}
       </div>
     </motion.div>
   );
@@ -139,9 +161,11 @@ export default function TournamentsPage() {
   const [startConfirmOpen, setStartConfirmOpen] = useState(false);
   const [myTeams, setMyTeams] = useState<Team[]>([]);
   const [blindMode, setBlindMode] = useState(false);
+  const [isPublic, setIsPublic] = useState(false);
   const [prizeFirst, setPrizeFirst] = useState("");
   const [prizeSecond, setPrizeSecond] = useState("");
   const [prizeThird, setPrizeThird] = useState("");
+  const [publicJoinTarget, setPublicJoinTarget] = useState<TournamentWithTeams | null>(null);
 
   useEffect(() => {
     checkUser();
@@ -256,6 +280,7 @@ export default function TournamentsPage() {
           max_teams: 8,
           status: TournamentStatus.LOBBY,
            settings: { timer: 20, questions: 10, blind_mode: blindMode },
+          is_public: isPublic,
           prizes: {
             first: prizeFirst.trim(),
             second: prizeSecond.trim(),
@@ -283,6 +308,7 @@ export default function TournamentsPage() {
       setTournamentName("");
       setCreateMode(false);
       setSelectedTeamId("");
+      setIsPublic(false);
       setPrizeFirst("");
       setPrizeSecond("");
       setPrizeThird("");
@@ -353,8 +379,8 @@ export default function TournamentsPage() {
       setJoinMode(false);
       setSelectedTeamId("");
       await loadTournaments();
-    } catch (err: any) {
-      setError(err.message || "Erro ao entrar no torneo");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Erro ao entrar no torneo");
     } finally {
       setSaving(false);
     }
@@ -364,6 +390,53 @@ export default function TournamentsPage() {
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
+  };
+
+  const joinPublicTournament = async () => {
+    if (!publicJoinTarget) return;
+    if (!selectedTeamId) {
+      setError("Selecciona uma equipa para entrar no torneio");
+      return;
+    }
+    setSaving(true);
+    setError("");
+
+    try {
+      const tournament = publicJoinTarget;
+      const teamCount = tournament.tournament_teams?.length || 0;
+      if (teamCount >= tournament.max_teams) {
+        setError("Torneio cheio");
+        setSaving(false);
+        return;
+      }
+
+      const alreadyJoined = tournament.tournament_teams?.some(
+        (tt) => tt.team_id === selectedTeamId
+      );
+      if (alreadyJoined) {
+        setError("A tua equipa já está neste torneio");
+        setSaving(false);
+        return;
+      }
+
+      const { error: insertError } = await supabase
+        .from("tournament_teams")
+        .insert({
+          tournament_id: tournament.id,
+          team_id: selectedTeamId,
+        });
+
+      if (insertError) throw insertError;
+
+      setMyTournament(tournament);
+      setPublicJoinTarget(null);
+      setSelectedTeamId("");
+      await loadTournaments();
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Erro ao entrar no torneo");
+    } finally {
+      setSaving(false);
+    }
   };
 
   if (loading) {
@@ -648,6 +721,27 @@ export default function TournamentsPage() {
                     </div>
                   </label>
 
+                  <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
+                    <span className="flex items-center gap-2 text-sm text-[#e3e0f9]">
+                      {isPublic ? <Globe className="w-4 h-4 text-[#4CAF50]" /> : <Lock className="w-4 h-4 text-[#e3e0f9]/50" />}
+                      Torneio Público
+                    </span>
+                    <div className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={isPublic}
+                        onChange={(e) => setIsPublic(e.target.checked)}
+                        className="sr-only peer"
+                      />
+                      <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4CAF50]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#4CAF50]"></div>
+                    </div>
+                  </label>
+                  <p className="text-[#e3e0f9]/40 text-xs ml-1">
+                    {isPublic
+                      ? "Visível na lista pública — qualquer jogador pode entrar sem código."
+                      : "Apenas por convite com o código do torneio."}
+                  </p>
+
                   <div className="space-y-3">
                     <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest ml-1 block">Prémios do Top 3 (opcional)</label>
                     <div className="flex items-center gap-3">
@@ -690,7 +784,7 @@ export default function TournamentsPage() {
 
                  <div className="flex gap-3">
                     <button
-                      onClick={() => { setCreateMode(false); setBlindMode(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); }}
+                      onClick={() => { setCreateMode(false); setBlindMode(false); setIsPublic(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); }}
                       className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
                     >
                      Cancelar
@@ -780,7 +874,93 @@ export default function TournamentsPage() {
               </div>
             </motion.section>
           )}
+
+          {publicJoinTarget && !myTournament && (
+            <motion.section
+              key="public-join-form"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-[#4CAF50]/30 p-6"
+            >
+              <h3 className="text-lg font-bold text-[#e3e0f9] mb-1">Entrar no Torneio Público</h3>
+              <p className="text-[#e3e0f9]/60 text-sm mb-4 flex items-center gap-2">
+                <Globe className="w-4 h-4 text-[#4CAF50]" />
+                {publicJoinTarget.name}
+              </p>
+
+              <div className="space-y-4">
+                {myTeams.length > 0 ? (
+                  <div>
+                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
+                    <select
+                      value={selectedTeamId}
+                      onChange={(e) => setSelectedTeamId(e.target.value)}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#4CAF50]/50 transition-all"
+                    >
+                      <option value="">Selecciona uma equipa</option>
+                      {myTeams.map((team) => (
+                        <option key={team.id} value={team.id}>{team.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                ) : (
+                  <div className="p-3 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-[#4CAF50] text-sm">
+                    Precisas de ter uma equipa para entrar num torneio. Cria em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button>.
+                  </div>
+                )}
+
+                {error && (
+                  <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
+                    {error}
+                  </div>
+                )}
+
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => { setPublicJoinTarget(null); setError(""); }}
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                  >
+                    Cancelar
+                  </button>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={joinPublicTournament}
+                    disabled={saving || !selectedTeamId}
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold disabled:opacity-50"
+                  >
+                    {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.section>
+          )}
         </AnimatePresence>
+
+        {tournaments.length > 0 && !myTournament && (
+          <section>
+            <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
+              <Globe className="w-5 h-5 text-[#4CAF50]" />
+              Torneios Públicos
+            </h3>
+            <div className="space-y-3">
+              {tournaments
+                .filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED)
+                .map((tournament) => (
+                  <TournamentCard
+                    key={tournament.id}
+                    tournament={tournament}
+                    onClick={() => router.push(`/tournaments/${tournament.id}`)}
+                    onJoin={() => { setSelectedTeamId(myTeams[0]?.id || ""); setPublicJoinTarget(tournament); }}
+                  />
+                ))}
+              {tournaments.filter((t) => t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
+                <p className="text-[#e3e0f9]/40 text-sm">Não há torneios públicos no momento. Cria um e torna-o público!</p>
+              )}
+            </div>
+          </section>
+        )}
 
         {tournaments.length > 0 && !myTournament && (
           <section>
@@ -789,14 +969,16 @@ export default function TournamentsPage() {
               Torneios Ativos
             </h3>
             <div className="space-y-3">
-              {tournaments.filter((t) => t.status !== TournamentStatus.FINISHED).map((tournament) => (
+              {tournaments
+                .filter((t) => !t.is_public && t.status !== TournamentStatus.FINISHED)
+                .map((tournament) => (
                 <TournamentCard
                   key={tournament.id}
                   tournament={tournament}
                   onClick={() => router.push(`/tournaments/${tournament.id}`)}
                 />
               ))}
-              {tournaments.filter((t) => t.status !== TournamentStatus.FINISHED).length === 0 && (
+              {tournaments.filter((t) => !t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
                 <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio ativo</p>
               )}
             </div>

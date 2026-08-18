@@ -62,7 +62,7 @@ Tudo implementado e funcional!
 - [x] Ecrã de detalhe `/tournaments/[id]` com pódio e definições
 - [x] Modo Cego (anfitrião não vê respostas) e definições de timer/perguntas
 - [x] Prémios/loot para o top 3 (criador define prémios 1º/2º/3º na criação; ecrã de detalhe mostra os prémios e o vencedor de cada lugar quando FINISHED)
-- [ ] Torneios públicos vs privados (PENDENTE)
+- [x] Torneios públicos vs privados (toggle "Torneio Público" na criação; lista de descoberta de públicos com entrada direta sem PIN; badge público/privado nos cartões e no detalhe)
 
 ---
 
@@ -75,7 +75,7 @@ Tudo implementado e funcional!
 5️⃣ **COMPLETO ✅**: Login Social (Google + Facebook OAuth em `/login` — `handleOAuthLogin` parametrizado, build OK)
 6️⃣ **COMPLETO ✅**: Melhorias de histórico no perfil (accuracy %, tempo médio, barra visual, 15 jogos)
 7️⃣ **COMPLETO ✅**: Prémios/loot para top 3 em Torneios (criador define prémios, ecrã de detalhe mostra pódio com prémios + vencedor)
-8️⃣ **PRÓXIMO**: Torneios públicos vs privados
+8️⃣ **COMPLETO ✅**: Torneios públicos vs privados (descoberta + entrada direta sem PIN)
 
 ---
 
@@ -98,6 +98,11 @@ Tudo implementado e funcional!
 ---
 
 *Última atualização: 18 Agosto 2026* 🎉
+
+## 🎯 Próximas sugestões (backlog)
+- Notificações/emails para torneios públicos em destaque
+- Filtros e pesquisa na lista de torneios
+- Torneios por convite com lista de equipas permitidas (whitelist)
 
 **O que achas de implementar agora?**
 
