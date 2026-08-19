@@ -48221,5 +48221,485 @@
       "hint": "País caribenho"
     },
     "image_url": null
+  },
+  {
+    "text": "Qual filme ganhou o Óscar de Melhor Filme em 1994?",
+    "options": [
+      "Forrest Gump",
+      "Pulp Fiction",
+      "O Rei Leão",
+      "Shawshank Redemption"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Protagonizado por Tom Hanks"
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'CPU' num computador?",
+    "options": [
+      "Central Processing Unit",
+      "Computer Power Unit",
+      "Control Panel Unit",
+      "Core Processing Utility"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "O 'cérebro' do computador"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com 13 listras horizontais e 50 estrelas?",
+    "options": [
+      "Estados Unidos",
+      "Libéria",
+      "Malásia",
+      "Taiti"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Stars and Stripes"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano estreou o primeiro filme da saga 'Star Wars'?",
+    "options": [
+      "1977",
+      "1980",
+      "1975",
+      "1983"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Episódio IV: Uma Nova Esperança"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 15 multiplicado por 15?",
+    "options": [
+      "225",
+      "250",
+      "200",
+      "215"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada do 15"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o formato de ficheiro de áudio digital comprimido mais comum?",
+    "options": [
+      "MP3",
+      "WAV",
+      "FLAC",
+      "AAC"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Sigla com 'MPEG-1 Audio Layer 3'"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza um 'tee' para iniciar a jogada?",
+    "options": [
+      "Golfe",
+      "Ténis",
+      "Futebol",
+      "Críquete"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Joga-se num campo relvado amplo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é atualmente o maior exportador de petróleo da OPEP?",
+    "options": [
+      "Arábia Saudita",
+      "Irão",
+      "Venezuela",
+      "Iraque"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "País do Golfo Pérsico"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em informática, quantos bits formam um byte?",
+    "options": [
+      "8",
+      "1",
+      "1024",
+      "4"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Codificação básica de dados"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o gás de efeito de estufa mais abundante emitido pela atividade humana?",
+    "options": [
+      "Metano",
+      "Dióxido de carbono",
+      "Ozónio",
+      "Azoto"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Vem da queima de combustíveis fósseis"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um instrumento de sopro?",
+    "options": [
+      "Flauta",
+      "Violino",
+      "Bateria",
+      "Harpa"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Toca-se soprando ar"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um queijo italiano tradicionalmente usado em pizzas?",
+    "options": [
+      "Mozzarella",
+      "Cheddar",
+      "Brie",
+      "Feta"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Queijo de massa filada"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a unidade do Sistema Internacional (SI) para energia?",
+    "options": [
+      "Joule",
+      "Watt",
+      "Newton",
+      "Volt"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Não confundir com a unidade de potência"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes planetas é conhecido como o 'gigante gaseoso' com um sistema de anéis proeminente?",
+    "options": [
+      "Saturno",
+      "Marte",
+      "Vénus",
+      "Mercúrio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "O segundo maior planeta do Sistema Solar"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a sede das Nações Unidas (ONU)?",
+    "options": [
+      "Nova Iorque",
+      "Genebra",
+      "Paris",
+      "Londres"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Cidade nos EUA"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos dentes tem, em média, um adulto humano?",
+    "options": [
+      "32",
+      "28",
+      "36",
+      "24"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Incluindo os 4 dentes do siso"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país organizou os Jogos Olímpicos de Verão de 2016?",
+    "options": [
+      "Brasil",
+      "China",
+      "Reino Unido",
+      "Rússia"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Cidade do Rio de Janeiro"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos juízes integram a Suprema Corte dos Estados Unidos?",
+    "options": [
+      "9",
+      "7",
+      "11",
+      "12"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Número fixo por lei"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bebida alcoólica destilada é obtida principalmente de cereais como cevada ou milho?",
+    "options": [
+      "Whisky",
+      "Vinho",
+      "Cerveja",
+      "Saquê"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Muito associada à Escócia e Irlanda"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem desenhou a Torre Eiffel?",
+    "options": [
+      "Gustave Eiffel",
+      "Le Corbusier",
+      "Frank Lloyd Wright",
+      "Antoni Gaudí"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Engenheiro francês"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o resultado de 144 dividido por 12?",
+    "options": [
+      "12",
+      "11",
+      "13",
+      "10"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "12 x 12 = 144"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem foi o primeiro Presidente dos Estados Unidos?",
+    "options": [
+      "George Washington",
+      "Abraham Lincoln",
+      "Thomas Jefferson",
+      "John Adams"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Liderou na Guerra da Independência"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual saga de filmes é baseada nos livros de J.R.R. Tolkien?",
+    "options": [
+      "O Senhor dos Anéis",
+      "Harry Potter",
+      "Star Wars",
+      "Nárnia"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Hobbits e Mordor"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores de cada equipa há em campo num jogo de voleibol?",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "9"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto de rede"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com um disco vermelho no centro sobre fundo branco?",
+    "options": [
+      "Japão",
+      "Bangladesh",
+      "Palau",
+      "Coreia do Sul"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Sol nascente"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos minutos dura um jogo de futebol oficial (sem prolongamento)?",
+    "options": [
+      "90",
+      "80",
+      "100",
+      "60"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Dividido em duas partes"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a velocidade aproximada da Terra na sua órbita em torno do Sol?",
+    "options": [
+      "30 km/s",
+      "3 km/s",
+      "300 km/s",
+      "3000 km/s"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Cerca de 108 000 km/h"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com maior população do mundo (desde 2023)?",
+    "options": [
+      "Índia",
+      "China",
+      "Estados Unidos",
+      "Indonésia"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Ultrapassou a China recentemente"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior país do mundo por área territorial?",
+    "options": [
+      "Rússia",
+      "Canadá",
+      "China",
+      "Estados Unidos"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Estende-se pela Europa e Ásia"
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é típico o prato 'paella'?",
+    "options": [
+      "Espanha",
+      "Itália",
+      "França",
+      "Portugal"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Usa arroz e frutos do mar"
+    },
+    "image_url": null
   }
 ]

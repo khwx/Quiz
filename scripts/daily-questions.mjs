@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 import WebSocket from 'ws';
 import { config as loadDotenv } from 'dotenv';
+import { readFileSync, writeFileSync } from 'fs';
+import path from 'path';
 
 loadDotenv();
 
@@ -132,35 +134,75 @@ async function main() {
 
   const hasGemini = Boolean(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
   const hasGroq = Boolean(process.env.GROQ_API_KEY);
-  if (!hasGemini && !hasGroq) {
-    console.warn('⚠️ AVISO: Nenhuma API key de IA definida (NEXT_PUBLIC_GEMINI_API_KEY / GROQ_API_KEY).');
-    console.warn('⚠️ Serão usadas apenas perguntas de fallback curadas — que provavelmente já existem na BD (0 novas).');
-    console.warn('⚠️ Define uma chave no .env para gerar perguntas novas com IA.');
-  } else {
-    console.log(`🤖 Provedores de IA: Gemini=${hasGemini ? 'on' : 'off'} · Groq=${hasGroq ? 'on' : 'off'}`);
-  }
+  console.log(`🤖 Provedores de IA: Gemini=${hasGemini ? 'on' : 'off'} · Groq=${hasGroq ? 'on' : 'off'}`);
 
   const existingPairs = await getExistingPairs();
   const newQuestions = [];
-  let attempts = 0;
 
-  for (const category of CATEGORIES) {
-    for (let i = 0; i < PER_CATEGORY; i++) {
-      attempts++;
-      const ageRating = AGE_RATINGS[Math.floor(Math.random() * AGE_RATINGS.length)];
-      let q = await generateGemini(category, ageRating) || await generateGroq(category, ageRating);
-      if (!q) q = getFallbackQuestion(category);
-      if (q && !existingPairs.has(`${q.text}|${q.category.toUpperCase()}`)) {
-        newQuestions.push(q);
-        existingPairs.add(`${q.text}|${q.category.toUpperCase()}`);
-        console.log(`✅ ${q.category}: "${q.text.substring(0, 60)}..."`);
-      } else {
-        console.log(`⏭️ Duplicado ignorado para ${category}`);
+  if (!hasGemini && !hasGroq) {
+    // No AI keys: draw fresh, non-duplicate questions from a curated pool so the
+    // bank keeps growing daily without manual intervention. The pool shrinks as used.
+    const poolPath = path.join(process.cwd(), 'scripts', 'curated-pool.json');
+    let pool = [];
+    try {
+      pool = JSON.parse(readFileSync(poolPath, 'utf8'));
+    } catch {
+      console.warn('⚠️ Sem scripts/curated-pool.json — não é possível gerar pelo pool curado.');
+    }
+    if (pool.length === 0) {
+      console.warn('⚠️ AVISO: Nenhuma API key de IA e pool curado vazio.');
+      console.warn('⚠️ Define uma chave no .env ou repõe scripts/curated-pool.json para gerar perguntas.');
+    } else {
+      console.log(`🔄 Modo pool curado: ${pool.length} perguntas disponíveis em scripts/curated-pool.json`);
+      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      const target = CATEGORIES.length * PER_CATEGORY;
+      const usedKeys = [];
+      for (const q of shuffled) {
+        if (newQuestions.length >= target) break;
+        const category = q.category || 'CULTURA_GERAL';
+        const key = `${q.text}|${String(category).toUpperCase()}`;
+        usedKeys.push(key);
+        if (existingPairs.has(key)) continue;
+        newQuestions.push({
+          text: q.text,
+          options: q.options,
+          correct_option: q.correct_option,
+          category,
+          age_rating: q.age_rating || 10,
+          metadata: q.metadata || {},
+        });
+        existingPairs.add(key);
+        console.log(`✅ ${category}: "${q.text.substring(0, 60)}..."`);
+      }
+      const remaining = pool.filter((q) => !usedKeys.includes(`${q.text}|${String(q.category || '').toUpperCase()}`));
+      try {
+        writeFileSync(poolPath, JSON.stringify(remaining, null, 2));
+        console.log(`🗂️ Pool curado: ${pool.length} → ${remaining.length} (usadas ${usedKeys.length}, novas ${newQuestions.length})`);
+      } catch (e) {
+        console.warn('⚠️ Não atualizei o pool curado:', e.message);
       }
     }
+  } else {
+    let attempts = 0;
+    for (const category of CATEGORIES) {
+      for (let i = 0; i < PER_CATEGORY; i++) {
+        attempts++;
+        const ageRating = AGE_RATINGS[Math.floor(Math.random() * AGE_RATINGS.length)];
+        let q = await generateGemini(category, ageRating) || await generateGroq(category, ageRating);
+        if (!q) q = getFallbackQuestion(category);
+        if (q && !existingPairs.has(`${q.text}|${q.category.toUpperCase()}`)) {
+          newQuestions.push(q);
+          existingPairs.add(`${q.text}|${q.category.toUpperCase()}`);
+          console.log(`✅ ${q.category}: "${q.text.substring(0, 60)}..."`);
+        } else {
+          console.log(`⏭️ Duplicado ignorado para ${category}`);
+        }
+      }
+    }
+    console.log(`\n📝 Geradas ${newQuestions.length}/${attempts} perguntas únicas`);
   }
 
-  console.log(`\n📝 Geradas ${newQuestions.length}/${attempts} perguntas únicas`);
+  console.log(`\n📝 Geradas ${newQuestions.length} perguntas únicas`);
 
   if (newQuestions.length === 0) {
     console.log('✅ Nenhuma pergunta nova para inserir');
@@ -180,6 +222,17 @@ async function main() {
     await new Promise(r => setTimeout(r, 300));
   }
   console.log(`\n🎉 Total inserido: ${inserted}`);
+
+  // Keep questions_backup.json in sync with the database.
+  try {
+    const backup = JSON.parse(readFileSync('questions_backup.json', 'utf8'));
+    const before = backup.length;
+    backup.push(...newQuestions.map(q => ({ ...q, image_url: null })));
+    writeFileSync('questions_backup.json', JSON.stringify(backup, null, 2));
+    console.log(`💾 Backup: ${before} → ${backup.length}`);
+  } catch (e) {
+    console.warn('⚠️ Backup não atualizado:', e.message);
+  }
 }
 
 main().catch(console.error);

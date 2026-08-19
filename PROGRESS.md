@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-19] MELHORIA — `npm run daily` com pool curado (crescimento automático sem API keys)
+- **MELHORIA — Geração diária sem depender de IA**: `scripts/daily-questions.mjs` agora, quando nenhuma API key de IA está definida (`NEXT_PUBLIC_GEMINI_API_KEY` / `GROQ_API_KEY`), recorre a um **pool curado** (`scripts/curated-pool.json`) em vez das antigas fallback de uma única pergunta por categoria (que quase sempre já existiam na BD → 0 novas).
+  - O pool é baralhado, faz dedupe por `texto|category` contra a BD, e **encolhe automaticamente** (as perguntas usadas são removidas do ficheiro), garantindo que cada execução de `npm run daily` adiciona perguntas novas e distintas até o pool esgotar.
+  - Após inserir, sincroniza `questions_backup.json` (antes só o `add-curated-batch.mjs` o fazia), mantendo o backup fiel à BD.
+  - O caminho com IA (Gemini→Groq) mantém-se intacto.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+30 novas** (de um pool de 60; 8 já existiam e foram ignoradas por dedupe). Pool: 60 → 22. Banco: 2.545 → 2.575 (backup) / 2.578 (BD).
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. 0 duplicados exatos removidos. 25 grupos aproximados (esmagadoramente Bandeiras, falsos positivos — não removidos).
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup; sem impacto no app. `node --check` OK; lint/build não aplicáveis a mudanças fora de `src/`.
+
 ## [2026-08-19] MELHORIA — Distribuição de Respostas na REVEAL (audit 7.18)
 - **MELHORIA — Estatísticas de resposta por opção no ecrã da TV** (`src/components/tv/QuestionDisplay.tsx`): na fase REVEAL, cada opção agora mostra uma barra de distribuição com a percentagem e o número de jogadores que escolheram essa opção (baseado em `answers`/`players` já disponíveis). Dá ao host e jogadores o "sabor" Dr.Why de ver onde a sala se divide, sem alterar a pontuação nem o fluxo de jogo.
   - Cálculo seguro: `totalAnswered` dedupica por `player_id`; `answerPct` só renderiza quando há respostas; respeita `blindMode` (não mostra no modo cego).
