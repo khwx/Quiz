@@ -1,30 +1,29 @@
 # ✅ DAILY QUESTION ADDITION COMPLETED
 
 ## 📊 **RESULTS OF TODAY'S ADDITION**
-- **Questions added today:** 70 new questions
-- **Duplicates avoided:** 5 questions (prevented)
-- **Total questions in database:** 1,830 (increased from 1,760)
-- **All categories now have 100+ questions:** ✅ 15/16 categories (only HISTÓRIA with 5 needs attention)
+- **Questions added today:** 21 new questions
+- **Duplicates avoided:** 9 questions (prevented)
+- **Total questions in database:** 2,624 (increased from 2,603)
+- **All categories now have 100+ questions:** ✅ 15/15 categories
 
 ## 📈 **CURRENT DISTRIBUTION**
 | Category | Count | Status |
 |----------|-------|--------|
-| Bandeiras | 265 | ✅ Excellent |
-| ANIMAIS | 132 | ✅ Excellent |
-| CIENCIA | 122 | ✅ Excellent |
-| CULTURA_GERAL | 120 | ✅ Excellent |
-| GASTRONOMIA | 115 | ✅ Excellent |
-| DESPORTO | 115 | ✅ Excellent |
-| TECNOLOGIA | 114 | ✅ Excellent |
-| CINEMA | 114 | ✅ Excellent |
-| POLITICA | 112 | ✅ Excellent |
-| MATEMATICA | 105 | ✅ Good |
-| MUSICA | 105 | ✅ Good |
-| GEOGRAFIA | 105 | ✅ Good |
-| HISTORIA | 100 | ✅ Good |
-| CAPITAIS_DO_MUNDO | 101 | ✅ Good |
-| ARTE | 100 | ✅ Good |
-| HISTÓRIA | 5 | ⚠️ Needs attention (duplicate variant) |
+| BANDEIRAS | 311 | ✅ Excellent |
+| CULTURA_GERAL | 230 | ✅ Excellent |
+| CIENCIA | 218 | ✅ Excellent |
+| ANIMAIS | 174 | ✅ Excellent |
+| MUSICA | 163 | ✅ Excellent |
+| DESPORTO | 163 | ✅ Excellent |
+| GASTRONOMIA | 161 | ✅ Excellent |
+| HISTÓRIA | 156 | ✅ Excellent |
+| MATEMATICA | 154 | ✅ Excellent |
+| ARTE | 152 | ✅ Excellent |
+| GEOGRAFIA | 152 | ✅ Excellent |
+| TECNOLOGIA | 151 | ✅ Excellent |
+| CINEMA | 148 | ✅ Excellent |
+| POLITICA | 139 | ✅ Excellent |
+| CAPITAIS_DO_MUNDO | 128 | ✅ Excellent |
 
 ## 🛠️ **HOW TO SET UP DAILY AUTOMATION**
 
@@ -41,7 +40,7 @@
 
 3. Add this line to run daily at 2:00 AM:
    ```
-   0 2 * * * cd /home/pxtkhw/projetos/quiz && node add-daily.mjs >> /home/pxtkhw/projetos/quiz/daily.log 2>&1
+   0 2 * * * cd /home/pxtkhw/projetos/quiz && node scripts/daily-questions.mjs >> /home/pxtkhw/projetos/quiz/daily.log 2>&1
    ```
 
 ### Option 2: Windows (using Task Scheduler)
@@ -50,7 +49,7 @@
 3. Trigger: Daily, set time (e.g., 2:00 AM)
 4. Action: Start a program
    - Program: `node`
-   - Arguments: `add-daily.mjs`
+   - Arguments: `scripts/daily-questions.mjs`
    - Start in: `C:\path\to\your\projetos\quiz`
 5. Finish and test
 
@@ -58,27 +57,27 @@
 Run anytime:
 ```bash
 cd /home/pxtkhw/projetos/quiz
-node add-daily.mjs
+npm run daily
 ```
 
 ## 📝 **ABOUT THE SCRIPT**
-- Located at: `/home/pxtkhw/projetos/quiz/add-daily.mjs`
-- Adds ~50-70 questions daily across all categories
+- Located at: `/home/pxtkhw/projetos/quiz/scripts/daily-questions.mjs`
+- Adds ~20-30 questions daily across all categories
+- Uses curated pool when AI API keys not available
 - Automatically avoids duplicates
 - Maintains proper question format with hints and correct answers
 - Updates backup after each run
 - Balanced distribution across all 15 main categories
 
-## 🔧 **NEXT STEPS RECOMMENDED**
-1. **Fix HISTÓRIA category:** The 5-question "HISTÓRIA" appears to be a duplicate variant of "HISTORIA" (100 questions). Consider merging or removing it.
-2. **Test the automation:** Run the script manually once to verify it works before scheduling.
-3. **Monitor logs:** Check daily.log for any errors after automation is set up.
-4. **Verify backups:** Ensure questions_backup.json is updated after each run.
+## 🔧 **CURRENT STATUS**
+- **Curated pool:** Empty (30 questions used today) — needs replenishment for next cycles
+- **AI API keys:** Not configured (using curated pool only)
+- **Next recommended action:** Replenish `scripts/curated-pool.json` with 60+ new questions
 
 ## 💡 **TIPS FOR MAINTAINING QUALITY**
-- Always run a quick build check after adding questions: `npx next build`
+- Always run a quick build check after adding questions: `npm run build`
 - Monitor the admin panel for any reported issues
 - Consider varying question difficulty to maintain engagement
 - Keep track of which topics need more depth in future additions
 
-The system now has a solid foundation with 1,830 questions across all major topics, ready for engaging daily gameplay!
+The system now has a solid foundation with 2,624 questions across all major topics, ready for engaging daily gameplay!

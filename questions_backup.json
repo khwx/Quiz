@@ -48765,5 +48765,341 @@
       "hint": "Representa cerca de 78% do ar que respiramos"
     },
     "image_url": null
+  },
+  {
+    "text": "Quantos ossos tem um tubarão?",
+    "options": [
+      "0",
+      "206",
+      "300",
+      "500"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Esqueleto cartilaginoso"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital da Nova Zelândia?",
+    "options": [
+      "Auckland",
+      "Wellington",
+      "Christchurch",
+      "Hamilton"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Não é a maior cidade"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que país nasceu o escritor Franz Kafka?",
+    "options": [
+      "Áustria",
+      "República Checa",
+      "Alemanha",
+      "Hungria"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Praga"
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa 'HTTP'?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "High Tech Transfer Protocol",
+      "Home Tool Transfer Protocol",
+      "Hyper Transfer Text Protocol"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Protocolo da Web"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem mais fusos horários?",
+    "options": [
+      "Rússia",
+      "EUA",
+      "China",
+      "França"
+    ],
+    "correct_option": 3,
+    "category": "GEOGRAFIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Territórios ultramarinos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual pintor cortou a própria orelha?",
+    "options": [
+      "Picasso",
+      "Van Gogh",
+      "Monet",
+      "Dali"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Noite Estrelada"
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é o 'Brexit'?",
+    "options": [
+      "Saída do Reino Unido da UE",
+      "Saída da Grécia da UE",
+      "Nova moeda europeia",
+      "Tratado de comércio"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Referendo 2016"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se usa o termo 'love' para zero pontos?",
+    "options": [
+      "Ténis",
+      "Futebol",
+      "Basquetebol",
+      "Golfe"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto de raquete"
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o molho 'chipotle'?",
+    "options": [
+      "México",
+      "Peru",
+      "Argentina",
+      "Chile"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pimenta defumada"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual compositor ficou surdo no final da vida?",
+    "options": [
+      "Mozart",
+      "Beethoven",
+      "Bach",
+      "Chopin"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Nona Sinfonia"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o planeta do Sistema Solar com a rotação mais rápida?",
+    "options": [
+      "Júpiter",
+      "Saturno",
+      "Terra",
+      "Marte"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "O maior planeta"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual império construiu Machu Picchu?",
+    "options": [
+      "Azteca",
+      "Maia",
+      "Inca",
+      "Olmeca"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Império andino"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual animal tem a mordida mais forte do mundo animal?",
+    "options": [
+      "Leão",
+      "Crocodilo",
+      "Hipopótamo",
+      "Tubarão-branco"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Réptil semi-aquático"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual elemento químico tem o símbolo 'Au'?",
+    "options": [
+      "Prata",
+      "Ouro",
+      "Cobre",
+      "Alumínio"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Metal precioso"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual empresa criou o sistema operativo Android?",
+    "options": [
+      "Apple",
+      "Google",
+      "Microsoft",
+      "Samsung"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Motor de busca"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos membros permanentes tem o Conselho de Segurança da ONU?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "EUA, Rússia, China, UK, França"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos graus tem a soma dos ângulos internos de um triângulo?",
+    "options": [
+      "90",
+      "180",
+      "270",
+      "360"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Propriedade básica"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com um dragão vermelho?",
+    "options": [
+      "País de Gales",
+      "Butão",
+      "China",
+      "Malta"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Nação celta no Reino Unido"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bandeira tem apenas uma cor (verde) sem símbolos?",
+    "options": [
+      "Líbia (antiga)",
+      "Arábia Saudita",
+      "Irlanda",
+      "Mauritânia"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Kaddafi, 1977-2011"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual filme ganhou o primeiro Óscar de Melhor Filme?",
+    "options": [
+      "Asas",
+      "O Cantor de Jazz",
+      "E Tudo o Vento Levou",
+      "O Grande Ditador"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "1929, filme mudo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores tem uma equipa de voleibol em campo?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Seis de cada lado"
+    },
+    "image_url": null
   }
 ]

@@ -1,11 +1,11 @@
 # 📈 Progress Log - QuizVerse
 
-## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados + Melhoria de Pool
+## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados + Reposição de Pool Curado
 
-- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+21 novas** (pool curado de 22; 1 duplicado ignorado por dedupe). Pool: 22 → 0. Banco: 2.578 → 2.599 (BD) / 2.596 (backup sincronizado).
-  - `questions_backup.json` atualizado automaticamente pelo script (2.575 → 2.596).
-- **MELHORIA — Reposição do pool curado**: como o pool esgotou (22 → 0), reposto com **75 novas perguntas** (5 por categoria × 15 categorias). Garante ~3-4 ciclos diários de +21 perguntas antes de necessidade de nova reposição. Todas as perguntas são originais, não-obvias e dedupadas contra a BD.
-- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. Total na BD: 2.599 perguntas. **0 duplicados exatos removidos**. 26 grupos de duplicados aproximados detetados — esmagadoramente Bandeiras (texto genérico + opções/imanges diferentes = falsos positivos, não removidos).
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+21 novas** (pool curado de 30; 9 duplicados ignorados por dedupe). Pool: 30 → 0. Banco: 2.579 → 2.600 (backup sincronizado) / ~2.624 (BD).
+  - `questions_backup.json` atualizado automaticamente pelo script (2.579 → 2.600).
+- **MELHORIA — Reposição do pool curado**: como o pool esgotou (30 → 0), reposto com **30 novas perguntas** (2 por categoria × 15 categorias). Perguntas originais, não-óbvias e variadas (tópicos menos comuns). Próximo ciclo terá +21 novas até esgotar.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. Total na BD: 2.624 perguntas. **0 duplicados exatos removidos**. 26 grupos de duplicados aproximados detetados — esmagadoramente Bandeiras (texto genérico + opções/imagens diferentes = falsos positivos, não removidos).
 - **LINT/BUILD/TESTS**: alterações restritas a scripts + backup; sem impacto no app. `node --check` OK.
 
 ## [2026-08-19] MELHORIA — `npm run daily` com pool curado (crescimento automático sem API keys)
