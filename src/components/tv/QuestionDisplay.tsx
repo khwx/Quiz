@@ -336,6 +336,9 @@ export default function QuestionDisplay({
           const isReveal = status === GameStatus.REVEAL;
           const showCorrect = isReveal && isCorrect && !blindMode;
           const showWrong = isReveal && !isCorrect && !blindMode;
+          const optionAnswerCount = answers.filter((a) => Number(a.chosen_option) === idx).length;
+          const totalAnswered = new Set(answers.map((a) => String(a.player_id))).size;
+          const answerPct = totalAnswered ? Math.round((optionAnswerCount / totalAnswered) * 100) : 0;
 
           return (
             <motion.div
@@ -389,12 +392,26 @@ export default function QuestionDisplay({
                             <span className="text-gray-900 font-black text-lg">{getInitials(player.name)}</span>
                           </motion.div>
                         );
-                      })}
-                  </div>
-                )}
-              </div>
+                       })}
+                   </div>
+                 )}
 
-              {showCorrect && (
+                 {isReveal && !blindMode && totalAnswered > 0 && (
+                   <div className="mt-3 flex items-center gap-2">
+                     <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
+                       <div
+                         className={`h-full transition-all duration-500 ${isCorrect ? "bg-green-400" : "bg-white/30"}`}
+                         style={{ width: `${answerPct}%` }}
+                       />
+                     </div>
+                     <span className="text-xs font-bold text-white/70 tabular-nums">
+                       {answerPct}% · {optionAnswerCount}
+                     </span>
+                   </div>
+                 )}
+               </div>
+
+               {showCorrect && (
                 <div className="absolute top-4 right-4 bg-white text-green-600 rounded-full p-2 shadow-lg z-10">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />

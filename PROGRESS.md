@@ -1,5 +1,10 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-19] MELHORIA — Distribuição de Respostas na REVEAL (audit 7.18)
+- **MELHORIA — Estatísticas de resposta por opção no ecrã da TV** (`src/components/tv/QuestionDisplay.tsx`): na fase REVEAL, cada opção agora mostra uma barra de distribuição com a percentagem e o número de jogadores que escolheram essa opção (baseado em `answers`/`players` já disponíveis). Dá ao host e jogadores o "sabor" Dr.Why de ver onde a sala se divide, sem alterar a pontuação nem o fluxo de jogo.
+  - Cálculo seguro: `totalAnswered` dedupica por `player_id`; `answerPct` só renderiza quando há respostas; respeita `blindMode` (não mostra no modo cego).
+- **LINT/BUILD/TESTS**: sem novos erros (warnings/erros pré-existentes em `QuestionDisplay.tsx` mantidos); build OK; 15/15 testes passam.
+
 ## [2026-08-19] Ciclo de Manutenção — Lote Curado de Perguntas + Dedupe Semanal
 - **MELHORIA — Crescimento do banco de perguntas (lote curado)**: como as API keys de IA continuam ausentes, o `npm run daily` gera 0 novas. Criado `scripts/add-curated-batch.mjs` (reutilizável por ciclo) com 30 perguntas curadas (2 por categoria), dedupe por `texto|category`, inserção em lotes e atualização do `questions_backup.json`.
   - Resultado: **17 novas perguntas inseridas** (13 já existiam na BD e foram ignoradas por dedupe). Banco continua a crescer de forma segura e sem duplicados.
