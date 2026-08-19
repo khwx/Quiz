@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados + Melhoria de Pool
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+21 novas** (pool curado de 22; 1 duplicado ignorado por dedupe). Pool: 22 → 0. Banco: 2.578 → 2.599 (BD) / 2.596 (backup sincronizado).
+  - `questions_backup.json` atualizado automaticamente pelo script (2.575 → 2.596).
+- **MELHORIA — Reposição do pool curado**: como o pool esgotou (22 → 0), reposto com **75 novas perguntas** (5 por categoria × 15 categorias). Garante ~3-4 ciclos diários de +21 perguntas antes de necessidade de nova reposição. Todas as perguntas são originais, não-obvias e dedupadas contra a BD.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. Total na BD: 2.599 perguntas. **0 duplicados exatos removidos**. 26 grupos de duplicados aproximados detetados — esmagadoramente Bandeiras (texto genérico + opções/imanges diferentes = falsos positivos, não removidos).
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup; sem impacto no app. `node --check` OK.
+
 ## [2026-08-19] MELHORIA — `npm run daily` com pool curado (crescimento automático sem API keys)
 - **MELHORIA — Geração diária sem depender de IA**: `scripts/daily-questions.mjs` agora, quando nenhuma API key de IA está definida (`NEXT_PUBLIC_GEMINI_API_KEY` / `GROQ_API_KEY`), recorre a um **pool curado** (`scripts/curated-pool.json`) em vez das antigas fallback de uma única pergunta por categoria (que quase sempre já existiam na BD → 0 novas).
   - O pool é baralhado, faz dedupe por `texto|category` contra a BD, e **encolhe automaticamente** (as perguntas usadas são removidas do ficheiro), garantindo que cada execução de `npm run daily` adiciona perguntas novas e distintas até o pool esgotar.

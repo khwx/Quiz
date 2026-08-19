@@ -48701,5 +48701,69 @@
       "hint": "Usa arroz e frutos do mar"
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o osso mais longo do corpo humano?",
+    "options": [
+      "Fémur",
+      "Tíbia",
+      "Úmero",
+      "Rádio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Localiza-se na coxa"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano ocorreu o desembarque na Lua da missão Apollo 11?",
+    "options": [
+      "1969",
+      "1965",
+      "1971",
+      "1973"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "O famoso 'um pequeno passo para o homem'"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem compôs a famosa Nona Sinfonia?",
+    "options": [
+      "Ludwig van Beethoven",
+      "Wolfgang Amadeus Mozart",
+      "Johann Sebastian Bach",
+      "Frédéric Chopin"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Gênio musical alemão que ficou surdo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o gás predominante na atmosfera da Terra?",
+    "options": [
+      "Azoto (Nitrogénio)",
+      "Oxigénio",
+      "Dióxido de Carbono",
+      "Hélio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Representa cerca de 78% do ar que respiramos"
+    },
+    "image_url": null
   }
 ]

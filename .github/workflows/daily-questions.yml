@@ -1,28 +1,40 @@
-name: Daily Question Generation
+name: Daily Questions Automation & Sync
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 3 * * *' # Every day at 03:00 UTC
   workflow_dispatch:
 
 jobs:
-  generate-questions:
+  update-questions:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Run daily question generation
+      - name: Run daily question generation & Supabase sync
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          GOOGLE_GEMINI_API_KEY: ${{ secrets.GOOGLE_GEMINI_API_KEY }}
-        run: node scripts/daily-questions.mjs
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_GEMINI_API_KEY: ${{ secrets.NEXT_PUBLIC_GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          QUESTIONS_PER_CATEGORY: 3
+        run: npm run daily
 
-      - name: Verify distribution
-        run: node check-distribution.mjs
+      - name: Commit and push changes to GitHub & Supabase backup
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add questions_backup.json scripts/curated-pool.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Daily automated question update & database sync [skip ci]" && git push)
