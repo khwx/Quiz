@@ -1,5 +1,12 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-19] Ciclo de Manutenção — Lote Curado de Perguntas + Dedupe Semanal
+- **MELHORIA — Crescimento do banco de perguntas (lote curado)**: como as API keys de IA continuam ausentes, o `npm run daily` gera 0 novas. Criado `scripts/add-curated-batch.mjs` (reutilizável por ciclo) com 30 perguntas curadas (2 por categoria), dedupe por `texto|category`, inserção em lotes e atualização do `questions_backup.json`.
+  - Resultado: **17 novas perguntas inseridas** (13 já existiam na BD e foram ignoradas por dedupe). Banco continua a crescer de forma segura e sem duplicados.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → 0 (sem API keys). Lote curado `scripts/add-curated-batch.mjs` → +17.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. 0 duplicados exatos removidos. 24 grupos aproximados (esmagadoramente Bandeiras, falsos positivos — não removidos).
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup; sem impacto no app. Lint/build não aplicáveis a mudanças fora de `src/`.
+
 ## [2026-08-18] Torneios em Destaque + Notificações (Backlog TAREFAS.md)
 - **MELHORIA — Torneios públicos em destaque com notificações**: implementada funcionalidade de destacar torneios públicos na página de descoberta e enviar notificações automáticas aos utilizadores.
   - Migração `supabase/migrations/017_add_tournament_featured.sql`: adiciona coluna `is_featured BOOLEAN DEFAULT false` à tabela `tournaments` com índice parcial para featured públicos.

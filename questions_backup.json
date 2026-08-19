@@ -47949,5 +47949,277 @@
     "metadata": {
       "hint": "A resposta correta e: Belize"
     }
+  },
+  {
+    "text": "Qual é o planeta do Sistema Solar conhecido como 'planeta vermelho'?",
+    "options": [
+      "Vénus",
+      "Marte",
+      "Júpiter",
+      "Mercúrio"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Lar do rover Curiosity"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a velocidade aproximada da luz no vácuo?",
+    "options": [
+      "300 km/s",
+      "300 000 km/s",
+      "3 000 km/s",
+      "30 000 km/s"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Cerca de 3×10⁸ m/s"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos continentes existem no mundo?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "África, América, Ásia, Europa, Oceânia, Antártida"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos corações tem um polvo?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Sistema circulatório distribuído"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o principal ingrediente do guacamole?",
+    "options": [
+      "Tomate",
+      "Abacate",
+      "Cebola",
+      "Pimento"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fruto verde cremoso"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual banda britânica ficou famosa com a canção 'Hey Jude'?",
+    "options": [
+      "Rolling Stones",
+      "The Beatles",
+      "Queen",
+      "The Who"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Lennon e McCartney"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas cordas tem uma guitarra clássica padrão?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "E A D G B e"
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'URL'?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Reference Link",
+      "Unified Routing Layer",
+      "User Redirect Login"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Endereço de uma página web"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual linguagem de marcação é usada para estruturar páginas web?",
+    "options": [
+      "Python",
+      "HTML",
+      "C++",
+      "SQL"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "HyperText Markup Language"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se joga com uma bola laranja e cestos?",
+    "options": [
+      "Futebol",
+      "Basquetebol",
+      "Voleibol",
+      "Ténis"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "NBA"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o deserto mais extenso do mundo?",
+    "options": [
+      "Saara",
+      "Gobi",
+      "Kalahari",
+      "Antártico"
+    ],
+    "correct_option": 3,
+    "category": "GEOGRAFIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Maior deserto frio, na Antártida"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 x 7?",
+    "options": [
+      "56",
+      "63",
+      "64",
+      "72"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabela básica"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o resultado de 2 elevado a 5 (2⁵)?",
+    "options": [
+      "10",
+      "16",
+      "32",
+      "64"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "2×2×2×2×2"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem dirigiu o filme 'Titanic' (1997)?",
+    "options": [
+      "James Cameron",
+      "Steven Spielberg",
+      "Christopher Nolan",
+      "Ridley Scott"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Também fez Avatar"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual personagem é interpretado por Daniel Radcliffe na saga Harry Potter?",
+    "options": [
+      "Ron Weasley",
+      "Harry Potter",
+      "Draco Malfoy",
+      "Neville Longbottom"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "O 'menino que sobreviveu'"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos estados membros tem a União Europeia (desde 2020)?",
+    "options": [
+      "26",
+      "27",
+      "28",
+      "30"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Após a saída do Reino Unido"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país cuja bandeira tem uma estrela solitária branca num triângulo azul?",
+    "options": [
+      "Cuba",
+      "Chile",
+      "Líbia",
+      "São Vicente"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "País caribenho"
+    },
+    "image_url": null
   }
 ]
