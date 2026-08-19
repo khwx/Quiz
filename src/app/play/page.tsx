@@ -192,23 +192,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   }, [currentQuestionId, gameId, gameSettings, currentQuestionIndex]);
 
   useEffect(() => {
-    if (currentQuestionId && (status === GameStatus.QUESTION || status === GameStatus.REVEAL)) {
-      setHasAnswered(false);
-      setSelectedOption(null);
-      setEliminatedOptions([]);
-      setEarnedPoints(null);
-      setStreak(0);
-      setShowHint(false);
-      setFiftyFiftyUsed(false);
-      setSkipUsed(false);
-      setFreezeUsed(false);
-      setFrozen(false);
-      frozenRef.current = false;
-      submittingRef.current = false;
-    }
-  }, [currentQuestionId, status]);
-
-  useEffect(() => {
     if (questionData?.id && status === GameStatus.QUESTION) {
       setHasAnswered(false);
       setSelectedOption(null);
@@ -351,25 +334,23 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
   useEffect(() => {
     if (correctOption !== null && selectedOption !== null) {
-    if (selectedOption === correctOption) {
-      const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
-      const timerDur = gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER;
-      const timeRatio = Math.max(0, timerDur - timeTaken) / timerDur;
-      const points = Math.round(600 + (400 * timeRatio));
-      setEarnedPoints(points);
+      if (selectedOption === correctOption) {
+        const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
+        const timerDur = gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER;
+        const timeRatio = Math.max(0, timerDur - timeTaken) / timerDur;
+        const points = Math.round(600 + (400 * timeRatio));
+        setEarnedPoints(points);
         setStreak((prev) => prev + 1);
         playSound("correct");
         triggerHaptic("correct");
-        setTimeout(() => setEarnedPoints(null), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
       } else {
         setEarnedPoints(0);
         setStreak(0);
         playSound("wrong");
         triggerHaptic("wrong");
-        setTimeout(() => setEarnedPoints(null), GAME_CONSTANTS.FEEDBACK_DISMISS_MS);
       }
     }
-  }, [correctOption, selectedOption, playSound, startTime]);
+  }, [correctOption, selectedOption, playSound, startTime, gameSettings?.timer_duration]);
 
   const handleAnswer = async (index: number) => {
     if (submittingRef.current) return;
