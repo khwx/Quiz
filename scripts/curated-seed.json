@@ -1,0 +1,662 @@
+[
+  {
+    "text": "Qual é a unidade estrutural base do ADN?",
+    "options": ["Proteína", "Nucléotido", "Aminoácido", "Glicose"],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Composto por fosfato, açúcar e base azotada.",
+      "explanation": "O ADN é uma cadeia de nucleótidos; cada um tem um grupo fosfato, uma desoxirribose e uma base (A, T, C ou G)."
+    }
+  },
+  {
+    "text": "Quantos planetas tem o Sistema Solar, segundo a definição atual?",
+    "options": ["7", "8", "9", "10"],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Plutão já não conta.",
+      "explanation": "Desde 2006, com a reclassificação de Plutão como planeta-anão, o Sistema Solar tem 8 planetas."
+    }
+  },
+  {
+    "text": "Qual gás libertado pela queima de combustíveis fósseis é o principal responsável pelo aquecimento global?",
+    "options": ["Dióxido de carbono", "Oxigénio", "Azoto", "Hélio"],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tem a fórmula CO2.",
+      "explanation": "O CO2 é o principal gás de efeito de estufa acumulado pela atividade humana, retendo calor na atmosfera."
+    }
+  },
+  {
+    "text": "Qual é a velocidade aproximada da luz no vazio?",
+    "options": ["300 000 km/s", "150 000 km/s", "1 000 000 km/s", "30 000 km/s"],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "É o limite de velocidade do universo.",
+      "explanation": "A luz viaja a ≈299 792 km/s; nada com massa pode ultrapassar essa velocidade segundo a relatividade."
+    }
+  },
+  {
+    "text": "Qual é o osso mais longo do corpo humano?",
+    "options": ["Fémur", "Tíbia", "Úmero", "Rádio"],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Ossos da coxa.",
+      "explanation": "O fémur pode representar cerca de 1/4 da altura de uma pessoa adulta."
+    }
+  },
+  {
+    "text": "Em que continente fica o deserto de Atacama?",
+    "options": ["África", "Ásia", "América do Sul", "Oceania"],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "No norte do Chile.",
+      "explanation": "O Atacama, no norte do Chile, é um dos desertos mais áridos do mundo — chove raramente décadas a fio."
+    }
+  },
+  {
+    "text": "Qual é a moeda oficial do Japão?",
+    "options": ["Yuan", "Iene", "Won", "Dólar"],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sigla JPY.",
+      "explanation": "O iene é a moeda do Japão; o yuan é da China e o won da Coreia do Sul."
+    }
+  },
+  {
+    "text": "Quantos continentes adota tradicionalmente o modelo escolar português?",
+    "options": ["5", "6", "7", "4"],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divide-se a América.",
+      "explanation": "Em Portugal ensinam-se tradicionalmente 6 continentes, contando a América do Norte e a América do Sul separadas."
+    }
+  },
+  {
+    "text": "Qual destes animais é um marsupial?",
+    "options": ["Coala", "Golfinho", "Foca", "Lobo"],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem uma bolsa (marsúpio).",
+      "explanation": "O coala, como o canguru, carrega as crias num marsúpio; os outros são placentários."
+    }
+  },
+  {
+    "text": "Quantas câmaras tem o coração de um crocodilo?",
+    "options": ["2", "3", "4", "5"],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tal como as aves.",
+      "explanation": "Os crocodilos têm um coração de 4 câmaras, raro entre os répteis, partilhado com aves e mamíferos."
+    }
+  },
+  {
+    "text": "Qual é o mamífero terrestre mais rápido em sprint?",
+    "options": ["Guepardo", "Cavalo", "Antílope", "Lebre"],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Atinge mais de 100 km/h.",
+      "explanation": "O guepardo pode atingir 100-120 km/h em sprints curtos, graças a patas semelhantes a molas."
+    }
+  },
+  {
+    "text": "Qual destes animais tem uma toxina considerada das mais venenosas do mundo?",
+    "options": ["Serpente de charrete", "Caracol-cone", "Aranha-armadeira", "Medusa-comum"],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Um molusco marinho.",
+      "explanation": "Os caracois-cone injectam uma toxina de acção rápida; algumas espécies podem matar um humano."
+    }
+  },
+  {
+    "text": "Quem foi o primeiro presidente dos Estados Unidos?",
+    "options": ["Lincoln", "Washington", "Jefferson", "Adams"],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Também com uma cidade com o seu nome.",
+      "explanation": "George Washington tomou posse em 1789 e presidiu à convenção que redigiu a Constituição."
+    }
+  },
+  {
+    "text": "Em que ano começou a Primeira Guerra Mundial?",
+    "options": ["1912", "1914", "1916", "1918"],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Após o assassinato de um arquiduque.",
+      "explanation": "A guerra começou em 1914 após o assassinato do arquiduque Francisco Ferdinando em Sarajevo."
+    }
+  },
+  {
+    "text": "Quem foi o primeiro rei de Portugal?",
+    "options": ["D. Sancho I", "D. Afonso Henriques", "D. João I", "D. Pedro I"],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Conquista de Lisboa em 1147.",
+      "explanation": "D. Afonso Henriques tornou-se o primeiro rei de Portugal, proclamado em 1139 após Ourique."
+    }
+  },
+  {
+    "text": "Qual foi a primeira mulher a ganhar um Prémio Nobel?",
+    "options": ["Marie Curie", "Rosalind Franklin", "Ada Lovelace", "Florence Nightingale"],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Estudou radioatividade.",
+      "explanation": "Marie Curie ganhou o Nobel da Física em 1903 e da Química em 1911 — a primeira pessoa com dois Nobéis."
+    }
+  },
+  {
+    "text": "Qual é o prato tradicional japonês de arroz avinagrado e peixe cru?",
+    "options": ["Ramen", "Sushi", "Tempura", "Udon"],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Muito servido em pizza no Ocidente... não.",
+      "explanation": "O sushi combina arroz avinagrado (shari) com peixe ou marisco; o ramen é sopa de noodles."
+    }
+  },
+  {
+    "text": "De que país é originária a paella?",
+    "options": ["Itália", "Espanha", "Grécia", "França"],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cidade de Valência.",
+      "explanation": "A paella nasceu em Valência, Espanha, originalmente com arroz, frango e marisco."
+    }
+  },
+  {
+    "text": "Qual é o queijo com maior produção e consumo mundial?",
+    "options": ["Brie", "Mozzarella", "Cheddar", "Parmesão"],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Base da pizza.",
+      "explanation": "A mozzarella lidera a produção global, impulsionada pela indústria da pizza."
+    }
+  },
+  {
+    "text": "Quantos bagos de uva entram, em média, numa garrafa de vinho de 0,75 L?",
+    "options": ["Cerca de 100", "Cerca de 600", "Cerca de 50", "Cerca de 50 000"],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Menos de mil.",
+      "explanation": "Uma garrafa requer cerca de 600-800 bagos de uva, conforme a casta e o rendimento."
+    }
+  },
+  {
+    "text": "Quantas teclas tem um piano de concerto padrão?",
+    "options": ["66", "88", "76", "102"],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "52 brancas, 36 pretas.",
+      "explanation": "O piano moderno tem 88 teclas; pianos de estúdio podem ter menos."
+    }
+  },
+  {
+    "text": "Qual destes instrumentos é de sopro (metal)?",
+    "options": ["Violino", "Trompete", "Harpa", "Cítara"],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fanfarra.",
+      "explanation": "O trompete é de sopro (família dos metais); os restantes são de cordas."
+    }
+  },
+  {
+    "text": "De que banda é a canção 'Bohemian Rhapsody'?",
+    "options": ["The Beatles", "Queen", "ABBA", "U2"],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Escrita por Freddie Mercury.",
+      "explanation": "Integra o álbum 'A Night at the Opera' (1975) e é um dos temas mais icónicos do rock."
+    }
+  },
+  {
+    "text": "Qual é a nota musical imediatamente superior a Dó na escala?",
+    "options": ["Si", "Ré", "Mi", "Fá"],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "A sequência sobe.",
+      "explanation": "Na escala diatónica: Dó, Ré, Mi, Fá, Sol, Lá, Si."
+    }
+  },
+  {
+    "text": "O que significa a sigla 'URL'?",
+    "options": ["Uniform Resource Locator", "Universal Read Link", "User Redirect Login", "Unified Route Label"],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Endereço de um site.",
+      "explanation": "URL (Localizador Uniforme de Recursos) identifica o endereço de um recurso na Web."
+    }
+  },
+  {
+    "text": "Em que ano Tim Berners-Lee propôs a World Wide Web no CERN?",
+    "options": ["1989", "1991", "1995", "2000"],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Fim da década de 80.",
+      "explanation": "Berners-Lee apresentou a proposta em 1989; o primeiro site esteve online em 1991."
+    }
+  },
+  {
+    "text": "Qual linguagem confere interactividade às páginas web no lado do cliente?",
+    "options": ["Python", "JavaScript", "C++", "Java"],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Corre no navegador.",
+      "explanation": "JavaScript executa nos navegadores; Python e C++ não são a linguagem padrão de cliente web."
+    }
+  },
+  {
+    "text": "Quantos bits tem um endereço IPv4?",
+    "options": ["32", "64", "128", "16"],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Cerca de 4 mil milhões de endereços.",
+      "explanation": "IPv4 usa 32 bits; o sucessor IPv6 usa 128 bits para lidar com a escassez de endereços."
+    }
+  },
+  {
+    "text": "Quantos jogadores de basquetebol em campo por equipa (NBA)?",
+    "options": ["5", "6", "7", "11"],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Menos que no futebol.",
+      "explanation": "Cada equipa joga com 5; no futebol são 11 em campo."
+    }
+  },
+  {
+    "text": "Qual cidade organizou os Jogos Olímpicos de Verão de 2016?",
+    "options": ["Pequim", "Rio de Janeiro", "Moscovo", "Londres"],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Primeira vez na América do Sul.",
+      "explanation": "O Rio de Janeiro foi a primeira cidade da América do Sul a receber a Olimpíada."
+    }
+  },
+  {
+    "text": "Em que desporto se usa o termo 'ace' para um serviço sem resposta?",
+    "options": ["Ténis", "Futebol", "Natação", "Xadrez"],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Raquetes.",
+      "explanation": "No ténis, 'ace' é um serviço que o adversário nem toca na bola."
+    }
+  },
+  {
+    "text": "Qual é o recorde do mundo dos 100 m planos (homens)?",
+    "options": ["9,58 s", "10,20 s", "9,00 s", "9,99 s"],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Usain Bolt.",
+      "explanation": "Usain Bolt correu 9,58 s em Berlim (2009), recorde mundial ainda vigente."
+    }
+  },
+  {
+    "text": "Quem esculpiu o 'David' renascentista em mármore?",
+    "options": ["Michelangelo", "Bernini", "Donatello", "Rodin"],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Também pintou a Capela Sistina.",
+      "explanation": "Michelangelo esculpiu o David (1501-1504) em mármore de Carrara, símbolo do Renascimento."
+    }
+  },
+  {
+    "text": "Qual movimento artístico valoriza o dramatismo e a ornamentação intensa do século XVII?",
+    "options": ["Minimalismo", "Barroco", "Abstrato", "Pop art"],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Contra-reforma.",
+      "explanation": "O barroco enfatiza emoção, movimento e contraste (claro-escuro), oposto ao rigor clássico."
+    }
+  },
+  {
+    "text": "Quem pintou o teto da Capela Sistina?",
+    "options": ["Rafael", "Michelangelo", "Leonardo", "Caravaggio"],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "'A Criação de Adão'.",
+      "explanation": "Michelangelo pintou o teto entre 1508 e 1512, uma das obras mais célebres da arte ocidental."
+    }
+  },
+  {
+    "text": "Em que país floresceu o movimento Art Nouveau no fim do século XIX?",
+    "options": ["França e Bélgica", "Japão", "Brasil", "Índia"],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Victor Horta.",
+      "explanation": "A Art Nouveau nasceu na França e na Bélgica, com linhas orgânicas inspiradas na natureza."
+    }
+  },
+  {
+    "text": "Qual é o ponto mais alto da Terra?",
+    "options": ["Monte Everest", "K2", "Aconcágua", "Kilimanjaro"],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Himalaia.",
+      "explanation": "O Everest atinge 8849 m, na fronteira Nepal-China (Tibete)."
+    }
+  },
+  {
+    "text": "Qual é o maior oceano do mundo?",
+    "options": ["Atlântico", "Pacífico", "Índico", "Ártico"],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cobre quase 1/3 do planeta.",
+      "explanation": "O Pacífico é o maior oceano, com mais de 165 milhões de km²."
+    }
+  },
+  {
+    "text": "Qual país se tornou o mais populoso do mundo em 2023?",
+    "options": ["China", "Índia", "Estados Unidos", "Indonésia"],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Subcontinente asiático.",
+      "explanation": "A Índia ultrapassou a China como o país mais populoso do mundo."
+    }
+  },
+  {
+    "text": "Qual é o maior rio da Europa em extensão?",
+    "options": ["Danúbio", "Volga", "Renan", "Tâmisa"],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Na Rússia.",
+      "explanation": "A Volga tem cerca de 3530 km e desagua no mar Cáspio; o Danúbio é o mais internacional."
+    }
+  },
+  {
+    "text": "Quanto é 15% de 200?",
+    "options": ["30", "25", "35", "40"],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "0,15 × 200.",
+      "explanation": "15% de 200 = 0,15 × 200 = 30."
+    }
+  },
+  {
+    "text": "Qual é o valor de 2 elevado a 10?",
+    "options": ["512", "1024", "2048", "256"],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Base dos 'bytes'.",
+      "explanation": "2^10 = 1024; daí 1 KB = 1024 bytes, e não 1000."
+    }
+  },
+  {
+    "text": "Quantos graus tem uma circunferência completa?",
+    "options": ["180", "270", "360", "400"],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Também 2π radianos.",
+      "explanation": "Uma volta completa são 360 graus, a medida convencional em geometria euclidiana."
+    }
+  },
+  {
+    "text": "Qual é o número primo imediatamente superior a 17?",
+    "options": ["18", "19", "21", "23"],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Só divisível por 1 e por si.",
+      "explanation": "19 é primo; 18 e 21 são compostos (18=2×9, 21=3×7)."
+    }
+  },
+  {
+    "text": "Quem realizou os filmes 'Titanic' e 'Avatar'?",
+    "options": ["James Cameron", "Steven Spielberg", "Christopher Nolan", "Peter Jackson"],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Ambos já foram os mais lucrativos.",
+      "explanation": "Cameron dirigiu ambos; 'Avatar' (2009) superou 'Titanic' (1997) em receita."
+    }
+  },
+  {
+    "text": "Em que ano estreou o primeiro filme da saga 'Star Wars'?",
+    "options": ["1977", "1980", "1983", "1999"],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "George Lucas.",
+      "explanation": "A 'Guerra das Estrelas' estreou em 1977 e revolucionou os efeitos especiais."
+    }
+  },
+  {
+    "text": "Qual personagem foi interpretada por Daniel Radcliffe nos cinemas?",
+    "options": ["Frodo", "Harry Potter", "Peter Pan", "Sherlock Holmes"],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Feitiçaria em Hogwarts.",
+      "explanation": "Radcliffe encarnou Harry Potter nos 8 filmes (2001-2011)."
+    }
+  },
+  {
+    "text": "Quantos Óscares ganhou 'O Senhor dos Anéis: O Regresso do Rei'?",
+    "options": ["3", "6", "11", "8"],
+    "correct_option": 2,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Venceu quase todas as nomeações.",
+      "explanation": "Venceu 11 Óscares, incluindo Melhor Filme — um dos maiores varrimentos da história."
+    }
+  },
+  {
+    "text": "Quantos estados membros tem a ONU atualmente?",
+    "options": ["193", "195", "189", "200"],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "A Santa Sé é observadora.",
+      "explanation": "A ONU tem 193 membros; a Santa Sé e a Palestina têm estatuto de observador."
+    }
+  },
+  {
+    "text": "Qual destes países NÃO é membro permanente do Conselho de Segurança da ONU?",
+    "options": ["França", "China", "Alemanha", "Reino Unido"],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Os 5 são CN, FR, RU, UK, US.",
+      "explanation": "Alemanha não tem assento permanente; tentou reformas do Conselho sem sucesso."
+    }
+  },
+  {
+    "text": "Onde fica a sede principal das Nações Unidas?",
+    "options": ["Genebra", "Nova Iorque", "Paris", "Haia"],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Numa cidade dos EUA.",
+      "explanation": "A sede principal fica em Nova Iorque; Genebra alberga muitos organismos da ONU."
+    }
+  },
+  {
+    "text": "Qual documento proclama os direitos humanos desde 1948?",
+    "options": ["Constituição dos EUA", "Declaração Universal dos Direitos Humanos", "Tratado de Roma", "Carta Magna"],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Adotada a 10 de dezembro.",
+      "explanation": "A DUDH foi adotada pela ONU a 10 de dezembro de 1948 como referência universal."
+    }
+  },
+  {
+    "text": "Qual é a capital do Egipto?",
+    "options": ["Alexandria", "Cairo", "Luxor", "Gizé"],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Junto ao Nilo.",
+      "explanation": "O Cairo é a capital e a maior cidade do Egipto, perto das pirâmides de Gizé."
+    }
+  },
+  {
+    "text": "Qual é a capital do Canadá?",
+    "options": ["Toronto", "Ottawa", "Vancouver", "Montreal"],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Não é a maior cidade.",
+      "explanation": "Ottawa é a capital federal; Toronto e Montreal são maiores, mas não capitais."
+    }
+  },
+  {
+    "text": "Qual é a capital da Argentina?",
+    "options": ["Rosário", "Buenos Aires", "Córdoba", "Mendoza"],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cidade com o mesmo nome do país vizinho?",
+      "explanation": "Buenos Aires é a capital e maior cidade da Argentina, na margem do Rio da Prata."
+    }
+  },
+  {
+    "text": "Qual é a capital administrativa da África do Sul?",
+    "options": ["Joanesburgo", "Cidade do Cabo", "Pretória", "Durban"],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "O país tem 3 capitais.",
+      "explanation": "Pretória é a capital executiva; Cidade do Cabo é a legislativa e Bloemfontein a judicial."
+    }
+  },
+  {
+    "text": "Qual destes países tem a bandeira com três faixas horizontais vermelha, branca e vermelha?",
+    "options": ["Áustria", "Alemanha", "Polónia", "Espanha"],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País alpino.",
+      "explanation": "A bandeira da Áustria (vermelho-branco-vermelho) recorda a túnica do Duque Leopoldo V."
+    }
+  },
+  {
+    "text": "Qual país tem a bandeira com um círculo vermelho centrado sobre fundo branco?",
+    "options": ["Japão", "Bangladesh", "Coreia do Sul", "Palau"],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sol nascente.",
+      "explanation": "A bandeira do Japão ('Nisshōki') tem o disco solar vermelho centrado; a do Bangladeche tem o círculo deslocado."
+    }
+  },
+  {
+    "text": "Qual país tem a bandeira com listras verticais verde, branca e vermelha e um escudo ao centro?",
+    "options": ["México", "Itália", "Irlanda", "França"],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "América Central.",
+      "explanation": "A bandeira do México tem verde-branco-vermelho com o escudo nacional (águia e serpente); a de Itália não tem escudo."
+    }
+  },
+  {
+    "text": "Qual país tem a bandeira com duas faixas horizontais, azul claro em cima e amarelo em baixo?",
+    "options": ["Ucrânia", "Tailândia", "Colômbia", "Equador"],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País europeu de leste.",
+      "explanation": "A bandeira da Ucrânia é azul (céu) sobre amarelo (campos de trigo); Colômbia e Equador usam vermelho também."
+    }
+  }
+]

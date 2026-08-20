@@ -49853,5 +49853,923 @@
       "hint": "É tocado soprando ar pelos lábios."
     },
     "image_url": null
+  },
+  {
+    "text": "Em que ano foi enviada a primeira mensagem de e-mail?",
+    "options": [
+      "1969",
+      "1971",
+      "1983",
+      "1990"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Foi quem introduziu o símbolo '@'.",
+      "explanation": "Ray Tomlinson enviou o primeiro e-mail entre dois computadores ligados em 1971 e criou o uso do '@' nos endereços."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual organização tem sede em Bruxelas e é liderada pela Comissão Europeia?",
+    "options": [
+      "ONU",
+      "União Europeia",
+      "NATO",
+      "OMC"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Bloco de países europeus.",
+      "explanation": "A Comissão Europeia, órgão executivo da UE, tem sede em Bruxelas, na Bélgica."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países tem uma bandeira com uma folha de bordo vermelha no centro?",
+    "options": [
+      "Estados Unidos",
+      "Canadá",
+      "Austrália",
+      "Nova Zelândia"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo nacional do país.",
+      "explanation": "A bandeira do Canadá (1965) tem duas faixas vermelhas e um quadrado branco com a folha de bordo vermelha, símbolo nacional."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos graus mede cada ângulo interno de um pentágono regular?",
+    "options": [
+      "108",
+      "120",
+      "90",
+      "72"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma interna = 540°.",
+      "explanation": "A soma dos ângulos internos de um pentágono é 540°, dividida por 5 dá 108° por ângulo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou '2001: Odisseia no Espaço'?",
+    "options": [
+      "Stanley Kubrick",
+      "Steven Spielberg",
+      "George Lucas",
+      "Ridley Scott"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Estreia em 1968.",
+      "explanation": "Stanley Kubrick co-criou o filme com Arthur C. Clarke, baseado num conto deste, e marcou a ficção científica para sempre."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais consegue regenerar partes do coração, dos olhos e do cérebro sem deixar cicatrizes?",
+    "options": [
+      "Axolote",
+      "Camaleão",
+      "Polvo",
+      "Estrela-do-mar"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Uma salamandra mexicana.",
+      "explanation": "O axolote mantém características de larva a vida toda e regenera membros e órgãos — alvo de intensa investigação médica."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos membros permanentes com poder de veto tem o Conselho de Segurança da ONU?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Inclui China, Rússia e EUA.",
+      "explanation": "China, França, Rússia, Reino Unido e Estados Unidos são os 5 membros permanentes com direito de veto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que movimento artístico faz parte 'A Persistência da Memória' (os relógios derretidos)?",
+    "options": [
+      "Cubismo",
+      "Surrealismo",
+      "Dadaísmo",
+      "Futurismo"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Sonhos e inconsciente.",
+      "explanation": "Salvador Dalí pintou esta obra surrealista em 1931; os relógios moleáveis simbolizam a fluidez e a subjetividade do tempo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com a Union Jack no canto superior esquerdo e a Cruz do Sul?",
+    "options": [
+      "Austrália",
+      "Reino Unido",
+      "Estados Unidos",
+      "Canadá"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Continente-oceano.",
+      "explanation": "A bandeira da Austrália combina a Union Jack (história britânica) com a Cruz do Sul, visível no hemisfério sul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país que abrange o maior número de fusos horários?",
+    "options": [
+      "Estados Unidos",
+      "Rússia",
+      "França",
+      "China"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Graças aos seus territórios ultramarinos.",
+      "explanation": "A França abrange 12 a 13 fusos horários devido às suas possessões espalhadas pelo globo (incluindo a Polinésia Francesa)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país venceu o primeiro Campeonato do Mundo de Futebol, em 1930?",
+    "options": [
+      "Argentina",
+      "Uruguai",
+      "Brasil",
+      "Itália"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Anfitrião da edição.",
+      "explanation": "O Uruguai venceu em casa, batendo a Argentina por 4-2 no Estádio Centenário, perante cerca de 90 000 espetadores."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o único mamífero capaz de voo verdadeiramente ativo?",
+    "options": [
+      "Esquilo-voador",
+      "Morcego",
+      "Lêmure-voador",
+      "Pangolim"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem asas membranáceas.",
+      "explanation": "Os morcegos são os únicos mamíferos com voo batido; os outros 'voadores' apenas planam entre árvores."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual civilização construiu Machu Picchu, no Peru?",
+    "options": [
+      "Asteca",
+      "Maia",
+      "Inca",
+      "Tolteca"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Império andino do século XV.",
+      "explanation": "Machu Picchu foi erguida no século XV pelo Império Inca a cerca de 2400 m de altitude, e permanecera desconhecida no Ocidente até 1911."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o rio mais longo do mundo segundo estudos recentes?",
+    "options": [
+      "Nilo",
+      "Amazonas",
+      "Yangtzé",
+      "Mississippi"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Na América do Sul.",
+      "explanation": "Medições recentes dão ao Amazonas cerca de 7062 km, à frente do Nilo, embora o tema continue em debate."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos anéis tem o logótipo dos Jogos Olímpicos?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Um por continente habitado.",
+      "explanation": "Os 5 anéis entrelaçados representam os cinco continentes unidos pelo movimento olímpico."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas estrelas se estima que existam na Via Láctea?",
+    "options": [
+      "Cerca de 100 milhões",
+      "Cerca de 100 mil milhões",
+      "Cerca de 1 bilião",
+      "Cerca de 1 milhão"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "A nossa galáxia, não o universo.",
+      "explanation": "As estimativas apontam para 100 a 400 mil milhões de estrelas apenas na nossa galáxia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior deserto quente do mundo?",
+    "options": [
+      "Saara",
+      "Gobi",
+      "Atacama",
+      "Kalahari"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fica em África.",
+      "explanation": "O Saara tem mais de 9 milhões de km², sendo o maior deserto quente do planeta."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas cordas tem um violoncelo afinado em concerto?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tal como o violino.",
+      "explanation": "O violoncelo tem 4 cordas (dó, sol, ré, lá), afinadas uma oitava abaixo da viola."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato 'pad thai'?",
+    "options": [
+      "Tailândia",
+      "Vietname",
+      "China",
+      "Indonésia"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sudeste asiático.",
+      "explanation": "O pad thai (salteado de noodles de arroz) foi promovido na Tailândia na década de 1930 como prato nacional."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem compôs 'A Sagração da Primavera'?",
+    "options": [
+      "Stravinsky",
+      "Debussy",
+      "Tchaikovsky",
+      "Bach"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Estreia em Paris, 1913.",
+      "explanation": "A estreia da obra de Igor Stravinsky causou uma autêntica revolta na sala devido à sua linguagem rítmica revolucionária."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas especiarias é a mais cara do mundo por quilograma?",
+    "options": [
+      "Baunilha",
+      "Açafrão",
+      "Cardamomo",
+      "Canela"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "É colhida à mão, fio a fio.",
+      "explanation": "O açafrão provém dos estigmas do Crocus sativus; são precisas cerca de 150 000 flores para obter 1 kg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a língua com mais falantes nativos no mundo?",
+    "options": [
+      "Inglês",
+      "Mandarim (chinês)",
+      "Espanhol",
+      "Hindi"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Falada na China continental.",
+      "explanation": "O mandarim é a língua materna de mais pessoas; o inglês lidera apenas se contarmos os falantes não-nativos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'HTTP' na Web?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "High Tech Transfer Process",
+      "Hyperlink Text Transmission",
+      "Host Transfer Type Protocol"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Base da World Wide Web.",
+      "explanation": "HTTP (HyperText Transfer Protocol) é o protocolo de transferência de hipertexto sobre o qual assenta a Web."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o único metal que permanece líquido à temperatura ambiente (cerca de 20 °C)?",
+    "options": [
+      "Mercúrio",
+      "Gálio",
+      "Bromo",
+      "Césio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Usado em termómetros antigos.",
+      "explanation": "O mercúrio funde a -38,8 °C. O gálio e o césio derretem só ligeiramente acima da temperatura ambiente, mas são sólidos a 20 °C."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o número primo imediatamente superior a 17?",
+    "options": [
+      "18",
+      "19",
+      "21",
+      "23"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Só divisível por 1 e por si.",
+      "explanation": "19 é primo; 18 e 21 são compostos (18=2×9, 21=3×7)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos estados membros tem a ONU atualmente?",
+    "options": [
+      "193",
+      "195",
+      "189",
+      "200"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "A Santa Sé é observadora.",
+      "explanation": "A ONU tem 193 membros; a Santa Sé e a Palestina têm estatuto de observador."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a velocidade aproximada da luz no vazio?",
+    "options": [
+      "300 000 km/s",
+      "150 000 km/s",
+      "1 000 000 km/s",
+      "30 000 km/s"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "É o limite de velocidade do universo.",
+      "explanation": "A luz viaja a ≈299 792 km/s; nada com massa pode ultrapassar essa velocidade segundo a relatividade."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o osso mais longo do corpo humano?",
+    "options": [
+      "Fémur",
+      "Tíbia",
+      "Úmero",
+      "Rádio"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Ossos da coxa.",
+      "explanation": "O fémur pode representar cerca de 1/4 da altura de uma pessoa adulta."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o recorde do mundo dos 100 m planos (homens)?",
+    "options": [
+      "9,58 s",
+      "10,20 s",
+      "9,00 s",
+      "9,99 s"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Usain Bolt.",
+      "explanation": "Usain Bolt correu 9,58 s em Berlim (2009), recorde mundial ainda vigente."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países tem a bandeira com três faixas horizontais vermelha, branca e vermelha?",
+    "options": [
+      "Áustria",
+      "Alemanha",
+      "Polónia",
+      "Espanha"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País alpino.",
+      "explanation": "A bandeira da Áustria (vermelho-branco-vermelho) recorda a túnica do Duque Leopoldo V."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos bagos de uva entram, em média, numa garrafa de vinho de 0,75 L?",
+    "options": [
+      "Cerca de 100",
+      "Cerca de 600",
+      "Cerca de 50",
+      "Cerca de 50 000"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Menos de mil.",
+      "explanation": "Uma garrafa requer cerca de 600-800 bagos de uva, conforme a casta e o rendimento."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual foi a primeira mulher a ganhar um Prémio Nobel?",
+    "options": [
+      "Marie Curie",
+      "Rosalind Franklin",
+      "Ada Lovelace",
+      "Florence Nightingale"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Estudou radioatividade.",
+      "explanation": "Marie Curie ganhou o Nobel da Física em 1903 e da Química em 1911 — a primeira pessoa com dois Nobéis."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a nota musical imediatamente superior a Dó na escala?",
+    "options": [
+      "Si",
+      "Ré",
+      "Mi",
+      "Fá"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "A sequência sobe.",
+      "explanation": "Na escala diatónica: Dó, Ré, Mi, Fá, Sol, Lá, Si."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o queijo com maior produção e consumo mundial?",
+    "options": [
+      "Brie",
+      "Mozzarella",
+      "Cheddar",
+      "Parmesão"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Base da pizza.",
+      "explanation": "A mozzarella lidera a produção global, impulsionada pela indústria da pizza."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com duas faixas horizontais, azul claro em cima e amarelo em baixo?",
+    "options": [
+      "Ucrânia",
+      "Tailândia",
+      "Colômbia",
+      "Equador"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País europeu de leste.",
+      "explanation": "A bandeira da Ucrânia é azul (céu) sobre amarelo (campos de trigo); Colômbia e Equador usam vermelho também."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais tem uma toxina considerada das mais venenosas do mundo?",
+    "options": [
+      "Serpente de charrete",
+      "Caracol-cone",
+      "Aranha-armadeira",
+      "Medusa-comum"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Um molusco marinho.",
+      "explanation": "Os caracois-cone injectam uma toxina de acção rápida; algumas espécies podem matar um humano."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o valor de 2 elevado a 10?",
+    "options": [
+      "512",
+      "1024",
+      "2048",
+      "256"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Base dos 'bytes'.",
+      "explanation": "2^10 = 1024; daí 1 KB = 1024 bytes, e não 1000."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se usa o termo 'ace' para um serviço sem resposta?",
+    "options": [
+      "Ténis",
+      "Futebol",
+      "Natação",
+      "Xadrez"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Raquetes.",
+      "explanation": "No ténis, 'ace' é um serviço que o adversário nem toca na bola."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o mamífero terrestre mais rápido em sprint?",
+    "options": [
+      "Guepardo",
+      "Cavalo",
+      "Antílope",
+      "Lebre"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Atinge mais de 100 km/h.",
+      "explanation": "O guepardo pode atingir 100-120 km/h em sprints curtos, graças a patas semelhantes a molas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Onde fica a sede principal das Nações Unidas?",
+    "options": [
+      "Genebra",
+      "Nova Iorque",
+      "Paris",
+      "Haia"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Numa cidade dos EUA.",
+      "explanation": "A sede principal fica em Nova Iorque; Genebra alberga muitos organismos da ONU."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes instrumentos é de sopro (metal)?",
+    "options": [
+      "Violino",
+      "Trompete",
+      "Harpa",
+      "Cítara"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fanfarra.",
+      "explanation": "O trompete é de sopro (família dos metais); os restantes são de cordas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano Tim Berners-Lee propôs a World Wide Web no CERN?",
+    "options": [
+      "1989",
+      "1991",
+      "1995",
+      "2000"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Fim da década de 80.",
+      "explanation": "Berners-Lee apresentou a proposta em 1989; o primeiro site esteve online em 1991."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a unidade estrutural base do ADN?",
+    "options": [
+      "Proteína",
+      "Nucléotido",
+      "Aminoácido",
+      "Glicose"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Composto por fosfato, açúcar e base azotada.",
+      "explanation": "O ADN é uma cadeia de nucleótidos; cada um tem um grupo fosfato, uma desoxirribose e uma base (A, T, C ou G)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual documento proclama os direitos humanos desde 1948?",
+    "options": [
+      "Constituição dos EUA",
+      "Declaração Universal dos Direitos Humanos",
+      "Tratado de Roma",
+      "Carta Magna"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Adotada a 10 de dezembro.",
+      "explanation": "A DUDH foi adotada pela ONU a 10 de dezembro de 1948 como referência universal."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos graus tem uma circunferência completa?",
+    "options": [
+      "180",
+      "270",
+      "360",
+      "400"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Também 2π radianos.",
+      "explanation": "Uma volta completa são 360 graus, a medida convencional em geometria euclidiana."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual gás libertado pela queima de combustíveis fósseis é o principal responsável pelo aquecimento global?",
+    "options": [
+      "Dióxido de carbono",
+      "Oxigénio",
+      "Azoto",
+      "Hélio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tem a fórmula CO2.",
+      "explanation": "O CO2 é o principal gás de efeito de estufa acumulado pela atividade humana, retendo calor na atmosfera."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital do Egipto?",
+    "options": [
+      "Alexandria",
+      "Cairo",
+      "Luxor",
+      "Gizé"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Junto ao Nilo.",
+      "explanation": "O Cairo é a capital e a maior cidade do Egipto, perto das pirâmides de Gizé."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem esculpiu o 'David' renascentista em mármore?",
+    "options": [
+      "Michelangelo",
+      "Bernini",
+      "Donatello",
+      "Rodin"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Também pintou a Capela Sistina.",
+      "explanation": "Michelangelo esculpiu o David (1501-1504) em mármore de Carrara, símbolo do Renascimento."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual cidade organizou os Jogos Olímpicos de Verão de 2016?",
+    "options": [
+      "Pequim",
+      "Rio de Janeiro",
+      "Moscovo",
+      "Londres"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Primeira vez na América do Sul.",
+      "explanation": "O Rio de Janeiro foi a primeira cidade da América do Sul a receber a Olimpíada."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos planetas tem o Sistema Solar, segundo a definição atual?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Plutão já não conta.",
+      "explanation": "Desde 2006, com a reclassificação de Plutão como planeta-anão, o Sistema Solar tem 8 planetas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que continente fica o deserto de Atacama?",
+    "options": [
+      "África",
+      "Ásia",
+      "América do Sul",
+      "Oceania"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "No norte do Chile.",
+      "explanation": "O Atacama, no norte do Chile, é um dos desertos mais áridos do mundo — chove raramente décadas a fio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos continentes adota tradicionalmente o modelo escolar português?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divide-se a América.",
+      "explanation": "Em Portugal ensinam-se tradicionalmente 6 continentes, contando a América do Norte e a América do Sul separadas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores de basquetebol em campo por equipa (NBA)?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "11"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Menos que no futebol.",
+      "explanation": "Cada equipa joga com 5; no futebol são 11 em campo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos Óscares ganhou 'O Senhor dos Anéis: O Regresso do Rei'?",
+    "options": [
+      "3",
+      "6",
+      "11",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Venceu quase todas as nomeações.",
+      "explanation": "Venceu 11 Óscares, incluindo Melhor Filme — um dos maiores varrimentos da história."
+    },
+    "image_url": null
   }
 ]

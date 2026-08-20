@@ -1,11 +1,11 @@
 {
   "date": "2026-08-20",
-  "totalQuestions": 2671,
+  "totalQuestions": 2725,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 26,
-  "fuzzyPairs": 285,
-  "fuzzyAffectedQuestions": 345,
+  "fuzzyPairs": 290,
+  "fuzzyAffectedQuestions": 355,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -140,6 +140,13 @@
     {
       "category": "POLITICA",
       "ids": [
+        "cbad739f-c5c6-4edc-838e-3a619ffc3e5c",
+        "c1e3c387-3e47-46ef-aa76-e92e61748a6f"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
         "504b1055-308b-4118-b577-387d09d6b203",
         "98ae588e-90aa-4858-912f-f6616949fd32"
       ]
@@ -177,13 +184,6 @@
       "ids": [
         "27ec7ed6-b1c4-4324-b8f7-e50afd037454",
         "a840e7fe-3b4c-47b9-bb98-b320c562cdd3"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "45da632f-8619-42e9-b6fa-1c4431cc4364",
-        "1457cc64-da34-4349-a2ed-57e48457c9b8"
       ]
     }
   ]

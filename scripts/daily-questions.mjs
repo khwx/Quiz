@@ -126,6 +126,38 @@ function getFallbackQuestion(category) {
   return { ...fb, category, age_rating: 10 };
 }
 
+function refillPoolFromSeed(currentPool, existingPairs, target, poolPath) {
+  const seedPath = path.join(process.cwd(), 'scripts', 'curated-seed.json');
+  let seed = [];
+  try {
+    seed = JSON.parse(readFileSync(seedPath, 'utf8'));
+  } catch {
+    console.warn('⚠️ Sem scripts/curated-seed.json — não é possível auto-repor o pool.');
+    return currentPool;
+  }
+  if (seed.length === 0) return currentPool;
+
+  const currentKeys = new Set(
+    currentPool.map((q) => `${q.text}|${String(q.category || '').toUpperCase()}`)
+  );
+  const available = seed.filter((q) => {
+    const key = `${q.text}|${String(q.category || '').toUpperCase()}`;
+    return !currentKeys.has(key) && !existingPairs.has(key);
+  });
+
+  const shuffled = [...available].sort(() => Math.random() - 0.5);
+  const needed = target - currentPool.length;
+  const topUp = shuffled.slice(0, Math.max(0, needed));
+  const merged = [...currentPool, ...topUp];
+  try {
+    writeFileSync(poolPath, JSON.stringify(merged, null, 2));
+    console.log(`🔁 Pool auto-reposto a partir do seed bank: +${topUp.length} (total ${merged.length})`);
+  } catch (e) {
+    console.warn('⚠️ Não consegui repor o pool curado:', e.message);
+  }
+  return merged;
+}
+
 async function main() {
   const date = new Date().toISOString().split('T')[0];
   const PER_CATEGORY = Number(process.env.QUESTIONS_PER_CATEGORY || 2);
@@ -149,9 +181,15 @@ async function main() {
     } catch {
       console.warn('⚠️ Sem scripts/curated-pool.json — não é possível gerar pelo pool curado.');
     }
+    // Auto-refill: if the pool is running low and a seed bank exists, top it up
+    // so the 8-hour loop keeps producing questions without manual intervention.
+    const target = CATEGORIES.length * PER_CATEGORY;
+    if (pool.length < target) {
+      pool = refillPoolFromSeed(pool, existingPairs, target, poolPath);
+    }
     if (pool.length === 0) {
-      console.warn('⚠️ AVISO: Nenhuma API key de IA e pool curado vazio.');
-      console.warn('⚠️ Define uma chave no .env ou repõe scripts/curated-pool.json para gerar perguntas.');
+      console.warn('⚠️ AVISO: Nenhuma API key de IA, pool curado e seed bank vazios.');
+      console.warn('⚠️ Define uma chave no .env ou repõe scripts/curated-pool.json / scripts/curated-seed.json.');
     } else {
       console.log(`🔄 Modo pool curado: ${pool.length} perguntas disponíveis em scripts/curated-pool.json`);
       const shuffled = [...pool].sort(() => Math.random() - 0.5);

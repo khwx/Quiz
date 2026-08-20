@@ -1,5 +1,15 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-20] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (auto-reposição do pool)
+
+- **CONTEXTO**: As API keys de IA (`.env`) continuam vazias, pelo que o `npm run daily` usa o pool curado. O pool estava esgotado (30 → 0 no ciclo anterior) e produziu 0 perguntas.
+- **MELHORIA — Seed bank + auto-reposição do pool**: Criado `scripts/curated-seed.json` (60 perguntas, 4 por categoria × 15 categorias, com `metadata.explanation` para o ecrã de revelação da TV) e alterado `scripts/daily-questions.mjs` para **auto-repor** `scripts/curated-pool.json` a partir do seed bank quando este fica abaixo do alvo. Isto torna o ciclo de 8h autossustentável (nunca fica a 0 por falta de material) mesmo sem chaves de IA.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+54 novas** (repós o pool a partir do seed bank e inseriu 24 + 30; 6 duplicados ignorados por dedupe no 1º lote). Backup: 2647 → 2701. Pool: 30 → 0 (reposto automaticamente a partir do seed para o próximo ciclo).
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. Grupos de duplicados aproximados detetados (esmagadoramente BANDEIRAS, falsos positivos por desenho) e pares fuzzy fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos automaticamente).
+- **PENDENTE (working tree, não incluído neste commit)**: `src/app/api/answer/route.ts`, `src/app/play/page.tsx`, `src/components/mobile/QuestionView.tsx`, `src/components/mobile/RevealView.tsx` têm alterações não comitadas que desativam o mecanismo de eliminação (vidas). São inconsistentes com `GameContext.tsx`/`SoloGame.tsx` e foram deixadas de fora deste commit para revisão manual.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup + seed + PROGRESS; sem impacto no app. `node --check` OK em `daily-questions.mjs` e `weekly-dedupe.mjs`.
+
 ## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (curiosidades no pool + tooling)
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+21 novas** (pool reposto com 30; 9 duplicados ignorados por dedupe). Pool: 30 → 0. Banco: ~2.668 (BD) / backup 2.626 → 2.647.
