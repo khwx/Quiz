@@ -9,7 +9,9 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "daily": "node scripts/daily-questions.mjs"
+    "daily": "node scripts/daily-questions.mjs",
+    "dedupe": "node scripts/weekly-dedupe.mjs",
+    "maintain": "node scripts/daily-questions.mjs && node scripts/weekly-dedupe.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

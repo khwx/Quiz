@@ -49517,5 +49517,341 @@
       "hint": "Arquipélago asiático"
     },
     "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'CPU' em informática?",
+    "options": [
+      "Unidade Central de Processamento",
+      "Memória de Acesso Aleatório",
+      "Unidade de Disco",
+      "Processador Gráfico"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "É o 'cérebro' do computador."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um movimento artístico do século XX?",
+    "options": [
+      "Cubismo",
+      "Barroco",
+      "Renascimento",
+      "Romantismo"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Associado a Picasso e Braque."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a linguagem de programação criada por Guido van Rossum?",
+    "options": [
+      "Python",
+      "Java",
+      "Ruby",
+      "Perl"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "O seu nome é inspirado num grupo de comédia britânico."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que órgão do corpo humano é produzida a insulina?",
+    "options": [
+      "Pâncreas",
+      "Fígado",
+      "Tiroide",
+      "Baço"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Também produz enzimas digestivas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza uma 'shuttlecock' (peteca com cone de cortiça)?",
+    "options": [
+      "Badminton",
+      "Ténis",
+      "Ténis de mesa",
+      "Flecha"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Parecida com uma peteca."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o principal ingrediente do hummus?",
+    "options": [
+      "Grão-de-bico",
+      "Sésamo",
+      "Beringela",
+      "Lentilha"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Uma leguminosa cremosa."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores por equipa jogam em campo no voleibol?",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "11"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Posicionados em rotação."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 factorial (7!)?",
+    "options": [
+      "5040",
+      "720",
+      "40320",
+      "120"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "7 × 6 × 5 × 4 × 3 × 2 × 1."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou os filmes 'Titanic' e 'Avatar'?",
+    "options": [
+      "James Cameron",
+      "Steven Spielberg",
+      "Christopher Nolan",
+      "Peter Jackson"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pioneiro em efeitos 3D."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a língua com maior número de falantes como língua materna no mundo?",
+    "options": [
+      "Mandarim",
+      "Inglês",
+      "Espanhol",
+      "Hindi"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "É falada principalmente na China."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o único planeta que roda sobre o seu eixo no sentido contrário à maioria dos planetas do sistema solar?",
+    "options": [
+      "Vénus",
+      "Marte",
+      "Saturno",
+      "Júpiter"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "O seu dia é mais longo que o seu ano."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país cuja bandeira tem uma estrela de cinco pontas de cor vermelha sobre fundo vermelho?",
+    "options": [
+      "Vietname",
+      "China",
+      "Marrocos",
+      "Turquia"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Um país do sudeste asiático."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um queijo de origem francesa?",
+    "options": [
+      "Roquefort",
+      "Gorgonzola",
+      "Feta",
+      "Cheddar"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Os outros são, respetivamente, italiano, grego e inglês."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem esculpiu a obra 'O Pensador'?",
+    "options": [
+      "Auguste Rodin",
+      "Michelangelo",
+      "Bernini",
+      "Donatello"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Escultor francês do século XIX."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o rio tradicionalmente considerado o mais longo do mundo?",
+    "options": [
+      "Nilo",
+      "Amazonas",
+      "Yangtzé",
+      "Mississipi"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cruza o nordeste de África."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países tem a Union Jack no canto superior esquerdo da sua bandeira?",
+    "options": [
+      "Austrália",
+      "França",
+      "Brasil",
+      "Índia"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem também um conjunto de estrelas e a constelação da Cruz do Sul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes vertebrados consegue regenerar membros, maxilar e até partes do coração?",
+    "options": [
+      "Axolote",
+      "Lagarto",
+      "Peixe-palhaço",
+      "Tubarão"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Uma salamandra mexicana que permanece com características de larva."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o único número primo par?",
+    "options": [
+      "2",
+      "1",
+      "3",
+      "0"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "É divisível por 1 e por si próprio, e por 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos membros tem o Conselho de Segurança da ONU?",
+    "options": [
+      "15",
+      "10",
+      "20",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "5 deles são permanentes com poder de veto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com o maior número de fusos horários diferentes no mundo?",
+    "options": [
+      "França",
+      "Rússia",
+      "Estados Unidos",
+      "China"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Deve-se aos seus muitos territórios ultramarinos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes instrumentos pertence à família dos metais?",
+    "options": [
+      "Trompete",
+      "Violoncelo",
+      "Clarinete",
+      "Harpa"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "É tocado soprando ar pelos lábios."
+    },
+    "image_url": null
   }
 ]

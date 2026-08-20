@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (curiosidades no pool + tooling)
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+21 novas** (pool reposto com 30; 9 duplicados ignorados por dedupe). Pool: 30 → 0. Banco: ~2.668 (BD) / backup 2.626 → 2.647.
+  - `questions_backup.json` atualizado automaticamente pelo script (2.626 → 2.647).
+- **MELHORIA — Curiosidades na REVEAL**: `scripts/curated-pool.json` enriquecido com `metadata.explanation` (curiosidade) em todas as 30 perguntas, para que o ecrã de revelação da TV mostre contexto extra (já lê `metadata.explanation`). Novo `scripts/backfill-explanations.mjs` preencheu explicações em **31 perguntas** da BD (as 21 inseridas hoje + duplicados correspondentes), tornando a melhoria visível de imediato.
+- **MELHORIA — Tooling de manutenção**: `package.json` com novos scripts `dedupe` (`weekly-dedupe.mjs`) e `maintain` (`daily` + `dedupe`) para facilitar o ciclo automático de 8h.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. Total na BD: ~2.668 perguntas. **0 duplicados exatos removidos**. 26 grupos de duplicados aproximados (esmagadoramente Bandeiras, falsos positivos — não removidos). `dedupe-report.json` atualizado.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup + package.json; sem impacto no app. `node --check` OK; testes (`npm test`) 15/15 passam; pool curado reposto com 30 para o próximo ciclo.
+
 ## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados (com deteção fuzzy) + MELHORIA dedupe
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+26 novas** (pool curado reposto com 30; 4 duplicados ignorados por dedupe). Pool: 30 → 0. Banco: 2.600 → 2.626 (backup sincronizado) / ~2.650 (BD).
