@@ -49101,5 +49101,421 @@
       "hint": "Seis de cada lado"
     },
     "image_url": null
+  },
+  {
+    "text": "Quantos ossos tem, aproximadamente, o corpo humano adulto?",
+    "options": [
+      "198",
+      "201",
+      "206",
+      "212"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "À nascença há mais, mas fundem com o tempo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países NÃO é membro permanente do Conselho de Segurança da ONU?",
+    "options": [
+      "China",
+      "França",
+      "Alemanha",
+      "Rússia"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Os cinco são EUA, Rússia, China, Reino Unido e França"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a unidade de medida da intensidade luminosa no Sistema Internacional?",
+    "options": [
+      "Lúmen",
+      "Candela",
+      "Lux",
+      "Watt"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Uma das sete unidades base do SI"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas notas tem uma oitava na escala diatónica?",
+    "options": [
+      "5",
+      "7",
+      "8",
+      "12"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Dó a Dó, inclusive"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com maior população do mundo atualmente?",
+    "options": [
+      "China",
+      "Índia",
+      "Estados Unidos",
+      "Indonésia"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Ultrapassou a China em 2023"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem compôs a Nona Sinfonia (com o 'Hino à Alegria')?",
+    "options": [
+      "Mozart",
+      "Beethoven",
+      "Bach",
+      "Chopin"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Compôs-a já surdo"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o protocolo usado para enviar e-mails entre servidores?",
+    "options": [
+      "SMTP",
+      "POP3",
+      "IMAP",
+      "FTP"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Simple Mail Transfer Protocol"
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'GPU' em informática?",
+    "options": [
+      "General Processing Unit",
+      "Graphics Processing Unit",
+      "Global Processing Unit",
+      "Gigabit Processing Unit"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Processa imagens e gráficos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem foi o líder soviético durante a Crise dos Mísseis de Cuba (1962)?",
+    "options": [
+      "Estaline",
+      "Khrushchev",
+      "Brejnev",
+      "Gorbachev"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Sucessor de Estaline"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Edvard Munch?",
+    "options": [
+      "O Grito",
+      "A Noite Estrelada",
+      "Os Girassóis",
+      "A Persistência da Memória"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Expressa angústia existencial"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com o maior número de fusos horários do mundo?",
+    "options": [
+      "Rússia",
+      "Estados Unidos",
+      "França",
+      "China"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Devido aos seus territórios ultramarinos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual filme ganhou o primeiro Óscar de Melhor Filme (1929)?",
+    "options": [
+      "O Cantor de Jazz",
+      "E o Vento Levou",
+      "Casablanca",
+      "A Guerra Mundial"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Teve som sincronizado"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o ponto mais profundo conhecido dos oceanos da Terra?",
+    "options": [
+      "Fossa de Porto Rico",
+      "Fossa das Marianas",
+      "Fossa de Java",
+      "Abismo Challenger"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Fica no oceano Pacífico"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas espécies é um mamífero ovíparo?",
+    "options": [
+      "Coala",
+      "Baleia",
+      "Ornitorrinco",
+      "Morcego"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Vive na Austrália"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país cuja bandeira retrata uma águia devorando uma serpente sobre um cactus?",
+    "options": [
+      "México",
+      "Equador",
+      "Argentina",
+      "Chile"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Aparece no centro da bandeira"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o metal mais caro do mundo por grama?",
+    "options": [
+      "Ouro",
+      "Platina",
+      "Paládio",
+      "Ródio"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Usado em catalisadores automóveis"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes condimentos é obtido do estigma de uma flor?",
+    "options": [
+      "Canela",
+      "Cravinho",
+      "Açafrão",
+      "Gengibre"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "É a especiaria mais cara por peso"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se usa o termo 'tee' para a saída da bola?",
+    "options": [
+      "Golfe",
+      "Ténis",
+      "Críquete",
+      "Hóquei em patins"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Joga-se num campo relvado com buracos"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual foi a duração aproximada da Guerra dos Cem Anos entre Inglaterra e França?",
+    "options": [
+      "100 anos",
+      "116 anos",
+      "132 anos",
+      "150 anos"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Decorreu entre 1337 e 1453"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual movimento artístico francês do século XIX enfatizou a luz e o instante fugaz?",
+    "options": [
+      "Barroco",
+      "Impressionismo",
+      "Romantismo",
+      "Realismo"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Monet foi um dos seus nomes"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o único animal terrestre conhecido capaz de sobreviver no vácuo do espaço?",
+    "options": [
+      "Água-viva",
+      "Tardígrado",
+      "Lesma",
+      "Bicho-da-seda"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Também chamado urso-de-água"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7! (o fatorial de 7)?",
+    "options": [
+      "720",
+      "5040",
+      "840",
+      "362880"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "7×6×5×4×3×2×1"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores há numa equipa de voleibol em campo?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Incluindo o líbero"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o número primo imediatamente a seguir a 23?",
+    "options": [
+      "25",
+      "27",
+      "29",
+      "31"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Não é divisível por 2 nem por 3"
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato 'paella'?",
+    "options": [
+      "Itália",
+      "Espanha",
+      "Portugal",
+      "México"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Região de Valência"
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país cuja bandeira tem um disco solar vermelho centrado sobre fundo branco?",
+    "options": [
+      "Japão",
+      "Bangladesh",
+      "Palau",
+      "Coreia do Sul"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Arquipélago asiático"
+    },
+    "image_url": null
   }
 ]

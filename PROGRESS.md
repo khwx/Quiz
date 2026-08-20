@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados (com deteção fuzzy) + MELHORIA dedupe
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+26 novas** (pool curado reposto com 30; 4 duplicados ignorados por dedupe). Pool: 30 → 0. Banco: 2.600 → 2.626 (backup sincronizado) / ~2.650 (BD).
+  - `questions_backup.json` atualizado automaticamente pelo script (2.600 → 2.626).
+- **MELHORIA — Reposição do pool curado**: pool esgotado (30 → 0 no ciclo anterior) reposto com **30 novas perguntas** (2 por categoria × 15 categorias), tópicos menos comuns e não-óbvios. Próximo ciclo reabastecerá quando esgotar.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. Total na BD: 2.650 perguntas. **0 duplicados exatos removidos**. 26 grupos de duplicados aproximados (texto+categoria) — esmagadoramente Bandeiras (falsos positivos, não removidos).
+- **MELHORIA — Deteção fuzzy de duplicados (audit dedupe)**: `scripts/weekly-dedupe.mjs` agora também faz deteção fuzzy (similaridade de Levenshtein ≥ 0.9) **dentro da mesma categoria**, **excluindo BANDEIRAS** (cujas perguntas são semelhantes por desenho → fonte dos falsos positivos). Gera `scripts/dedupe-report.json` (machine-readable) com data, total, exatos removidos, grupos aproximados e pares fuzzy para revisão manual. Resultado: 284 pares fuzzy / 343 perguntas afetadas fora de Bandeiras (candidatos a revisão, não removidos automaticamente).
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup; sem impacto no app. `node --check` OK; testes (`npm test`) 15/15 passam.
+
 ## [2026-08-20] TAREFA DIÁRIA — Novas perguntas + TAREFA SEMANAL — Duplicados + Reposição de Pool Curado
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+21 novas** (pool curado de 30; 9 duplicados ignorados por dedupe). Pool: 30 → 0. Banco: 2.579 → 2.600 (backup sincronizado) / ~2.624 (BD).

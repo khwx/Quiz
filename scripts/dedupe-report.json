@@ -1,0 +1,190 @@
+{
+  "date": "2026-08-20",
+  "totalQuestions": 2650,
+  "exactDuplicatesRemoved": 0,
+  "exactDuplicatesFound": 0,
+  "nearDuplicateGroups": 26,
+  "fuzzyPairs": 284,
+  "fuzzyAffectedQuestions": 343,
+  "fuzzySkippedCategories": [
+    "BANDEIRAS"
+  ],
+  "fuzzyThreshold": 0.9,
+  "fuzzySample": [
+    {
+      "category": "ARTE",
+      "ids": [
+        "9bf61cdf-378a-4a42-9984-4bff7abfb316",
+        "c565e1e4-c2ec-4ba8-bba1-d305cb71ce44"
+      ]
+    },
+    {
+      "category": "ARTE",
+      "ids": [
+        "6b0cf101-f95b-4908-9a3d-68bb56bf558f",
+        "2850a864-2120-4cde-b864-87970dfa3ff9"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "329bbb4f-6feb-458e-9f37-13855db4aca1",
+        "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "329bbb4f-6feb-458e-9f37-13855db4aca1",
+        "7e3508b6-a913-467a-917e-7a2abad49497"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5",
+        "7e3508b6-a913-467a-917e-7a2abad49497"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "04eda4e7-e20b-4073-b877-960757966f71",
+        "647281ef-7b6a-4c72-82c5-71a0cf17e59a"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "25bc1623-6fac-4f38-95ee-c9cf3e5386fd",
+        "a61a88aa-cb30-43a1-b3d0-5e4fb2c8d6d9"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "4d8730ac-a217-408a-b265-8c84f1063b95",
+        "57c29d21-78d4-4380-a7fd-99d7319132b1"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
+        "65d0ecdd-b564-45d1-ac1e-d434e228195e",
+        "3d1676c2-8f06-431b-abf0-70c84dd12770"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
+        "acf4eef3-d18d-406f-bc7b-88ed80861705",
+        "3139616e-cb6c-4dab-bf70-fcfff4b95d92"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
+        "a6b91124-1901-4973-ac06-9c70140348bf",
+        "41698113-49d3-48da-9c2c-34ee335692e5"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
+        "51f3cee5-302a-483f-ac94-02d5dbaa0259",
+        "d0619e06-11ae-4402-9882-b3c3670606c3"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "f83b5405-1102-4cfd-a170-096555725492",
+        "c3370e35-7d4c-46c1-8702-3029dfcf8218"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "22d25c44-1cd2-4a0a-a96e-a89454e04932",
+        "aeec69d2-66d8-4115-a6a8-c1802170642e"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "b85cd242-436f-4e7c-a2ed-28d498d419fc",
+        "da9ad32e-3986-4fcc-a6aa-a41876dd3fb7"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "b761bb37-7bf7-49a4-9249-7123676d2f8b",
+        "29887ad0-de86-4703-9e4a-5a9445fe1e12"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "5e740767-7451-4f23-a5f5-58e6967e4ec6",
+        "d4b9d768-cfe5-4ad4-8f85-ff33acbc85fa"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "5e740767-7451-4f23-a5f5-58e6967e4ec6",
+        "6b397159-4b41-4b24-9db9-7fe0739ddc11"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "504b1055-308b-4118-b577-387d09d6b203",
+        "98ae588e-90aa-4858-912f-f6616949fd32"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "c6ab5204-8949-490b-9483-34a76bbd336d",
+        "19a1e94a-5b2e-4a6b-a759-91782400a084"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "a558bed3-ed0d-44c1-942c-e11a58af44c6",
+        "70863393-7b33-449d-b925-1637625fefe4"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "7b8b1087-77c9-4bcf-b1c8-d6a43b22646f",
+        "7a30cd1d-28ec-4099-874e-e869e943d161"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "d7f0ae15-3d10-4309-94e8-99b8fcec4872",
+        "69ae9147-41e8-4cb3-b0e0-b9514830ad16"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "27ec7ed6-b1c4-4324-b8f7-e50afd037454",
+        "a840e7fe-3b4c-47b9-bb98-b320c562cdd3"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "45da632f-8619-42e9-b6fa-1c4431cc4364",
+        "1457cc64-da34-4349-a2ed-57e48457c9b8"
+      ]
+    }
+  ]
+}
