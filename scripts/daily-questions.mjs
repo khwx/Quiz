@@ -126,6 +126,93 @@ function getFallbackQuestion(category) {
   return { ...fb, category, age_rating: 10 };
 }
 
+// --- Built-in deterministic generator (no AI keys, no curated pool) -----------
+// Guarantees the bank keeps growing even after the curated pool + seed bank are
+// fully consumed. MATEMATICA produces essentially infinite unique questions via
+// random operands; a small fact table tops up CAPITAIS_DO_MUNDO / GEOGRAFIA.
+const COUNTRY_FACTS = [
+  { c: 'Portugal', cap: 'Lisboa' }, { c: 'Espanha', cap: 'Madrid' },
+  { c: 'França', cap: 'Paris' }, { c: 'Itália', cap: 'Roma' },
+  { c: 'Alemanha', cap: 'Berlim' }, { c: 'Reino Unido', cap: 'Londres' },
+  { c: 'Irlanda', cap: 'Dublin' }, { c: 'Grécia', cap: 'Atenas' },
+  { c: 'Turquia', cap: 'Ancara' }, { c: 'Egito', cap: 'Cairo' },
+  { c: 'Marrocos', cap: 'Rabat' }, { c: 'África do Sul', cap: 'Pretória' },
+  { c: 'Nigéria', cap: 'Abuja' }, { c: 'Quénia', cap: 'Nairobi' },
+  { c: 'Brasil', cap: 'Brasília' }, { c: 'Argentina', cap: 'Buenos Aires' },
+  { c: 'Chile', cap: 'Santiago' }, { c: 'Peru', cap: 'Lima' },
+  { c: 'México', cap: 'Cidade do México' }, { c: 'Canadá', cap: 'Ottawa' },
+  { c: 'Estados Unidos', cap: 'Washington' }, { c: 'Japão', cap: 'Tóquio' },
+  { c: 'China', cap: 'Pequim' }, { c: 'Índia', cap: 'Nova Deli' },
+  { c: 'Coreia do Sul', cap: 'Seul' }, { c: 'Tailândia', cap: 'Banguecoque' },
+  { c: 'Indonésia', cap: 'Jacarta' }, { c: 'Austrália', cap: 'Canberra' },
+  { c: 'Rússia', cap: 'Moscovo' }, { c: 'Ucrânia', cap: 'Quieve' },
+  { c: 'Polónia', cap: 'Varsóvia' }, { c: 'Suécia', cap: 'Estocolmo' },
+  { c: 'Noruega', cap: 'Oslo' }, { c: 'Suíça', cap: 'Berna' },
+  { c: 'Países Baixos', cap: 'Amesterdão' }, { c: 'Bélgica', cap: 'Bruxelas' },
+  { c: 'Áustria', cap: 'Viena' }, { c: 'República Checa', cap: 'Praga' },
+  { c: 'Hungria', cap: 'Budapeste' }, { c: 'Roménia', cap: 'Bucareste' },
+];
+
+function rndInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function makeOptions(answer) {
+  const correct = String(answer);
+  const set = new Set([correct]);
+  const deltas = shuffle([1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 10, -10, 7, -7]);
+  for (const d of deltas) {
+    if (set.size >= 4) break;
+    const v = answer + d;
+    if (v < 0) continue;
+    set.add(String(v));
+  }
+  let k = 6;
+  while (set.size < 4) { const v = answer + k; if (String(v) !== correct) set.add(String(v)); k++; }
+  return shuffle([...set]);
+}
+function mathQuestion(ageRating) {
+  const types = ['add', 'sub', 'mul', 'div', 'sqrt', 'pow', 'pct'];
+  const t = types[rndInt(0, types.length - 1)];
+  let text, ans, hint;
+  switch (t) {
+    case 'add': { const a = rndInt(2, 99), b = rndInt(2, 99); text = `Quanto é ${a} + ${b}?`; ans = a + b; hint = 'Soma simples.'; break; }
+    case 'sub': { const a = rndInt(10, 99), b = rndInt(2, a); text = `Quanto é ${a} - ${b}?`; ans = a - b; hint = 'Diferença.'; break; }
+    case 'mul': { const a = rndInt(2, 12), b = rndInt(2, 12); text = `Quanto é ${a} × ${b}?`; ans = a * b; hint = 'Tabuada.'; break; }
+    case 'div': { const b = rndInt(2, 12), q = rndInt(2, 12); const a = b * q; text = `Quanto é ${a} ÷ ${b}?`; ans = q; hint = 'Divisão exata.'; break; }
+    case 'sqrt': { const n = rndInt(2, 15); const sq = n * n; text = `Qual é a raiz quadrada de ${sq}?`; ans = n; hint = 'Quadrado perfeito.'; break; }
+    case 'pow': { const base = rndInt(2, 9), exp = rndInt(2, 4); text = `Quanto é ${base} elevado a ${exp}?`; ans = Math.pow(base, exp); hint = 'Potência.'; break; }
+    case 'pct': { const p = [10, 20, 25, 50][rndInt(0, 3)]; const tot = [40, 60, 80, 100, 200][rndInt(0, 4)]; text = `Quanto é ${p}% de ${tot}?`; ans = tot * p / 100; hint = 'Percentagem.'; break; }
+  }
+  const options = makeOptions(ans);
+  const correct_option = options.indexOf(String(ans));
+  return {
+    text, options, correct_option, category: 'MATEMATICA',
+    age_rating: ageRating || 10,
+    metadata: { hint, explanation: `${text.replace('?', '')} = ${ans}.` },
+  };
+}
+function builtinGenerate(category, ageRating) {
+  if (category === 'MATEMATICA') return mathQuestion(ageRating);
+  if (category === 'CAPITAIS_DO_MUNDO' || category === 'GEOGRAFIA') {
+    const fact = COUNTRY_FACTS[rndInt(0, COUNTRY_FACTS.length - 1)];
+    const distractors = shuffle(COUNTRY_FACTS.filter(f => f.cap !== fact.cap).map(f => f.cap)).slice(0, 3);
+    const options = shuffle([fact.cap, ...distractors]);
+    return {
+      text: `Qual é a capital de ${fact.c}?`,
+      options, correct_option: options.indexOf(fact.cap),
+      category, age_rating: ageRating || 10,
+      metadata: { hint: `País: ${fact.c}.`, explanation: `${fact.c} tem como capital ${fact.cap}.` },
+    };
+  }
+  return null;
+}
+
 function refillPoolFromSeed(currentPool, existingPairs, target, poolPath) {
   const seedPath = path.join(process.cwd(), 'scripts', 'curated-seed.json');
   let seed = [];
@@ -188,8 +275,23 @@ async function main() {
       pool = refillPoolFromSeed(pool, existingPairs, target, poolPath);
     }
     if (pool.length === 0) {
-      console.warn('⚠️ AVISO: Nenhuma API key de IA, pool curado e seed bank vazios.');
-      console.warn('⚠️ Define uma chave no .env ou repõe scripts/curated-pool.json / scripts/curated-seed.json.');
+      // Last-resort built-in generator so the bank never fully freezes even
+      // when the curated pool AND seed bank are exhausted (no AI keys).
+      console.warn('⚠️ Pool curado e seed bank vazios — a usar gerador incorporado (built-in).');
+      for (const category of CATEGORIES) {
+        if (newQuestions.length >= CATEGORIES.length) break;
+        const ageRating = AGE_RATINGS[Math.floor(Math.random() * AGE_RATINGS.length)];
+        const q = builtinGenerate(category, ageRating);
+        if (!q) continue;
+        const key = `${q.text}|${q.category.toUpperCase()}`;
+        if (existingPairs.has(key)) continue;
+        newQuestions.push(q);
+        existingPairs.add(key);
+        console.log(`🔧 built-in ${q.category}: "${q.text.substring(0, 60)}..."`);
+      }
+      if (newQuestions.length === 0) {
+        console.warn('⚠️ AVISO: Nenhuma API key de IA, pool curado, seed bank e built-in esgotados.');
+      }
     } else {
       console.log(`🔄 Modo pool curado: ${pool.length} perguntas disponíveis em scripts/curated-pool.json`);
       const shuffled = [...pool].sort(() => Math.random() - 0.5);

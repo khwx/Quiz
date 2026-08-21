@@ -1,5 +1,17 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-21] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (sustentabilidade do bank) + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — Banco congelado**: O `scripts/curated-seed.json` (60 perguntas) estava **98% consumido** (59/60 já na BD), pelo que o `npm run daily` passou a produzir **0 perguntas** — o ciclo de 8h tinha ficado sem material, mesmo com o auto-replenish do pool a partir do seed.
+- **MELHORIA — Seed bank expandido**: Adicionadas **68 novas perguntas curadas** (de 91 candidatas; 23 já existiam na BD e foram ignoradas por dedupe) ao `scripts/curated-seed.json` → agora **128 perguntas**. Isto devolve sustentabilidade ao ciclo de 8h por vários ciclos.
+- **MELHORIA — Gerador incorporado (built-in) como rede de segurança**: `scripts/daily-questions.mjs` agora tem um `builtinGenerate()` usado quando o pool curado **e** o seed bank estão vazios (sem chaves de IA). Gera perguntas determinísticas e verificáveis: **MATEMATICA** (adição, subtração, multiplicação, divisão, raiz, potência, percentagem — operandos aleatórios → praticamente infinitas e únicas) e **CAPITAIS_DO_MUNDO/GEOGRAFIA** (tabela de ~45 países com distratores). O banco **nunca mais congela** por falta de material, mesmo sem IA.
+  - Validação isolada: 2000 perguntas de MATEMATICA + 200 de CAPITAIS geradas sem erros estruturais (4 opções únicas, índice correto).
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+30 novas** (pool auto-reposto do seed com 30 e inseridas; 0 duplicados). Backup: 2718 → 2748. Pool: 0 → 30 (seed) → 0 (usadas). BD: ~2772.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. Grupos aproximados (BANDEIRAS, falsos positivos) e pares fuzzy fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos).
+- **PENDENTE (working tree, não incluído neste commit)**: `src/app/api/answer/route.ts`, `src/app/play/page.tsx`, `src/components/mobile/QuestionView.tsx`, `src/components/mobile/RevealView.tsx` continuam com alterações não comitadas (desativação de mecanismo de eliminação/vidas), inconsistentes com `GameContext.tsx`/`SoloGame.tsx` — mantidas fora do commit para revisão manual.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup + seed; sem impacto no app. `node --check` OK em `daily-questions.mjs`.
+
 ## [2026-08-21] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+17 novas** (pool auto-reposto a partir do seed bank com 17; todas inseridas). Pool: 0 → 17 (seed) → 0 (usadas). Backup: 2701 → 2718. BD: ~2742.

@@ -51060,5 +51060,515 @@
       "explanation": "JavaScript executa nos navegadores; Python e C++ não são a linguagem padrão de cliente web."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual destes é um estilo de música portuguesa?",
+    "options": [
+      "Fado",
+      "Tango",
+      "Salsa",
+      "Reggae"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Canteiros de Lisboa.",
+      "explanation": "O fado é um género musical português, Património Imaterial da UNESCO."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a Union Jack no canto superior esquerdo da sua bandeira?",
+    "options": [
+      "Austrália",
+      "Nova Zelândia",
+      "Reino Unido",
+      "Todas as anteriores"
+    ],
+    "correct_option": 3,
+    "category": "BANDEIRAS",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Herança britânica.",
+      "explanation": "Austrália, NZ e Reino Unido incluem a Union Jack."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem esculpiu o 'David'?",
+    "options": [
+      "Donatello",
+      "Miguel Ângelo",
+      "Bernini",
+      "Rodin"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Também pintou a Capela Sistina.",
+      "explanation": "Miguel Ângelo esculpiu o David renascentista."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem uma folha de bordo vermelha no centro da sua bandeira?",
+    "options": [
+      "Estados Unidos",
+      "Canadá",
+      "Japão",
+      "Tailândia"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo nacional canadense.",
+      "explanation": "A bandeira do Canadá tem a folha de bordo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a bebida alcoólica destilada da cevada, trigo ou centeio?",
+    "options": [
+      "Vinho",
+      "Cerveja",
+      "Whisky",
+      "Sumo"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Muito associada à Escócia.",
+      "explanation": "O whisky é destilado a partir de cereais como cevada ou trigo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa 'UE'?",
+    "options": [
+      "União Europeia",
+      "União Económica",
+      "União Estatal",
+      "Unidos da Europa"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Bloco de países europeus.",
+      "explanation": "UE = União Europeia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual foi a primeira civilização a usar a escrita cuneiforme?",
+    "options": [
+      "Grega",
+      "Romana",
+      "Suméria",
+      "Fenícia"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Mesopotâmia.",
+      "explanation": "Os sumérios desenvolveram a escrita cuneiforme na Mesopotâmia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é o 'al dente' em culinária?",
+    "options": [
+      "Muito salgado",
+      "Ligeiramente firme",
+      "Muito doce",
+      "Queimado"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diz respeito à massa.",
+      "explanation": "Al dente descreve massa cozinhada mas firme à mordida."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o gás que as plantas absorvem para fazer fotossíntese?",
+    "options": [
+      "Oxigénio",
+      "Azoto",
+      "Dióxido de carbono",
+      "Hidrogénio"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "É o que exalamos ao respirar.",
+      "explanation": "As plantas captam CO2 atmosférico e, com luz, produzem compostos orgânicos libertando oxigénio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um queijo português?",
+    "options": [
+      "Parmesão",
+      "Brie",
+      "Queijo da Serra",
+      "Gorgonzola"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Da região da Serra da Estrela.",
+      "explanation": "O Queijo da Serra da Estrela é um queijo de ovelha português."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a atual sede da ONU?",
+    "options": [
+      "Genebra",
+      "Paris",
+      "Nova Iorque",
+      "Bruxelas"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Nos EUA.",
+      "explanation": "A sede da ONU fica em Nova Iorque."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se usa o termo 'ace'?",
+    "options": [
+      "Ténis",
+      "Futebol",
+      "Rugby",
+      "Golfe"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Serviço sem resposta.",
+      "explanation": "No ténis, 'ace' é um serviço que o adversário não toca."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que fruto se obtém o azeite?",
+    "options": [
+      "Uva",
+      "Azeitona",
+      "Amêndoa",
+      "Coco"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fruto pequeno e oleoso.",
+      "explanation": "O azeite é extraído da azeitona."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o deserto mais árido do mundo?",
+    "options": [
+      "Saara",
+      "Atacama",
+      "Gobi",
+      "Kalahari"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Fica no Chile.",
+      "explanation": "O Atacama é o deserto mais seco, com quase chuva."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 elevado a 5?",
+    "options": [
+      "10",
+      "16",
+      "32",
+      "64"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "2×2×2×2×2.",
+      "explanation": "2^5 = 32."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos bits formam um byte?",
+    "options": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Potência de 2.",
+      "explanation": "1 byte = 8 bits."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o desporto conhecido como 'xadrez com tacos'?",
+    "options": [
+      "Golfe",
+      "Críquete",
+      "Billar",
+      "Ténis de mesa"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Joga-se num relvado.",
+      "explanation": "O golfe é por vezes apelidado de xadrez com tacos pela estratégia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual movimento artístico é associado a Monet e Renoir?",
+    "options": [
+      "Cubismo",
+      "Impressionismo",
+      "Surrealismo",
+      "Barroco"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Luz e cor, ar livre.",
+      "explanation": "Monet e Renoir foram líderes do Impressionismo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos membros tinha originalmente o quarteto de cordas clássico?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Dois violinos, uma violeta e um violoncelo.",
+      "explanation": "Um quarteto de cordas tem 4 instrumentistas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bandeira é composta apenas por duas cores: vermelho e branco?",
+    "options": [
+      "Indonésia",
+      "França",
+      "Alemanha",
+      "Itália"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem listas horizontais.",
+      "explanation": "A Indonésia tem listas horizontais vermelha e branca."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos pontos vale um ensaio (try) no rugby?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Aumentou de 4 para 5.",
+      "explanation": "Um try vale 5 pontos no rugby."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual filme ganhou o Óscar de Melhor Filme em 2020?",
+    "options": [
+      "1917",
+      "Parasitas",
+      "Coringa",
+      "Era Uma Vez em... Hollywood"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Filme sul-coreano.",
+      "explanation": "Parasitas venceu o Óscar de Melhor Filme."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem interpretou Jack Sparrow?",
+    "options": [
+      "Depp",
+      "Cruise",
+      "Smith",
+      "Hanks"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pirata das Caraíbas.",
+      "explanation": "Johnny Depp interpretou o Capitão Jack Sparrow."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos continentes existem tradicionalmente?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "África, Europa, Ásia...",
+      "explanation": "São geralmente contados 7 continentes: África, América, Antártida, Ásia, Europa, Oceânia e Europa."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é a 'perspetiva' numa pintura?",
+    "options": [
+      "Uso de cores quentes",
+      "Sensação de profundidade",
+      "Textura",
+      "Moldura"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Faz objetos parecerem distantes.",
+      "explanation": "A perspetiva dá ilusão de profundidade e distância."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem foi 'The King of Rock'?",
+    "options": [
+      "Elvis Presley",
+      "Michael Jackson",
+      "Chuck Berry",
+      "Little Richard"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "De Graceland.",
+      "explanation": "Elvis Presley é conhecido como o Rei do Rock."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que século nasceu o Renascimento?",
+    "options": [
+      "XIII",
+      "XIV",
+      "XV",
+      "XVII"
+    ],
+    "correct_option": 2,
+    "category": "ARTE",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Itália, fim da Idade Média.",
+      "explanation": "O Renascimento teve início no século XV em Itália."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a montanha mais alta do mundo?",
+    "options": [
+      "K2",
+      "Everest",
+      "Aconcágua",
+      "Kilimanjaro"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Himalaia.",
+      "explanation": "O Evereste (8.849 m) é o pico mais alto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países NÃO tem regime monárquico?",
+    "options": [
+      "Espanha",
+      "Suécia",
+      "França",
+      "Reino Unido"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tem um presidente.",
+      "explanation": "França é uma república; os outros são monarquias."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano chegou o homem à Lua?",
+    "options": [
+      "1965",
+      "1969",
+      "1972",
+      "1975"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fim da década de 60.",
+      "explanation": "A missão Apollo 11 pousou na Lua em 1969."
+    },
+    "image_url": null
   }
 ]

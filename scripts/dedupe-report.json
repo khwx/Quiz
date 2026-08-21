@@ -1,11 +1,11 @@
 {
   "date": "2026-08-21",
-  "totalQuestions": 2742,
+  "totalQuestions": 2772,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 26,
-  "fuzzyPairs": 292,
-  "fuzzyAffectedQuestions": 359,
+  "fuzzyPairs": 298,
+  "fuzzyAffectedQuestions": 365,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -42,8 +42,22 @@
     {
       "category": "CINEMA",
       "ids": [
+        "329bbb4f-6feb-458e-9f37-13855db4aca1",
+        "de8ea6ca-0a88-4232-b7cc-35b5ac607afe"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
         "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5",
         "7e3508b6-a913-467a-917e-7a2abad49497"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5",
+        "de8ea6ca-0a88-4232-b7cc-35b5ac607afe"
       ]
     },
     {
@@ -58,6 +72,13 @@
       "ids": [
         "25bc1623-6fac-4f38-95ee-c9cf3e5386fd",
         "a61a88aa-cb30-43a1-b3d0-5e4fb2c8d6d9"
+      ]
+    },
+    {
+      "category": "CINEMA",
+      "ids": [
+        "7e3508b6-a913-467a-917e-7a2abad49497",
+        "de8ea6ca-0a88-4232-b7cc-35b5ac607afe"
       ]
     },
     {
@@ -163,27 +184,6 @@
       "ids": [
         "a558bed3-ed0d-44c1-942c-e11a58af44c6",
         "70863393-7b33-449d-b925-1637625fefe4"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "7b8b1087-77c9-4bcf-b1c8-d6a43b22646f",
-        "7a30cd1d-28ec-4099-874e-e869e943d161"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "d7f0ae15-3d10-4309-94e8-99b8fcec4872",
-        "69ae9147-41e8-4cb3-b0e0-b9514830ad16"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "27ec7ed6-b1c4-4324-b8f7-e50afd037454",
-        "a840e7fe-3b4c-47b9-bb98-b320c562cdd3"
       ]
     }
   ]
