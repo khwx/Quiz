@@ -50771,5 +50771,294 @@
       "explanation": "Venceu 11 Óscares, incluindo Melhor Filme — um dos maiores varrimentos da história."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual país se tornou o mais populoso do mundo em 2023?",
+    "options": [
+      "China",
+      "Índia",
+      "Estados Unidos",
+      "Indonésia"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Subcontinente asiático.",
+      "explanation": "A Índia ultrapassou a China como o país mais populoso do mundo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas câmaras tem o coração de um crocodilo?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tal como as aves.",
+      "explanation": "Os crocodilos têm um coração de 4 câmaras, raro entre os répteis, partilhado com aves e mamíferos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o prato tradicional japonês de arroz avinagrado e peixe cru?",
+    "options": [
+      "Ramen",
+      "Sushi",
+      "Tempura",
+      "Udon"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Muito servido em pizza no Ocidente... não.",
+      "explanation": "O sushi combina arroz avinagrado (shari) com peixe ou marisco; o ramen é sopa de noodles."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual movimento artístico valoriza o dramatismo e a ornamentação intensa do século XVII?",
+    "options": [
+      "Minimalismo",
+      "Barroco",
+      "Abstrato",
+      "Pop art"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Contra-reforma.",
+      "explanation": "O barroco enfatiza emoção, movimento e contraste (claro-escuro), oposto ao rigor clássico."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos bits tem um endereço IPv4?",
+    "options": [
+      "32",
+      "64",
+      "128",
+      "16"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Cerca de 4 mil milhões de endereços.",
+      "explanation": "IPv4 usa 32 bits; o sucessor IPv6 usa 128 bits para lidar com a escassez de endereços."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originária a paella?",
+    "options": [
+      "Itália",
+      "Espanha",
+      "Grécia",
+      "França"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cidade de Valência.",
+      "explanation": "A paella nasceu em Valência, Espanha, originalmente com arroz, frango e marisco."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que banda é a canção 'Bohemian Rhapsody'?",
+    "options": [
+      "The Beatles",
+      "Queen",
+      "ABBA",
+      "U2"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Escrita por Freddie Mercury.",
+      "explanation": "Integra o álbum 'A Night at the Opera' (1975) e é um dos temas mais icónicos do rock."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem foi o primeiro rei de Portugal?",
+    "options": [
+      "D. Sancho I",
+      "D. Afonso Henriques",
+      "D. João I",
+      "D. Pedro I"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Conquista de Lisboa em 1147.",
+      "explanation": "D. Afonso Henriques tornou-se o primeiro rei de Portugal, proclamado em 1139 após Ourique."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com listras verticais verde, branca e vermelha e um escudo ao centro?",
+    "options": [
+      "México",
+      "Itália",
+      "Irlanda",
+      "França"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "América Central.",
+      "explanation": "A bandeira do México tem verde-branco-vermelho com o escudo nacional (águia e serpente); a de Itália não tem escudo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior rio da Europa em extensão?",
+    "options": [
+      "Danúbio",
+      "Volga",
+      "Renan",
+      "Tâmisa"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Na Rússia.",
+      "explanation": "A Volga tem cerca de 3530 km e desagua no mar Cáspio; o Danúbio é o mais internacional."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital administrativa da África do Sul?",
+    "options": [
+      "Joanesburgo",
+      "Cidade do Cabo",
+      "Pretória",
+      "Durban"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "O país tem 3 capitais.",
+      "explanation": "Pretória é a capital executiva; Cidade do Cabo é a legislativa e Bloemfontein a judicial."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o ponto mais alto da Terra?",
+    "options": [
+      "Monte Everest",
+      "K2",
+      "Aconcágua",
+      "Kilimanjaro"
+    ],
+    "correct_option": 0,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Himalaia.",
+      "explanation": "O Everest atinge 8849 m, na fronteira Nepal-China (Tibete)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a bandeira com um círculo vermelho centrado sobre fundo branco?",
+    "options": [
+      "Japão",
+      "Bangladesh",
+      "Coreia do Sul",
+      "Palau"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sol nascente.",
+      "explanation": "A bandeira do Japão ('Nisshōki') tem o disco solar vermelho centrado; a do Bangladeche tem o círculo deslocado."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um marsupial?",
+    "options": [
+      "Coala",
+      "Golfinho",
+      "Foca",
+      "Lobo"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem uma bolsa (marsúpio).",
+      "explanation": "O coala, como o canguru, carrega as crias num marsúpio; os outros são placentários."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual personagem foi interpretada por Daniel Radcliffe nos cinemas?",
+    "options": [
+      "Frodo",
+      "Harry Potter",
+      "Peter Pan",
+      "Sherlock Holmes"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Feitiçaria em Hogwarts.",
+      "explanation": "Radcliffe encarnou Harry Potter nos 8 filmes (2001-2011)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que país floresceu o movimento Art Nouveau no fim do século XIX?",
+    "options": [
+      "França e Bélgica",
+      "Japão",
+      "Brasil",
+      "Índia"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Victor Horta.",
+      "explanation": "A Art Nouveau nasceu na França e na Bélgica, com linhas orgânicas inspiradas na natureza."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual linguagem confere interactividade às páginas web no lado do cliente?",
+    "options": [
+      "Python",
+      "JavaScript",
+      "C++",
+      "Java"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Corre no navegador.",
+      "explanation": "JavaScript executa nos navegadores; Python e C++ não são a linguagem padrão de cliente web."
+    },
+    "image_url": null
   }
 ]

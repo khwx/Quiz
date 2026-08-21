@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-21] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+17 novas** (pool auto-reposto a partir do seed bank com 17; todas inseridas). Pool: 0 → 17 (seed) → 0 (usadas). Backup: 2701 → 2718. BD: ~2742.
+  - `questions_backup.json` atualizado automaticamente pelo script (2701 → 2718).
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs`. Total na BD: 2.742 perguntas. **0 duplicados exatos removidos**. 26 grupos de duplicados aproximados detetados (esmagadoramente BANDEIRAS, falsos positivos). 292 pares fuzzy fora de BANDEIRAS (candidatos a revisão manual, não removidos).
+- **PENDENTE (working tree, não incluído neste commit)**: `src/app/api/answer/route.ts`, `src/app/play/page.tsx`, `src/components/mobile/QuestionView.tsx`, `src/components/mobile/RevealView.tsx` continuam com alterações não comitadas (desativação de mecanismo de eliminação/vidas). Inconsistentes com `GameContext.tsx`/`SoloGame.tsx`, mantidas fora do commit para revisão manual.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup; sem impacto no app. `node --check` OK em `daily-questions.mjs` e `weekly-dedupe.mjs`.
+
 ## [2026-08-20] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (auto-reposição do pool)
 
 - **CONTEXTO**: As API keys de IA (`.env`) continuam vazias, pelo que o `npm run daily` usa o pool curado. O pool estava esgotado (30 → 0 no ciclo anterior) e produziu 0 perguntas.
