@@ -29,10 +29,11 @@ export default function RevealView({
   skipped = false,
   onReport,
 }: RevealViewProps) {
-  const isCorrect = selectedOption === correctOption;
+  const resolvedCorrectOption = questionData?.correct_option !== undefined && questionData?.correct_option !== null ? questionData.correct_option : correctOption;
+  const isCorrect = selectedOption !== null && resolvedCorrectOption !== null && selectedOption === resolvedCorrectOption;
   const hasNoSelection = selectedOption === null;
   const isSkipped = skipped && selectedOption === null;
-  const correctText = questionData?.options?.[correctOption ?? -1];
+  const correctText = resolvedCorrectOption !== null && resolvedCorrectOption !== undefined && resolvedCorrectOption >= 0 ? questionData?.options?.[resolvedCorrectOption] : undefined;
   const hint = questionData?.metadata?.hint as string | undefined;
   const explanation = (questionData?.explanation || (questionData?.metadata as Record<string, unknown> | undefined)?.explanation || (questionData?.metadata as Record<string, unknown> | undefined)?.curiosidade) as string | undefined;
 

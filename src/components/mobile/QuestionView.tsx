@@ -224,21 +224,10 @@ export default function QuestionView({
       </div>
 
       {/* Waiting indicator */}
-      {hasAnswered && !eliminated && (
+      {hasAnswered && (
         <div className="px-4 pb-4 flex items-center justify-center gap-2 text-[#e3e0f9]/50">
           <div className="w-5 h-5 border-2 border-[#e3e0f9]/30 border-t-[#d0bcff] rounded-full animate-spin" />
           <span className="text-sm">Aguarda...</span>
-        </div>
-      )}
-
-      {/* Eliminated overlay */}
-      {eliminated && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-          <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-center p-8">
-            <div className="text-6xl mb-4">💀</div>
-            <h2 className="text-3xl font-black text-[#FF6B6B] mb-2">ELIMINADO</h2>
-            <p className="text-[#e3e0f9]/60">Ficaste sem vidas!</p>
-          </motion.div>
         </div>
       )}
 

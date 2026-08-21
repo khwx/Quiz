@@ -258,13 +258,12 @@ export async function POST(req: NextRequest) {
       const { data: player } = await supabase.from('players').select('lives, eliminated').eq('id', playerId).single();
       const currentLives = player?.lives ?? 3;
       const newLives = Math.max(0, currentLives - 1);
-      const isEliminated = newLives === 0;
 
       const { error: livesError } = await supabase
         .from('players')
         .update({
           lives: newLives,
-          eliminated: isEliminated,
+          eliminated: false,
         })
         .eq('id', playerId);
 
@@ -283,7 +282,7 @@ export async function POST(req: NextRequest) {
         isCorrect,
         points,
         lives: newLives,
-        eliminated: isEliminated,
+        eliminated: false,
         isBuzzer,
         streak: 0,
         maxStreak,

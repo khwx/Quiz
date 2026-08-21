@@ -354,8 +354,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
   const handleAnswer = async (index: number) => {
     if (submittingRef.current) return;
-    if (!currentQuestionId) {
-      showToast("Aguarde, a sincronizar...", "info");
+    const qId = currentQuestionId || questionData?.id || gameSettings?.current_question_id;
+    if (!qId) {
+      showToast("Aguarde, a carregar...", "info");
       return;
     }
     submittingRef.current = true;
@@ -392,7 +393,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         body: JSON.stringify({
           gameId,
           playerId: player!.id,
-          questionId: currentQuestionId,
+          questionId: qId,
           chosenOption: index,
           timeTaken,
         }),
@@ -400,18 +401,14 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
       submittingRef.current = false;
-      if (data.eliminated) {
-      showToast("Ficaste sem vidas! Estás eliminado!", "error");
-      playSound("wrong");
-    }
-   } catch (err: unknown) {
+    } catch (err: unknown) {
       const errorMessage = err instanceof Error ? err.message : "Erro desconhecido";
       showToast("Erro ao enviar resposta: " + errorMessage, "error");
       submittingRef.current = false;
       setHasAnswered(false);
       setSelectedOption(null);
     }
-};
+  };
 
   const handleFiftyFifty = useCallback(() => {
     if (fiftyFiftyUsed || !questionData || !correctOption) return;
@@ -577,7 +574,6 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   if (status === GameStatus.QUESTION && questionData) {
     const currentPlayer = players.find((p) => p.name === name);
     const playerLives = currentPlayer?.lives ?? 3;
-    const isEliminated = currentPlayer?.eliminated ?? false;
     return (
       <>
         <QuestionView
@@ -588,7 +584,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
           selectedOption={selectedOption}
           streak={streak}
           lives={playerLives}
-          eliminated={isEliminated}
+          eliminated={false}
           onAnswer={handleAnswer}
           onReport={() => setReportOpen(true)}
           onFiftyFifty={handleFiftyFifty}
@@ -639,7 +635,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       <>
         <RevealView
           selectedOption={selectedOption}
-          correctOption={correctOption}
+          correctOption={correctOption ?? questionData?.correct_option ?? null}
           questionData={questionData}
           earnedPoints={earnedPoints}
           skipped={skipUsed}
