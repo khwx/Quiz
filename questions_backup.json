@@ -51570,5 +51570,651 @@
       "explanation": "A missão Apollo 11 pousou na Lua em 1969."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual país ganhou o Mundial de Futebol de 2022?",
+    "options": [
+      "França",
+      "Argentina",
+      "Brasil",
+      "Inglaterra"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Messi levantou o troféu.",
+      "explanation": "A Argentina venceu o Qatar 2022."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual linguagem é usada para estruturar páginas web?",
+    "options": [
+      "CSS",
+      "HTML",
+      "SQL",
+      "JSON"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Define títulos, parágrafos...",
+      "explanation": "HTML estrutura o conteúdo das páginas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o número primo imediatamente após 13?",
+    "options": [
+      "14",
+      "15",
+      "16",
+      "17"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Só divisível por 1 e por si.",
+      "explanation": "17 é primo; 14,15,16 não."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem é o realizador de 'Interestelar' e 'Dunkirk'?",
+    "options": [
+      "Nolan",
+      "Tarantino",
+      "Scorsese",
+      "Eastwood"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Gosta de tempo e IMAX.",
+      "explanation": "Christopher Nolan realizou ambos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que planeta é conhecido como o 'Planeta Vermelho'?",
+    "options": [
+      "Vénus",
+      "Marte",
+      "Júpiter",
+      "Saturno"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tem óxido de ferro na superfície.",
+      "explanation": "Marte deve a cor avermelhada ao óxido de ferro (ferrugem) presente no seu solo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o órgão mais pesado do corpo humano?",
+    "options": [
+      "Coração",
+      "Cérebro",
+      "Fígado",
+      "Pele"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Fica do lado direito.",
+      "explanation": "O fígado é o maior órgão interno e desempenha funções de filtragem."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é a 'nuvem' (cloud) na informática?",
+    "options": [
+      "Um disco físico",
+      "Servidores remotos",
+      "Um cabo",
+      "Um virus"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Armazenamento na internet.",
+      "explanation": "Cloud computing usa servidores remotos acessíveis pela rede."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é um grupo de lobos chamado?",
+    "options": [
+      "Alcateia",
+      "Banho",
+      "Colmeia",
+      "Rebanho"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Come por A.",
+      "explanation": "Uma alcateia é o grupo social de lobos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bandeira tem um círculo vermelho sobre fundo branco?",
+    "options": [
+      "Japão",
+      "Bangladesh",
+      "Palau",
+      "Coreia do Sul"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sol nascente.",
+      "explanation": "A bandeira do Japão tem o Hinomaru (disco vermelho)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com maior extensão territorial?",
+    "options": [
+      "China",
+      "Canadá",
+      "Rússia",
+      "Estados Unidos"
+    ],
+    "correct_option": 2,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Maior que toda a Europa.",
+      "explanation": "A Rússia é o maior país em área."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas cordas tem um violoncelo?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tal como o violino.",
+      "explanation": "O violoncelo tem 4 cordas afinandas em quintas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem liderou a independência da Índia através da não-violência?",
+    "options": [
+      "Nehru",
+      "Gandhi",
+      "Bose",
+      "Patel"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Defendia o satyagraha.",
+      "explanation": "Mahatma Gandhi liderou o movimento de independência pacífica."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos anéis olímpicos existem?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Representam continentes.",
+      "explanation": "Os 5 anéis representam os 5 continentes habitados."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual artista cortou parte da própria orelha?",
+    "options": [
+      "Dalí",
+      "Van Gogh",
+      "Picasso",
+      "Matisse"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pós-impressionista holandês.",
+      "explanation": "Van Gogh cortou a orelha num episódio de crise."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual instrumento tem teclas, martelos e cordas?",
+    "options": [
+      "Órgão",
+      "Piano",
+      "Harpa",
+      "Cravo"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Percutido por teclas.",
+      "explanation": "O piano produz som quando martelos batem em cordas ao premir teclas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas é uma obra de Van Gogh?",
+    "options": [
+      "A Noite Estrelada",
+      "O Grito",
+      "Guernica",
+      "Os Universos"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Céu turbulento com redemoinhos.",
+      "explanation": "A Noite Estrelada é de Van Gogh."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é uma fonte de energia renovável?",
+    "options": [
+      "Carvão",
+      "Petróleo",
+      "Gás natural",
+      "Geotérmica"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Vem do calor da Terra.",
+      "explanation": "A energia geotérmica aproveita o calor do interior do planeta e renova-se continuamente."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem estrelas na forma de Cruzeiro do Sul na bandeira?",
+    "options": [
+      "Austrália",
+      "Brasil",
+      "Argentina",
+      "Estados Unidos"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Constelação do hemisfério sul.",
+      "explanation": "A bandeira do Brasil tem o Cruzeiro do Sul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que continente fica o deserto do Saara?",
+    "options": [
+      "Ásia",
+      "África",
+      "América",
+      "Oceania"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Norte de África.",
+      "explanation": "O Saara fica no norte de África."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a partícula subatómica com carga negativa?",
+    "options": [
+      "Protão",
+      "Neutrão",
+      "Eletrão",
+      "Pósitron"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Orbita o núcleo.",
+      "explanation": "O eletrão tem carga negativa e move-se à volta do núcleo atómico."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos estados membros tem a União Europeia (2024)?",
+    "options": [
+      "25",
+      "27",
+      "29",
+      "30"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Reino Unido saiu (Brexit).",
+      "explanation": "A UE tem 27 Estados-membros após o Brexit."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o desporto mais praticado no mundo?",
+    "options": [
+      "Basquetebol",
+      "Futebol",
+      "Ténis",
+      "Críquete"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Joga-se com os pés.",
+      "explanation": "O futebol é o desporto com mais praticantes e espetadores do mundo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 8?",
+    "options": [
+      "54",
+      "56",
+      "63",
+      "49"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Perto de 60.",
+      "explanation": "7 × 8 = 56."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um sistema operativo?",
+    "options": [
+      "Excel",
+      "Linux",
+      "Chrome",
+      "Python"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "De código aberto.",
+      "explanation": "Linux é um sistema operativo; os outros são app/linguagem."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um mamífero?",
+    "options": [
+      "Tubarão",
+      "Golfinho",
+      "Pinguim",
+      "Crocodilo"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Vive no mar mas respira por pulmões.",
+      "explanation": "O golfinho é um mamífero marinho que respira ar e amamenta as crias."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual império construiu as pirâmides do Egipto?",
+    "options": [
+      "Romano",
+      "Persa",
+      "Egípcio",
+      "Otomano"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fica em África, junto ao Nilo.",
+      "explanation": "As pirâmides foram erguidas pelo Antigo Egito como túmulos reais."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem é o chefe de Estado em Portugal?",
+    "options": [
+      "O Primeiro-Ministro",
+      "O Presidente da República",
+      "O Presidente da Assembleia",
+      "O Rei"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "É eleito por sufrágio universal.",
+      "explanation": "O Presidente da República é o chefe de Estado português."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem três cores verticais: azul, branco e vermelho com o escudo central?",
+    "options": [
+      "França",
+      "Rússia",
+      "Sérvia",
+      "Itália"
+    ],
+    "correct_option": 2,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "País dos Balcãs.",
+      "explanation": "A Sérvia tem listas verticais azul-branco-vermelho com escudo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores de cada equipa há num jogo de basquetebol (NBA)?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "11"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Menos que no futebol.",
+      "explanation": "Cada equipa joga com 5 jogadores em campo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com maior população do mundo (2024)?",
+    "options": [
+      "China",
+      "Índia",
+      "Estados Unidos",
+      "Indonésia"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Ultrapassou a China recentemente.",
+      "explanation": "A Índia tornou-se o país mais populoso do mundo, à frente da China."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a saga com 'A Guerra das Estrelas'?",
+    "options": [
+      "Star Trek",
+      "Star Wars",
+      "Matrix",
+      "Dune"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Começa com 'Episódio IV'.",
+      "explanation": "Star Wars é a saga espacial de George Lucas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem compôs a 'Nona Sinfonia' com o 'Hino à Alegria'?",
+    "options": [
+      "Mozart",
+      "Bach",
+      "Beethoven",
+      "Chopin"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Ficou surdo mas continuou a compor.",
+      "explanation": "Beethoven compôs a Nona Sinfonia já surdo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas espécies é ovípara?",
+    "options": [
+      "Baleia",
+      "Morcego",
+      "Tartaruga",
+      "Gato"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Põe ovos.",
+      "explanation": "As tartarugas são répteis ovíparos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano estreou o primeiro filme de 'Harry Potter'?",
+    "options": [
+      "1999",
+      "2001",
+      "2003",
+      "2005"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Início da década de 2000.",
+      "explanation": "A Pedra Filosofal estreou em 2001."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa 'WWW'?",
+    "options": [
+      "World Wide Web",
+      "Web Wire World",
+      "Wide Web Window",
+      "World Web Work"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "A rede global.",
+      "explanation": "WWW = World Wide Web."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 1/2 + 1/4?",
+    "options": [
+      "3/4",
+      "2/6",
+      "1",
+      "1/4"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Denominador comum 4.",
+      "explanation": "1/2 = 2/4; 2/4 + 1/4 = 3/4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que mede a escala de Richter?",
+    "options": [
+      "Temperatura",
+      "Sismos",
+      "Vento",
+      "Chuva"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Relacionado com tremores de terra.",
+      "explanation": "A escala de Richter quantifica a magnitude de sismos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou 'Titanic' e 'Avatar'?",
+    "options": [
+      "Spielberg",
+      "Cameron",
+      "Nolan",
+      "Lucas"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pioneiro do 3D.",
+      "explanation": "James Cameron realizou ambos."
+    },
+    "image_url": null
   }
 ]
