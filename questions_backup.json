@@ -52216,5 +52216,447 @@
       "explanation": "James Cameron realizou ambos."
     },
     "image_url": null
+  },
+  {
+    "text": "Que empresa criou o sistema operativo Android?",
+    "options": [
+      "Apple",
+      "Google",
+      "Microsoft",
+      "Samsung"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Dono do motor de busca.",
+      "explanation": "O Android foi desenvolvido pela Google."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a partícula subatómica com carga elétrica positiva?",
+    "options": [
+      "Eletrão",
+      "Protão",
+      "Neutrão",
+      "Fotão"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Está no núcleo do átomo.",
+      "explanation": "O protão tem carga positiva e, com o neutrão, forma o núcleo atómico."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o resultado de 144 ÷ 12?",
+    "options": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "12 × 12 = 144.",
+      "explanation": "144 ÷ 12 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual linguagem é usada para estruturar o conteúdo de páginas web?",
+    "options": [
+      "CSS",
+      "HTML",
+      "Python",
+      "SQL"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Define a estrutura, não o estilo.",
+      "explanation": "HTML (HyperText Markup Language) estrutura o conteúdo web."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos anéis tem o símbolo olímpico?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Um por continente representado.",
+      "explanation": "O símbolo olímpico tem 5 anéis entrelaçados."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos jogadores de cada equipa há em campo no basquetebol?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "11"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Menos de sete.",
+      "explanation": "Cada equipa de basquetebol tem 5 jogadores em campo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual movimento artístico está associado a Claude Monet?",
+    "options": [
+      "Cubismo",
+      "Impressionismo",
+      "Barroco",
+      "Surrealismo"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Luz e cor.",
+      "explanation": "Monet foi um dos líderes do Impressionismo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bebida alcoólica é destilada da cana-de-açúcar?",
+    "options": [
+      "Whisky",
+      "Rum",
+      "Gin",
+      "Vodka"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Típico das Caraíbas.",
+      "explanation": "O rum é obtido pela fermentação e destilação da cana-de-açúcar."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual personagem é interpretado por Daniel Radcliffe na saga principal?",
+    "options": [
+      "Harry Potter",
+      "Ron Weasley",
+      "Frodo",
+      "Peter Pan"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Feiticeiro.",
+      "explanation": "Daniel Radcliffe interpretou Harry Potter."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a maior ave do mundo (incapaz de voar)?",
+    "options": [
+      "Pinguim-imperador",
+      "Avestruz",
+      "Emu",
+      "Quivi"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Vive em África.",
+      "explanation": "A avestruz é a maior ave viva, podendo superar 2 metros de altura."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o mamífero terrestre mais rápido?",
+    "options": [
+      "Leão",
+      "Guepardo",
+      "Cavalo",
+      "Antílope"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Um felino.",
+      "explanation": "O guepardo pode atingir cerca de 100 km/h em corrida."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem uma estrela vermelha e crescente sobre fundo vermelho?",
+    "options": [
+      "Turquia",
+      "Paquistão",
+      "Argélia",
+      "Tunísia"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Entre a Europa e a Ásia.",
+      "explanation": "A bandeira da Turquia tem crescente e estrela vermelhos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem esculpiu a obra 'David' (renascentista)?",
+    "options": [
+      "Miguel Ângelo",
+      "Bernini",
+      "Rodin",
+      "Donatello"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Também pintou a Capela Sistina.",
+      "explanation": "O 'David' de Florença foi esculpido por Miguel Ângelo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país ganhou mais Campeonatos do Mundo de futebol masculino?",
+    "options": [
+      "Alemanha",
+      "Itália",
+      "Brasil",
+      "Argentina"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinco títulos.",
+      "explanation": "O Brasil é o maior campeão do Mundo de futebol (5 títulos)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos Estados-membros tem a União Europeia (até 2025)?",
+    "options": [
+      "25",
+      "27",
+      "29",
+      "30"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Entre 25 e 30.",
+      "explanation": "A UE tem 27 Estados-membros."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes instrumentos tem teclas brancas e pretas?",
+    "options": [
+      "Harpa",
+      "Piano",
+      "Flauta",
+      "Bateria"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Teclado.",
+      "explanation": "O piano tem teclas brancas e pretas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que país nasceu a pintora Frida Kahlo?",
+    "options": [
+      "Espanha",
+      "México",
+      "Itália",
+      "França"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "América Central.",
+      "explanation": "Frida Kahlo nasceu no México."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes ganhou o Óscar de Melhor Filme em 1994?",
+    "options": [
+      "Pulp Fiction",
+      "Forrest Gump",
+      "O Rei Leão",
+      "Speed"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Protagonista com baixo QI.",
+      "explanation": "O Óscar de 1994 foi para 'Forrest Gump'."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem bandeira com listas verticais verde, branca e vermelha e o escudo nacional ao centro?",
+    "options": [
+      "Itália",
+      "México",
+      "Irlanda",
+      "Costa do Marfim"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "América Central.",
+      "explanation": "O México tem verde-branco-vermelho com escudo ao centro."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem compôs a 9.ª Sinfonia (com a 'Ode à Alegria')?",
+    "options": [
+      "Mozart",
+      "Beethoven",
+      "Bach",
+      "Chopin"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Ficou surdo.",
+      "explanation": "Beethoven compôs a 9.ª Sinfonia já surdo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Itália?",
+    "options": [
+      "Milão",
+      "Roma",
+      "Nápoles",
+      "Turim"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cidade eterna.",
+      "explanation": "Roma é a capital de Itália."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem uma águia de duas cabeças na sua bandeira?",
+    "options": [
+      "Rússia",
+      "Albânia",
+      "Sérvia",
+      "Montenegro"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Balcãs.",
+      "explanation": "A bandeira da Albânia ostenta uma águia de duas cabeças."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o órgão principal da Assembleia Geral das Nações Unidas?",
+    "options": [
+      "Conselho de Segurança",
+      "Assembleia Geral",
+      "Tribunal Internacional",
+      "Secretariado"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Reúne todos os Estados-membros.",
+      "explanation": "A Assembleia Geral é o órgão deliberativo principal da ONU."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'CPU'?",
+    "options": [
+      "Central Process Unit",
+      "Computer Power Unit",
+      "Central Processing Unit",
+      "Core Programming Unit"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "'Processing'.",
+      "explanation": "CPU = Central Processing Unit, o processador do computador."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem a sua capital em Washington, D.C.?",
+    "options": [
+      "Canadá",
+      "México",
+      "Estados Unidos",
+      "Brasil"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "América do Norte.",
+      "explanation": "Washington, D.C. é a capital dos Estados Unidos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o planeta mais quente do Sistema Solar?",
+    "options": [
+      "Mercúrio",
+      "Vénus",
+      "Marte",
+      "Júpiter"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Apesar de não ser o mais próximo do Sol.",
+      "explanation": "Vénus é mais quente que Mercúrio devido ao seu intenso efeito de estufa."
+    },
+    "image_url": null
   }
 ]

@@ -1,5 +1,15 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-22] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (diversidade do seed bank) + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — built-in só cobria 3 categorias**: O `builtinBatch()` (usado quando pool+seed estão esgotados) só produz perguntas para **MATEMATICA / CAPITAIS_DO_MUNDO / GEOGRAFIA**; as restantes 12 categorias ficavam limitadas a 1 fallback cada (já na BD → deduped → 0 crescimento). O banco crescia, mas de forma enviesada.
+- **MELHORIA — Seed bank diversificado**: Adicionadas **45 perguntas curadas novas** (3 por categoria × 15 categorias) a `scripts/curated-seed.json` (128 → 173). Isto devolve material fresco ao auto-replenish do pool `curated-pool.json` para TODAS as categorias, não só as 3 do built-in. Validação: JSON OK, índices `correct_option` corretos, 4 opções únicas por pergunta.
+  - `node -e` confirmou 173 perguntas no seed e correção dos índices.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+26 novas** (pool auto-reposto do seed com 26 perguntas DISTRIBUÍDAS por CIENCIA, CULTURA_GERAL, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, GEOGRAFIA, MATEMATICA, CINEMA, POLITICA, CAPITAIS_DO_MUNDO, BANDEIRAS — não só as 3 do built-in). Backup: 2786 → 2812. Pool: 0 → 26 (seed) → 0 (usadas).
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. Grupos aproximados (BANDEIRAS, falsos positivos) e pares fuzzy fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: ~2.882.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts (seed) + backup + PROGRESS; sem impacto no app. `node --check` OK em `daily-questions.mjs`; validação de seed OK.
+
 ## [2026-08-22] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (built-in batch) + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — Pool curado + seed bank esgotados**: O `scripts/curated-pool.json` está a 0 e o `scripts/curated-seed.json` (128 perguntas) já está **100% na BD** (todas consumidas pelo auto-replenish dos ciclos anteriores). Sem chaves de IA (`.env` tem `NEXT_PUBLIC_GEMINI_API_KEY`/`GROQ_API_KEY` vazias), o ciclo caiu no gerador incorporado (built-in), que antes produzia apenas **3 perguntas/ciclo** (1 por categoria suportada) — crescimento diário insustentavelmente baixo.
