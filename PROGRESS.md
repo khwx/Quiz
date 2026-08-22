@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-22] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (built-in batch) + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — Pool curado + seed bank esgotados**: O `scripts/curated-pool.json` está a 0 e o `scripts/curated-seed.json` (128 perguntas) já está **100% na BD** (todas consumidas pelo auto-replenish dos ciclos anteriores). Sem chaves de IA (`.env` tem `NEXT_PUBLIC_GEMINI_API_KEY`/`GROQ_API_KEY` vazias), o ciclo caiu no gerador incorporado (built-in), que antes produzia apenas **3 perguntas/ciclo** (1 por categoria suportada) — crescimento diário insustentavelmente baixo.
+- **MELHORIA — `builtinBatch()` no gerador incorporado**: `scripts/daily-questions.mjs` agora tem `builtinBatch()` que, quando pool+seed estão vazios, gera um lote saudável e dedupado: **MATEMATICA** (até `PER_CATEGORY` por ciclo, operandos aleatórios → únicas e praticamente infinitas), **CAPITAIS_DO_MUNDO/GEOGRAFIA** (percorre toda a tabela de ~45 países, uma pergunta por país) e as **restantes 12 categorias** (1 fallback segura cada, adicionada uma vez e depois deduped). Teto de segurança `maxTotal = max(15×PER_CATEGORY, 40)` evita runaway. O banco continua a crescer de forma robusta mesmo sem IA nem pool curado.
+  - `node --check` OK em `daily-questions.mjs`.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+40 novas** (built-in batch: GEOGRAFIA + MATEMATICA + CAPITAIS). Banco: ~2816 → 2856 (total na BD confirmado pelo dedupe). `questions_backup.json` atualizado automaticamente (2754 → 2794, incluindo o +3 do 1º ensaio do ciclo).
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria) e 325 pares fuzzy (≥0.9) fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: 2.856.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts + backup + report + PROGRESS; sem impacto no app. `node --check` OK; `npm test` 15/15 passam.
+
 ## [2026-08-21] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (sustentabilidade do bank) + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — Banco congelado**: O `scripts/curated-seed.json` (60 perguntas) estava **98% consumido** (59/60 já na BD), pelo que o `npm run daily` passou a produzir **0 perguntas** — o ciclo de 8h tinha ficado sem material, mesmo com o auto-replenish do pool a partir do seed.

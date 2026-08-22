@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-21",
-  "totalQuestions": 2772,
+  "date": "2026-08-22",
+  "totalQuestions": 2856,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
-  "nearDuplicateGroups": 26,
-  "fuzzyPairs": 298,
-  "fuzzyAffectedQuestions": 365,
+  "nearDuplicateGroups": 27,
+  "fuzzyPairs": 325,
+  "fuzzyAffectedQuestions": 401,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -16,6 +16,13 @@
       "ids": [
         "9bf61cdf-378a-4a42-9984-4bff7abfb316",
         "c565e1e4-c2ec-4ba8-bba1-d305cb71ce44"
+      ]
+    },
+    {
+      "category": "ARTE",
+      "ids": [
+        "7b01e1b7-ae70-462e-8851-3a279b133d47",
+        "fb2e9cee-8572-454f-b82f-c1e3a77371db"
       ]
     },
     {
@@ -105,6 +112,13 @@
     {
       "category": "MUSICA",
       "ids": [
+        "ec961498-324c-4d92-b8bf-a5e4f4a166e1",
+        "05b5ede0-8787-45cc-b08c-10a8cec2f6ed"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
         "a6b91124-1901-4973-ac06-9c70140348bf",
         "41698113-49d3-48da-9c2c-34ee335692e5"
       ]
@@ -114,6 +128,13 @@
       "ids": [
         "51f3cee5-302a-483f-ac94-02d5dbaa0259",
         "d0619e06-11ae-4402-9882-b3c3670606c3"
+      ]
+    },
+    {
+      "category": "POLITICA",
+      "ids": [
+        "0466a2d2-ffb5-4ab8-8bf6-d856c2b9ced4",
+        "18867fb9-d62f-4de1-a07b-64bcce64315b"
       ]
     },
     {
@@ -163,27 +184,6 @@
       "ids": [
         "cbad739f-c5c6-4edc-838e-3a619ffc3e5c",
         "c1e3c387-3e47-46ef-aa76-e92e61748a6f"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "504b1055-308b-4118-b577-387d09d6b203",
-        "98ae588e-90aa-4858-912f-f6616949fd32"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "c6ab5204-8949-490b-9483-34a76bbd336d",
-        "19a1e94a-5b2e-4a6b-a759-91782400a084"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "a558bed3-ed0d-44c1-942c-e11a58af44c6",
-        "70863393-7b33-449d-b925-1637625fefe4"
       ]
     }
   ]

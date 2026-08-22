@@ -213,6 +213,50 @@ function builtinGenerate(category, ageRating) {
   return null;
 }
 
+// Produce a healthy batch when neither AI keys nor the curated pool/seed bank
+// are available. MATEMATICA yields unlimited unique questions; CAPITAIS/GEOGRAFIA
+// cycle through the whole fact table; the remaining categories contribute their
+// single safe fallback question (added once, then deduped by existingPairs).
+function builtinBatch(existingPairs, perCategory, maxTotal) {
+  const out = [];
+  const seen = new Set();
+  const pushIfNew = (q) => {
+    if (!q) return;
+    const key = `${q.text}|${q.category.toUpperCase()}`;
+    if (existingPairs.has(key) || seen.has(key)) return;
+    seen.add(key);
+    out.push(q);
+    existingPairs.add(key);
+  };
+  for (const category of CATEGORIES) {
+    if (category === 'MATEMATICA') {
+      let made = 0, guard = 0;
+      while (made < perCategory && guard < perCategory * 30 && out.length < maxTotal) {
+        guard++;
+        const q = builtinGenerate(category, AGE_RATINGS[Math.floor(Math.random() * AGE_RATINGS.length)]);
+        const before = out.length;
+        pushIfNew(q);
+        if (out.length > before) made++;
+      }
+    } else if (category === 'CAPITAIS_DO_MUNDO' || category === 'GEOGRAFIA') {
+      for (const fact of COUNTRY_FACTS) {
+        if (out.length >= maxTotal) break;
+        const distractors = shuffle(COUNTRY_FACTS.filter(f => f.cap !== fact.cap).map(f => f.cap)).slice(0, 3);
+        const options = shuffle([fact.cap, ...distractors]);
+        pushIfNew({
+          text: `Qual é a capital de ${fact.c}?`,
+          options, correct_option: options.indexOf(fact.cap),
+          category, age_rating: 10,
+          metadata: { hint: `País: ${fact.c}.`, explanation: `${fact.c} tem como capital ${fact.cap}.` },
+        });
+      }
+    } else {
+      pushIfNew({ ...getFallbackQuestion(category), category, age_rating: 10 });
+    }
+  }
+  return out;
+}
+
 function refillPoolFromSeed(currentPool, existingPairs, target, poolPath) {
   const seedPath = path.join(process.cwd(), 'scripts', 'curated-seed.json');
   let seed = [];
@@ -278,17 +322,10 @@ async function main() {
       // Last-resort built-in generator so the bank never fully freezes even
       // when the curated pool AND seed bank are exhausted (no AI keys).
       console.warn('⚠️ Pool curado e seed bank vazios — a usar gerador incorporado (built-in).');
-      for (const category of CATEGORIES) {
-        if (newQuestions.length >= CATEGORIES.length) break;
-        const ageRating = AGE_RATINGS[Math.floor(Math.random() * AGE_RATINGS.length)];
-        const q = builtinGenerate(category, ageRating);
-        if (!q) continue;
-        const key = `${q.text}|${q.category.toUpperCase()}`;
-        if (existingPairs.has(key)) continue;
-        newQuestions.push(q);
-        existingPairs.add(key);
-        console.log(`🔧 built-in ${q.category}: "${q.text.substring(0, 60)}..."`);
-      }
+      const maxTotal = Math.max(CATEGORIES.length * PER_CATEGORY, 40);
+      const batch = builtinBatch(existingPairs, PER_CATEGORY, maxTotal);
+      newQuestions.push(...batch);
+      batch.forEach(q => console.log(`🔧 built-in ${q.category}: "${q.text.substring(0, 60)}..."`));
       if (newQuestions.length === 0) {
         console.warn('⚠️ AVISO: Nenhuma API key de IA, pool curado, seed bank e built-in esgotados.');
       }
