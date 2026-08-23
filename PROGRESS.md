@@ -1,5 +1,15 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-23] Ciclo de Manutenção (3º ciclo, 8h) — MELHORIA (variantes combinatórias + tabelas expandidas) + Novas perguntas + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — Banco estagnado no built-in**: Sem IA nem pool/seed, o ciclo de 8h recorria ao gerador fact-table. Mas as tabelas eram finitas e já largamente inseridas na BD: o 1º ciclo do dia produziu apenas **9 novas** (em vez das ~30 alvo). Cada fact gerava 1 única pergunta; esgotadas as tabelas, o banco parava de crescer.
+- **MELHORIA — Variantes combinatórias + tabelas expandidas em `scripts/builtin-facts.mjs`**: Cada fact é agora perguntado em ≥2 direções (forward + reverse) onde faça sentido — ex.: CIENCIA "símbolo de X" ↔ "elemento com símbolo Y"; ANIMAIS/MUSICA "é um {classe}" ↔ "NÃO é um {classe}"; HISTÓRIA/GASTRONOMIA/ARTE/CINEMA/POLITICA/TECNOLOGIA/DESPORTO com pergunta inversa. Tabelas expandidas: ELEMENTS 20→39, ANIMAL_CLASSES +Inseto, HISTORY 10→20, GASTRONOMY 12→22, INSTRUMENTOS +teclas, TECH 8→15, SPORT 7→12, ART 8→14, FILM 8→15, POLITICS 7→13, CULTURA_GERAL 20→36. Total de textos únicos geráveis saltou de ~150 para **345** (validação: 5000 geradas, 0 inválidas, `node --check` OK).
+- **TAREFA DIÁRIA — Novas perguntas (1º ciclo, pré-melhoria)**: `npm run daily` → **+9 novas** (fact-table esgotada). Backup: 3000 → 3009.
+- **TAREFA DIÁRIA — Novas perguntas (3º ciclo, pós-melhoria)**: `npm run daily` → **+24 novas** (variantes combinatórias a atravessar todas as 15 categorias). Backup: 3009 → 3033. Sem IA nem pool/seed.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. Grupos aproximados (BANDEIRAS, falsos positivos) e pares fuzzy (≥0.9) fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: ~3.033.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts (`builtin-facts.mjs` + backup + report + PROGRESS); sem impacto no app. `node --check` OK; validação do gerador OK.
+
 ## [2026-08-23] Ciclo de Manutenção (2º ciclo, 8h) — MELHORIA (gerador CULTURA_GERAL) + Novas perguntas + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — CULTURA_GERAL sem gerador incorporado**: Dos 15 categorias, o `builtin-facts.mjs` cobria 13 (CIENCIA, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, CINEMA, POLITICA, MATEMATICA, CAPITAIS_DO_MUNDO, GEOGRAFIA). `CULTURA_GERAL` e `BANDEIRAS` ficavam sem built-in (BANDEIRAS exige imagem e mantém-se de fora por segurança). Sem IA nem pool/seed, o ciclo de 8h produzia só ~16 perguntas em vez das 30 alvo, e CULTURA_GERAL parava de crescer.

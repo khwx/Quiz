@@ -57281,5 +57281,566 @@
       "hint": "Organização",
       "explanation": "Qual é a cidade sede de a Interpol → Lyon."
     }
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Potássio?",
+    "options": [
+      "K",
+      "O",
+      "P",
+      "H"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Potássio → K."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Azoto?",
+    "options": [
+      "N",
+      "K",
+      "S",
+      "Fe"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Azoto → N."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o planeta mais próximo do Sol?",
+    "options": [
+      "Mercúrio",
+      "Vénus",
+      "Terra",
+      "Marte"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Menor planeta",
+      "explanation": "Qual é o planeta mais próximo do Sol → Mercúrio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior mamífero do mundo?",
+    "options": [
+      "Girafa",
+      "Rinoceronte",
+      "Baleia-azul",
+      "Elefante"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Vive no oceano",
+      "explanation": "Qual é o maior mamífero do mundo → Baleia-azul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano os EUA declararam independência?",
+    "options": [
+      "1776",
+      "1139",
+      "1789",
+      "1918"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano os EUA declararam independência → 1776."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Pasta?",
+    "options": [
+      "Brasil",
+      "México",
+      "França",
+      "Itália"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Pasta → Itália."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Paella?",
+    "options": [
+      "Brasil",
+      "França",
+      "México",
+      "Espanha"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Paella → Espanha."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 4?",
+    "options": [
+      "5",
+      "2",
+      "3",
+      "12"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 4 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 3?",
+    "options": [
+      "14",
+      "15",
+      "18",
+      "19"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 3 = 15."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é C?",
+    "options": [
+      "Cálcio",
+      "Boro",
+      "Flúor",
+      "Carbono"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo C",
+      "explanation": "Qual é o elemento cujo símbolo químico é C → Carbono."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Bário?",
+    "options": [
+      "N",
+      "Pb",
+      "F",
+      "Ba"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Bário → Ba."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o rio mais longo da Europa?",
+    "options": [
+      "Rio Tejo",
+      "Rio Reno",
+      "Rio Tamisa",
+      "Rio Volga"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Rússia",
+      "explanation": "Qual é o rio mais longo da Europa → Rio Volga."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com mais habitantes de língua portuguesa?",
+    "options": [
+      "Guiné-Bissau",
+      "Moçambique",
+      "Angola",
+      "Brasil"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Maior país lusófono",
+      "explanation": "Qual é o país com mais habitantes de língua portuguesa → Brasil."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um Inseto?",
+    "options": [
+      "Corvo",
+      "Carpa",
+      "Salamandra",
+      "Formiga"
+    ],
+    "correct_option": 3,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Inseto",
+      "explanation": "Qual destes animais é um Inseto → Formiga."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais NÃO é um Ave?",
+    "options": [
+      "Papagaio",
+      "Corvo",
+      "Mosca",
+      "Pinguim"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Ave",
+      "explanation": "Qual destes animais NÃO é um Ave → Mosca."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1453?",
+    "options": [
+      "a queda do Império Romano do Oriente",
+      "a Primeira Guerra Mundial começou",
+      "a descoberta da América por Colombo",
+      "a independência de Angola"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1453 → a queda do Império Romano do Oriente."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a Revolução Industrial começou?",
+    "options": [
+      "1969",
+      "1760",
+      "1139",
+      "1440"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a Revolução Industrial começou → 1760."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Itália?",
+    "options": [
+      "Bacalhau à Brás",
+      "Paella",
+      "Tacos",
+      "Risotto"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Itália → Risotto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Risotto?",
+    "options": [
+      "Estados Unidos",
+      "México",
+      "Índia",
+      "Itália"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Risotto → Itália."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes NÃO é um instrumento de cordas?",
+    "options": [
+      "Harpa",
+      "Violino",
+      "Baixo",
+      "Gongo"
+    ],
+    "correct_option": 3,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: cordas",
+      "explanation": "Qual destes NÃO é um instrumento de cordas → Gongo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes NÃO é um instrumento de percussão?",
+    "options": [
+      "Violoncelo",
+      "Vibrafone",
+      "Tambor",
+      "Bateria"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: percussão",
+      "explanation": "Qual destes NÃO é um instrumento de percussão → Violoncelo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .avi?",
+    "options": [
+      "um ficheiro de vídeo",
+      "um executável",
+      "uma apresentação",
+      "um ficheiro comprimido"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .avi → um ficheiro de vídeo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .exe?",
+    "options": [
+      "uma folha de cálculo",
+      "um executável",
+      "uma apresentação",
+      "um ficheiro de vídeo"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .exe → um executável."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente um arco e flechas?",
+    "options": [
+      "Futebol",
+      "Ténis",
+      "Tiro com arco",
+      "Basquetebol"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente um arco e flechas → Tiro com arco."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Hóquei no gelo?",
+    "options": [
+      "um puck",
+      "um remo",
+      "uma bola de andebol",
+      "uma bola de futebol"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Hóquei no gelo → um puck."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"O Beijo\"?",
+    "options": [
+      "Botticelli",
+      "Klimt",
+      "Monet",
+      "Dalí"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"O Beijo\" → Klimt."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Velázquez?",
+    "options": [
+      "A Ronda Noturna",
+      "O Instituto",
+      "Impressão, Nascer do Sol",
+      "As Meninas"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Velázquez → As Meninas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 15 ÷ 5?",
+    "options": [
+      "3",
+      "0",
+      "7",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 15 ÷ 5 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 82 + 26?",
+    "options": [
+      "104",
+      "110",
+      "103",
+      "108"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 82 + 26 = 108."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Christopher Nolan?",
+    "options": [
+      "Interestelar",
+      "Gladiador",
+      "O Resgate do Soldado Ryan",
+      "Matrix"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Christopher Nolan → Interestelar."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"O Resgate do Soldado Ryan\"?",
+    "options": [
+      "Roger Allers",
+      "Steven Spielberg",
+      "George Lucas",
+      "Ridley Scott"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"O Resgate do Soldado Ryan\" → Steven Spielberg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Washington?",
+    "options": [
+      "a OMC",
+      "o Banco Mundial",
+      "a ONU",
+      "a União Europeia"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Washington → o Banco Mundial."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Genebra?",
+    "options": [
+      "a OMS",
+      "o Banco Mundial",
+      "a Cruz Vermelha",
+      "a Corte Penal Internacional"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Genebra → a OMS."
+    },
+    "image_url": null
   }
 ]
