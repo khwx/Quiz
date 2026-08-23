@@ -1,5 +1,15 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-23] Ciclo de Manutenção (2º ciclo, 8h) — MELHORIA (gerador CULTURA_GERAL) + Novas perguntas + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — CULTURA_GERAL sem gerador incorporado**: Dos 15 categorias, o `builtin-facts.mjs` cobria 13 (CIENCIA, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, CINEMA, POLITICA, MATEMATICA, CAPITAIS_DO_MUNDO, GEOGRAFIA). `CULTURA_GERAL` e `BANDEIRAS` ficavam sem built-in (BANDEIRAS exige imagem e mantém-se de fora por segurança). Sem IA nem pool/seed, o ciclo de 8h produzia só ~16 perguntas em vez das 30 alvo, e CULTURA_GERAL parava de crescer.
+- **MELHORIA — Gerador fact-table para CULTURA_GERAL**: Adicionado `CULTURA_GERAL()` a `FACT_GENERATORS` em `scripts/builtin-facts.mjs` com tabela de 20 factos curados (oceano/rio/montanha mais..., planetas, recordes, moedas, fusos, órgãos). Cada pergunta tem 4 opções únicas e `correct_option` calculado. Também corrigido/estendido a tabela `POLITICS` (ONU duplicada → substituída por Interpol/OMS). Validação isolada: 2000 perguntas geradas para CULTURA_GERAL, **0 inválidas**, 20 textos únicos; `node --check` OK.
+- **TAREFA DIÁRIA — Novas perguntas (1º ciclo do dia)**: `npm run daily` → **+16 novas** (fact-table + built-in matemática/geografia/capitais). Backup: 2869 → 2885.
+- **TAREFA DIÁRIA — Novas perguntas (2º ciclo, pós-melhoria)**: `npm run daily` → **+15 novas** (agora inclui CULTURA_GERAL: "montanha mais alta da Europa", "língua materna mais falada", etc.). Backup: 2885 → 2900. Sem IA nem pool/seed.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. Grupos aproximados e pares fuzzy (≥0.9) fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: 2.985.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts (`builtin-facts.mjs` + backup + report + PROGRESS); sem impacto no app. `node --check` OK; validação do gerador OK.
+
 ## [2026-08-23] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (geradores fact-table modulares) + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — Integração dos geradores fact-table quebrada**: A melhoria anterior moveu os geradores determinísticos para `scripts/builtin-facts.mjs` e importou-os em `scripts/daily-questions.mjs`, mas ficaram declarações duplicadas (`CATEGORIES` e `FACT_GENERATORS`) que impedim o script de correr (`SyntaxError`). Sem isto, o ciclo de 8h não executava.
