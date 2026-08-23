@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-23] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (geradores fact-table modulares) + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — Integração dos geradores fact-table quebrada**: A melhoria anterior moveu os geradores determinísticos para `scripts/builtin-facts.mjs` e importou-os em `scripts/daily-questions.mjs`, mas ficaram declarações duplicadas (`CATEGORIES` e `FACT_GENERATORS`) que impedim o script de correr (`SyntaxError`). Sem isto, o ciclo de 8h não executava.
+- **MELHORIA — Consolidação do módulo fact-table**: Removidas as declarações duplicadas em `scripts/daily-questions.mjs` (bloco inline que redefinia `FACT_GENERATORS` e as helpers `pick`/`factOptions`/`factQuestion`). Agora `daily-questions.mjs` importa `FACT_GENERATORS` de `scripts/builtin-facts.mjs`. Os 10 geradores (CIENCIA, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, CINEMA, POLITICA) produzem perguntas verificadas (4 opções únicas, índice `correct_option` calculado, nunca hardcoded). Validação isolada: 2000 perguntas geradas (200×categoria), 0 inválidas.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+22 novas** (built-in fact-table distribuídas por CIENCIA, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, MATEMATICA, CINEMA, POLITICA + fallbacks de CULTURA_GERAL/BANDEIRAS). Backup: 2847 → 2869. Pool: 0 (sem IA nem seed).
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 28 grupos aproximados (texto+categoria) e 379 pares fuzzy (≥0.9) fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: 2.939.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts (`builtin-facts.mjs` novo + fix em `daily-questions.mjs`) + backup + report + PROGRESS; sem impacto no app. `node --check` OK em ambos os ficheiros.
+
 ## [2026-08-22] Ciclo de Manutenção (rotina de 8h) — Novas perguntas + MELHORIA (diversidade do seed bank) + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — built-in só cobria 3 categorias**: O `builtinBatch()` (usado quando pool+seed estão esgotados) só produz perguntas para **MATEMATICA / CAPITAIS_DO_MUNDO / GEOGRAFIA**; as restantes 12 categorias ficavam limitadas a 1 fallback cada (já na BD → deduped → 0 crescimento). O banco crescia, mas de forma enviesada.

@@ -52658,5 +52658,974 @@
       "explanation": "Vénus é mais quente que Mercúrio devido ao seu intenso efeito de estufa."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 72 ÷ 12?",
+    "options": [
+      "16",
+      "8",
+      "2",
+      "6"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 72 ÷ 12 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 14 ÷ 7?",
+    "options": [
+      "5",
+      "0",
+      "9",
+      "2"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 14 ÷ 7 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Alemanha?",
+    "options": [
+      "Dublin",
+      "Banguecoque",
+      "Berlim",
+      "Ancara"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Alemanha.",
+      "explanation": "Alemanha tem como capital Berlim."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Reino Unido?",
+    "options": [
+      "Londres",
+      "Pequim",
+      "Madrid",
+      "Ottawa"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Reino Unido.",
+      "explanation": "Reino Unido tem como capital Londres."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Irlanda?",
+    "options": [
+      "Ancara",
+      "Dublin",
+      "Nova Deli",
+      "Buenos Aires"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Irlanda.",
+      "explanation": "Irlanda tem como capital Dublin."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Grécia?",
+    "options": [
+      "Atenas",
+      "Ottawa",
+      "Varsóvia",
+      "Seul"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Grécia.",
+      "explanation": "Grécia tem como capital Atenas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Turquia?",
+    "options": [
+      "Ottawa",
+      "Pequim",
+      "Ancara",
+      "Cairo"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Turquia.",
+      "explanation": "Turquia tem como capital Ancara."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Egito?",
+    "options": [
+      "Praga",
+      "Quieve",
+      "Banguecoque",
+      "Cairo"
+    ],
+    "correct_option": 3,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Egito.",
+      "explanation": "Egito tem como capital Cairo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de África do Sul?",
+    "options": [
+      "Bucareste",
+      "Pretória",
+      "Santiago",
+      "Ancara"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: África do Sul.",
+      "explanation": "África do Sul tem como capital Pretória."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Nigéria?",
+    "options": [
+      "Abuja",
+      "Berlim",
+      "Tóquio",
+      "Ottawa"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Nigéria.",
+      "explanation": "Nigéria tem como capital Abuja."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Brasil?",
+    "options": [
+      "Brasília",
+      "Jacarta",
+      "Abuja",
+      "Roma"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Brasil.",
+      "explanation": "Brasil tem como capital Brasília."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Argentina?",
+    "options": [
+      "Buenos Aires",
+      "Abuja",
+      "Cairo",
+      "Jacarta"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Argentina.",
+      "explanation": "Argentina tem como capital Buenos Aires."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Chile?",
+    "options": [
+      "Jacarta",
+      "Pretória",
+      "Lisboa",
+      "Santiago"
+    ],
+    "correct_option": 3,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Chile.",
+      "explanation": "Chile tem como capital Santiago."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Peru?",
+    "options": [
+      "Lima",
+      "Pretória",
+      "Pequim",
+      "Bruxelas"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Peru.",
+      "explanation": "Peru tem como capital Lima."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de México?",
+    "options": [
+      "Praga",
+      "Cidade do México",
+      "Buenos Aires",
+      "Ancara"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: México.",
+      "explanation": "México tem como capital Cidade do México."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Estados Unidos?",
+    "options": [
+      "Banguecoque",
+      "Washington",
+      "Pequim",
+      "Viena"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Estados Unidos.",
+      "explanation": "Estados Unidos tem como capital Washington."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Japão?",
+    "options": [
+      "Roma",
+      "Lisboa",
+      "Tóquio",
+      "Santiago"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Japão.",
+      "explanation": "Japão tem como capital Tóquio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de China?",
+    "options": [
+      "Lisboa",
+      "Rabat",
+      "Pequim",
+      "Moscovo"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: China.",
+      "explanation": "China tem como capital Pequim."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Índia?",
+    "options": [
+      "Pretória",
+      "Tóquio",
+      "Londres",
+      "Nova Deli"
+    ],
+    "correct_option": 3,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Índia.",
+      "explanation": "Índia tem como capital Nova Deli."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Coreia do Sul?",
+    "options": [
+      "Seul",
+      "Berlim",
+      "Ancara",
+      "Jacarta"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Coreia do Sul.",
+      "explanation": "Coreia do Sul tem como capital Seul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Tailândia?",
+    "options": [
+      "Banguecoque",
+      "Lisboa",
+      "Abuja",
+      "Ancara"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Tailândia.",
+      "explanation": "Tailândia tem como capital Banguecoque."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Indonésia?",
+    "options": [
+      "Berna",
+      "Rabat",
+      "Jacarta",
+      "Viena"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Indonésia.",
+      "explanation": "Indonésia tem como capital Jacarta."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Austrália?",
+    "options": [
+      "Tóquio",
+      "Madrid",
+      "Canberra",
+      "Atenas"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Austrália.",
+      "explanation": "Austrália tem como capital Canberra."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Rússia?",
+    "options": [
+      "Varsóvia",
+      "Moscovo",
+      "Tóquio",
+      "Quieve"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Rússia.",
+      "explanation": "Rússia tem como capital Moscovo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Ucrânia?",
+    "options": [
+      "Nova Deli",
+      "Quieve",
+      "Moscovo",
+      "Pretória"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Ucrânia.",
+      "explanation": "Ucrânia tem como capital Quieve."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Polónia?",
+    "options": [
+      "Jacarta",
+      "Varsóvia",
+      "Lisboa",
+      "Quieve"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Polónia.",
+      "explanation": "Polónia tem como capital Varsóvia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Suécia?",
+    "options": [
+      "Quieve",
+      "Estocolmo",
+      "Atenas",
+      "Pequim"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Suécia.",
+      "explanation": "Suécia tem como capital Estocolmo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Noruega?",
+    "options": [
+      "Budapeste",
+      "Varsóvia",
+      "Oslo",
+      "Seul"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Noruega.",
+      "explanation": "Noruega tem como capital Oslo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Suíça?",
+    "options": [
+      "Berna",
+      "Praga",
+      "Estocolmo",
+      "Buenos Aires"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Suíça.",
+      "explanation": "Suíça tem como capital Berna."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Países Baixos?",
+    "options": [
+      "Brasília",
+      "Praga",
+      "Atenas",
+      "Amesterdão"
+    ],
+    "correct_option": 3,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Países Baixos.",
+      "explanation": "Países Baixos tem como capital Amesterdão."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Bélgica?",
+    "options": [
+      "Bruxelas",
+      "Paris",
+      "Brasília",
+      "Quieve"
+    ],
+    "correct_option": 0,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Bélgica.",
+      "explanation": "Bélgica tem como capital Bruxelas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Áustria?",
+    "options": [
+      "Pequim",
+      "Viena",
+      "Buenos Aires",
+      "Lisboa"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Áustria.",
+      "explanation": "Áustria tem como capital Viena."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de República Checa?",
+    "options": [
+      "Ottawa",
+      "Berlim",
+      "Canberra",
+      "Praga"
+    ],
+    "correct_option": 3,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: República Checa.",
+      "explanation": "República Checa tem como capital Praga."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Hungria?",
+    "options": [
+      "Ancara",
+      "Budapeste",
+      "Santiago",
+      "Banguecoque"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Hungria.",
+      "explanation": "Hungria tem como capital Budapeste."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital de Roménia?",
+    "options": [
+      "Moscovo",
+      "Santiago",
+      "Nairobi",
+      "Bucareste"
+    ],
+    "correct_option": 3,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País: Roménia.",
+      "explanation": "Roménia tem como capital Bucareste."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Oxigénio?",
+    "options": [
+      "Ag",
+      "P",
+      "H",
+      "O"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Oxigénio → O."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Carbono?",
+    "options": [
+      "H",
+      "C",
+      "Al",
+      "Na"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Carbono → C."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um Mamífero?",
+    "options": [
+      "Tartaruga",
+      "Lagarto",
+      "Baleia",
+      "Tubarão"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Mamífero",
+      "explanation": "Qual destes animais é um Mamífero → Baleia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um Peixe?",
+    "options": [
+      "Leão",
+      "Atum",
+      "Lagarto",
+      "Rã"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Peixe",
+      "explanation": "Qual destes animais é um Peixe → Atum."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a Revolução Francesa começou?",
+    "options": [
+      "1440",
+      "1789",
+      "1776",
+      "1945"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a Revolução Francesa começou → 1789."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o Homem pisou a Lua pela primeira vez?",
+    "options": [
+      "1918",
+      "1969",
+      "1139",
+      "1500"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano o Homem pisou a Lua pela primeira vez → 1969."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Kimchi?",
+    "options": [
+      "Itália",
+      "Bélgica",
+      "Espanha",
+      "Coreia do Sul"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Kimchi → Coreia do Sul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Curry?",
+    "options": [
+      "Marrocos",
+      "Brasil",
+      "Índia",
+      "França"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Curry → Índia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um instrumento de cordas?",
+    "options": [
+      "Saxofone",
+      "Piano",
+      "Flauta",
+      "Tambor"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: cordas",
+      "explanation": "Qual destes é um instrumento de cordas → Piano."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um instrumento de percussão?",
+    "options": [
+      "Bateria",
+      "Trompete",
+      "Clarinete",
+      "Violino"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: percussão",
+      "explanation": "Qual destes é um instrumento de percussão → Bateria."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a uma imagem?",
+    "options": [
+      ".xls",
+      ".db",
+      ".mp4",
+      ".jpg"
+    ],
+    "correct_option": 3,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a uma imagem → .jpg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a um vídeo?",
+    "options": [
+      ".xls",
+      ".mp3",
+      ".mp4",
+      ".html"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a um vídeo → .mp4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente uma bola de basquetebol?",
+    "options": [
+      "Futebol",
+      "Hóquei no gelo",
+      "Basquetebol",
+      "Voleibol"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente uma bola de basquetebol → Basquetebol."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente uma bola de futebol?",
+    "options": [
+      "Canoagem",
+      "Futebol",
+      "Hóquei no gelo",
+      "Voleibol"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente uma bola de futebol → Futebol."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"O Grito\"?",
+    "options": [
+      "Munch",
+      "Da Vinci",
+      "Van Gogh",
+      "Botticelli"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"O Grito\" → Munch."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"O Nascimento de Vénus\"?",
+    "options": [
+      "Van Gogh",
+      "Munch",
+      "Picasso",
+      "Botticelli"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"O Nascimento de Vénus\" → Botticelli."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 169?",
+    "options": [
+      "13",
+      "20",
+      "23",
+      "14"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 169 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 66 - 6?",
+    "options": [
+      "65",
+      "61",
+      "60",
+      "58"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 66 - 6 = 60."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"O Senhor dos Anéis\"?",
+    "options": [
+      "Peter Jackson",
+      "James Cameron",
+      "George Lucas",
+      "Steven Spielberg"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"O Senhor dos Anéis\" → Peter Jackson."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"Avatar\"?",
+    "options": [
+      "Steven Spielberg",
+      "James Cameron",
+      "Christopher Nolan",
+      "George Lucas"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"Avatar\" → James Cameron."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de a NATO?",
+    "options": [
+      "Bruxelas",
+      "Nova Iorque",
+      "Washington",
+      "Paris"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de a NATO → Bruxelas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de a União Europeia?",
+    "options": [
+      "Paris",
+      "Nova Iorque",
+      "Washington",
+      "Bruxelas"
+    ],
+    "correct_option": 3,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de a União Europeia → Bruxelas."
+    },
+    "image_url": null
   }
 ]

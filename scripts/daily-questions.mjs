@@ -3,6 +3,7 @@ import WebSocket from 'ws';
 import { config as loadDotenv } from 'dotenv';
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
+import { FACT_GENERATORS } from './builtin-facts.mjs';
 
 loadDotenv();
 
@@ -213,10 +214,11 @@ function builtinGenerate(category, ageRating) {
   return null;
 }
 
+
 // Produce a healthy batch when neither AI keys nor the curated pool/seed bank
 // are available. MATEMATICA yields unlimited unique questions; CAPITAIS/GEOGRAFIA
-// cycle through the whole fact table; the remaining categories contribute their
-// single safe fallback question (added once, then deduped by existingPairs).
+// cycle through the whole fact table; fact-table generators keep the remaining
+// categories growing until their finite sets are exhausted (then deduped).
 function builtinBatch(existingPairs, perCategory, maxTotal) {
   const out = [];
   const seen = new Set();
@@ -251,7 +253,17 @@ function builtinBatch(existingPairs, perCategory, maxTotal) {
         });
       }
     } else {
-      pushIfNew({ ...getFallbackQuestion(category), category, age_rating: 10 });
+      // Fact-table driven: produce up to perCategory fresh questions per
+      // category (each cycle picks random entries, deduped against the DB).
+      let made = 0, guard = 0;
+      while (made < perCategory && guard < perCategory * 30 && out.length < maxTotal) {
+        guard++;
+        const gen = FACT_GENERATORS[category];
+        const q = gen ? gen() : { ...getFallbackQuestion(category), category, age_rating: 10 };
+        const before = out.length;
+        pushIfNew(q);
+        if (out.length > before) made++;
+      }
     }
   }
   return out;
