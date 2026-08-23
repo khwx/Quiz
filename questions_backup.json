@@ -53627,5 +53627,515 @@
       "explanation": "Qual é a cidade sede de a União Europeia → Bruxelas."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Magnésio?",
+    "options": [
+      "Mg",
+      "Cl",
+      "O",
+      "Al"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Magnésio → Mg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Ouro?",
+    "options": [
+      "K",
+      "N",
+      "Mg",
+      "Au"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Ouro → Au."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Sódio?",
+    "options": [
+      "Na",
+      "O",
+      "H",
+      "Cl"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Sódio → Na."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um Réptil?",
+    "options": [
+      "Papagaio",
+      "Elefante",
+      "Águia",
+      "Crocodilo"
+    ],
+    "correct_option": 3,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Réptil",
+      "explanation": "Qual destes animais é um Réptil → Crocodilo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um Anfíbio?",
+    "options": [
+      "Atum",
+      "Falcão",
+      "Águia",
+      "Salamandra"
+    ],
+    "correct_option": 3,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Anfíbio",
+      "explanation": "Qual destes animais é um Anfíbio → Salamandra."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um Ave?",
+    "options": [
+      "Pinguim",
+      "Gorila",
+      "Leão",
+      "Cão"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Ave",
+      "explanation": "Qual destes animais é um Ave → Pinguim."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano Pedro Álvares Cabral chegou ao Brasil?",
+    "options": [
+      "1776",
+      "1989",
+      "1789",
+      "1500"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano Pedro Álvares Cabral chegou ao Brasil → 1500."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o Muro de Berlim caiu?",
+    "options": [
+      "1918",
+      "1440",
+      "1989",
+      "1776"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano o Muro de Berlim caiu → 1989."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o Império Romano do Ocidente caiu?",
+    "options": [
+      "476",
+      "1500",
+      "1945",
+      "1776"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano o Império Romano do Ocidente caiu → 476."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Croissant?",
+    "options": [
+      "Itália",
+      "Bélgica",
+      "Marrocos",
+      "França"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Croissant → França."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Waffle?",
+    "options": [
+      "Itália",
+      "Japão",
+      "Bélgica",
+      "Brasil"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Waffle → Bélgica."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Tacos?",
+    "options": [
+      "México",
+      "Índia",
+      "Espanha",
+      "Coreia do Sul"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Tacos → México."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a uma apresentação?",
+    "options": [
+      ".xls",
+      ".txt",
+      ".mp4",
+      ".ppt"
+    ],
+    "correct_option": 3,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a uma apresentação → .ppt."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a um documento de texto simples?",
+    "options": [
+      ".txt",
+      ".mp3",
+      ".jpg",
+      ".html"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a um documento de texto simples → .txt."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a uma base de dados?",
+    "options": [
+      ".mp4",
+      ".xls",
+      ".db",
+      ".mp3"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a uma base de dados → .db."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente um taco de golfe?",
+    "options": [
+      "Ténis",
+      "Canoagem",
+      "Basquetebol",
+      "Golfe"
+    ],
+    "correct_option": 3,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente um taco de golfe → Golfe."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente um remo?",
+    "options": [
+      "Ténis",
+      "Futebol",
+      "Canoagem",
+      "Golfe"
+    ],
+    "correct_option": 2,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente um remo → Canoagem."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente uma bola de voleibol?",
+    "options": [
+      "Voleibol",
+      "Hóquei no gelo",
+      "Ténis",
+      "Basquetebol"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente uma bola de voleibol → Voleibol."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"A Última Ceia\"?",
+    "options": [
+      "Botticelli",
+      "Velázquez",
+      "Da Vinci",
+      "Van Gogh"
+    ],
+    "correct_option": 2,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"A Última Ceia\" → Da Vinci."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"Guernica\"?",
+    "options": [
+      "Picasso",
+      "Velázquez",
+      "Van Gogh",
+      "Dalí"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"Guernica\" → Picasso."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"As Meninas\"?",
+    "options": [
+      "Picasso",
+      "Velázquez",
+      "Van Gogh",
+      "Botticelli"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"As Meninas\" → Velázquez."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 elevado a 3?",
+    "options": [
+      "118",
+      "122",
+      "130",
+      "125"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 5 elevado a 3 = 125."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 47 - 3?",
+    "options": [
+      "42",
+      "40",
+      "43",
+      "44"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 47 - 3 = 44."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 ÷ 3?",
+    "options": [
+      "4",
+      "13",
+      "0",
+      "3"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 9 ÷ 3 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"O Padrinho\"?",
+    "options": [
+      "Francis Ford Coppola",
+      "James Cameron",
+      "Christopher Nolan",
+      "Steven Spielberg"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"O Padrinho\" → Francis Ford Coppola."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"E.T.\"?",
+    "options": [
+      "Steven Spielberg",
+      "George Lucas",
+      "Peter Jackson",
+      "Francis Ford Coppola"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"E.T.\" → Steven Spielberg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"Titanic\"?",
+    "options": [
+      "Peter Jackson",
+      "Steven Spielberg",
+      "James Cameron",
+      "George Lucas"
+    ],
+    "correct_option": 2,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"Titanic\" → James Cameron."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de a ONU?",
+    "options": [
+      "Nova Iorque",
+      "Paris",
+      "Bruxelas",
+      "Washington"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de a ONU → Nova Iorque."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de a UNESCO?",
+    "options": [
+      "Paris",
+      "Nova Iorque",
+      "Bruxelas",
+      "Washington"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de a UNESCO → Paris."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de o FMI?",
+    "options": [
+      "Washington",
+      "Nova Iorque",
+      "Bruxelas",
+      "Paris"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de o FMI → Washington."
+    },
+    "image_url": null
   }
 ]
