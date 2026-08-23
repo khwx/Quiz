@@ -1,11 +1,11 @@
 {
   "date": "2026-08-23",
-  "totalQuestions": 3033,
+  "totalQuestions": 3037,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
-  "nearDuplicateGroups": 28,
-  "fuzzyPairs": 424,
-  "fuzzyAffectedQuestions": 492,
+  "nearDuplicateGroups": 27,
+  "fuzzyPairs": 353,
+  "fuzzyAffectedQuestions": 480,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -23,13 +23,6 @@
       "ids": [
         "7b01e1b7-ae70-462e-8851-3a279b133d47",
         "fb2e9cee-8572-454f-b82f-c1e3a77371db"
-      ]
-    },
-    {
-      "category": "ARTE",
-      "ids": [
-        "6b0cf101-f95b-4908-9a3d-68bb56bf558f",
-        "2850a864-2120-4cde-b864-87970dfa3ff9"
       ]
     },
     {
@@ -135,6 +128,13 @@
       "ids": [
         "a6b91124-1901-4973-ac06-9c70140348bf",
         "41698113-49d3-48da-9c2c-34ee335692e5"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
+        "93c862aa-aab7-4cc3-afbd-54f0c30167a2",
+        "574616e6-725e-436e-8771-77c0c4fcffed"
       ]
     },
     {

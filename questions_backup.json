@@ -57842,5 +57842,413 @@
       "explanation": "Que organização internacional tem sede em Genebra → a OMS."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Mn?",
+    "options": [
+      "Bromo",
+      "Magnésio",
+      "Titânio",
+      "Manganês"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Mn",
+      "explanation": "Qual é o elemento cujo símbolo químico é Mn → Manganês."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Cs?",
+    "options": [
+      "Flúor",
+      "Hidrogénio",
+      "Césio",
+      "Fósforo"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Cs",
+      "explanation": "Qual é o elemento cujo símbolo químico é Cs → Césio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o país com maior número de fusos horários?",
+    "options": [
+      "França",
+      "Estados Unidos",
+      "China",
+      "Rússia"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Devido aos territórios ultramarinos",
+      "explanation": "Qual é o país com maior número de fusos horários → França."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a moeda oficial do Reino Unido?",
+    "options": [
+      "Coroa",
+      "Franco",
+      "Libra",
+      "Dólar"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Não adotou o euro",
+      "explanation": "Qual é a moeda oficial do Reino Unido → Libra."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais NÃO é um Réptil?",
+    "options": [
+      "Crocodilo",
+      "Tartaruga",
+      "Gato",
+      "Camaleão"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Réptil",
+      "explanation": "Qual destes animais NÃO é um Réptil → Gato."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais NÃO é um Anfíbio?",
+    "options": [
+      "Rã",
+      "Salamandra",
+      "Tritão",
+      "Elefante"
+    ],
+    "correct_option": 3,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Anfíbio",
+      "explanation": "Qual destes animais NÃO é um Anfíbio → Elefante."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1975?",
+    "options": [
+      "a independência de Angola",
+      "a queda do Império Romano do Oriente",
+      "a Primeira Guerra Mundial terminou",
+      "o 11 de Setembro ocorreu em Nova Iorque"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1975 → a independência de Angola."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1945?",
+    "options": [
+      "a Revolução de 25 de Abril em Portugal",
+      "a descoberta da América por Colombo",
+      "o Império Romano do Ocidente caiu",
+      "a Segunda Guerra Mundial terminou"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1945 → a Segunda Guerra Mundial terminou."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Suíça?",
+    "options": [
+      "Dim Sum",
+      "Pasta",
+      "Sushi",
+      "Fondue"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Suíça → Fondue."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Peru?",
+    "options": [
+      "Ceviche",
+      "Feijoada",
+      "Tacos",
+      "Bacalhau à Brás"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Peru → Ceviche."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes é um instrumento de teclas?",
+    "options": [
+      "Guitarra",
+      "Piano",
+      "Fagote",
+      "Oboé"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: teclas",
+      "explanation": "Qual destes é um instrumento de teclas → Piano."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes NÃO é um instrumento de sopro?",
+    "options": [
+      "Viola",
+      "Clarinete",
+      "Flauta",
+      "Saxofone"
+    ],
+    "correct_option": 0,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: sopro",
+      "explanation": "Qual destes NÃO é um instrumento de sopro → Viola."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .zip?",
+    "options": [
+      "um documento PDF",
+      "um ficheiro comprimido",
+      "um vídeo",
+      "um ficheiro de áudio"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .zip → um ficheiro comprimido."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a um documento PDF?",
+    "options": [
+      ".pdf",
+      ".ppt",
+      ".zip",
+      ".js"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a um documento PDF → .pdf."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente uma tabela e prancha?",
+    "options": [
+      "Andebol",
+      "Surf",
+      "Ténis",
+      "Basquetebol"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente uma tabela e prancha → Surf."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente uma espada?",
+    "options": [
+      "Ténis",
+      "Canoagem",
+      "Basquetebol",
+      "Esgrima"
+    ],
+    "correct_option": 3,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente uma espada → Esgrima."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"A Criação de Adão\"?",
+    "options": [
+      "Miguel Ângelo",
+      "Rembrandt",
+      "Munch",
+      "Picasso"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"A Criação de Adão\" → Miguel Ângelo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Da Vinci?",
+    "options": [
+      "As Bodas de Caná",
+      "A Persistência da Memória",
+      "A Última Ceia",
+      "Guernica"
+    ],
+    "correct_option": 2,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Da Vinci → A Última Ceia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 × 2?",
+    "options": [
+      "4",
+      "8",
+      "15",
+      "11"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 4 × 2 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 87 + 27?",
+    "options": [
+      "116",
+      "114",
+      "104",
+      "117"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 87 + 27 = 114."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"Matrix\"?",
+    "options": [
+      "Peter Jackson",
+      "Irmãos Wachowski",
+      "Roger Allers",
+      "Christopher Nolan"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"Matrix\" → Irmãos Wachowski."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Fernando Meirelles?",
+    "options": [
+      "Titanic",
+      "E.T.",
+      "Cidade de Deus",
+      "Jurassic Park"
+    ],
+    "correct_option": 2,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Fernando Meirelles → Cidade de Deus."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de a ONU (sede europeia)?",
+    "options": [
+      "Nova Iorque",
+      "Washington",
+      "Genebra",
+      "Londres"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de a ONU (sede europeia) → Genebra."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Bruxelas?",
+    "options": [
+      "a NATO",
+      "a Corte Penal Internacional",
+      "a OMS",
+      "o Banco Mundial"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Bruxelas → a NATO."
+    },
+    "image_url": null
   }
 ]

@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-23] Ciclo de Manutenção (4º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — Melhorias consolidadas**: O `builtin-facts.mjs` já tem variantes combinatórias (forward/reverse) em todas as 13 categorias fact-table + CULTURA_GERAL (36 factos) + MATEMATICA (infinito) + CAPITAIS/GEOGRAFIA (45 países). Total de textos únicos geráveis: ~345. Pool curado vazio, seed bank esgotado (todas no BD), sem chaves de IA — o ciclo usa exclusivamente o gerador incorporado.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+24 novas** (built-in fact-table distribuídas por todas as 15 categorias: CIENCIA, CULTURA_GERAL, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, MATEMATICA, CINEMA, POLITICA, CAPITAIS_DO_MUNDO, GEOGRAFIA, BANDEIRAS). Backup: 3033 → 3057. Total na BD: ~3.037.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria) e 353 pares fuzzy (≥0.9) fora de BANDEIRAS (ARTE, CINEMA, MUSICA, POLITICA) registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: 3.037.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts (backup + report + PROGRESS); sem impacto no app. `node --check` OK.
+
 ## [2026-08-23] Ciclo de Manutenção (3º ciclo, 8h) — MELHORIA (variantes combinatórias + tabelas expandidas) + Novas perguntas + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — Banco estagnado no built-in**: Sem IA nem pool/seed, o ciclo de 8h recorria ao gerador fact-table. Mas as tabelas eram finitas e já largamente inseridas na BD: o 1º ciclo do dia produziu apenas **9 novas** (em vez das ~30 alvo). Cada fact gerava 1 única pergunta; esgotadas as tabelas, o banco parava de crescer.
