@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-24] Ciclo de Manutenção (7º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (relatório de duplicados útil)
+
+- **MELHORIA — `scripts/weekly-dedupe.mjs` (exclusão de falsos positivos de template)**: Adicionada a função `isTemplateFamily()` que deteta pares de perguntas que partilham um prefixo/sufixo longo (mesma família de template, ex: "Qual é o símbolo químico do elemento X?" para dezenas de elementos, ou "Qual é a capital de Y?"). Estes pares não são duplicados reais e inundavam o relatório fuzzy (513 pares na iteração anterior, quase todos ruído). Agora são contabilizados à parte (`templateFamilyPairs`) e excluídos do relatório de revisão manual. Resultado: **63 pares fuzzy reais** (candidatos a revisão manual) + **450 pares de família de template ignorados**. O relatório `scripts/dedupe-report.json` passa a incluir `templateFamilyPairs`.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+19 novas** (built-in fact-table em 15 categorias; pool curado e seed bank vazios, sem chaves de IA). Backup: 3120 → 3139. Total na BD: 3.150.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria) e 63 pares fuzzy (≥0.9) reais fora de BANDEIRAS + 450 pares de família de template excluídos como falsos positivos, registados em `scripts/dedupe-report.json`. Total na BD: 3.150.
+- **LINT/BUILD/TESTS**: alterações restritas a `scripts/weekly-dedupe.mjs` (`node --check` OK) + `questions_backup.json` e `dedupe-report.json` atualizados. Sem impacto no app.
+
 ## [2026-08-24] Ciclo de Manutenção (6º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (centralização de bandeiras + robustez de pontuação)
 
 - **MELHORIA — `src/lib/flags.ts` (resolução centralizada de bandeiras)**: Extraída a lógica de resolução de URL de bandeira (de `image_url` ou fallback por nome de país → código ISO) de `QuestionDisplay.tsx`, `QuestionView.tsx` e `SpectatorView.tsx` para um helper `getFlagUrl()`/`getFlagCode()` reutilizável, com `countryMap` alargado a ~150 países (Europa/Américas/Ásia-Oceânia/África). Remove duplicação e garante consistência visual das bandeiras em TV, telemóvel e espetador.

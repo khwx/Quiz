@@ -61,6 +61,29 @@ function similarity(a, b) {
   return 1 - levenshtein(a, b) / maxLen;
 }
 
+// Two questions that share a long common prefix/suffix are likely members of
+// the same question *template* (e.g. "Qual é o símbolo químico do elemento X?"
+// for every element, or "Qual é a capital de Y?" for every country). Such pairs
+// are NOT genuine near-duplicates — they are by-design template families
+// produced by the built-in generator — and would otherwise flood the fuzzy
+// report with hundreds of useless false positives. We detect and exclude them.
+function isTemplateFamily(a, b) {
+  const ta = a.split(/\s+/).filter(Boolean);
+  const tb = b.split(/\s+/).filter(Boolean);
+  if (ta.length === 0 || tb.length === 0) return false;
+  const minLen = Math.min(ta.length, tb.length);
+
+  let prefixLen = 0;
+  while (prefixLen < minLen && ta[prefixLen] === tb[prefixLen]) prefixLen++;
+  let suffixLen = 0;
+  while (suffixLen < minLen && ta[ta.length - 1 - suffixLen] === tb[tb.length - 1 - suffixLen]) suffixLen++;
+
+  const shared = Math.max(prefixLen, suffixLen);
+  // Exclude when the shared template spans most of both questions (and is
+  // substantial in absolute terms). This keeps genuinely reworded near-dupes.
+  return shared >= 3 && shared >= minLen * 0.6;
+}
+
 async function getAllQuestions() {
   const rows = [];
   let offset = 0;
@@ -132,10 +155,15 @@ async function main() {
   }
 
   const fuzzyGroups = [];
+  let templateFamilyPairs = 0;
   for (const [cat, items] of byCategory) {
     for (let i = 0; i < items.length; i++) {
       for (let j = i + 1; j < items.length; j++) {
         if (similarity(items[i].norm, items[j].norm) >= FUZZY_SIMILARITY_THRESHOLD) {
+          if (isTemplateFamily(items[i].norm, items[j].norm)) {
+            templateFamilyPairs++;
+            continue; // by-design template family, not a real duplicate
+          }
           fuzzyGroups.push({ category: cat, ids: [items[i].id, items[j].id] });
         }
       }
@@ -143,6 +171,7 @@ async function main() {
   }
   const fuzzyCount = new Set(fuzzyGroups.flatMap((g) => g.ids)).size;
   console.log(`🔍 ${fuzzyGroups.length} pares com texto muito semelhante (similaridade ≥ ${FUZZY_SIMILARITY_THRESHOLD}) fora de ${[...FUZZY_SKIP_CATEGORIES].join(', ')}.`);
+  console.log(`🧩 ${templateFamilyPairs} pares de famílias de template (ignorados como falsos positivos).`);
 
   console.log(`\n🎉 Duplicados exatos removidos: ${removedExact}`);
   if (nearDupes.length > 0) {
@@ -163,6 +192,7 @@ async function main() {
     exactDuplicatesFound: toDelete.length,
     nearDuplicateGroups: nearDupes.length,
     fuzzyPairs: fuzzyGroups.length,
+    templateFamilyPairs,
     fuzzyAffectedQuestions: fuzzyCount,
     fuzzySkippedCategories: [...FUZZY_SKIP_CATEGORIES],
     fuzzyThreshold: FUZZY_SIMILARITY_THRESHOLD,

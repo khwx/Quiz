@@ -1,11 +1,12 @@
 {
   "date": "2026-08-24",
-  "totalQuestions": 3131,
+  "totalQuestions": 3150,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 27,
-  "fuzzyPairs": 470,
-  "fuzzyAffectedQuestions": 522,
+  "fuzzyPairs": 63,
+  "templateFamilyPairs": 450,
+  "fuzzyAffectedQuestions": 80,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -19,111 +20,6 @@
       ]
     },
     {
-      "category": "ARTE",
-      "ids": [
-        "7b01e1b7-ae70-462e-8851-3a279b133d47",
-        "fb2e9cee-8572-454f-b82f-c1e3a77371db"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "92b1fd77-7252-4e1d-b54b-1117aba08659",
-        "821937b3-8aed-4838-91a2-2d17182f4c93"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "329bbb4f-6feb-458e-9f37-13855db4aca1",
-        "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "329bbb4f-6feb-458e-9f37-13855db4aca1",
-        "7e3508b6-a913-467a-917e-7a2abad49497"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "329bbb4f-6feb-458e-9f37-13855db4aca1",
-        "de8ea6ca-0a88-4232-b7cc-35b5ac607afe"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5",
-        "7e3508b6-a913-467a-917e-7a2abad49497"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "2d3b6428-95d4-4c3c-aeb9-1c90c9b2c6b5",
-        "de8ea6ca-0a88-4232-b7cc-35b5ac607afe"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "04eda4e7-e20b-4073-b877-960757966f71",
-        "647281ef-7b6a-4c72-82c5-71a0cf17e59a"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "25bc1623-6fac-4f38-95ee-c9cf3e5386fd",
-        "a61a88aa-cb30-43a1-b3d0-5e4fb2c8d6d9"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "7e3508b6-a913-467a-917e-7a2abad49497",
-        "de8ea6ca-0a88-4232-b7cc-35b5ac607afe"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "4d8730ac-a217-408a-b265-8c84f1063b95",
-        "57c29d21-78d4-4380-a7fd-99d7319132b1"
-      ]
-    },
-    {
-      "category": "CINEMA",
-      "ids": [
-        "dcdc3567-adfb-40fd-9eb1-bab7788dab31",
-        "0402ac19-f940-4463-8b09-dab61602fda4"
-      ]
-    },
-    {
-      "category": "MUSICA",
-      "ids": [
-        "65d0ecdd-b564-45d1-ac1e-d434e228195e",
-        "3d1676c2-8f06-431b-abf0-70c84dd12770"
-      ]
-    },
-    {
-      "category": "MUSICA",
-      "ids": [
-        "acf4eef3-d18d-406f-bc7b-88ed80861705",
-        "3139616e-cb6c-4dab-bf70-fcfff4b95d92"
-      ]
-    },
-    {
-      "category": "MUSICA",
-      "ids": [
-        "ec961498-324c-4d92-b8bf-a5e4f4a166e1",
-        "05b5ede0-8787-45cc-b08c-10a8cec2f6ed"
-      ]
-    },
-    {
       "category": "MUSICA",
       "ids": [
         "a6b91124-1901-4973-ac06-9c70140348bf",
@@ -131,59 +27,164 @@
       ]
     },
     {
-      "category": "MUSICA",
+      "category": "GASTRONOMIA",
       "ids": [
-        "93c862aa-aab7-4cc3-afbd-54f0c30167a2",
-        "574616e6-725e-436e-8771-77c0c4fcffed"
+        "66076ead-8588-444d-976a-0b95f6df9833",
+        "417f94d2-4a0d-41f1-870b-d9304e6fdaa6"
       ]
     },
     {
-      "category": "MUSICA",
+      "category": "GASTRONOMIA",
       "ids": [
-        "51f3cee5-302a-483f-ac94-02d5dbaa0259",
-        "d0619e06-11ae-4402-9882-b3c3670606c3"
+        "2d70f62f-7b26-491f-8e93-491e82976076",
+        "b9fb13b5-ad6f-49f7-bdec-f327d54346ac"
       ]
     },
     {
-      "category": "MUSICA",
+      "category": "TECNOLOGIA",
       "ids": [
-        "3bb09945-f78e-4d53-915b-aab7cd022f7f",
-        "4ece4b41-6a2e-4ab1-90ca-8b7367c68dd0"
+        "83a751b0-9949-47a2-a627-8a059f9f0433",
+        "cf4ea5d5-420f-41b8-b69d-a6e925612ff2"
       ]
     },
     {
-      "category": "MUSICA",
+      "category": "TECNOLOGIA",
       "ids": [
-        "b60016bb-62af-4574-97b4-f9c7cefc7b60",
-        "7781b6fb-6b2b-4a00-84d7-a7038523e0b9"
+        "3ad0efcb-4b00-4388-b13f-77682fb3cc2b",
+        "70bf07ef-1209-436f-9c8b-c83b2ed50f92"
       ]
     },
     {
-      "category": "MUSICA",
+      "category": "HISTÓRIA",
       "ids": [
-        "4ece4b41-6a2e-4ab1-90ca-8b7367c68dd0",
-        "dc966bcb-2280-43d4-93ff-2fc7c998126c"
+        "5475e6b6-658c-4c40-b97a-349286f8ffd9",
+        "dbe3dff0-faf7-4972-8f62-ae879ea49b78"
       ]
     },
     {
-      "category": "MUSICA",
+      "category": "HISTÓRIA",
       "ids": [
-        "d094b7e1-c3fd-40c6-9f4c-b6935a062790",
-        "dc966bcb-2280-43d4-93ff-2fc7c998126c"
+        "5af04aac-e7db-4af7-9c25-da40d0a9149f",
+        "dbe3dff0-faf7-4972-8f62-ae879ea49b78"
       ]
     },
     {
-      "category": "POLITICA",
+      "category": "HISTÓRIA",
       "ids": [
-        "0466a2d2-ffb5-4ab8-8bf6-d856c2b9ced4",
-        "18867fb9-d62f-4de1-a07b-64bcce64315b"
+        "7b38fdf2-98ae-40be-86e7-4f89d18204ac",
+        "422103f1-e1ba-43f5-a32c-5e65fb95c52e"
       ]
     },
     {
-      "category": "POLITICA",
+      "category": "DESPORTO",
       "ids": [
-        "f83b5405-1102-4cfd-a170-096555725492",
-        "c3370e35-7d4c-46c1-8702-3029dfcf8218"
+        "c854c009-402e-4229-82fc-e5646e5ab118",
+        "f14e2f83-111d-498a-94bf-9e6e028e57ec"
+      ]
+    },
+    {
+      "category": "DESPORTO",
+      "ids": [
+        "16c4bcae-888a-4813-8f39-4524d193615a",
+        "f14e2f83-111d-498a-94bf-9e6e028e57ec"
+      ]
+    },
+    {
+      "category": "DESPORTO",
+      "ids": [
+        "8c434b90-409e-486f-981a-b88481fb5802",
+        "30df3426-1a57-4784-973c-e6ec7134d083"
+      ]
+    },
+    {
+      "category": "DESPORTO",
+      "ids": [
+        "25d3599d-2345-4283-87bd-e941b5041033",
+        "1956d7cd-34a3-4200-a0b8-cdb5776bde9a"
+      ]
+    },
+    {
+      "category": "GEOGRAFIA",
+      "ids": [
+        "1a5c120f-1f71-4744-84f5-e552501640a7",
+        "f3130d37-a187-46a1-abaf-cc9d3ef2feca"
+      ]
+    },
+    {
+      "category": "GEOGRAFIA",
+      "ids": [
+        "e110f834-3a69-4744-ab48-fbeaea189f48",
+        "6f2154dc-2cab-478b-a51a-3d0e6bc77428"
+      ]
+    },
+    {
+      "category": "GEOGRAFIA",
+      "ids": [
+        "e110f834-3a69-4744-ab48-fbeaea189f48",
+        "0d59ef5f-956b-4b39-99c5-57be78e0199c"
+      ]
+    },
+    {
+      "category": "GEOGRAFIA",
+      "ids": [
+        "ca0786a1-0c4f-4b15-a9b3-09ade8fff8de",
+        "526fa3b0-0255-4f2c-96a8-8ee39d55afb6"
+      ]
+    },
+    {
+      "category": "GEOGRAFIA",
+      "ids": [
+        "83d9e0f2-690b-42da-8714-89dff87b5888",
+        "f3130d37-a187-46a1-abaf-cc9d3ef2feca"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "54e1d898-0cd3-4658-ba4c-62a3aaf60343",
+        "98b65471-43ab-4ee3-8f7d-a5ee1e2b51eb"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
+        "4ca0e303-cdfe-42d7-ab94-fb6cddf47901"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
+        "4b36a5ec-4fe8-4e2c-a581-af80eb670505"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "b36396fe-f128-4e56-9b22-269eba1bbbde",
+        "6e27a86f-adc5-449d-8e0f-a386c09330df"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "09515873-3725-4fe5-9518-ec851c8f0064",
+        "6e27a86f-adc5-449d-8e0f-a386c09330df"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "57f35c16-3219-4877-bfad-d49bb307ffa7",
+        "cb834626-db13-4f09-939e-d3874f3d12c9"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "57f35c16-3219-4877-bfad-d49bb307ffa7",
+        "cdda1048-1807-4f64-a9b9-94d34024faac"
       ]
     }
   ]

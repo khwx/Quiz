@@ -59321,5 +59321,328 @@
       "explanation": "Qual é a cidade sede de a Corte Penal Internacional → Haia."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Ca?",
+    "options": [
+      "Cálcio",
+      "Crómio",
+      "Platina",
+      "Sódio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Ca",
+      "explanation": "Qual é o elemento cujo símbolo químico é Ca → Cálcio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Ni?",
+    "options": [
+      "Zirconio",
+      "Zinco",
+      "Ouro",
+      "Níquel"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Ni",
+      "explanation": "Qual é o elemento cujo símbolo químico é Ni → Níquel."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior animal marinho?",
+    "options": [
+      "Tubarão-baleia",
+      "Baleia-azul",
+      "Orca",
+      "Baleia-cachalote"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Mamífero marinho",
+      "explanation": "Qual é o maior animal marinho → Baleia-azul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o gás mais abundante na atmosfera terrestre?",
+    "options": [
+      "Azoto",
+      "Oxigénio",
+      "Dióxido de carbono",
+      "Hidrogénio"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cerca de 78%",
+      "explanation": "Qual é o gás mais abundante na atmosfera terrestre → Azoto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a independência de Angola?",
+    "options": [
+      "1969",
+      "1500",
+      "1440",
+      "1975"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a independência de Angola → 1975."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1139?",
+    "options": [
+      "Portugal se tornou independente",
+      "os EUA declararam independência",
+      "a Revolução Industrial começou",
+      "a Primeira Guerra Mundial terminou"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1139 → Portugal se tornou independente."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Marrocos?",
+    "options": [
+      "Croissant",
+      "Curry",
+      "Goulash",
+      "Couscous"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Marrocos → Couscous."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Portugal?",
+    "options": [
+      "Curry",
+      "Feijoada",
+      "Croissant",
+      "Bacalhau à Brás"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Portugal → Bacalhau à Brás."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .html?",
+    "options": [
+      "uma imagem",
+      "um documento de texto simples",
+      "uma página web",
+      "um executável"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .html → uma página web."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .txt?",
+    "options": [
+      "um documento PDF",
+      "um documento de texto simples",
+      "um ficheiro de código",
+      "um ficheiro de vídeo"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .txt → um documento de texto simples."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que desporto se utiliza principalmente uma bicicleta?",
+    "options": [
+      "Ciclismo",
+      "Ténis",
+      "Hóquei no gelo",
+      "Voleibol"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Em que desporto se utiliza principalmente uma bicicleta → Ciclismo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Ciclismo?",
+    "options": [
+      "uma bicicleta",
+      "uma espada",
+      "um remo",
+      "uma bola de basquetebol"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Ciclismo → uma bicicleta."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Klimt?",
+    "options": [
+      "O Grito",
+      "O Beijo",
+      "O Nascimento de Vénus",
+      "As Bodas de Caná"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Klimt → O Beijo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Van Gogh?",
+    "options": [
+      "A Ronda Noturna",
+      "Os Girassóis",
+      "Guernica",
+      "A Noite Estrelada"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Van Gogh → A Noite Estrelada."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 78 + 88?",
+    "options": [
+      "173",
+      "166",
+      "163",
+      "164"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 78 + 88 = 166."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 elevado a 3?",
+    "options": [
+      "61",
+      "66",
+      "67",
+      "64"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 4 elevado a 3 = 64."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"Forrest Gump\"?",
+    "options": [
+      "Robert Zemeckis",
+      "Francis Ford Coppola",
+      "Ridley Scott",
+      "James Cameron"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"Forrest Gump\" → Robert Zemeckis."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Francis Ford Coppola?",
+    "options": [
+      "O Padrinho",
+      "E.T.",
+      "Gladiador",
+      "Jurassic Park"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Francis Ford Coppola → O Padrinho."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Nova Iorque?",
+    "options": [
+      "a ONU",
+      "a NATO",
+      "a ONU (sede europeia)",
+      "o FMI"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Nova Iorque → a ONU."
+    },
+    "image_url": null
   }
 ]
