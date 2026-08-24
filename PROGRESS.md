@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-24] Ciclo de Manutenção (6º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (centralização de bandeiras + robustez de pontuação)
+
+- **MELHORIA — `src/lib/flags.ts` (resolução centralizada de bandeiras)**: Extraída a lógica de resolução de URL de bandeira (de `image_url` ou fallback por nome de país → código ISO) de `QuestionDisplay.tsx`, `QuestionView.tsx` e `SpectatorView.tsx` para um helper `getFlagUrl()`/`getFlagCode()` reutilizável, com `countryMap` alargado a ~150 países (Europa/Américas/Ásia-Oceânia/África). Remove duplicação e garante consistência visual das bandeiras em TV, telemóvel e espetador.
+- **MELHORIA — Robustez de pontuação/correção em `src/app/api/answer/route.ts` e `src/app/play/page.tsx`**: `route.ts` passa a ler `correct_option` diretamente da BD (com fallback para `game.settings.current_correct_option`), eliminando dependência frágil do estado do jogo. `play/page.tsx` usa `questionData.correct_option` diretamente, sincroniza imediatamente ao selecionar e aplica os `points` devolvidos pela API (`setEarnedPoints` só sobrescreve se não houver valor positivo), evitando pontuação dupla/perdida.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+20 novas** (built-in fact-table em 12 categorias: CIENCIA, CULTURA_GERAL, HISTÓRIA, GASTRONOMIA, TECNOLOGIA, DESPORTO, ARTE, MATEMATICA, CINEMA, POLITICA + fallback). Backup: 3080 → 3100. Total na BD: ~3.080.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados e 373 pares fuzzy (≥0.9) fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: 3.080.
+- **LINT/BUILD/TESTS**: alterações restritas a `src/lib/flags.ts` (novo, lint-clean) + 5 ficheiros de componentes/API (erros de lint pré-existentes em `play/page.tsx` e `QuestionDisplay.tsx` mantidos; 0 erros novos introduzidos). `questions_backup.json` e `dedupe-report.json` atualizados.
+
 ## [2026-08-24] Ciclo de Manutenção (5º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — Gerador built-in a funcionar**: O `builtin-facts.mjs` continua operacional com variantes combinatórias (forward/reverse) em todas as 13 categorias fact-table + CULTURA_GERAL (36 factos) + MATEMATICA (infinito) + CAPITAIS/GEOGRAFIA (45 países). Pool curado e seed bank vazios, sem chaves de IA — ciclo usa exclusivamente o gerador incorporado.

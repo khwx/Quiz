@@ -58643,529 +58643,342 @@
     "image_url": null
   },
   {
-    "text": "Qual é o símbolo químico do elemento Hélio?",
+    "text": "Qual é o símbolo químico do elemento Tungsténio?",
     "options": [
-      "He",
-      "B",
+      "Ti",
       "Mn",
-      "Ba"
+      "Ba",
+      "W"
     ],
-    "correct_option": 0,
+    "correct_option": 3,
     "category": "CIENCIA",
     "age_rating": 10,
     "metadata": {
       "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Hélio → He."
+      "explanation": "Qual é o símbolo químico do elemento Tungsténio → W."
     },
     "image_url": null
   },
   {
-    "text": "Qual é o símbolo químico do elemento Estanho?",
+    "text": "Qual é o símbolo químico do elemento Manganês?",
     "options": [
-      "K",
       "As",
-      "B",
-      "Sn"
+      "Br",
+      "Mn",
+      "Mg"
     ],
-    "correct_option": 3,
+    "correct_option": 2,
     "category": "CIENCIA",
     "age_rating": 10,
     "metadata": {
       "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Estanho → Sn."
+      "explanation": "Qual é o símbolo químico do elemento Manganês → Mn."
     },
     "image_url": null
   },
   {
-    "text": "Qual é o símbolo químico do elemento Crómio?",
+    "text": "Qual é a velocidade da luz no vácuo?",
     "options": [
-      "Cr",
-      "Cs",
-      "K",
-      "Cl"
-    ],
-    "correct_option": 0,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Crómio → Cr."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o continente mais extenso?",
-    "options": [
-      "Ásia",
-      "África",
-      "Antártida",
-      "Europa"
-    ],
-    "correct_option": 0,
-    "category": "CULTURA_GERAL",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Maior população",
-      "explanation": "Qual é o continente mais extenso → Ásia."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é a estrela mais próxima da Terra (além do Sol)?",
-    "options": [
-      "Proxima Centauri",
-      "Alfa Centauri",
-      "Betelgeuse",
-      "Vega"
-    ],
-    "correct_option": 0,
-    "category": "CULTURA_GERAL",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Sistema Alpha Centauri",
-      "explanation": "Qual é a estrela mais próxima da Terra (além do Sol) → Proxima Centauri."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o maior planeta do Sistema Solar?",
-    "options": [
-      "Urano",
-      "Júpiter",
-      "Netuno",
-      "Saturno"
-    ],
-    "correct_option": 1,
-    "category": "CULTURA_GERAL",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Gigante gasoso",
-      "explanation": "Qual é o maior planeta do Sistema Solar → Júpiter."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual destes animais NÃO é um Inseto?",
-    "options": [
-      "Abelha",
-      "Gafanhoto",
-      "Mosca",
-      "Salamandra"
+      "3 000 km/s",
+      "1 000 000 km/s",
+      "150 000 km/s",
+      "300 000 km/s"
     ],
     "correct_option": 3,
-    "category": "ANIMAIS",
+    "category": "CULTURA_GERAL",
     "age_rating": 10,
     "metadata": {
-      "hint": "Classe: Inseto",
-      "explanation": "Qual destes animais NÃO é um Inseto → Salamandra."
+      "hint": "Constante c",
+      "explanation": "Qual é a velocidade da luz no vácuo → 300 000 km/s."
     },
     "image_url": null
   },
   {
-    "text": "Que acontecimento histórico ocorreu no ano 1918?",
+    "text": "Qual é o país com maior população da Europa?",
     "options": [
-      "a Primeira Guerra Mundial terminou",
-      "o Homem pisou a Lua pela primeira vez",
-      "a Revolução Francesa começou",
-      "a queda do Império Romano do Oriente"
+      "Rússia",
+      "Alemanha",
+      "Reino Unido",
+      "Itália"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Maior país do mundo em área",
+      "explanation": "Qual é o país com maior população da Europa → Rússia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1494?",
+    "options": [
+      "o Tratado de Tordesilhas foi assinado",
+      "a fundação da ONU",
+      "os EUA declararam independência",
+      "o Muro de Berlim caiu"
     ],
     "correct_option": 0,
     "category": "HISTÓRIA",
     "age_rating": 10,
     "metadata": {
       "hint": "História",
-      "explanation": "Que acontecimento histórico ocorreu no ano 1918 → a Primeira Guerra Mundial terminou."
+      "explanation": "Que acontecimento histórico ocorreu no ano 1494 → o Tratado de Tordesilhas foi assinado."
     },
     "image_url": null
   },
   {
-    "text": "Em que ano a Primeira Guerra Mundial começou?",
+    "text": "Em que ano a Revolução de 25 de Abril em Portugal?",
     "options": [
-      "1789",
-      "1918",
-      "2001",
-      "1914"
+      "1494",
+      "1760",
+      "1974",
+      "1440"
     ],
-    "correct_option": 3,
+    "correct_option": 2,
     "category": "HISTÓRIA",
     "age_rating": 10,
     "metadata": {
       "hint": "História",
-      "explanation": "Em que ano a Primeira Guerra Mundial começou → 1914."
+      "explanation": "Em que ano a Revolução de 25 de Abril em Portugal → 1974."
     },
     "image_url": null
   },
   {
-    "text": "Que acontecimento histórico ocorreu no ano 476?",
+    "text": "De que país é originário o prato Bacalhau à Brás?",
     "options": [
-      "a Revolução Industrial começou",
-      "o Império Romano do Ocidente caiu",
-      "a descoberta da América por Colombo",
-      "os EUA declararam independência"
+      "China",
+      "Portugal",
+      "Japão",
+      "Polónia"
     ],
     "correct_option": 1,
-    "category": "HISTÓRIA",
+    "category": "GASTRONOMIA",
     "age_rating": 10,
     "metadata": {
-      "hint": "História",
-      "explanation": "Que acontecimento histórico ocorreu no ano 476 → o Império Romano do Ocidente caiu."
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Bacalhau à Brás → Portugal."
     },
     "image_url": null
   },
   {
-    "text": "De que país é originário o prato Falafel?",
+    "text": "De que país é originário o prato Dim Sum?",
     "options": [
-      "Oriente Médio",
-      "Marrocos",
-      "Hungria",
-      "Grécia"
+      "China",
+      "França",
+      "Suíça",
+      "Índia"
     ],
     "correct_option": 0,
     "category": "GASTRONOMIA",
     "age_rating": 10,
     "metadata": {
       "hint": "Culinária",
-      "explanation": "De que país é originário o prato Falafel → Oriente Médio."
+      "explanation": "De que país é originário o prato Dim Sum → China."
     },
     "image_url": null
   },
   {
-    "text": "Qual destes pratos é originário de Tailândia?",
-    "options": [
-      "Sushi",
-      "Pad Thai",
-      "Ceviche",
-      "Waffle"
-    ],
-    "correct_option": 1,
-    "category": "GASTRONOMY",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Culinária",
-      "explanation": "Qual destes pratos é originário de Tailândia → Pad Thai."
-    },
-    "image_url": null
-  },
-  {
-    "text": "De que país é originário o prato Feijoada?",
-    "options": [
-      "Brasil",
-      "Marrocos",
-      "Grécia",
-      "China"
-    ],
-    "correct_option": 0,
-    "category": "GASTRONOMIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Culinária",
-      "explanation": "De que país é originário o prato Feijoada → Brasil."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é a extensão de ficheiro mais associada a um ficheiro de código?",
-    "options": [
-      ".js",
-      ".zip",
-      ".doc",
-      ".avi"
-    ],
-    "correct_option": 0,
-    "category": "TECNOLOGIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Informática",
-      "explanation": "Qual é a extensão de ficheiro mais associada a um ficheiro de código → .js."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é a extensão de ficheiro mais associada a um ficheiro comprimido?",
-    "options": [
-      ".zip",
-      ".js",
-      ".ppt",
-      ".exe"
-    ],
-    "correct_option": 0,
-    "category": "TECNOLOGIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Informática",
-      "explanation": "Qual é a extensão de ficheiro mais associada a um ficheiro comprimido → .zip."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Que tipo de ficheiro tem habitualmente a extensão .pdf?",
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .mp4?",
     "options": [
       "uma imagem",
-      "uma apresentação",
-      "um documento Word",
-      "um documento PDF"
+      "uma imagem vetorial",
+      "um documento PDF",
+      "um vídeo"
     ],
     "correct_option": 3,
     "category": "TECNOLOGIA",
     "age_rating": 10,
     "metadata": {
       "hint": "Informática",
-      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .pdf → um documento PDF."
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .mp4 → um vídeo."
     },
     "image_url": null
   },
   {
-    "text": "Que material/equipamento se utiliza no desporto Canoagem?",
+    "text": "Qual é a extensão de ficheiro mais associada a um executável?",
     "options": [
+      ".exe",
+      ".xls",
+      ".ppt",
+      ".js"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a um executável → .exe."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Golfe?",
+    "options": [
+      "uma bola de voleibol",
+      "uma bola de andebol",
+      "uma bola de futebol",
+      "um taco de golfe"
+    ],
+    "correct_option": 3,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Golfe → um taco de golfe."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Basquetebol?",
+    "options": [
+      "um arco e flechas",
       "uma raquete",
-      "um arco e flechas",
-      "um remo",
-      "um puck"
-    ],
-    "correct_option": 2,
-    "category": "DESPORTO",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Desporto",
-      "explanation": "Que material/equipamento se utiliza no desporto Canoagem → um remo."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Em que desporto se utiliza principalmente uma bola de andebol?",
-    "options": [
-      "Canoagem",
-      "Voleibol",
-      "Futebol",
-      "Andebol"
+      "uma tabela e prancha",
+      "uma bola de basquetebol"
     ],
     "correct_option": 3,
     "category": "DESPORTO",
     "age_rating": 10,
     "metadata": {
       "hint": "Desporto",
-      "explanation": "Em que desporto se utiliza principalmente uma bola de andebol → Andebol."
+      "explanation": "Que material/equipamento se utiliza no desporto Basquetebol → uma bola de basquetebol."
     },
     "image_url": null
   },
   {
-    "text": "Que material/equipamento se utiliza no desporto Voleibol?",
+    "text": "Qual destas obras foi pintada por Rembrandt?",
     "options": [
-      "um arco e flechas",
-      "um puck",
-      "um remo",
-      "uma bola de voleibol"
-    ],
-    "correct_option": 3,
-    "category": "DESPORTO",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Desporto",
-      "explanation": "Que material/equipamento se utiliza no desporto Voleibol → uma bola de voleibol."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual destas obras foi pintada por Vermeer?",
-    "options": [
+      "Guernica",
       "O Instituto",
-      "A Ronda Noturna",
-      "Impressão, Nascer do Sol",
-      "A Criação de Adão"
-    ],
-    "correct_option": 0,
-    "category": "ARTE",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Pintura",
-      "explanation": "Qual destas obras foi pintada por Vermeer → O Instituto."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual destas obras foi pintada por Picasso?",
-    "options": [
-      "O Nascimento de Vénus",
-      "A Persistência da Memória",
-      "As Meninas",
-      "Guernica"
+      "O Grito",
+      "A Ronda Noturna"
     ],
     "correct_option": 3,
     "category": "ARTE",
     "age_rating": 10,
     "metadata": {
       "hint": "Pintura",
-      "explanation": "Qual destas obras foi pintada por Picasso → Guernica."
+      "explanation": "Qual destas obras foi pintada por Rembrandt → A Ronda Noturna."
     },
     "image_url": null
   },
   {
-    "text": "Quem pintou a obra \"Impressão, Nascer do Sol\"?",
+    "text": "Quem pintou a obra \"O Instituto\"?",
     "options": [
-      "Monet",
+      "Velázquez",
+      "Vermeer",
       "Picasso",
-      "Van Gogh",
-      "Miguel Ângelo"
-    ],
-    "correct_option": 0,
-    "category": "ARTE",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Pintura",
-      "explanation": "Quem pintou a obra \"Impressão, Nascer do Sol\" → Monet."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 7 elevado a 2?",
-    "options": [
-      "47",
-      "44",
-      "53",
-      "49"
-    ],
-    "correct_option": 3,
-    "category": "MATEMATICA",
-    "age_rating": 8,
-    "metadata": {
-      "hint": "Potência.",
-      "explanation": "Quanto é 7 elevado a 2 = 49."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 20% de 80?",
-    "options": [
-      "23",
-      "21",
-      "16",
-      "6"
-    ],
-    "correct_option": 2,
-    "category": "MATEMATICA",
-    "age_rating": 12,
-    "metadata": {
-      "hint": "Percentagem.",
-      "explanation": "Quanto é 20% de 80 = 16."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 89 + 45?",
-    "options": [
-      "136",
-      "134",
-      "132",
-      "135"
+      "Da Vinci"
     ],
     "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"O Instituto\" → Vermeer."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 35 + 22?",
+    "options": [
+      "67",
+      "54",
+      "59",
+      "57"
+    ],
+    "correct_option": 3,
     "category": "MATEMATICA",
-    "age_rating": 12,
+    "age_rating": 14,
     "metadata": {
       "hint": "Soma simples.",
-      "explanation": "Quanto é 89 + 45 = 134."
+      "explanation": "Quanto é 35 + 22 = 57."
     },
     "image_url": null
   },
   {
-    "text": "Qual destes filmes foi realizado por Steven Spielberg?",
+    "text": "Qual é a raiz quadrada de 16?",
     "options": [
-      "Titanic",
+      "11",
+      "14",
+      "7",
+      "4"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 16 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por James Cameron?",
+    "options": [
+      "Jurassic Park",
       "O Padrinho",
-      "Forrest Gump",
-      "A Lista de Schindler"
+      "O Senhor dos Anéis",
+      "Titanic"
     ],
     "correct_option": 3,
     "category": "CINEMA",
     "age_rating": 10,
     "metadata": {
       "hint": "Cinema",
-      "explanation": "Qual destes filmes foi realizado por Steven Spielberg → A Lista de Schindler."
+      "explanation": "Qual destes filmes foi realizado por James Cameron → Titanic."
     },
     "image_url": null
   },
   {
-    "text": "Qual destes filmes foi realizado por Roger Allers?",
+    "text": "Quem realizou o filme \"Gladiador\"?",
     "options": [
-      "A Lista de Schindler",
-      "Avatar",
-      "O Rei Leão",
-      "Cidade de Deus"
-    ],
-    "correct_option": 2,
-    "category": "CINEMA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Cinema",
-      "explanation": "Qual destes filmes foi realizado por Roger Allers → O Rei Leão."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quem realizou o filme \"Cidade de Deus\"?",
-    "options": [
-      "Fernando Meirelles",
-      "Robert Zemeckis",
+      "Ridley Scott",
+      "Steven Spielberg",
       "George Lucas",
-      "Irmãos Wachowski"
+      "Francis Ford Coppola"
     ],
     "correct_option": 0,
     "category": "CINEMA",
     "age_rating": 10,
     "metadata": {
       "hint": "Cinema",
-      "explanation": "Quem realizou o filme \"Cidade de Deus\" → Fernando Meirelles."
+      "explanation": "Quem realizou o filme \"Gladiador\" → Ridley Scott."
     },
     "image_url": null
   },
   {
-    "text": "Qual é a cidade sede de a Cruz Vermelha?",
+    "text": "Que organização internacional tem sede em Haia?",
     "options": [
-      "Haia",
-      "Bruxelas",
-      "Genebra",
-      "Londres"
-    ],
-    "correct_option": 2,
-    "category": "POLITICA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Organização",
-      "explanation": "Qual é a cidade sede de a Cruz Vermelha → Genebra."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é a cidade sede de a Anistia Internacional?",
-    "options": [
-      "Washington",
-      "Londres",
-      "Nova Iorque",
-      "Genebra"
-    ],
-    "correct_option": 1,
-    "category": "POLITICA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Organização",
-      "explanation": "Qual é a cidade sede de a Anistia Internacional → Londres."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é a cidade sede de a OMC?",
-    "options": [
-      "Genebra",
-      "Paris",
-      "Lyon",
-      "Bruxelas"
+      "a Corte Penal Internacional",
+      "o FMI",
+      "a OMC",
+      "a Cruz Vermelha"
     ],
     "correct_option": 0,
     "category": "POLITICA",
     "age_rating": 10,
     "metadata": {
       "hint": "Organização",
-      "explanation": "Qual é a cidade sede de a OMC → Genebra."
+      "explanation": "Que organização internacional tem sede em Haia → a Corte Penal Internacional."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Lyon?",
+    "options": [
+      "a Interpol",
+      "a OMC",
+      "a ONU",
+      "a Cruz Vermelha"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Lyon → a Interpol."
     },
     "image_url": null
   }

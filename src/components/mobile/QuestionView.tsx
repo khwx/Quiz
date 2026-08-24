@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Clock, Flag, Lightbulb, Image as ImageIcon, Heart, Zap, SkipForward, Snowflake } from "lucide-react";
 import StreakBadge from "@/components/mobile/StreakBadge";
 import type { Question } from "@/types";
+import { getFlagUrl } from "@/lib/flags";
 
 interface QuestionViewProps {
   questionData: Question;
@@ -59,11 +60,9 @@ export default function QuestionView({
 }: QuestionViewProps) {
   const hint = questionData?.metadata?.hint as string | undefined;
   const [showHint, setShowHint] = useState(false);
-  const flagCode =
-    questionData?.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
-    questionData?.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
+  const flagUrl = getFlagUrl(questionData);
   const isFlagQuestion =
-    questionData?.category?.toLowerCase().includes("bandeira") || flagCode;
+    questionData?.category?.toLowerCase().includes("bandeira") || flagUrl || questionData?.image_url;
 
   return (
     <main className="min-h-screen flex flex-col bg-[#121223]">
@@ -117,10 +116,8 @@ export default function QuestionView({
       {isFlagQuestion && (
         <div className="flex justify-center px-4 mb-2">
           <div className="w-40 h-28 bg-black/30 rounded-xl overflow-hidden border-2 border-white/10 flex items-center justify-center">
-            {flagCode ? (
-              <img src={`/flags/${flagCode}.svg`} alt="Bandeira" className="max-h-full max-w-full object-contain" />
-            ) : questionData.image_url ? (
-              <img src={questionData.image_url} alt="Bandeira" className="max-h-full max-w-full object-contain" />
+            {flagUrl ? (
+              <img src={flagUrl} alt="Bandeira" className="max-h-full max-w-full object-contain" />
             ) : (
               <ImageIcon className="w-8 h-8 text-white/20" />
             )}

@@ -55,29 +55,22 @@ export async function POST(req: NextRequest) {
       isBuzzer = (count || 0) === 0;
     }
 
-    let correctOption = game.settings?.current_correct_option;
+    const { data: questionData } = await supabase
+      .from("questions")
+      .select("correct_option, category, age_rating")
+      .eq("id", questionId)
+      .single();
 
-    if (correctOption === undefined) {
-      log.warn("current_correct_option not found in game settings. Falling back to DB.", { gameId });
-      const { data: questionData } = await supabase
-        .from("questions")
-        .select("correct_option")
-        .eq("id", questionId)
-        .single();
+    let correctOption = questionData?.correct_option;
 
-      if (questionData && questionData.correct_option !== undefined) {
-        correctOption = questionData.correct_option;
+    if (correctOption === undefined || correctOption === null) {
+      if (game.settings?.current_correct_option !== undefined) {
+        correctOption = game.settings.current_correct_option;
       } else {
         log.error("correct_option completely missing", { questionId });
         return NextResponse.json({ error: "Erro no estado do jogo" }, { status: 500 });
       }
     }
-
-    const { data: questionData } = await supabase
-      .from("questions")
-      .select("category, age_rating")
-      .eq("id", questionId)
-      .single();
 
     const isCorrect = correctOption === chosenOption;
 

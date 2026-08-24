@@ -6,6 +6,7 @@ import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
 import { useEffect, useState, useCallback } from "react";
 import type { Question, Answer } from "@/types";
 import { Eye, Users, Trophy, Clock } from "lucide-react";
+import { getFlagUrl } from "@/lib/flags";
 
 export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: () => void }) {
   const { gameId, status, currentQuestionIndex, players, gameSettings, joinSpectator } = useGame();
@@ -216,9 +217,12 @@ export default function SpectatorView({ pin, onLeave }: { pin: string; onLeave: 
                 </span>
               )}
               <h2 className="text-xl font-bold text-white mt-2 leading-relaxed">{questionData.text}</h2>
-              {questionData.image_url && (
-                <img src={questionData.image_url} alt="" className="mt-4 rounded-xl max-h-48 object-contain mx-auto" />
-              )}
+              {(() => {
+                const flagUrl = getFlagUrl(questionData);
+                return flagUrl ? (
+                  <img src={flagUrl} alt="" className="mt-4 rounded-xl max-h-48 object-contain mx-auto" />
+                ) : null;
+              })()}
               <div className="mt-4 grid grid-cols-2 gap-3">
                 {questionData.options.map((opt, idx) => {
                   const answerCount = questionAnswers.filter((a) => a.chosen_option === idx).length;

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Clock, Brain, Database, Volume2, VolumeX, Flag, Heart } from "lucide-react";
 import { speak, stopSpeaking, isSpeaking } from "@/lib/tts";
+import { getFlagUrl } from "@/lib/flags";
 import type { Question, Player, Answer } from "@/types";
 import { GameStatus } from "@/lib/constants";
 
@@ -232,43 +233,7 @@ export default function QuestionDisplay({
           className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl h-48 sm:h-64 md:h-80 lg:h-96 bg-black/20 rounded-2xl sm:rounded-3xl overflow-hidden mb-4 sm:mb-8 shadow-2xl border-2 sm:border-4 border-white/10 flex items-center justify-center relative group"
         >
           {(() => {
-            let flagCode =
-              question.image_url?.match(/\/flags\/([a-z]{2})\.svg/i)?.[1] ||
-              question.image_url?.match(/flagcdn\.com\/.*?\/([a-z]{2})\.svg/i)?.[1];
-
-            if (!flagCode && question.category?.toLowerCase().includes("bandeira") && question.correct_option != null) {
-              const correctCountry = question.options[question.correct_option]
-                ?.toLowerCase()
-                .trim()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "");
-
-              const countryMap: Record<string, string> = {
-                portugal: "pt",
-                espanha: "es",
-                franca: "fr",
-                italia: "it",
-                alemanha: "de",
-                brasil: "br",
-                angola: "ao",
-                mocambique: "mz",
-                "reino unido": "gb",
-                "estados unidos": "us",
-                china: "cn",
-                japao: "jp",
-                india: "in",
-                russia: "ru",
-                canada: "ca",
-                australia: "au",
-                mexico: "mx",
-                argentina: "ar",
-                ucrania: "ua",
-                polonia: "pl",
-              };
-              flagCode = countryMap[correctCountry];
-            }
-
-            const finalUrl = flagCode ? `/flags/${flagCode}.svg` : question.image_url;
+            const finalUrl = getFlagUrl(question);
 
             if (!finalUrl)
               return (

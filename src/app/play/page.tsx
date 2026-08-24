@@ -308,38 +308,40 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   };
 
   useEffect(() => {
-    if (status === "REVEAL" && currentQuestionId) {
-      const getResult = async () => {
-        if (!gameId) return;
-        const { data } = await supabase
-          .from("games")
-          .select("settings")
-          .eq("id", gameId)
-          .single();
-        if (data && data.settings?.current_correct_option !== undefined) {
-          setCorrectOption(data.settings.current_correct_option);
-        } else {
-          const { data: qData } = await supabase
+    if (status === GameStatus.REVEAL) {
+      if (questionData?.correct_option !== undefined && questionData?.correct_option !== null) {
+        setCorrectOption(questionData.correct_option);
+      } else {
+        const qId = currentQuestionId || gameSettings?.current_question_id;
+        if (qId) {
+          supabase
             .from("questions")
             .select("correct_option")
-            .eq("id", currentQuestionId)
-            .single();
-          if (qData) setCorrectOption(qData.correct_option);
+            .eq("id", qId)
+            .single()
+            .then(({ data }) => {
+              if (data?.correct_option !== undefined) {
+                setCorrectOption(data.correct_option);
+              }
+            });
         }
-      };
-      getResult();
+      }
       setTimerActive(false);
     }
-  }, [status, currentQuestionId, gameId]);
+  }, [status, currentQuestionId, questionData?.correct_option, gameSettings?.current_correct_option]);
 
   useEffect(() => {
-    if (correctOption !== null && selectedOption !== null) {
-      if (selectedOption === correctOption) {
+    const resolvedCorrect = questionData?.correct_option !== undefined && questionData?.correct_option !== null 
+      ? questionData.correct_option 
+      : correctOption;
+
+    if (resolvedCorrect !== null && selectedOption !== null) {
+      if (selectedOption === resolvedCorrect) {
         const timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
         const timerDur = gameSettings?.timer_duration || GAME_CONSTANTS.DEFAULT_TIMER;
         const timeRatio = Math.max(0, timerDur - timeTaken) / timerDur;
         const points = Math.round(600 + (400 * timeRatio));
-        setEarnedPoints(points);
+        setEarnedPoints((prev) => (prev !== null && prev > 0 ? prev : points));
         setStreak((prev) => prev + 1);
         playSound("correct");
         triggerHaptic("correct");
@@ -350,11 +352,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
         triggerHaptic("wrong");
       }
     }
-  }, [correctOption, selectedOption, playSound, startTime, gameSettings?.timer_duration]);
+  }, [correctOption, questionData?.correct_option, selectedOption, playSound, startTime, gameSettings?.timer_duration]);
 
   const handleAnswer = async (index: number) => {
     if (submittingRef.current) return;
-    const qId = currentQuestionId || questionData?.id || gameSettings?.current_question_id;
+    const qId = questionData?.id || currentQuestionId || gameSettings?.current_question_id;
     if (!qId) {
       showToast("Aguarde, a carregar...", "info");
       return;
@@ -363,6 +365,11 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
     setHasAnswered(true);
     setSelectedOption(index);
     playSound("tick");
+
+    // Immediately sync correctOption if questionData is already present
+    if (questionData?.correct_option !== undefined && questionData?.correct_option !== null) {
+      setCorrectOption(questionData.correct_option);
+    }
 
     let player = players.find((p) => p.name === name);
     if (!player) {
@@ -401,6 +408,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
       submittingRef.current = false;
+      if (data.points !== undefined) {
+        setEarnedPoints(data.points);
+      }
     } catch (err: unknown) {
       const errorMessage = err instanceof Error ? err.message : "Erro desconhecido";
       showToast("Erro ao enviar resposta: " + errorMessage, "error");
