@@ -58981,5 +58981,345 @@
       "explanation": "Que organização internacional tem sede em Lyon → a Interpol."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Alumínio?",
+    "options": [
+      "Al",
+      "O",
+      "He",
+      "Cr"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Alumínio → Al."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é O?",
+    "options": [
+      "Oxigénio",
+      "Bromo",
+      "Prata",
+      "Titânio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo O",
+      "explanation": "Qual é o elemento cujo símbolo químico é O → Oxigénio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos planetas tem o Sistema Solar?",
+    "options": [
+      "6",
+      "7",
+      "9",
+      "8"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desde 2006",
+      "explanation": "Quantos planetas tem o Sistema Solar → 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o órgão responsável por bombear o sangue?",
+    "options": [
+      "Coração",
+      "Pulmão",
+      "Rim",
+      "Fígado"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sistema circulatório",
+      "explanation": "Qual é o órgão responsável por bombear o sangue → Coração."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a queda da União Soviética?",
+    "options": [
+      "1492",
+      "1500",
+      "1991",
+      "1494"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a queda da União Soviética → 1991."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1440?",
+    "options": [
+      "a imprensa de tipos móveis foi inventada",
+      "o Império Romano do Ocidente caiu",
+      "o Tratado de Tordesilhas foi assinado",
+      "Portugal se tornou independente"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1440 → a imprensa de tipos móveis foi inventada."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de China?",
+    "options": [
+      "Fondue",
+      "Pad Thai",
+      "Dim Sum",
+      "Sushi"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de China → Dim Sum."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Grécia?",
+    "options": [
+      "Fondue",
+      "Sushi",
+      "Couscous",
+      "Moussaka"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Grécia → Moussaka."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a uma imagem vetorial?",
+    "options": [
+      ".js",
+      ".mp3",
+      ".html",
+      ".svg"
+    ],
+    "correct_option": 3,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a uma imagem vetorial → .svg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .doc?",
+    "options": [
+      "uma folha de cálculo",
+      "um documento Word",
+      "uma apresentação",
+      "um executável"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .doc → um documento Word."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Futebol?",
+    "options": [
+      "um arco e flechas",
+      "uma bola de futebol",
+      "um taco de golfe",
+      "um puck"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Futebol → uma bola de futebol."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Esgrima?",
+    "options": [
+      "uma espada",
+      "um remo",
+      "uma bola de futebol",
+      "uma bicicleta"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Esgrima → uma espada."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Miguel Ângelo?",
+    "options": [
+      "A Noite Estrelada",
+      "A Ronda Noturna",
+      "O Nascimento de Vénus",
+      "A Criação de Adão"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Miguel Ângelo → A Criação de Adão."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Munch?",
+    "options": [
+      "A Ronda Noturna",
+      "Guernica",
+      "Os Girassóis",
+      "O Grito"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Munch → O Grito."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 elevado a 4?",
+    "options": [
+      "1300",
+      "1296",
+      "1293",
+      "1297"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 6 elevado a 4 = 1296."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 12?",
+    "options": [
+      "19",
+      "26",
+      "31",
+      "24"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 12 = 24."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"O Rei Leão\"?",
+    "options": [
+      "James Cameron",
+      "Roger Allers",
+      "Ridley Scott",
+      "Fernando Meirelles"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"O Rei Leão\" → Roger Allers."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem realizou o filme \"A Lista de Schindler\"?",
+    "options": [
+      "Steven Spielberg",
+      "James Cameron",
+      "Francis Ford Coppola",
+      "Fernando Meirelles"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Quem realizou o filme \"A Lista de Schindler\" → Steven Spielberg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Londres?",
+    "options": [
+      "a Anistia Internacional",
+      "a Interpol",
+      "a NATO",
+      "a UNESCO"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Londres → a Anistia Internacional."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de a Corte Penal Internacional?",
+    "options": [
+      "Paris",
+      "Haia",
+      "Genebra",
+      "Londres"
+    ],
+    "correct_option": 1,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de a Corte Penal Internacional → Haia."
+    },
+    "image_url": null
   }
 ]
