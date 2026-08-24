@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-24] Ciclo de Manutenção (5º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados
+
+- **CONTEXTO — Gerador built-in a funcionar**: O `builtin-facts.mjs` continua operacional com variantes combinatórias (forward/reverse) em todas as 13 categorias fact-table + CULTURA_GERAL (36 factos) + MATEMATICA (infinito) + CAPITAIS/GEOGRAFIA (45 países). Pool curado e seed bank vazios, sem chaves de IA — ciclo usa exclusivamente o gerador incorporado.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+23 novas** (built-in fact-table distribuídas por 12 categorias: CIENCIA, CULTURA_GERAL, ANIMAIS, HISTÓRIA, GASTRONOMIA, MUSICA, TECNOLOGIA, DESPORTO, ARTE, MATEMATICA, CINEMA, POLITICA). Backup: 3057 → 3080. Total na BD: ~3.060.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria) e 373 pares fuzzy (≥0.9) fora de BANDEIRAS registados em `scripts/dedupe-report.json` para revisão manual (não removidos). Total na BD: 3.060.
+- **LINT/BUILD/TESTS**: alterações restritas a scripts (backup + report + PROGRESS); sem impacto no app. `node --check` OK.
+
 ## [2026-08-23] Ciclo de Manutenção (4º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados
 
 - **CONTEXTO — Melhorias consolidadas**: O `builtin-facts.mjs` já tem variantes combinatórias (forward/reverse) em todas as 13 categorias fact-table + CULTURA_GERAL (36 factos) + MATEMATICA (infinito) + CAPITAIS/GEOGRAFIA (45 países). Total de textos únicos geráveis: ~345. Pool curado vazio, seed bank esgotado (todas no BD), sem chaves de IA — o ciclo usa exclusivamente o gerador incorporado.

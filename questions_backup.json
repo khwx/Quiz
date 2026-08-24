@@ -58250,5 +58250,396 @@
       "explanation": "Que organização internacional tem sede em Bruxelas → a NATO."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é P?",
+    "options": [
+      "Magnésio",
+      "Fósforo",
+      "Bromo",
+      "Flúor"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo P",
+      "explanation": "Qual é o elemento cujo símbolo químico é P → Fósforo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Cr?",
+    "options": [
+      "Crómio",
+      "Iodo",
+      "Cloro",
+      "Platina"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Cr",
+      "explanation": "Qual é o elemento cujo símbolo químico é Cr → Crómio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a unidade básica da vida?",
+    "options": [
+      "Órgão",
+      "Molécula",
+      "Tecido",
+      "Célula"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Biologia",
+      "explanation": "Qual é a unidade básica da vida → Célula."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o animal terrestre mais rápido?",
+    "options": [
+      "Guepardo",
+      "Leão",
+      "Cavalo",
+      "Gazela"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Felino",
+      "explanation": "Qual é o animal terrestre mais rápido → Guepardo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais NÃO é um Mamífero?",
+    "options": [
+      "Rato",
+      "Leão",
+      "Baleia",
+      "Lagarto"
+    ],
+    "correct_option": 3,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Mamífero",
+      "explanation": "Qual destes animais NÃO é um Mamífero → Lagarto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais NÃO é um Peixe?",
+    "options": [
+      "Tubarão",
+      "Carpa",
+      "Salmão",
+      "Cobra"
+    ],
+    "correct_option": 3,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Classe: Peixe",
+      "explanation": "Qual destes animais NÃO é um Peixe → Cobra."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1776?",
+    "options": [
+      "os EUA declararam independência",
+      "a Revolução Industrial começou",
+      "a queda do Império Romano do Oriente",
+      "Portugal se tornou independente"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1776 → os EUA declararam independência."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1914?",
+    "options": [
+      "a fundação da ONU",
+      "Pedro Álvares Cabral chegou ao Brasil",
+      "o 11 de Setembro ocorreu em Nova Iorque",
+      "a Primeira Guerra Mundial começou"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1914 → a Primeira Guerra Mundial começou."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Pierogi?",
+    "options": [
+      "Brasil",
+      "Espanha",
+      "Polónia",
+      "Marrocos"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Pierogi → Polónia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Hungria?",
+    "options": [
+      "Goulash",
+      "Fondue",
+      "Waffle",
+      "Tacos"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Hungria → Goulash."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes NÃO é um instrumento de teclas?",
+    "options": [
+      "Órgão",
+      "Piano",
+      "Acordeão",
+      "Oboé"
+    ],
+    "correct_option": 3,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Família: teclas",
+      "explanation": "Qual destes NÃO é um instrumento de teclas → Oboé."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a um ficheiro de vídeo?",
+    "options": [
+      ".doc",
+      ".avi",
+      ".ppt",
+      ".html"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a um ficheiro de vídeo → .avi."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .db?",
+    "options": [
+      "uma folha de cálculo",
+      "um ficheiro de código",
+      "uma imagem vetorial",
+      "uma base de dados"
+    ],
+    "correct_option": 3,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .db → uma base de dados."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Andebol?",
+    "options": [
+      "uma bola de voleibol",
+      "uma bola de andebol",
+      "uma tabela e prancha",
+      "uma espada"
+    ],
+    "correct_option": 1,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Andebol → uma bola de andebol."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Tiro com arco?",
+    "options": [
+      "um arco e flechas",
+      "uma bicicleta",
+      "uma bola de basquetebol",
+      "uma raquete"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Tiro com arco → um arco e flechas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Dalí?",
+    "options": [
+      "Guernica",
+      "O Nascimento de Vénus",
+      "O Beijo",
+      "A Persistência da Memória"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Dalí → A Persistência da Memória."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Botticelli?",
+    "options": [
+      "O Grito",
+      "O Nascimento de Vénus",
+      "A Criação de Adão",
+      "A Ronda Noturna"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Botticelli → O Nascimento de Vénus."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 72 ÷ 6?",
+    "options": [
+      "12",
+      "2",
+      "5",
+      "15"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 72 ÷ 6 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 58 - 23?",
+    "options": [
+      "39",
+      "35",
+      "40",
+      "31"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 58 - 23 = 35."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Ridley Scott?",
+    "options": [
+      "Jurassic Park",
+      "O Rei Leão",
+      "Star Wars",
+      "Gladiador"
+    ],
+    "correct_option": 3,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Ridley Scott → Gladiador."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por George Lucas?",
+    "options": [
+      "O Senhor dos Anéis",
+      "Jurassic Park",
+      "Matrix",
+      "Star Wars"
+    ],
+    "correct_option": 3,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por George Lucas → Star Wars."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que organização internacional tem sede em Paris?",
+    "options": [
+      "a Corte Penal Internacional",
+      "a NATO",
+      "o FMI",
+      "a UNESCO"
+    ],
+    "correct_option": 3,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Que organização internacional tem sede em Paris → a UNESCO."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a cidade sede de o Banco Mundial?",
+    "options": [
+      "Washington",
+      "Bruxelas",
+      "Nova Iorque",
+      "Paris"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Organização",
+      "explanation": "Qual é a cidade sede de o Banco Mundial → Washington."
+    },
+    "image_url": null
   }
 ]

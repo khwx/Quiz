@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-23",
-  "totalQuestions": 3037,
+  "date": "2026-08-24",
+  "totalQuestions": 3060,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 27,
-  "fuzzyPairs": 353,
-  "fuzzyAffectedQuestions": 480,
+  "fuzzyPairs": 373,
+  "fuzzyAffectedQuestions": 489,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -159,6 +159,20 @@
       ]
     },
     {
+      "category": "MUSICA",
+      "ids": [
+        "4ece4b41-6a2e-4ab1-90ca-8b7367c68dd0",
+        "dc966bcb-2280-43d4-93ff-2fc7c998126c"
+      ]
+    },
+    {
+      "category": "MUSICA",
+      "ids": [
+        "d094b7e1-c3fd-40c6-9f4c-b6935a062790",
+        "dc966bcb-2280-43d4-93ff-2fc7c998126c"
+      ]
+    },
+    {
       "category": "POLITICA",
       "ids": [
         "0466a2d2-ffb5-4ab8-8bf6-d856c2b9ced4",
@@ -170,20 +184,6 @@
       "ids": [
         "f83b5405-1102-4cfd-a170-096555725492",
         "c3370e35-7d4c-46c1-8702-3029dfcf8218"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "22d25c44-1cd2-4a0a-a96e-a89454e04932",
-        "aeec69d2-66d8-4115-a6a8-c1802170642e"
-      ]
-    },
-    {
-      "category": "POLITICA",
-      "ids": [
-        "b85cd242-436f-4e7c-a2ed-28d498d419fc",
-        "da9ad32e-3986-4fcc-a6aa-a41876dd3fb7"
       ]
     }
   ]
