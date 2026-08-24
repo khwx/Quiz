@@ -59644,5 +59644,294 @@
       "explanation": "Que organização internacional tem sede em Nova Iorque → a ONU."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Li?",
+    "options": [
+      "Carbono",
+      "Crómio",
+      "Flúor",
+      "Lítio"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Li",
+      "explanation": "Qual é o elemento cujo símbolo químico é Li → Lítio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Si?",
+    "options": [
+      "Urânio",
+      "Ouro",
+      "Oxigénio",
+      "Silício"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Si",
+      "explanation": "Qual é o elemento cujo símbolo químico é Si → Silício."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento mais abundante no universo?",
+    "options": [
+      "Carbono",
+      "Hidrogénio",
+      "Oxigénio",
+      "Hélio"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Estrelas",
+      "explanation": "Qual é o elemento mais abundante no universo → Hidrogénio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o oceano mais profundo do mundo?",
+    "options": [
+      "Oceano Pacífico",
+      "Oceano Índico",
+      "Oceano Ártico",
+      "Oceano Atlântico"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fossa das Marianas",
+      "explanation": "Qual é o oceano mais profundo do mundo → Oceano Pacífico."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a queda do Império Romano do Oriente?",
+    "options": [
+      "1989",
+      "1453",
+      "1440",
+      "1918"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a queda do Império Romano do Oriente → 1453."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1492?",
+    "options": [
+      "a Primeira Guerra Mundial terminou",
+      "o Tratado de Tordesilhas foi assinado",
+      "a descoberta da América por Colombo",
+      "o Homem pisou a Lua pela primeira vez"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1492 → a descoberta da América por Colombo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Coreia do Sul?",
+    "options": [
+      "Kimchi",
+      "Bacalhau à Brás",
+      "Goulash",
+      "Moussaka"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Coreia do Sul → Kimchi."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Moussaka?",
+    "options": [
+      "Grécia",
+      "Bélgica",
+      "Suíça",
+      "Japão"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Moussaka → Grécia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .svg?",
+    "options": [
+      "uma imagem vetorial",
+      "um ficheiro comprimido",
+      "um documento de texto simples",
+      "um ficheiro de código"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .svg → uma imagem vetorial."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .ppt?",
+    "options": [
+      "um documento Word",
+      "um documento de texto simples",
+      "um documento PDF",
+      "uma apresentação"
+    ],
+    "correct_option": 3,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .ppt → uma apresentação."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Surf?",
+    "options": [
+      "um remo",
+      "um arco e flechas",
+      "uma bola de basquetebol",
+      "uma tabela e prancha"
+    ],
+    "correct_option": 3,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Surf → uma tabela e prancha."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Veronese?",
+    "options": [
+      "As Meninas",
+      "Guernica",
+      "As Bodas de Caná",
+      "O Nascimento de Vénus"
+    ],
+    "correct_option": 2,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Veronese → As Bodas de Caná."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"As Bodas de Caná\"?",
+    "options": [
+      "Dalí",
+      "Miguel Ângelo",
+      "Veronese",
+      "Munch"
+    ],
+    "correct_option": 2,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"As Bodas de Caná\" → Veronese."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 ÷ 8?",
+    "options": [
+      "4",
+      "9",
+      "11",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 32 ÷ 8 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 82 - 35?",
+    "options": [
+      "48",
+      "51",
+      "44",
+      "47"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 82 - 35 = 47."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Irmãos Wachowski?",
+    "options": [
+      "Cidade de Deus",
+      "Matrix",
+      "O Padrinho",
+      "Interestelar"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Irmãos Wachowski → Matrix."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Robert Zemeckis?",
+    "options": [
+      "A Lista de Schindler",
+      "Forrest Gump",
+      "Titanic",
+      "Jurassic Park"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Robert Zemeckis → Forrest Gump."
+    },
+    "image_url": null
   }
 ]

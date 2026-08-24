@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { GameProvider } from "@/context/GameContext";
+import { MotionConfig } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import OfflineIndicator from "@/components/OfflineIndicator";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -63,11 +64,13 @@ export default function RootLayout({
           Saltar para o conteúdo principal
         </a>
         <ErrorBoundary>
-          <GameProvider>
-            <div id="main-content">
-              {children}
-            </div>
-          </GameProvider>
+          <MotionConfig reducedMotion="user">
+            <GameProvider>
+              <div id="main-content">
+                {children}
+              </div>
+            </GameProvider>
+          </MotionConfig>
         </ErrorBoundary>
         <Analytics />
         <OfflineIndicator />

@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-24] Ciclo de Manutenção (8º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (reduced-motion global)
+
+- **MELHORIA — `src/app/layout.tsx` (acessibilidade: `prefers-reduced-motion`)**: Embrulhado o `GameProvider` em `<MotionConfig reducedMotion="user">` do Framer Motion. Isto faz com que TODAS as animações do app (TV, telemóvel, espetador, transições) respeitem automaticamente a preferência de sistema "Reduzir Movimento" (acessibilidade, item 9.5 da auditoria). Alteração de uma linha + import, sem impacto visual para utilizadores normais. Lint clean.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+17 novas** (built-in fact-table em 15 categorias; pool curado e seed bank vazios, sem chaves de IA). Backup: 3139 → 3156. Total na BD: 3.167.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria) e 63 pares fuzzy (≥0.9) reais fora de BANDEIRAS + 499 pares de família de template excluídos como falsos positivos, registados em `scripts/dedupe-report.json`. Total na BD: 3.167.
+- **LINT/BUILD/TESTS**: alteração restrita a `src/app/layout.tsx` (lint clean) + `questions_backup.json` e `dedupe-report.json` atualizados. Sem impacto no app.
+
 ## [2026-08-24] Ciclo de Manutenção (7º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (relatório de duplicados útil)
 
 - **MELHORIA — `scripts/weekly-dedupe.mjs` (exclusão de falsos positivos de template)**: Adicionada a função `isTemplateFamily()` que deteta pares de perguntas que partilham um prefixo/sufixo longo (mesma família de template, ex: "Qual é o símbolo químico do elemento X?" para dezenas de elementos, ou "Qual é a capital de Y?"). Estes pares não são duplicados reais e inundavam o relatório fuzzy (513 pares na iteração anterior, quase todos ruído). Agora são contabilizados à parte (`templateFamilyPairs`) e excluídos do relatório de revisão manual. Resultado: **63 pares fuzzy reais** (candidatos a revisão manual) + **450 pares de família de template ignorados**. O relatório `scripts/dedupe-report.json` passa a incluir `templateFamilyPairs`.
