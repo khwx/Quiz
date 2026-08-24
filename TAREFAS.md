@@ -1,110 +1,81 @@
-# Quizverse - Lista de Tarefas
+# Quizverse - Lista de Tarefas e Melhorias
 
-## ✅ JÁ FEITO (Última Atualização)
+## ✅ JÁ IMPLEMENTADO E FUNCIONAL
 
-### Login e Autenticação
-- [x] Página login com Supabase Auth real
-- [x] Sistema de registo de contas
-- [x] Perfil ligado à conta do utilizador
-- [x] Botão Login/Perfil na homepage
-- [x] **Fixed**: Ícones sobrepostos nos inputs do login
+### 🎮 Jogabilidade e Experiência Principal
+- [x] **Multiplayer em Tempo Real (Mobile + TV)** via Supabase Realtime
+- [x] **Modo Solo Offline/Online (`/play?solo=1`)** com 10 perguntas, power-ups e pontuação local
+- [x] **Power-ups 50:50, Saltar (Skip) e Congelar Tempo (Freeze)** no telemóvel e solo
+- [x] **Vibração Háptica Real** (`navigator.vibrate`) em cliques e respostas
+- [x] **Eliminação Flexível:** Removido o bloqueio restritivo de 3 vidas para todos poderem jogar até ao fim
+- [x] **Validação Exata no Reveal:** Resposta certa sincronizada 100% com a pergunta ativa (`questions.correct_option`)
+- [x] **Fallback Resiliente de Perguntas:** Eliminação de erros 400 na carga de perguntas
 
-### Perfil e Estatísticas
-- [x] Perfil mostra dados do utilizador (email, nome)
-- [x] Estatísticas reais: Total de jogos, Vitórias, Pontos, Taxa de acerto
-- [x] Achievements básicos (desbloqueiam conforme joga)
-- [x] Logout funcional
+### 🔐 Login e Autenticação
+- [x] Página de login/registo com Supabase Auth real
+- [x] Login Social com Google e Facebook OAuth
+- [x] Criação automática de perfil de jogador (`profiles`) com avatar, nível e XP inicial
+- [x] Botão de acesso Login/Perfil na barra superior da homepage
 
-### Reportar Perguntas
-- [x] Botão "Reportar" no Play (telemóvel)
-- [x] Botão "Reportar" na TV
-- [x] Botão "Reportar" no Admin
-- [x] Lista de perguntas reportadas no Admin
-- [x] Guarda relato no metadata da pergunta
+### 🏆 Perfil, Estatísticas e Conquistas
+- [x] Perfil com dados em tempo real (email, nome, avatar, nível e XP)
+- [x] Estatísticas reais agrupadas por partidas (`/history` e `/stats`)
+- [x] Tabela oficial `achievements` no Supabase (migração `011`)
+- [x] Catálogo partilhado de conquistas (`src/lib/achievements.ts`) ligado à página `/achievements`
 
-### UI/UX Melhorias
-- [x] **Fixed**: Ícones material-symbols substituídos por Lucide
-- [x] Inputs com padding correto para não sobrepor texto
-- [x] Ícones com `pointer-events-none` para não bloquear input
+### 👥 Equipas e Amigos
+- [x] Criar e gerir equipas de 2-4 jogadores com código PIN
+- [x] Pontuação coletiva em tempo real (`teams.total_score`)
+- [x] Ranking de equipas (`/teams/ranking`)
+- [x] Código único de convite e link partilhável por jogador (`/invite/[code]`)
+- [x] Sistema de amizades (`/friends`)
 
----
-
-## 🎯 FASE 1: Login + Perfil COMPLETA ✅
-
-Tudo implementado e funcional!
-
----
-
-## 🎯 FASE 2: Jogar com Amigos (EM CURSO)
-
-### Sistema de Equipas 🟢 (COMPLETO)
-- [x] Criar equipas de 2-4 jogadores
-- [x] Cada equipa responde em conjunto
-- [x] Pontuação coletiva por equipa (`teams.total_score` atualizada em tempo real)
-- [x] Ecrã de ranking por equipas (`/teams/ranking`)
-
-### Código Único por Jogador 🟢 (COMPLETO)
-- [x] Cada jogador recebe código/link único para convites (`profiles.invite_code`, gerado no registo)
-- [x] Página de convite `/invite/[code]` com QR Code, link copiável e botão "Adicionar como amigo"
-- [x] Código visível no Perfil com botão "Copiar link"
-- [x] Tracking individual de pontuações (`game_history` + estatísticas no perfil)
-- [x] Histórico pessoal (tab "Histórico" no perfil — melhorado com accuracy %, tempo médio e barra visual)
+### 🚩 Reportar Perguntas
+- [x] Botão "Reportar" no telemóvel (`/play`), na TV (`/tv`) e no Admin
+- [x] Registo automático de denúncias no `metadata.reports` da pergunta
+- [x] Gestão de perguntas denunciadas no painel Admin (`/admin`)
 
 ---
 
-## 🎯 FASE 3: Campeonatos (EM CURSO)
+## 🎯 TAREFAS PRIORITÁRIAS A IMPLEMENTAR (BACKLOG ATIVO)
 
-### Torneios 🟢 (COMPLETO)
-- [x] Criar torneios com PIN único (6 carateres)
-- [x] Registo de equipas no torneio (lobby + capacidade)
-- [x] Fases: LOBBY → QUALIFYING → FINAL → FINISHED
-- [x] Classificações em tempo real (realtime via Supabase)
-- [x] Ecrã de detalhe `/tournaments/[id]` com pódio e definições
-- [x] Modo Cego (anfitrião não vê respostas) e definições de timer/perguntas
-- [x] Prémios/loot para o top 3 (criador define prémios 1º/2º/3º na criação; ecrã de detalhe mostra os prémios e o vencedor de cada lugar quando FINISHED)
-- [x] Torneios públicos vs privados (toggle "Torneio Público" na criação; lista de descoberta de públicos com entrada direta sem PIN; badge público/privado nos cartões e no detalhe)
+### 🇵🇹 1. Geografia e Freguesias de Portugal
+- [ ] Criar lote de ~50+ perguntas dedicadas a **Freguesias, Concelhos e Monumentos de Portugal**
+- [ ] Adicionar categoria oficial **"Portugal & Freguesias"** em `CATEGORIES`
+- [ ] Validar distribuição equilibrada de opções corretas (A, B, C, D)
 
----
+### 🎨 2. Legendas e Apresentação Visual das Páginas
+- [ ] **Página de Modos (`/modes`):** Adicionar legendas com duração estimada, formato (individual vs equipa) e nível de dinamismo
+- [ ] **Página de Categorias (`/categories`):** Legendas explicativas com exemplos do tipo de perguntas e tags de dificuldade
+- [ ] **Ecrã de Apresentador (`/tv`):** Legendas de estado (*"Aguardando respostas"*, *"Tempo a esgotar"*, *"Revelação de pontos"*)
+- [ ] **Ecrã de Jogador (`/play`):** Legendas informativas sobre bónus de velocidade e multiplicadores de sequência
 
-## 📋 ORDEM DE TRABALHO
+### 🎛️ 3. Controlos do Host / Apresentador na TV (`/tv`)
+- [ ] Botão de **Pausa** (congelar timer da TV e telemóveis)
+- [ ] Botão de **Voltar Atrás** (rever pergunta anterior)
+- [ ] Botão de **Saltar Pergunta** (avançar sem atribuir pontos)
 
-1️⃣ **COMPLETO ✅**: Login + Perfil com estatísticas
-2️⃣ **COMPLETO ✅**: Sistema de equipas (Equipas, respostas em conjunto, pontuação coletiva e ranking)
-3️⃣ **COMPLETO ✅**: Código único por jogador (código/link de convite + convites por código)
-4️⃣ **COMPLETO ✅**: Torneios (criação, registo de equipas, fases, classificações, ecrã de detalhe)
-5️⃣ **COMPLETO ✅**: Login Social (Google + Facebook OAuth em `/login` — `handleOAuthLogin` parametrizado, build OK)
-6️⃣ **COMPLETO ✅**: Melhorias de histórico no perfil (accuracy %, tempo médio, barra visual, 15 jogos)
-7️⃣ **COMPLETO ✅**: Prémios/loot para top 3 em Torneios (criador define prémios, ecrã de detalhe mostra pódio com prémios + vencedor)
-8️⃣ **COMPLETO ✅**: Torneios públicos vs privados (descoberta + entrada direta sem PIN)
+### ⚡ 4. Novos Power-ups & Modos
+- [ ] Power-up **"Votação do Público" (Public Poll)**: Mostra percentagem de respostas da sala
+- [ ] Modo **Treino por Categoria no Solo** (escolher categoria específica para praticar)
+- [ ] Modo **Duelo 1v1 Rápido**
 
 ---
 
-## 🐛 Bugs Corrigidos
-- [x] Ícones sobrepostos nos inputs do login
-- [x] Botão "Ver Todas" nas categorias
-- [x] Autenticação no Supabase
-- [x] **Categorias com casing errado**: `História` devolvia 0 perguntas e `Bandeiras` só 12 — alinhado o app a `BANDEIRAS`/`HISTÓRIA` (ver migração 012)
-- [x] **Typo de categoria `GEGRAFIA`**: 1 pergunta orfã com categoria `GEGRAFIA` (falta de 'O') normalizada para `GEOGRAFIA` (ver migração 013)
+## 🐛 BUGS RECENTEMENTE CORRIGIDOS
+- [x] **Erro 400 ao Carregar Pergunta:** Removida a coluna inexistente `explanation` das queries REST e implementada leitura via `metadata`.
+- [x] **"Demasiado Lento" na 1ª Pergunta:** Removido reset prematuro de `selectedOption` na transição de estados e adicionado fallback de ID no `handleAnswer`.
+- [x] **Desfasamento da Resposta Certa no Reveal:** `api/answer` e `RevealView` passam a ler `correct_option` diretamente da pergunta ativa na BD em vez do estado global do jogo.
+- [x] **Bloqueio de 3 Vidas ("Fui Eliminado"):** Removido o overlay obstrutivo para permitir jogo contínuo.
 
 ---
 
-## 🛠️ Tech Stack
-- Next.js 16 (App Router)
-- Tailwind CSS v4
-- Supabase (DB + Auth)
-- Framer Motion (animações)
-- Vercel (hosting)
+## 🛠️ Stack Tecnológica
+- **Framework:** Next.js 16 (App Router + Turbopack) & React 19
+- **Estilos:** Tailwind CSS v4 & Framer Motion
+- **Base de Dados & Realtime:** Supabase (PostgreSQL + Realtime Channels + Auth)
+- **Testes:** Vitest
+- **Deploy:** Vercel (CI/CD automático via GitHub `main`)
 
 ---
-
-*Última atualização: 18 Agosto 2026* 🎉
-
-## 🎯 Próximas sugestões (backlog)
-- Torneios por convite com lista de equipas permitidas (whitelist)
-
-**O que achas de implementar agora?**
-
-1. **Sistema de Equipas** (jogar em equipa)
-2. **Código único por jogador** (convites personalizados)
-3. **Login social** (Google/Facebook)
-4. **Melhorar histórico de jogos** no perfil
+*Última atualização: Agosto 2026* 🚀
