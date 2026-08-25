@@ -59933,5 +59933,379 @@
       "explanation": "Qual destes filmes foi realizado por Robert Zemeckis → Forrest Gump."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Fe?",
+    "options": [
+      "Mercúrio",
+      "Ferro",
+      "Oxigénio",
+      "Estanho"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Fe",
+      "explanation": "Qual é o elemento cujo símbolo químico é Fe → Ferro."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é K?",
+    "options": [
+      "Potássio",
+      "Ferro",
+      "Flúor",
+      "Cloro"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo K",
+      "explanation": "Qual é o elemento cujo símbolo químico é K → Potássio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Pt?",
+    "options": [
+      "Platina",
+      "Cobalto",
+      "Lítio",
+      "Azoto"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Pt",
+      "explanation": "Qual é o elemento cujo símbolo químico é Pt → Platina."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior deserto quente do mundo?",
+    "options": [
+      "Sahara",
+      "Gobi",
+      "Arábico",
+      "Kalahari"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "África do Norte",
+      "explanation": "Qual é o maior deserto quente do mundo → Sahara."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o homem chegou à Lua pela primeira vez?",
+    "options": [
+      "1959",
+      "1969",
+      "1972",
+      "1965"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Apollo 11",
+      "explanation": "Em que ano o homem chegou à Lua pela primeira vez → 1969."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o metal mais precioso e caro do mundo?",
+    "options": [
+      "Ródio",
+      "Paládio",
+      "Platina",
+      "Ouro"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Usado em catalisadores",
+      "explanation": "Qual é o metal mais precioso e caro do mundo → Ródio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a descoberta da América por Colombo?",
+    "options": [
+      "1918",
+      "1945",
+      "1492",
+      "1440"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a descoberta da América por Colombo → 1492."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1991?",
+    "options": [
+      "Pedro Álvares Cabral chegou ao Brasil",
+      "a queda do Império Romano do Oriente",
+      "o Muro de Berlim caiu",
+      "a queda da União Soviética"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1991 → a queda da União Soviética."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 2001?",
+    "options": [
+      "a fundação da ONU",
+      "a queda do Império Romano do Oriente",
+      "o Tratado de Tordesilhas foi assinado",
+      "o 11 de Setembro ocorreu em Nova Iorque"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 2001 → o 11 de Setembro ocorreu em Nova Iorque."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Estados Unidos?",
+    "options": [
+      "Sushi",
+      "Hambúrguer",
+      "Pizza",
+      "Couscous"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Estados Unidos → Hambúrguer."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Bélgica?",
+    "options": [
+      "Sushi",
+      "Waffle",
+      "Risotto",
+      "Goulash"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Bélgica → Waffle."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Pad Thai?",
+    "options": [
+      "México",
+      "China",
+      "Tailândia",
+      "Suíça"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Pad Thai → Tailândia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .jpg?",
+    "options": [
+      "uma imagem",
+      "um documento Word",
+      "uma folha de cálculo",
+      "um documento de texto simples"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .jpg → uma imagem."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .js?",
+    "options": [
+      "um ficheiro de código",
+      "uma imagem vetorial",
+      "uma base de dados",
+      "um vídeo"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .js → um ficheiro de código."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .xls?",
+    "options": [
+      "uma folha de cálculo",
+      "uma apresentação",
+      "um ficheiro de código",
+      "uma base de dados"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .xls → uma folha de cálculo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que material/equipamento se utiliza no desporto Ténis?",
+    "options": [
+      "uma raquete",
+      "um puck",
+      "uma bola de basquetebol",
+      "uma bola de futebol"
+    ],
+    "correct_option": 0,
+    "category": "DESPORTO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Desporto",
+      "explanation": "Que material/equipamento se utiliza no desporto Ténis → uma raquete."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem pintou a obra \"A Ronda Noturna\"?",
+    "options": [
+      "Van Gogh",
+      "Dalí",
+      "Munch",
+      "Rembrandt"
+    ],
+    "correct_option": 3,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Quem pintou a obra \"A Ronda Noturna\" → Rembrandt."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas obras foi pintada por Monet?",
+    "options": [
+      "A Última Ceia",
+      "Impressão, Nascer do Sol",
+      "Os Girassóis",
+      "As Meninas"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Pintura",
+      "explanation": "Qual destas obras foi pintada por Monet → Impressão, Nascer do Sol."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 11 × 11?",
+    "options": [
+      "124",
+      "111",
+      "118",
+      "121"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 11 = 121."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 elevado a 4?",
+    "options": [
+      "2401",
+      "2397",
+      "2404",
+      "2403"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 7 elevado a 4 = 2401."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 ÷ 7?",
+    "options": [
+      "10",
+      "11",
+      "18",
+      "15"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 77 ÷ 7 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes filmes foi realizado por Peter Jackson?",
+    "options": [
+      "O Senhor dos Anéis",
+      "Titanic",
+      "E.T.",
+      "O Padrinho"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cinema",
+      "explanation": "Qual destes filmes foi realizado por Peter Jackson → O Senhor dos Anéis."
+    },
+    "image_url": null
   }
 ]
