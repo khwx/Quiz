@@ -60307,5 +60307,294 @@
       "explanation": "Qual destes filmes foi realizado por Peter Jackson → O Senhor dos Anéis."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Silício?",
+    "options": [
+      "Hg",
+      "As",
+      "Si",
+      "N"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Silício → Si."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Au?",
+    "options": [
+      "Ouro",
+      "Cobre",
+      "Lítio",
+      "Prata"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Au",
+      "explanation": "Qual é o elemento cujo símbolo químico é Au → Ouro."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Ferro?",
+    "options": [
+      "Fe",
+      "F",
+      "N",
+      "Cl"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Ferro → Fe."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o planeta mais quente do Sistema Solar?",
+    "options": [
+      "Vénus",
+      "Terra",
+      "Mercúrio",
+      "Marte"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Efeito de estufa intenso",
+      "explanation": "Qual é o planeta mais quente do Sistema Solar → Vénus."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a maior floresta tropical do mundo?",
+    "options": [
+      "Congo",
+      "Amazónia",
+      "Daintree",
+      "Borneu"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "América do Sul",
+      "explanation": "Qual é a maior floresta tropical do mundo → Amazónia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o menor país do mundo em área?",
+    "options": [
+      "Vaticano",
+      "Nauru",
+      "San Marino",
+      "Mónaco"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Em Roma",
+      "explanation": "Qual é o menor país do mundo em área → Vaticano."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o Tratado de Tordesilhas foi assinado?",
+    "options": [
+      "1453",
+      "1969",
+      "1440",
+      "1494"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano o Tratado de Tordesilhas foi assinado → 1494."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1760?",
+    "options": [
+      "a Revolução Francesa começou",
+      "o Homem pisou a Lua pela primeira vez",
+      "a descoberta da América por Colombo",
+      "a Revolução Industrial começou"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1760 → a Revolução Industrial começou."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1789?",
+    "options": [
+      "a Segunda Guerra Mundial terminou",
+      "o Tratado de Tordesilhas foi assinado",
+      "a Revolução Francesa começou",
+      "Pedro Álvares Cabral chegou ao Brasil"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1789 → a Revolução Francesa começou."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Oriente Médio?",
+    "options": [
+      "Bacalhau à Brás",
+      "Couscous",
+      "Sushi",
+      "Falafel"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Oriente Médio → Falafel."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Fondue?",
+    "options": [
+      "França",
+      "Grécia",
+      "Suíça",
+      "Bélgica"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Fondue → Suíça."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Índia?",
+    "options": [
+      "Kimchi",
+      "Dim Sum",
+      "Curry",
+      "Sushi"
+    ],
+    "correct_option": 2,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Índia → Curry."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a extensão de ficheiro mais associada a um documento Word?",
+    "options": [
+      ".html",
+      ".txt",
+      ".doc",
+      ".jpg"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Qual é a extensão de ficheiro mais associada a um documento Word → .doc."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que tipo de ficheiro tem habitualmente a extensão .mp3?",
+    "options": [
+      "uma imagem",
+      "um ficheiro de código",
+      "um ficheiro de áudio",
+      "um documento de texto simples"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Informática",
+      "explanation": "Que tipo de ficheiro tem habitualmente a extensão .mp3 → um ficheiro de áudio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10% de 60?",
+    "options": [
+      "2",
+      "10",
+      "6",
+      "13"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 10% de 60 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 48?",
+    "options": [
+      "13",
+      "10",
+      "11",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 48 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 49?",
+    "options": [
+      "5",
+      "7",
+      "17",
+      "0"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 49 = 7."
+    },
+    "image_url": null
   }
 ]
