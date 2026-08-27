@@ -60596,5 +60596,226 @@
       "explanation": "Qual é a raiz quadrada de 49 = 7."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é As?",
+    "options": [
+      "Bromo",
+      "Arsénio",
+      "Bário",
+      "Carbono"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo As",
+      "explanation": "Qual é o elemento cujo símbolo químico é As → Arsénio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Enxofre?",
+    "options": [
+      "O",
+      "S",
+      "Ni",
+      "Cu"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Enxofre → S."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Ti?",
+    "options": [
+      "Cloro",
+      "Crómio",
+      "Níquel",
+      "Titânio"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Ti",
+      "explanation": "Qual é o elemento cujo símbolo químico é Ti → Titânio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o deserto mais extenso do mundo?",
+    "options": [
+      "Atacama",
+      "Gobi",
+      "Kalahari",
+      "Antártida"
+    ],
+    "correct_option": 3,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Frio e gelado",
+      "explanation": "Qual é o deserto mais extenso do mundo → Antártida."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano o 11 de Setembro ocorreu em Nova Iorque?",
+    "options": [
+      "1453",
+      "1492",
+      "476",
+      "2001"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano o 11 de Setembro ocorreu em Nova Iorque → 2001."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1969?",
+    "options": [
+      "o Tratado de Tordesilhas foi assinado",
+      "a Revolução Francesa começou",
+      "Portugal se tornou independente",
+      "o Homem pisou a Lua pela primeira vez"
+    ],
+    "correct_option": 3,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1969 → o Homem pisou a Lua pela primeira vez."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1989?",
+    "options": [
+      "Pedro Álvares Cabral chegou ao Brasil",
+      "o Tratado de Tordesilhas foi assinado",
+      "o Muro de Berlim caiu",
+      "a imprensa de tipos móveis foi inventada"
+    ],
+    "correct_option": 2,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1989 → o Muro de Berlim caiu."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Hambúrguer?",
+    "options": [
+      "Polónia",
+      "Brasil",
+      "Marrocos",
+      "Estados Unidos"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Hambúrguer → Estados Unidos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de México?",
+    "options": [
+      "Kimchi",
+      "Feijoada",
+      "Waffle",
+      "Tacos"
+    ],
+    "correct_option": 3,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de México → Tacos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Espanha?",
+    "options": [
+      "Paella",
+      "Waffle",
+      "Feijoada",
+      "Couscous"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Espanha → Paella."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 × 7?",
+    "options": [
+      "63",
+      "51",
+      "56",
+      "49"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 7 = 56."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 39 - 4?",
+    "options": [
+      "30",
+      "35",
+      "37",
+      "28"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 39 - 4 = 35."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50% de 40?",
+    "options": [
+      "20",
+      "24",
+      "19",
+      "22"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 50% de 40 = 20."
+    },
+    "image_url": null
   }
 ]
