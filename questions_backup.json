@@ -60817,5 +60817,209 @@
       "explanation": "Quanto é 50% de 40 = 20."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é U?",
+    "options": [
+      "Sódio",
+      "Boro",
+      "Flúor",
+      "Urânio"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo U",
+      "explanation": "Qual é o elemento cujo símbolo químico é U → Urânio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Ba?",
+    "options": [
+      "Iodo",
+      "Ferro",
+      "Zinco",
+      "Bário"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Ba",
+      "explanation": "Qual é o elemento cujo símbolo químico é Ba → Bário."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Lítio?",
+    "options": [
+      "I",
+      "Ag",
+      "Li",
+      "Ti"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Lítio → Li."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1974?",
+    "options": [
+      "a Revolução de 25 de Abril em Portugal",
+      "a Revolução Francesa começou",
+      "a fundação da ONU",
+      "o Muro de Berlim caiu"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1974 → a Revolução de 25 de Abril em Portugal."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Que acontecimento histórico ocorreu no ano 1500?",
+    "options": [
+      "os EUA declararam independência",
+      "Pedro Álvares Cabral chegou ao Brasil",
+      "a imprensa de tipos móveis foi inventada",
+      "a descoberta da América por Colombo"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Que acontecimento histórico ocorreu no ano 1500 → Pedro Álvares Cabral chegou ao Brasil."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano a fundação da ONU?",
+    "options": [
+      "1440",
+      "1945",
+      "1918",
+      "2001"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "História",
+      "explanation": "Em que ano a fundação da ONU → 1945."
+    },
+    "image_url": null
+  },
+  {
+    "text": "De que país é originário o prato Goulash?",
+    "options": [
+      "Hungria",
+      "Suíça",
+      "China",
+      "Tailândia"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "De que país é originário o prato Goulash → Hungria."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Brasil?",
+    "options": [
+      "Couscous",
+      "Feijoada",
+      "Pasta",
+      "Paella"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Brasil → Feijoada."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes pratos é originário de Japão?",
+    "options": [
+      "Sushi",
+      "Pizza",
+      "Pierogi",
+      "Dim Sum"
+    ],
+    "correct_option": 0,
+    "category": "GASTRONOMY",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Culinária",
+      "explanation": "Qual destes pratos é originário de Japão → Sushi."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 70 ÷ 10?",
+    "options": [
+      "8",
+      "2",
+      "7",
+      "14"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 70 ÷ 10 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 64?",
+    "options": [
+      "1",
+      "10",
+      "3",
+      "8"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 64 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 79 + 91?",
+    "options": [
+      "168",
+      "170",
+      "173",
+      "167"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 79 + 91 = 170."
+    },
+    "image_url": null
   }
 ]
