@@ -283,6 +283,21 @@ export default function QuestionDisplay({
         </motion.div>
       )}
 
+      {/* Phase Caption Legend */}
+      <div className="flex justify-center mb-4">
+        {status === GameStatus.QUESTION ? (
+          <span className="px-4 py-1.5 rounded-full bg-[#d0bcff]/15 border border-[#d0bcff]/30 text-[#d0bcff] text-xs md:text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#d0bcff] animate-ping" />
+            Responde no teu telemóvel
+          </span>
+        ) : (
+          <span className="px-4 py-1.5 rounded-full bg-[#4CAF50]/15 border border-[#4CAF50]/30 text-[#4CAF50] text-xs md:text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+            <span>✨</span>
+            Revelação dos Resultados
+          </span>
+        )}
+      </div>
+
       {/* Question Text */}
       <motion.h2
         initial={{ y: 20, opacity: 0 }}

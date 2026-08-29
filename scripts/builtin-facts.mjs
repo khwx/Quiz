@@ -188,6 +188,34 @@ const CULTURA_GERAL = [
   { text: 'Qual é o órgão responsável por bombear o sangue?', answer: 'Coração', pool: ['Fígado', 'Pulmão', 'Rim', 'Cérebro'], hint: 'Sistema circulatório' },
 ];
 
+// --- PORTUGAL_FREGUESIAS: freguesias e concelhos ----------------------------
+const PORTUGAL = [
+  { text: 'A que concelho pertence a famosa freguesia de Fátima?', answer: 'Ourém', pool: ['Leiria', 'Tomar', 'Batalha', 'Alcanena'], hint: 'Distrito de Santarém' },
+  { text: 'Em que concelho se situa a histórica freguesia da Foz do Douro?', answer: 'Porto', pool: ['Vila Nova de Gaia', 'Matosinhos', 'Maia', 'Gondomar'], hint: 'Foz do rio Douro' },
+  { text: 'A freguesia de Belém, em Lisboa, é célebre por qual monumento?', answer: 'Torre de Belém', pool: ['Castelo de São Jorge', 'Palácio da Pena', 'Convento de Cristo', 'Sé de Braga'], hint: 'Junto ao Tejo' },
+  { text: 'A freguesia de Colares pertence a que concelho?', answer: 'Sintra', pool: ['Cascais', 'Mafra', 'Oeiras', 'Amadora'], hint: 'Vinhos de chão de areia' },
+  { text: 'A freguesia de Caniço situa-se em que ilha portuguesa?', answer: 'Madeira', pool: ['São Miguel', 'Terceira', 'Porto Santo', 'Faial'], hint: 'Concelho de Santa Cruz' },
+  { text: 'Em que concelho fica a freguesia das Furnas, famosa pelas caldeiras e cozido?', answer: 'Povoação', pool: ['Ponta Delgada', 'Ribeira Grande', 'Lagoa', 'Vila Franca do Campo'], hint: 'São Miguel, Açores' },
+  { text: 'A freguesia de Sagres pertence a qual concelho algarvio?', answer: 'Vila do Bispo', pool: ['Lagos', 'Portimão', 'Aljezur', 'Silves'], hint: 'Barlavento algarvio' },
+  { text: 'Em que concelho se situa a freguesia de Nazaré, famosa pelas ondas gigantes?', answer: 'Nazaré', pool: ['Alcobaça', 'Caldas da Rainha', 'Peniche', 'Marinha Grande'], hint: 'Praia do Norte' },
+  { text: 'A vila e freguesia de Monsaraz pertence a que concelho alentejano?', answer: 'Reguengos de Monsaraz', pool: ['Mourão', 'Moura', 'Redondo', 'Portel'], hint: 'Vila medieval fortificada' },
+  { text: 'Em que concelho fica a freguesia de Ílhavo, terra dos bacalhoeiros e da Vista Alegre?', answer: 'Ílhavo', pool: ['Aveiro', 'Águeda', 'Vagos', 'Ovar'], hint: 'Ria de Aveiro' },
+  { text: 'A freguesia de Pinhão, no Douro Vinhateiro, pertence a qual concelho?', answer: 'Alijó', pool: ['Peso da Régua', 'Lamego', 'Sabrosa', 'Tabuaço'], hint: 'Distrito de Vila Real' },
+  { text: 'Quantos municípios (concelhos) existem em Portugal?', answer: '308', pool: ['278', '300', '320', '350'], hint: 'Continente e ilhas' },
+  { text: 'O concelho com maior área territorial em Portugal é:', answer: 'Odemira', pool: ['Beja', 'Alcácer do Sal', 'Castelo Branco', 'Mértola'], hint: 'Litoral alentejano' },
+  { text: 'O concelho com menor área territorial em Portugal Continental é:', answer: 'São João da Madeira', pool: ['Entroncamento', 'Amadora', 'Corvo', 'Espinho'], hint: 'Cerca de 8 km²' },
+  { text: 'A freguesia de Buçaco (Luso) pertence a que concelho?', answer: 'Mealhada', pool: ['Anadia', 'Cantanhede', 'Mortágua', 'Águeda'], hint: 'Mata secular e termas' },
+  { text: 'Em que concelho se situa a freguesia de Tróia / Carvalhal?', answer: 'Grândola', pool: ['Alcácer do Sal', 'Santiago do Cacém', 'Setúbal', 'Sines'], hint: 'Península de Tróia' },
+  { text: 'A freguesia de Santana, na ilha da Madeira, é famosa por:', answer: 'Casas típicas triangulares', pool: ['Vinhos do Porto', 'Grutas calcárias', 'Cozido das furnas', 'Tapeçarias'], hint: 'Teto de colmo' },
+  { text: 'A cidade mais alta de Portugal Continental (1056m de altitude) é:', answer: 'Guarda', pool: ['Bragança', 'Covilhã', 'Viseu', 'Vila Real'], hint: 'Cidade dos 5 F\'s' },
+  { text: 'Em que concelho se situa a freguesia de Óbidos?', answer: 'Óbidos', pool: ['Caldas da Rainha', 'Peniche', 'Bombarral', 'Rio Maior'], hint: 'Vila medieval' },
+  { text: 'A freguesia de Peniche é mundialmente conhecida por qual modalidade?', answer: 'Surf', pool: ['Vela', 'Remo', 'Kitesurf', 'Natação'], hint: 'Praia dos Supertubos' },
+  { text: 'O Galo de Barcelos é um símbolo popular de qual concelho?', answer: 'Barcelos', pool: ['Braga', 'Guimarães', 'Fafe', 'Viana do Castelo'], hint: 'Minho' },
+  { text: 'A freguesia de Belmonte é a terra natal de qual navegador português?', answer: 'Pedro Álvares Cabral', pool: ['Vasco da Gama', 'Fernão de Magalhães', 'Bartolomeu Dias', 'Gil Eanes'], hint: 'Chegou ao Brasil em 1500' },
+  { text: 'A freguesia de Miranda do Douro é célebre por qual língua oficial?', answer: 'Mirandês', pool: ['Galego', 'Barranquenho', 'Asturiano', 'Leonês'], hint: 'Reconhecida em 1999' },
+  { text: 'Em que concelho se situa a freguesia de Costa Nova dos palheiros listados?', answer: 'Ílhavo', pool: ['Aveiro', 'Ovar', 'Mira', 'Estarreja'], hint: 'Concelho de Ílhavo' },
+];
+
 export const FACT_GENERATORS = {
   CIENCIA() {
     const [name, sym] = pick(ELEMENTS);
@@ -219,7 +247,7 @@ export const FACT_GENERATORS = {
     if (flip()) {
       return factQuestion(`De que país é originário o prato ${dish}?`, country, GASTRONOMY_COUNTRIES.filter((c) => c !== country), 'Culinária', 'GASTRONOMIA');
     }
-    return factQuestion(`Qual destes pratos é originário de ${country}?`, dish, GASTRONOMY_DISHES.filter((d) => d !== dish), 'Culinária', 'GASTRONOMY');
+    return factQuestion(`Qual destes pratos é originário de ${country}?`, dish, GASTRONOMY_DISHES.filter((d) => d !== dish), 'Culinária', 'GASTRONOMIA');
   },
   MUSICA() {
     const type = pick(Object.keys(INSTRUMENT_TYPES));
@@ -270,5 +298,9 @@ export const FACT_GENERATORS = {
   CULTURA_GERAL() {
     const item = pick(CULTURA_GERAL);
     return factQuestion(item.text, item.answer, item.pool.filter((p) => p !== item.answer), item.hint, 'CULTURA_GERAL');
+  },
+  PORTUGAL_FREGUESIAS() {
+    const item = pick(PORTUGAL);
+    return factQuestion(item.text, item.answer, item.pool.filter((p) => p !== item.answer), item.hint, 'PORTUGAL_FREGUESIAS');
   },
 };

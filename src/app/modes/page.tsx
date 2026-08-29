@@ -9,9 +9,12 @@ const MODES = [
   {
     id: "solo",
     title: "Missão Solo",
-    description: "Treina os teus conhecimentos e sobe de nível sozinho no vácuo.",
+    description: "Treina os teus conhecimentos, usa power-ups e sobe de nível ao teu próprio ritmo.",
     icon: Rocket,
     players: "12k Pilotos",
+    duration: "⚡ ~3 min",
+    format: "👤 1 Jogador",
+    tag: "Power-ups Ativos",
     gradient: "from-[#d0bcff] to-[#a078ff]",
     color: "#d0bcff",
     bgGlow: "bg-[#d0bcff]/20",
@@ -21,9 +24,12 @@ const MODES = [
   {
     id: "team",
     title: "Batalha de Tripulação",
-    description: "Junta-te aos teus amigos e dominem as galáxias em conjunto.",
+    description: "Junta-te aos teus amigos, responde em conjunto e liderem o ranking galáctico.",
     icon: Users,
     players: "8k Equipas",
+    duration: "⏱️ ~5 min",
+    format: "👥 2 a 4 Jogadores",
+    tag: "Pontuação Coletiva",
     gradient: "from-[#d0bcff] to-[#a078ff]",
     color: "#d0bcff",
     bgGlow: "bg-[#d0bcff]/20",
@@ -34,9 +40,12 @@ const MODES = [
   {
     id: "tournament",
     title: "Nebula Championship",
-    description: "Participa em eventos sazonais por prémios estelares exclusivos.",
+    description: "Participa em torneios eliminatórios ao vivo e conquista troféus e prémios estelares.",
     icon: Trophy,
     players: "AO VIVO",
+    duration: "🏆 Por Rondas",
+    format: "⚔️ Competição Aberta",
+    tag: "Pódio & Prémios",
     gradient: "from-[#FFB0CD] to-[#FF6B6B]",
     color: "#FFB0CD",
     bgGlow: "bg-[#FFB0CD]/20",
@@ -109,20 +118,31 @@ export default function ModesPage() {
                   </motion.div>
                 </div>
 
-                {/* Player count / Live badge */}
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 ${
-                  mode.live
-                    ? "bg-[#FFB0CD]/10 text-[#FFB0CD] animate-pulse"
-                    : "bg-white/5 text-[#e3e0f9]/60"
-                }`}>
-                  {mode.live && <Zap className="w-3 h-3 inline mr-1" />}
-                  {mode.players}
-                </span>
+                {/* Badges & Legends */}
+                <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+                  <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${
+                    mode.live
+                      ? "bg-[#FFB0CD]/15 text-[#FFB0CD] border border-[#FFB0CD]/30 animate-pulse"
+                      : "bg-white/5 text-[#e3e0f9]/70 border border-white/10"
+                  }`}>
+                    {mode.live && <Zap className="w-3 h-3 inline mr-1" />}
+                    {mode.players}
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-[#d0bcff]/10 text-[#d0bcff] border border-[#d0bcff]/20">
+                    {mode.duration}
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-white/5 text-[#e3e0f9]/60 border border-white/5">
+                    {mode.format}
+                  </span>
+                </div>
 
                 {/* Title & description */}
-                <h3 className="text-xl font-bold text-[#e3e0f9] mb-3" style={{ fontFamily: "Space Grotesk" }}>
+                <h3 className="text-xl font-bold text-[#e3e0f9] mb-2" style={{ fontFamily: "Space Grotesk" }}>
                   {mode.title}
                 </h3>
+                <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#FFD700] mb-2">
+                  ✦ {mode.tag}
+                </span>
                 <p className="text-sm text-[#e3e0f9]/50 mb-6 leading-relaxed">{mode.description}</p>
 
                 {/* Button */}

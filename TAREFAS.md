@@ -40,20 +40,20 @@
 ## 🎯 TAREFAS PRIORITÁRIAS A IMPLEMENTAR (BACKLOG ATIVO)
 
 ### 🇵🇹 1. Geografia e Freguesias de Portugal
-- [ ] Criar lote de ~50+ perguntas dedicadas a **Freguesias, Concelhos e Monumentos de Portugal**
-- [ ] Adicionar categoria oficial **"Portugal & Freguesias"** em `CATEGORIES`
-- [ ] Validar distribuição equilibrada de opções corretas (A, B, C, D)
+- [x] Criar lote de ~50+ perguntas dedicadas a **Freguesias, Concelhos e Monumentos de Portugal**
+- [x] Adicionar categoria oficial **"Portugal & Freguesias"** em `CATEGORIES`
+- [x] Validar distribuição equilibrada de opções corretas (A, B, C, D)
 
 ### 🎨 2. Legendas e Apresentação Visual das Páginas
-- [ ] **Página de Modos (`/modes`):** Adicionar legendas com duração estimada, formato (individual vs equipa) e nível de dinamismo
-- [ ] **Página de Categorias (`/categories`):** Legendas explicativas com exemplos do tipo de perguntas e tags de dificuldade
-- [ ] **Ecrã de Apresentador (`/tv`):** Legendas de estado (*"Aguardando respostas"*, *"Tempo a esgotar"*, *"Revelação de pontos"*)
-- [ ] **Ecrã de Jogador (`/play`):** Legendas informativas sobre bónus de velocidade e multiplicadores de sequência
+- [x] **Página de Modos (`/modes`):** Adicionar legendas com duração estimada, formato (individual vs equipa) e nível de dinamismo
+- [x] **Página de Categorias (`/categories`):** Legendas explicativas com exemplos do tipo de perguntas e tags de dificuldade
+- [x] **Ecrã de Apresentador (`/tv`):** Legendas de estado (*"Aguardando respostas"*, *"Tempo a esgotar"*, *"Revelação de pontos"*)
+- [x] **Ecrã de Jogador (`/play`):** Legendas informativas sobre bónus de velocidade e multiplicadores de sequência
 
 ### 🎛️ 3. Controlos do Host / Apresentador na TV (`/tv`)
-- [ ] Botão de **Pausa** (congelar timer da TV e telemóveis)
-- [ ] Botão de **Voltar Atrás** (rever pergunta anterior)
-- [ ] Botão de **Saltar Pergunta** (avançar sem atribuir pontos)
+- [x] Botão de **Pausa** (congelar timer da TV e telemóveis)
+- [x] Botão de **Voltar Atrás** (rever pergunta anterior)
+- [x] Botão de **Saltar Pergunta** (avançar sem atribuir pontos)
 
 ### ⚡ 4. Novos Power-ups & Modos
 - [ ] Power-up **"Votação do Público" (Public Poll)**: Mostra percentagem de respostas da sala

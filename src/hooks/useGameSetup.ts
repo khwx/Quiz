@@ -164,6 +164,7 @@ export function useGameSetup() {
 
 export const CATEGORIES = [
   { name: "Cultura Geral", icon: "Globe", dbName: "CULTURA_GERAL" },
+  { name: "Portugal & Freguesias", icon: "Landmark", dbName: "PORTUGAL_FREGUESIAS" },
   { name: "Capitais do Mundo", icon: "Zap", dbName: "CAPITAIS_DO_MUNDO" },
   { name: "Bandeiras", icon: "Flag", dbName: "BANDEIRAS" },
   { name: "Cinema", icon: "Film", dbName: "CINEMA" },

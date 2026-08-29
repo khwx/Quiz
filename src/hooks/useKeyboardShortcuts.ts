@@ -13,7 +13,10 @@ export function useKeyboardShortcuts(
   updateStatus: (status: GameStatus) => Promise<void>,
   triggerReveal: () => void,
   onReport: () => void,
-  onMemoryClearClose: () => void
+  onMemoryClearClose: () => void,
+  onTogglePause?: () => void,
+  onPreviousQuestion?: () => void,
+  onSkipQuestion?: () => void
 ) {
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -33,6 +36,15 @@ export function useKeyboardShortcuts(
           triggerReveal();
         }
       }
+      if (e.key === "p" || e.key === "P") {
+        onTogglePause?.();
+      }
+      if (e.key === "b" || e.key === "B") {
+        onPreviousQuestion?.();
+      }
+      if (e.key === "s" || e.key === "S") {
+        onSkipQuestion?.();
+      }
       if (e.key === "r" || e.key === "R") {
         if (status === GameStatusConst.QUESTION || status === GameStatusConst.REVEAL) {
           onReport();
@@ -45,5 +57,5 @@ export function useKeyboardShortcuts(
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [status, currentQuestionIndex, currentQuestions, nextQuestion, updateStatus, triggerReveal]);
+  }, [status, currentQuestionIndex, currentQuestions, nextQuestion, updateStatus, triggerReveal, onTogglePause, onPreviousQuestion, onSkipQuestion]);
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 import { useGame } from "@/context/GameContext";
 import { supabase } from "@/lib/supabase";
 import QuestionDisplay from "@/components/tv/QuestionDisplay";
@@ -96,10 +97,35 @@ export default function TVHost() {
     timeLeft,
     setTimeLeft,
     timeUntilNext,
+    isPaused,
+    togglePause,
     questionStartTimeRef,
     shouldRevealRef,
     triggerReveal,
   } = useQuestionFlowTimer(timerDuration, currentQuestions);
+
+  const handlePreviousQuestion = useCallback(() => {
+    if (currentQuestionIndex > 1) {
+      const prevIdx = currentQuestionIndex - 2;
+      const prevQ = currentQuestions[prevIdx];
+      if (prevQ) {
+        nextQuestion(prevQ.id, prevQ.correct_option);
+        showToast(`A recuar para a pergunta ${prevIdx + 1}`, "info");
+      }
+    } else {
+      showToast("Já estás na primeira pergunta", "info");
+    }
+  }, [currentQuestionIndex, currentQuestions, nextQuestion, showToast]);
+
+  const handleSkipQuestion = useCallback(() => {
+    const nextQ = currentQuestions[currentQuestionIndex];
+    if (nextQ) {
+      nextQuestion(nextQ.id, nextQ.correct_option);
+      showToast("Pergunta saltada", "info");
+    } else {
+      updateStatus(GameStatus.PODIUM);
+    }
+  }, [currentQuestionIndex, currentQuestions, nextQuestion, updateStatus, showToast]);
 
   // Auto-skip: advance to REVEAL when all players have answered
   const currentAnswersRef = useRef(currentAnswers);
@@ -180,7 +206,10 @@ export default function TVHost() {
     () => {
       setReportOpen(false);
       setMemoryConfirmOpen(false);
-    }
+    },
+    togglePause,
+    handlePreviousQuestion,
+    handleSkipQuestion
   );
 
   useEffect(() => {
@@ -442,25 +471,84 @@ if (status !== GameStatus.QUESTION) return;
       )}
 
       {(status === GameStatus.QUESTION || status === GameStatus.REVEAL) && currentQ && (
-        <QuestionDisplay
-          question={currentQ}
-          timeLeft={timeLeft}
-          totalTime={timerDuration}
-          status={status}
-          players={players}
-          questionSource={questionSource}
-          answers={currentAnswers.filter((a) => String(a.question_id) === String(currentQ.id))}
-          onTimerClick={() => setTimeLeft(0)}
-          localMode={localMode}
-          onLocalAnswer={handleLocalAnswer}
-          questionNumber={currentQuestionIndex}
-          totalQuestions={currentQuestions.length}
-          localLives={localLives}
-          blindMode={blindMode}
-          buzzerMode={buzzerMode}
-          hotseatMode={hotseatMode}
-          currentHotseatPlayer={hotseatMode && hotseatPlayers[currentHotseatIndex] ? hotseatPlayers[currentHotseatIndex] : undefined}
-        />
+        <>
+          <QuestionDisplay
+            question={currentQ}
+            timeLeft={timeLeft}
+            totalTime={timerDuration}
+            status={status}
+            players={players}
+            questionSource={questionSource}
+            answers={currentAnswers.filter((a) => String(a.question_id) === String(currentQ.id))}
+            onTimerClick={() => setTimeLeft(0)}
+            localMode={localMode}
+            onLocalAnswer={handleLocalAnswer}
+            questionNumber={currentQuestionIndex}
+            totalQuestions={currentQuestions.length}
+            localLives={localLives}
+            blindMode={blindMode}
+            buzzerMode={buzzerMode}
+            hotseatMode={hotseatMode}
+            currentHotseatPlayer={hotseatMode && hotseatPlayers[currentHotseatIndex] ? hotseatPlayers[currentHotseatIndex] : undefined}
+          />
+
+          {/* Host Quick Controls Bar (TV Host) */}
+          <div className="fixed bottom-6 left-6 z-40 flex items-center gap-2 bg-[#1e1e30]/80 backdrop-blur-md px-3 py-2 rounded-2xl border border-white/10 shadow-2xl">
+            <button
+              onClick={togglePause}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                isPaused
+                  ? "bg-[#FFD700] text-[#121223] shadow-[0_0_15px_rgba(255,215,0,0.4)]"
+                  : "bg-white/10 text-[#e3e0f9] hover:bg-white/20"
+              }`}
+              title="Pausar / Retomar o jogo (Tecla P)"
+            >
+              <span>{isPaused ? "▶️ Retomar" : "⏸️ Pausar"}</span>
+              <span className="text-[10px] opacity-60 font-mono">[P]</span>
+            </button>
+
+            {currentQuestionIndex > 1 && (
+              <button
+                onClick={handlePreviousQuestion}
+                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-[#e3e0f9] transition-all flex items-center gap-1.5"
+                title="Voltar à pergunta anterior (Tecla B)"
+              >
+                <span>⬅️ Anterior</span>
+                <span className="text-[10px] opacity-60 font-mono">[B]</span>
+              </button>
+            )}
+
+            <button
+              onClick={handleSkipQuestion}
+              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-[#e3e0f9] transition-all flex items-center gap-1.5"
+              title="Saltar pergunta (Tecla S)"
+            >
+              <span>⏭️ Saltar</span>
+              <span className="text-[10px] opacity-60 font-mono">[S]</span>
+            </button>
+          </div>
+
+          {/* Pause Screen Overlay */}
+          {isPaused && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="p-8 bg-[#1e1e30] border-2 border-[#FFD700] rounded-3xl text-center shadow-[0_0_40px_rgba(255,215,0,0.3)] max-w-md"
+              >
+                <div className="text-5xl mb-4 animate-bounce">⏸️</div>
+                <h2 className="text-3xl font-black text-[#e3e0f9] mb-2">JOGO EM PAUSA</h2>
+                <p className="text-sm text-[#e3e0f9]/60 mb-6">O apresentador pausou temporariamente o cronómetro.</p>
+                <button
+                  onClick={togglePause}
+                  className="px-6 py-3 bg-[#FFD700] text-[#121223] font-bold rounded-xl shadow-lg hover:scale-105 transition-all text-sm uppercase tracking-wider"
+                >
+                  Continuar Jogo [P]
+                </button>
+              </motion.div>
+            </div>
+          )}
+        </>
       )}
 
       {status === GameStatus.REVEAL && currentQ && <LiveLeaderboard players={players} />}

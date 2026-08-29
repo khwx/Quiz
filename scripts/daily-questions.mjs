@@ -20,6 +20,7 @@ const CATEGORIES = [
   'CIENCIA', 'CULTURA_GERAL', 'ANIMAIS', 'HISTÓRIA', 'GASTRONOMIA',
   'MUSICA', 'TECNOLOGIA', 'DESPORTO', 'ARTE', 'GEOGRAFIA',
   'MATEMATICA', 'CINEMA', 'POLITICA', 'CAPITAIS_DO_MUNDO', 'BANDEIRAS',
+  'PORTUGAL_FREGUESIAS',
 ];
 
 const AGE_RATINGS = [8, 10, 12, 14, 16];
@@ -40,6 +41,7 @@ const CATEGORY_HINTS = {
   POLITICA: 'política, governos ou organizações internacionais',
   CAPITAIS_DO_MUNDO: 'capitais de países',
   BANDEIRAS: 'bandeiras de países e respetivos símbolos',
+  PORTUGAL_FREGUESIAS: 'freguesias, concelhos, distritos, ilhas e tradições de Portugal',
 };
 
 async function getExistingPairs() {
@@ -122,6 +124,7 @@ function getFallbackQuestion(category) {
     POLITICA: { text: "Quantos presidentes teve a República Portuguesa?", options: ["10", "15", "20", "25"], correct_option: 1, metadata: { hint: "Desde 1910" } },
     CAPITAIS_DO_MUNDO: { text: "Qual é a capital do Reino Unido?", options: ["Londres", "Edimburgo", "Cardiff", "Belfast"], correct_option: 0, metadata: { hint: "Capital inglesa" } },
     BANDEIRAS: { text: "Qual é o país cuja bandeira tem uma folha de bordo vermelha no centro?", options: ["Estados Unidos", "Canadá", "Austrália", "Nova Zelândia"], correct_option: 1, metadata: { hint: "Símbolo nacional do Canadá" } },
+    PORTUGAL_FREGUESIAS: { text: "A que concelho pertence a famosa freguesia de Fátima?", options: ["Leiria", "Ourém", "Tomar", "Batalha"], correct_option: 1, metadata: { hint: "Fica no distrito de Santarém" } },
   };
   const fb = fallbacks[category] || fallbacks.CULTURA_GERAL;
   return { ...fb, category, age_rating: 10 };

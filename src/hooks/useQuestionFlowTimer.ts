@@ -10,9 +10,17 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   const { status, currentQuestionIndex, updateStatus, nextQuestion } = useGame();
   const [timeLeft, setTimeLeft] = useState(timerDuration);
   const [timeUntilNext, setTimeUntilNext] = useState(20);
+  const [isPaused, setIsPaused] = useState(false);
+  const isPausedRef = useRef(false);
+  isPausedRef.current = isPaused;
+
   const shouldRevealRef = useRef(false);
   const questionStartTimeRef = useRef<number>(0);
   const { playSound } = useSound();
+
+  const togglePause = useCallback(() => {
+    setIsPaused((prev) => !prev);
+  }, []);
 
   // Use refs for values used in effects to prevent unnecessary re-runs
   const currentQuestionsRef = useRef(currentQuestions);
@@ -30,6 +38,7 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   const resetTimer = useCallback(() => {
     setTimeLeft(timerDurationRef.current);
     shouldRevealRef.current = false;
+    setIsPaused(false);
     questionStartTimeRef.current = Date.now();
   }, []);
 
@@ -45,6 +54,10 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
         if (shouldRevealRef.current) {
           clearInterval(timer);
           return;
+        }
+
+        if (isPausedRef.current) {
+          return; // Frozen while paused
         }
 
         setTimeLeft((prev) => {
@@ -89,6 +102,8 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
     }
 
     const interval = setInterval(() => {
+      if (isPausedRef.current) return;
+
       setTimeUntilNext((prev) => {
         const next = prev - 1;
         if (next <= 0) {
@@ -112,6 +127,9 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
     timeLeft,
     setTimeLeft,
     timeUntilNext,
+    isPaused,
+    setIsPaused,
+    togglePause,
     questionStartTimeRef,
     shouldRevealRef,
     triggerReveal,

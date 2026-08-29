@@ -1,5 +1,25 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-29] Ciclo de Manutenção (9º ciclo, 8h) — Portugal & Freguesias + Controlos de Host na TV + Legendas Visuais + Dedupe & Novas Perguntas
+
+- **MELHORIA — Nova Categoria `Portugal & Freguesias` (`PORTUGAL_FREGUESIAS`)**:
+  - Adicionada aos seletores de categorias (`src/app/categories/page.tsx` e `src/hooks/useGameSetup.ts`) com ícone `Landmark` e cor âmbar.
+  - Lote curado de 55 perguntas dedicado a freguesias, concelhos, distritos, ilhas e património de Portugal inserido com sucesso na BD via `scripts/add-portugal-freguesias.mjs`.
+  - Integrado no gerador de factos incorporados (`scripts/builtin-facts.mjs`) e na rotina diária (`scripts/daily-questions.mjs`), permitindo crescimento sustentável e autónomo.
+- **MELHORIA — Controlos do Host / Apresentador na TV (`src/app/tv/page.tsx`, `useQuestionFlowTimer.ts`, `useKeyboardShortcuts.ts`)**:
+  - Barra flutuante de ações rápidas no ecrã de apresentador: **Pausar / Retomar** (tecla `P`), **Voltar Atrás** (tecla `B`) e **Saltar Pergunta** (tecla `S`).
+  - Congelamento completo dos temporizadores de pergunta e de transição quando em pausa, acompanhado por overlay visual claro de pausa ("JOGO EM PAUSA").
+- **MELHORIA — Legendas e Apresentação Visual (`/modes`, `/categories`, `/tv`, `/play`)**:
+  - **Página de Modos (`/modes`)**: Adicionados badges com estimativa de duração (~3 min, ~5 min, Por Rondas), formato (1 Jogador, 2 a 4 Jogadores, Competição Aberta) e tags destacadas.
+  - **Página de Categorias (`/categories`)**: Legendas informativas, contadores de perguntas estilizados e tags de quiz.
+  - **Ecrã de TV (`QuestionDisplay.tsx`)**: Legenda dinâmica indicando a fase ativa ("Responde no teu telemóvel" / "Revelação dos Resultados").
+  - **Ecrã de Jogador (`QuestionView.tsx`)**: Legenda indicativa de bónus de pontuação por velocidade.
+- **CORREÇÃO DE DADOS**:
+  - Corrigido typo em `scripts/builtin-facts.mjs` (`GASTRONOMY` → `GASTRONOMIA`) e normalizados 20 registos no Supabase e `questions_backup.json`.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+8 novas** via built-in. Backup atualizado para 3.164.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **55 duplicados exatos removidos** pós-inserção de lote. 72 pares fuzzy e 922 famílias de template registados em `scripts/dedupe-report.json`. Total na BD: 3.294.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` gerou 40/40 páginas estáticas e rotas dinâmicas sem erros.
+
 ## [2026-08-24] Ciclo de Manutenção (8º ciclo, 8h) — Novas perguntas + TAREFA SEMANAL — Duplicados + MELHORIA (reduced-motion global)
 
 - **MELHORIA — `src/app/layout.tsx` (acessibilidade: `prefers-reduced-motion`)**: Embrulhado o `GameProvider` em `<MotionConfig reducedMotion="user">` do Framer Motion. Isto faz com que TODAS as animações do app (TV, telemóvel, espetador, transições) respeitem automaticamente a preferência de sistema "Reduzir Movimento" (acessibilidade, item 9.5 da auditoria). Alteração de uma linha + import, sem impacto visual para utilizadores normais. Lint clean.

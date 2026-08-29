@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Globe, History, FlaskConical, Map, Trophy, Flag, Zap, PawPrint, Utensils, Check, Crown, Cpu, Film, Music, Palette, Sparkles, ArrowLeft, Users } from "lucide-react";
+import { Globe, History, FlaskConical, Map, Trophy, Flag, Zap, PawPrint, Utensils, Check, Crown, Cpu, Film, Music, Palette, Sparkles, ArrowLeft, Users, Landmark } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
 import { createContextLogger } from "@/lib/logger";
 
@@ -30,6 +30,7 @@ const getCategoryStyles = (color: string) => {
 
 const CATEGORIES = [
   { name: "Cultura Geral", icon: Globe, color: "violet", desc: "Conhecimentos gerais", dbName: "CULTURA_GERAL" },
+  { name: "Portugal & Freguesias", icon: Landmark, color: "amber", desc: "Freguesias, concelhos e tradições", dbName: "PORTUGAL_FREGUESIAS" },
   { name: "Capitais do Mundo", icon: Zap, color: "emerald", desc: "Capitais e países", dbName: "CAPITAIS_DO_MUNDO" },
   { name: "Bandeiras", icon: Flag, color: "green", desc: "Bandeiras de países", dbName: "BANDEIRAS" },
   { name: "Geografia", icon: Map, color: "green", desc: "Montanhas, rios e oceanos", dbName: "GEOGRAFIA" },
@@ -240,17 +241,20 @@ export default function CategoriesPage() {
                       )}
                     </AnimatePresence>
                   </div>
-                  <p className="text-[#e3e0f9]/50 text-sm mb-3">{cat.desc}</p>
-                  <div className="mt-auto flex items-center justify-between w-full">
-                    <span className="text-[#e3e0f9]/40 text-xs">
+                  <p className="text-[#e3e0f9]/60 text-sm mb-3 leading-relaxed">{cat.desc}</p>
+                  <div className="mt-auto flex items-center justify-between w-full pt-2 border-t border-white/5">
+                    <span className="text-[#d0bcff]/80 text-xs font-semibold">
                       {countsLoading ? (
                         <span className="inline-flex items-center gap-1">
                           <span className="w-3 h-3 border border-white/20 border-t-[#d0bcff] rounded-full animate-spin" />
                           a carregar...
                         </span>
                       ) : (
-                        `${count} perguntas`
+                        `📚 ${count} perguntas`
                       )}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-white/30 bg-white/5 px-2 py-0.5 rounded-full">
+                      Quiz
                     </span>
                   </div>
                 </motion.div>

@@ -125,9 +125,14 @@ export default function QuestionView({
         </div>
       )}
 
-      {/* Question text */}
-      <div className="px-4 py-3 text-center">
-        <h2 className="text-xl font-black text-[#e3e0f9] leading-tight">{questionData.text}</h2>
+      {/* Question text & legend */}
+      <div className="px-4 py-2 text-center">
+        <h2 className="text-xl font-black text-[#e3e0f9] leading-tight mb-1">{questionData.text}</h2>
+        {!hasAnswered && (
+          <p className="text-[11px] font-medium text-[#e3e0f9]/40 uppercase tracking-wider">
+            ⚡ Responde rápido para pontuação máxima
+          </p>
+        )}
       </div>
 
       {/* Hint button */}
