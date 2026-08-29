@@ -69778,5 +69778,158 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Br?",
+    "options": [
+      "Bromo",
+      "Azoto",
+      "Estanho",
+      "Mercúrio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Br",
+      "explanation": "Qual é o elemento cujo símbolo químico é Br → Bromo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Prata?",
+    "options": [
+      "Ag",
+      "N",
+      "Si",
+      "Mg"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Prata → Ag."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é N?",
+    "options": [
+      "Azoto",
+      "Ouro",
+      "Prata",
+      "Iodo"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo N",
+      "explanation": "Qual é o elemento cujo símbolo químico é N → Azoto."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 × 12?",
+    "options": [
+      "36",
+      "33",
+      "26",
+      "31"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 12 = 36."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 121?",
+    "options": [
+      "11",
+      "8",
+      "10",
+      "18"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 121 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 3?",
+    "options": [
+      "34",
+      "24",
+      "25",
+      "27"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 3 = 27."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Santana, na ilha da Madeira, é famosa por:",
+    "options": [
+      "Cozido das furnas",
+      "Grutas calcárias",
+      "Casas típicas triangulares",
+      "Tapeçarias"
+    ],
+    "correct_option": 2,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Teto de colmo",
+      "explanation": "A freguesia de Santana, na ilha da Madeira, é famosa por: → Casas típicas triangulares."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que concelho se situa a freguesia de Nazaré, famosa pelas ondas gigantes?",
+    "options": [
+      "Caldas da Rainha",
+      "Alcobaça",
+      "Nazaré",
+      "Marinha Grande"
+    ],
+    "correct_option": 2,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Praia do Norte",
+      "explanation": "Em que concelho se situa a freguesia de Nazaré, famosa pelas ondas gigantes → Nazaré."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Miranda do Douro é célebre por qual língua oficial?",
+    "options": [
+      "Barranquenho",
+      "Mirandês",
+      "Asturiano",
+      "Leonês"
+    ],
+    "correct_option": 1,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Reconhecida em 1999",
+      "explanation": "A freguesia de Miranda do Douro é célebre por qual língua oficial → Mirandês."
+    },
+    "image_url": null
   }
 ]
