@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { triggerHaptic } from "@/lib/haptics";
 import { useSound } from "@/hooks/useSound";
 import { GAME_CONSTANTS, GameStatus } from "@/lib/constants";
+import { CATEGORIES } from "@/hooks/useGameSetup";
 import type { Question, Player } from "@/types";
 import QuestionView from "@/components/mobile/QuestionView";
 import RevealView from "@/components/mobile/RevealView";
@@ -44,6 +45,10 @@ export default function SoloGame() {
   const [frozen, setFrozen] = useState(false);
   const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
 
+  const [selectingCategory, setSelectingCategory] = useState(true);
+  const [chosenCategory, setChosenCategory] = useState<string | null>(null);
+  const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
+
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const revealTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -57,14 +62,32 @@ export default function SoloGame() {
     if (revealTimeoutRef.current) clearTimeout(revealTimeoutRef.current);
   }, []);
 
-  // Load questions
+  // Load category counts for the selection screen
   useEffect(() => {
+    (async () => {
+      const { data } = await supabase.from("questions").select("category").not("category", "is", null);
+      if (data) {
+        const counts: Record<string, number> = {};
+        data.forEach((q) => {
+          counts[q.category] = (counts[q.category] || 0) + 1;
+        });
+        setCategoryCounts(counts);
+      }
+    })();
+  }, []);
+
+  // Load questions (optionally filtered by a chosen category)
+  useEffect(() => {
+    if (selectingCategory || !chosenCategory) return;
     let cancelled = false;
     (async () => {
-      const { data, error } = await supabase
+      const query = supabase
         .from("questions")
         .select("id, text, options, correct_option, image_url, category, metadata, age_rating")
-        .limit(200);
+        .limit(500);
+      const { data, error } = await (chosenCategory === "ALL"
+        ? query
+        : query.eq("category", chosenCategory));
       if (cancelled) return;
       if (error || !data || data.length === 0) {
         setLoadError(true);
@@ -82,7 +105,13 @@ export default function SoloGame() {
     return () => {
       cancelled = true;
     };
-  }, [timerDuration]);
+  }, [chosenCategory, selectingCategory, timerDuration]);
+
+  const startSolo = (category: string | null) => {
+    setChosenCategory(category ?? "ALL");
+    setSelectingCategory(false);
+    setLoading(true);
+  };
 
   const goToReveal = useCallback(() => {
     clearTimers();
