@@ -70033,5 +70033,158 @@
       "explanation": "Em que concelho fica a freguesia das Furnas, famosa pelas caldeiras e cozido → Povoação."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Mercúrio?",
+    "options": [
+      "Hg",
+      "Ti",
+      "O",
+      "K"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Mercúrio → Hg."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Hidrogénio?",
+    "options": [
+      "Zn",
+      "Hg",
+      "Au",
+      "H"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Hidrogénio → H."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Zr?",
+    "options": [
+      "Zirconio",
+      "Ouro",
+      "Oxigénio",
+      "Tungsténio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Zr",
+      "explanation": "Qual é o elemento cujo símbolo químico é Zr → Zirconio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 elevado a 2?",
+    "options": [
+      "60",
+      "64",
+      "69",
+      "59"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 8 elevado a 2 = 64."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 62?",
+    "options": [
+      "25",
+      "23",
+      "27",
+      "33"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 62 = 23."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50% de 60?",
+    "options": [
+      "30",
+      "34",
+      "27",
+      "28"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 50% de 60 = 30."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que concelho se situa a freguesia de Costa Nova dos palheiros listados?",
+    "options": [
+      "Ovar",
+      "Aveiro",
+      "Estarreja",
+      "Ílhavo"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Concelho de Ílhavo",
+      "explanation": "Em que concelho se situa a freguesia de Costa Nova dos palheiros listados → Ílhavo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Peniche é mundialmente conhecida por qual modalidade?",
+    "options": [
+      "Remo",
+      "Vela",
+      "Natação",
+      "Surf"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Praia dos Supertubos",
+      "explanation": "A freguesia de Peniche é mundialmente conhecida por qual modalidade → Surf."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Belém, em Lisboa, é célebre por qual monumento?",
+    "options": [
+      "Convento de Cristo",
+      "Sé de Braga",
+      "Castelo de São Jorge",
+      "Torre de Belém"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Junto ao Tejo",
+      "explanation": "A freguesia de Belém, em Lisboa, é célebre por qual monumento → Torre de Belém."
+    },
+    "image_url": null
   }
 ]
