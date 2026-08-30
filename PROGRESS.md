@@ -1,5 +1,20 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-08-29] Ciclo de Manutenção (10º ciclo, 8h) — Modo Treino por Categoria no Solo + Novas Perguntas + Dedupe Semanal
+
+- **MELHORIA — Modo Treino por Categoria no Solo (`src/components/mobile/SoloGame.tsx`)**:
+  - Adicionado ecrã inicial de seleção de categoria antes de iniciar o jogo solo.
+  - O jogador pode escolher **"Todas as Categorias"** (modo original) ou filtrar por uma categoria específica (ex: Ciência, História, Portugal & Freguesias, etc.).
+  - Mostra contador de perguntas disponíveis por categoria (`categoryCounts`) obtido da BD em tempo real.
+  - Categorias sem perguntas aparecem desativadas.
+  - Botão "Escolher Categoria" no ecrã de erro permite voltar à seleção.
+  - Lint clean, build OK, testes 15/15 passam.
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+6 novas** via built-in (CIENCIA, MATEMATICA, PORTUGAL_FREGUESIAS). Backup: 3303 → 3309. Total na BD: 3.315.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria), 91 pares fuzzy (≥0.9) reais fora de BANDEIRAS, 972 pares de famílias de template ignorados como falsos positivos. Total na BD: 3.315.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` gerou 40/40 páginas estáticas e rotas dinâmicas sem erros; lint clean no ficheiro alterado.
+
 ## [2026-08-29] Ciclo de Manutenção (9º ciclo, 8h) — Portugal & Freguesias + Controlos de Host na TV + Legendas Visuais + Dedupe & Novas Perguntas
 
 - **MELHORIA — Nova Categoria `Portugal & Freguesias` (`PORTUGAL_FREGUESIAS`)**:

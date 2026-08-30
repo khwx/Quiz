@@ -57,7 +57,7 @@
 
 ### ⚡ 4. Novos Power-ups & Modos
 - [ ] Power-up **"Votação do Público" (Public Poll)**: Mostra percentagem de respostas da sala
-- [ ] Modo **Treino por Categoria no Solo** (escolher categoria específica para praticar)
+- [x] Modo **Treino por Categoria no Solo** (escolher categoria específica para praticar)
 - [ ] Modo **Duelo 1v1 Rápido**
 
 ---

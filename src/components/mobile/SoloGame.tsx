@@ -238,6 +238,54 @@ export default function SoloGame() {
 
   useEffect(() => () => clearTimers(), [clearTimers]);
 
+  if (selectingCategory) {
+    return (
+      <main className="min-h-screen flex flex-col items-center justify-center gap-6 bg-[#121223] p-6 relative overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#4a007f] blur-[150px] opacity-40 rounded-full" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[#aa0266] blur-[150px] opacity-30 rounded-full" />
+        <div className="relative z-10 text-center w-full max-w-md">
+          <h2 className="text-3xl font-black text-[#e3e0f9] mb-2" style={{ fontFamily: "Space Grotesk" }}>
+            Treino Solo
+          </h2>
+          <p className="text-[#e3e0f9]/50 text-sm mb-8">
+            Escolhe uma categoria para treinar especificamente ou joga com todas as categorias.
+          </p>
+
+          <button
+            onClick={() => startSolo(null)}
+            className="w-full mb-4 py-3.5 rounded-2xl bg-gradient-to-r from-[#FFD700] to-[#d0bcff] text-[#121223] font-bold shadow-lg active:scale-95 transition-transform uppercase tracking-widest text-sm"
+          >
+            🎲 Todas as Categorias
+          </button>
+
+          <div className="grid grid-cols-2 gap-2.5">
+            {CATEGORIES.map((cat) => {
+              const count = categoryCounts[cat.dbName] ?? 0;
+              return (
+                <button
+                  key={cat.dbName}
+                  onClick={() => startSolo(cat.dbName)}
+                  disabled={count === 0}
+                  className="px-3 py-3 rounded-2xl bg-white/5 border border-white/10 text-[#e3e0f9] font-semibold text-sm hover:bg-white/10 hover:border-[#d0bcff]/40 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  <span className="block text-xs opacity-60 mb-1">{count} 📚</span>
+                  {cat.name}
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            onClick={() => (window.location.href = "/")}
+            className="mt-8 px-6 py-3 bg-white/10 hover:bg-white/20 text-[#e3e0f9] rounded-xl border border-white/10 text-sm"
+          >
+            Voltar ao Início
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   if (loading) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4 bg-[#121223]">
@@ -251,12 +299,20 @@ export default function SoloGame() {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4 bg-[#121223] p-6 text-center">
         <p className="text-[#e3e0f9]/60">Não foi possível carregar perguntas.</p>
-        <button
-          onClick={() => (window.location.href = "/")}
-          className="px-6 py-3 bg-white/10 hover:bg-white/20 text-[#e3e0f9] rounded-xl border border-white/10"
-        >
-          Voltar ao Início
-        </button>
+        <div className="flex flex-wrap gap-3 justify-center">
+          <button
+            onClick={() => setSelectingCategory(true)}
+            className="px-6 py-3 bg-white/10 hover:bg-white/20 text-[#e3e0f9] rounded-xl border border-white/10"
+          >
+            Escolher Categoria
+          </button>
+          <button
+            onClick={() => (window.location.href = "/")}
+            className="px-6 py-3 bg-white/10 hover:bg-white/20 text-[#e3e0f9] rounded-xl border border-white/10"
+          >
+            Voltar ao Início
+          </button>
+        </div>
       </main>
     );
   }

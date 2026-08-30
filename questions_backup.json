@@ -69931,5 +69931,107 @@
       "explanation": "A freguesia de Miranda do Douro é célebre por qual língua oficial → Mirandês."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Boro?",
+    "options": [
+      "Cs",
+      "B",
+      "Na",
+      "Hg"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Boro → B."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Zn?",
+    "options": [
+      "Cobre",
+      "Boro",
+      "Fósforo",
+      "Zinco"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Zn",
+      "explanation": "Qual é o elemento cujo símbolo químico é Zn → Zinco."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 70 - 24?",
+    "options": [
+      "39",
+      "41",
+      "53",
+      "46"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 70 - 24 = 46."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 elevado a 4?",
+    "options": [
+      "256",
+      "254",
+      "259",
+      "249"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 4 elevado a 4 = 256."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A vila e freguesia de Monsaraz pertence a que concelho alentejano?",
+    "options": [
+      "Reguengos de Monsaraz",
+      "Mourão",
+      "Redondo",
+      "Portel"
+    ],
+    "correct_option": 0,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Vila medieval fortificada",
+      "explanation": "A vila e freguesia de Monsaraz pertence a que concelho alentejano → Reguengos de Monsaraz."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que concelho fica a freguesia das Furnas, famosa pelas caldeiras e cozido?",
+    "options": [
+      "Ponta Delgada",
+      "Lagoa",
+      "Vila Franca do Campo",
+      "Povoação"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "São Miguel, Açores",
+      "explanation": "Em que concelho fica a freguesia das Furnas, famosa pelas caldeiras e cozido → Povoação."
+    },
+    "image_url": null
   }
 ]
