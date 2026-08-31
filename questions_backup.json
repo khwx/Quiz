@@ -70186,5 +70186,158 @@
       "explanation": "A freguesia de Belém, em Lisboa, é célebre por qual monumento → Torre de Belém."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Mg?",
+    "options": [
+      "Magnésio",
+      "Fósforo",
+      "Flúor",
+      "Titânio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Mg",
+      "explanation": "Qual é o elemento cujo símbolo químico é Mg → Magnésio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Chumbo?",
+    "options": [
+      "F",
+      "Pb",
+      "I",
+      "Ag"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Chumbo → Pb."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Na?",
+    "options": [
+      "Cobalto",
+      "Sódio",
+      "Flúor",
+      "Carbono"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Na",
+      "explanation": "Qual é o elemento cujo símbolo químico é Na → Sódio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 68 - 54?",
+    "options": [
+      "21",
+      "14",
+      "7",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 68 - 54 = 14."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 elevado a 4?",
+    "options": [
+      "85",
+      "88",
+      "76",
+      "81"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 3 elevado a 4 = 81."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25% de 200?",
+    "options": [
+      "43",
+      "53",
+      "50",
+      "52"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 25% de 200 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Colares pertence a que concelho?",
+    "options": [
+      "Cascais",
+      "Mafra",
+      "Sintra",
+      "Oeiras"
+    ],
+    "correct_option": 2,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Vinhos de chão de areia",
+      "explanation": "A freguesia de Colares pertence a que concelho → Sintra."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Buçaco (Luso) pertence a que concelho?",
+    "options": [
+      "Anadia",
+      "Mealhada",
+      "Águeda",
+      "Cantanhede"
+    ],
+    "correct_option": 1,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Mata secular e termas",
+      "explanation": "A freguesia de Buçaco (Luso) pertence a que concelho → Mealhada."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Sagres pertence a qual concelho algarvio?",
+    "options": [
+      "Vila do Bispo",
+      "Silves",
+      "Portimão",
+      "Aljezur"
+    ],
+    "correct_option": 0,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Barlavento algarvio",
+      "explanation": "A freguesia de Sagres pertence a qual concelho algarvio → Vila do Bispo."
+    },
+    "image_url": null
   }
 ]
