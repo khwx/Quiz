@@ -70339,5 +70339,107 @@
       "explanation": "A freguesia de Sagres pertence a qual concelho algarvio → Vila do Bispo."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Sn?",
+    "options": [
+      "Azoto",
+      "Hélio",
+      "Estanho",
+      "Cobalto"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Sn",
+      "explanation": "Qual é o elemento cujo símbolo químico é Sn → Estanho."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Níquel?",
+    "options": [
+      "Au",
+      "I",
+      "O",
+      "Ni"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Níquel → Ni."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Flúor?",
+    "options": [
+      "Li",
+      "P",
+      "F",
+      "W"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Flúor → F."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 46 - 33?",
+    "options": [
+      "13",
+      "23",
+      "10",
+      "20"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 46 - 33 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 59 + 71?",
+    "options": [
+      "120",
+      "130",
+      "133",
+      "126"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 59 + 71 = 130."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 225?",
+    "options": [
+      "15",
+      "11",
+      "12",
+      "18"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 225 = 15."
+    },
+    "image_url": null
   }
 ]
