@@ -251,8 +251,8 @@ export default function TeamsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
   }
@@ -260,16 +260,16 @@ export default function TeamsPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/profile" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/profile" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Equipas</h1>
+          <h1 className="text-lg font-bold text-on-surface">Equipas</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -284,10 +284,10 @@ export default function TeamsPage() {
             <div className="flex justify-between items-start mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Crown className="w-5 h-5 text-[#FFD700]" />
-                  <h2 className="text-2xl font-bold text-[#e3e0f9]">{myTeam.name}</h2>
+                  <Crown className="w-5 h-5 text-amber-400" />
+                  <h2 className="text-2xl font-bold text-on-surface">{myTeam.name}</h2>
                 </div>
-                <p className="text-[#e3e0f9]/50 text-sm">A tua equipa</p>
+                <p className="text-on-surface/50 text-sm">A tua equipa</p>
               </div>
               <button
                 onClick={() => {
@@ -295,18 +295,18 @@ export default function TeamsPage() {
                     leaveTeam(myTeam.id);
                   }
                 }}
-                className="text-[#FFB0CD] hover:text-[#FFB0CD]/80 text-sm"
+                className="text-secondary hover:text-secondary/80 text-sm"
               >
                 Sair
               </button>
             </div>
 
             <div className="bg-white/5 rounded-xl p-4">
-              <div className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 tracking-wider font-bold">
+              <div className="text-[10px] text-on-surface/40 uppercase mb-2 tracking-wider font-bold">
                 Código para amigos
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 font-mono text-3xl tracking-widest text-[#d0bcff]">
+                <div className="flex-1 font-mono text-3xl tracking-widest text-primary">
                   {myTeam.pin}
                 </div>
                 <motion.button
@@ -315,32 +315,32 @@ export default function TeamsPage() {
                   className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                 >
                   {copied ? (
-                    <Check className="w-5 h-5 text-[#4CAF50]" />
+                    <Check className="w-5 h-5 text-green-400" />
                   ) : (
-                    <Copy className="w-5 h-5 text-[#e3e0f9]" />
+                    <Copy className="w-5 h-5 text-on-surface" />
                   )}
                 </motion.button>
               </div>
             </div>
 
             <div className="mt-4">
-              <div className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 tracking-wider font-bold">
+              <div className="text-[10px] text-on-surface/40 uppercase mb-2 tracking-wider font-bold">
                 Membros ({myTeam.team_members?.length || 0}/{myTeam.max_members})
               </div>
               <div className="flex flex-wrap gap-2">
                 {myTeam.team_members?.map((member) => (
                   <div key={member.id} className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg border border-white/10">
                     <span className="text-lg">{member.profiles?.avatar || "🧑‍🚀"}</span>
-                    <span className="text-[#e3e0f9] text-sm">{member.profiles?.username || "Jogador"}</span>
+                    <span className="text-on-surface text-sm">{member.profiles?.username || "Jogador"}</span>
                     {member.role === "host" && (
-                      <Crown className="w-3 h-3 text-[#FFB0CD]" />
+                      <Crown className="w-3 h-3 text-secondary" />
                     )}
                   </div>
                 ))}
                 {(!myTeam.team_members || myTeam.team_members.length === 0) && (
                   <div className="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-lg border border-white/10">
-                    <UserPlus className="w-4 h-4 text-[#d0bcff]" />
-                    <span className="text-[#e3e0f9] text-sm">Tu</span>
+                    <UserPlus className="w-4 h-4 text-primary" />
+                    <span className="text-on-surface text-sm">Tu</span>
                   </div>
                 )}
               </div>
@@ -349,7 +349,7 @@ export default function TeamsPage() {
             <motion.button
               whileTap={{ scale: 0.98 }}
               onClick={() => router.push(`/host?team=${myTeam.id}`)}
-              className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-xl font-bold text-[#3c0091] shadow-[0_0_20px_rgba(208,188,255,0.3)]"
+              className="w-full mt-4 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-primary to-secondary rounded-xl font-bold text-on-primary shadow-[0_0_20px_rgba(208,188,255,0.3)]"
             >
               <Trophy className="w-5 h-5" />
               Criar Jogo em Equipa
@@ -366,13 +366,13 @@ export default function TeamsPage() {
                 setCreateMode(true);
                 setJoinMode(false);
               }}
-              className="glass-panel p-6 text-center hover:border-[#d0bcff]/50 transition-all"
+              className="glass-panel p-6 text-center hover:border-primary/50 transition-all"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#d0bcff]/20 flex items-center justify-center mx-auto mb-3">
-                <Plus className="w-6 h-6 text-[#d0bcff]" />
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-3">
+                <Plus className="w-6 h-6 text-primary" />
               </div>
-              <div className="font-bold text-[#e3e0f9]">Criar Equipa</div>
-              <div className="text-[#e3e0f9]/50 text-sm mt-1">
+              <div className="font-bold text-on-surface">Criar Equipa</div>
+              <div className="text-on-surface/50 text-sm mt-1">
                 Começar uma nova equipa
               </div>
             </motion.button>
@@ -383,13 +383,13 @@ export default function TeamsPage() {
                 setJoinMode(true);
                 setCreateMode(false);
               }}
-              className="glass-panel p-6 text-center hover:border-[#FFB0CD]/50 transition-all"
+              className="glass-panel p-6 text-center hover:border-secondary/50 transition-all"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#FFB0CD]/20 flex items-center justify-center mx-auto mb-3">
-                <QrCode className="w-6 h-6 text-[#FFB0CD]" />
+              <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mx-auto mb-3">
+                <QrCode className="w-6 h-6 text-secondary" />
               </div>
-              <div className="font-bold text-[#e3e0f9]">Entrar em Equipa</div>
-              <div className="text-[#e3e0f9]/50 text-sm mt-1">Entrar com código</div>
+              <div className="font-bold text-on-surface">Entrar em Equipa</div>
+              <div className="text-on-surface/50 text-sm mt-1">Entrar com código</div>
             </motion.button>
           </div>
         )}
@@ -401,18 +401,18 @@ export default function TeamsPage() {
         >
           <Link
             href="/teams/ranking"
-            className="glass-panel p-5 flex items-center justify-between hover:border-[#d0bcff]/40 transition-all group block"
+            className="glass-panel p-5 flex items-center justify-between hover:border-primary/40 transition-all group block"
           >
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFD700]/20 to-[#d0bcff]/20 flex items-center justify-center border border-[#FFD700]/30 group-hover:scale-105 transition-transform">
-                <Trophy className="w-6 h-6 text-[#FFD700]" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400/20 to-primary/20 flex items-center justify-center border border-amber-400/30 group-hover:scale-105 transition-transform">
+                <Trophy className="w-6 h-6 text-amber-400" />
               </div>
               <div>
                 <h3 className="font-bold text-white text-base">Ranking de Equipas</h3>
-                <p className="text-xs text-[#e3e0f9]/60">Ver classificação coletiva e pódio</p>
+                <p className="text-xs text-on-surface/60">Ver classificação coletiva e pódio</p>
               </div>
             </div>
-            <span className="text-[#d0bcff] font-bold text-sm group-hover:translate-x-1 transition-transform">Ver Ranking →</span>
+            <span className="text-primary font-bold text-sm group-hover:translate-x-1 transition-transform">Ver Ranking →</span>
           </Link>
         </motion.div>
 
@@ -424,11 +424,11 @@ export default function TeamsPage() {
               exit={{ opacity: 0, height: 0 }}
               className="glass-panel p-6 overflow-hidden"
             >
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Nova Equipa</h3>
+              <h3 className="text-lg font-bold text-on-surface mb-4">Nova Equipa</h3>
 
               <div className="space-y-4">
                 <div>
-                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 ml-1 block tracking-wider font-bold">
+                  <label className="text-[10px] text-on-surface/40 uppercase mb-2 ml-1 block tracking-wider font-bold">
                     Nome da Equipa
                   </label>
                   <input
@@ -441,7 +441,7 @@ export default function TeamsPage() {
                 </div>
 
                 {error && (
-                  <div className="p-3 bg-[#FF6B6B]/20 border border-[#FF6B6B]/30 rounded-lg text-[#FF6B6B] text-sm">
+                  <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
                     {error}
                   </div>
                 )}
@@ -450,7 +450,7 @@ export default function TeamsPage() {
                   <motion.button
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setCreateMode(false)}
-                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 border border-white/10"
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-on-surface/60 border border-white/10"
                   >
                     Cancelar
                   </motion.button>
@@ -458,7 +458,7 @@ export default function TeamsPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={createTeam}
                     disabled={saving || !teamName}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-xl font-bold text-[#3c0091] disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-primary to-secondary rounded-xl font-bold text-on-primary disabled:opacity-50"
                   >
                     {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Criar"}
                   </motion.button>
@@ -474,11 +474,11 @@ export default function TeamsPage() {
               exit={{ opacity: 0, height: 0 }}
               className="glass-panel p-6 overflow-hidden"
             >
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Entrar em Equipa</h3>
+              <h3 className="text-lg font-bold text-on-surface mb-4">Entrar em Equipa</h3>
 
               <div className="space-y-4">
                 <div>
-                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase mb-2 ml-1 block tracking-wider font-bold">
+                  <label className="text-[10px] text-on-surface/40 uppercase mb-2 ml-1 block tracking-wider font-bold">
                     Código da Equipa
                   </label>
                   <input
@@ -492,7 +492,7 @@ export default function TeamsPage() {
                 </div>
 
                 {error && (
-                  <div className="p-3 bg-[#FF6B6B]/20 border border-[#FF6B6B]/30 rounded-lg text-[#FF6B6B] text-sm">
+                  <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
                     {error}
                   </div>
                 )}
@@ -501,7 +501,7 @@ export default function TeamsPage() {
                   <motion.button
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setJoinMode(false)}
-                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 border border-white/10"
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-on-surface/60 border border-white/10"
                   >
                     Cancelar
                   </motion.button>
@@ -509,7 +509,7 @@ export default function TeamsPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={joinTeam}
                     disabled={saving || !teamPin}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#FFB0CD] to-[#FF6B6B] rounded-xl font-bold text-white disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-secondary to-red-500 rounded-xl font-bold text-white disabled:opacity-50"
                   >
                     {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
                   </motion.button>
@@ -525,8 +525,8 @@ export default function TeamsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-[#d0bcff]" />
+            <h3 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-primary" />
               Equipas Ativas
             </h3>
             <div className="space-y-3">
@@ -539,17 +539,17 @@ export default function TeamsPage() {
                   className="glass-panel p-4 flex items-center justify-between hover:border-white/20 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#d0bcff]/20 flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-[#d0bcff]" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <div className="font-bold text-[#e3e0f9]">{team.name}</div>
-                      <div className="text-[#e3e0f9]/40 text-sm">
+                      <div className="font-bold text-on-surface">{team.name}</div>
+                      <div className="text-on-surface/40 text-sm">
                         {team.team_members?.length || 0}/{team.max_members} membros
                       </div>
                     </div>
                   </div>
-                  <div className="font-mono text-[#d0bcff] text-sm tracking-wider">
+                  <div className="font-mono text-primary text-sm tracking-wider">
                     {team.pin}
                   </div>
                 </motion.div>

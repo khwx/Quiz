@@ -95,7 +95,7 @@ export default function Home() {
       name: "Idiomas",
       desc: "Culturas e tradições",
       color: "violet",
-      gradient: "from-violet-500 to-purple-500",
+      gradient: "from-primary to-tertiary",
       questions: "150+",
     },
   ];
@@ -132,12 +132,12 @@ export default function Home() {
     <main className="min-h-screen relative overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-violet-600/10 rounded-full mix-blend-screen filter blur-[150px] animate-pulse" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-pink-600/10 rounded-full mix-blend-screen filter blur-[150px] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] bg-purple-500/5 rounded-full mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-primary/10 rounded-full mix-blend-screen filter blur-[150px] animate-pulse" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-secondary/10 rounded-full mix-blend-screen filter blur-[150px] animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] bg-tertiary/5 rounded-full mix-blend-screen filter blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
         {/* Cursor glow effect */}
         <div
-          className="absolute w-[300px] h-[300px] bg-violet-500/10 rounded-full filter blur-[100px] pointer-events-none transition-all duration-300"
+          className="absolute w-[300px] h-[300px] bg-primary/10 rounded-full filter blur-[100px] pointer-events-none transition-all duration-300"
           style={{
             left: mousePosition.x - 150,
             top: mousePosition.y - 150,
@@ -152,7 +152,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-black italic bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-pink-500"
+          className="text-2xl font-black italic bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           style={{ fontFamily: "Space Grotesk, system-ui" }}
         >
           QUIZVERSE
@@ -163,7 +163,7 @@ export default function Home() {
           transition={{ delay: 0.1 }}
           className="flex items-center gap-6"
         >
-          <Link href="/" className="text-white font-bold border-b-2 border-pink-500 pb-1 text-sm">
+          <Link href="/" className="text-white font-bold border-b-2 border-primary pb-1 text-sm">
             Início
           </Link>
           <Link href="/teams" className="text-white/60 hover:text-white transition-colors text-sm">
@@ -190,7 +190,7 @@ export default function Home() {
               <span className="text-sm">{user.email?.split("@")[0]}</span>
             </Link>
           ) : (
-            <Link href="/login" className="flex items-center gap-2 px-4 py-2 bg-violet-500/20 hover:bg-violet-500/30 text-violet-400 rounded-full transition-colors">
+            <Link href="/login" className="flex items-center gap-2 px-4 py-2 bg-primary/15 hover:bg-primary/25 text-primary rounded-full transition-colors">
               <UserIcon className="w-5 h-5" />
               <span className="text-sm">Entrar</span>
             </Link>
@@ -218,15 +218,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6"
             >
-              <Sparkles className="w-4 h-4 text-violet-400" />
-              <span className="text-xs font-semibold tracking-widest text-violet-400 uppercase">Quiz Gaming v3.0</span>
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-xs font-semibold tracking-widest text-primary uppercase">Quiz Gaming v3.0</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-white mb-6 leading-[1.1]" style={{ fontFamily: "Space Grotesk, system-ui" }}>
               Acende a tua{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400">
+              <span className="neon-text">
                 Mente
               </span>
               .
@@ -239,9 +239,9 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 mb-12">
               <Link
                 href="/host"
-                className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-2xl hover:scale-[0.98] active:scale-[0.95] transition-all shadow-[0_0_30px_rgba(139,92,246,0.4)] relative overflow-hidden"
+                className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-tertiary text-white font-semibold rounded-2xl hover:scale-[0.98] active:scale-[0.95] transition-all shadow-[0_0_30px_rgba(139,92,246,0.4)] relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
                 <Tv className="w-5 h-5 relative z-10" />
                 <span className="relative z-10">Criar Jogo</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -265,7 +265,7 @@ export default function Home() {
                   transition={{ delay: 0.5 + i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+                  <div className="text-2xl md:text-3xl font-black neon-text">
                     {stat.value}
                   </div>
                   <div className="text-xs text-white/40 mt-1">{stat.label}</div>
@@ -297,19 +297,19 @@ export default function Home() {
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: 1 }}
               className="absolute -bottom-4 -left-4 z-20"
             >
-              <div className="bg-gradient-to-r from-violet-500 to-purple-500 p-3 rounded-xl shadow-[0_0_20px_rgba(139,92,246,0.4)]">
+              <div className="bg-gradient-to-r from-primary to-tertiary p-3 rounded-xl shadow-[0_0_20px_rgba(139,92,246,0.4)]">
                 <Star className="w-6 h-6 text-white" />
               </div>
             </motion.div>
 
             {/* Main Card */}
             <div className="glass-card p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-pink-500/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
 
               {/* PIN Input Section */}
               <div className="relative z-10">
                 <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
-                  <Rocket className="w-5 h-5 text-violet-400" />
+                  <Rocket className="w-5 h-5 text-primary" />
                   Entrar no Jogo
                 </h3>
                 <p className="text-white/40 text-sm mb-6">Insere o código de 6 dígitos</p>
@@ -323,7 +323,7 @@ export default function Home() {
                     value={quickPin}
                     onChange={(e) => setQuickPin(e.target.value.replace(/\D/g, ""))}
                     maxLength={6}
-                    className="flex-1 bg-black/30 border border-white/10 rounded-xl px-6 py-4 text-white text-center text-2xl font-mono tracking-[0.4em] placeholder-gray-600 focus:outline-none focus:border-violet-500 focus:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all"
+                    className="flex-1 bg-black/30 border border-white/10 rounded-xl px-6 py-4 text-white text-center text-2xl font-mono tracking-[0.4em] placeholder-gray-600 focus:outline-none focus:border-primary focus:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all"
                   />
                 </div>
 
@@ -336,7 +336,7 @@ export default function Home() {
                   disabled={quickPin.length < 4}
                   className={`w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-bold transition-all ${
                     quickPin.length >= 4
-                      ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:brightness-110"
+                      ? "bg-gradient-to-r from-primary to-tertiary text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:brightness-110"
                       : "bg-white/5 text-white/30 cursor-not-allowed"
                   }`}
                 >
@@ -369,7 +369,7 @@ export default function Home() {
         >
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: "Space Grotesk" }}>
             Escolhe a tua{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Arena</span>
+            <span className="neon-text">Arena</span>
           </h2>
           <p className="text-white/50 max-w-md mx-auto">Cada categoria tem centenas de perguntas esperando por ti</p>
         </motion.div>
@@ -406,7 +406,7 @@ export default function Home() {
         <div className="text-center mt-8">
           <Link
             href="/categories"
-            className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 transition-colors"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary-fixed transition-colors"
           >
             Ver Todas as Categorias
             <ArrowRight className="w-4 h-4" />
@@ -424,14 +424,14 @@ export default function Home() {
         >
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: "Space Grotesk" }}>
             Como{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Funciona?</span>
+            <span className="neon-text">Funciona?</span>
           </h2>
           <p className="text-white/50 max-w-md mx-auto">Três passos simples para começar a jogar</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Connection line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-500/50 via-pink-500/50 to-violet-500/50 -translate-y-1/2" />
+          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/50 via-secondary/50 to-primary/50 -translate-y-1/2" />
 
           {steps.map((step, i) => (
             <motion.div
@@ -443,11 +443,11 @@ export default function Home() {
               className="relative"
             >
               <div className="glass-panel p-8 text-center relative z-10 bg-slate-950/50">
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-violet-500 to-pink-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)]">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)]">
                   <span className="text-white font-bold text-sm">{step.num}</span>
                 </div>
                 <div className="mt-4 mb-4">
-                  <step.icon className="w-10 h-10 text-violet-400 mx-auto" />
+                  <step.icon className="w-10 h-10 text-primary mx-auto" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                 <p className="text-white/50 text-sm">{step.desc}</p>
@@ -465,11 +465,11 @@ export default function Home() {
           viewport={{ once: true }}
           className="glass-card p-12 text-center relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-pink-500/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: "Space Grotesk" }}>
               Pronto para o{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Desafio</span>?
+              <span className="neon-text">Desafio</span>?
             </h2>
             <p className="text-white/50 mb-8 max-w-md mx-auto">
               Cria um jogo agora e desafia os teus amigos a uma batalha de conhecimento!
@@ -477,7 +477,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/host"
-                className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-semibold rounded-2xl hover:scale-[0.98] active:scale-[0.95] transition-all shadow-[0_0_30px_rgba(139,92,246,0.4)]"
+                className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-tertiary text-white font-semibold rounded-2xl hover:scale-[0.98] active:scale-[0.95] transition-all shadow-[0_0_30px_rgba(139,92,246,0.4)]"
               >
                 <Tv className="w-5 h-5" />
                 Criar Jogo Agora
@@ -507,7 +507,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-2xl font-black italic bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-pink-500 mb-4" style={{ fontFamily: "Space Grotesk" }}>
+              <div className="text-2xl font-black italic bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-4" style={{ fontFamily: "Space Grotesk" }}>
                 QUIZVERSE
               </div>
               <p className="text-white/40 text-sm">A arena do conhecimento. Desafia os teus amigos num jogo de perguntas épico!</p>

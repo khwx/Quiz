@@ -466,8 +466,8 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       return (
         <>
           <main className="min-h-screen flex flex-col items-center justify-center gap-6 p-6">
-            <div className="w-16 h-16 rounded-full bg-[#d0bcff]/10 flex items-center justify-center mb-2">
-              <Eye className="w-8 h-8 text-[#d0bcff]" />
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+              <Eye className="w-8 h-8 text-primary" />
             </div>
             <h1 className="text-2xl font-bold text-white text-center">Modo Espectador</h1>
             <p className="text-white/50 text-center text-sm max-w-xs">
@@ -480,13 +480,13 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
                 value={spectatorPin}
                 onChange={(e) => setSpectatorPin(e.target.value.toUpperCase())}
                 onKeyDown={(e) => e.key === "Enter" && handleSpectatorJoin()}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-center text-2xl font-mono tracking-widest placeholder-white/20 focus:outline-none focus:border-[#d0bcff]"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-center text-2xl font-mono tracking-widest placeholder-white/20 focus:outline-none focus:border-primary"
                 maxLength={6}
               />
               <button
                 onClick={handleSpectatorJoin}
                 disabled={!spectatorPin || isSpectatorJoining}
-                className="w-full py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full py-3 bg-primary text-[#121223] rounded-xl font-bold disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {isSpectatorJoining ? (
                   <>
@@ -521,7 +521,7 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
 
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </main>
     );
   }
@@ -619,19 +619,19 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
   if (status === GameStatus.QUESTION && !questionData) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4">
-        <Loader2 className="w-12 h-12 animate-spin text-[#d0bcff]" />
+        <Loader2 className="w-12 h-12 animate-spin text-primary" />
         {questionLoadError ? (
           <>
-            <p className="text-[#e3e0f9]/50 text-sm">Erro ao carregar pergunta.</p>
+            <p className="text-on-surface/50 text-sm">Erro ao carregar pergunta.</p>
             <button
               onClick={() => { setQuestionLoadError(false); fetchQuestion(); }}
-              className="px-6 py-2 bg-[#d0bcff]/20 hover:bg-[#d0bcff]/30 text-[#d0bcff] rounded-xl font-bold text-sm border border-[#d0bcff]/30"
+              className="px-6 py-2 bg-primary/20 hover:bg-primary/30 text-primary rounded-xl font-bold text-sm border border-primary/30"
             >
               Tentar Novamente
             </button>
           </>
         ) : (
-          <p className="text-[#e3e0f9]/30 text-sm">A carregar pergunta...</p>
+          <p className="text-on-surface/30 text-sm">A carregar pergunta...</p>
         )}
         <MobileChat gameId={gameId!} playerId={clientPlayerId} playerName={name || "Anónimo"} />
       </main>

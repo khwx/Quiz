@@ -137,16 +137,16 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
   }
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <Link href="/login" className="text-[#d0bcff]">Entrar</Link>
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Link href="/login" className="text-primary">Entrar</Link>
       </div>
     );
   }
@@ -154,24 +154,24 @@ export default function ProfilePage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             ← Voltar
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Perfil</h1>
+          <h1 className="text-lg font-bold text-on-surface">Perfil</h1>
           <div className="flex items-center gap-3">
-            <Link href="/stats" className="text-[#e3e0f9]/60 hover:text-[#d0bcff] transition-colors">
+            <Link href="/stats" className="text-on-surface/60 hover:text-primary transition-colors">
               <BarChart3 className="w-5 h-5" />
             </Link>
-            <Link href="/profile/edit" className="text-[#e3e0f9]/60 hover:text-[#d0bcff] transition-colors text-sm font-bold">
+            <Link href="/profile/edit" className="text-on-surface/60 hover:text-primary transition-colors text-sm font-bold">
               Editar
             </Link>
-            <button onClick={handleLogout} className="text-[#e3e0f9]/60 hover:text-[#FFB0CD] transition-colors">
+            <button onClick={handleLogout} className="text-on-surface/60 hover:text-secondary transition-colors">
               <LogOut className="w-5 h-5" />
             </button>
           </div>
@@ -182,7 +182,7 @@ export default function ProfilePage() {
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6"
+          className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6"
         >
           <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
             <motion.div 
@@ -191,52 +191,52 @@ export default function ProfilePage() {
               transition={{ type: "spring", bounce: 0.4 }}
               className="relative"
             >
-              <div className="w-28 h-28 rounded-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] flex items-center justify-center text-5xl font-bold text-[#3c0091] shadow-[0_0_30px_rgba(208,188,255,0.3)]">
+              <div className="w-28 h-28 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-5xl font-bold text-on-primary shadow-[0_0_30px_rgba(208,188,255,0.3)]">
                 {user.avatar}
               </div>
-              <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-[#FFD700] rounded-full flex items-center justify-center">
+              <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center">
                 <Crown className="w-4 h-4 text-[#121223]" />
               </div>
             </motion.div>
 
               <div className="flex-1 text-center md:text-left">
-                <h2 className="text-3xl font-bold text-[#e3e0f9] mb-1">{user.name}</h2>
-                <p className="text-[#e3e0f9]/50 mb-2">{user.email}</p>
+                <h2 className="text-3xl font-bold text-on-surface mb-1">{user.name}</h2>
+                <p className="text-on-surface/50 mb-2">{user.email}</p>
                 {profile && (
                   <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-                    <span className="text-xs font-bold text-[#d0bcff] bg-[#d0bcff]/10 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
                       Nível {profile.level}
                     </span>
                     <div className="w-24 h-2 bg-white/10 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] rounded-full"
+                        className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
                         style={{ width: `${Math.min(100, (profile.xp % (profile.level * 100)) / (profile.level * 100) * 100)}%` }}
                       />
                     </div>
-                    <span className="text-xs text-[#e3e0f9]/60">{profile.xp} XP</span>
+                    <span className="text-xs text-on-surface/60">{profile.xp} XP</span>
                   </div>
                 )}
 
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
                 <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
-                  <Target className="w-5 h-5 text-[#d0bcff]" />
+                  <Target className="w-5 h-5 text-primary" />
                   <div>
-                    <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-wider">Acertos</div>
-                    <div className="font-bold text-[#e3e0f9]">{stats?.correctAnswers || 0}</div>
+                    <div className="text-[10px] text-on-surface/40 uppercase tracking-wider">Acertos</div>
+                    <div className="font-bold text-on-surface">{stats?.correctAnswers || 0}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
-                  <Coins className="w-5 h-5 text-[#FFD700]" />
+                  <Coins className="w-5 h-5 text-amber-400" />
                   <div>
-                    <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-wider">Pontos</div>
-                    <div className="font-bold text-[#e3e0f9]">{stats?.totalPoints || 0}</div>
+                    <div className="text-[10px] text-on-surface/40 uppercase tracking-wider">Pontos</div>
+                    <div className="font-bold text-on-surface">{stats?.totalPoints || 0}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
-                  <Flame className="w-5 h-5 text-[#FF6B6B]" />
+                  <Flame className="w-5 h-5 text-red-400" />
                   <div>
-                    <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-wider">Jogos</div>
-                    <div className="font-bold text-[#e3e0f9]">{stats?.totalGames || 0}</div>
+                    <div className="text-[10px] text-on-surface/40 uppercase tracking-wider">Jogos</div>
+                    <div className="font-bold text-on-surface">{stats?.totalGames || 0}</div>
                   </div>
                 </div>
               </div>
@@ -248,24 +248,24 @@ export default function ProfilePage() {
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6"
+            className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 mb-6"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#d0bcff]/15 flex items-center justify-center">
-                <Link2 className="w-5 h-5 text-[#d0bcff]" />
+              <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center">
+                <Link2 className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-bold text-[#e3e0f9]">O teu código de jogador</h3>
-                <p className="text-[11px] text-[#e3e0f9]/40">Partilha para os teus amigos te encontrarem e convidarem</p>
+                <h3 className="font-bold text-on-surface">O teu código de jogador</h3>
+                <p className="text-[11px] text-on-surface/40">Partilha para os teus amigos te encontrarem e convidarem</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <code className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-lg font-bold tracking-widest text-[#d0bcff] text-center sm:text-left">
+              <code className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-lg font-bold tracking-widest text-primary text-center sm:text-left">
                 {profile.invite_code}
               </code>
               <button
                 onClick={copyInviteLink}
-                className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-primary to-secondary text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
               >
                 {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
                 {copied ? "Copiado!" : "Copiar link"}
@@ -281,8 +281,8 @@ export default function ProfilePage() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? "bg-[#d0bcff]/15 text-[#d0bcff] border border-[#d0bcff]/30"
-                  : "text-[#e3e0f9]/60 hover:text-[#e3e0f9] bg-white/5 border border-white/10 hover:border-white/20"
+                  ? "bg-primary/15 text-primary border border-primary/30"
+                  : "text-on-surface/60 hover:text-on-surface bg-white/5 border border-white/10 hover:border-white/20"
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -301,23 +301,23 @@ export default function ProfilePage() {
               className="grid grid-cols-2 md:grid-cols-4 gap-4"
             >
               {[
-                { label: "Jogos Totais", value: stats?.totalGames || 0, color: "text-[#e3e0f9]", icon: <Activity className="w-5 h-5" /> },
-                { label: "Respostas Certas", value: stats?.correctAnswers || 0, color: "text-[#4CAF50]", icon: <Target className="w-5 h-5" /> },
-                { label: "Pontos Totais", value: stats?.totalPoints || 0, color: "text-[#FFD700]", icon: <Coins className="w-5 h-5" /> },
-                { label: "Taxa de Acerto", value: `${stats?.accuracy || 0}%`, color: "text-[#d0bcff]", icon: <Zap className="w-5 h-5" /> },
+                { label: "Jogos Totais", value: stats?.totalGames || 0, color: "text-on-surface", icon: <Activity className="w-5 h-5" /> },
+                { label: "Respostas Certas", value: stats?.correctAnswers || 0, color: "text-green-400", icon: <Target className="w-5 h-5" /> },
+                { label: "Pontos Totais", value: stats?.totalPoints || 0, color: "text-amber-400", icon: <Coins className="w-5 h-5" /> },
+                { label: "Taxa de Acerto", value: `${stats?.accuracy || 0}%`, color: "text-primary", icon: <Zap className="w-5 h-5" /> },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-5 text-center hover:border-white/20 transition-colors"
+                  className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-5 text-center hover:border-white/20 transition-colors"
                 >
                   <div className={`w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3 ${stat.color}`}>
                     {stat.icon}
                   </div>
                   <div className={`text-3xl font-bold mb-1 ${stat.color}`}>{stat.value}</div>
-                  <div className="text-[11px] text-[#e3e0f9]/40 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-[11px] text-on-surface/40 uppercase tracking-wider">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.section>
@@ -337,22 +337,22 @@ export default function ProfilePage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  className={`bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border p-5 text-center transition-all ${
+                  className={`bg-surface-container/80 backdrop-blur-xl rounded-2xl border p-5 text-center transition-all ${
                     achievement.earned 
-                      ? "border-[#FFD700]/30 hover:border-[#FFD700]/50 hover:shadow-[0_0_20px_rgba(255,215,0,0.1)]" 
+                      ? "border-amber-400/30 hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(255,215,0,0.1)]" 
                       : "border-white/10 opacity-40 grayscale"
                   }`}
                 >
                   <div className="text-4xl mb-3">{achievement.icon}</div>
-                  <div className="font-bold text-[#e3e0f9] text-sm mb-1">{achievement.name}</div>
-                  <div className="text-[10px] text-[#e3e0f9]/40 mb-2">{achievement.description}</div>
+                  <div className="font-bold text-on-surface text-sm mb-1">{achievement.name}</div>
+                  <div className="text-[10px] text-on-surface/40 mb-2">{achievement.description}</div>
                   {achievement.earned ? (
-                    <div className="inline-flex items-center gap-1 text-[10px] font-bold text-[#4CAF50] bg-[#4CAF50]/10 px-2 py-1 rounded-full">
+                    <div className="inline-flex items-center gap-1 text-[10px] font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded-full">
                       <Medal className="w-3 h-3" />
                       Desbloqueado
                     </div>
                   ) : (
-                    <div className="text-[10px] text-[#e3e0f9]/30">Bloqueado</div>
+                    <div className="text-[10px] text-on-surface/30">Bloqueado</div>
                   )}
                 </motion.div>
               ))}
@@ -368,16 +368,16 @@ export default function ProfilePage() {
               className="space-y-3"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-[#e3e0f9]">Os teus últimos jogos</h3>
+                <h3 className="text-lg font-bold text-on-surface">Os teus últimos jogos</h3>
                 {gamesHistory.length > 0 && (
-                  <span className="text-xs text-[#e3e0f9]/40">{gamesHistory.length} respostas registadas</span>
+                  <span className="text-xs text-on-surface/40">{gamesHistory.length} respostas registadas</span>
                 )}
               </div>
               {gamesHistory.length === 0 ? (
-                <div className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center">
+                <div className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center">
                   <div className="text-4xl mb-4">🎮</div>
-                  <p className="text-[#e3e0f9]/60 mb-2">Ainda não jogaste nenhum jogo!</p>
-                  <p className="text-[#e3e0f9]/40 text-sm">Joga para veres o teu histórico aqui.</p>
+                  <p className="text-on-surface/60 mb-2">Ainda não jogaste nenhum jogo!</p>
+                  <p className="text-on-surface/40 text-sm">Joga para veres o teu histórico aqui.</p>
                 </div>
               ) : (() => {
                 const gameMap = new Map<string, {
@@ -417,46 +417,46 @@ export default function ProfilePage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.04 }}
-                      className={`bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border p-4 hover:border-white/20 transition-all ${
-                        isPerfect ? 'border-[#4CAF50]/20' : 'border-white/10'
+                      className={`bg-surface-container/80 backdrop-blur-xl rounded-2xl border p-4 hover:border-white/20 transition-all ${
+                        isPerfect ? 'border-green-500/20' : 'border-white/10'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-3">
                           <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold ${
                             isPerfect
-                              ? 'bg-[#4CAF50]/20 text-[#4CAF50]'
+                              ? 'bg-green-500/20 text-green-400'
                               : isGood
-                                ? 'bg-[#d0bcff]/20 text-[#d0bcff]'
-                                : 'bg-[#FF6B6B]/20 text-[#FF6B6B]'
+                                ? 'bg-primary/20 text-primary'
+                                : 'bg-red-500/20 text-red-400'
                           }`}>
                             {isPerfect ? '★' : `#${idx + 1}`}
                           </div>
                           <div>
-                            <div className="text-[#e3e0f9] font-bold text-sm">Jogo #{game.id?.slice(-6)}</div>
-                            <div className="text-[#e3e0f9]/40 text-xs">
+                            <div className="text-on-surface font-bold text-sm">Jogo #{game.id?.slice(-6)}</div>
+                            <div className="text-on-surface/40 text-xs">
                               {new Date(game.date).toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' })}
                               {game.avgTime > 0 && ` · ${game.avgTime}s médio`}
                             </div>
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-[#FFD700] font-bold">{game.points} pts</div>
+                          <div className="text-amber-400 font-bold">{game.points} pts</div>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-3">
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-[10px] text-[#e3e0f9]/40">{game.correct}/{game.total} corretas</span>
+                            <span className="text-[10px] text-on-surface/40">{game.correct}/{game.total} corretas</span>
                             <span className={`text-[10px] font-bold ${
-                              isPerfect ? 'text-[#4CAF50]' : isGood ? 'text-[#d0bcff]' : 'text-[#FF6B6B]'
+                              isPerfect ? 'text-green-400' : isGood ? 'text-primary' : 'text-red-400'
                             }`}>{accuracy}%</span>
                           </div>
                           <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                             <div
                               className={`h-full rounded-full transition-all ${
-                                isPerfect ? 'bg-[#4CAF50]' : isGood ? 'bg-[#d0bcff]' : 'bg-[#FF6B6B]'
+                                isPerfect ? 'bg-green-500' : isGood ? 'bg-primary' : 'bg-red-500'
                               }`}
                               style={{ width: `${accuracy}%` }}
                             />
@@ -464,10 +464,10 @@ export default function ProfilePage() {
                         </div>
                         <div className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                           isPerfect
-                            ? 'text-[#4CAF50] bg-[#4CAF50]/10'
+                            ? 'text-green-400 bg-green-500/10'
                             : isGood
-                              ? 'text-[#d0bcff] bg-[#d0bcff]/10'
-                              : 'text-[#FF6B6B] bg-[#FF6B6B]/10'
+                              ? 'text-primary bg-primary/10'
+                              : 'text-red-400 bg-red-500/10'
                         }`}>
                           {isPerfect ? 'Perfeito!' : isGood ? 'Bom' : 'Fraco'}
                         </div>

@@ -101,8 +101,8 @@ export default function InvitePage({ params }: { params: { code: string } }) {
 
   if (loading) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+      <main className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </main>
     );
   }
@@ -110,16 +110,16 @@ export default function InvitePage({ params }: { params: { code: string } }) {
   return (
     <main className="min-h-screen relative overflow-x-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ArrowLeft className="w-4 h-4" /> Voltar
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Convite</h1>
+          <h1 className="text-lg font-bold text-on-surface">Convite</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -129,12 +129,12 @@ export default function InvitePage({ params }: { params: { code: string } }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center mt-10"
+            className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center mt-10"
           >
             <div className="text-5xl mb-4">🔍</div>
-            <p className="text-[#e3e0f9]/60 mb-2">Código de convite inválido</p>
-            <p className="text-[#e3e0f9]/40 text-sm mb-6">O código &quot;{code}&quot; não corresponde a nenhum jogador.</p>
-            <Link href="/" className="inline-block px-6 py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold">
+            <p className="text-on-surface/60 mb-2">Código de convite inválido</p>
+            <p className="text-on-surface/40 text-sm mb-6">O código &quot;{code}&quot; não corresponde a nenhum jogador.</p>
+            <Link href="/" className="inline-block px-6 py-3 bg-primary text-[#121223] rounded-xl font-bold">
               Ir para o início
             </Link>
           </motion.div>
@@ -142,13 +142,13 @@ export default function InvitePage({ params }: { params: { code: string } }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center mt-10"
+            className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center mt-10"
           >
-            <div className="w-28 h-28 rounded-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] flex items-center justify-center text-5xl font-bold text-[#3c0091] mx-auto mb-4 shadow-[0_0_30px_rgba(208,188,255,0.3)]">
+            <div className="w-28 h-28 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-5xl font-bold text-on-primary mx-auto mb-4 shadow-[0_0_30px_rgba(208,188,255,0.3)]">
               {target.avatar || "🎮"}
             </div>
-            <h2 className="text-2xl font-bold text-[#e3e0f9] mb-1">{target.username || "Jogador"}</h2>
-            <p className="text-[#e3e0f9]/40 text-sm mb-6">Convida-te para jogar no QuizVerse</p>
+            <h2 className="text-2xl font-bold text-on-surface mb-1">{target.username || "Jogador"}</h2>
+            <p className="text-on-surface/40 text-sm mb-6">Convida-te para jogar no QuizVerse</p>
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-center mb-6">
               <QRCodeSVG value={inviteLink || "https://quizverse.app"} size={140} bgColor="#1e1e30" fgColor="#d0bcff" />
@@ -156,18 +156,18 @@ export default function InvitePage({ params }: { params: { code: string } }) {
 
             <div className="flex flex-col gap-3">
               {!currentUser ? (
-                <Link href={`/login?redirect=/invite/${code}`} className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity">
+                <Link href={`/login?redirect=/invite/${code}`} className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-primary to-secondary text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity">
                   <LogIn className="w-5 h-5" /> Entrar para adicionar
                 </Link>
               ) : currentUser === target.id ? (
-                <div className="px-5 py-3 bg-white/5 text-[#e3e0f9]/50 rounded-xl font-medium">
+                <div className="px-5 py-3 bg-white/5 text-on-surface/50 rounded-xl font-medium">
                   Este é o teu próprio código
                 </div>
               ) : (
                 <button
                   onClick={addFriend}
                   disabled={sent}
-                  className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity disabled:opacity-60"
+                  className="flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-primary to-secondary text-[#121223] rounded-xl font-bold hover:opacity-90 transition-opacity disabled:opacity-60"
                 >
                   {sent ? <Check className="w-5 h-5" /> : <UserPlus className="w-5 h-5" />}
                   {sent ? (alreadyFriend ? "Pedido enviado" : "Adicionado") : "Adicionar como amigo"}
@@ -176,13 +176,13 @@ export default function InvitePage({ params }: { params: { code: string } }) {
 
               <button
                 onClick={copyLink}
-                className="flex items-center justify-center gap-2 px-5 py-3 bg-white/5 border border-white/10 text-[#e3e0f9] rounded-xl font-medium hover:border-white/20 transition-colors"
+                className="flex items-center justify-center gap-2 px-5 py-3 bg-white/5 border border-white/10 text-on-surface rounded-xl font-medium hover:border-white/20 transition-colors"
               >
-                {copied ? <Check className="w-5 h-5 text-[#4CAF50]" /> : <Copy className="w-5 h-5" />}
+                {copied ? <Check className="w-5 h-5 text-green-400" /> : <Copy className="w-5 h-5" />}
                 {copied ? "Copiado!" : "Copiar link de convite"}
               </button>
 
-              <Link href="/modes" className="text-[#e3e0f9]/50 hover:text-[#d0bcff] text-sm transition-colors">
+              <Link href="/modes" className="text-on-surface/50 hover:text-primary text-sm transition-colors">
                 Ou começa um jogo tu próprio →
               </Link>
             </div>

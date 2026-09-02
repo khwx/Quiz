@@ -12,18 +12,18 @@ const log = createContextLogger("CategoriesPage");
 
 const getCategoryStyles = (color: string) => {
   const colors: Record<string, { bg: string; text: string; border: string }> = {
-    emerald: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", border: "border-[#4CAF50]/30" },
-    green: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", border: "border-[#4CAF50]/30" },
-    amber: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", border: "border-[#FFB0CD]/30" },
-    cyan: { bg: "bg-[#deb7ff]/15", text: "text-[#deb7ff]", border: "border-[#deb7ff]/30" },
-    violet: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", border: "border-[#d0bcff]/30" },
-    rose: { bg: "bg-[#FF6B6B]/15", text: "text-[#FF6B6B]", border: "border-[#FF6B6B]/30" },
-    pink: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", border: "border-[#FFB0CD]/30" },
-    orange: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", border: "border-[#FFD700]/30" },
-    purple: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", border: "border-[#d0bcff]/30" },
-    fuchsia: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", border: "border-[#FFB0CD]/30" },
-    yellow: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", border: "border-[#FFD700]/30" },
-    red: { bg: "bg-[#FF6B6B]/15", text: "text-[#FF6B6B]", border: "border-[#FF6B6B]/30" },
+    emerald: { bg: "bg-green-500/15", text: "text-green-400", border: "border-green-500/30" },
+    green: { bg: "bg-green-500/15", text: "text-green-400", border: "border-green-500/30" },
+    amber: { bg: "bg-secondary/15", text: "text-secondary", border: "border-secondary/30" },
+    cyan: { bg: "bg-tertiary/15", text: "text-tertiary", border: "border-tertiary/30" },
+    violet: { bg: "bg-primary/15", text: "text-primary", border: "border-primary/30" },
+    rose: { bg: "bg-red-500/15", text: "text-red-400", border: "border-red-500/30" },
+    pink: { bg: "bg-secondary/15", text: "text-secondary", border: "border-secondary/30" },
+    orange: { bg: "bg-amber-400/15", text: "text-amber-400", border: "border-amber-400/30" },
+    purple: { bg: "bg-primary/15", text: "text-primary", border: "border-primary/30" },
+    fuchsia: { bg: "bg-secondary/15", text: "text-secondary", border: "border-secondary/30" },
+    yellow: { bg: "bg-amber-400/15", text: "text-amber-400", border: "border-amber-400/30" },
+    red: { bg: "bg-red-500/15", text: "text-red-400", border: "border-red-500/30" },
   };
   return colors[color] || colors.violet;
 };
@@ -134,17 +134,17 @@ export default function CategoriesPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden pb-32">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/" className="flex items-center gap-2 text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors">
+          <Link href="/" className="flex items-center gap-2 text-on-surface/60 hover:text-on-surface transition-colors">
             <ArrowLeft className="w-5 h-5" />
             <span className="text-sm">Voltar</span>
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Categorias</h1>
+          <h1 className="text-lg font-bold text-on-surface">Categorias</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -155,8 +155,8 @@ export default function CategoriesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-6"
         >
-          <h2 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-            <Users className="w-5 h-5 text-[#d0bcff]" />
+          <h2 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+            <Users className="w-5 h-5 text-primary" />
             Filtrar por Idade
           </h2>
           <div className="flex flex-wrap gap-3">
@@ -168,8 +168,8 @@ export default function CategoriesPage() {
                 onClick={() => setAgeGroup(age.id)}
                 className={`flex items-center gap-3 px-5 py-3 rounded-xl transition-all ${
                   ageGroup === age.id 
-                    ? 'bg-[#d0bcff]/15 border border-[#d0bcff]/30 text-[#d0bcff]' 
-                    : 'bg-white/5 border border-white/10 text-[#e3e0f9]/60 hover:text-[#e3e0f9] hover:border-white/20'
+                    ? 'bg-primary/15 border border-primary/30 text-primary' 
+                    : 'bg-white/5 border border-white/10 text-on-surface/60 hover:text-on-surface hover:border-white/20'
                 }`}
               >
                 <span className="text-xl">{age.icon}</span>
@@ -188,9 +188,9 @@ export default function CategoriesPage() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="mb-4 p-4 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl"
+              className="mb-4 p-4 bg-secondary/10 border border-secondary/30 rounded-xl"
             >
-              <p className="text-[#FFB0CD] font-bold">
+              <p className="text-secondary font-bold">
                 {totalSelected} categoria{totalSelected !== 1 ? 's' : ''} selecionada{totalSelected !== 1 ? 's' : ''}
               </p>
             </motion.div>
@@ -198,8 +198,8 @@ export default function CategoriesPage() {
         </AnimatePresence>
 
         <section>
-          <h2 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-            <Globe className="w-5 h-5 text-[#d0bcff]" />
+          <h2 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+            <Globe className="w-5 h-5 text-primary" />
             Todas as Categorias
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -217,9 +217,9 @@ export default function CategoriesPage() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => toggleCategory(cat.name)}
-                  className={`bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border p-5 flex flex-col items-start transition-all duration-300 cursor-pointer ${
+                  className={`bg-surface-container/80 backdrop-blur-xl rounded-2xl border p-5 flex flex-col items-start transition-all duration-300 cursor-pointer ${
                     isSelected 
-                      ? `border-[#FFB0CD]/50 shadow-[0_0_25px_rgba(255,176,205,0.15)]` 
+                      ? `border-secondary/50 shadow-[0_0_25px_rgba(255,176,205,0.15)]` 
                       : 'border-white/10 hover:border-white/20 hover:shadow-[0_0_20px_rgba(208,188,255,0.1)]'
                   }`}
                 >
@@ -227,26 +227,26 @@ export default function CategoriesPage() {
                     <cat.icon className="w-6 h-6" />
                   </div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-base font-bold text-[#e3e0f9]">{cat.name}</h3>
+                    <h3 className="text-base font-bold text-on-surface">{cat.name}</h3>
                     <AnimatePresence>
                       {isSelected && (
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           exit={{ scale: 0 }}
-                          className="w-5 h-5 rounded-full bg-[#FFB0CD] flex items-center justify-center"
+                          className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center"
                         >
                           <Check className="w-3 h-3 text-[#121223]" />
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
-                  <p className="text-[#e3e0f9]/60 text-sm mb-3 leading-relaxed">{cat.desc}</p>
+                  <p className="text-on-surface/60 text-sm mb-3 leading-relaxed">{cat.desc}</p>
                   <div className="mt-auto flex items-center justify-between w-full pt-2 border-t border-white/5">
-                    <span className="text-[#d0bcff]/80 text-xs font-semibold">
+                    <span className="text-primary/80 text-xs font-semibold">
                       {countsLoading ? (
                         <span className="inline-flex items-center gap-1">
-                          <span className="w-3 h-3 border border-white/20 border-t-[#d0bcff] rounded-full animate-spin" />
+                          <span className="w-3 h-3 border border-white/20 border-t-primary rounded-full animate-spin" />
                           a carregar...
                         </span>
                       ) : (
@@ -270,7 +270,7 @@ export default function CategoriesPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="mb-3 p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm text-center"
+                className="mb-3 p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm text-center"
               >
                 {catError}
               </motion.div>
@@ -283,8 +283,8 @@ export default function CategoriesPage() {
             disabled={totalSelected === 0}
             className={`w-full py-4 rounded-2xl font-bold text-lg transition-all ${
               totalSelected > 0
-                ? 'bg-[#d0bcff] text-[#3c0091] shadow-[0_0_30px_rgba(208,188,255,0.3)]'
-                : 'bg-white/10 text-[#e3e0f9]/30 cursor-not-allowed'
+                ? 'bg-primary text-on-primary shadow-[0_0_30px_rgba(208,188,255,0.3)]'
+                : 'bg-white/10 text-on-surface/30 cursor-not-allowed'
             }`}
           >
             {totalSelected > 0 ? `Jogar com ${totalSelected} Categorias` : 'Seleciona uma Categoria'}
@@ -292,20 +292,20 @@ export default function CategoriesPage() {
         </section>
 
         <section className="mt-6">
-          <div className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 opacity-50">
-            <div className="flex items-center gap-2 text-[#e3e0f9]/60 mb-4">
-              <Sparkles className="w-5 h-5 text-[#d0bcff]" />
+          <div className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6 opacity-50">
+            <div className="flex items-center gap-2 text-on-surface/60 mb-4">
+              <Sparkles className="w-5 h-5 text-primary" />
               <p className="font-bold">Tema personalizado</p>
             </div>
-            <p className="text-[#e3e0f9]/40 mb-4 text-sm">Brevemente disponível!</p>
+            <p className="text-on-surface/40 mb-4 text-sm">Brevemente disponível!</p>
             <div className="flex gap-3">
               <input
                 type="text"
                 placeholder="Ex: Anime, Videojogos..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#d0bcff]/50"
+                className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder-on-surface/30 focus:outline-none focus:border-primary/50"
                 disabled
               />
-              <button className="px-6 py-3 bg-[#d0bcff]/30 text-[#e3e0f9]/50 font-bold rounded-xl cursor-not-allowed" disabled>
+              <button className="px-6 py-3 bg-primary/30 text-on-surface/50 font-bold rounded-xl cursor-not-allowed" disabled>
                 Criar
               </button>
             </div>

@@ -43,7 +43,7 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className={`glass-panel rounded-2xl p-5 hover:border-white/20 transition-all cursor-pointer group ${isFeaturedTournament ? "border-[#FFD700]/30 bg-[#FFD700]/5" : "border border-white/10"}`}
+      className={`glass-panel rounded-2xl p-5 hover:border-white/20 transition-all cursor-pointer group ${isFeaturedTournament ? "border-amber-400/30 bg-amber-400/5" : "border border-white/10"}`}
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1">
@@ -52,14 +52,14 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
               {tournament.name}
             </div>
             {isFeaturedTournament && (
-              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FFD700]/15 text-[#FFD700]" title="Torneio em Destaque">
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/15 text-amber-400" title="Torneio em Destaque">
                 <Star className="w-3 h-3" />
                 Destaque
               </span>
             )}
             <span
               className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
-                isPublicTournament ? "bg-[#4CAF50]/15 text-[#4CAF50]" : "bg-white/10 text-[#e3e0f9]/50"
+                isPublicTournament ? "bg-green-500/15 text-green-400" : "bg-white/10 text-on-surface/50"
               }`}
               title={isPublicTournament ? "Torneio Público" : "Torneio Privado"}
             >
@@ -67,7 +67,7 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
             </span>
             {Array.isArray(tournament.whitelisted_team_ids) && tournament.whitelisted_team_ids.length > 0 && !isPublicTournament && (
               <span
-                className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#d0bcff]/15 text-[#d0bcff]"
+                className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-primary/15 text-primary"
                 title="Torneio por convite (whitelist)"
               >
                 <ShieldCheck className="w-3 h-3" />
@@ -134,7 +134,7 @@ function TournamentCard({ tournament, onClick, onJoin }: { tournament: Tournamen
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={(e) => { e.stopPropagation(); onJoin(); }}
-            className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#4CAF50] text-white rounded-xl font-bold text-sm"
+            className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-3 bg-green-500 text-white rounded-xl font-bold text-sm"
           >
             <Globe className="w-4 h-4" />
             Entrar no Torneio Público
@@ -153,10 +153,10 @@ const statusLabels: Record<string, string> = {
 };
 
 const statusConfig: Record<string, { bg: string; text: string; dot: string }> = {
-  [TournamentStatus.LOBBY]: { bg: "bg-[#d0bcff]/15", text: "text-[#d0bcff]", dot: "bg-[#d0bcff]" },
-  [TournamentStatus.QUALIFYING]: { bg: "bg-[#FFD700]/15", text: "text-[#FFD700]", dot: "bg-[#FFD700]" },
-  [TournamentStatus.FINAL]: { bg: "bg-[#FFB0CD]/15", text: "text-[#FFB0CD]", dot: "bg-[#FFB0CD]" },
-  [TournamentStatus.FINISHED]: { bg: "bg-[#4CAF50]/15", text: "text-[#4CAF50]", dot: "bg-[#4CAF50]" },
+  [TournamentStatus.LOBBY]: { bg: "bg-primary/15", text: "text-primary", dot: "bg-primary" },
+  [TournamentStatus.QUALIFYING]: { bg: "bg-amber-400/15", text: "text-amber-400", dot: "bg-amber-400" },
+  [TournamentStatus.FINAL]: { bg: "bg-secondary/15", text: "text-secondary", dot: "bg-secondary" },
+  [TournamentStatus.FINISHED]: { bg: "bg-green-500/15", text: "text-green-400", dot: "bg-green-500" },
 };
 
 export default function TournamentsPage() {
@@ -520,25 +520,25 @@ export default function TournamentsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
   }
 
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[#121223]">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#FFD700]/5 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/5 blur-[150px]" />
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-background">
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-amber-400/5 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/5 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/profile" className="flex items-center gap-2 text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors">
+          <Link href="/profile" className="flex items-center gap-2 text-on-surface/60 hover:text-on-surface transition-colors">
             <ArrowLeft className="w-5 h-5" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Torneios</h1>
+          <h1 className="text-lg font-bold text-on-surface">Torneios</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -551,13 +551,13 @@ export default function TournamentsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-[#FFD700]/30 p-6"
+              className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-amber-400/30 p-6"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <Trophy className="w-5 h-5 text-[#FFD700]" />
-                    <h2 className="text-2xl font-bold text-[#e3e0f9]">{myTournament.name}</h2>
+                    <Trophy className="w-5 h-5 text-amber-400" />
+                    <h2 className="text-2xl font-bold text-on-surface">{myTournament.name}</h2>
                   </div>
                   <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold ${statusConfig[myTournament.status]?.bg} ${statusConfig[myTournament.status]?.text}`}>
                     <div className={`w-2 h-2 rounded-full ${statusConfig[myTournament.status]?.dot}`} />
@@ -567,9 +567,9 @@ export default function TournamentsPage() {
               </div>
 
               <div className="bg-white/5 rounded-xl p-4 mb-4">
-                <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2">Código do Torneio</div>
+                <div className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-2">Código do Torneio</div>
                 <div className="flex items-center gap-3">
-                  <div className="flex-1 font-mono text-3xl tracking-widest text-[#FFD700]">
+                  <div className="flex-1 font-mono text-3xl tracking-widest text-amber-400">
                     {myTournament.pin}
                   </div>
                   <motion.button
@@ -579,9 +579,9 @@ export default function TournamentsPage() {
                     className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
                     {copied ? (
-                      <Check className="w-5 h-5 text-[#4CAF50]" />
+                      <Check className="w-5 h-5 text-green-400" />
                     ) : (
-                      <Copy className="w-5 h-5 text-[#e3e0f9]/60" />
+                      <Copy className="w-5 h-5 text-on-surface/60" />
                     )}
                   </motion.button>
                 </div>
@@ -589,40 +589,40 @@ export default function TournamentsPage() {
 
               <div className="grid grid-cols-3 gap-4 mb-4">
                 <div className="bg-white/5 rounded-xl p-3 text-center">
-                  <Users className="w-5 h-5 mx-auto mb-1 text-[#d0bcff]" />
-                  <div className="text-[#e3e0f9] font-bold">{myTournament.tournament_teams?.length || 0}/{myTournament.max_teams}</div>
-                  <div className="text-[#e3e0f9]/40 text-xs">Equipas</div>
+                  <Users className="w-5 h-5 mx-auto mb-1 text-primary" />
+                  <div className="text-on-surface font-bold">{myTournament.tournament_teams?.length || 0}/{myTournament.max_teams}</div>
+                  <div className="text-on-surface/40 text-xs">Equipas</div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-3 text-center">
-                  <Target className="w-5 h-5 mx-auto mb-1 text-[#FFB0CD]" />
-                  <div className="text-[#e3e0f9] font-bold">{myTournament.settings?.questions || 10}</div>
-                  <div className="text-[#e3e0f9]/40 text-xs">Perguntas</div>
+                  <Target className="w-5 h-5 mx-auto mb-1 text-secondary" />
+                  <div className="text-on-surface font-bold">{myTournament.settings?.questions || 10}</div>
+                  <div className="text-on-surface/40 text-xs">Perguntas</div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-3 text-center">
-                  <Clock className="w-5 h-5 mx-auto mb-1 text-[#FFD700]" />
-                  <div className="text-[#e3e0f9] font-bold">{myTournament.settings?.timer || 20}s</div>
-                  <div className="text-[#e3e0f9]/40 text-xs">Tempo</div>
+                  <Clock className="w-5 h-5 mx-auto mb-1 text-amber-400" />
+                  <div className="text-on-surface font-bold">{myTournament.settings?.timer || 20}s</div>
+                  <div className="text-on-surface/40 text-xs">Tempo</div>
                 </div>
               </div>
 
               {/* Registered Teams */}
               {myTournament.tournament_teams && myTournament.tournament_teams.length > 0 && (
                 <div className="bg-white/5 rounded-xl p-4 mb-4">
-                  <div className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-3">Equipas Registadas</div>
+                  <div className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-3">Equipas Registadas</div>
                   <div className="space-y-2">
                     {myTournament.tournament_teams
                       .sort((a, b) => (b.score || 0) - (a.score || 0))
                       .map((tt, i) => (
                       <div key={tt.id || i} className="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-[#e3e0f9]/30 text-sm font-bold">#{i + 1}</span>
-                          <span className="text-[#e3e0f9] font-medium">{tt.teams?.name || "Equipa"}</span>
+                          <span className="text-on-surface/30 text-sm font-bold">#{i + 1}</span>
+                          <span className="text-on-surface font-medium">{tt.teams?.name || "Equipa"}</span>
                         </div>
                         <div className="flex items-center gap-3">
                           {tt.score !== undefined && tt.score > 0 && (
-                            <span className="text-[#FFD700] font-bold text-sm">{tt.score} pts</span>
+                            <span className="text-amber-400 font-bold text-sm">{tt.score} pts</span>
                           )}
-                          <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
+                          <span className="text-on-surface/30 text-xs font-mono">{tt.teams?.pin}</span>
                           {myTournament.status === TournamentStatus.LOBBY && user?.id === myTournament.created_by && (
                             <button
                               onClick={async () => {
@@ -632,7 +632,7 @@ export default function TournamentsPage() {
                                   tournament_teams: myTournament.tournament_teams.filter((t) => t.id !== tt.id),
                                 });
                               }}
-                              className="text-[#FF6B6B] hover:text-[#FF6B6B]/80 text-xs p-1"
+                              className="text-red-400 hover:text-red-400/80 text-xs p-1"
                               title="Expulsar equipa"
                             >
                               ✕
@@ -650,7 +650,7 @@ export default function TournamentsPage() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setStartConfirmOpen(true)}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#FFD700] text-[#121223] rounded-xl font-bold"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-amber-400 text-[#121223] rounded-xl font-bold"
                 >
                   <Play className="w-5 h-5" />
                   Iniciar Torneio
@@ -659,7 +659,7 @@ export default function TournamentsPage() {
 
               {myTournament.status === TournamentStatus.QUALIFYING && (
                 <div className="space-y-3">
-                  <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm text-center">
+                  <div className="p-3 bg-amber-400/10 border border-amber-400/30 rounded-xl text-amber-400 text-sm text-center">
                     Torneio em curso — abre o TV para jogar
                   </div>
                   <motion.button
@@ -669,7 +669,7 @@ export default function TournamentsPage() {
                       await supabase.from('tournaments').update({ status: TournamentStatus.FINAL }).eq('id', myTournament.id);
                       setMyTournament({ ...myTournament, status: TournamentStatus.FINAL });
                     }}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#FFB0CD] text-[#640039] rounded-xl font-bold"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-secondary text-on-secondary rounded-xl font-bold"
                   >
                     <Zap className="w-5 h-5" />
                     Avançar para Final
@@ -679,7 +679,7 @@ export default function TournamentsPage() {
 
               {myTournament.status === TournamentStatus.FINAL && (
                 <div className="space-y-3">
-                  <div className="p-3 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl text-[#FFB0CD] text-sm text-center">
+                  <div className="p-3 bg-secondary/10 border border-secondary/30 rounded-xl text-secondary text-sm text-center">
                     Final em curso
                   </div>
                   <motion.button
@@ -689,7 +689,7 @@ export default function TournamentsPage() {
                       await supabase.from('tournaments').update({ status: TournamentStatus.FINISHED }).eq('id', myTournament.id);
                       setMyTournament({ ...myTournament, status: TournamentStatus.FINISHED });
                     }}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-green-500 text-white rounded-xl font-bold"
                   >
                     <Flag className="w-5 h-5" />
                     Finalizar Torneio
@@ -698,9 +698,9 @@ export default function TournamentsPage() {
               )}
 
               {myTournament.status === TournamentStatus.FINISHED && (
-                <div className="p-4 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-center">
-                  <Trophy className="w-8 h-8 mx-auto mb-2 text-[#4CAF50]" />
-                  <div className="text-[#4CAF50] font-bold">Torneio Finalizado!</div>
+                <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-center">
+                  <Trophy className="w-8 h-8 mx-auto mb-2 text-green-400" />
+                  <div className="text-green-400 font-bold">Torneio Finalizado!</div>
                 </div>
               )}
             </motion.section>
@@ -718,25 +718,25 @@ export default function TournamentsPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => { setCreateMode(true); setJoinMode(false); }}
-                className="bg-[#1e1e30]/80 backdrop-blur-xl border border-white/10 p-6 text-center rounded-2xl hover:border-[#FFD700]/30 transition-all"
+                className="bg-surface-container/80 backdrop-blur-xl border border-white/10 p-6 text-center rounded-2xl hover:border-amber-400/30 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#FFD700]/15 flex items-center justify-center mx-auto mb-3">
-                  <Plus className="w-6 h-6 text-[#FFD700]" />
+                <div className="w-12 h-12 rounded-xl bg-amber-400/15 flex items-center justify-center mx-auto mb-3">
+                  <Plus className="w-6 h-6 text-amber-400" />
                 </div>
-                <div className="font-bold text-[#e3e0f9]">Criar Torneio</div>
-                <div className="text-[#e3e0f9]/50 text-sm">Começar um campeonato</div>
+                <div className="font-bold text-on-surface">Criar Torneio</div>
+                <div className="text-on-surface/50 text-sm">Começar um campeonato</div>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => { setJoinMode(true); setCreateMode(false); }}
-                className="bg-[#1e1e30]/80 backdrop-blur-xl border border-white/10 p-6 text-center rounded-2xl hover:border-[#FFB0CD]/30 transition-all"
+                className="bg-surface-container/80 backdrop-blur-xl border border-white/10 p-6 text-center rounded-2xl hover:border-secondary/30 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#FFB0CD]/15 flex items-center justify-center mx-auto mb-3">
-                  <Flag className="w-6 h-6 text-[#FFB0CD]" />
+                <div className="w-12 h-12 rounded-xl bg-secondary/15 flex items-center justify-center mx-auto mb-3">
+                  <Flag className="w-6 h-6 text-secondary" />
                 </div>
-                <div className="font-bold text-[#e3e0f9]">Entrar em Torneio</div>
-                <div className="text-[#e3e0f9]/50 text-sm">Entrar com código</div>
+                <div className="font-bold text-on-surface">Entrar em Torneio</div>
+                <div className="text-on-surface/50 text-sm">Entrar com código</div>
               </motion.button>
             </motion.div>
           )}
@@ -746,18 +746,18 @@ export default function TournamentsPage() {
         {!myTournament && !createMode && !joinMode && !publicJoinTarget && tournaments.length > 0 && (
           <div className="space-y-3">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#e3e0f9]/40 pointer-events-none" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-on-surface/40 pointer-events-none" />
               <input
                 type="text"
                 placeholder="Pesquisar por nome ou código..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-10 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#d0bcff]/50 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-10 py-3 text-on-surface placeholder-on-surface/30 focus:outline-none focus:border-primary/50 transition-all"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#e3e0f9]/40 hover:text-[#e3e0f9] transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface/40 hover:text-on-surface transition-colors"
                   aria-label="Limpar pesquisa"
                 >
                   <X className="w-4 h-4" />
@@ -774,8 +774,8 @@ export default function TournamentsPage() {
                     onClick={() => setStatusFilter(key)}
                     className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                       active
-                        ? "bg-[#d0bcff] text-[#121223]"
-                        : "bg-white/5 text-[#e3e0f9]/50 hover:bg-white/10"
+                        ? "bg-primary text-[#121223]"
+                        : "bg-white/5 text-on-surface/50 hover:bg-white/10"
                     }`}
                   >
                     {label}
@@ -793,29 +793,29 @@ export default function TournamentsPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6"
+              className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6"
             >
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Novo Torneio</h3>
+              <h3 className="text-lg font-bold text-on-surface mb-4">Novo Torneio</h3>
               
               <div className="space-y-4">
                 <div>
-                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">Nome do Torneio</label>
+                  <label className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-2 ml-1 block">Nome do Torneio</label>
                   <input
                     type="text"
                     placeholder="Campeonato QuizVerse"
                     value={tournamentName}
                     onChange={(e) => setTournamentName(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#d0bcff]/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder-on-surface/30 focus:outline-none focus:border-primary/50 transition-all"
                   />
                 </div>
 
                 {myTeams.length > 0 && (
                   <div>
-                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
+                    <label className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
                     <select
                       value={selectedTeamId}
                       onChange={(e) => setSelectedTeamId(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#d0bcff]/50 transition-all"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-primary/50 transition-all"
                     >
                       <option value="">Sem equipa (só anfitrião)</option>
                       {myTeams.map((team) => (
@@ -826,13 +826,13 @@ export default function TournamentsPage() {
                 )}
 
                   {myTeams.length === 0 && (
-                    <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm">
+                    <div className="p-3 bg-amber-400/10 border border-amber-400/30 rounded-xl text-amber-400 text-sm">
                       Cria uma equipa primeiro em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button> para participar no torneio.
                     </div>
                   )}
 
                   <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
-                    <span className="text-sm text-[#e3e0f9]">Modo Cego</span>
+                    <span className="text-sm text-on-surface">Modo Cego</span>
                     <div className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
@@ -840,13 +840,13 @@ export default function TournamentsPage() {
                         onChange={(e) => setBlindMode(e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#d0bcff]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#d0bcff]"></div>
+                      <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                     </div>
                   </label>
 
 <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
-                    <span className="flex items-center gap-2 text-sm text-[#e3e0f9]">
-                      {isPublic ? <Globe className="w-4 h-4 text-[#4CAF50]" /> : <Lock className="w-4 h-4 text-[#e3e0f9]/50" />}
+                    <span className="flex items-center gap-2 text-sm text-on-surface">
+                      {isPublic ? <Globe className="w-4 h-4 text-green-400" /> : <Lock className="w-4 h-4 text-on-surface/50" />}
                       Torneio Público
                     </span>
                     <div className="relative inline-flex items-center cursor-pointer">
@@ -856,10 +856,10 @@ export default function TournamentsPage() {
                         onChange={(e) => { setIsPublic(e.target.checked); if (!e.target.checked) setIsFeatured(false); }}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4CAF50]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#4CAF50]"></div>
+                      <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#4CAF50]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
                     </div>
                   </label>
-                  <p className="text-[#e3e0f9]/40 text-xs ml-1">
+                  <p className="text-on-surface/40 text-xs ml-1">
                     {isPublic
                       ? "Visível na lista pública — qualquer jogador pode entrar sem código."
                       : "Apenas por convite com o código do torneio."}
@@ -867,8 +867,8 @@ export default function TournamentsPage() {
 
                   {isPublic && (
                     <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
-                      <span className="flex items-center gap-2 text-sm text-[#e3e0f9]">
-                        <Star className="w-4 h-4 text-[#FFD700]" />
+                      <span className="flex items-center gap-2 text-sm text-on-surface">
+                        <Star className="w-4 h-4 text-amber-400" />
                         Destacar na Página Inicial
                       </span>
                       <div className="relative inline-flex items-center cursor-pointer">
@@ -878,7 +878,7 @@ export default function TournamentsPage() {
                           onChange={(e) => setIsFeatured(e.target.checked)}
                           className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FFD700]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#FFD700]"></div>
+                        <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FFD700]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-400"></div>
                       </div>
                     </label>
                   )}
@@ -886,7 +886,7 @@ export default function TournamentsPage() {
                   {!isPublic && (
                    <div className="space-y-3 pt-2">
                      <label className="flex items-center justify-between p-3 bg-white/5 rounded-xl cursor-pointer border border-white/10">
-                       <span className="text-sm text-[#e3e0f9]">Limitar a equipas convidadas</span>
+                       <span className="text-sm text-on-surface">Limitar a equipas convidadas</span>
                        <div className="relative inline-flex items-center cursor-pointer">
                          <input
                            type="checkbox"
@@ -894,10 +894,10 @@ export default function TournamentsPage() {
                            onChange={(e) => { setWhitelistEnabled(e.target.checked); if (!e.target.checked) setWhitelistedTeams([]); }}
                            className="sr-only peer"
                          />
-                         <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#d0bcff]/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#d0bcff]"></div>
+                         <div className="w-11 h-6 bg-white/10 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                        </div>
                      </label>
-                     <p className="text-[#e3e0f9]/40 text-xs ml-1">
+                     <p className="text-on-surface/40 text-xs ml-1">
                        {whitelistEnabled
                          ? "Apenas as equipas seleccionadas abaixo podem entrar (mesmo com o código)."
                          : "Qualquer equipa com o código pode entrar."}
@@ -916,15 +916,15 @@ export default function TournamentsPage() {
                                      : prev.filter((t) => t !== team.id)
                                  );
                                }}
-                               className="rounded border-white/20 text-[#FFD700 focus:ring-[#d0bcff]/30"
+                               className="rounded border-white/20 text-[#FFD700 focus:ring-primary/30"
                              />
-                             <span className="text-[#e3e0f9]">{team.name}</span>
+                             <span className="text-on-surface">{team.name}</span>
                            </label>
                          ))}
                        </div>
                      )}
                      {whitelistEnabled && myTeams.length === 0 && (
-                       <div className="p-3 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-xl text-[#FFD700] text-sm">
+                       <div className="p-3 bg-amber-400/10 border border-amber-400/30 rounded-xl text-amber-400 text-sm">
                          Cria uma equipa primeiro em{" "}
                          <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button>
                          {" "}para poderes convidá-la.
@@ -934,15 +934,15 @@ export default function TournamentsPage() {
                  )}
 
                   <div className="space-y-3">
-                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest ml-1 block">Prémios do Top 3 (opcional)</label>
+                    <label className="text-[10px] text-on-surface/40 uppercase tracking-widest ml-1 block">Prémios do Top 3 (opcional)</label>
                     <div className="flex items-center gap-3">
-                      <Crown className="w-5 h-5 text-[#FFD700] shrink-0" />
+                      <Crown className="w-5 h-5 text-amber-400 shrink-0" />
                       <input
                         type="text"
                         placeholder="1º Lugar — ex: Troféu de Ouro"
                         value={prizeFirst}
                         onChange={(e) => setPrizeFirst(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#FFD700]/50 transition-all"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder-on-surface/30 focus:outline-none focus:border-amber-400/50 transition-all"
                       />
                     </div>
                     <div className="flex items-center gap-3">
@@ -952,7 +952,7 @@ export default function TournamentsPage() {
                         placeholder="2º Lugar — ex: Medalha de Prata"
                         value={prizeSecond}
                         onChange={(e) => setPrizeSecond(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#C0C0C0]/50 transition-all"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder-on-surface/30 focus:outline-none focus:border-[#C0C0C0]/50 transition-all"
                       />
                     </div>
                     <div className="flex items-center gap-3">
@@ -962,13 +962,13 @@ export default function TournamentsPage() {
                         placeholder="3º Lugar — ex: Medalha de Bronze"
                         value={prizeThird}
                         onChange={(e) => setPrizeThird(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#CD7F32]/50 transition-all"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder-on-surface/30 focus:outline-none focus:border-[#CD7F32]/50 transition-all"
                       />
                     </div>
                   </div>
 
                   {error && (
-                  <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
+                  <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm">
                     {error}
                   </div>
                 )}
@@ -976,7 +976,7 @@ export default function TournamentsPage() {
 <div className="flex gap-3">
                      <button
                        onClick={() => { setCreateMode(false); setBlindMode(false); setIsPublic(false); setIsFeatured(false); setPrizeFirst(""); setPrizeSecond(""); setPrizeThird(""); setWhitelistEnabled(false); setWhitelistedTeams([]); }}
-                       className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                       className="flex-1 py-4 bg-white/5 rounded-xl text-on-surface/60 hover:bg-white/10 transition-colors"
                      >
                       Cancelar
                     </button>
@@ -985,7 +985,7 @@ export default function TournamentsPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={createTournament}
                     disabled={saving || !tournamentName}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#FFD700] text-[#121223] rounded-xl font-bold disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-amber-400 text-[#121223] rounded-xl font-bold disabled:opacity-50"
                   >
                     {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Criar"}
                   </motion.button>
@@ -1000,30 +1000,30 @@ export default function TournamentsPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6"
+              className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-6"
             >
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4">Entrar em Torneio</h3>
+              <h3 className="text-lg font-bold text-on-surface mb-4">Entrar em Torneio</h3>
               
               <div className="space-y-4">
                 <div>
-                  <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">Código do Torneio</label>
+                  <label className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-2 ml-1 block">Código do Torneio</label>
                   <input
                     type="text"
                     placeholder="ABCD12"
                     value={tournamentPin}
                     onChange={(e) => setTournamentPin(e.target.value.toUpperCase())}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-[#e3e0f9] text-center font-mono text-2xl tracking-widest placeholder-[#e3e0f9]/30 focus:outline-none focus:border-[#FFB0CD]/50 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-on-surface text-center font-mono text-2xl tracking-widest placeholder-on-surface/30 focus:outline-none focus:border-secondary/50 transition-all"
                     maxLength={6}
                   />
                 </div>
 
                 {myTeams.length > 0 && (
                   <div>
-                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
+                    <label className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
                     <select
                       value={selectedTeamId}
                       onChange={(e) => setSelectedTeamId(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#FFB0CD]/50 transition-all"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-secondary/50 transition-all"
                     >
                       <option value="">Selecciona uma equipa</option>
                       {myTeams.map((team) => (
@@ -1034,13 +1034,13 @@ export default function TournamentsPage() {
                 )}
 
                 {myTeams.length === 0 && (
-                  <div className="p-3 bg-[#FFB0CD]/10 border border-[#FFB0CD]/30 rounded-xl text-[#FFB0CD] text-sm">
+                  <div className="p-3 bg-secondary/10 border border-secondary/30 rounded-xl text-secondary text-sm">
                     Precisas de ter uma equipa para entrar num torneio. Cria em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button>.
                   </div>
                 )}
 
                 {error && (
-                  <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
+                  <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm">
                     {error}
                   </div>
                 )}
@@ -1048,7 +1048,7 @@ export default function TournamentsPage() {
                 <div className="flex gap-3">
                   <button
                     onClick={() => setJoinMode(false)}
-                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-on-surface/60 hover:bg-white/10 transition-colors"
                   >
                     Cancelar
                   </button>
@@ -1057,7 +1057,7 @@ export default function TournamentsPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={joinTournament}
                     disabled={saving || !tournamentPin || !selectedTeamId}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#FFB0CD] text-[#640039] rounded-xl font-bold disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-secondary text-on-secondary rounded-xl font-bold disabled:opacity-50"
                   >
                     {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
                   </motion.button>
@@ -1072,22 +1072,22 @@ export default function TournamentsPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-[#4CAF50]/30 p-6"
+              className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-green-500/30 p-6"
             >
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-1">Entrar no Torneio Público</h3>
-              <p className="text-[#e3e0f9]/60 text-sm mb-4 flex items-center gap-2">
-                <Globe className="w-4 h-4 text-[#4CAF50]" />
+              <h3 className="text-lg font-bold text-on-surface mb-1">Entrar no Torneio Público</h3>
+              <p className="text-on-surface/60 text-sm mb-4 flex items-center gap-2">
+                <Globe className="w-4 h-4 text-green-400" />
                 {publicJoinTarget.name}
               </p>
 
               <div className="space-y-4">
                 {myTeams.length > 0 ? (
                   <div>
-                    <label className="text-[10px] text-[#e3e0f9]/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
+                    <label className="text-[10px] text-on-surface/40 uppercase tracking-widest mb-2 ml-1 block">A tua Equipa</label>
                     <select
                       value={selectedTeamId}
                       onChange={(e) => setSelectedTeamId(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#4CAF50]/50 transition-all"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-green-500/50 transition-all"
                     >
                       <option value="">Selecciona uma equipa</option>
                       {myTeams.map((team) => (
@@ -1096,13 +1096,13 @@ export default function TournamentsPage() {
                     </select>
                   </div>
                 ) : (
-                  <div className="p-3 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-[#4CAF50] text-sm">
+                  <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm">
                     Precisas de ter uma equipa para entrar num torneio. Cria em <button onClick={() => router.push("/teams")} className="underline font-bold">Equipas</button>.
                   </div>
                 )}
 
                 {error && (
-                  <div className="p-3 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 rounded-xl text-[#FF6B6B] text-sm">
+                  <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm">
                     {error}
                   </div>
                 )}
@@ -1110,7 +1110,7 @@ export default function TournamentsPage() {
                 <div className="flex gap-3">
                   <button
                     onClick={() => { setPublicJoinTarget(null); setError(""); }}
-                    className="flex-1 py-4 bg-white/5 rounded-xl text-[#e3e0f9]/60 hover:bg-white/10 transition-colors"
+                    className="flex-1 py-4 bg-white/5 rounded-xl text-on-surface/60 hover:bg-white/10 transition-colors"
                   >
                     Cancelar
                   </button>
@@ -1119,7 +1119,7 @@ export default function TournamentsPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={joinPublicTournament}
                     disabled={saving || !selectedTeamId}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold disabled:opacity-50"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-green-500 text-white rounded-xl font-bold disabled:opacity-50"
                   >
                     {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar"}
                   </motion.button>
@@ -1133,8 +1133,8 @@ export default function TournamentsPage() {
           <>
             {/* Featured tournaments section */}
             <section>
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-                <Star className="w-5 h-5 text-[#FFD700]" />
+              <h3 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+                <Star className="w-5 h-5 text-amber-400" />
                 Em Destaque
               </h3>
               <div className="space-y-3">
@@ -1149,15 +1149,15 @@ export default function TournamentsPage() {
                     />
                   ))}
                 {filteredTournaments.filter((t) => t.is_public && t.is_featured && t.status !== TournamentStatus.FINISHED).length === 0 && (
-                  <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio em destaque no momento.</p>
+                  <p className="text-on-surface/40 text-sm">Nenhum torneio em destaque no momento.</p>
                 )}
               </div>
             </section>
 
             {/* Public tournaments section */}
             <section>
-              <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-[#4CAF50]" />
+              <h3 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-green-400" />
                 Torneios Públicos
               </h3>
               <div className="space-y-3">
@@ -1172,7 +1172,7 @@ export default function TournamentsPage() {
                     />
                   ))}
                 {filteredTournaments.filter((t) => t.is_public && !t.is_featured && t.status !== TournamentStatus.FINISHED).length === 0 && (
-                  <p className="text-[#e3e0f9]/40 text-sm">Não há torneios públicos no momento. Cria um e torna-o público!</p>
+                  <p className="text-on-surface/40 text-sm">Não há torneios públicos no momento. Cria um e torna-o público!</p>
                 )}
               </div>
             </section>
@@ -1181,8 +1181,8 @@ export default function TournamentsPage() {
 
         {filteredTournaments.length > 0 && !myTournament && (
           <section>
-            <h3 className="text-lg font-bold text-[#e3e0f9] mb-4 flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-[#FFD700]" />
+            <h3 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-amber-400" />
               Torneios Ativos
             </h3>
             <div className="space-y-3">
@@ -1196,7 +1196,7 @@ export default function TournamentsPage() {
                 />
               ))}
               {filteredTournaments.filter((t) => !t.is_public && t.status !== TournamentStatus.FINISHED).length === 0 && (
-                <p className="text-[#e3e0f9]/40 text-sm">Nenhum torneio ativo</p>
+                <p className="text-on-surface/40 text-sm">Nenhum torneio ativo</p>
               )}
             </div>
           </section>
@@ -1204,8 +1204,8 @@ export default function TournamentsPage() {
 
         {filteredTournaments.some((t) => t.status === TournamentStatus.FINISHED) && !myTournament && (
           <section>
-            <h3 className="text-lg font-bold text-[#e3e0f9]/60 mb-4 flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-[#e3e0f9]/30" />
+            <h3 className="text-lg font-bold text-on-surface/60 mb-4 flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-on-surface/30" />
               Torneios Finalizados
             </h3>
             <div className="space-y-3 opacity-60">
@@ -1224,13 +1224,13 @@ export default function TournamentsPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#1e1e30]/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center"
+            className="bg-surface-container/80 backdrop-blur-xl rounded-2xl border border-white/10 p-8 text-center"
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center mx-auto mb-4">
-              <Trophy className="w-8 h-8 text-[#FFD700]/40" />
+            <div className="w-16 h-16 rounded-2xl bg-amber-400/10 flex items-center justify-center mx-auto mb-4">
+              <Trophy className="w-8 h-8 text-amber-400/40" />
             </div>
-            <h3 className="text-xl font-bold text-[#e3e0f9] mb-2">Sem Torneios Ativos</h3>
-            <p className="text-[#e3e0f9]/50 mb-6">Cria o primeiro torneo ou entra num com código</p>
+            <h3 className="text-xl font-bold text-on-surface mb-2">Sem Torneios Ativos</h3>
+            <p className="text-on-surface/50 mb-6">Cria o primeiro torneo ou entra num com código</p>
           </motion.div>
         )}
       </div>

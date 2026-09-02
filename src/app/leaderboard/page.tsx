@@ -60,16 +60,16 @@ export default function LeaderboardPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Classificação Global</h1>
+          <h1 className="text-lg font-bold text-on-surface">Classificação Global</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -102,7 +102,7 @@ export default function LeaderboardPage() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[#e3e0f9]/50 text-center text-sm mb-8"
+              className="text-on-surface/50 text-center text-sm mb-8"
             >
               Os exploradores mais lendários do cosmos.
             </motion.p>
@@ -135,9 +135,9 @@ export default function LeaderboardPage() {
                         </span>
                       )}
                       <div
-                        className={`w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex items-center justify-center text-3xl md:text-4xl bg-[#1e1e30] border-2 ${
+                        className={`w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden flex items-center justify-center text-3xl md:text-4xl bg-surface-container border-2 ${
                           actualRank === 1
-                            ? "border-[#FFD700] shadow-[0_0_12px_rgba(255,215,0,0.4)]"
+                            ? "border-amber-400 shadow-[0_0_12px_rgba(255,215,0,0.4)]"
                             : actualRank === 2
                             ? "border-[#C0C0C0] shadow-[0_0_12px_rgba(192,192,192,0.4)]"
                             : "border-[#CD7F32] shadow-[0_0_12px_rgba(205,127,50,0.4)]"
@@ -148,8 +148,8 @@ export default function LeaderboardPage() {
                       <div
                         className={`absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center border font-bold text-sm ${
                           actualRank === 1
-                            ? "bg-primary w-10 h-10 text-lg border-surface text-[#3c0091]"
-                            : "bg-[#28283a] border-white/20 text-[#e3e0f9]"
+                            ? "bg-primary w-10 h-10 text-lg border-surface text-on-primary"
+                            : "bg-surface-container-high border-white/20 text-on-surface"
                         }`}
                       >
                         {actualRank}
@@ -161,7 +161,7 @@ export default function LeaderboardPage() {
                         isCenter ? "border-primary/20 bg-primary/5" : ""
                       }`}
                     >
-                      <p className={`font-bold truncate text-sm ${isCenter ? "text-[#e3e0f9]" : "text-[#e3e0f9]/80"}`}>
+                      <p className={`font-bold truncate text-sm ${isCenter ? "text-on-surface" : "text-on-surface/80"}`}>
                         {player.name}
                       </p>
                       <p
@@ -193,10 +193,10 @@ export default function LeaderboardPage() {
               className="glass-panel p-4 md:p-6 shadow-2xl mb-6 overflow-hidden"
             >
               <div className="flex justify-between items-center px-3 py-2 border-b border-white/10 mb-3">
-                <span className="text-[10px] font-bold text-[#e3e0f9]/50 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-on-surface/50 uppercase tracking-widest">
                   Piloto
                 </span>
-                <span className="text-[10px] font-bold text-[#e3e0f9]/50 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-on-surface/50 uppercase tracking-widest">
                   Pontuação
                 </span>
               </div>
@@ -214,14 +214,14 @@ export default function LeaderboardPage() {
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className={`w-6 text-center font-bold ${player.isMe ? "text-primary" : "text-[#e3e0f9]/60"}`}>
+                      <span className={`w-6 text-center font-bold ${player.isMe ? "text-primary" : "text-on-surface/60"}`}>
                         {player.rank}
                       </span>
-                      <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 flex items-center justify-center bg-[#1e1e30] text-xl">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 flex items-center justify-center bg-surface-container text-xl">
                         {player.avatar}
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-bold text-[#e3e0f9] text-sm flex items-center gap-1">
+                        <span className="font-bold text-on-surface text-sm flex items-center gap-1">
                           {player.name}
                         </span>
                         {player.isMe && (
@@ -235,7 +235,7 @@ export default function LeaderboardPage() {
                       <span className={`font-bold text-sm ${player.isMe ? "text-primary" : "text-secondary"}`}>
                         {player.points.toLocaleString()}
                       </span>
-                      <span className="block text-[10px] text-[#e3e0f9]/40 uppercase">
+                      <span className="block text-[10px] text-on-surface/40 uppercase">
                         PONTOS
                       </span>
                     </div>
@@ -252,16 +252,16 @@ export default function LeaderboardPage() {
             >
               <div className="glass-panel p-6 rounded-xl flex flex-col items-center">
                 <Globe className="text-primary mb-2 w-6 h-6" />
-                <span className="text-[10px] font-bold text-[#e3e0f9]/50 uppercase">Global</span>
-                <span className="text-xl font-bold text-[#e3e0f9]">{totalPlayers.toLocaleString()}</span>
-                <span className="text-[10px] text-[#e3e0f9]/40">Jogadores ativos</span>
+                <span className="text-[10px] font-bold text-on-surface/50 uppercase">Global</span>
+                <span className="text-xl font-bold text-on-surface">{totalPlayers.toLocaleString()}</span>
+                <span className="text-[10px] text-on-surface/40">Jogadores ativos</span>
               </div>
               {userRank && (
                 <div className="glass-panel p-6 rounded-xl flex flex-col items-center">
                   <Medal className="text-secondary mb-2 w-6 h-6" />
-                  <span className="text-[10px] font-bold text-[#e3e0f9]/50 uppercase">A Tua Posição</span>
-                  <span className="text-xl font-bold text-[#e3e0f9]">#{userRank.rank}</span>
-                  <span className="text-[10px] text-[#e3e0f9]/40">{userRank.points.toLocaleString()} pontos</span>
+                  <span className="text-[10px] font-bold text-on-surface/50 uppercase">A Tua Posição</span>
+                  <span className="text-xl font-bold text-on-surface">#{userRank.rank}</span>
+                  <span className="text-[10px] text-on-surface/40">{userRank.points.toLocaleString()} pontos</span>
                 </div>
               )}
             </motion.section>

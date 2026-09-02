@@ -144,8 +144,8 @@ export default function HistoryPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <div className="w-8 h-8 border-2 border-[#d0bcff]/30 border-t-[#d0bcff] rounded-full animate-spin" />
+      <main className="min-h-screen flex items-center justify-center bg-background">
+        <div className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
       </main>
     );
   }
@@ -153,16 +153,16 @@ export default function HistoryPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-[#d0bcff]/10 blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full bg-[#FFB0CD]/10 blur-[100px]" />
+        <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px]" />
+        <div className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[100px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Histórico de Missões</h1>
+          <h1 className="text-lg font-bold text-on-surface">Histórico de Missões</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -176,8 +176,8 @@ export default function HistoryPage() {
               onClick={() => setActiveFilter(filter)}
               className={`px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
                 activeFilter === filter
-                  ? "bg-[#d0bcff]/15 text-[#d0bcff] border border-[#d0bcff]/30 shadow-[0_0_15px_rgba(208,188,255,0.3)]"
-                  : "text-[#e3e0f9]/50 border border-white/10 hover:text-[#d0bcff] hover:border-[#d0bcff]/30 transition-all"
+                  ? "bg-primary/15 text-primary border border-primary/30 shadow-[0_0_15px_rgba(208,188,255,0.3)]"
+                  : "text-on-surface/50 border border-white/10 hover:text-primary hover:border-primary/30 transition-all"
               }`}
             >
               {filter}
@@ -196,7 +196,7 @@ export default function HistoryPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
-                className="glass-panel p-4 rounded-xl flex items-center gap-4 relative overflow-hidden group hover:border-[#d0bcff]/30 transition-all"
+                className="glass-panel p-4 rounded-xl flex items-center gap-4 relative overflow-hidden group hover:border-primary/30 transition-all"
               >
                 {/* Accent bar */}
                 <div
@@ -216,18 +216,18 @@ export default function HistoryPage() {
                 </div>
 
                 <div className="flex-grow min-w-0">
-                  <h3 className="font-bold text-[#d0bcff] truncate">{item.category.replace(/_/g, " ")}</h3>
-                  <p className="text-[#e3e0f9]/50 text-sm">{item.date}</p>
+                  <h3 className="font-bold text-primary truncate">{item.category.replace(/_/g, " ")}</h3>
+                  <p className="text-on-surface/50 text-sm">{item.date}</p>
                 </div>
 
                 <div className="flex flex-col items-end gap-1 shrink-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-[#e3e0f9]/40 uppercase">Pontuação</span>
-                    <span className="font-bold text-[#d0bcff]">{item.score.toLocaleString()}</span>
+                    <span className="text-[10px] text-on-surface/40 uppercase">Pontuação</span>
+                    <span className="font-bold text-primary">{item.score.toLocaleString()}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-[#e3e0f9]/40 uppercase">Precisão</span>
-                    <span className="font-bold text-[#FFB0CD]">{item.accuracy}%</span>
+                    <span className="text-[10px] text-on-surface/40 uppercase">Precisão</span>
+                    <span className="font-bold text-secondary">{item.accuracy}%</span>
                   </div>
                 </div>
               </motion.div>
@@ -237,8 +237,8 @@ export default function HistoryPage() {
 
         {filtered.length === 0 && (
           <div className="text-center py-16">
-            <History className="w-12 h-12 text-[#e3e0f9]/20 mx-auto mb-4" />
-            <p className="text-[#e3e0f9]/50">Ainda não tens missões registadas</p>
+            <History className="w-12 h-12 text-on-surface/20 mx-auto mb-4" />
+            <p className="text-on-surface/50">Ainda não tens missões registadas</p>
           </div>
         )}
       </div>

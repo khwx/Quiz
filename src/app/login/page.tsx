@@ -74,14 +74,14 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
-      <div className="fixed inset-0 z-0 bg-[#0c0c1d]">
+      <div className="fixed inset-0 z-0 bg-surface-container-lowest">
         <div className="absolute inset-0 nebula-bg" />
         <div className="absolute inset-0 star-field" />
       </div>
 
       <header className="fixed top-0 w-full z-50 flex items-center justify-center px-6 h-20">
         <Link href="/">
-          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] tracking-widest uppercase">
+          <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary tracking-widest uppercase">
             QuizVerse
           </h1>
         </Link>
@@ -91,12 +91,12 @@ export default function LoginPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 w-full max-w-md bg-[#1e1e30]/80 backdrop-blur-xl rounded-[2rem] p-8 border border-[#d0bcff]/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]"
+        className="relative z-10 w-full max-w-md bg-surface-container/80 backdrop-blur-xl rounded-[2rem] p-8 border border-primary/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]"
       >
         <div className="relative flex bg-white/5 rounded-2xl p-1 mb-8">
           <motion.div
             layout
-            className="absolute inset-y-1 w-[calc(50%-4px)] bg-[#d0bcff]/20 border border-[#d0bcff]/30 rounded-xl"
+            className="absolute inset-y-1 w-[calc(50%-4px)] bg-primary/20 border border-primary/30 rounded-xl"
             animate={{ x: isLogin ? 0 : "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
@@ -104,13 +104,13 @@ export default function LoginPage() {
             onClick={() => setIsLogin(true)}
             className="relative z-10 flex-1 py-3 text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-            <span className={isLogin ? "text-[#d0bcff]" : "text-white/50 hover:text-white"}>Entrar</span>
+            <span className={isLogin ? "text-primary" : "text-white/50 hover:text-white"}>Entrar</span>
           </button>
           <button
             onClick={() => setIsLogin(false)}
             className="relative z-10 flex-1 py-3 text-sm font-semibold tracking-wide transition-colors duration-300"
           >
-            <span className={!isLogin ? "text-[#d0bcff]" : "text-white/50 hover:text-white"}>Registar</span>
+            <span className={!isLogin ? "text-primary" : "text-white/50 hover:text-white"}>Registar</span>
           </button>
         </div>
 
@@ -124,17 +124,17 @@ export default function LoginPage() {
                 exit={{ opacity: 0, height: 0 }}
                 className="overflow-hidden"
               >
-                <label className="block text-[10px] font-medium text-[#cbc3d7] uppercase tracking-widest mb-2 ml-1">
+                <label className="block text-[10px] font-medium text-on-surface-variant uppercase tracking-widest mb-2 ml-1">
                   Nome de Utilizador
                 </label>
                 <div className="relative group">
-                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#958ea0] group-focus-within:text-[#d0bcff] transition-colors pointer-events-none z-10" />
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-outline group-focus-within:text-primary transition-colors pointer-events-none z-10" />
                   <input
                     type="text"
                     placeholder="O teu nome"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-[#0c0c1d]/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-[#958ea0] focus:outline-none focus:border-[#d0bcff]/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
+                    className="w-full bg-surface-container-lowest/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-outline focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
                   />
                 </div>
               </motion.div>
@@ -142,38 +142,38 @@ export default function LoginPage() {
           </AnimatePresence>
 
           <div>
-            <label className="block text-[10px] font-medium text-[#cbc3d7] uppercase tracking-widest mb-2 ml-1">
+            <label className="block text-[10px] font-medium text-on-surface-variant uppercase tracking-widest mb-2 ml-1">
               Endereço de Email
             </label>
             <div className="relative group">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#958ea0] group-focus-within:text-[#d0bcff] transition-colors pointer-events-none z-10" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-outline group-focus-within:text-primary transition-colors pointer-events-none z-10" />
               <input
                 type="email"
                 placeholder="astronauta@quizverse.gal"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-[#0c0c1d]/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-[#958ea0] focus:outline-none focus:border-[#d0bcff]/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
+                className="w-full bg-surface-container-lowest/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder:text-outline focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-[10px] font-medium text-[#cbc3d7] uppercase tracking-widest mb-2 ml-1">
+            <label className="block text-[10px] font-medium text-on-surface-variant uppercase tracking-widest mb-2 ml-1">
               Código de Acesso
             </label>
             <div className="relative group">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#958ea0] group-focus-within:text-[#FFB0CD] transition-colors pointer-events-none z-10" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-outline group-focus-within:text-secondary transition-colors pointer-events-none z-10" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-[#0c0c1d]/40 border border-white/10 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-[#958ea0] focus:outline-none focus:border-[#d0bcff]/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
+                className="w-full bg-surface-container-lowest/40 border border-white/10 rounded-xl py-4 pl-12 pr-12 text-white placeholder:text-outline focus:outline-none focus:border-primary/50 focus:shadow-[0_0_10px_rgba(160,120,255,0.3)] transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#958ea0] hover:text-white transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-white transition-colors"
               >
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
@@ -196,7 +196,7 @@ export default function LoginPage() {
                 } catch (err: unknown) {
                   setError(err instanceof Error ? err.message : "Erro ao enviar email de recuperação");
                 }
-              }} className="text-xs font-semibold text-[#d0bcff]/80 hover:text-[#d0bcff] transition-colors uppercase tracking-wider">
+              }} className="text-xs font-semibold text-primary/80 hover:text-primary transition-colors uppercase tracking-wider">
                 Recuperar Trajectória
               </button>
             </div>
@@ -208,7 +208,7 @@ export default function LoginPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="p-3 bg-[#ffb4ab]/10 border border-[#ffb4ab]/30 rounded-xl text-[#ffb4ab] text-sm"
+                className="p-3 bg-error/10 border border-error/30 rounded-xl text-error text-sm"
               >
                 {error}
               </motion.div>
@@ -221,7 +221,7 @@ export default function LoginPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="p-3 bg-[#4CAF50]/10 border border-[#4CAF50]/30 rounded-xl text-[#4CAF50] text-sm flex items-center gap-2"
+                className="p-3 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm flex items-center gap-2"
               >
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
                 {success}
@@ -240,8 +240,8 @@ export default function LoginPage() {
                 : ""
             }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] group-hover:from-[#d0bcff] group-hover:to-[#FFB0CD]" />
-            <div className="relative bg-[#0c0c1d]/10 rounded-[10px] flex items-center justify-center gap-3 py-4 text-white font-bold tracking-widest uppercase">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary group-hover:from-primary group-hover:to-secondary" />
+            <div className="relative bg-surface-container-lowest/10 rounded-[10px] flex items-center justify-center gap-3 py-4 text-white font-bold tracking-widest uppercase">
               {isLoading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
@@ -256,7 +256,7 @@ export default function LoginPage() {
 
         <div className="flex items-center gap-4 py-4 mt-4">
           <div className="h-[1px] flex-1 bg-white/10" />
-          <span className="text-[10px] font-bold text-[#958ea0] uppercase tracking-[0.2em]">OU ACEDER VIA</span>
+          <span className="text-[10px] font-bold text-outline uppercase tracking-[0.2em]">OU ACEDER VIA</span>
           <div className="h-[1px] flex-1 bg-white/10" />
         </div>
 
@@ -292,7 +292,7 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/" className="flex items-center justify-center gap-2 text-[#958ea0] hover:text-white/60 transition-colors text-sm">
+          <Link href="/" className="flex items-center justify-center gap-2 text-outline hover:text-white/60 transition-colors text-sm">
             <ArrowRight className="w-4 h-4 rotate-180" />
             Voltar ao Início
           </Link>
@@ -300,7 +300,7 @@ export default function LoginPage() {
       </motion.div>
 
       <footer className="fixed bottom-0 w-full pb-8 text-center z-10">
-        <p className="text-[10px] text-[#958ea0]/60 uppercase tracking-widest">
+        <p className="text-[10px] text-outline/60 uppercase tracking-widest">
           Protocolo Seguro QuizVerse © 2026
         </p>
       </footer>

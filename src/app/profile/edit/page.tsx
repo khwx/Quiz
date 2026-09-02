@@ -23,7 +23,7 @@ function Toggle({ enabled, onToggle }: { enabled: boolean; onToggle: () => void 
     <button
       onClick={onToggle}
       className={`w-11 h-6 rounded-full relative transition-colors ${
-        enabled ? "bg-[#d0bcff]" : "bg-white/10"
+        enabled ? "bg-primary" : "bg-white/10"
       }`}
     >
       <motion.div
@@ -71,18 +71,18 @@ export default function ProfileEditPage() {
     <main className="min-h-screen relative overflow-hidden pb-24">
       {/* Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#d0bcff]/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#FFB0CD]/10 blur-[120px] rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/10 blur-[120px] rounded-full" />
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/profile" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/profile" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Editar Perfil</h1>
-          <button onClick={handleSave} className="text-sm text-[#d0bcff] font-bold uppercase tracking-widest">
+          <h1 className="text-lg font-bold text-on-surface">Editar Perfil</h1>
+          <button onClick={handleSave} className="text-sm text-primary font-bold uppercase tracking-widest">
             Guardar
           </button>
         </div>
@@ -96,16 +96,16 @@ export default function ProfileEditPage() {
           className="flex flex-col items-center space-y-4"
         >
           <div className="relative group">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-[3px] border-[#d0bcff] shadow-[0_0_30px_rgba(208,188,255,0.4)] relative">
-              <div className="w-full h-full bg-[#1e1e30] flex items-center justify-center">
-                <Rocket className="w-12 h-12 text-[#d0bcff]" />
+            <div className="w-32 h-32 rounded-full overflow-hidden border-[3px] border-primary shadow-[0_0_30px_rgba(208,188,255,0.4)] relative">
+              <div className="w-full h-full bg-surface-container flex items-center justify-center">
+                <Rocket className="w-12 h-12 text-primary" />
               </div>
             </div>
-            <button className="absolute bottom-0 right-0 bg-[#d0bcff] text-[#121223] p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
+            <button className="absolute bottom-0 right-0 bg-primary text-[#121223] p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
               <Camera className="w-4 h-4" />
             </button>
           </div>
-          <button className="px-6 py-2 rounded-full border border-[#d0bcff]/40 text-[#d0bcff] text-sm font-bold hover:bg-[#d0bcff]/10 transition-all">
+          <button className="px-6 py-2 rounded-full border border-primary/40 text-primary text-sm font-bold hover:bg-primary/10 transition-all">
             Alterar Avatar
           </button>
         </motion.section>
@@ -118,26 +118,26 @@ export default function ProfileEditPage() {
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
           <div className="space-y-2">
-            <label className="text-xs text-[#e3e0f9]/60 uppercase tracking-wider font-bold ml-1">Nome do Piloto</label>
-            <div className="glass-panel rounded-xl flex items-center px-4 py-3 focus-within:border-[#d0bcff]/50 focus-within:shadow-[0_0_20px_rgba(208,188,255,0.2)] transition-all">
-              <Rocket className="w-5 h-5 text-[#d0bcff] mr-3" />
+            <label className="text-xs text-on-surface/60 uppercase tracking-wider font-bold ml-1">Nome do Piloto</label>
+            <div className="glass-panel rounded-xl flex items-center px-4 py-3 focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(208,188,255,0.2)] transition-all">
+              <Rocket className="w-5 h-5 text-primary mr-3" />
               <input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="bg-transparent border-none focus:ring-0 text-[#e3e0f9] w-full text-lg placeholder:text-[#e3e0f9]/30"
+                className="bg-transparent border-none focus:ring-0 text-on-surface w-full text-lg placeholder:text-on-surface/30"
                 placeholder="Pilot Name"
               />
             </div>
           </div>
           <div className="space-y-2">
-            <label className="text-xs text-[#e3e0f9]/60 uppercase tracking-wider font-bold ml-1">Diário de Missão (Bio)</label>
-            <div className="glass-panel rounded-xl flex items-start px-4 py-3 h-32 focus-within:border-[#d0bcff]/50 focus-within:shadow-[0_0_20px_rgba(208,188,255,0.2)] transition-all">
-              <FileText className="w-5 h-5 text-[#d0bcff] mr-3 mt-1" />
+            <label className="text-xs text-on-surface/60 uppercase tracking-wider font-bold ml-1">Diário de Missão (Bio)</label>
+            <div className="glass-panel rounded-xl flex items-start px-4 py-3 h-32 focus-within:border-primary/50 focus-within:shadow-[0_0_20px_rgba(208,188,255,0.2)] transition-all">
+              <FileText className="w-5 h-5 text-primary mr-3 mt-1" />
               <textarea
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                className="bg-transparent border-none focus:ring-0 text-[#e3e0f9] w-full resize-none placeholder:text-[#e3e0f9]/30"
+                className="bg-transparent border-none focus:ring-0 text-on-surface w-full resize-none placeholder:text-on-surface/30"
                 placeholder="Descreve as tuas conquistas..."
               />
             </div>
@@ -151,7 +151,7 @@ export default function ProfileEditPage() {
           transition={{ delay: 0.2 }}
           className="space-y-3"
         >
-          <h3 className="text-lg font-bold text-[#d0bcff]" style={{ fontFamily: "Space Grotesk" }}>Esquema de Cores Cósmico</h3>
+          <h3 className="text-lg font-bold text-primary" style={{ fontFamily: "Space Grotesk" }}>Esquema de Cores Cósmico</h3>
           <div className="flex flex-wrap gap-4">
             {THEME_COLORS.map((theme, idx) => (
               <button
@@ -180,21 +180,21 @@ export default function ProfileEditPage() {
         >
           {/* Audio & Haptics */}
           <div className="glass-panel rounded-xl p-4 space-y-4">
-            <div className="flex items-center space-x-2 text-[#d0bcff]">
+            <div className="flex items-center space-x-2 text-primary">
               <Volume2 className="w-5 h-5" />
               <h3 className="font-bold" style={{ fontFamily: "Space Grotesk" }}>Sons e Tato</h3>
             </div>
             <div className="flex justify-between items-center py-2">
               <div>
-                <p className="text-[#e3e0f9]">Efeitos Sonoros</p>
-                <p className="text-xs text-[#e3e0f9]/50">Sons das missões e conquistas</p>
+                <p className="text-on-surface">Efeitos Sonoros</p>
+                <p className="text-xs text-on-surface/50">Sons das missões e conquistas</p>
               </div>
               <Toggle enabled={soundEffects} onToggle={() => setSoundEffects(!soundEffects)} />
             </div>
             <div className="flex justify-between items-center py-2">
               <div>
-                <p className="text-[#e3e0f9]">Haptics (Vibração)</p>
-                <p className="text-xs text-[#e3e0f9]/50">Feedback tátil ao acertar questões</p>
+                <p className="text-on-surface">Haptics (Vibração)</p>
+                <p className="text-xs text-on-surface/50">Feedback tátil ao acertar questões</p>
               </div>
               <Toggle enabled={haptics} onToggle={() => setHaptics(!haptics)} />
             </div>
@@ -202,21 +202,21 @@ export default function ProfileEditPage() {
 
           {/* Notifications */}
           <div className="glass-panel rounded-xl p-4 space-y-4">
-            <div className="flex items-center space-x-2 text-[#d0bcff]">
+            <div className="flex items-center space-x-2 text-primary">
               <Bell className="w-5 h-5" />
               <h3 className="font-bold" style={{ fontFamily: "Space Grotesk" }}>Notificações</h3>
             </div>
             <div className="flex justify-between items-center py-2">
               <div>
-                <p className="text-[#e3e0f9]">Lembretes de Missão</p>
-                <p className="text-xs text-[#e3e0f9]/50">Novas missões diárias disponíveis</p>
+                <p className="text-on-surface">Lembretes de Missão</p>
+                <p className="text-xs text-on-surface/50">Novas missões diárias disponíveis</p>
               </div>
               <Toggle enabled={missionReminders} onToggle={() => setMissionReminders(!missionReminders)} />
             </div>
             <div className="flex justify-between items-center py-2">
               <div>
-                <p className="text-[#e3e0f9]">Ranking e Desafios</p>
-                <p className="text-xs text-[#e3e0f9]/50">Alertas quando alguém te ultrapassa</p>
+                <p className="text-on-surface">Ranking e Desafios</p>
+                <p className="text-xs text-on-surface/50">Alertas quando alguém te ultrapassa</p>
               </div>
               <Toggle enabled={rankingAlerts} onToggle={() => setRankingAlerts(!rankingAlerts)} />
             </div>
@@ -231,7 +231,7 @@ export default function ProfileEditPage() {
         >
           <button
             onClick={handleSignOut}
-            className="w-full py-4 rounded-xl border border-[#FF6B6B]/30 text-[#FF6B6B] text-sm font-bold flex items-center justify-center gap-2 hover:bg-[#FF6B6B]/5 transition-colors"
+            className="w-full py-4 rounded-xl border border-red-500/30 text-red-400 text-sm font-bold flex items-center justify-center gap-2 hover:bg-red-500/5 transition-colors"
           >
             <LogOut className="w-4 h-4" />
             Terminar Sessão

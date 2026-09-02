@@ -338,10 +338,10 @@ if (status !== GameStatus.QUESTION) return;
     return (
       <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#d0bcff]/20 blur-[100px]" />
-          <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-[#FFB0CD]/20 blur-[100px]" />
+          <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary/20 blur-[100px]" />
+          <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-secondary/20 blur-[100px]" />
         </div>
-        <Loader2 className="w-12 h-12 animate-spin text-[#d0bcff] relative z-10" />
+        <Loader2 className="w-12 h-12 animate-spin text-primary relative z-10" />
       </div>
     );
   }
@@ -355,7 +355,7 @@ if (status !== GameStatus.QUESTION) return;
           onClick={toggleFullscreen}
           aria-label={isFullscreen ? "Sair do ecrã inteiro" : "Ecrã inteiro"}
           title={isFullscreen ? "Sair do ecrã inteiro" : "Ecrã inteiro"}
-          className="p-2 bg-white/10 hover:bg-white/20 rounded-lg text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors"
+          className="p-2 bg-white/10 hover:bg-white/20 rounded-lg text-on-surface/60 hover:text-on-surface transition-colors"
         >
           {isFullscreen ? (
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -368,9 +368,9 @@ if (status !== GameStatus.QUESTION) return;
       <SoundControls />
 
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-[#d0bcff]/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-[#FFB0CD]/10 rounded-full blur-[150px]" />
-        <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-[#FFD700]/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-primary/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-secondary/10 rounded-full blur-[150px]" />
+        <div className="absolute top-[30%] left-[40%] w-[30vw] h-[30vw] bg-amber-400/5 rounded-full blur-[120px]" />
       </div>
 
       {(status === GameStatus.LOBBY || status === GameStatus.STARTING) && (
@@ -461,7 +461,7 @@ if (status !== GameStatus.QUESTION) return;
             setCurrentAnswers([]);
             triggerReveal();
           }}
-          className="absolute top-4 right-4 z-50 flex items-center gap-2 px-4 py-2 bg-[#FF6B6B]/20 hover:bg-[#FF6B6B]/30 text-[#FF6B6B] rounded-xl border border-[#FF6B6B]/30 transition-all text-sm font-bold"
+          className="absolute top-4 right-4 z-50 flex items-center gap-2 px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-xl border border-red-500/30 transition-all text-sm font-bold"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
@@ -493,13 +493,13 @@ if (status !== GameStatus.QUESTION) return;
           />
 
           {/* Host Quick Controls Bar (TV Host) */}
-          <div className="fixed bottom-6 left-6 z-40 flex items-center gap-2 bg-[#1e1e30]/80 backdrop-blur-md px-3 py-2 rounded-2xl border border-white/10 shadow-2xl">
+          <div className="fixed bottom-6 left-6 z-40 flex items-center gap-2 bg-surface-container/80 backdrop-blur-md px-3 py-2 rounded-2xl border border-white/10 shadow-2xl">
             <button
               onClick={togglePause}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                 isPaused
-                  ? "bg-[#FFD700] text-[#121223] shadow-[0_0_15px_rgba(255,215,0,0.4)]"
-                  : "bg-white/10 text-[#e3e0f9] hover:bg-white/20"
+                  ? "bg-amber-400 text-[#121223] shadow-[0_0_15px_rgba(255,215,0,0.4)]"
+                  : "bg-white/10 text-on-surface hover:bg-white/20"
               }`}
               title="Pausar / Retomar o jogo (Tecla P)"
             >
@@ -510,7 +510,7 @@ if (status !== GameStatus.QUESTION) return;
             {currentQuestionIndex > 1 && (
               <button
                 onClick={handlePreviousQuestion}
-                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-[#e3e0f9] transition-all flex items-center gap-1.5"
+                className="px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-on-surface transition-all flex items-center gap-1.5"
                 title="Voltar à pergunta anterior (Tecla B)"
               >
                 <span>⬅️ Anterior</span>
@@ -520,7 +520,7 @@ if (status !== GameStatus.QUESTION) return;
 
             <button
               onClick={handleSkipQuestion}
-              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-[#e3e0f9] transition-all flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-on-surface transition-all flex items-center gap-1.5"
               title="Saltar pergunta (Tecla S)"
             >
               <span>⏭️ Saltar</span>
@@ -534,14 +534,14 @@ if (status !== GameStatus.QUESTION) return;
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="p-8 bg-[#1e1e30] border-2 border-[#FFD700] rounded-3xl text-center shadow-[0_0_40px_rgba(255,215,0,0.3)] max-w-md"
+                className="p-8 bg-surface-container border-2 border-amber-400 rounded-3xl text-center shadow-[0_0_40px_rgba(255,215,0,0.3)] max-w-md"
               >
                 <div className="text-5xl mb-4 animate-bounce">⏸️</div>
-                <h2 className="text-3xl font-black text-[#e3e0f9] mb-2">JOGO EM PAUSA</h2>
-                <p className="text-sm text-[#e3e0f9]/60 mb-6">O apresentador pausou temporariamente o cronómetro.</p>
+                <h2 className="text-3xl font-black text-on-surface mb-2">JOGO EM PAUSA</h2>
+                <p className="text-sm text-on-surface/60 mb-6">O apresentador pausou temporariamente o cronómetro.</p>
                 <button
                   onClick={togglePause}
-                  className="px-6 py-3 bg-[#FFD700] text-[#121223] font-bold rounded-xl shadow-lg hover:scale-105 transition-all text-sm uppercase tracking-wider"
+                  className="px-6 py-3 bg-amber-400 text-[#121223] font-bold rounded-xl shadow-lg hover:scale-105 transition-all text-sm uppercase tracking-wider"
                 >
                   Continuar Jogo [P]
                 </button>

@@ -139,7 +139,7 @@ export default function FriendsPage() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-[#d0bcff] border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
       </main>
     );
   }
@@ -147,13 +147,13 @@ export default function FriendsPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#4a007f] blur-[150px] opacity-40 rounded-full" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[#aa0266] blur-[150px] opacity-30 rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-on-tertiary blur-[150px] opacity-40 rounded-full" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-secondary-container blur-[150px] opacity-30 rounded-full" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Amigos</h1>
+          <h1 className="text-lg font-bold text-on-surface">Amigos</h1>
         </div>
       </header>
 
@@ -169,12 +169,12 @@ export default function FriendsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && searchUsers()}
-                className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#d0bcff]"
+                className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary"
               />
             </div>
             <button
               onClick={searchUsers}
-              className="px-6 py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold"
+              className="px-6 py-3 bg-primary text-[#121223] rounded-xl font-bold"
             >
               Procurar
             </button>
@@ -185,14 +185,14 @@ export default function FriendsPage() {
               {searchResults.map((user) => (
                 <div key={user.id} className="flex items-center justify-between bg-white/5 p-3 rounded-lg">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] flex items-center justify-center font-bold text-[#3c0091]">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center font-bold text-on-primary">
                       {user.avatar || "👤"}
                     </div>
                     <span className="text-white font-medium">{user.username}</span>
                   </div>
                   <button
                     onClick={() => sendFriendRequest(user.id)}
-                    className="p-2 bg-[#d0bcff]/20 text-[#d0bcff] rounded-lg hover:bg-[#d0bcff]/30"
+                    className="p-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30"
                   >
                     <UserPlus className="w-4 h-4" />
                   </button>
@@ -210,7 +210,7 @@ export default function FriendsPage() {
               {pendingFriends.map((friend) => (
                 <div key={friend.id} className="glass-panel p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] flex items-center justify-center font-bold text-[#3c0091] text-lg">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center font-bold text-on-primary text-lg">
                       {friend.profiles?.avatar || "👤"}
                     </div>
                     <div>
@@ -251,7 +251,7 @@ export default function FriendsPage() {
               {acceptedFriends.map((friend) => (
                 <div key={friend.id} className="glass-panel p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#d0bcff] to-[#FFB0CD] flex items-center justify-center font-bold text-[#3c0091] text-lg">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center font-bold text-on-primary text-lg">
                       {friend.profiles?.avatar || "👤"}
                     </div>
                     <div>

@@ -106,9 +106,9 @@ export default function ShopPage() {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case "cosmetic": return "from-[#d0bcff] to-[#a078ff]";
-      case "powerup": return "from-[#FFB0CD] to-[#FF6B6B]";
-      case "badge": return "from-[#FFD700] to-[#FFA500]";
+      case "cosmetic": return "from-primary to-primary-container";
+      case "powerup": return "from-secondary to-red-500";
+      case "badge": return "from-amber-400 to-[#FFA500]";
       default: return "from-gray-400 to-gray-600";
     }
   };
@@ -116,7 +116,7 @@ export default function ShopPage() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-[#d0bcff] border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
       </main>
     );
   }
@@ -124,16 +124,16 @@ export default function ShopPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#4a007f] blur-[150px] opacity-40 rounded-full" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-[#aa0266] blur-[150px] opacity-30 rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-on-tertiary blur-[150px] opacity-40 rounded-full" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-secondary-container blur-[150px] opacity-30 rounded-full" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Loja de Recompensas</h1>
-          <div className="flex items-center gap-2 bg-[#FFD700]/10 px-4 py-2 rounded-full border border-[#FFD700]/20">
-            <Star className="w-4 h-4 text-[#FFD700]" />
-            <span className="text-[#FFD700] font-bold">{userXp} XP</span>
+          <h1 className="text-lg font-bold text-on-surface">Loja de Recompensas</h1>
+          <div className="flex items-center gap-2 bg-amber-400/10 px-4 py-2 rounded-full border border-amber-400/20">
+            <Star className="w-4 h-4 text-amber-400" />
+            <span className="text-amber-400 font-bold">{userXp} XP</span>
           </div>
         </div>
       </header>
@@ -165,9 +165,9 @@ export default function ShopPage() {
                 <h3 className="text-lg font-bold text-white mb-1">{reward.name}</h3>
                 <p className="text-sm text-white/60 mb-4">{reward.description}</p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 bg-[#FFD700]/10 px-3 py-1.5 rounded-full">
-                    <Star className="w-4 h-4 text-[#FFD700]" />
-                    <span className="text-[#FFD700] font-bold text-sm">{reward.cost} XP</span>
+                  <div className="flex items-center gap-1 bg-amber-400/10 px-3 py-1.5 rounded-full">
+                    <Star className="w-4 h-4 text-amber-400" />
+                    <span className="text-amber-400 font-bold text-sm">{reward.cost} XP</span>
                   </div>
                   {!isPurchased && (
                     <button
@@ -175,7 +175,7 @@ export default function ShopPage() {
                       disabled={!canAfford}
                       className={`flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm transition-all ${
                         canAfford
-                          ? "bg-[#d0bcff] text-[#121223] hover:shadow-[0_0_15px_rgba(208,188,255,0.3)]"
+                          ? "bg-primary text-[#121223] hover:shadow-[0_0_15px_rgba(208,188,255,0.3)]"
                           : "bg-white/5 text-white/30 cursor-not-allowed"
                       }`}
                     >

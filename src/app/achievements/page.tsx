@@ -21,10 +21,10 @@ interface Achievement {
 }
 
 const RARITY_CONFIG = {
-  legendary: { label: "Lendário", color: "text-[#FFB0CD]", bg: "bg-[#FFB0CD]/10", border: "border-[#FFB0CD]/20", glow: "shadow-[0_0_20px_rgba(255,176,205,0.2)]" },
-  epic: { label: "Épico", color: "text-[#deb7ff]", bg: "bg-[#deb7ff]/10", border: "border-[#deb7ff]/20", glow: "shadow-[0_0_20px_rgba(222,183,255,0.2)]" },
-  rare: { label: "Raro", color: "text-[#d0bcff]", bg: "bg-[#d0bcff]/10", border: "border-[#d0bcff]/20", glow: "shadow-[0_0_20px_rgba(208,188,255,0.2)]" },
-  common: { label: "Comum", color: "text-[#e3e0f9]/50", bg: "bg-white/5", border: "border-white/10", glow: "" },
+  legendary: { label: "Lendário", color: "text-secondary", bg: "bg-secondary/10", border: "border-secondary/20", glow: "shadow-[0_0_20px_rgba(255,176,205,0.2)]" },
+  epic: { label: "Épico", color: "text-tertiary", bg: "bg-tertiary/10", border: "border-tertiary/20", glow: "shadow-[0_0_20px_rgba(222,183,255,0.2)]" },
+  rare: { label: "Raro", color: "text-primary", bg: "bg-primary/10", border: "border-primary/20", glow: "shadow-[0_0_20px_rgba(208,188,255,0.2)]" },
+  common: { label: "Comum", color: "text-on-surface/50", bg: "bg-white/5", border: "border-white/10", glow: "" },
 };
 
 const CATEGORIES = ["Todas", "Vitórias", "Sequências", "Precisão", "Social"];
@@ -89,8 +89,8 @@ export default function AchievementsPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-[#121223]">
-        <span className="text-[#d0bcff] animate-pulse">A carregar conquistas...</span>
+      <main className="min-h-screen flex items-center justify-center bg-background">
+        <span className="text-primary animate-pulse">A carregar conquistas...</span>
       </main>
     );
   }
@@ -98,16 +98,16 @@ export default function AchievementsPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/profile" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/profile" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Conquistas</h1>
+          <h1 className="text-lg font-bold text-on-surface">Conquistas</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -117,16 +117,16 @@ export default function AchievementsPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between mb-6 bg-[#1e1e30]/50 backdrop-blur-sm p-4 rounded-xl border border-white/5"
+          className="flex items-center justify-between mb-6 bg-surface-container/50 backdrop-blur-sm p-4 rounded-xl border border-white/5"
         >
           <div>
-            <p className="text-[10px] text-[#FFB0CD] uppercase tracking-wider font-bold">Desbloqueadas</p>
-            <p className="text-xl font-bold text-[#e3e0f9]">{unlocked}/{total}</p>
+            <p className="text-[10px] text-secondary uppercase tracking-wider font-bold">Desbloqueadas</p>
+            <p className="text-xl font-bold text-on-surface">{unlocked}/{total}</p>
           </div>
           <div className="h-10 w-px bg-white/10" />
           <div>
-            <p className="text-[10px] text-[#FFD700] uppercase tracking-wider font-bold">Pontos Astro</p>
-            <p className="text-xl font-bold text-[#e3e0f9]">{astroPoints.toLocaleString("pt-PT")}</p>
+            <p className="text-[10px] text-amber-400 uppercase tracking-wider font-bold">Pontos Astro</p>
+            <p className="text-xl font-bold text-on-surface">{astroPoints.toLocaleString("pt-PT")}</p>
           </div>
         </motion.div>
 
@@ -138,8 +138,8 @@ export default function AchievementsPage() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
                 activeCategory === cat
-                  ? "bg-[#d0bcff]/15 text-[#d0bcff] border border-[#d0bcff]/30"
-                  : "text-[#e3e0f9]/50 border border-white/10 hover:text-[#d0bcff] hover:border-[#d0bcff]/30"
+                  ? "bg-primary/15 text-primary border border-primary/30"
+                  : "text-on-surface/50 border border-white/10 hover:text-primary hover:border-primary/30"
               }`}
             >
               {cat}
@@ -182,18 +182,18 @@ export default function AchievementsPage() {
                   </motion.span>
                 </div>
 
-                <h3 className={`font-bold mb-1 ${achievement.unlocked ? "text-[#e3e0f9]" : "text-[#e3e0f9]/50"}`}>
+                <h3 className={`font-bold mb-1 ${achievement.unlocked ? "text-on-surface" : "text-on-surface/50"}`}>
                   {achievement.name}
                 </h3>
-                <p className="text-xs text-[#e3e0f9]/40 mb-3">{achievement.description}</p>
+                <p className="text-xs text-on-surface/40 mb-3">{achievement.description}</p>
 
                 {/* Progress bar */}
                 <div className="w-full mt-auto">
-                  <div className="flex justify-between text-[10px] uppercase font-bold text-[#e3e0f9]/30 mb-1">
+                  <div className="flex justify-between text-[10px] uppercase font-bold text-on-surface/30 mb-1">
                     <span>Progresso</span>
                     <span>{achievement.progress}/{achievement.maxProgress}</span>
                   </div>
-                  <div className="h-2 w-full bg-[#121223] rounded-full overflow-hidden">
+                  <div className="h-2 w-full bg-background rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${progressPercent}%` }}
@@ -202,12 +202,12 @@ export default function AchievementsPage() {
                       style={{
                         background: achievement.unlocked
                           ? "linear-gradient(90deg, #d0bcff, #FFB0CD)"
-                          : `linear-gradient(90deg, ${rarity.color === "text-[#FFB0CD]" ? "#FFB0CD" : rarity.color === "text-[#deb7ff]" ? "#deb7ff" : "#d0bcff"} 0%, ${rarity.color === "text-[#FFB0CD]" ? "#FFB0CD" : rarity.color === "text-[#deb7ff]" ? "#b86dfd" : "#a078ff"} 100%)`,
+                          : `linear-gradient(90deg, ${rarity.color === "text-secondary" ? "#FFB0CD" : rarity.color === "text-tertiary" ? "#deb7ff" : "#d0bcff"} 0%, ${rarity.color === "text-secondary" ? "#FFB0CD" : rarity.color === "text-tertiary" ? "#b86dfd" : "#a078ff"} 100%)`,
                       }}
                     />
                   </div>
                   {achievement.unlocked && (
-                    <div className="mt-2 flex items-center justify-center gap-1 text-[#4CAF50]">
+                    <div className="mt-2 flex items-center justify-center gap-1 text-green-400">
                       <CheckCircle className="w-3 h-3" />
                       <span className="text-[10px] font-bold uppercase tracking-widest">Concluído</span>
                     </div>

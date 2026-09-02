@@ -28,7 +28,7 @@ export default function PlayError({
       <div className="flex gap-3">
         <button
           onClick={reset}
-          className="flex items-center gap-2 px-6 py-3 bg-[#d0bcff] text-[#121223] rounded-xl font-bold hover:shadow-[0_0_20px_rgba(208,188,255,0.3)] transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-primary text-[#121223] rounded-xl font-bold hover:shadow-[0_0_20px_rgba(208,188,255,0.3)] transition-all"
         >
           <RefreshCcw className="w-5 h-5" />
           Tentar Novamente

@@ -70035,512 +70035,104 @@
     "image_url": null
   },
   {
-    "text": "Qual é o símbolo químico do elemento Mercúrio?",
+    "text": "Qual é o símbolo químico do elemento Zirconio?",
     "options": [
-      "Hg",
-      "Ti",
-      "O",
-      "K"
-    ],
-    "correct_option": 0,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Mercúrio → Hg."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o símbolo químico do elemento Hidrogénio?",
-    "options": [
-      "Zn",
-      "Hg",
-      "Au",
-      "H"
-    ],
-    "correct_option": 3,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Hidrogénio → H."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é Zr?",
-    "options": [
-      "Zirconio",
-      "Ouro",
-      "Oxigénio",
-      "Tungsténio"
-    ],
-    "correct_option": 0,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo Zr",
-      "explanation": "Qual é o elemento cujo símbolo químico é Zr → Zirconio."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 8 elevado a 2?",
-    "options": [
-      "60",
-      "64",
-      "69",
-      "59"
+      "Ba",
+      "Zr",
+      "As",
+      "Fe"
     ],
     "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Zirconio → Zr."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Al?",
+    "options": [
+      "Alumínio",
+      "Oxigénio",
+      "Titânio",
+      "Arsénio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Al",
+      "explanation": "Qual é o elemento cujo símbolo químico é Al → Alumínio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 + 9?",
+    "options": [
+      "18",
+      "20",
+      "25",
+      "29"
+    ],
+    "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
     "metadata": {
-      "hint": "Potência.",
-      "explanation": "Quanto é 8 elevado a 2 = 64."
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 16 + 9 = 25."
     },
     "image_url": null
   },
   {
-    "text": "Quanto é 85 - 62?",
-    "options": [
-      "25",
-      "23",
-      "27",
-      "33"
-    ],
-    "correct_option": 1,
-    "category": "MATEMATICA",
-    "age_rating": 14,
-    "metadata": {
-      "hint": "Diferença.",
-      "explanation": "Quanto é 85 - 62 = 23."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 50% de 60?",
-    "options": [
-      "30",
-      "34",
-      "27",
-      "28"
-    ],
-    "correct_option": 0,
-    "category": "MATEMATICA",
-    "age_rating": 16,
-    "metadata": {
-      "hint": "Percentagem.",
-      "explanation": "Quanto é 50% de 60 = 30."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Em que concelho se situa a freguesia de Costa Nova dos palheiros listados?",
-    "options": [
-      "Ovar",
-      "Aveiro",
-      "Estarreja",
-      "Ílhavo"
-    ],
-    "correct_option": 3,
-    "category": "PORTUGAL_FREGUESIAS",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Concelho de Ílhavo",
-      "explanation": "Em que concelho se situa a freguesia de Costa Nova dos palheiros listados → Ílhavo."
-    },
-    "image_url": null
-  },
-  {
-    "text": "A freguesia de Peniche é mundialmente conhecida por qual modalidade?",
-    "options": [
-      "Remo",
-      "Vela",
-      "Natação",
-      "Surf"
-    ],
-    "correct_option": 3,
-    "category": "PORTUGAL_FREGUESIAS",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Praia dos Supertubos",
-      "explanation": "A freguesia de Peniche é mundialmente conhecida por qual modalidade → Surf."
-    },
-    "image_url": null
-  },
-  {
-    "text": "A freguesia de Belém, em Lisboa, é célebre por qual monumento?",
-    "options": [
-      "Convento de Cristo",
-      "Sé de Braga",
-      "Castelo de São Jorge",
-      "Torre de Belém"
-    ],
-    "correct_option": 3,
-    "category": "PORTUGAL_FREGUESIAS",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Junto ao Tejo",
-      "explanation": "A freguesia de Belém, em Lisboa, é célebre por qual monumento → Torre de Belém."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é Mg?",
-    "options": [
-      "Magnésio",
-      "Fósforo",
-      "Flúor",
-      "Titânio"
-    ],
-    "correct_option": 0,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo Mg",
-      "explanation": "Qual é o elemento cujo símbolo químico é Mg → Magnésio."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o símbolo químico do elemento Chumbo?",
-    "options": [
-      "F",
-      "Pb",
-      "I",
-      "Ag"
-    ],
-    "correct_option": 1,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Chumbo → Pb."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é Na?",
-    "options": [
-      "Cobalto",
-      "Sódio",
-      "Flúor",
-      "Carbono"
-    ],
-    "correct_option": 1,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo Na",
-      "explanation": "Qual é o elemento cujo símbolo químico é Na → Sódio."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 68 - 54?",
+    "text": "Quanto é 7 × 3?",
     "options": [
       "21",
-      "14",
-      "7",
-      "10"
-    ],
-    "correct_option": 1,
-    "category": "MATEMATICA",
-    "age_rating": 8,
-    "metadata": {
-      "hint": "Diferença.",
-      "explanation": "Quanto é 68 - 54 = 14."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 3 elevado a 4?",
-    "options": [
-      "85",
-      "88",
-      "76",
-      "81"
-    ],
-    "correct_option": 3,
-    "category": "MATEMATICA",
-    "age_rating": 16,
-    "metadata": {
-      "hint": "Potência.",
-      "explanation": "Quanto é 3 elevado a 4 = 81."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 25% de 200?",
-    "options": [
-      "43",
-      "53",
-      "50",
-      "52"
-    ],
-    "correct_option": 2,
-    "category": "MATEMATICA",
-    "age_rating": 8,
-    "metadata": {
-      "hint": "Percentagem.",
-      "explanation": "Quanto é 25% de 200 = 50."
-    },
-    "image_url": null
-  },
-  {
-    "text": "A freguesia de Colares pertence a que concelho?",
-    "options": [
-      "Cascais",
-      "Mafra",
-      "Sintra",
-      "Oeiras"
-    ],
-    "correct_option": 2,
-    "category": "PORTUGAL_FREGUESIAS",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Vinhos de chão de areia",
-      "explanation": "A freguesia de Colares pertence a que concelho → Sintra."
-    },
-    "image_url": null
-  },
-  {
-    "text": "A freguesia de Buçaco (Luso) pertence a que concelho?",
-    "options": [
-      "Anadia",
-      "Mealhada",
-      "Águeda",
-      "Cantanhede"
-    ],
-    "correct_option": 1,
-    "category": "PORTUGAL_FREGUESIAS",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Mata secular e termas",
-      "explanation": "A freguesia de Buçaco (Luso) pertence a que concelho → Mealhada."
-    },
-    "image_url": null
-  },
-  {
-    "text": "A freguesia de Sagres pertence a qual concelho algarvio?",
-    "options": [
-      "Vila do Bispo",
-      "Silves",
-      "Portimão",
-      "Aljezur"
-    ],
-    "correct_option": 0,
-    "category": "PORTUGAL_FREGUESIAS",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Barlavento algarvio",
-      "explanation": "A freguesia de Sagres pertence a qual concelho algarvio → Vila do Bispo."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é Sn?",
-    "options": [
-      "Azoto",
-      "Hélio",
-      "Estanho",
-      "Cobalto"
-    ],
-    "correct_option": 2,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo Sn",
-      "explanation": "Qual é o elemento cujo símbolo químico é Sn → Estanho."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o símbolo químico do elemento Níquel?",
-    "options": [
-      "Au",
-      "I",
-      "O",
-      "Ni"
-    ],
-    "correct_option": 3,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Níquel → Ni."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o símbolo químico do elemento Flúor?",
-    "options": [
-      "Li",
-      "P",
-      "F",
-      "W"
-    ],
-    "correct_option": 2,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Química",
-      "explanation": "Qual é o símbolo químico do elemento Flúor → F."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 46 - 33?",
-    "options": [
-      "13",
-      "23",
-      "10",
-      "20"
-    ],
-    "correct_option": 0,
-    "category": "MATEMATICA",
-    "age_rating": 12,
-    "metadata": {
-      "hint": "Diferença.",
-      "explanation": "Quanto é 46 - 33 = 13."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 59 + 71?",
-    "options": [
-      "120",
-      "130",
-      "133",
-      "126"
-    ],
-    "correct_option": 1,
-    "category": "MATEMATICA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Soma simples.",
-      "explanation": "Quanto é 59 + 71 = 130."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é a raiz quadrada de 225?",
-    "options": [
-      "15",
-      "11",
-      "12",
-      "18"
-    ],
-    "correct_option": 0,
-    "category": "MATEMATICA",
-    "age_rating": 14,
-    "metadata": {
-      "hint": "Quadrado perfeito.",
-      "explanation": "Qual é a raiz quadrada de 225 = 15."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é H?",
-    "options": [
-      "Cálcio",
-      "Magnésio",
-      "Hidrogénio",
-      "Tungsténio"
-    ],
-    "correct_option": 2,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo H",
-      "explanation": "Qual é o elemento cujo símbolo químico é H → Hidrogénio."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é B?",
-    "options": [
-      "Carbono",
-      "Ouro",
-      "Boro",
-      "Hélio"
-    ],
-    "correct_option": 2,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo B",
-      "explanation": "Qual é o elemento cujo símbolo químico é B → Boro."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Qual é o elemento cujo símbolo químico é Ag?",
-    "options": [
-      "Hidrogénio",
-      "Prata",
-      "Bromo",
-      "Crómio"
-    ],
-    "correct_option": 1,
-    "category": "CIENCIA",
-    "age_rating": 10,
-    "metadata": {
-      "hint": "Símbolo Ag",
-      "explanation": "Qual é o elemento cujo símbolo químico é Ag → Prata."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 4 elevado a 2?",
-    "options": [
-      "16",
+      "28",
       "19",
-      "14",
-      "11"
-    ],
-    "correct_option": 0,
-    "category": "MATEMATICA",
-    "age_rating": 16,
-    "metadata": {
-      "hint": "Potência.",
-      "explanation": "Quanto é 4 elevado a 2 = 16."
-    },
-    "image_url": null
-  },
-  {
-    "text": "Quanto é 58 + 90?",
-    "options": [
-      "148",
-      "146",
-      "150",
-      "158"
+      "31"
     ],
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 12,
     "metadata": {
-      "hint": "Soma simples.",
-      "explanation": "Quanto é 58 + 90 = 148."
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 3 = 21."
     },
     "image_url": null
   },
   {
-    "text": "Quanto é 99 - 27?",
+    "text": "Em que concelho se situa a freguesia de Óbidos?",
     "options": [
-      "76",
-      "77",
-      "72",
-      "71"
+      "Rio Maior",
+      "Óbidos",
+      "Bombarral",
+      "Caldas da Rainha"
     ],
-    "correct_option": 2,
-    "category": "MATEMATICA",
-    "age_rating": 16,
+    "correct_option": 1,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
     "metadata": {
-      "hint": "Diferença.",
-      "explanation": "Quanto é 99 - 27 = 72."
+      "hint": "Vila medieval",
+      "explanation": "Em que concelho se situa a freguesia de Óbidos → Óbidos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Pinhão, no Douro Vinhateiro, pertence a qual concelho?",
+    "options": [
+      "Alijó",
+      "Peso da Régua",
+      "Tabuaço",
+      "Lamego"
+    ],
+    "correct_option": 0,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Distrito de Vila Real",
+      "explanation": "A freguesia de Pinhão, no Douro Vinhateiro, pertence a qual concelho → Alijó."
     },
     "image_url": null
   }

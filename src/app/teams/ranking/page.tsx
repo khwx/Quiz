@@ -42,17 +42,17 @@ export default function TeamsRankingPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/teams" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/teams" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
             Equipas
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Ranking de Equipas</h1>
+          <h1 className="text-lg font-bold text-on-surface">Ranking de Equipas</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -60,13 +60,13 @@ export default function TeamsRankingPage() {
       <div className="relative z-10 max-w-4xl mx-auto p-6">
         {loading ? (
           <div className="flex items-center justify-center min-h-[50vh]">
-            <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
           </div>
         ) : teams.length === 0 ? (
           <div className="text-center mt-16">
             <Trophy className="w-12 h-12 text-white/20 mx-auto mb-4" />
             <p className="text-white/50 text-sm">Ainda não há equipas no ranking.</p>
-            <Link href="/teams" className="mt-4 inline-block px-6 py-3 bg-[#d0bcff] text-[#3c0091] font-bold rounded-xl">
+            <Link href="/teams" className="mt-4 inline-block px-6 py-3 bg-primary text-on-primary font-bold rounded-xl">
               Criar ou Entrar numa Equipa
             </Link>
           </div>
@@ -75,7 +75,7 @@ export default function TeamsRankingPage() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[#e3e0f9]/50 text-center text-sm mb-8"
+              className="text-on-surface/50 text-center text-sm mb-8"
             >
               As equipas mais poderosas e sincronizadas do QuizVerse.
             </motion.p>
@@ -103,26 +103,26 @@ export default function TeamsRankingPage() {
                     >
                       <div className="relative mb-3">
                         {isCenter && (
-                          <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-[#FFD700] animate-bounce text-2xl">
+                          <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-amber-400 animate-bounce text-2xl">
                             👑
                           </span>
                         )}
                         <div
-                          className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden flex items-center justify-center text-3xl md:text-4xl bg-[#1e1e30] border-2 ${
+                          className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden flex items-center justify-center text-3xl md:text-4xl bg-surface-container border-2 ${
                             actualRank === 1
-                              ? "border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.4)]"
+                              ? "border-amber-400 shadow-[0_0_15px_rgba(255,215,0,0.4)]"
                               : actualRank === 2
                               ? "border-[#C0C0C0] shadow-[0_0_15px_rgba(192,192,192,0.4)]"
                               : "border-[#CD7F32] shadow-[0_0_15px_rgba(205,127,50,0.4)]"
                           }`}
                         >
-                          <Shield className="w-8 h-8 text-[#d0bcff]" />
+                          <Shield className="w-8 h-8 text-primary" />
                         </div>
                         <div
                           className={`absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center border font-bold text-sm ${
                             actualRank === 1
-                              ? "bg-[#FFD700] border-surface text-[#3c0091]"
-                              : "bg-[#28283a] border-white/20 text-[#e3e0f9]"
+                              ? "bg-amber-400 border-surface text-on-primary"
+                              : "bg-surface-container-high border-white/20 text-on-surface"
                           }`}
                         >
                           {actualRank}
@@ -131,15 +131,15 @@ export default function TeamsRankingPage() {
 
                       <div
                         className={`glass-panel w-full rounded-t-xl p-3 text-center ${
-                          isCenter ? "border-[#d0bcff]/30 bg-[#d0bcff]/10" : ""
+                          isCenter ? "border-primary/30 bg-primary/10" : ""
                         }`}
                       >
-                        <p className={`font-bold truncate text-sm ${isCenter ? "text-white" : "text-[#e3e0f9]/80"}`}>
+                        <p className={`font-bold truncate text-sm ${isCenter ? "text-white" : "text-on-surface/80"}`}>
                           {team.name}
                         </p>
                         <p
                           className={`font-extrabold text-sm ${
-                            actualRank === 1 ? "text-[#FFD700] text-base" : "text-[#d0bcff]"
+                            actualRank === 1 ? "text-amber-400 text-base" : "text-primary"
                           }`}
                         >
                           {(team.total_score || 0).toLocaleString()} pts
@@ -148,7 +148,7 @@ export default function TeamsRankingPage() {
                       <div
                         className={`w-full bg-gradient-to-b ${
                           isCenter
-                            ? "h-28 from-[#d0bcff]/20 to-transparent border-x border-[#d0bcff]/10"
+                            ? "h-28 from-primary/20 to-transparent border-x border-primary/10"
                             : "h-12 from-white/10 to-transparent border-x border-white/5"
                         }`}
                       />
@@ -165,10 +165,10 @@ export default function TeamsRankingPage() {
               className="glass-panel p-4 md:p-6 shadow-2xl mb-6 overflow-hidden"
             >
               <div className="flex justify-between items-center px-3 py-2 border-b border-white/10 mb-3">
-                <span className="text-[10px] font-bold text-[#e3e0f9]/50 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-on-surface/50 uppercase tracking-widest">
                   Equipa
                 </span>
-                <span className="text-[10px] font-bold text-[#e3e0f9]/50 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-on-surface/50 uppercase tracking-widest">
                   Pontuação Coletiva
                 </span>
               </div>
@@ -184,27 +184,27 @@ export default function TeamsRankingPage() {
                       className="flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-all"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="w-6 text-center font-bold font-mono text-[#d0bcff]">
+                        <span className="w-6 text-center font-bold font-mono text-primary">
                           #{rank}
                         </span>
-                        <div className="w-12 h-12 rounded-xl bg-[#d0bcff]/10 border border-white/10 flex items-center justify-center">
-                          <Shield className="w-6 h-6 text-[#d0bcff]" />
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 border border-white/10 flex items-center justify-center">
+                          <Shield className="w-6 h-6 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-bold text-white text-base">{team.name}</h4>
                           <div className="flex items-center gap-2 mt-1">
-                            <span className="text-xs text-[#e3e0f9]/50 flex items-center gap-1">
+                            <span className="text-xs text-on-surface/50 flex items-center gap-1">
                               <Users className="w-3 h-3" /> {team.team_members?.length || 0}/{team.max_members} membros
                             </span>
-                            <span className="text-xs font-mono text-[#d0bcff]/70">• PIN: {team.pin}</span>
+                            <span className="text-xs font-mono text-primary/70">• PIN: {team.pin}</span>
                           </div>
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="font-bold text-[#d0bcff] text-lg">
+                        <span className="font-bold text-primary text-lg">
                           {(team.total_score || 0).toLocaleString()}
                         </span>
-                        <span className="block text-[10px] text-[#e3e0f9]/40 uppercase tracking-wider">
+                        <span className="block text-[10px] text-on-surface/40 uppercase tracking-wider">
                           PONTOS
                         </span>
                       </div>

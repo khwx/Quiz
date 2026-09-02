@@ -103,7 +103,7 @@ export default function TournamentDetailPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-[#d0bcff]" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
   }
@@ -111,8 +111,8 @@ export default function TournamentDetailPage() {
   if (!tournament) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-        <p className="text-[#e3e0f9]/50">Torneio não encontrado.</p>
-        <Link href="/tournaments" className="text-[#d0bcff] font-bold">Voltar</Link>
+        <p className="text-on-surface/50">Torneio não encontrado.</p>
+        <Link href="/tournaments" className="text-primary font-bold">Voltar</Link>
       </div>
     );
   }
@@ -125,16 +125,16 @@ export default function TournamentDetailPage() {
   return (
     <main className="min-h-screen relative overflow-hidden pb-24">
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-[#d0bcff]/10 blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-[#FFB0CD]/10 blur-[150px]" />
+        <div className="absolute top-0 left-0 w-[60vw] h-[60vw] bg-primary/10 blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-secondary/10 blur-[150px]" />
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#121223]/80 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-4xl mx-auto">
-          <Link href="/tournaments" className="text-sm text-[#e3e0f9]/60 hover:text-[#e3e0f9] transition-colors flex items-center gap-1">
+          <Link href="/tournaments" className="text-sm text-on-surface/60 hover:text-on-surface transition-colors flex items-center gap-1">
             <ChevronLeft className="w-4 h-4" />
           </Link>
-          <h1 className="text-lg font-bold text-[#e3e0f9]">Detalhe do Torneio</h1>
+          <h1 className="text-lg font-bold text-on-surface">Detalhe do Torneio</h1>
           <div className="w-10" />
         </div>
       </header>
@@ -146,41 +146,41 @@ export default function TournamentDetailPage() {
           animate={{ opacity: 1, y: 0 }}
           className="glass-panel rounded-2xl p-6 text-center"
         >
-          <Trophy className="w-12 h-12 text-[#FFD700] mx-auto mb-3" />
+          <Trophy className="w-12 h-12 text-amber-400 mx-auto mb-3" />
           <h2 className="text-2xl font-bold text-white mb-1" style={{ fontFamily: "Space Grotesk" }}>
             {tournament.name}
           </h2>
           <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${
             tournament.status === "FINISHED"
-              ? "bg-white/10 text-[#e3e0f9]/50"
-              : "bg-[#FFD700]/20 text-[#FFD700]"
+              ? "bg-white/10 text-on-surface/50"
+              : "bg-amber-400/20 text-amber-400"
           }`}>
             {statusLabels[tournament.status] || tournament.status}
           </span>
           {tournament.is_public && (
-            <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#4CAF50]/20 text-[#4CAF50] align-middle">
+            <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-green-500/20 text-green-400 align-middle">
               <Globe className="w-3 h-3" />
               Público
             </span>
           )}
           {tournament.is_featured && (
-            <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFD700]/20 text-[#FFD700] align-middle">
+            <span className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 align-middle">
               <Star className="w-3 h-3" />
               Destaque
             </span>
           )}
           {Array.isArray(tournament.whitelisted_team_ids) && tournament.whitelisted_team_ids.length > 0 && (
-            <div className="mt-2 flex items-center justify-center gap-1.5 text-xs text-[#d0bcff]/80">
-              <ShieldCheck className="w-4 h-4 text-[#d0bcff]" />
+            <div className="mt-2 flex items-center justify-center gap-1.5 text-xs text-primary/80">
+              <ShieldCheck className="w-4 h-4 text-primary" />
               Torneio por convite — apenas {tournament.whitelisted_team_ids.length} equipa(s) convidada(s)
             </div>
           )}
-          <p className="text-sm text-[#e3e0f9]/50 mt-3">
+          <p className="text-sm text-on-surface/50 mt-3">
             {teamCount} / {maxTeams} equipas inscritas
           </p>
           <div className="w-full bg-white/10 h-2 rounded-full mt-3 overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-[#FFD700] to-[#FFB0CD] rounded-full transition-all"
+              className="h-full bg-gradient-to-r from-amber-400 to-secondary rounded-full transition-all"
               style={{ width: `${(teamCount / maxTeams) * 100}%` }}
             />
           </div>
@@ -191,14 +191,14 @@ export default function TournamentDetailPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-panel rounded-2xl p-6 border border-[#4CAF50]/30"
+            className="glass-panel rounded-2xl p-6 border border-green-500/30"
           >
             {myTeams.length === 0 ? (
               <div className="text-center">
-                <p className="text-[#4CAF50] text-sm mb-3">Cria uma equipa para entrares neste torneio público.</p>
+                <p className="text-green-400 text-sm mb-3">Cria uma equipa para entrares neste torneio público.</p>
                 <button
                   onClick={() => router.push("/teams")}
-                  className="px-6 py-3 bg-[#4CAF50] text-white rounded-xl font-bold"
+                  className="px-6 py-3 bg-green-500 text-white rounded-xl font-bold"
                 >
                   Ir para Equipas
                 </button>
@@ -206,13 +206,13 @@ export default function TournamentDetailPage() {
             ) : (
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-[#4CAF50]" />
+                  <Globe className="w-5 h-5 text-green-400" />
                   Entrar no Torneio Público
                 </h3>
                 <select
                   value={selectedTeamId}
                   onChange={(e) => setSelectedTeamId(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-[#e3e0f9] focus:outline-none focus:border-[#4CAF50]/50 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:outline-none focus:border-green-500/50 transition-all"
                 >
                   <option value="">Selecciona uma equipa</option>
                   {myTeams.map((team) => (
@@ -226,7 +226,7 @@ export default function TournamentDetailPage() {
                   whileTap={{ scale: 0.98 }}
                   onClick={joinPublicTournament}
                   disabled={joining || !selectedTeamId || alreadyJoined(selectedTeamId)}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#4CAF50] text-white rounded-xl font-bold disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-green-500 text-white rounded-xl font-bold disabled:opacity-50"
                 >
                   {joining ? <Loader2 className="w-5 h-5 animate-spin" /> : "Entrar no Torneio"}
                 </motion.button>
@@ -244,30 +244,30 @@ export default function TournamentDetailPage() {
             className="glass-panel rounded-2xl p-6"
           >
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
-              <Medal className="w-5 h-5 text-[#FFD700]" />
+              <Medal className="w-5 h-5 text-amber-400" />
               Classificação
             </h3>
             <div className="space-y-3">
               {sortedTeams.map((tt, idx) => (
                 <div key={tt.id} className={`flex items-center justify-between p-3 rounded-xl ${
-                  idx === 0 ? "bg-[#FFD700]/10 border border-[#FFD700]/20" : "bg-white/5"
+                  idx === 0 ? "bg-amber-400/10 border border-amber-400/20" : "bg-white/5"
                 }`}>
                   <div className="flex items-center gap-3">
                     <span className={`text-lg font-bold w-8 text-center ${
-                      idx === 0 ? "text-[#FFD700]" : idx === 1 ? "text-[#C0C0C0]" : idx === 2 ? "text-[#CD7F32]" : "text-[#e3e0f9]/40"
+                      idx === 0 ? "text-amber-400" : idx === 1 ? "text-[#C0C0C0]" : idx === 2 ? "text-[#CD7F32]" : "text-on-surface/40"
                     }`}>
                       #{idx + 1}
                     </span>
                     <div className="flex items-center gap-2">
-                      {idx === 0 && <Crown className="w-4 h-4 text-[#FFD700]" />}
+                      {idx === 0 && <Crown className="w-4 h-4 text-amber-400" />}
                       <span className="font-bold text-white">{tt.teams?.name || "Equipa"}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     {tt.score !== undefined && tt.score > 0 && (
-                      <span className="text-[#FFD700] font-bold">{tt.score.toLocaleString()} pts</span>
+                      <span className="text-amber-400 font-bold">{tt.score.toLocaleString()} pts</span>
                     )}
-                    <span className="text-[#e3e0f9]/30 text-xs font-mono">{tt.teams?.pin}</span>
+                    <span className="text-on-surface/30 text-xs font-mono">{tt.teams?.pin}</span>
                   </div>
                 </div>
               ))}
@@ -283,8 +283,8 @@ export default function TournamentDetailPage() {
             transition={{ delay: 0.1 }}
             className="glass-panel rounded-2xl p-8 text-center"
           >
-            <Users className="w-12 h-12 text-[#e3e0f9]/20 mx-auto mb-3" />
-            <p className="text-[#e3e0f9]/50">Nenhuma equipa inscrita ainda.</p>
+            <Users className="w-12 h-12 text-on-surface/20 mx-auto mb-3" />
+            <p className="text-on-surface/50">Nenhuma equipa inscrita ainda.</p>
           </motion.div>
         )}
 
@@ -294,7 +294,7 @@ export default function TournamentDetailPage() {
           const hasPrizes = prizes.first || prizes.second || prizes.third;
           if (!hasPrizes) return null;
           const prizeRows = [
-            { rank: 0, icon: <Crown className="w-5 h-5 text-[#FFD700]" />, color: "text-[#FFD700]", label: "1º Lugar", value: prizes.first },
+            { rank: 0, icon: <Crown className="w-5 h-5 text-amber-400" />, color: "text-amber-400", label: "1º Lugar", value: prizes.first },
             { rank: 1, icon: <Medal className="w-5 h-5 text-[#C0C0C0]" />, color: "text-[#C0C0C0]", label: "2º Lugar", value: prizes.second },
             { rank: 2, icon: <Medal className="w-5 h-5 text-[#CD7F32]" />, color: "text-[#CD7F32]", label: "3º Lugar", value: prizes.third },
           ];
@@ -306,7 +306,7 @@ export default function TournamentDetailPage() {
               className="glass-panel rounded-2xl p-6"
             >
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
-                <Gift className="w-5 h-5 text-[#FFD700]" />
+                <Gift className="w-5 h-5 text-amber-400" />
                 Prémios do Top 3
               </h3>
               <div className="space-y-3">
@@ -317,7 +317,7 @@ export default function TournamentDetailPage() {
                       <span className={`font-bold ${row.color}`}>{row.label}</span>
                       {row.icon}
                       <div className="flex-1">
-                        <p className="text-[#e3e0f9] font-medium">{row.value || "—"}</p>
+                        <p className="text-on-surface font-medium">{row.value || "—"}</p>
                         {winner && (
                           <p className={`text-xs ${row.color}`}>
                             🏆 {winner.teams?.name || "Equipa"}
@@ -340,12 +340,12 @@ export default function TournamentDetailPage() {
           className="grid grid-cols-2 gap-4"
         >
           <div className="glass-panel rounded-2xl p-4 text-center">
-            <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Equipas</span>
+            <span className="text-xs text-on-surface/40 uppercase font-bold">Equipas</span>
             <p className="text-2xl font-bold text-white" style={{ fontFamily: "Space Grotesk" }}>{teamCount}</p>
           </div>
           <div className="glass-panel rounded-2xl p-4 text-center">
-            <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Estado</span>
-            <p className="text-lg font-bold text-[#FFD700]">{statusLabels[tournament.status] || tournament.status}</p>
+            <span className="text-xs text-on-surface/40 uppercase font-bold">Estado</span>
+            <p className="text-lg font-bold text-amber-400">{statusLabels[tournament.status] || tournament.status}</p>
           </div>
         </motion.div>
 
@@ -357,21 +357,21 @@ export default function TournamentDetailPage() {
           className="glass-panel rounded-2xl p-6"
         >
           <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "Space Grotesk" }}>
-            <Target className="w-5 h-5 text-[#FFB0CD]" />
+            <Target className="w-5 h-5 text-secondary" />
             Definições
           </h3>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white/5 rounded-xl p-3 text-center">
-              <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Tempo por Pergunta</span>
+              <span className="text-xs text-on-surface/40 uppercase font-bold">Tempo por Pergunta</span>
               <p className="text-xl font-bold text-white">{tournament.settings?.timer || 20}s</p>
             </div>
             <div className="bg-white/5 rounded-xl p-3 text-center">
-              <span className="text-xs text-[#e3e0f9]/40 uppercase font-bold">Perguntas</span>
+              <span className="text-xs text-on-surface/40 uppercase font-bold">Perguntas</span>
               <p className="text-xl font-bold text-white">{tournament.settings?.questions || 10}</p>
             </div>
           </div>
           {tournament.settings?.blind_mode && (
-            <div className="mt-4 p-3 bg-[#d0bcff]/10 border border-[#d0bcff]/30 rounded-xl text-[#d0bcff] text-sm flex items-center gap-2">
+            <div className="mt-4 p-3 bg-primary/10 border border-primary/30 rounded-xl text-primary text-sm flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.292-4.292M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
