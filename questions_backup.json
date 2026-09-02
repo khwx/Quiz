@@ -70441,5 +70441,107 @@
       "explanation": "Qual é a raiz quadrada de 225 = 15."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é H?",
+    "options": [
+      "Cálcio",
+      "Magnésio",
+      "Hidrogénio",
+      "Tungsténio"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo H",
+      "explanation": "Qual é o elemento cujo símbolo químico é H → Hidrogénio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é B?",
+    "options": [
+      "Carbono",
+      "Ouro",
+      "Boro",
+      "Hélio"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo B",
+      "explanation": "Qual é o elemento cujo símbolo químico é B → Boro."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Ag?",
+    "options": [
+      "Hidrogénio",
+      "Prata",
+      "Bromo",
+      "Crómio"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Ag",
+      "explanation": "Qual é o elemento cujo símbolo químico é Ag → Prata."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 elevado a 2?",
+    "options": [
+      "16",
+      "19",
+      "14",
+      "11"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 4 elevado a 2 = 16."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 58 + 90?",
+    "options": [
+      "148",
+      "146",
+      "150",
+      "158"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 58 + 90 = 148."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 99 - 27?",
+    "options": [
+      "76",
+      "77",
+      "72",
+      "71"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 99 - 27 = 72."
+    },
+    "image_url": null
   }
 ]
