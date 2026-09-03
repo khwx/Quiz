@@ -70135,5 +70135,107 @@
       "explanation": "A freguesia de Pinhão, no Douro Vinhateiro, pertence a qual concelho → Alijó."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Cu?",
+    "options": [
+      "Ouro",
+      "Oxigénio",
+      "Magnésio",
+      "Cobre"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Cu",
+      "explanation": "Qual é o elemento cujo símbolo químico é Cu → Cobre."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Iodo?",
+    "options": [
+      "I",
+      "Ag",
+      "Ti",
+      "H"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Iodo → I."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é F?",
+    "options": [
+      "Flúor",
+      "Hélio",
+      "Bromo",
+      "Cloro"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo F",
+      "explanation": "Qual é o elemento cujo símbolo químico é F → Flúor."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 elevado a 3?",
+    "options": [
+      "342",
+      "346",
+      "343",
+      "344"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 7 elevado a 3 = 343."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 43 - 19?",
+    "options": [
+      "26",
+      "24",
+      "28",
+      "14"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 43 - 19 = 24."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 196?",
+    "options": [
+      "4",
+      "21",
+      "10",
+      "14"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 196 = 14."
+    },
+    "image_url": null
   }
 ]
