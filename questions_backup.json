@@ -71252,5 +71252,73 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Bromo?",
+    "options": [
+      "Li",
+      "N",
+      "Sn",
+      "Br"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Bromo → Br."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é S?",
+    "options": [
+      "Enxofre",
+      "Azoto",
+      "Cloro",
+      "Carbono"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo S",
+      "explanation": "Qual é o elemento cujo símbolo químico é S → Enxofre."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 ÷ 4?",
+    "options": [
+      "9",
+      "6",
+      "7",
+      "4"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 16 ÷ 4 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 4?",
+    "options": [
+      "28",
+      "24",
+      "18",
+      "29"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 4 = 28."
+    },
+    "image_url": null
   }
 ]
