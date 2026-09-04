@@ -71320,5 +71320,107 @@
       "explanation": "Quanto é 7 × 4 = 28."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Cl?",
+    "options": [
+      "Cloro",
+      "Ouro",
+      "Oxigénio",
+      "Enxofre"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Cl",
+      "explanation": "Qual é o elemento cujo símbolo químico é Cl → Cloro."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Cobalto?",
+    "options": [
+      "Ag",
+      "Sn",
+      "U",
+      "Co"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Cobalto → Co."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é W?",
+    "options": [
+      "Sódio",
+      "Tungsténio",
+      "Alumínio",
+      "Hidrogénio"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo W",
+      "explanation": "Qual é o elemento cujo símbolo químico é W → Tungsténio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50% de 80?",
+    "options": [
+      "43",
+      "37",
+      "45",
+      "40"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 50% de 80 = 40."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 elevado a 2?",
+    "options": [
+      "14",
+      "1",
+      "4",
+      "11"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 2 elevado a 2 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 8?",
+    "options": [
+      "6",
+      "26",
+      "16",
+      "12"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 8 = 16."
+    },
+    "image_url": null
   }
 ]
