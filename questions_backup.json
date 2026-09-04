@@ -71628,5 +71628,56 @@
       "explanation": "Quanto é 27 + 13 = 40."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Hg?",
+    "options": [
+      "Manganês",
+      "Flúor",
+      "Mercúrio",
+      "Arsénio"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Hg",
+      "explanation": "Qual é o elemento cujo símbolo químico é Hg → Mercúrio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 35 ÷ 7?",
+    "options": [
+      "2",
+      "1",
+      "5",
+      "9"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 35 ÷ 7 = 5."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25% de 40?",
+    "options": [
+      "10",
+      "17",
+      "9",
+      "0"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 25% de 40 = 10."
+    },
+    "image_url": null
   }
 ]
