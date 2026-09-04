@@ -68988,6 +68988,28 @@
     "hint": null
   },
   {
+    "id": "73e19f06-f9ff-48a5-9df4-dca94b49282a",
+    "text": "Quanto é 2 elevado a 2?",
+    "image_url": null,
+    "options": [
+      "14",
+      "1",
+      "4",
+      "11"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-04T07:52:09.510244+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 2 elevado a 2 = 4."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
     "id": "9d8e1ae4-5dbf-4bd0-b3f7-cdb499a841bd",
     "text": "Quanto é 8 × 7?",
     "image_url": null,
@@ -71254,7 +71276,9 @@
     "hint": null
   },
   {
+    "id": "fac34650-cbf7-4745-b0fd-e1b5e5d157be",
     "text": "Qual é o símbolo químico do elemento Bromo?",
+    "image_url": null,
     "options": [
       "Li",
       "N",
@@ -71264,14 +71288,19 @@
     "correct_option": 3,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T05:12:33.112836+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Bromo → Br."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "6aea8e9f-f613-42ec-974f-88baa44853a1",
     "text": "Qual é o elemento cujo símbolo químico é S?",
+    "image_url": null,
     "options": [
       "Enxofre",
       "Azoto",
@@ -71281,14 +71310,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T05:12:33.112836+00:00",
     "metadata": {
       "hint": "Símbolo S",
       "explanation": "Qual é o elemento cujo símbolo químico é S → Enxofre."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "bb4d7cd6-e7eb-4268-9e85-fb58feb06e8b",
     "text": "Quanto é 16 ÷ 4?",
+    "image_url": null,
     "options": [
       "9",
       "6",
@@ -71298,14 +71332,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-04T05:12:33.112836+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 16 ÷ 4 = 4."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a3db2a57-402b-4716-a263-78062dfa4d6b",
     "text": "Quanto é 7 × 4?",
+    "image_url": null,
     "options": [
       "28",
       "24",
@@ -71315,14 +71354,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-04T05:12:33.112836+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 7 × 4 = 28."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "27f44b79-dce9-459e-ba5d-076de68434af",
     "text": "Qual é o elemento cujo símbolo químico é Cl?",
+    "image_url": null,
     "options": [
       "Cloro",
       "Ouro",
@@ -71332,14 +71376,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T07:52:09.510244+00:00",
     "metadata": {
       "hint": "Símbolo Cl",
       "explanation": "Qual é o elemento cujo símbolo químico é Cl → Cloro."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "5ff83fab-77e0-427c-a919-614ec014a651",
     "text": "Qual é o símbolo químico do elemento Cobalto?",
+    "image_url": null,
     "options": [
       "Ag",
       "Sn",
@@ -71349,14 +71398,19 @@
     "correct_option": 3,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T07:52:09.510244+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Cobalto → Co."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "ef48f539-a16f-404c-890f-b8802a37c28c",
     "text": "Qual é o elemento cujo símbolo químico é W?",
+    "image_url": null,
     "options": [
       "Sódio",
       "Tungsténio",
@@ -71366,14 +71420,19 @@
     "correct_option": 1,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T07:52:09.510244+00:00",
     "metadata": {
       "hint": "Símbolo W",
       "explanation": "Qual é o elemento cujo símbolo químico é W → Tungsténio."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "97b5cff1-37be-436a-8901-74ba033a3766",
     "text": "Quanto é 50% de 80?",
+    "image_url": null,
     "options": [
       "43",
       "37",
@@ -71383,31 +71442,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-04T07:52:09.510244+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 50% de 80 = 40."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
-    "text": "Quanto é 2 elevado a 2?",
-    "options": [
-      "14",
-      "1",
-      "4",
-      "11"
-    ],
-    "correct_option": 2,
-    "category": "MATEMATICA",
-    "age_rating": 12,
-    "metadata": {
-      "hint": "Potência.",
-      "explanation": "Quanto é 2 elevado a 2 = 4."
-    },
-    "image_url": null
-  },
-  {
+    "id": "5b3a45b7-83c5-4ee4-8b1c-e6511631363e",
     "text": "Quanto é 2 × 8?",
+    "image_url": null,
     "options": [
       "6",
       "26",
@@ -71417,10 +71464,101 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T07:52:09.510244+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 2 × 8 = 16."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "ed999640-2f61-4986-a645-0ba0505e12ae",
+    "text": "Qual é o símbolo químico do elemento Arsénio?",
+    "image_url": null,
+    "options": [
+      "Pt",
+      "Fe",
+      "F",
+      "As"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T10:21:37.049717+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Arsénio → As."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "e4a7a1a2-9596-4765-bddf-27c9521e5381",
+    "text": "Qual é o símbolo químico do elemento Titânio?",
+    "image_url": null,
+    "options": [
+      "Ti",
+      "Br",
+      "Pt",
+      "Au"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T10:21:37.049717+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Titânio → Ti."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "d59893a1-b509-4391-a554-9e03259c8ec6",
+    "text": "Quanto é 34 + 50?",
+    "image_url": null,
+    "options": [
+      "87",
+      "85",
+      "84",
+      "89"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-04T10:21:37.049717+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 34 + 50 = 84."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "a63817d0-148e-4f23-abbe-3909aac1677c",
+    "text": "Quanto é 15 + 11?",
+    "image_url": null,
+    "options": [
+      "28",
+      "26",
+      "21",
+      "30"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-04T10:21:37.049717+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 15 + 11 = 26."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
