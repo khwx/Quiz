@@ -71560,5 +71560,73 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Qual é o elemento cujo símbolo químico é Pb?",
+    "options": [
+      "Oxigénio",
+      "Cobre",
+      "Césio",
+      "Chumbo"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Símbolo Pb",
+      "explanation": "Qual é o elemento cujo símbolo químico é Pb → Chumbo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o símbolo químico do elemento Césio?",
+    "options": [
+      "Cs",
+      "W",
+      "Ni",
+      "H"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Césio → Cs."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 - 68?",
+    "options": [
+      "2",
+      "5",
+      "3",
+      "4"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 71 - 68 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 27 + 13?",
+    "options": [
+      "38",
+      "44",
+      "40",
+      "36"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 27 + 13 = 40."
+    },
+    "image_url": null
   }
 ]
