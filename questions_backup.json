@@ -67849,6 +67849,28 @@
     "hint": null
   },
   {
+    "id": "8960da3f-f3aa-41f4-a411-c023fe0bb4e3",
+    "text": "Quanto é 9 elevado a 4?",
+    "image_url": null,
+    "options": [
+      "6566",
+      "6551",
+      "6561",
+      "6562"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:56:37.640972+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 9 elevado a 4 = 6561."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
     "id": "0594cedb-d544-4495-a5ed-6ddebf26b2cb",
     "text": "A histórica freguesia de Tomar é famosa por qual monumento templário?",
     "image_url": null,
@@ -68922,6 +68944,50 @@
     "hint": null
   },
   {
+    "id": "98b47683-6f26-491b-8735-bd409bf18fa5",
+    "text": "Quanto é 10 + 28?",
+    "image_url": null,
+    "options": [
+      "38",
+      "28",
+      "39",
+      "48"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:56:37.640972+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 10 + 28 = 38."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "ea9e84c2-298e-4628-b4ab-b76c53a4eb67",
+    "text": "O Galo de Barcelos é um símbolo popular de qual concelho?",
+    "image_url": null,
+    "options": [
+      "Guimarães",
+      "Fafe",
+      "Braga",
+      "Barcelos"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:56:37.640972+00:00",
+    "metadata": {
+      "hint": "Minho",
+      "explanation": "O Galo de Barcelos é um símbolo popular de qual concelho → Barcelos."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
     "id": "9d8e1ae4-5dbf-4bd0-b3f7-cdb499a841bd",
     "text": "Quanto é 8 × 7?",
     "image_url": null,
@@ -69780,7 +69846,9 @@
     "hint": null
   },
   {
+    "id": "92a621a7-a787-471a-956e-cff8e61307d9",
     "text": "Qual é o elemento cujo símbolo químico é Br?",
+    "image_url": null,
     "options": [
       "Bromo",
       "Azoto",
@@ -69790,14 +69858,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Símbolo Br",
       "explanation": "Qual é o elemento cujo símbolo químico é Br → Bromo."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "485869ed-8b60-4cc9-89c4-8522f295a254",
     "text": "Qual é o símbolo químico do elemento Prata?",
+    "image_url": null,
     "options": [
       "Ag",
       "N",
@@ -69807,14 +69880,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Prata → Ag."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "fa038377-f813-452c-8944-5dc9bb1eb7c3",
     "text": "Qual é o elemento cujo símbolo químico é N?",
+    "image_url": null,
     "options": [
       "Azoto",
       "Ouro",
@@ -69824,14 +69902,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Símbolo N",
       "explanation": "Qual é o elemento cujo símbolo químico é N → Azoto."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a09b3738-395a-4991-ae8d-aaf4125af3f1",
     "text": "Quanto é 3 × 12?",
+    "image_url": null,
     "options": [
       "36",
       "33",
@@ -69841,14 +69924,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 3 × 12 = 36."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "8bbd914c-996b-409b-a98e-3de592087d5e",
     "text": "Qual é a raiz quadrada de 121?",
+    "image_url": null,
     "options": [
       "11",
       "8",
@@ -69858,14 +69946,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Quadrado perfeito.",
       "explanation": "Qual é a raiz quadrada de 121 = 11."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c21847cd-c6a9-4388-b415-336fd73c908d",
     "text": "Quanto é 9 × 3?",
+    "image_url": null,
     "options": [
       "34",
       "24",
@@ -69875,14 +69968,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 9 × 3 = 27."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "eacb457b-3fc2-4164-b02a-c7cdb8168957",
     "text": "A freguesia de Santana, na ilha da Madeira, é famosa por:",
+    "image_url": null,
     "options": [
       "Cozido das furnas",
       "Grutas calcárias",
@@ -69892,14 +69990,19 @@
     "correct_option": 2,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Teto de colmo",
       "explanation": "A freguesia de Santana, na ilha da Madeira, é famosa por: → Casas típicas triangulares."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "7d9a8cb9-dfcb-4a2a-b671-e178a7cb46d3",
     "text": "Em que concelho se situa a freguesia de Nazaré, famosa pelas ondas gigantes?",
+    "image_url": null,
     "options": [
       "Caldas da Rainha",
       "Alcobaça",
@@ -69909,14 +70012,19 @@
     "correct_option": 2,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Praia do Norte",
       "explanation": "Em que concelho se situa a freguesia de Nazaré, famosa pelas ondas gigantes → Nazaré."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e29974ca-b952-4426-8c1c-ad2d2832ee9a",
     "text": "A freguesia de Miranda do Douro é célebre por qual língua oficial?",
+    "image_url": null,
     "options": [
       "Barranquenho",
       "Mirandês",
@@ -69926,14 +70034,85 @@
     "correct_option": 1,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:45:55.189727+00:00",
     "metadata": {
       "hint": "Reconhecida em 1999",
       "explanation": "A freguesia de Miranda do Douro é célebre por qual língua oficial → Mirandês."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c1a251f7-00a4-414e-8cc0-7ec1617e2ab5",
+    "text": "Qual é o símbolo químico do elemento Platina?",
+    "image_url": null,
+    "options": [
+      "Ag",
+      "O",
+      "Zn",
+      "Pt"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:56:37.640972+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Platina → Pt."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "cfac0fee-2a10-4ef1-951a-777fad438ba5",
+    "text": "Qual é o elemento cujo símbolo químico é He?",
+    "image_url": null,
+    "options": [
+      "Cobalto",
+      "Cloro",
+      "Carbono",
+      "Hélio"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:56:37.640972+00:00",
+    "metadata": {
+      "hint": "Símbolo He",
+      "explanation": "Qual é o elemento cujo símbolo químico é He → Hélio."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "9aa69fd3-fe0a-410a-b6ad-596cd7b2a009",
+    "text": "Quantos municípios (concelhos) existem em Portugal?",
+    "image_url": null,
+    "options": [
+      "350",
+      "308",
+      "300",
+      "278"
+    ],
+    "correct_option": 1,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T09:56:37.640972+00:00",
+    "metadata": {
+      "hint": "Continente e ilhas",
+      "explanation": "Quantos municípios (concelhos) existem em Portugal → 308."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "b0b2c329-82ee-4d16-a0a7-c4e326341b4e",
     "text": "Qual é o símbolo químico do elemento Boro?",
+    "image_url": null,
     "options": [
       "Cs",
       "B",
@@ -69943,14 +70122,19 @@
     "correct_option": 1,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T14:50:43.836643+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Boro → B."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "85b9d1e4-7a22-4f70-9770-5952606df9b4",
     "text": "Qual é o elemento cujo símbolo químico é Zn?",
+    "image_url": null,
     "options": [
       "Cobre",
       "Boro",
@@ -69960,14 +70144,19 @@
     "correct_option": 3,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T14:50:43.836643+00:00",
     "metadata": {
       "hint": "Símbolo Zn",
       "explanation": "Qual é o elemento cujo símbolo químico é Zn → Zinco."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "74c88137-036f-40a2-ab07-fd6766cb7b33",
     "text": "Quanto é 70 - 24?",
+    "image_url": null,
     "options": [
       "39",
       "41",
@@ -69977,14 +70166,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T14:50:43.836643+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 70 - 24 = 46."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "92f25e98-fc0b-4614-a741-638d9a332e1f",
     "text": "Quanto é 4 elevado a 4?",
+    "image_url": null,
     "options": [
       "256",
       "254",
@@ -69994,14 +70188,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-08-29T14:50:43.836643+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 4 elevado a 4 = 256."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "00fe3830-ed7c-4485-9e05-2a175cbec6e3",
     "text": "A vila e freguesia de Monsaraz pertence a que concelho alentejano?",
+    "image_url": null,
     "options": [
       "Reguengos de Monsaraz",
       "Mourão",
@@ -70011,14 +70210,19 @@
     "correct_option": 0,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T14:50:43.836643+00:00",
     "metadata": {
       "hint": "Vila medieval fortificada",
       "explanation": "A vila e freguesia de Monsaraz pertence a que concelho alentejano → Reguengos de Monsaraz."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "34883790-aa70-4d52-9552-6c3a098dd9b9",
     "text": "Em que concelho fica a freguesia das Furnas, famosa pelas caldeiras e cozido?",
+    "image_url": null,
     "options": [
       "Ponta Delgada",
       "Lagoa",
@@ -70028,14 +70232,19 @@
     "correct_option": 3,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-29T14:50:43.836643+00:00",
     "metadata": {
       "hint": "São Miguel, Açores",
       "explanation": "Em que concelho fica a freguesia das Furnas, famosa pelas caldeiras e cozido → Povoação."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "1cbe0153-e739-4227-9170-c7d4d753d8e4",
     "text": "Qual é o símbolo químico do elemento Zirconio?",
+    "image_url": null,
     "options": [
       "Ba",
       "Zr",
@@ -70045,14 +70254,19 @@
     "correct_option": 1,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T04:43:16.873735+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Zirconio → Zr."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "cfbc1d3b-f602-495d-aff2-b7c96bb5d0ab",
     "text": "Qual é o elemento cujo símbolo químico é Al?",
+    "image_url": null,
     "options": [
       "Alumínio",
       "Oxigénio",
@@ -70062,14 +70276,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T04:43:16.873735+00:00",
     "metadata": {
       "hint": "Símbolo Al",
       "explanation": "Qual é o elemento cujo símbolo químico é Al → Alumínio."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "f5935fbf-ca2c-4c60-bd7a-80af6672f4ea",
     "text": "Quanto é 16 + 9?",
+    "image_url": null,
     "options": [
       "18",
       "20",
@@ -70079,14 +70298,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-08-30T04:43:16.873735+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 16 + 9 = 25."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "ae40a00d-b82d-4b69-a74e-5160877eb202",
     "text": "Quanto é 7 × 3?",
+    "image_url": null,
     "options": [
       "21",
       "28",
@@ -70096,14 +70320,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-08-30T04:43:16.873735+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 7 × 3 = 21."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "934f73a0-12c1-43c0-b20b-e7a67a2e39ab",
     "text": "Em que concelho se situa a freguesia de Óbidos?",
+    "image_url": null,
     "options": [
       "Rio Maior",
       "Óbidos",
@@ -70113,14 +70342,19 @@
     "correct_option": 1,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T04:43:16.873735+00:00",
     "metadata": {
       "hint": "Vila medieval",
       "explanation": "Em que concelho se situa a freguesia de Óbidos → Óbidos."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "eb46e9e4-5a30-4af8-b48d-e1f13b70c15b",
     "text": "A freguesia de Pinhão, no Douro Vinhateiro, pertence a qual concelho?",
+    "image_url": null,
     "options": [
       "Alijó",
       "Peso da Régua",
@@ -70130,14 +70364,679 @@
     "correct_option": 0,
     "category": "PORTUGAL_FREGUESIAS",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T04:43:16.873735+00:00",
     "metadata": {
       "hint": "Distrito de Vila Real",
       "explanation": "A freguesia de Pinhão, no Douro Vinhateiro, pertence a qual concelho → Alijó."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a4fe3b13-eadb-4072-a8e4-3088eb9ec936",
+    "text": "Qual é o símbolo químico do elemento Mercúrio?",
+    "image_url": null,
+    "options": [
+      "Hg",
+      "Ti",
+      "O",
+      "K"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Mercúrio → Hg."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "2ecb7483-f6d9-4cfb-b0e0-c456f17259ee",
+    "text": "Qual é o símbolo químico do elemento Hidrogénio?",
+    "image_url": null,
+    "options": [
+      "Zn",
+      "Hg",
+      "Au",
+      "H"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Hidrogénio → H."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "8a111ff3-7748-4351-ae14-424cd871193a",
+    "text": "Qual é o elemento cujo símbolo químico é Zr?",
+    "image_url": null,
+    "options": [
+      "Zirconio",
+      "Ouro",
+      "Oxigénio",
+      "Tungsténio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Símbolo Zr",
+      "explanation": "Qual é o elemento cujo símbolo químico é Zr → Zirconio."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "9673308c-d44f-4729-8ddd-f14044dd5819",
+    "text": "Quanto é 8 elevado a 2?",
+    "image_url": null,
+    "options": [
+      "60",
+      "64",
+      "69",
+      "59"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 8 elevado a 2 = 64."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "6c73c9f9-2c86-433f-8115-8c6615401ed1",
+    "text": "Quanto é 85 - 62?",
+    "image_url": null,
+    "options": [
+      "25",
+      "23",
+      "27",
+      "33"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 62 = 23."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "80da5eff-79fe-481b-97fb-03978bcb261e",
+    "text": "Quanto é 50% de 60?",
+    "image_url": null,
+    "options": [
+      "30",
+      "34",
+      "27",
+      "28"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 50% de 60 = 30."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "a4cd24c5-bb0b-419f-aa33-0d3b888ea82f",
+    "text": "Em que concelho se situa a freguesia de Costa Nova dos palheiros listados?",
+    "image_url": null,
+    "options": [
+      "Ovar",
+      "Aveiro",
+      "Estarreja",
+      "Ílhavo"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Concelho de Ílhavo",
+      "explanation": "Em que concelho se situa a freguesia de Costa Nova dos palheiros listados → Ílhavo."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "556b3316-7123-4e86-ac48-2a88bee9c7a8",
+    "text": "A freguesia de Peniche é mundialmente conhecida por qual modalidade?",
+    "image_url": null,
+    "options": [
+      "Remo",
+      "Vela",
+      "Natação",
+      "Surf"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Praia dos Supertubos",
+      "explanation": "A freguesia de Peniche é mundialmente conhecida por qual modalidade → Surf."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "743a5918-ccf2-40a4-b63e-26caa6450171",
+    "text": "A freguesia de Belém, em Lisboa, é célebre por qual monumento?",
+    "image_url": null,
+    "options": [
+      "Convento de Cristo",
+      "Sé de Braga",
+      "Castelo de São Jorge",
+      "Torre de Belém"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-30T08:57:08.575136+00:00",
+    "metadata": {
+      "hint": "Junto ao Tejo",
+      "explanation": "A freguesia de Belém, em Lisboa, é célebre por qual monumento → Torre de Belém."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "b752a73e-1d9c-41a9-9395-6fb0918e76ce",
+    "text": "Qual é o elemento cujo símbolo químico é Mg?",
+    "image_url": null,
+    "options": [
+      "Magnésio",
+      "Fósforo",
+      "Flúor",
+      "Titânio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Símbolo Mg",
+      "explanation": "Qual é o elemento cujo símbolo químico é Mg → Magnésio."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "71d5d039-4ead-45a3-9322-71a4beb062cd",
+    "text": "Qual é o símbolo químico do elemento Chumbo?",
+    "image_url": null,
+    "options": [
+      "F",
+      "Pb",
+      "I",
+      "Ag"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Chumbo → Pb."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "a95ba7e9-bf08-4dd7-b45c-3a73ee79f4d3",
+    "text": "Qual é o elemento cujo símbolo químico é Na?",
+    "image_url": null,
+    "options": [
+      "Cobalto",
+      "Sódio",
+      "Flúor",
+      "Carbono"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Símbolo Na",
+      "explanation": "Qual é o elemento cujo símbolo químico é Na → Sódio."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "05197191-2f17-4742-b8e6-7da408bea364",
+    "text": "Quanto é 68 - 54?",
+    "image_url": null,
+    "options": [
+      "21",
+      "14",
+      "7",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 68 - 54 = 14."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "95748c0f-2bab-4b80-973c-22b6266bdc91",
+    "text": "Quanto é 3 elevado a 4?",
+    "image_url": null,
+    "options": [
+      "85",
+      "88",
+      "76",
+      "81"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 3 elevado a 4 = 81."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "9a107b20-0f3f-42ac-a0dd-198d94375b71",
+    "text": "Quanto é 25% de 200?",
+    "image_url": null,
+    "options": [
+      "43",
+      "53",
+      "50",
+      "52"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 25% de 200 = 50."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "2607c829-b307-4278-b5f6-d0586fd7fd00",
+    "text": "A freguesia de Colares pertence a que concelho?",
+    "image_url": null,
+    "options": [
+      "Cascais",
+      "Mafra",
+      "Sintra",
+      "Oeiras"
+    ],
+    "correct_option": 2,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Vinhos de chão de areia",
+      "explanation": "A freguesia de Colares pertence a que concelho → Sintra."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "63998ece-2ed4-4779-bf2f-94dc7e932ee6",
+    "text": "A freguesia de Buçaco (Luso) pertence a que concelho?",
+    "image_url": null,
+    "options": [
+      "Anadia",
+      "Mealhada",
+      "Águeda",
+      "Cantanhede"
+    ],
+    "correct_option": 1,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Mata secular e termas",
+      "explanation": "A freguesia de Buçaco (Luso) pertence a que concelho → Mealhada."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "58c1db72-b105-45d1-93ed-000ed4bee035",
+    "text": "A freguesia de Sagres pertence a qual concelho algarvio?",
+    "image_url": null,
+    "options": [
+      "Vila do Bispo",
+      "Silves",
+      "Portimão",
+      "Aljezur"
+    ],
+    "correct_option": 0,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-08-31T09:22:56.795102+00:00",
+    "metadata": {
+      "hint": "Barlavento algarvio",
+      "explanation": "A freguesia de Sagres pertence a qual concelho algarvio → Vila do Bispo."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "0bf0b19e-60da-4bbe-ba88-fd737311e779",
+    "text": "Qual é o elemento cujo símbolo químico é Sn?",
+    "image_url": null,
+    "options": [
+      "Azoto",
+      "Hélio",
+      "Estanho",
+      "Cobalto"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-01T08:20:38.82451+00:00",
+    "metadata": {
+      "hint": "Símbolo Sn",
+      "explanation": "Qual é o elemento cujo símbolo químico é Sn → Estanho."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "705dbecc-7119-41ee-af9b-142742d30de4",
+    "text": "Qual é o símbolo químico do elemento Níquel?",
+    "image_url": null,
+    "options": [
+      "Au",
+      "I",
+      "O",
+      "Ni"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-01T08:20:38.82451+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Níquel → Ni."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "39f68816-42ef-465d-8463-f1d451e970b5",
+    "text": "Qual é o símbolo químico do elemento Flúor?",
+    "image_url": null,
+    "options": [
+      "Li",
+      "P",
+      "F",
+      "W"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-01T08:20:38.82451+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Flúor → F."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "7e9f3d22-12f1-4745-b8a7-8aa66b54002e",
+    "text": "Quanto é 46 - 33?",
+    "image_url": null,
+    "options": [
+      "13",
+      "23",
+      "10",
+      "20"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-01T08:20:38.82451+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 46 - 33 = 13."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "000938db-4eb4-4bda-a1e8-9028cc98bfb0",
+    "text": "Quanto é 59 + 71?",
+    "image_url": null,
+    "options": [
+      "120",
+      "130",
+      "133",
+      "126"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-01T08:20:38.82451+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 59 + 71 = 130."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "25c5b03c-24c1-49d0-9c0d-563293abfcbf",
+    "text": "Qual é a raiz quadrada de 225?",
+    "image_url": null,
+    "options": [
+      "15",
+      "11",
+      "12",
+      "18"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-01T08:20:38.82451+00:00",
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 225 = 15."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "ae6b9c11-fcd8-4c23-a4c3-9b8ff2355f0c",
+    "text": "Qual é o elemento cujo símbolo químico é H?",
+    "image_url": null,
+    "options": [
+      "Cálcio",
+      "Magnésio",
+      "Hidrogénio",
+      "Tungsténio"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-02T07:40:35.862434+00:00",
+    "metadata": {
+      "hint": "Símbolo H",
+      "explanation": "Qual é o elemento cujo símbolo químico é H → Hidrogénio."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "f0326056-300e-4d00-b953-793a8a196b30",
+    "text": "Qual é o elemento cujo símbolo químico é B?",
+    "image_url": null,
+    "options": [
+      "Carbono",
+      "Ouro",
+      "Boro",
+      "Hélio"
+    ],
+    "correct_option": 2,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-02T07:40:35.862434+00:00",
+    "metadata": {
+      "hint": "Símbolo B",
+      "explanation": "Qual é o elemento cujo símbolo químico é B → Boro."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "24282c52-ff48-457c-a6be-35323464345e",
+    "text": "Qual é o elemento cujo símbolo químico é Ag?",
+    "image_url": null,
+    "options": [
+      "Hidrogénio",
+      "Prata",
+      "Bromo",
+      "Crómio"
+    ],
+    "correct_option": 1,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-02T07:40:35.862434+00:00",
+    "metadata": {
+      "hint": "Símbolo Ag",
+      "explanation": "Qual é o elemento cujo símbolo químico é Ag → Prata."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "7243fc03-b86f-466e-9fe1-6ad7c3dd2a7d",
+    "text": "Quanto é 4 elevado a 2?",
+    "image_url": null,
+    "options": [
+      "16",
+      "19",
+      "14",
+      "11"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-02T07:40:35.862434+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 4 elevado a 2 = 16."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "1ec6ea97-536f-4803-8277-15aa51ffda52",
+    "text": "Quanto é 58 + 90?",
+    "image_url": null,
+    "options": [
+      "148",
+      "146",
+      "150",
+      "158"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-02T07:40:35.862434+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 58 + 90 = 148."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "ac47749d-2ea1-4ecc-a2c9-9cff228188a7",
+    "text": "Quanto é 99 - 27?",
+    "image_url": null,
+    "options": [
+      "76",
+      "77",
+      "72",
+      "71"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-02T07:40:35.862434+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 99 - 27 = 72."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "f62c1e85-f63a-4d14-828f-cc069201a7c8",
     "text": "Qual é o elemento cujo símbolo químico é Cu?",
+    "image_url": null,
     "options": [
       "Ouro",
       "Oxigénio",
@@ -70147,14 +71046,19 @@
     "correct_option": 3,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-03T07:49:42.838733+00:00",
     "metadata": {
       "hint": "Símbolo Cu",
       "explanation": "Qual é o elemento cujo símbolo químico é Cu → Cobre."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "feb124b0-1acd-4869-82bb-9b2b27146e20",
     "text": "Qual é o símbolo químico do elemento Iodo?",
+    "image_url": null,
     "options": [
       "I",
       "Ag",
@@ -70164,14 +71068,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-03T07:49:42.838733+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Iodo → I."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "cfc6f04e-7f22-44d1-b1ad-990671a9ed35",
     "text": "Qual é o elemento cujo símbolo químico é F?",
+    "image_url": null,
     "options": [
       "Flúor",
       "Hélio",
@@ -70181,14 +71090,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-03T07:49:42.838733+00:00",
     "metadata": {
       "hint": "Símbolo F",
       "explanation": "Qual é o elemento cujo símbolo químico é F → Flúor."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "0a6361cf-30c7-4bd6-bf5d-419a8fb9d1e6",
     "text": "Quanto é 7 elevado a 3?",
+    "image_url": null,
     "options": [
       "342",
       "346",
@@ -70198,14 +71112,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-03T07:49:42.838733+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 7 elevado a 3 = 343."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "d4d36c13-2612-4f10-841a-6920cba82fce",
     "text": "Quanto é 43 - 19?",
+    "image_url": null,
     "options": [
       "26",
       "24",
@@ -70215,14 +71134,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-03T07:49:42.838733+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 43 - 19 = 24."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "9b5a2003-2466-4c46-9782-83dda674a01a",
     "text": "Qual é a raiz quadrada de 196?",
+    "image_url": null,
     "options": [
       "4",
       "21",
@@ -70232,10 +71156,101 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-03T07:49:42.838733+00:00",
     "metadata": {
       "hint": "Quadrado perfeito.",
       "explanation": "Qual é a raiz quadrada de 196 = 14."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "3186abfb-46bd-49bc-be97-948b99cb0d00",
+    "text": "Qual é o elemento cujo símbolo químico é I?",
+    "image_url": null,
+    "options": [
+      "Arsénio",
+      "Prata",
+      "Boro",
+      "Iodo"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T00:02:21.873739+00:00",
+    "metadata": {
+      "hint": "Símbolo I",
+      "explanation": "Qual é o elemento cujo símbolo químico é I → Iodo."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "84a2211b-a975-4487-a10c-8d6903522e14",
+    "text": "Qual é o símbolo químico do elemento Urânio?",
+    "image_url": null,
+    "options": [
+      "Ba",
+      "Br",
+      "F",
+      "U"
+    ],
+    "correct_option": 3,
+    "category": "CIENCIA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T00:02:21.873739+00:00",
+    "metadata": {
+      "hint": "Química",
+      "explanation": "Qual é o símbolo químico do elemento Urânio → U."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "a5b27da1-17c0-4dcd-988d-e5f2907514d3",
+    "text": "Quanto é 27 ÷ 9?",
+    "image_url": null,
+    "options": [
+      "2",
+      "4",
+      "3",
+      "0"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-04T00:02:21.873739+00:00",
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 27 ÷ 9 = 3."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "1e1fe1c6-1d55-4405-8251-ec39c09ef915",
+    "text": "Quanto é 3 × 10?",
+    "image_url": null,
+    "options": [
+      "30",
+      "33",
+      "40",
+      "25"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-04T00:02:21.873739+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 10 = 30."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
