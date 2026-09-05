@@ -71562,7 +71562,9 @@
     "hint": null
   },
   {
+    "id": "f2fbe026-7f59-40a7-b75a-72b3336ad13f",
     "text": "Qual é o elemento cujo símbolo químico é Pb?",
+    "image_url": null,
     "options": [
       "Oxigénio",
       "Cobre",
@@ -71572,14 +71574,19 @@
     "correct_option": 3,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:47:24.009896+00:00",
     "metadata": {
       "hint": "Símbolo Pb",
       "explanation": "Qual é o elemento cujo símbolo químico é Pb → Chumbo."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "71a96b9d-8d73-4296-b02a-6028476a3221",
     "text": "Qual é o símbolo químico do elemento Césio?",
+    "image_url": null,
     "options": [
       "Cs",
       "W",
@@ -71589,14 +71596,19 @@
     "correct_option": 0,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:47:24.009896+00:00",
     "metadata": {
       "hint": "Química",
       "explanation": "Qual é o símbolo químico do elemento Césio → Cs."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "3194401e-9a3a-4a6b-85a1-41a12cc69000",
     "text": "Quanto é 71 - 68?",
+    "image_url": null,
     "options": [
       "2",
       "5",
@@ -71606,14 +71618,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:47:24.009896+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 71 - 68 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "0ccd1f28-f54a-4624-9210-a1350a4bc897",
     "text": "Quanto é 27 + 13?",
+    "image_url": null,
     "options": [
       "38",
       "44",
@@ -71623,14 +71640,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:47:24.009896+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 27 + 13 = 40."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "cc11f645-33f0-4c59-b0d1-5074c02441d4",
     "text": "Qual é o elemento cujo símbolo químico é Hg?",
+    "image_url": null,
     "options": [
       "Manganês",
       "Flúor",
@@ -71640,14 +71662,19 @@
     "correct_option": 2,
     "category": "CIENCIA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:59:27.574835+00:00",
     "metadata": {
       "hint": "Símbolo Hg",
       "explanation": "Qual é o elemento cujo símbolo químico é Hg → Mercúrio."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "1538e461-6c75-4fa3-bf81-eda6425c206d",
     "text": "Quanto é 35 ÷ 7?",
+    "image_url": null,
     "options": [
       "2",
       "1",
@@ -71657,14 +71684,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:59:27.574835+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 35 ÷ 7 = 5."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "70d96042-7fae-4a0c-ba00-91a9b55d5ec2",
     "text": "Quanto é 25% de 40?",
+    "image_url": null,
     "options": [
       "10",
       "17",
@@ -71674,14 +71706,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-04T15:59:27.574835+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 25% de 40 = 10."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "871ca216-fbaa-418a-82a9-956ce1072737",
     "text": "Quanto é 10% de 80?",
+    "image_url": null,
     "options": [
       "8",
       "5",
@@ -71691,14 +71728,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-05T02:22:26.392441+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 10% de 80 = 8."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "998941a8-505a-4438-9bdc-7a7566ab8c21",
     "text": "Quanto é 60 - 52?",
+    "image_url": null,
     "options": [
       "3",
       "15",
@@ -71708,14 +71750,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-05T02:22:26.392441+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 60 - 52 = 8."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "85040602-ccc3-45be-b46a-6cd0a8f31f06",
     "text": "Quanto é 99 ÷ 9?",
+    "image_url": null,
     "options": [
       "16",
       "9",
@@ -71725,14 +71772,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-05T07:26:44.574169+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 99 ÷ 9 = 11."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "9092d4fd-0d55-4006-8546-d234795e5dea",
     "text": "Quanto é 26 - 11?",
+    "image_url": null,
     "options": [
       "15",
       "14",
@@ -71742,14 +71794,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-05T07:26:44.574169+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 26 - 11 = 15."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "85eeaedd-10f9-427e-b1f0-5d643209f464",
     "text": "Quanto é 8 × 3?",
+    "image_url": null,
     "options": [
       "22",
       "14",
@@ -71759,10 +71816,57 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-05T07:26:44.574169+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 8 × 3 = 24."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "9145300a-d17e-43de-8d8c-3b29d698cf8d",
+    "text": "Quanto é 35 - 34?",
+    "image_url": null,
+    "options": [
+      "4",
+      "1",
+      "5",
+      "0"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-05T07:27:10.486723+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 35 - 34 = 1."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "e0ac4ffb-e57f-49a7-8bf3-6bc939a65c9f",
+    "text": "Quanto é 5 × 12?",
+    "image_url": null,
+    "options": [
+      "60",
+      "58",
+      "61",
+      "62"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-05T07:27:10.486723+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 12 = 60."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
