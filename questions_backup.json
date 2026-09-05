@@ -71679,5 +71679,39 @@
       "explanation": "Quanto é 25% de 40 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10% de 80?",
+    "options": [
+      "8",
+      "5",
+      "9",
+      "12"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 10% de 80 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 60 - 52?",
+    "options": [
+      "3",
+      "15",
+      "8",
+      "4"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 60 - 52 = 8."
+    },
+    "image_url": null
   }
 ]
