@@ -71868,5 +71868,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 22 ÷ 2?",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "16"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 22 ÷ 2 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 7?",
+    "options": [
+      "48",
+      "50",
+      "49",
+      "47"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 7 = 49."
+    },
+    "image_url": null
   }
 ]
