@@ -71713,5 +71713,56 @@
       "explanation": "Quanto é 60 - 52 = 8."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 99 ÷ 9?",
+    "options": [
+      "16",
+      "9",
+      "8",
+      "11"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 99 ÷ 9 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 26 - 11?",
+    "options": [
+      "15",
+      "14",
+      "12",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 26 - 11 = 15."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 × 3?",
+    "options": [
+      "22",
+      "14",
+      "28",
+      "24"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 3 = 24."
+    },
+    "image_url": null
   }
 ]
