@@ -71870,7 +71870,9 @@
     "hint": null
   },
   {
+    "id": "45885742-0006-4866-8ec0-6d0b2c6925c7",
     "text": "Quanto é 22 ÷ 2?",
+    "image_url": null,
     "options": [
       "7",
       "9",
@@ -71880,14 +71882,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-05T15:14:09.889667+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 22 ÷ 2 = 11."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "55881c0c-3893-49ea-8dff-00735d6ed2de",
     "text": "Quanto é 7 × 7?",
+    "image_url": null,
     "options": [
       "48",
       "50",
@@ -71897,14 +71904,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-05T15:14:09.889667+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 7 × 7 = 49."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b909d75e-4e46-4b03-9aa3-8619c7ea222f",
     "text": "Quanto é 4 × 5?",
+    "image_url": null,
     "options": [
       "30",
       "19",
@@ -71914,14 +71926,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-05T15:29:50.91963+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 4 × 5 = 20."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "10805a97-1632-4d34-9d30-de4b1b087b31",
     "text": "Quanto é 6 elevado a 2?",
+    "image_url": null,
     "options": [
       "34",
       "39",
@@ -71931,14 +71948,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-05T15:29:50.91963+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 6 elevado a 2 = 36."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "197cf587-daa3-4187-a791-563ee9e0c210",
     "text": "Quanto é 81 ÷ 9?",
+    "image_url": null,
     "options": [
       "4",
       "9",
@@ -71948,14 +71970,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-06T01:57:08.162699+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 81 ÷ 9 = 9."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "f6475b06-c223-4611-b410-087ae1716f47",
     "text": "Quanto é 53 - 12?",
+    "image_url": null,
     "options": [
       "45",
       "41",
@@ -71965,14 +71992,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-06T01:57:08.162699+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 53 - 12 = 41."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "2c84406f-e753-41be-92a4-19e0b7b3e026",
     "text": "Quanto é 18 ÷ 3?",
+    "image_url": null,
     "options": [
       "6",
       "7",
@@ -71982,14 +72014,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-06T06:46:12.78384+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 18 ÷ 3 = 6."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "3a19ce73-e8e7-4d13-b157-aeeb4cc927c2",
     "text": "Quanto é 96 + 90?",
+    "image_url": null,
     "options": [
       "186",
       "189",
@@ -71999,14 +72036,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-06T06:46:12.78384+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 96 + 90 = 186."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "75457e16-938e-4fdf-b6a2-8f026e132f90",
     "text": "Quanto é 6 × 3?",
+    "image_url": null,
     "options": [
       "16",
       "18",
@@ -72016,14 +72058,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-06T07:40:36.387925+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 6 × 3 = 18."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "fb108aa1-0ba9-4817-b983-5c2c63fab1a7",
     "text": "Quanto é 20 ÷ 4?",
+    "image_url": null,
     "options": [
       "3",
       "12",
@@ -72033,14 +72080,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-06T07:40:36.387925+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 20 ÷ 4 = 5."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "fe0af79e-ffbb-462e-9ad3-841f7d0be707",
     "text": "Quanto é 16 - 10?",
+    "image_url": null,
     "options": [
       "8",
       "2",
@@ -72050,10 +72102,57 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-06T07:40:36.387925+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 16 - 10 = 6."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "4fe66e38-027e-43d7-a117-3e147b017391",
+    "text": "Quanto é 9 elevado a 3?",
+    "image_url": null,
+    "options": [
+      "732",
+      "731",
+      "729",
+      "725"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-06T11:50:46.346216+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 9 elevado a 3 = 729."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "cb8b9ba4-3ca7-4e10-846d-50ede652b1e5",
+    "text": "Quanto é 20% de 60?",
+    "image_url": null,
+    "options": [
+      "5",
+      "12",
+      "17",
+      "14"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-06T11:50:46.346216+00:00",
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 20% de 60 = 12."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
