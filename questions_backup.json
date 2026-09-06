@@ -71970,5 +71970,39 @@
       "explanation": "Quanto é 53 - 12 = 41."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 18 ÷ 3?",
+    "options": [
+      "6",
+      "7",
+      "2",
+      "1"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 18 ÷ 3 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 96 + 90?",
+    "options": [
+      "186",
+      "189",
+      "184",
+      "188"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 96 + 90 = 186."
+    },
+    "image_url": null
   }
 ]
