@@ -72154,5 +72154,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 3 × 2?",
+    "options": [
+      "8",
+      "6",
+      "2",
+      "13"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 2 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 12?",
+    "options": [
+      "115",
+      "110",
+      "120",
+      "116"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 12 = 120."
+    },
+    "image_url": null
   }
 ]
