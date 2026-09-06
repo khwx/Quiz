@@ -72188,5 +72188,39 @@
       "explanation": "Quanto é 10 × 12 = 120."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 49 ÷ 7?",
+    "options": [
+      "3",
+      "17",
+      "0",
+      "7"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 49 ÷ 7 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 98 - 66?",
+    "options": [
+      "33",
+      "34",
+      "31",
+      "32"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 98 - 66 = 32."
+    },
+    "image_url": null
   }
 ]
