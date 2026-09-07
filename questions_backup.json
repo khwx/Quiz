@@ -72256,5 +72256,56 @@
       "explanation": "Quanto é 8 elevado a 3 = 512."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 57 + 26?",
+    "options": [
+      "87",
+      "83",
+      "80",
+      "76"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 57 + 26 = 83."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 18 ÷ 9?",
+    "options": [
+      "0",
+      "2",
+      "1",
+      "4"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 18 ÷ 9 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25% de 60?",
+    "options": [
+      "22",
+      "18",
+      "15",
+      "14"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 25% de 60 = 15."
+    },
+    "image_url": null
   }
 ]
