@@ -72430,5 +72430,39 @@
       "explanation": "Quanto é 4 × 3 = 12."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 6 elevado a 3?",
+    "options": [
+      "214",
+      "226",
+      "216",
+      "223"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 6 elevado a 3 = 216."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 + 19?",
+    "options": [
+      "35",
+      "31",
+      "37",
+      "30"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 16 + 19 = 35."
+    },
+    "image_url": null
   }
 ]
