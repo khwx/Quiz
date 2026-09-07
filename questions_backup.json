@@ -72222,5 +72222,39 @@
       "explanation": "Quanto é 98 - 66 = 32."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 18 ÷ 6?",
+    "options": [
+      "13",
+      "3",
+      "7",
+      "5"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 18 ÷ 6 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 elevado a 3?",
+    "options": [
+      "519",
+      "515",
+      "511",
+      "512"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 8 elevado a 3 = 512."
+    },
+    "image_url": null
   }
 ]
