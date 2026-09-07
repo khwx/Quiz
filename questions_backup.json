@@ -72156,7 +72156,9 @@
     "hint": null
   },
   {
+    "id": "843dfa46-16a3-4277-9fd8-2ca9603466b6",
     "text": "Quanto é 3 × 2?",
+    "image_url": null,
     "options": [
       "8",
       "6",
@@ -72166,14 +72168,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-06T17:53:20.382955+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 3 × 2 = 6."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c5a12647-435e-4ecb-b810-ae5cc127ff6d",
     "text": "Quanto é 10 × 12?",
+    "image_url": null,
     "options": [
       "115",
       "110",
@@ -72183,14 +72190,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-06T17:53:20.382955+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 10 × 12 = 120."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "ae8b8e0c-7911-438f-a5a2-33ee7671e261",
     "text": "Quanto é 49 ÷ 7?",
+    "image_url": null,
     "options": [
       "3",
       "17",
@@ -72200,14 +72212,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-06T22:54:07.89965+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 49 ÷ 7 = 7."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e8a3c181-b3ee-4ff9-87e4-05d530977400",
     "text": "Quanto é 98 - 66?",
+    "image_url": null,
     "options": [
       "33",
       "34",
@@ -72217,14 +72234,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-06T22:54:07.89965+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 98 - 66 = 32."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "7e272f2d-8282-4349-9718-927ba76a5bc8",
     "text": "Quanto é 18 ÷ 6?",
+    "image_url": null,
     "options": [
       "13",
       "3",
@@ -72234,14 +72256,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-07T03:26:39.976078+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 18 ÷ 6 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "fc6ace7b-4873-4648-9514-b61a043d3e66",
     "text": "Quanto é 8 elevado a 3?",
+    "image_url": null,
     "options": [
       "519",
       "515",
@@ -72251,14 +72278,63 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-07T03:26:39.976078+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 8 elevado a 3 = 512."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "018d7637-ebd8-4541-85d1-afb12e2bfe76",
+    "text": "Quanto é 4 × 4?",
+    "image_url": null,
+    "options": [
+      "9",
+      "21",
+      "16",
+      "19"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-07T07:57:01.701986+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 4 × 4 = 16."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "a4544fe7-5fc4-42ae-877a-61822fca0a26",
+    "text": "Quanto é 60 ÷ 12?",
+    "image_url": null,
+    "options": [
+      "12",
+      "1",
+      "5",
+      "3"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-07T07:57:01.701986+00:00",
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 60 ÷ 12 = 5."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "36a89cb6-3069-4b29-bf3d-71e29a64b30f",
     "text": "Quanto é 57 + 26?",
+    "image_url": null,
     "options": [
       "87",
       "83",
@@ -72268,14 +72344,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-07T07:58:45.335372+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 57 + 26 = 83."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "eb635603-2251-49eb-8867-534d0e8f9f3f",
     "text": "Quanto é 18 ÷ 9?",
+    "image_url": null,
     "options": [
       "0",
       "2",
@@ -72285,14 +72366,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-07T07:58:45.335372+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 18 ÷ 9 = 2."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "881b6a3e-5cba-441b-a0cd-4a59caa3db2c",
     "text": "Quanto é 25% de 60?",
+    "image_url": null,
     "options": [
       "22",
       "18",
@@ -72302,10 +72388,13 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-07T07:58:45.335372+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 25% de 60 = 15."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   }
 ]
