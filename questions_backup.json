@@ -72716,5 +72716,39 @@
       "explanation": "Quanto é 7 × 9 = 63."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 83 - 56?",
+    "options": [
+      "37",
+      "27",
+      "17",
+      "30"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 83 - 56 = 27."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 + 67?",
+    "options": [
+      "99",
+      "106",
+      "109",
+      "92"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 32 + 67 = 99."
+    },
+    "image_url": null
   }
 ]
