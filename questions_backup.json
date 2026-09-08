@@ -72498,5 +72498,39 @@
       "explanation": "Quanto é 68 - 7 = 61."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 8 elevado a 4?",
+    "options": [
+      "4096",
+      "4095",
+      "4089",
+      "4092"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 8 elevado a 4 = 4096."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 + 63?",
+    "options": [
+      "74",
+      "77",
+      "70",
+      "73"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 10 + 63 = 73."
+    },
+    "image_url": null
   }
 ]
