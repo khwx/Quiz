@@ -72682,5 +72682,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 28 ÷ 7?",
+    "options": [
+      "6",
+      "4",
+      "11",
+      "9"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 28 ÷ 7 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 9?",
+    "options": [
+      "60",
+      "66",
+      "67",
+      "63"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 9 = 63."
+    },
+    "image_url": null
   }
 ]
