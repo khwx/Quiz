@@ -72398,7 +72398,9 @@
     "hint": null
   },
   {
+    "id": "e6b032f3-29c5-49b9-952b-ace423bf4a44",
     "text": "Qual é a raiz quadrada de 9?",
+    "image_url": null,
     "options": [
       "0",
       "1",
@@ -72408,14 +72410,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-07T14:22:10.470241+00:00",
     "metadata": {
       "hint": "Quadrado perfeito.",
       "explanation": "Qual é a raiz quadrada de 9 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "4124f967-451d-4e85-8c5f-275f10d9c531",
     "text": "Quanto é 4 × 3?",
+    "image_url": null,
     "options": [
       "12",
       "15",
@@ -72425,14 +72432,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-07T14:22:10.470241+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 4 × 3 = 12."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "ac33cbd8-8790-43bc-a673-1a2e0944f0ea",
     "text": "Quanto é 6 elevado a 3?",
+    "image_url": null,
     "options": [
       "214",
       "226",
@@ -72442,14 +72454,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-07T19:21:56.211616+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 6 elevado a 3 = 216."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b70410d9-5638-4309-96c6-4365b6b4b8e3",
     "text": "Quanto é 16 + 19?",
+    "image_url": null,
     "options": [
       "35",
       "31",
@@ -72459,14 +72476,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-07T19:21:56.211616+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 16 + 19 = 35."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "5efa7b18-c36d-430b-889f-ff12003fa185",
     "text": "Quanto é 20% de 200?",
+    "image_url": null,
     "options": [
       "44",
       "36",
@@ -72476,14 +72498,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-08T00:17:34.831809+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 20% de 200 = 40."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "7e039799-aef6-440d-8838-faf7cf4e0563",
     "text": "Quanto é 68 - 7?",
+    "image_url": null,
     "options": [
       "59",
       "65",
@@ -72493,14 +72520,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-08T00:17:34.831809+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 68 - 7 = 61."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "971e0870-ed7e-44f1-b1a2-22ca93aa788c",
     "text": "Quanto é 8 elevado a 4?",
+    "image_url": null,
     "options": [
       "4096",
       "4095",
@@ -72510,14 +72542,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-08T05:44:38.630653+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 8 elevado a 4 = 4096."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "7a2f5010-e040-4a0c-a427-853f1772ee00",
     "text": "Quanto é 10 + 63?",
+    "image_url": null,
     "options": [
       "74",
       "77",
@@ -72527,14 +72564,63 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-08T05:44:38.630653+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 10 + 63 = 73."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "43c96ea2-7363-4f85-8c24-ff6e6bf3c50b",
+    "text": "Quanto é 6 × 2?",
+    "image_url": null,
+    "options": [
+      "15",
+      "14",
+      "16",
+      "12"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-08T05:54:01.189052+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 2 = 12."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "0d64c3ea-eefb-46ff-9181-7cee9ff0b159",
+    "text": "Quanto é 93 + 34?",
+    "image_url": null,
+    "options": [
+      "124",
+      "137",
+      "127",
+      "132"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-08T05:54:01.189052+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 93 + 34 = 127."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "4378b08e-0346-491f-9788-51893f7367c6",
     "text": "Quanto é 4 × 10?",
+    "image_url": null,
     "options": [
       "40",
       "38",
@@ -72544,14 +72630,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-08T07:51:47.943267+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 4 × 10 = 40."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "7394b05a-897e-4edc-aba8-32d2e9223ac0",
     "text": "Quanto é 48 - 5?",
+    "image_url": null,
     "options": [
       "42",
       "36",
@@ -72561,14 +72652,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-08T07:51:47.943267+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 48 - 5 = 43."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c256d99b-cb09-4998-854a-b479a72ce2c8",
     "text": "Quanto é 132 ÷ 12?",
+    "image_url": null,
     "options": [
       "8",
       "11",
@@ -72578,10 +72674,13 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-08T07:51:47.943267+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 132 ÷ 12 = 11."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   }
 ]
