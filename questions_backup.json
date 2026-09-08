@@ -72464,5 +72464,39 @@
       "explanation": "Quanto é 16 + 19 = 35."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 20% de 200?",
+    "options": [
+      "44",
+      "36",
+      "40",
+      "47"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 20% de 200 = 40."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 68 - 7?",
+    "options": [
+      "59",
+      "65",
+      "58",
+      "61"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 68 - 7 = 61."
+    },
+    "image_url": null
   }
 ]
