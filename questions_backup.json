@@ -72784,5 +72784,56 @@
       "explanation": "Quanto é 76 + 94 = 170."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 13 - 7?",
+    "options": [
+      "16",
+      "11",
+      "6",
+      "1"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 13 - 7 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 30 ÷ 10?",
+    "options": [
+      "3",
+      "1",
+      "4",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 30 ÷ 10 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 ÷ 12?",
+    "options": [
+      "12",
+      "2",
+      "0",
+      "5"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 24 ÷ 12 = 2."
+    },
+    "image_url": null
   }
 ]
