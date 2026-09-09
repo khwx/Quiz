@@ -72924,5 +72924,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 67 + 17?",
+    "options": [
+      "80",
+      "84",
+      "74",
+      "86"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 67 + 17 = 84."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 33 ÷ 11?",
+    "options": [
+      "0",
+      "3",
+      "5",
+      "10"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 33 ÷ 11 = 3."
+    },
+    "image_url": null
   }
 ]
