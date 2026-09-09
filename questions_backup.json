@@ -72684,7 +72684,9 @@
     "hint": null
   },
   {
+    "id": "cf4b7e9d-80d1-4e18-adac-9da3699bda7b",
     "text": "Quanto é 28 ÷ 7?",
+    "image_url": null,
     "options": [
       "6",
       "4",
@@ -72694,14 +72696,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-08T16:42:43.635096+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 28 ÷ 7 = 4."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c1f1eda0-fb57-452f-a38d-90e0cd088b5b",
     "text": "Quanto é 7 × 9?",
+    "image_url": null,
     "options": [
       "60",
       "66",
@@ -72711,14 +72718,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-08T16:42:43.635096+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 7 × 9 = 63."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "485f14b8-a55d-4db8-88d2-10f9d7ecc0d4",
     "text": "Quanto é 83 - 56?",
+    "image_url": null,
     "options": [
       "37",
       "27",
@@ -72728,14 +72740,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-08T22:21:06.473203+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 83 - 56 = 27."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b845ce61-1965-40bd-891f-f034f0a13de8",
     "text": "Quanto é 32 + 67?",
+    "image_url": null,
     "options": [
       "99",
       "106",
@@ -72745,14 +72762,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-08T22:21:06.473203+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 32 + 67 = 99."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e20b9c9b-b28a-4f00-9c4b-2d6ebe4c50af",
     "text": "Quanto é 3 × 9?",
+    "image_url": null,
     "options": [
       "29",
       "32",
@@ -72762,14 +72784,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-09T03:34:27.680463+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 3 × 9 = 27."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "f887471c-fe76-4a78-98b9-94198af556a4",
     "text": "Quanto é 76 + 94?",
+    "image_url": null,
     "options": [
       "166",
       "173",
@@ -72779,14 +72806,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-09T03:34:27.680463+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 76 + 94 = 170."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "0520822e-87fc-425c-901d-96d288816347",
     "text": "Quanto é 13 - 7?",
+    "image_url": null,
     "options": [
       "16",
       "11",
@@ -72796,14 +72828,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-09T07:54:30.62099+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 13 - 7 = 6."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "4280cd28-b123-44fd-bd0e-c379cc404af3",
     "text": "Quanto é 30 ÷ 10?",
+    "image_url": null,
     "options": [
       "3",
       "1",
@@ -72813,14 +72850,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-09T07:54:30.62099+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 30 ÷ 10 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "80a35241-e0c0-456a-b119-61ab78a39662",
     "text": "Quanto é 24 ÷ 12?",
+    "image_url": null,
     "options": [
       "12",
       "2",
@@ -72830,10 +72872,57 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-09T07:54:30.62099+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 24 ÷ 12 = 2."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "98778eb3-9620-41cc-b473-786309dee959",
+    "text": "Quanto é 2 elevado a 4?",
+    "image_url": null,
+    "options": [
+      "13",
+      "16",
+      "20",
+      "12"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-09T09:04:45.731866+00:00",
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 2 elevado a 4 = 16."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "c32a6845-af89-4bc6-8aea-b09eecb17bb2",
+    "text": "Quanto é 20 + 58?",
+    "image_url": null,
+    "options": [
+      "75",
+      "80",
+      "76",
+      "78"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-09T09:04:45.731866+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 20 + 58 = 78."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
