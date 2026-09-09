@@ -72750,5 +72750,39 @@
       "explanation": "Quanto é 32 + 67 = 99."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 3 × 9?",
+    "options": [
+      "29",
+      "32",
+      "27",
+      "25"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 9 = 27."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 76 + 94?",
+    "options": [
+      "166",
+      "173",
+      "167",
+      "170"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 76 + 94 = 170."
+    },
+    "image_url": null
   }
 ]
