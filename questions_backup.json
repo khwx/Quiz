@@ -72926,7 +72926,9 @@
     "hint": null
   },
   {
+    "id": "25320792-168d-49f2-9016-f4ba798cd019",
     "text": "Quanto é 67 + 17?",
+    "image_url": null,
     "options": [
       "80",
       "84",
@@ -72936,14 +72938,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-09T09:17:53.815234+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 67 + 17 = 84."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "25160a2b-3461-43e1-a24c-b5405b2200bd",
     "text": "Quanto é 33 ÷ 11?",
+    "image_url": null,
     "options": [
       "0",
       "3",
@@ -72953,14 +72960,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-09T09:17:53.815234+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 33 ÷ 11 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "8a236715-f7a3-4955-898f-888d679144b0",
     "text": "Qual é a raiz quadrada de 100?",
+    "image_url": null,
     "options": [
       "3",
       "10",
@@ -72970,14 +72982,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-09T19:42:01.637014+00:00",
     "metadata": {
       "hint": "Quadrado perfeito.",
       "explanation": "Qual é a raiz quadrada de 100 = 10."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b4e70a68-f98a-4c07-b399-ff6d5d79e5f1",
     "text": "Quanto é 9 elevado a 2?",
+    "image_url": null,
     "options": [
       "83",
       "77",
@@ -72987,14 +73004,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-09T19:42:01.637014+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 9 elevado a 2 = 81."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a3b65227-32d1-45a7-96c6-ec9d5788d3dc",
     "text": "Quanto é 86 - 54?",
+    "image_url": null,
     "options": [
       "33",
       "32",
@@ -73004,14 +73026,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-10T00:58:55.152775+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 86 - 54 = 32."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "160e2d83-0190-489d-b442-d3fe3ef566b2",
     "text": "Qual é a raiz quadrada de 36?",
+    "image_url": null,
     "options": [
       "10",
       "6",
@@ -73021,14 +73048,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-10T00:58:55.152775+00:00",
     "metadata": {
       "hint": "Quadrado perfeito.",
       "explanation": "Qual é a raiz quadrada de 36 = 6."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "70a03529-b3c5-4e8a-a95a-99dfa0de573f",
     "text": "Quanto é 6 ÷ 2?",
+    "image_url": null,
     "options": [
       "13",
       "4",
@@ -73038,14 +73070,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-10T01:02:57.682022+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 6 ÷ 2 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "91ccbeae-3641-474a-b6d5-383775b24798",
     "text": "Quanto é 54 ÷ 6?",
+    "image_url": null,
     "options": [
       "9",
       "19",
@@ -73055,14 +73092,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-10T01:02:57.682022+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 54 ÷ 6 = 9."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c4684b9b-919e-43ba-bd24-492e42414271",
     "text": "Quanto é 5 elevado a 4?",
+    "image_url": null,
     "options": [
       "635",
       "629",
@@ -73072,14 +73114,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-10T07:54:29.684012+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 5 elevado a 4 = 625."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "f32b846f-da13-4e51-9269-9da188353130",
     "text": "Quanto é 45 - 5?",
+    "image_url": null,
     "options": [
       "39",
       "30",
@@ -73089,14 +73136,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-10T07:54:29.684012+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 45 - 5 = 40."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b1131b9d-45c0-4358-b68c-bf386f2e437c",
     "text": "Quanto é 50 + 68?",
+    "image_url": null,
     "options": [
       "115",
       "114",
@@ -73106,10 +73158,57 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-10T07:54:29.684012+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 50 + 68 = 118."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "0ecf073c-4085-4369-b8ad-a2a239056fb1",
+    "text": "Quanto é 10% de 200?",
+    "image_url": null,
+    "options": [
+      "20",
+      "16",
+      "10",
+      "23"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-10T08:49:19.278458+00:00",
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 10% de 200 = 20."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "924357d7-cdae-44aa-aa81-1e8947768102",
+    "text": "Quanto é 57 - 27?",
+    "image_url": null,
+    "options": [
+      "31",
+      "40",
+      "27",
+      "30"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-10T08:49:19.278458+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 57 - 27 = 30."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
