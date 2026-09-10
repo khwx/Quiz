@@ -73244,5 +73244,39 @@
       "explanation": "Quanto é 36 - 6 = 30."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 7?",
+    "options": [
+      "61",
+      "59",
+      "63",
+      "70"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 7 = 63."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 60 ÷ 6?",
+    "options": [
+      "7",
+      "9",
+      "14",
+      "10"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 60 ÷ 6 = 10."
+    },
+    "image_url": null
   }
 ]
