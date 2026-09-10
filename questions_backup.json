@@ -73210,5 +73210,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 11 × 9?",
+    "options": [
+      "104",
+      "101",
+      "92",
+      "99"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 9 = 99."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 36 - 6?",
+    "options": [
+      "30",
+      "26",
+      "40",
+      "27"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 36 - 6 = 30."
+    },
+    "image_url": null
   }
 ]
