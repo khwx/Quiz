@@ -73278,5 +73278,39 @@
       "explanation": "Quanto é 60 ÷ 6 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 77 - 61?",
+    "options": [
+      "6",
+      "9",
+      "16",
+      "19"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 77 - 61 = 16."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 9?",
+    "options": [
+      "90",
+      "95",
+      "91",
+      "93"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 9 = 90."
+    },
+    "image_url": null
   }
 ]
