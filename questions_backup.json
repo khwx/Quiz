@@ -73060,5 +73060,56 @@
       "explanation": "Quanto é 54 ÷ 6 = 9."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 5 elevado a 4?",
+    "options": [
+      "635",
+      "629",
+      "625",
+      "632"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 5 elevado a 4 = 625."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 45 - 5?",
+    "options": [
+      "39",
+      "30",
+      "37",
+      "40"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 45 - 5 = 40."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50 + 68?",
+    "options": [
+      "115",
+      "114",
+      "116",
+      "118"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 50 + 68 = 118."
+    },
+    "image_url": null
   }
 ]
