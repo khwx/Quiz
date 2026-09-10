@@ -72992,5 +72992,39 @@
       "explanation": "Quanto é 9 elevado a 2 = 81."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 86 - 54?",
+    "options": [
+      "33",
+      "32",
+      "30",
+      "39"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 86 - 54 = 32."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 36?",
+    "options": [
+      "10",
+      "6",
+      "13",
+      "11"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 36 = 6."
+    },
+    "image_url": null
   }
 ]
