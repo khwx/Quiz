@@ -73026,5 +73026,39 @@
       "explanation": "Qual é a raiz quadrada de 36 = 6."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 6 ÷ 2?",
+    "options": [
+      "13",
+      "4",
+      "3",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 6 ÷ 2 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 54 ÷ 6?",
+    "options": [
+      "9",
+      "19",
+      "12",
+      "16"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 54 ÷ 6 = 9."
+    },
+    "image_url": null
   }
 ]
