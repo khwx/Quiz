@@ -73346,5 +73346,56 @@
       "explanation": "Quanto é 75 - 6 = 69."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 80 ÷ 10?",
+    "options": [
+      "12",
+      "10",
+      "4",
+      "8"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 80 ÷ 10 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 18 + 34?",
+    "options": [
+      "52",
+      "48",
+      "50",
+      "51"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 18 + 34 = 52."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 × 5?",
+    "options": [
+      "56",
+      "53",
+      "60",
+      "61"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 12 × 5 = 60."
+    },
+    "image_url": null
   }
 ]
