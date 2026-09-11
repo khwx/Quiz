@@ -73312,5 +73312,39 @@
       "explanation": "Quanto é 10 × 9 = 90."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 6 × 6?",
+    "options": [
+      "36",
+      "34",
+      "31",
+      "33"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 6 = 36."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 75 - 6?",
+    "options": [
+      "68",
+      "66",
+      "69",
+      "67"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 75 - 6 = 69."
+    },
+    "image_url": null
   }
 ]
