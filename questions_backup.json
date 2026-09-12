@@ -73397,5 +73397,56 @@
       "explanation": "Quanto é 12 × 5 = 60."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 96 ÷ 8?",
+    "options": [
+      "15",
+      "17",
+      "12",
+      "13"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 96 ÷ 8 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 99?",
+    "options": [
+      "168",
+      "173",
+      "170",
+      "171"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 99 = 170."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 35 ÷ 5?",
+    "options": [
+      "10",
+      "7",
+      "6",
+      "11"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 35 ÷ 5 = 7."
+    },
+    "image_url": null
   }
 ]
