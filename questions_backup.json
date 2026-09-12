@@ -73562,5 +73562,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 20 - 17?",
+    "options": [
+      "3",
+      "4",
+      "0",
+      "10"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 20 - 17 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 20% de 40?",
+    "options": [
+      "8",
+      "1",
+      "9",
+      "7"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 20% de 40 = 8."
+    },
+    "image_url": null
   }
 ]
