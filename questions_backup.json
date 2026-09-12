@@ -73212,7 +73212,9 @@
     "hint": null
   },
   {
+    "id": "07b0611a-9eb8-45e4-81b0-2afca3545775",
     "text": "Quanto é 11 × 9?",
+    "image_url": null,
     "options": [
       "104",
       "101",
@@ -73222,14 +73224,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-10T18:05:18.335888+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 11 × 9 = 99."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "380ac08e-02f5-4525-935c-948e2a609a04",
     "text": "Quanto é 36 - 6?",
+    "image_url": null,
     "options": [
       "30",
       "26",
@@ -73239,14 +73246,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-10T18:05:18.335888+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 36 - 6 = 30."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e7be259b-1fa8-4eec-b1b0-f9cc6416656c",
     "text": "Quanto é 9 × 7?",
+    "image_url": null,
     "options": [
       "61",
       "59",
@@ -73256,14 +73268,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-10T18:16:50.081177+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 9 × 7 = 63."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "86f99a70-e089-44b1-a673-4b141bc155ee",
     "text": "Quanto é 60 ÷ 6?",
+    "image_url": null,
     "options": [
       "7",
       "9",
@@ -73273,14 +73290,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-10T18:16:50.081177+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 60 ÷ 6 = 10."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "dcffaec0-fec0-44c7-ab99-8591cb54f697",
     "text": "Quanto é 77 - 61?",
+    "image_url": null,
     "options": [
       "6",
       "9",
@@ -73290,14 +73312,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-10T22:47:32.028739+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 77 - 61 = 16."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "f8429a2e-4dc2-4129-a5bf-a7f24d584b92",
     "text": "Quanto é 10 × 9?",
+    "image_url": null,
     "options": [
       "90",
       "95",
@@ -73307,14 +73334,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-10T22:47:32.028739+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 10 × 9 = 90."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "1dc7438e-7e01-4262-8579-9252b7177d2d",
     "text": "Quanto é 6 × 6?",
+    "image_url": null,
     "options": [
       "36",
       "34",
@@ -73324,14 +73356,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-11T03:23:08.983649+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 6 × 6 = 36."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "15d90100-e34f-4a11-aff1-1882396d5cd4",
     "text": "Quanto é 75 - 6?",
+    "image_url": null,
     "options": [
       "68",
       "66",
@@ -73341,14 +73378,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-11T03:23:08.983649+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 75 - 6 = 69."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "793889fe-6fcc-4c40-9d37-30332589a1a6",
     "text": "Quanto é 80 ÷ 10?",
+    "image_url": null,
     "options": [
       "12",
       "10",
@@ -73358,14 +73400,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-11T07:50:03.330008+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 80 ÷ 10 = 8."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c7241e2d-a849-4bee-973c-1b5a7c3ab10d",
     "text": "Quanto é 18 + 34?",
+    "image_url": null,
     "options": [
       "52",
       "48",
@@ -73375,14 +73422,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-11T07:50:03.330008+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 18 + 34 = 52."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "aac6d336-7d1b-4879-aba9-0cc076f4b2ae",
     "text": "Quanto é 12 × 5?",
+    "image_url": null,
     "options": [
       "56",
       "53",
@@ -73392,14 +73444,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-11T07:50:03.330008+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 12 × 5 = 60."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "3c644e59-a65e-41f5-8730-6bd0311b93f2",
     "text": "Quanto é 96 ÷ 8?",
+    "image_url": null,
     "options": [
       "15",
       "17",
@@ -73409,14 +73466,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-12T07:43:08.300876+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 96 ÷ 8 = 12."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "ecc2773e-b7bb-4122-95e2-ac86a4e34512",
     "text": "Quanto é 71 + 99?",
+    "image_url": null,
     "options": [
       "168",
       "173",
@@ -73426,14 +73488,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-12T07:43:08.300876+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 71 + 99 = 170."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a2cb73db-0ebe-4e3a-9213-420a0c29fd3d",
     "text": "Quanto é 35 ÷ 5?",
+    "image_url": null,
     "options": [
       "10",
       "7",
@@ -73443,10 +73510,57 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-12T07:43:08.300876+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 35 ÷ 5 = 7."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "03403694-5a71-49d6-b5f0-c954ad7df068",
+    "text": "Quanto é 80 - 38?",
+    "image_url": null,
+    "options": [
+      "42",
+      "44",
+      "43",
+      "41"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-12T12:59:28.666327+00:00",
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 80 - 38 = 42."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "e32319a6-dee9-40de-8935-8827b29aa249",
+    "text": "Quanto é 99 + 81?",
+    "image_url": null,
+    "options": [
+      "190",
+      "184",
+      "180",
+      "178"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-12T12:59:28.666327+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 99 + 81 = 180."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
