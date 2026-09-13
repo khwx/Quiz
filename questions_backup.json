@@ -73698,5 +73698,73 @@
       "explanation": "Quanto é 132 ÷ 11 = 12."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é a raiz quadrada de 25?",
+    "options": [
+      "0",
+      "6",
+      "1",
+      "5"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Quadrado perfeito.",
+      "explanation": "Qual é a raiz quadrada de 25 = 5."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 48 ÷ 8?",
+    "options": [
+      "6",
+      "2",
+      "11",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 48 ÷ 8 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 120 ÷ 10?",
+    "options": [
+      "13",
+      "12",
+      "5",
+      "17"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 120 ÷ 10 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 120 ÷ 12?",
+    "options": [
+      "10",
+      "7",
+      "15",
+      "9"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 120 ÷ 12 = 10."
+    },
+    "image_url": null
   }
 ]

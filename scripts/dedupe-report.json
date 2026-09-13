@@ -1,12 +1,12 @@
 {
   "date": "2026-09-13",
-  "totalQuestions": 3474,
+  "totalQuestions": 3478,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 27,
-  "fuzzyPairs": 377,
-  "templateFamilyPairs": 1663,
-  "fuzzyAffectedQuestions": 175,
+  "fuzzyPairs": 379,
+  "templateFamilyPairs": 1674,
+  "fuzzyAffectedQuestions": 176,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -176,14 +176,14 @@
     {
       "category": "MATEMATICA",
       "ids": [
-        "b36396fe-f128-4e56-9b22-269eba1bbbde",
-        "6e27a86f-adc5-449d-8e0f-a386c09330df"
+        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
+        "eaae7106-c3b8-44a6-aba7-b5047e3f4425"
       ]
     },
     {
       "category": "MATEMATICA",
       "ids": [
-        "09515873-3725-4fe5-9518-ec851c8f0064",
+        "b36396fe-f128-4e56-9b22-269eba1bbbde",
         "6e27a86f-adc5-449d-8e0f-a386c09330df"
       ]
     }
