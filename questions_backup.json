@@ -73564,7 +73564,9 @@
     "hint": null
   },
   {
+    "id": "38c6d852-ded4-4bbf-9f43-a11ea2da1b1e",
     "text": "Quanto é 20 - 17?",
+    "image_url": null,
     "options": [
       "3",
       "4",
@@ -73574,14 +73576,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-12T18:19:19.891051+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 20 - 17 = 3."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "4b7dd887-06c0-40d8-96d0-d836a642e4a7",
     "text": "Quanto é 20% de 40?",
+    "image_url": null,
     "options": [
       "8",
       "1",
@@ -73591,14 +73598,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-12T18:19:19.891051+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 20% de 40 = 8."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "2c41f6be-fd54-4196-92b0-2b25d601ff11",
     "text": "Quanto é 56 - 5?",
+    "image_url": null,
     "options": [
       "51",
       "44",
@@ -73608,14 +73620,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-12T18:32:47.655229+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 56 - 5 = 51."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e31b736a-08a7-4c3b-8b7d-ad5c0a70270c",
     "text": "Quanto é 30 + 37?",
+    "image_url": null,
     "options": [
       "71",
       "64",
@@ -73625,14 +73642,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-12T18:32:47.655229+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 30 + 37 = 67."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "984865ed-30ee-4afb-84ed-08e5505b14dd",
     "text": "Quanto é 8 × 11?",
+    "image_url": null,
     "options": [
       "86",
       "88",
@@ -73642,14 +73664,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-13T00:08:04.317528+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 8 × 11 = 88."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b6ca5e9c-1158-4652-88e7-766c49c5f5a7",
     "text": "Quanto é 10% de 40?",
+    "image_url": null,
     "options": [
       "7",
       "3",
@@ -73659,14 +73686,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-13T00:08:04.317528+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 10% de 40 = 4."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "53090094-238b-4dd4-9bc7-6f1ed91a74a6",
     "text": "Quanto é 89 - 66?",
+    "image_url": null,
     "options": [
       "20",
       "21",
@@ -73676,14 +73708,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-13T00:16:25.515556+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 89 - 66 = 23."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "edf5883d-ce58-4e00-9411-d96fcf752764",
     "text": "Quanto é 132 ÷ 11?",
+    "image_url": null,
     "options": [
       "13",
       "8",
@@ -73693,14 +73730,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-13T00:16:25.515556+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 132 ÷ 11 = 12."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a78d431b-4f79-457d-978e-493102827af7",
     "text": "Qual é a raiz quadrada de 25?",
+    "image_url": null,
     "options": [
       "0",
       "6",
@@ -73710,14 +73752,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-13T00:24:18.709899+00:00",
     "metadata": {
       "hint": "Quadrado perfeito.",
       "explanation": "Qual é a raiz quadrada de 25 = 5."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "94b77cd8-04bc-4fbe-b5cb-528ee5658a8b",
     "text": "Quanto é 48 ÷ 8?",
+    "image_url": null,
     "options": [
       "6",
       "2",
@@ -73727,14 +73774,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-13T00:24:18.709899+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 48 ÷ 8 = 6."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "37636a38-4f56-458d-b0fb-b711754c7226",
     "text": "Quanto é 120 ÷ 10?",
+    "image_url": null,
     "options": [
       "13",
       "12",
@@ -73744,14 +73796,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-13T05:20:48.297564+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 120 ÷ 10 = 12."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "eaae7106-c3b8-44a6-aba7-b5047e3f4425",
     "text": "Quanto é 120 ÷ 12?",
+    "image_url": null,
     "options": [
       "10",
       "7",
@@ -73761,14 +73818,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-13T05:20:48.297564+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 120 ÷ 12 = 10."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "a709f928-100d-42e5-b885-ed9b55d246b8",
     "text": "Quanto é 77 - 12?",
+    "image_url": null,
     "options": [
       "58",
       "62",
@@ -73778,14 +73840,19 @@
     "correct_option": 3,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-13T08:02:14.814234+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 77 - 12 = 65."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "8a48338c-3df3-43a8-8cb4-415aad5e3a71",
     "text": "Quanto é 88 + 62?",
+    "image_url": null,
     "options": [
       "157",
       "152",
@@ -73795,14 +73862,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-13T08:02:14.814234+00:00",
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 88 + 62 = 150."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e2839798-1248-4ea4-981c-4e280e1d38d5",
     "text": "Quanto é 2 × 5?",
+    "image_url": null,
     "options": [
       "17",
       "9",
@@ -73812,10 +73884,57 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-13T08:02:14.814234+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 2 × 5 = 10."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "c973b0eb-2ac5-44a1-a33a-bdb5743ffced",
+    "text": "Quanto é 14 + 27?",
+    "image_url": null,
+    "options": [
+      "46",
+      "41",
+      "48",
+      "39"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-13T10:28:41.086103+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 14 + 27 = 41."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "15789545-1b5e-4985-ab0e-49d2952f8328",
+    "text": "Quanto é 13 + 8?",
+    "image_url": null,
+    "options": [
+      "14",
+      "11",
+      "17",
+      "21"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-13T10:28:41.086103+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 13 + 8 = 21."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
