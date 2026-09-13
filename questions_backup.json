@@ -73596,5 +73596,39 @@
       "explanation": "Quanto é 20% de 40 = 8."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 56 - 5?",
+    "options": [
+      "51",
+      "44",
+      "46",
+      "61"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 56 - 5 = 51."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 30 + 37?",
+    "options": [
+      "71",
+      "64",
+      "63",
+      "67"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 30 + 37 = 67."
+    },
+    "image_url": null
   }
 ]
