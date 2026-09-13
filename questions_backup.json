@@ -73664,5 +73664,39 @@
       "explanation": "Quanto é 10% de 40 = 4."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 89 - 66?",
+    "options": [
+      "20",
+      "21",
+      "25",
+      "23"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 89 - 66 = 23."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 132 ÷ 11?",
+    "options": [
+      "13",
+      "8",
+      "12",
+      "17"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 132 ÷ 11 = 12."
+    },
+    "image_url": null
   }
 ]
