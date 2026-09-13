@@ -73766,5 +73766,56 @@
       "explanation": "Quanto é 120 ÷ 12 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 77 - 12?",
+    "options": [
+      "58",
+      "62",
+      "61",
+      "65"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 77 - 12 = 65."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 88 + 62?",
+    "options": [
+      "157",
+      "152",
+      "150",
+      "151"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 88 + 62 = 150."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 5?",
+    "options": [
+      "17",
+      "9",
+      "10",
+      "0"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 5 = 10."
+    },
+    "image_url": null
   }
 ]
