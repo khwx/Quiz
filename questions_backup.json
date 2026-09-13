@@ -73630,5 +73630,39 @@
       "explanation": "Quanto é 30 + 37 = 67."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 8 × 11?",
+    "options": [
+      "86",
+      "88",
+      "93",
+      "91"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 11 = 88."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10% de 40?",
+    "options": [
+      "7",
+      "3",
+      "2",
+      "4"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 10% de 40 = 4."
+    },
+    "image_url": null
   }
 ]
