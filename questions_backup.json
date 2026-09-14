@@ -74004,5 +74004,39 @@
       "explanation": "Quanto é 24 ÷ 4 = 6."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 7 + 6?",
+    "options": [
+      "13",
+      "11",
+      "10",
+      "15"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 7 + 6 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 + 4?",
+    "options": [
+      "10",
+      "11",
+      "9",
+      "13"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 9 + 4 = 13."
+    },
+    "image_url": null
   }
 ]
