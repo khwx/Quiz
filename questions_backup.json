@@ -74222,5 +74222,73 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 69 - 51?",
+    "options": [
+      "15",
+      "11",
+      "18",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 69 - 51 = 18."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 + 45?",
+    "options": [
+      "53",
+      "43",
+      "60",
+      "56"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 8 + 45 = 53."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 56 - 3?",
+    "options": [
+      "50",
+      "55",
+      "57",
+      "53"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 56 - 3 = 53."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25% de 100?",
+    "options": [
+      "25",
+      "22",
+      "29",
+      "20"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 25% de 100 = 25."
+    },
+    "image_url": null
   }
 ]
