@@ -74392,5 +74392,39 @@
       "explanation": "Quanto é 87 + 90 = 177."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 38 - 13?",
+    "options": [
+      "18",
+      "28",
+      "24",
+      "25"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 38 - 13 = 25."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 × 3?",
+    "options": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 3 = 9."
+    },
+    "image_url": null
   }
 ]
