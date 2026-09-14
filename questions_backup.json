@@ -74072,5 +74072,821 @@
       "explanation": "Quanto é 61 - 44 = 17."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o valor de 2 elevado a 10?",
+    "options": [
+      "512",
+      "1024",
+      "2048",
+      "256"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Base dos 'bytes'.",
+      "explanation": "2^10 = 1024; daí 1 KB = 1024 bytes, e não 1000."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem foi o primeiro rei de Portugal?",
+    "options": [
+      "D. Sancho I",
+      "D. Afonso Henriques",
+      "D. João I",
+      "D. Pedro I"
+    ],
+    "correct_option": 1,
+    "category": "HISTÓRIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Conquista de Lisboa em 1147.",
+      "explanation": "D. Afonso Henriques tornou-se o primeiro rei de Portugal, proclamado em 1139 após Ourique."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano estreou o primeiro filme de 'Harry Potter'?",
+    "options": [
+      "1999",
+      "2001",
+      "2003",
+      "2005"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Início da década de 2000.",
+      "explanation": "A Pedra Filosofal estreou em 2001."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o mamífero terrestre mais rápido em sprint?",
+    "options": [
+      "Guepardo",
+      "Cavalo",
+      "Antílope",
+      "Lebre"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Atinge mais de 100 km/h.",
+      "explanation": "O guepardo pode atingir 100-120 km/h em sprints curtos, graças a patas semelhantes a molas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos bits formam um byte?",
+    "options": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Potência de 2.",
+      "explanation": "1 byte = 8 bits."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual filme ganhou o Óscar de Melhor Filme em 2020?",
+    "options": [
+      "1917",
+      "Parasitas",
+      "Coringa",
+      "Era Uma Vez em... Hollywood"
+    ],
+    "correct_option": 1,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Filme sul-coreano.",
+      "explanation": "Parasitas venceu o Óscar de Melhor Filme."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países NÃO tem regime monárquico?",
+    "options": [
+      "Espanha",
+      "Suécia",
+      "França",
+      "Reino Unido"
+    ],
+    "correct_option": 2,
+    "category": "POLITICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tem um presidente.",
+      "explanation": "França é uma república; os outros são monarquias."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 1/2 + 1/4?",
+    "options": [
+      "3/4",
+      "2/6",
+      "1",
+      "1/4"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Denominador comum 4.",
+      "explanation": "1/2 = 2/4; 2/4 + 1/4 = 3/4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos membros tinha originalmente o quarteto de cordas clássico?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_option": 2,
+    "category": "MUSICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Dois violinos, uma violeta e um violoncelo.",
+      "explanation": "Um quarteto de cordas tem 4 instrumentistas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual foi a primeira mulher a ganhar um Prémio Nobel?",
+    "options": [
+      "Marie Curie",
+      "Rosalind Franklin",
+      "Ada Lovelace",
+      "Florence Nightingale"
+    ],
+    "correct_option": 0,
+    "category": "HISTÓRIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Estudou radioatividade.",
+      "explanation": "Marie Curie ganhou o Nobel da Física em 1903 e da Química em 1911 — a primeira pessoa com dois Nobéis."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior oceano do mundo?",
+    "options": [
+      "Atlântico",
+      "Pacífico",
+      "Índico",
+      "Ártico"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cobre quase 1/3 do planeta.",
+      "explanation": "O Pacífico é o maior oceano, com mais de 165 milhões de km²."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual linguagem é usada para estruturar páginas web?",
+    "options": [
+      "CSS",
+      "HTML",
+      "SQL",
+      "JSON"
+    ],
+    "correct_option": 1,
+    "category": "TECNOLOGIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Define títulos, parágrafos...",
+      "explanation": "HTML estrutura o conteúdo das páginas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 8?",
+    "options": [
+      "54",
+      "56",
+      "63",
+      "49"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Perto de 60.",
+      "explanation": "7 × 8 = 56."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos continentes adota tradicionalmente o modelo escolar português?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divide-se a América.",
+      "explanation": "Em Portugal ensinam-se tradicionalmente 6 continentes, contando a América do Norte e a América do Sul separadas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos bagos de uva entram, em média, numa garrafa de vinho de 0,75 L?",
+    "options": [
+      "Cerca de 100",
+      "Cerca de 600",
+      "Cerca de 50",
+      "Cerca de 50 000"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Menos de mil.",
+      "explanation": "Uma garrafa requer cerca de 600-800 bagos de uva, conforme a casta e o rendimento."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa 'UE'?",
+    "options": [
+      "União Europeia",
+      "União Económica",
+      "União Estatal",
+      "Unidos da Europa"
+    ],
+    "correct_option": 0,
+    "category": "POLITICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Bloco de países europeus.",
+      "explanation": "UE = União Europeia."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bandeira tem um círculo vermelho sobre fundo branco?",
+    "options": [
+      "Japão",
+      "Bangladesh",
+      "Palau",
+      "Coreia do Sul"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Sol nascente.",
+      "explanation": "A bandeira do Japão tem o Hinomaru (disco vermelho)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes instrumentos tem teclas brancas e pretas?",
+    "options": [
+      "Harpa",
+      "Piano",
+      "Flauta",
+      "Bateria"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Teclado.",
+      "explanation": "O piano tem teclas brancas e pretas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que continente fica o deserto de Atacama?",
+    "options": [
+      "África",
+      "Ásia",
+      "América do Sul",
+      "Oceania"
+    ],
+    "correct_option": 2,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "No norte do Chile.",
+      "explanation": "O Atacama, no norte do Chile, é um dos desertos mais áridos do mundo — chove raramente décadas a fio."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes animais é um marsupial?",
+    "options": [
+      "Coala",
+      "Golfinho",
+      "Foca",
+      "Lobo"
+    ],
+    "correct_option": 0,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem uma bolsa (marsúpio).",
+      "explanation": "O coala, como o canguru, carrega as crias num marsúpio; os outros são placentários."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa a sigla 'CPU'?",
+    "options": [
+      "Central Process Unit",
+      "Computer Power Unit",
+      "Central Processing Unit",
+      "Core Programming Unit"
+    ],
+    "correct_option": 2,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "'Processing'.",
+      "explanation": "CPU = Central Processing Unit, o processador do computador."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital do Canadá?",
+    "options": [
+      "Toronto",
+      "Vancouver",
+      "Ottawa",
+      "Montreal"
+    ],
+    "correct_option": 2,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Na província de Ontário.",
+      "explanation": "Ottawa é a capital do Canadá."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que país floresceu o movimento Art Nouveau no fim do século XIX?",
+    "options": [
+      "França e Bélgica",
+      "Japão",
+      "Brasil",
+      "Índia"
+    ],
+    "correct_option": 0,
+    "category": "ARTE",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Victor Horta.",
+      "explanation": "A Art Nouveau nasceu na França e na Bélgica, com linhas orgânicas inspiradas na natureza."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a velocidade aproximada da luz no vazio?",
+    "options": [
+      "300 000 km/s",
+      "150 000 km/s",
+      "1 000 000 km/s",
+      "30 000 km/s"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "É o limite de velocidade do universo.",
+      "explanation": "A luz viaja a ≈299 792 km/s; nada com massa pode ultrapassar essa velocidade segundo a relatividade."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes países tem a bandeira com três faixas horizontais vermelha, branca e vermelha?",
+    "options": [
+      "Áustria",
+      "Alemanha",
+      "Polónia",
+      "Espanha"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "País alpino.",
+      "explanation": "A bandeira da Áustria (vermelho-branco-vermelho) recorda a túnica do Duque Leopoldo V."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destes instrumentos é de sopro (metal)?",
+    "options": [
+      "Violino",
+      "Trompete",
+      "Harpa",
+      "Cítara"
+    ],
+    "correct_option": 1,
+    "category": "MUSICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Fanfarra.",
+      "explanation": "O trompete é de sopro (família dos metais); os restantes são de cordas."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o osso mais longo do corpo humano?",
+    "options": [
+      "Fémur",
+      "Tíbia",
+      "Úmero",
+      "Rádio"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Ossos da coxa.",
+      "explanation": "O fémur pode representar cerca de 1/4 da altura de uma pessoa adulta."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual destas espécies é ovípara?",
+    "options": [
+      "Baleia",
+      "Morcego",
+      "Tartaruga",
+      "Gato"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Põe ovos.",
+      "explanation": "As tartarugas são répteis ovíparos."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 15% de 200?",
+    "options": [
+      "30",
+      "25",
+      "35",
+      "40"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "0,15 × 200.",
+      "explanation": "15% de 200 = 0,15 × 200 = 30."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual artista cortou parte da própria orelha?",
+    "options": [
+      "Dalí",
+      "Van Gogh",
+      "Picasso",
+      "Matisse"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pós-impressionista holandês.",
+      "explanation": "Van Gogh cortou a orelha num episódio de crise."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quem interpretou Jack Sparrow?",
+    "options": [
+      "Depp",
+      "Cruise",
+      "Smith",
+      "Hanks"
+    ],
+    "correct_option": 0,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Pirata das Caraíbas.",
+      "explanation": "Johnny Depp interpretou o Capitão Jack Sparrow."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual gás libertado pela queima de combustíveis fósseis é o principal responsável pelo aquecimento global?",
+    "options": [
+      "Dióxido de carbono",
+      "Oxigénio",
+      "Azoto",
+      "Hélio"
+    ],
+    "correct_option": 0,
+    "category": "CIENCIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tem a fórmula CO2.",
+      "explanation": "O CO2 é o principal gás de efeito de estufa acumulado pela atividade humana, retendo calor na atmosfera."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país se tornou o mais populoso do mundo em 2023?",
+    "options": [
+      "China",
+      "Índia",
+      "Estados Unidos",
+      "Indonésia"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Subcontinente asiático.",
+      "explanation": "A Índia ultrapassou a China como o país mais populoso do mundo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que significa 'WWW'?",
+    "options": [
+      "World Wide Web",
+      "Web Wire World",
+      "Wide Web Window",
+      "World Web Work"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "A rede global.",
+      "explanation": "WWW = World Wide Web."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos bits tem um endereço IPv4?",
+    "options": [
+      "32",
+      "64",
+      "128",
+      "16"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Cerca de 4 mil milhões de endereços.",
+      "explanation": "IPv4 usa 32 bits; o sucessor IPv6 usa 128 bits para lidar com a escassez de endereços."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual bandeira é composta apenas por duas cores: vermelho e branco?",
+    "options": [
+      "Indonésia",
+      "França",
+      "Alemanha",
+      "Itália"
+    ],
+    "correct_option": 0,
+    "category": "BANDEIRAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tem listas horizontais.",
+      "explanation": "A Indonésia tem listas horizontais vermelha e branca."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a montanha mais alta do mundo?",
+    "options": [
+      "K2",
+      "Everest",
+      "Aconcágua",
+      "Kilimanjaro"
+    ],
+    "correct_option": 1,
+    "category": "GEOGRAFIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "No Himalaia.",
+      "explanation": "O Monte Everest é o pico mais alto do mundo (≈8849 m)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantos Óscares ganhou 'O Senhor dos Anéis: O Regresso do Rei'?",
+    "options": [
+      "3",
+      "6",
+      "11",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "CINEMA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Venceu quase todas as nomeações.",
+      "explanation": "Venceu 11 Óscares, incluindo Melhor Filme — um dos maiores varrimentos da história."
+    },
+    "image_url": null
+  },
+  {
+    "text": "O que é a 'perspetiva' numa pintura?",
+    "options": [
+      "Uso de cores quentes",
+      "Sensação de profundidade",
+      "Textura",
+      "Moldura"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Faz objetos parecerem distantes.",
+      "explanation": "A perspetiva dá ilusão de profundidade e distância."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual movimento artístico é associado a Monet e Renoir?",
+    "options": [
+      "Cubismo",
+      "Impressionismo",
+      "Surrealismo",
+      "Barroco"
+    ],
+    "correct_option": 1,
+    "category": "ARTE",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Luz e cor, ar livre.",
+      "explanation": "Monet e Renoir foram líderes do Impressionismo."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que ano Tim Berners-Lee propôs a World Wide Web no CERN?",
+    "options": [
+      "1989",
+      "1991",
+      "1995",
+      "2000"
+    ],
+    "correct_option": 0,
+    "category": "TECNOLOGIA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Fim da década de 80.",
+      "explanation": "Berners-Lee apresentou a proposta em 1989; o primeiro site esteve online em 1991."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o prato tradicional japonês de arroz avinagrado e peixe cru?",
+    "options": [
+      "Ramen",
+      "Sushi",
+      "Tempura",
+      "Udon"
+    ],
+    "correct_option": 1,
+    "category": "GASTRONOMIA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Muito servido em pizza no Ocidente... não.",
+      "explanation": "O sushi combina arroz avinagrado (shari) com peixe ou marisco; o ramen é sopa de noodles."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o mamífero terrestre mais rápido?",
+    "options": [
+      "Leão",
+      "Guepardo",
+      "Cavalo",
+      "Antílope"
+    ],
+    "correct_option": 1,
+    "category": "ANIMAIS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Um felino.",
+      "explanation": "O guepardo pode atingir cerca de 100 km/h em corrida."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o número primo imediatamente superior a 17?",
+    "options": [
+      "18",
+      "19",
+      "21",
+      "23"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Só divisível por 1 e por si.",
+      "explanation": "19 é primo; 18 e 21 são compostos (18=2×9, 21=3×7)."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem estrelas na forma de Cruzeiro do Sul na bandeira?",
+    "options": [
+      "Austrália",
+      "Brasil",
+      "Argentina",
+      "Estados Unidos"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Constelação do hemisfério sul.",
+      "explanation": "A bandeira do Brasil tem o Cruzeiro do Sul."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a capital do Egipto?",
+    "options": [
+      "Alexandria",
+      "Cairo",
+      "Luxor",
+      "Gizé"
+    ],
+    "correct_option": 1,
+    "category": "CAPITAIS_DO_MUNDO",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Junto ao Nilo.",
+      "explanation": "O Cairo é a capital e a maior cidade do Egipto, perto das pirâmides de Gizé."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual país tem uma águia de duas cabeças na sua bandeira?",
+    "options": [
+      "Rússia",
+      "Albânia",
+      "Sérvia",
+      "Montenegro"
+    ],
+    "correct_option": 1,
+    "category": "BANDEIRAS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Balcãs.",
+      "explanation": "A bandeira da Albânia ostenta uma águia de duas cabeças."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quantas câmaras tem o coração de um crocodilo?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct_option": 2,
+    "category": "ANIMAIS",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tal como as aves.",
+      "explanation": "Os crocodilos têm um coração de 4 câmaras, raro entre os répteis, partilhado com aves e mamíferos."
+    },
+    "image_url": null
   }
 ]
