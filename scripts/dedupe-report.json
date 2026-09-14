@@ -1,12 +1,12 @@
 {
   "date": "2026-09-14",
-  "totalQuestions": 3491,
-  "exactDuplicatesRemoved": 0,
-  "exactDuplicatesFound": 0,
-  "nearDuplicateGroups": 27,
-  "fuzzyPairs": 418,
-  "templateFamilyPairs": 1695,
-  "fuzzyAffectedQuestions": 188,
+  "totalQuestions": 3541,
+  "exactDuplicatesRemoved": 45,
+  "exactDuplicatesFound": 45,
+  "nearDuplicateGroups": 75,
+  "fuzzyPairs": 422,
+  "templateFamilyPairs": 1759,
+  "fuzzyAffectedQuestions": 191,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -127,6 +127,13 @@
     {
       "category": "GEOGRAFIA",
       "ids": [
+        "e110f834-3a69-4744-ab48-fbeaea189f48",
+        "33798100-6b4f-43b4-98a4-b5a4c82aa2c7"
+      ]
+    },
+    {
+      "category": "GEOGRAFIA",
+      "ids": [
         "ca0786a1-0c4f-4b15-a9b3-09ade8fff8de",
         "526fa3b0-0255-4f2c-96a8-8ee39d55afb6"
       ]
@@ -178,13 +185,6 @@
       "ids": [
         "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
         "eaae7106-c3b8-44a6-aba7-b5047e3f4425"
-      ]
-    },
-    {
-      "category": "MATEMATICA",
-      "ids": [
-        "b36396fe-f128-4e56-9b22-269eba1bbbde",
-        "6e27a86f-adc5-449d-8e0f-a386c09330df"
       ]
     }
   ]
