@@ -74290,5 +74290,39 @@
       "explanation": "Quanto é 25% de 100 = 25."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 74 + 6?",
+    "options": [
+      "75",
+      "76",
+      "80",
+      "83"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 74 + 6 = 80."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 × 7?",
+    "options": [
+      "40",
+      "39",
+      "37",
+      "42"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 7 = 42."
+    },
+    "image_url": null
   }
 ]
