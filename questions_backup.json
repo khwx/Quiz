@@ -73936,5 +73936,73 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 6 × 9?",
+    "options": [
+      "54",
+      "44",
+      "52",
+      "61"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 9 = 54."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 elevado a 2?",
+    "options": [
+      "12",
+      "8",
+      "9",
+      "4"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 3 elevado a 2 = 9."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 72 ÷ 9?",
+    "options": [
+      "8",
+      "18",
+      "9",
+      "1"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 72 ÷ 9 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 ÷ 4?",
+    "options": [
+      "10",
+      "6",
+      "13",
+      "1"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 24 ÷ 4 = 6."
+    },
+    "image_url": null
   }
 ]
