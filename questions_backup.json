@@ -74038,5 +74038,39 @@
       "explanation": "Quanto é 9 + 4 = 13."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 23?",
+    "options": [
+      "41",
+      "38",
+      "48",
+      "33"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 23 = 38."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 44?",
+    "options": [
+      "18",
+      "20",
+      "17",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 44 = 17."
+    },
+    "image_url": null
   }
 ]
