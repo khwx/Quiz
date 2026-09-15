@@ -74426,5 +74426,39 @@
       "explanation": "Quanto é 3 × 3 = 9."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 41 - 28?",
+    "options": [
+      "3",
+      "14",
+      "13",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 41 - 28 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 9?",
+    "options": [
+      "55",
+      "53",
+      "57",
+      "52"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 9 = 52."
+    },
+    "image_url": null
   }
 ]

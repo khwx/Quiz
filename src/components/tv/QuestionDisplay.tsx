@@ -26,6 +26,7 @@ interface QuestionDisplayProps {
   buzzerMode?: boolean;
   hotseatMode?: boolean;
   currentHotseatPlayer?: string;
+  publicPollActive?: boolean;
 }
 
 const optionColors = [
@@ -55,6 +56,7 @@ export default function QuestionDisplay({
   buzzerMode = false,
   hotseatMode = false,
   currentHotseatPlayer,
+  publicPollActive = false,
 }: QuestionDisplayProps) {
   const progress = (timeLeft / totalTime) * 100;
   const [ttsEnabled, setTtsEnabled] = useState(true);
@@ -155,6 +157,18 @@ export default function QuestionDisplay({
               {answeredCount} / {players.length}
             </span>
           </div>
+
+          {/* Public Poll badge */}
+          {publicPollActive && status === GameStatus.QUESTION && (
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="bg-[#d0bcff]/15 px-4 py-2 rounded-xl flex items-center gap-2 border border-[#d0bcff]/40 shadow-[0_0_15px_rgba(208,188,255,0.25)]"
+            >
+              <span className="text-lg">📊</span>
+              <span className="text-[#d0bcff] font-black uppercase text-xs tracking-widest">Votação do Público</span>
+            </motion.div>
+          )}
 
           {/* Player Avatars */}
           <div className="flex flex-wrap gap-2 justify-end">
@@ -314,6 +328,7 @@ export default function QuestionDisplay({
         {question.options.map((option: string, idx: number) => {
           const isCorrect = idx === question.correct_option;
           const isReveal = status === GameStatus.REVEAL;
+          const showPoll = publicPollActive && status === GameStatus.QUESTION;
           const showCorrect = isReveal && isCorrect && !blindMode;
           const showWrong = isReveal && !isCorrect && !blindMode;
           const optionAnswerCount = answers.filter((a) => Number(a.chosen_option) === idx).length;
@@ -376,11 +391,11 @@ export default function QuestionDisplay({
                    </div>
                  )}
 
-                 {isReveal && !blindMode && totalAnswered > 0 && (
+                 {showPoll || (isReveal && !blindMode && totalAnswered > 0) ? (
                    <div className="mt-3 flex items-center gap-2">
                      <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
                        <div
-                         className={`h-full transition-all duration-500 ${isCorrect ? "bg-green-400" : "bg-white/30"}`}
+                         className={`h-full transition-all duration-500 ${showPoll ? "bg-[#d0bcff]" : isCorrect ? "bg-green-400" : "bg-white/30"}`}
                          style={{ width: `${answerPct}%` }}
                        />
                      </div>
@@ -388,7 +403,7 @@ export default function QuestionDisplay({
                        {answerPct}% · {optionAnswerCount}
                      </span>
                    </div>
-                 )}
+                 ) : null}
                </div>
 
                {showCorrect && (

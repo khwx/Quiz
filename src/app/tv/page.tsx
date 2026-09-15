@@ -66,6 +66,7 @@ export default function TVHost() {
   const [hotseatPlayers, setHotseatPlayers] = useState<string[]>([]);
   const [currentHotseatIndex, setCurrentHotseatIndex] = useState(0);
   const [hotseatScores, setHotseatScores] = useState<Record<string, number>>({});
+  const [publicPollActive, setPublicPollActive] = useState(false);
 
   useEffect(() => {
     if (gameSettings?.buzzer_mode !== undefined) {
@@ -76,6 +77,12 @@ export default function TVHost() {
       setHotseatPlayers(gameSettings.hotseat_players || []);
     }
   }, [gameSettings?.buzzer_mode, gameSettings?.hotseat_mode, gameSettings?.hotseat_players]);
+
+  useEffect(() => {
+    if (status !== GameStatus.QUESTION && status !== GameStatus.REVEAL) {
+      setPublicPollActive(false);
+    }
+  }, [status]);
 
   const { currentAnswers, setCurrentAnswers, updateQuestionIds } = useAnswerSubscription();
 
@@ -490,6 +497,7 @@ if (status !== GameStatus.QUESTION) return;
             buzzerMode={buzzerMode}
             hotseatMode={hotseatMode}
             currentHotseatPlayer={hotseatMode && hotseatPlayers[currentHotseatIndex] ? hotseatPlayers[currentHotseatIndex] : undefined}
+            publicPollActive={publicPollActive}
           />
 
           {/* Host Quick Controls Bar (TV Host) */}
@@ -526,6 +534,20 @@ if (status !== GameStatus.QUESTION) return;
               <span>⏭️ Saltar</span>
               <span className="text-[10px] opacity-60 font-mono">[S]</span>
             </button>
+
+            {status === GameStatus.QUESTION && (
+              <button
+                onClick={() => setPublicPollActive((v) => !v)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  publicPollActive
+                    ? "bg-[#d0bcff] text-[#121223] shadow-[0_0_15px_rgba(208,188,255,0.4)]"
+                    : "bg-white/10 hover:bg-white/20 text-on-surface"
+                }`}
+                title="Mostrar/ocultar Votação do Público em tempo real"
+              >
+                <span>📊 {publicPollActive ? "Votação ON" : "Votação do Público"}</span>
+              </button>
+            )}
           </div>
 
           {/* Pause Screen Overlay */}

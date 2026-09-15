@@ -1,5 +1,17 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-09-14] Ciclo de Manutenção (62º ciclo, 8h) — Novas Perguntas + Dedupe Semanal + Power-up Votação do Público
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3508 → 3510. Total na BD: 3.510.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 27 grupos aproximados (texto+categoria), 447 pares fuzzy (≥0.9) reais fora de BANDEIRAS, 1.712 pares de famílias de template ignorados como falsos positivos. Total na BD: 3.510.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **NOVA FEATURE — Power-up "Votação do Público"** (`TAREFAS.md` item 4):
+  - Botão **📊 Votação do Público** na barra de controlos do host (`/tv`) durante `QUESTION`.
+  - Mostra em tempo real as barras de percentagem de respostas da sala (já não apenas no `REVEAL`), com badge "Votação do Público" no topo. Sem cor de resposta certa durante a votação (não revela a correta).
+  - Ficheiros: `src/components/tv/QuestionDisplay.tsx`, `src/app/tv/page.tsx`.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` gerou 40/40 páginas estáticas e rotas dinâmicas sem erros.
+
 ## [2026-09-14] Ciclo de Manutenção (61º ciclo, 8h) — Novas Perguntas + Dedupe Semanal
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3506 → 3508. Total na BD: 3.508.
