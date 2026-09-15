@@ -56,9 +56,9 @@
 - [x] Botão de **Saltar Pergunta** (avançar sem atribuir pontos)
 
 ### ⚡ 4. Novos Power-ups & Modos
-- [ ] Power-up **"Votação do Público" (Public Poll)**: Mostra percentagem de respostas da sala
+- [x] Power-up **"Votação do Público" (Public Poll)**: Mostra percentagem de respostas da sala na TV (host toggle durante QUESTION)
 - [x] Modo **Treino por Categoria no Solo** (escolher categoria específica para praticar)
-- [ ] Modo **Duelo 1v1 Rápido**
+- [x] Modo **Duelo 1v1 Rápido**: card em /modes → /tv?duel=1 (5 perguntas, 15s, lobby restrito a 2 jogadores)
 
 ---
 
