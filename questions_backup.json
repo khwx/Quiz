@@ -74718,5 +74718,39 @@
       "explanation": "Quanto é 97 - 79 = 18."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 2?",
+    "options": [
+      "20",
+      "15",
+      "27",
+      "25"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 2 = 20."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 ÷ 4?",
+    "options": [
+      "5",
+      "8",
+      "10",
+      "3"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 32 ÷ 4 = 8."
+    },
+    "image_url": null
   }
 ]
