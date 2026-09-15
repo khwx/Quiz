@@ -74494,5 +74494,56 @@
       "explanation": "Quanto é 50 ÷ 10 = 5."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 36 + 70?",
+    "options": [
+      "109",
+      "105",
+      "96",
+      "106"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 36 + 70 = 106."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 6?",
+    "options": [
+      "60",
+      "59",
+      "55",
+      "67"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 6 = 60."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 + 28?",
+    "options": [
+      "104",
+      "108",
+      "105",
+      "109"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 77 + 28 = 105."
+    },
+    "image_url": null
   }
 ]
