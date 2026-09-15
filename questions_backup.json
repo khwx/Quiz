@@ -74684,5 +74684,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 12 × 7?",
+    "options": [
+      "79",
+      "85",
+      "84",
+      "83"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 12 × 7 = 84."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 97 - 79?",
+    "options": [
+      "23",
+      "15",
+      "18",
+      "11"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 97 - 79 = 18."
+    },
+    "image_url": null
   }
 ]
