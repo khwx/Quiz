@@ -1,5 +1,18 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-09-14] Ciclo de Manutenção (63º ciclo, 8h) — Novas Perguntas + Dedupe + Duelo Rápido 1v1
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3510 → 3512. Total na BD: 3.512.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 451 pares fuzzy (≥0.9) fora de BANDEIRAS, 1.712 pares de famílias de template ignorados. Total na BD: 3.512.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **NOVA FEATURE — Modo "Duelo Rápido 1v1"** (`TAREFAS.md` item 4):
+  - Novo card **"Duelo Rápido 1v1"** na página `/modes`, ligação a `/tv?duel=1`.
+  - Config pré-definida: 5 perguntas, 15s por pergunta, `duel_mode: true` no `games.settings`.
+  - Lobby com badge ⚔️ Duelo 1v1, contador `x/2`, mensagem de espera, e botão Iniciar bloqueado até 2 jogadores.
+  - Ficheiros: `src/app/modes/page.tsx`, `src/hooks/useGameSetup.ts`, `src/components/tv/LobbyView.tsx`.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` 40/40 páginas OK.
+
 ## [2026-09-14] Ciclo de Manutenção (62º ciclo, 8h) — Novas Perguntas + Dedupe Semanal + Power-up Votação do Público
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3508 → 3510. Total na BD: 3.510.

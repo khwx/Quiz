@@ -42,6 +42,8 @@ export interface GameSettings {
   buzzer_mode?: boolean;
   hotseat_mode?: boolean;
   hotseat_players?: string[];
+  duel_mode?: boolean;
+  public_poll?: boolean;
 }
 
 export interface Game {

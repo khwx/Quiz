@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
 import { Users, Play, Loader2, ArrowRight, Zap, GraduationCap, Share2, Check } from "lucide-react";
 import { CATEGORIES } from "@/hooks/useGameSetup";
+import { useGame } from "@/context/GameContext";
 import type { Player } from "@/types";
 import { GAME_CONSTANTS, APP_URL } from "@/lib/constants";
 
@@ -71,6 +72,8 @@ export default function LobbyView({
 }: LobbyViewProps) {
   const [shared, setShared] = useState(false);
   const [hotseatName, setHotseatName] = useState("");
+  const { gameSettings } = useGame();
+  const duelMode = gameSettings?.duel_mode === true;
 
   const shareGame = async () => {
     const url = `${typeof window !== "undefined" ? window.location.origin : APP_URL}/play?pin=${pin}`;
@@ -113,6 +116,15 @@ export default function LobbyView({
             <Users className="w-8 h-8 lg:w-10 lg:h-10 text-[#3c0091]" />
           </div>
           <span className="text-sm font-bold text-[#d0bcff] uppercase tracking-widest">QuizVerse TV</span>
+          {duelMode && (
+            <motion.span
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="ml-2 px-3 py-1 rounded-full bg-orange-500/15 text-orange-400 text-sm font-black uppercase tracking-widest border border-orange-500/40"
+            >
+              ⚔️ Duelo 1v1
+            </motion.span>
+          )}
         </div>
 
         <div>
@@ -161,8 +173,21 @@ export default function LobbyView({
               <Users className="text-[#FFB0CD] w-6 h-6 lg:w-8 lg:h-8" />
               <h2 className="text-xl lg:text-3xl font-bold text-[#e3e0f9]">Jogadores</h2>
             </div>
-            <span className="bg-[#FFB0CD] text-[#3c0091] px-4 py-1 rounded-full font-bold">{players.length}</span>
+            <span className="bg-[#FFB0CD] text-[#3c0091] px-4 py-1 rounded-full font-bold">
+              {duelMode ? `${players.length}/2` : players.length}
+            </span>
           </div>
+
+          {duelMode && players.length < 2 && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-3 px-4 py-2 rounded-lg bg-orange-500/10 border border-orange-500/30 text-orange-300 text-sm font-bold flex items-center gap-2"
+            >
+              <span className="animate-pulse">⚔️</span>
+              {players.length === 0 ? "A aguardar 1º duelo… (0/2)" : "A aguardar adversário… (1/2)"}
+            </motion.div>
+          )}
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 flex-grow overflow-y-auto max-h-[200px] lg:max-h-[400px]">
             <AnimatePresence>
@@ -448,7 +473,7 @@ export default function LobbyView({
 
             <button
               onClick={onStart}
-              disabled={(players.length === 0 && !localMode) || isGenerating || status === "STARTING"}
+              disabled={(players.length === 0 && !localMode) || (duelMode && players.length < 2 && !localMode) || isGenerating || status === "STARTING"}
               className="btn-quiz btn-primary w-full py-6 flex justify-center items-center gap-3 relative overflow-hidden group mt-auto"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity" />

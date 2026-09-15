@@ -74460,5 +74460,39 @@
       "explanation": "Quanto é 61 - 9 = 52."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 90 - 37?",
+    "options": [
+      "56",
+      "54",
+      "50",
+      "53"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 90 - 37 = 53."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50 ÷ 10?",
+    "options": [
+      "3",
+      "4",
+      "15",
+      "5"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 50 ÷ 10 = 5."
+    },
+    "image_url": null
   }
 ]

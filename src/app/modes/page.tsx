@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Rocket, Users, Trophy, ChevronLeft, Zap, Shield, Crown } from "lucide-react";
+import { Rocket, Users, Trophy, ChevronLeft, Zap, Shield, Crown, Swords } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
 
 const MODES = [
@@ -52,6 +52,22 @@ const MODES = [
     buttonGradient: "border-secondary/50",
     href: "/tournaments",
     live: true,
+  },
+  {
+    id: "duel",
+    title: "Duelo Rápido 1v1",
+    description: "Desafia um amigo para um duelo de 5 perguntas cabeça-a-cabeça. Rápido, direto e sem esperas.",
+    icon: Swords,
+    players: "2 Jogadores",
+    duration: "⚡ ~2 min",
+    format: "⚔️ 1 vs 1",
+    tag: "Cabeça a Cabeça",
+    gradient: "from-orange-500 to-red-500",
+    color: "#FF9E64",
+    bgGlow: "bg-orange-500/20",
+    buttonGradient: "from-orange-500 to-red-500",
+    href: "/tv?duel=1",
+    featured: true,
   },
 ];
 
@@ -154,7 +170,7 @@ export default function ModesPage() {
                       </button>
                     ) : (
                       <button className={`w-full py-3 bg-gradient-to-r ${mode.buttonGradient} text-[#121223] font-bold rounded-lg shadow-lg active:scale-95 transition-transform uppercase tracking-widest text-sm`}>
-                        {mode.id === "solo" ? "Lançar Missão" : "Reunir Tripulação"}
+                        {mode.id === "solo" ? "Lançar Missão" : mode.id === "duel" ? "Entrar no Duelo" : "Reunir Tripulação"}
                       </button>
                     )}
                   </Link>

@@ -32,6 +32,12 @@ export function useGameSetup() {
       const queryAge = urlParams.get("age");
       const queryTournament = urlParams.get("tournament");
       const queryTeam = urlParams.get("team");
+      const queryDuel = urlParams.get("duel");
+
+      if (queryDuel) {
+        setTimerDuration(15);
+        setQuestionCount(5);
+      }
 
       if (queryTournament) {
         setTournamentId(queryTournament);
@@ -74,6 +80,7 @@ export function useGameSetup() {
         const insertData: Record<string, unknown> = { pin: newPin, status: "LOBBY" };
         if (queryTournament) insertData.tournament_id = queryTournament;
         if (queryTeam) insertData.team_id = queryTeam;
+        if (queryDuel) insertData.settings = { duel_mode: true };
 
         const { data } = await supabase
           .from("games")
