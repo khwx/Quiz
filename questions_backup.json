@@ -75004,5 +75004,39 @@
       "explanation": "Quanto é 28 - 14 = 14."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 36 ÷ 6?",
+    "options": [
+      "8",
+      "3",
+      "1",
+      "6"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 36 ÷ 6 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 60 - 46?",
+    "options": [
+      "14",
+      "10",
+      "17",
+      "13"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 60 - 46 = 14."
+    },
+    "image_url": null
   }
 ]
