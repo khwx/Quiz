@@ -74970,5 +74970,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 11 × 3?",
+    "options": [
+      "40",
+      "28",
+      "33",
+      "30"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 3 = 33."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 28 - 14?",
+    "options": [
+      "14",
+      "15",
+      "16",
+      "19"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 28 - 14 = 14."
+    },
+    "image_url": null
   }
 ]
