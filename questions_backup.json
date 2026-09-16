@@ -74820,5 +74820,56 @@
       "explanation": "Quanto é 2 × 2 = 4."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 50% de 100?",
+    "options": [
+      "51",
+      "50",
+      "52",
+      "43"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 50% de 100 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 11?",
+    "options": [
+      "62",
+      "45",
+      "55",
+      "57"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 11 = 55."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 elevado a 3?",
+    "options": [
+      "11",
+      "6",
+      "8",
+      "12"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 2 elevado a 3 = 8."
+    },
+    "image_url": null
   }
 ]
