@@ -74752,5 +74752,39 @@
       "explanation": "Quanto é 32 ÷ 4 = 8."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 11 × 7?",
+    "options": [
+      "77",
+      "82",
+      "67",
+      "80"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 7 = 77."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 11 × 4?",
+    "options": [
+      "37",
+      "44",
+      "48",
+      "39"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 4 = 44."
+    },
+    "image_url": null
   }
 ]
