@@ -74786,5 +74786,39 @@
       "explanation": "Quanto é 11 × 4 = 44."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 50 - 29?",
+    "options": [
+      "14",
+      "26",
+      "21",
+      "17"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 50 - 29 = 21."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 2?",
+    "options": [
+      "4",
+      "7",
+      "3",
+      "2"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 2 = 4."
+    },
+    "image_url": null
   }
 ]
