@@ -74686,7 +74686,9 @@
     "hint": null
   },
   {
+    "id": "580b6c38-9942-4714-80a2-65e0bbb6b1f8",
     "text": "Quanto é 12 × 7?",
+    "image_url": null,
     "options": [
       "79",
       "85",
@@ -74696,14 +74698,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-15T15:29:05.26606+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 12 × 7 = 84."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "c00c9337-9f15-4b7a-bd0a-0f1995a0fcd1",
     "text": "Quanto é 97 - 79?",
+    "image_url": null,
     "options": [
       "23",
       "15",
@@ -74713,14 +74720,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-15T15:29:05.26606+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 97 - 79 = 18."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "b8e7716a-d23d-4734-bfc8-ce1d1c54b7f7",
     "text": "Quanto é 10 × 2?",
+    "image_url": null,
     "options": [
       "20",
       "15",
@@ -74730,14 +74742,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-15T20:07:35.239878+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 10 × 2 = 20."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "32a94a4f-2676-4def-9918-77de7ca5cc21",
     "text": "Quanto é 32 ÷ 4?",
+    "image_url": null,
     "options": [
       "5",
       "8",
@@ -74747,14 +74764,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-15T20:07:35.239878+00:00",
     "metadata": {
       "hint": "Divisão exata.",
       "explanation": "Quanto é 32 ÷ 4 = 8."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "e4cc2bad-0c1d-4c16-8dc7-525e6b46034d",
     "text": "Quanto é 11 × 7?",
+    "image_url": null,
     "options": [
       "77",
       "82",
@@ -74764,14 +74786,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-16T00:56:16.448983+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 11 × 7 = 77."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "6a8b33db-0ed1-4bc7-886c-c4d4285bab27",
     "text": "Quanto é 11 × 4?",
+    "image_url": null,
     "options": [
       "37",
       "44",
@@ -74781,14 +74808,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 10,
+    "country_code": "PT",
+    "created_at": "2026-09-16T00:56:16.448983+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 11 × 4 = 44."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "913ea710-b8d4-4d27-b785-2d2a5586c09d",
     "text": "Quanto é 50 - 29?",
+    "image_url": null,
     "options": [
       "14",
       "26",
@@ -74798,14 +74830,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-16T05:25:37.00746+00:00",
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 50 - 29 = 21."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "89b913b8-d89e-49ba-8375-855ccd0e23e7",
     "text": "Quanto é 2 × 2?",
+    "image_url": null,
     "options": [
       "4",
       "7",
@@ -74815,14 +74852,19 @@
     "correct_option": 0,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-16T05:25:37.00746+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 2 × 2 = 4."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "6b863954-a72c-4b72-ab44-18171a60846c",
     "text": "Quanto é 50% de 100?",
+    "image_url": null,
     "options": [
       "51",
       "50",
@@ -74832,14 +74874,19 @@
     "correct_option": 1,
     "category": "MATEMATICA",
     "age_rating": 14,
+    "country_code": "PT",
+    "created_at": "2026-09-16T08:19:14.160524+00:00",
     "metadata": {
       "hint": "Percentagem.",
       "explanation": "Quanto é 50% de 100 = 50."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "4ceeff8b-c6df-411c-9c32-5b142872f716",
     "text": "Quanto é 5 × 11?",
+    "image_url": null,
     "options": [
       "62",
       "45",
@@ -74849,14 +74896,19 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-09-16T08:19:14.160524+00:00",
     "metadata": {
       "hint": "Tabuada.",
       "explanation": "Quanto é 5 × 11 = 55."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
   },
   {
+    "id": "7fa8f1e3-0141-4892-80c2-980ba17b6e04",
     "text": "Quanto é 2 elevado a 3?",
+    "image_url": null,
     "options": [
       "11",
       "6",
@@ -74866,10 +74918,57 @@
     "correct_option": 2,
     "category": "MATEMATICA",
     "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-16T08:19:14.160524+00:00",
     "metadata": {
       "hint": "Potência.",
       "explanation": "Quanto é 2 elevado a 3 = 8."
     },
-    "image_url": null
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "5031b2db-668d-4671-ab26-958df197c565",
+    "text": "Quanto é 42 + 86?",
+    "image_url": null,
+    "options": [
+      "131",
+      "128",
+      "132",
+      "123"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "country_code": "PT",
+    "created_at": "2026-09-16T10:06:43.926762+00:00",
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 42 + 86 = 128."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "3eac9a3c-ef8f-474c-82a6-e279d1c4220e",
+    "text": "Quanto é 3 × 8?",
+    "image_url": null,
+    "options": [
+      "23",
+      "24",
+      "20",
+      "25"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-09-16T10:06:43.926762+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 8 = 24."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]
