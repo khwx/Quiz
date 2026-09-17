@@ -75038,5 +75038,56 @@
       "explanation": "Quanto é 60 - 46 = 14."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 89 + 81?",
+    "options": [
+      "170",
+      "169",
+      "177",
+      "174"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 89 + 81 = 170."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 75 - 11?",
+    "options": [
+      "74",
+      "68",
+      "64",
+      "62"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 75 - 11 = 64."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 8?",
+    "options": [
+      "72",
+      "68",
+      "79",
+      "76"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 8 = 72."
+    },
+    "image_url": null
   }
 ]
