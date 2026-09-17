@@ -75038,5 +75038,39 @@
       "explanation": "Quanto é 60 - 46 = 14."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 28 - 3?",
+    "options": [
+      "32",
+      "29",
+      "25",
+      "35"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 28 - 3 = 25."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 + 20?",
+    "options": [
+      "34",
+      "32",
+      "29",
+      "19"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 9 + 20 = 29."
+    },
+    "image_url": null
   }
 ]
