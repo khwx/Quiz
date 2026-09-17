@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Laugh, Flame, Hand, ThumbsUp } from "lucide-react";
 
@@ -45,9 +45,12 @@ export default function ReactionBar({ gameId, playerName }: ReactionBarProps) {
     return () => channel.close();
   }, [gameId]);
 
-  const sendReaction = (emoji: string) => {
+  const reactionCounter = useRef(0);
+
+  const sendReaction = useCallback((emoji: string) => {
+    reactionCounter.current += 1;
     const reaction: Reaction = {
-      id: `${Date.now()}-${Math.random()}`,
+      id: `reaction-${reactionCounter.current}`,
       emoji,
       playerName,
       timestamp: Date.now(),
@@ -60,7 +63,7 @@ export default function ReactionBar({ gameId, playerName }: ReactionBarProps) {
     const channel = new BroadcastChannel(`reactions-${gameId}`);
     channel.postMessage({ type: "reaction", reaction });
     channel.close();
-  };
+  }, [gameId, playerName]);
 
   return (
     <>

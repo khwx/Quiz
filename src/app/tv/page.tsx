@@ -100,6 +100,11 @@ export default function TVHost() {
     updateQuestionIds(currentQuestions.map((q) => String(q.id)));
   }, [currentQuestions, updateQuestionIds]);
 
+  const [usedCount, setUsedCount] = useState(0);
+  useEffect(() => {
+    setUsedCount(usedQuestionIdsRef.current.length);
+  }, [currentQuestions, usedQuestionIdsRef]);
+
   const {
     timeLeft,
     setTimeLeft,
@@ -136,9 +141,10 @@ export default function TVHost() {
 
   // Auto-skip: advance to REVEAL when all players have answered
   const currentAnswersRef = useRef(currentAnswers);
-  currentAnswersRef.current = currentAnswers;
   const playersRef = useRef(players);
-  playersRef.current = players;
+
+  useEffect(() => { currentAnswersRef.current = currentAnswers; }, [currentAnswers]);
+  useEffect(() => { playersRef.current = players; }, [players]);
 
   useEffect(() => {
     if (status !== "QUESTION") return;
@@ -393,7 +399,7 @@ if (status !== GameStatus.QUESTION) return;
           availableCount={availableCount}
           isGenerating={isGenerating}
           status={status}
-          usedCount={usedQuestionIdsRef.current.length}
+          usedCount={usedCount}
           onTopicToggle={(name) => {
             if (topic.includes(name)) {
               setTopic(topic.filter((x) => x !== name));
@@ -620,7 +626,7 @@ if (status !== GameStatus.QUESTION) return;
         onClose={() => setMemoryConfirmOpen(false)}
         onConfirm={clearUsedQuestions}
         title="Limpar Memória"
-        message={`Tens a certeza? ${usedQuestionIdsRef.current.length} perguntas memorizadas serão apagadas.`}
+        message={`Tens a certeza? ${usedCount} perguntas memorizadas serão apagadas.`}
         confirmLabel="Limpar"
         danger
       />

@@ -12,7 +12,6 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
   const [timeUntilNext, setTimeUntilNext] = useState(20);
   const [isPaused, setIsPaused] = useState(false);
   const isPausedRef = useRef(false);
-  isPausedRef.current = isPaused;
 
   const shouldRevealRef = useRef(false);
   const questionStartTimeRef = useRef<number>(0);
@@ -24,11 +23,13 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
   // Use refs for values used in effects to prevent unnecessary re-runs
   const currentQuestionsRef = useRef(currentQuestions);
-  currentQuestionsRef.current = currentQuestions;
   const timerDurationRef = useRef(timerDuration);
-  timerDurationRef.current = timerDuration;
   const playSoundRef = useRef(playSound);
-  playSoundRef.current = playSound;
+
+  useEffect(() => { isPausedRef.current = isPaused; }, [isPaused]);
+  useEffect(() => { currentQuestionsRef.current = currentQuestions; }, [currentQuestions]);
+  useEffect(() => { timerDurationRef.current = timerDuration; }, [timerDuration]);
+  useEffect(() => { playSoundRef.current = playSound; }, [playSound]);
 
   const triggerReveal = useCallback(() => {
     shouldRevealRef.current = true;
