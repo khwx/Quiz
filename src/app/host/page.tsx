@@ -13,7 +13,12 @@ export default function HostPage() {
     const [gamePin, setGamePin] = useState<string>("");
     const [showSettings, setShowSettings] = useState(false);
     const [categories, setCategories] = useState<{ name: string; dbName: string }[]>([]);
-    const [selectedCategories, setSelectedCategories] = useState<string[]>(["Cultura Geral"]);
+    const [selectedCategories, setSelectedCategories] = useState<string[]>(() => {
+        if (gameSettings?.topic) {
+            return Array.isArray(gameSettings.topic) ? gameSettings.topic : [gameSettings.topic];
+        }
+        return ["Cultura Geral"];
+    });
 
     useEffect(() => {
         const fetchCategories = async () => {

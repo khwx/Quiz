@@ -43,12 +43,8 @@ function saveSettings(s: GameSettings) {
 }
 
 export default function SettingsPage() {
-  const [settings, setSettings] = useState<GameSettings>(DEFAULTS);
+  const [settings, setSettings] = useState<GameSettings>(() => loadSettings());
   const [saved, setSaved] = useState(false);
-
-  useEffect(() => {
-    setSettings(loadSettings());
-  }, []);
 
   const update = <K extends keyof GameSettings>(key: K, value: GameSettings[K]) => {
     const next = { ...settings, [key]: value };
