@@ -75089,5 +75089,39 @@
       "explanation": "Quanto é 9 × 8 = 72."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 6?",
+    "options": [
+      "12",
+      "17",
+      "19",
+      "15"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 6 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 × 11?",
+    "options": [
+      "43",
+      "37",
+      "29",
+      "33"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 11 = 33."
+    },
+    "image_url": null
   }
 ]
