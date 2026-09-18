@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronLeft, Lock, CheckCircle } from "lucide-react";
+import { ChevronLeft, CheckCircle } from "lucide-react";
 import MobileNav from "@/components/MobileNav";
 import { supabase } from "@/lib/supabase";
 import { ACHIEVEMENT_CATALOG, RARITY_POINTS } from "@/lib/achievements";

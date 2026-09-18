@@ -3,7 +3,7 @@ import { createContextLogger } from "@/lib/logger";
 const log = createContextLogger("tts");
 
 export function speak(text: string, lang: string = 'pt-PT'): Promise<void> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     if (!('speechSynthesis' in window)) {
       log.warn("Speech synthesis not supported");
       resolve();

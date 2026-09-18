@@ -75123,5 +75123,39 @@
       "explanation": "Quanto é 3 × 11 = 33."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 55 ÷ 5?",
+    "options": [
+      "7",
+      "12",
+      "16",
+      "11"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 55 ÷ 5 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 30 - 16?",
+    "options": [
+      "4",
+      "13",
+      "12",
+      "14"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 30 - 16 = 14."
+    },
+    "image_url": null
   }
 ]
