@@ -1,8 +1,25 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Groq from "groq-sdk";
-import { getCachedQuestions, setCachedQuestions } from "./cache";
 import { FLAG_CDN_BASE } from "@/lib/constants";
 import { createContextLogger } from "@/lib/logger";
+
+interface RawQuestion {
+  text?: string;
+  options?: string[];
+  correct_option?: number;
+  category?: string;
+  explanation?: string;
+  image_url?: string;
+}
+
+interface NormalizedQuestion {
+  text: string;
+  options: string[];
+  correct_option: number;
+  category: string;
+  explanation: string;
+  image_url?: string;
+}
 
 const log = createContextLogger("ai-service");
 
@@ -100,7 +117,7 @@ function buildPrompt(prompt: string, count: number, ageRating: string) {
   `;
 }
 
-function normalizeQuestions(questions: any[], defaultCategory: string) {
+function normalizeQuestions(questions: RawQuestion[], defaultCategory: string): NormalizedQuestion[] {
   return questions.map((q) => {
     let text = (q.text || "").trim();
     if (text) {
@@ -117,7 +134,7 @@ function normalizeQuestions(questions: any[], defaultCategory: string) {
     const shuffled = [...options].sort(() => Math.random() - 0.5);
     const newCorrectIndex = shuffled.indexOf(correctText);
 
-    return { ...q, text, category, options: shuffled, correct_option: newCorrectIndex };
+    return { ...q, text, category, options: shuffled, correct_option: newCorrectIndex, explanation: q.explanation || "" };
   });
 }
 
@@ -135,14 +152,14 @@ async function tryGemini(fullPrompt: string, attempt: number = 0): Promise<strin
     const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
     const result = await withTimeout(model.generateContent(fullPrompt), TIMEOUT_MS);
     return cleanJson(result.response.text());
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (attempt < MAX_RETRIES) {
       const delay = getRetryDelay(attempt);
       log.warn(`Gemini attempt ${attempt + 1} failed, retrying in ${delay}ms`);
       await sleep(delay);
       return tryGemini(fullPrompt, attempt + 1);
     }
-    throw error;
+    throw error instanceof Error ? error : new Error(String(error));
   }
 }
 
@@ -164,18 +181,18 @@ async function tryGroq(fullPrompt: string, attempt: number = 0): Promise<string>
 
     const text = response.choices[0]?.message?.content || "";
     return cleanJson(text);
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (attempt < MAX_RETRIES) {
       const delay = getRetryDelay(attempt);
       log.warn(`Groq attempt ${attempt + 1} failed, retrying in ${delay}ms`);
       await sleep(delay);
       return tryGroq(fullPrompt, attempt + 1);
     }
-    throw error;
+    throw error instanceof Error ? error : new Error(String(error));
   }
 }
 
-export async function generateQuestionsWithFallback(prompt: string, count: number = 5, ageRating: string = "adults", round: number = 1) {
+export async function generateQuestionsWithFallback(prompt: string, count: number = 5, ageRating: string = "adults", _round: number = 1) {
   // Cache disabled to prevent repeated questions across different game sessions
   // Performance is still good with retry + timeout
   const fullPrompt = buildPrompt(prompt, count, ageRating);
@@ -192,8 +209,8 @@ export async function generateQuestionsWithFallback(prompt: string, count: numbe
       const questions = JSON.parse(jsonStr);
       const normalized = normalizeQuestions(questions, prompt);
       return { questions: normalized, provider: provider.name };
-    } catch (error: any) {
-      lastError = error;
+    } catch (error: unknown) {
+      lastError = error instanceof Error ? error : new Error(String(error));
     }
   }
 

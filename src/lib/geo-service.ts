@@ -3,6 +3,11 @@ import { createContextLogger } from "@/lib/logger";
 
 const log = createContextLogger("geo-service");
 
+interface GeoQuestion {
+  country_code?: string;
+  age_rating?: number;
+}
+
 export async function getCountryCode() {
     try {
         const response = await fetch(GEO_SERVICE_URL);
@@ -14,9 +19,9 @@ export async function getCountryCode() {
     }
 }
 
-export function filterQuestions(questions: any[], country: string, age: number) {
+export function filterQuestions(questions: GeoQuestion[], country: string, age: number) {
     return questions.filter(q =>
         q.country_code === country &&
-        (age === 18 ? q.age_rating === 18 : q.age_rating <= age)
+        (age === 18 ? q.age_rating === 18 : (q.age_rating ?? 0) <= age)
     );
 }

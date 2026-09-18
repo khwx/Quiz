@@ -75157,5 +75157,39 @@
       "explanation": "Quanto é 30 - 16 = 14."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 48 ÷ 6?",
+    "options": [
+      "9",
+      "8",
+      "11",
+      "6"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 48 ÷ 6 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 83 + 71?",
+    "options": [
+      "154",
+      "158",
+      "155",
+      "150"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 83 + 71 = 154."
+    },
+    "image_url": null
   }
 ]

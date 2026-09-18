@@ -1,5 +1,14 @@
+interface CachedQuestion {
+  text: string;
+  options: string[];
+  correct_option: number;
+  category: string;
+  explanation: string;
+  image_url?: string;
+}
+
 type CachedQuestions = {
-  questions: any[];
+  questions: CachedQuestion[];
   provider: string;
   createdAt: number;
 };
@@ -22,7 +31,7 @@ function hashPrompt(prompt: string, count: number, ageRating: string, round: num
   return hash.toString(36);
 }
 
-export function getCachedQuestions(prompt: string, count: number, ageRating: string, round: number): { questions: any[]; provider: string } | null {
+export function getCachedQuestions(prompt: string, count: number, ageRating: string, round: number): { questions: CachedQuestion[]; provider: string } | null {
   const key = hashPrompt(prompt, count, ageRating, round);
   const cached = store[key];
 
@@ -36,7 +45,7 @@ export function getCachedQuestions(prompt: string, count: number, ageRating: str
   return { questions: cached.questions, provider: cached.provider };
 }
 
-export function setCachedQuestions(prompt: string, count: number, ageRating: string, round: number, questions: any[], provider: string): void {
+export function setCachedQuestions(prompt: string, count: number, ageRating: string, round: number, questions: CachedQuestion[], provider: string): void {
   const key = hashPrompt(prompt, count, ageRating, round);
   store[key] = { questions, provider, createdAt: Date.now() };
 }

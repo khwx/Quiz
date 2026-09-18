@@ -1,5 +1,14 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-09-18] Ciclo de Manutenção (74º ciclo, 8h) — Lint Fixes + Novas Perguntas + Dedupe Semanal
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3541 → 3543. Total na BD: 3545.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 0 grupos aproximados, 519 pares fuzzy (≥0.9) fora de BANDEIRAS. Total na BD: 3545.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **LINT FIXES**: Corrigidos 3 ficheiros — `ai-service-fallback.ts` (removed unused imports + any→interfaces + unused param), `cache.ts` (any→CachedQuestion interface), `geo-service.ts` (any→GeoQuestion interface). Erros reduzidos de 48→40.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` OK; `npm run lint` 40 erros (todos pré-existentes em outros ficheiros).
+
 ## [2026-09-18] Ciclo de Manutenção (73º ciclo, 8h) — Lint Fixes + Novas Perguntas + Dedupe Semanal
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3539 → 3541. Total na BD: 3541.
