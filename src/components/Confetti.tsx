@@ -18,6 +18,7 @@ interface Particle {
   color: string;
   velocityX: number;
   velocityY: number;
+  borderRadius: string;
 }
 
 export default function Confetti({
@@ -42,6 +43,7 @@ export default function Confetti({
       color: colors[Math.floor(Math.random() * colors.length)],
       velocityX: (Math.random() - 0.5) * 4,
       velocityY: Math.random() * 3 + 2,
+      borderRadius: Math.random() > 0.5 ? "50%" : "2px",
     }));
 
     setParticles(newParticles);
@@ -83,7 +85,7 @@ export default function Confetti({
                 width: 8,
                 height: 8,
                 backgroundColor: particle.color,
-                borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+                borderRadius: particle.borderRadius,
               }}
             />
           ))}

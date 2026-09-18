@@ -74,9 +74,10 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       }
       await joinGame(data.id, name);
       setHasJoined(true);
-    } catch (err: any) {
-      log.error("Erro ao entrar", { error: err.message || String(err) });
-      showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      log.error("Erro ao entrar", { error: errorMessage });
+      showToast("Erro ao entrar: " + (errorMessage || "Tenta novamente"), "error");
     } finally {
       setIsJoining(false);
     }
@@ -93,9 +94,10 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
        }
        await joinSpectator(data.id);
        setHasJoined(true);
-     } catch (err: any) {
-       log.error("Erro ao entrar como espectador", { error: err.message || String(err) });
-       showToast("Erro ao entrar: " + (err.message || "Tenta novamente"), "error");
+} catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : String(err);
+        log.error("Erro ao entrar como espectador", { error: errorMessage });
+        showToast("Erro ao entrar: " + (errorMessage || "Tenta novamente"), "error");
      } finally {
        setIsSpectatorJoining(false);
      }
@@ -169,8 +171,9 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
       setEliminatedOptions([]);
       setEarnedPoints(null);
       setStreak(0);
-    } catch (err: any) {
-      log.error("Error in fetchQuestion, using fallback", { error: err?.message || String(err) });
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      log.error("Error in fetchQuestion, using fallback", { error: errorMessage });
       // Guaranteed fallback so player never gets stuck on error screen
       setQuestionData({
         id: "fallback-question",
@@ -273,16 +276,18 @@ export default function MobilePlay({ searchParams }: { searchParams: Promise<{ p
               log.warn("Question ID not found in questions table", { questionId });
             }
           }
-        } catch (err: any) {
-          log.error("Polling sync failed", { error: err.message });
+        } catch (err: unknown) {
+          const errorMessage = err instanceof Error ? err.message : String(err);
+          log.error("Polling sync failed", { error: errorMessage });
         }
         try {
           const { data: playerData, error: playerError } = await supabase.from("players").select("*").eq("game_id", gameId);
           if (!playerError && playerData && playerData.length > 0) {
             setPlayers(playerData);
           }
-        } catch (err: any) {
-          log.error("Player polling sync failed", { error: err.message });
+        } catch (err: unknown) {
+          const errorMessage = err instanceof Error ? err.message : String(err);
+          log.error("Player polling sync failed", { error: errorMessage });
         }
       };
       syncGameState();

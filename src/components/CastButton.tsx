@@ -41,10 +41,10 @@ export default function CastButton() {
 
                 context.addEventListener(
                     window.cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
-                    (event: any) => {
-                        const sessionState = event.sessionState;
+                    (event: unknown) => {
+                        const sessionState = (event as { sessionState?: number }).sessionState;
                         const SESSION_STARTED = window.cast.framework.SessionState.SESSION_STARTED;
-                        setIsSessionConnected(sessionState === SESSION_STARTED);
+                        setIsSessionConnected(String(sessionState) === String(SESSION_STARTED));
                     }
                 );
             } catch (e) {
@@ -57,7 +57,7 @@ export default function CastButton() {
         if (isApiAvailable && window.cast && window.cast.framework) {
             window.cast.framework.CastContext.getInstance().requestSession()
                 .then(() => {})
-                .catch((err: any) => {
+                .catch((err: unknown) => {
                     if (err !== 'cancel') log.error("Session Request Failed", { error: String(err) });
                 });
         } else {
