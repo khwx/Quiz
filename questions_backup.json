@@ -75293,5 +75293,56 @@
       "explanation": "Quanto é 67 + 45 = 112."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 11 × 5?",
+    "options": [
+      "54",
+      "55",
+      "59",
+      "65"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 5 = 55."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 11 + 24?",
+    "options": [
+      "37",
+      "35",
+      "33",
+      "40"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 11 + 24 = 35."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 × 6?",
+    "options": [
+      "70",
+      "72",
+      "77",
+      "76"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 12 × 6 = 72."
+    },
+    "image_url": null
   }
 ]
