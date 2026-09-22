@@ -75395,5 +75395,56 @@
       "explanation": "Quanto é 55 - 2 = 53."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 93 - 28?",
+    "options": [
+      "72",
+      "60",
+      "58",
+      "65"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 93 - 28 = 65."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 11 + 89?",
+    "options": [
+      "102",
+      "99",
+      "90",
+      "100"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 11 + 89 = 100."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 29 - 9?",
+    "options": [
+      "22",
+      "18",
+      "16",
+      "20"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 29 - 9 = 20."
+    },
+    "image_url": null
   }
 ]
