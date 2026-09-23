@@ -75446,5 +75446,56 @@
       "explanation": "Quanto é 29 - 9 = 20."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 73 - 13?",
+    "options": [
+      "57",
+      "70",
+      "60",
+      "65"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 73 - 13 = 60."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 86 + 64?",
+    "options": [
+      "143",
+      "150",
+      "157",
+      "149"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 86 + 64 = 150."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 × 8?",
+    "options": [
+      "103",
+      "96",
+      "97",
+      "99"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 12 × 8 = 96."
+    },
+    "image_url": null
   }
 ]
