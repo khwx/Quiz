@@ -56,11 +56,7 @@ export default function HistoryPage() {
   const [history, setHistory] = useState<GameHistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadHistory();
-  }, [loadHistory]);
-
-  const loadHistory = async () => {
+  const loadHistory = useCallback(async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
@@ -135,7 +131,11 @@ export default function HistoryPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
+
+  useEffect(() => {
+    loadHistory();
+  }, [loadHistory]);
 
   const filtered = useMemo(() => {
     if (activeFilter === "Vitórias") return history.filter((item) => item.accuracy >= 80);

@@ -35,10 +35,12 @@ export default function HostPage() {
         if (gameSettings?.topic) {
             const cats = Array.isArray(gameSettings.topic) ? gameSettings.topic : [gameSettings.topic];
             setSelectedCategories(cats);
-        await supabase
-            .from("games")
-            .update({ settings: { ...gameSettings, topic: cats } })
-            .eq("id", gameId);
+            (async () => {
+                await supabase
+                    .from("games")
+                    .update({ settings: { ...gameSettings, topic: cats } })
+                    .eq("id", gameId);
+            })();
         }
     }, [gameSettings?.topic, gameSettings, gameId]);
 
