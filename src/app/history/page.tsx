@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, Rocket, FlaskConical, Brain, Globe, Palette, History } from "lucide-react";
+import { ChevronLeft, Rocket, FlaskConical, Brain, Globe, Palette, History, LucideIcon } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import MobileNav from "@/components/MobileNav";
 
@@ -14,11 +14,11 @@ interface GameHistoryItem {
   date: string;
   score: number;
   accuracy: number;
-  icon: any;
+  icon: LucideIcon;
   color: string;
 }
 
-const CATEGORY_ICONS: Record<string, { icon: any; color: string }> = {
+const CATEGORY_ICONS: Record<string, { icon: LucideIcon; color: string }> = {
   "CULTURA_GERAL": { icon: Globe, color: "#d0bcff" },
   "HISTÓRIA": { icon: History, color: "#FFD700" },
   "CIENCIA": { icon: FlaskConical, color: "#4CAF50" },
@@ -58,7 +58,7 @@ export default function HistoryPage() {
 
   useEffect(() => {
     loadHistory();
-  }, []);
+  }, [loadHistory]);
 
   const loadHistory = async () => {
     try {
@@ -188,7 +188,6 @@ export default function HistoryPage() {
         {/* History list */}
         <div className="space-y-3">
           {filtered.map((item, idx) => {
-            const catConfig = CATEGORY_ICONS[item.category] || CATEGORY_ICONS.default;
             const Icon = item.icon;
             return (
               <motion.div

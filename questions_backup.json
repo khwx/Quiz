@@ -75497,5 +75497,39 @@
       "explanation": "Quanto é 12 × 8 = 96."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 37 - 9?",
+    "options": [
+      "18",
+      "27",
+      "26",
+      "28"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 37 - 9 = 28."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 × 12?",
+    "options": [
+      "58",
+      "52",
+      "48",
+      "43"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 4 × 12 = 48."
+    },
+    "image_url": null
   }
 ]
