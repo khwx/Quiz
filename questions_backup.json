@@ -75531,5 +75531,39 @@
       "explanation": "Quanto é 4 × 12 = 48."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 121 ÷ 11?",
+    "options": [
+      "13",
+      "8",
+      "11",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 121 ÷ 11 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 12?",
+    "options": [
+      "87",
+      "77",
+      "89",
+      "84"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 12 = 84."
+    },
+    "image_url": null
   }
 ]
