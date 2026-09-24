@@ -35,8 +35,12 @@ export default function HostPage() {
         if (gameSettings?.topic) {
             const cats = Array.isArray(gameSettings.topic) ? gameSettings.topic : [gameSettings.topic];
             setSelectedCategories(cats);
+        await supabase
+            .from("games")
+            .update({ settings: { ...gameSettings, topic: cats } })
+            .eq("id", gameId);
         }
-    }, [gameSettings?.topic]);
+    }, [gameSettings?.topic, gameSettings, gameId]);
 
     useEffect(() => {
         if (!gameId) return;
@@ -57,7 +61,7 @@ export default function HostPage() {
             const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
             return () => clearInterval(interval);
         }
-    }, [status, gameId]);
+    }, [status, gameId, setPlayers]);
 
     const handleCreateGame = async () => {
         setLoading(true);
@@ -326,7 +330,12 @@ const getStatusLabel = () => {
                                     .from("profiles")
                                     .select("id")
                                     .eq("username", username)
-                                    .single();
+                                    .maybeSingle();
+
+                                if (!profile) {
+                                    alert("Utilizador não encontrado");
+                                    return;
+                                }
 
                                 if (!profile) {
                                     alert("Utilizador não encontrado");
