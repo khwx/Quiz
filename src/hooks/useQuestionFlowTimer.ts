@@ -82,7 +82,8 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
   useEffect(() => {
     if (status === GameStatus.QUESTION) {
-      setTimeUntilNext(20);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setTimeUntilNext((prev) => (prev === 20 ? prev : 20));
     }
   }, [status, currentQuestionIndex]);
 
@@ -98,7 +99,8 @@ export function useQuestionFlowTimer(timerDuration: number, currentQuestions: Qu
 
   useEffect(() => {
     if (status !== GameStatus.REVEAL) {
-      setTimeUntilNext(20);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setTimeUntilNext((prev) => (prev === 20 ? prev : 20));
       return;
     }
 

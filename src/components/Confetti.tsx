@@ -30,7 +30,8 @@ export default function Confetti({
 
   useEffect(() => {
     if (!active) {
-      setParticles([]);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setParticles((prev) => (prev.length === 0 ? prev : []));
       return;
     }
 

@@ -24,7 +24,8 @@ export default function Onboarding({ steps, onComplete, storageKey = "onboarding
   useEffect(() => {
     const completed = localStorage.getItem(storageKey);
     if (!completed) {
-      setIsVisible(true);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsVisible((prev) => prev || true);
     }
   }, [storageKey]);
 
