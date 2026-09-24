@@ -75497,5 +75497,56 @@
       "explanation": "Quanto é 12 × 8 = 96."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 80 - 41?",
+    "options": [
+      "49",
+      "39",
+      "38",
+      "32"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 80 - 41 = 39."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 28 ÷ 4?",
+    "options": [
+      "7",
+      "0",
+      "9",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 28 ÷ 4 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50 - 28?",
+    "options": [
+      "22",
+      "24",
+      "15",
+      "26"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 50 - 28 = 22."
+    },
+    "image_url": null
   }
 ]
