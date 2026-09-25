@@ -75565,5 +75565,56 @@
       "explanation": "Quanto é 7 × 12 = 84."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 51 - 15?",
+    "options": [
+      "26",
+      "40",
+      "36",
+      "33"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 51 - 15 = 36."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 + 40?",
+    "options": [
+      "64",
+      "74",
+      "59",
+      "63"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 24 + 40 = 64."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 82 - 82?",
+    "options": [
+      "2",
+      "3",
+      "0",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 82 - 82 = 0."
+    },
+    "image_url": null
   }
 ]
