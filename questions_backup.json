@@ -75616,5 +75616,56 @@
       "explanation": "Quanto é 82 - 82 = 0."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 56 - 26?",
+    "options": [
+      "35",
+      "29",
+      "37",
+      "30"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 56 - 26 = 30."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 92 + 2?",
+    "options": [
+      "101",
+      "89",
+      "93",
+      "94"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 92 + 2 = 94."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 ÷ 3?",
+    "options": [
+      "12",
+      "8",
+      "6",
+      "13"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 24 ÷ 3 = 8."
+    },
+    "image_url": null
   }
 ]
