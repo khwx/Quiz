@@ -75667,5 +75667,56 @@
       "explanation": "Quanto é 24 ÷ 3 = 8."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 48 - 9?",
+    "options": [
+      "34",
+      "41",
+      "43",
+      "39"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 48 - 9 = 39."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 21 + 92?",
+    "options": [
+      "112",
+      "111",
+      "113",
+      "106"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 21 + 92 = 113."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 88 ÷ 8?",
+    "options": [
+      "12",
+      "11",
+      "9",
+      "6"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 88 ÷ 8 = 11."
+    },
+    "image_url": null
   }
 ]
