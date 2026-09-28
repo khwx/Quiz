@@ -75718,5 +75718,56 @@
       "explanation": "Quanto é 88 ÷ 8 = 11."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 30 ÷ 5?",
+    "options": [
+      "16",
+      "5",
+      "13",
+      "6"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 30 ÷ 5 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 2?",
+    "options": [
+      "19",
+      "12",
+      "15",
+      "14"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 2 = 14."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 19 + 29?",
+    "options": [
+      "53",
+      "48",
+      "58",
+      "51"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 19 + 29 = 48."
+    },
+    "image_url": null
   }
 ]
