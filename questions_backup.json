@@ -75769,5 +75769,56 @@
       "explanation": "Quanto é 19 + 29 = 48."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 46 + 58?",
+    "options": [
+      "104",
+      "101",
+      "114",
+      "106"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 46 + 58 = 104."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 40 ÷ 4?",
+    "options": [
+      "12",
+      "17",
+      "10",
+      "3"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 40 ÷ 4 = 10."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 56?",
+    "options": [
+      "31",
+      "22",
+      "29",
+      "26"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 56 = 29."
+    },
+    "image_url": null
   }
 ]
