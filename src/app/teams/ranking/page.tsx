@@ -26,7 +26,7 @@ export default function TeamsRankingPage() {
 
         if (error) throw error;
         setTeams((data || []) as TeamWithMembers[]);
-      } catch (err: any) {
+      } catch (err: unknown) {
         showToast("Erro ao carregar ranking de equipas.", "error");
       } finally {
         setLoading(false);

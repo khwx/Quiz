@@ -269,8 +269,9 @@ export default function TournamentsPage() {
         .filter(Boolean) as Team[];
       setMyTeams(teams);
       if (teams.length === 1) setSelectedTeamId(teams[0].id);
-    } catch (err: any) {
-      log.error("Erro ao carregar equipas", { error: err.message || String(err) });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      log.error("Erro ao carregar equipas", { error: message });
     }
   };
 
@@ -285,8 +286,9 @@ export default function TournamentsPage() {
       const allData = (data || []) as TournamentWithTeams[];
       setTournaments(allData);
       return allData;
-    } catch (err: any) {
-      log.error("Erro ao carregar torneios", { error: err.message || String(err) });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      log.error("Erro ao carregar torneios", { error: message });
       setError("Erro ao carregar torneios");
       return null;
     }
@@ -356,8 +358,9 @@ export default function TournamentsPage() {
       }
 
       await loadTournaments();
-    } catch (err: any) {
-      setError(err.message || "Erro ao criar torneo");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || "Erro ao criar torneo");
     } finally {
       setSaving(false);
     }

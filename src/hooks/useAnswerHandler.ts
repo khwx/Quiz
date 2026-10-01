@@ -45,7 +45,8 @@ export function useAnswerHandler(playerName: string) {
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || "Falha ao enviar resposta");
         return true;
-      } catch (err: any) {
+      } catch (err: unknown) {
+        console.error("Error submitting answer:", err);
         setHasAnswered(false);
         setSelectedOption(null);
         return false;

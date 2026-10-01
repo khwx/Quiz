@@ -93,8 +93,9 @@ export default function TeamsPage() {
         );
         setMyTeam(my || null);
       }
-    } catch (err: any) {
-      log.error("Erro ao carregar equipas", { error: err.message || String(err) });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      log.error("Erro ao carregar equipas", { error: message });
       setError("Erro ao carregar equipas");
     }
   };
@@ -137,8 +138,9 @@ export default function TeamsPage() {
       setTeamName("");
       setCreateMode(false);
       await loadTeams(user.id);
-    } catch (err: any) {
-      setError(err.message || "Erro ao criar equipa");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || "Erro ao criar equipa");
     } finally {
       setSaving(false);
     }
@@ -190,8 +192,9 @@ export default function TeamsPage() {
       setTeamPin("");
       setJoinMode(false);
       await loadTeams(user.id);
-    } catch (err: any) {
-      setError(err.message || "Erro ao entrar na equipa");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || "Erro ao entrar na equipa");
     } finally {
       setSaving(false);
     }
