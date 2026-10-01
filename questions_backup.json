@@ -75922,5 +75922,39 @@
       "explanation": "Quanto é 27 ÷ 3 = 9."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 69 + 19?",
+    "options": [
+      "92",
+      "98",
+      "88",
+      "83"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 69 + 19 = 88."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 elevado a 3?",
+    "options": [
+      "27",
+      "17",
+      "26",
+      "22"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Potência.",
+      "explanation": "Quanto é 3 elevado a 3 = 27."
+    },
+    "image_url": null
   }
 ]
