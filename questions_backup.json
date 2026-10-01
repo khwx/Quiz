@@ -75990,5 +75990,39 @@
       "explanation": "Quanto é 84 ÷ 7 = 12."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 54 ÷ 9?",
+    "options": [
+      "2",
+      "6",
+      "13",
+      "3"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 54 ÷ 9 = 6."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 ÷ 2?",
+    "options": [
+      "6",
+      "9",
+      "7",
+      "8"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 12 ÷ 2 = 6."
+    },
+    "image_url": null
   }
 ]
