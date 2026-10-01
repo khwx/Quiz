@@ -68,7 +68,8 @@ export async function POST(req: NextRequest) {
     await supabase.from("profiles").update({ xp: newXp }).eq("id", userId);
 
     return NextResponse.json({ success: true, newXp });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error) {
+    const err = error as Error;
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }

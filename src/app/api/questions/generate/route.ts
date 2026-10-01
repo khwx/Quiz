@@ -6,6 +6,12 @@ import { createContextLogger } from "@/lib/logger";
 
 const log = createContextLogger("API/questions/generate");
 
+interface GeneratePayload {
+  prompt: string;
+  count?: number;
+  ageRating?: string;
+}
+
 export async function POST(req: NextRequest) {
   const rateLimitKey = getRateLimitKey(req, "generate");
   const rateLimitResult = rateLimit(rateLimitKey);
@@ -17,21 +23,27 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  let payload: any = null;
+  let payload: GeneratePayload | null = null;
   try {
     payload = await req.json();
-    const validationErrors = validateGeneratePayload(payload);
+    const validationErrors = validateGeneratePayloadSafe(payload);
 
     if (validationErrors.length > 0) {
       return NextResponse.json({ error: "Validação falhou", details: validationErrors }, { status: 400 });
     }
 
-    const { prompt, count = 5, ageRating = "adults" } = payload;
+    const { prompt, count = 5, ageRating = "adults" } = payload as GeneratePayload;
     const { questions, provider } = await generateQuestionsWithFallback(prompt, count, ageRating);
 
     return NextResponse.json({ questions, provider });
-  } catch (error: any) {
-    log.error("Error generating questions", { prompt: payload?.prompt }, error);
-    return NextResponse.json({ error: "Falha ao gerar perguntas", details: error.message }, { status: 500 });
+  } catch (error) {
+    const err = error as Error;
+    log.error("Error generating questions", { prompt: payload?.prompt }, err);
+    return NextResponse.json({ error: "Falha ao gerar perguntas", details: err.message }, { status: 500 });
   }
+}
+
+function validateGeneratePayloadSafe(payload: GeneratePayload | null): string[] {
+  if (!payload) return ["Payload é obrigatório"];
+  return validateGeneratePayload(payload as unknown as Record<string, unknown>);
 }

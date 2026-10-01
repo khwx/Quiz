@@ -24,12 +24,18 @@ interface Friend {
   };
 }
 
+interface SearchResult {
+  id: string;
+  username: string;
+  avatar: string | null;
+}
+
 export default function FriendsPage() {
   const router = useRouter();
   const { toasts, show } = useToast();
   const [friends, setFriends] = useState<Friend[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState<string | null>(null);
 
