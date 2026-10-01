@@ -75956,5 +75956,39 @@
       "explanation": "Quanto é 3 elevado a 3 = 27."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 97 + 31?",
+    "options": [
+      "133",
+      "130",
+      "118",
+      "128"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 97 + 31 = 128."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 84 ÷ 7?",
+    "options": [
+      "7",
+      "12",
+      "17",
+      "19"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 84 ÷ 7 = 12."
+    },
+    "image_url": null
   }
 ]
