@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
 import { Trash2, Database, Filter, Search, AlertTriangle, Shield, ShieldCheck, Users, Plus, Edit2, X, Save } from "lucide-react";
 import { motion } from "framer-motion";
@@ -148,11 +148,7 @@ export default function AdminPage() {
     const [currentPage, setCurrentPage] = useState(1);
     const PAGE_SIZE = 50;
 
-    useEffect(() => {
-        checkAuth();
-    }, []);
-
-    const checkAuth = async () => {
+    const checkAuth = useCallback(async () => {
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) {
             router.push("/login");
@@ -182,7 +178,11 @@ export default function AdminPage() {
         setIsAuthenticated(true);
         loadData();
         loadAdminUsers();
-    };
+    }, []);
+
+    useEffect(() => {
+        checkAuth();
+    }, [checkAuth]);
 
     const loadAdminUsers = async () => {
         const { data } = await supabase
@@ -216,7 +216,7 @@ export default function AdminPage() {
             setNewAdminEmail("");
             setShowAddAdmin(false);
             loadAdminUsers();
-        } catch (error) {
+        } catch (_error) {
             showToast("Erro ao adicionar admin", "error");
         }
     };
@@ -478,7 +478,7 @@ export default function AdminPage() {
             resetForm();
             setShowCreateForm(false);
             loadData();
-        } catch (err) {
+        } catch (_err) {
             showToast("Erro ao guardar.", "error");
         } finally {
             setSaving(false);

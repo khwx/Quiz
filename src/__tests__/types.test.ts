@@ -2,17 +2,6 @@ import { describe, it, expect } from 'vitest';
 import type {
   Game,
   Player,
-  Question,
-  Answer,
-  Team,
-  TeamMember,
-  Tournament,
-  TournamentTeam,
-  Profile,
-  GameSettings,
-  TournamentSettings,
-  PlayerStats,
-  AnswerSummary,
   TeamWithMembers,
   TournamentWithTeams,
 } from '@/types';

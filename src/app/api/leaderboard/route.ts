@@ -7,13 +7,13 @@ export async function GET() {
     const { data: { user } } = await supabase.auth.getUser();
 
     // Get all players with their profiles, ordered by score
-    const { data: players, error } = await supabase
+    const { data: players, error: _error } = await supabase
       .from("players")
       .select("id, user_id, score, name, avatar")
       .order("score", { ascending: false })
       .limit(50);
 
-    if (error) throw error;
+    if (_error) throw _error;
 
     // Deduplicate by user_id, keeping highest score
     const seen = new Map<string, typeof players[0]>();
