@@ -12,8 +12,8 @@ export default function SoundEnableButton() {
     useEffect(() => {
         const wasEnabled = sessionStorage.getItem("soundEnabled") === "true";
         if (wasEnabled) {
-            setSoundEnabled(true);
-            setShow(false);
+            setTimeout(() => setSoundEnabled(true), 0);
+            setTimeout(() => setShow(false), 0);
         }
     }, []);
 

@@ -34,7 +34,7 @@ export default function HostPage() {
     useEffect(() => {
         if (gameSettings?.topic) {
             const cats = Array.isArray(gameSettings.topic) ? gameSettings.topic : [gameSettings.topic];
-            setSelectedCategories(cats);
+            setTimeout(() => setSelectedCategories(cats), 0);
             (async () => {
                 await supabase
                     .from("games")
@@ -48,7 +48,7 @@ export default function HostPage() {
         if (!gameId) return;
         const fetchPin = async () => {
             const { data } = await supabase.from("games").select("pin").eq("id", gameId).single();
-            if (data?.pin) setGamePin(data.pin);
+            if (data?.pin) setTimeout(() => setGamePin(data.pin), 0);
         };
         fetchPin();
     }, [gameId]);
@@ -57,7 +57,7 @@ export default function HostPage() {
         if ((status === GameStatus.LOBBY || status === GameStatus.STARTING) && gameId) {
             const syncPlayers = async () => {
                 const { data } = await supabase.from("players").select("*").eq("game_id", gameId);
-                if (data) setPlayers(data);
+                if (data) setTimeout(() => setPlayers(data), 0);
             };
             syncPlayers();
             const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);

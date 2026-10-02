@@ -69,18 +69,22 @@ export default function TVHost() {
   const [publicPollActive, setPublicPollActive] = useState(false);
 
   useEffect(() => {
-    if (gameSettings?.buzzer_mode !== undefined) {
-      setBuzzerMode(gameSettings.buzzer_mode);
+    const buzzerMode = gameSettings?.buzzer_mode;
+    const hotseatMode = gameSettings?.hotseat_mode;
+    const hotseatPlayers = gameSettings?.hotseat_players;
+    
+    if (buzzerMode !== undefined) {
+      setTimeout(() => setBuzzerMode(buzzerMode), 0);
     }
-    if (gameSettings?.hotseat_mode !== undefined) {
-      setHotseatMode(gameSettings.hotseat_mode);
-      setHotseatPlayers(gameSettings.hotseat_players || []);
+    if (hotseatMode !== undefined) {
+      setTimeout(() => setHotseatMode(hotseatMode), 0);
+      setTimeout(() => setHotseatPlayers(hotseatPlayers || []), 0);
     }
   }, [gameSettings?.buzzer_mode, gameSettings?.hotseat_mode, gameSettings?.hotseat_players]);
 
   useEffect(() => {
     if (status !== GameStatus.QUESTION && status !== GameStatus.REVEAL) {
-      setPublicPollActive(false);
+      setTimeout(() => setPublicPollActive(false), 0);
     }
   }, [status]);
 
@@ -227,8 +231,8 @@ export default function TVHost() {
 
   useEffect(() => {
     if (status === GameStatus.REVEAL) {
-      setRevealStartTime(Date.now());
-      setCanAdvanceFromReveal(false);
+      setTimeout(() => setRevealStartTime(Date.now()), 0);
+      setTimeout(() => setCanAdvanceFromReveal(false), 0);
       const timer = setTimeout(() => setCanAdvanceFromReveal(true), GAME_CONSTANTS.AUTO_SKIP_DELAY);
       return () => clearTimeout(timer);
     }
@@ -240,7 +244,7 @@ export default function TVHost() {
       if (gameId) {
         const syncPlayers = async () => {
           const { data } = await supabase.from("players").select("*").eq("game_id", gameId);
-          if (data) setPlayers(data);
+          if (data) setTimeout(() => setPlayers(data), 0);
         };
         syncPlayers();
         const timeout = setTimeout(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
@@ -254,7 +258,7 @@ export default function TVHost() {
     if ((status === GameStatus.LOBBY || status === GameStatus.STARTING) && gameId) {
       const syncPlayers = async () => {
         const { data } = await supabase.from("players").select("*").eq("game_id", gameId);
-        if (data) setPlayers(data);
+        if (data) setTimeout(() => setPlayers(data), 0);
       };
       syncPlayers();
       const interval = setInterval(syncPlayers, GAME_CONSTANTS.PLAYER_SYNC_DELAY_MS);
