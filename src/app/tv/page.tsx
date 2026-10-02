@@ -268,7 +268,7 @@ export default function TVHost() {
 
   const handleLocalAnswer = useCallback(
     (optionIndex: number) => {
-if (status !== GameStatus.QUESTION) return;
+      if (status !== GameStatus.QUESTION) return;
       const currentQ = currentQuestions[currentQuestionIndex - 1];
       if (!currentQ) return;
 
@@ -311,7 +311,7 @@ if (status !== GameStatus.QUESTION) return;
       }
       updateStatus(GameStatus.REVEAL);
     },
-    [status, currentQuestions, currentQuestionIndex, localScore, questionCount, timeLeft, timerDuration, localLives, playSound, updateStatus, setLocalLives, showToast, hotseatMode, hotseatPlayers, currentHotseatIndex, triggerReveal]
+    [status, currentQuestions, currentQuestionIndex, localScore, questionCount, timeLeft, timerDuration, localLives, playSound, updateStatus, setLocalLives, setLocalScore, showToast, hotseatMode, hotseatPlayers, currentHotseatIndex, triggerReveal]
   );
 
   const handleReportQuestion = useCallback(

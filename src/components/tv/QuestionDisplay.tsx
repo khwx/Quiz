@@ -64,7 +64,7 @@ export default function QuestionDisplay({
 
   useEffect(() => {
     stopSpeaking();
-    setIsReading(false);
+    setTimeout(() => setIsReading(false), 0);
   }, [question.text]);
 
   const getInitials = (name: string) => {
