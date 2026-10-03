@@ -76143,5 +76143,39 @@
       "explanation": "Quanto é 88 - 61 = 27."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 98 - 74?",
+    "options": [
+      "17",
+      "19",
+      "24",
+      "31"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 98 - 74 = 24."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 17 - 4?",
+    "options": [
+      "13",
+      "8",
+      "6",
+      "14"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 17 - 4 = 13."
+    },
+    "image_url": null
   }
 ]

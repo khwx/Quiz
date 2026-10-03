@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-10-03] Ciclo de Manutenção (75º ciclo, 8h) — Novas Perguntas + Dedupe Semanal
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3599 → 3601. Total na BD: 3608.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 30 grupos aproximados, 650 pares fuzzy (≥0.9) fora de BANDEIRAS, 1820 pares de famílias de template ignorados. Total na BD: 3608.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` OK; `npm run lint` apenas warnings (pré-existentes).
+
 ## [2026-09-18] Ciclo de Manutenção (74º ciclo, 8h) — Lint Fixes + Novas Perguntas + Dedupe Semanal
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3541 → 3543. Total na BD: 3545.
