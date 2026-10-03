@@ -76211,5 +76211,39 @@
       "explanation": "Quanto é 5 × 4 = 20."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 63?",
+    "options": [
+      "108",
+      "112",
+      "107",
+      "104"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 63 = 107."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 62 + 5?",
+    "options": [
+      "72",
+      "67",
+      "69",
+      "64"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 62 + 5 = 67."
+    },
+    "image_url": null
   }
 ]
