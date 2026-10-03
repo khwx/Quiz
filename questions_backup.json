@@ -76279,5 +76279,39 @@
       "explanation": "Quanto é 70 - 67 = 3."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 12 - 8?",
+    "options": [
+      "5",
+      "14",
+      "6",
+      "4"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 12 - 8 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 66 ÷ 6?",
+    "options": [
+      "12",
+      "11",
+      "10",
+      "18"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 66 ÷ 6 = 11."
+    },
+    "image_url": null
   }
 ]
