@@ -76636,5 +76636,39 @@
       "explanation": "Quanto é 24 + 42 = 66."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 77?",
+    "options": [
+      "123",
+      "121",
+      "117",
+      "126"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 77 = 121."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 23 - 16?",
+    "options": [
+      "12",
+      "3",
+      "4",
+      "7"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 23 - 16 = 7."
+    },
+    "image_url": null
   }
 ]
