@@ -76483,5 +76483,39 @@
       "explanation": "Quanto é 37 - 7 = 30."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 20 ÷ 2?",
+    "options": [
+      "7",
+      "5",
+      "10",
+      "9"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 20 ÷ 2 = 10."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 90 + 23?",
+    "options": [
+      "118",
+      "109",
+      "113",
+      "123"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 90 + 23 = 113."
+    },
+    "image_url": null
   }
 ]
