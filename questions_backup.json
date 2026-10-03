@@ -76245,5 +76245,39 @@
       "explanation": "Quanto é 62 + 5 = 67."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 21 - 13?",
+    "options": [
+      "7",
+      "8",
+      "5",
+      "18"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 21 - 13 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 70 - 67?",
+    "options": [
+      "7",
+      "5",
+      "3",
+      "13"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 70 - 67 = 3."
+    },
+    "image_url": null
   }
 ]
