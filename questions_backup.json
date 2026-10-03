@@ -76942,5 +76942,39 @@
       "explanation": "Quanto é 85 - 63 = 22."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 28 - 11?",
+    "options": [
+      "22",
+      "15",
+      "17",
+      "24"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 28 - 11 = 17."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 28?",
+    "options": [
+      "69",
+      "82",
+      "72",
+      "70"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 28 = 72."
+    },
+    "image_url": null
   }
 ]
