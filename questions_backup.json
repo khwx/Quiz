@@ -76670,5 +76670,39 @@
       "explanation": "Quanto é 23 - 16 = 7."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 3 + 81?",
+    "options": [
+      "82",
+      "74",
+      "88",
+      "84"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 3 + 81 = 84."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 28?",
+    "options": [
+      "33",
+      "30",
+      "37",
+      "28"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 28 = 33."
+    },
+    "image_url": null
   }
 ]
