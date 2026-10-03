@@ -76415,5 +76415,39 @@
       "explanation": "Quanto é 9 × 10 = 90."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 50% de 200?",
+    "options": [
+      "95",
+      "107",
+      "96",
+      "100"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Percentagem.",
+      "explanation": "Quanto é 50% de 200 = 100."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 72 + 24?",
+    "options": [
+      "97",
+      "103",
+      "89",
+      "96"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 72 + 24 = 96."
+    },
+    "image_url": null
   }
 ]
