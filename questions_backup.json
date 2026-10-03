@@ -76177,5 +76177,39 @@
       "explanation": "Quanto é 17 - 4 = 13."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 31 - 24?",
+    "options": [
+      "12",
+      "17",
+      "0",
+      "7"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 31 - 24 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 4?",
+    "options": [
+      "20",
+      "10",
+      "23",
+      "21"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 4 = 20."
+    },
+    "image_url": null
   }
 ]
