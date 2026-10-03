@@ -76109,5 +76109,39 @@
       "explanation": "Quanto é 17 - 16 = 1."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 78 - 74?",
+    "options": [
+      "4",
+      "11",
+      "8",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 78 - 74 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 88 - 61?",
+    "options": [
+      "24",
+      "23",
+      "30",
+      "27"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 88 - 61 = 27."
+    },
+    "image_url": null
   }
 ]
