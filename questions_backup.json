@@ -76840,5 +76840,39 @@
       "explanation": "Quanto é 110 ÷ 11 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 66 - 23?",
+    "options": [
+      "43",
+      "46",
+      "44",
+      "40"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 66 - 23 = 43."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 - 24?",
+    "options": [
+      "57",
+      "51",
+      "50",
+      "47"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 71 - 24 = 47."
+    },
+    "image_url": null
   }
 ]
