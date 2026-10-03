@@ -76602,5 +76602,39 @@
       "explanation": "Quanto é 8 × 12 = 96."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 93 + 49?",
+    "options": [
+      "142",
+      "137",
+      "140",
+      "146"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 93 + 49 = 142."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 + 42?",
+    "options": [
+      "65",
+      "56",
+      "66",
+      "59"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 24 + 42 = 66."
+    },
+    "image_url": null
   }
 ]
