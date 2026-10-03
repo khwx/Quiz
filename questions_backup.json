@@ -76568,5 +76568,39 @@
       "explanation": "Quanto é 20 ÷ 5 = 4."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 5?",
+    "options": [
+      "55",
+      "52",
+      "43",
+      "50"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 5 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 × 12?",
+    "options": [
+      "96",
+      "97",
+      "101",
+      "93"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 12 = 96."
+    },
+    "image_url": null
   }
 ]
