@@ -76772,5 +76772,39 @@
       "explanation": "Quanto é 53 - 42 = 11."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 12 × 9?",
+    "options": [
+      "108",
+      "107",
+      "112",
+      "110"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 12 × 9 = 108."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 51 - 38?",
+    "options": [
+      "12",
+      "3",
+      "13",
+      "9"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 51 - 38 = 13."
+    },
+    "image_url": null
   }
 ]
