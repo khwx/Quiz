@@ -76908,5 +76908,39 @@
       "explanation": "Quanto é 18 - 17 = 1."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 59 + 53?",
+    "options": [
+      "112",
+      "107",
+      "119",
+      "102"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 59 + 53 = 112."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 63?",
+    "options": [
+      "23",
+      "17",
+      "22",
+      "29"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 63 = 22."
+    },
+    "image_url": null
   }
 ]
