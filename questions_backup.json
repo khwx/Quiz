@@ -77248,5 +77248,39 @@
       "explanation": "Quanto é 88 ÷ 11 = 8."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 48 + 43?",
+    "options": [
+      "88",
+      "98",
+      "94",
+      "91"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 48 + 43 = 91."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 63 - 27?",
+    "options": [
+      "32",
+      "29",
+      "36",
+      "35"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 63 - 27 = 36."
+    },
+    "image_url": null
   }
 ]
