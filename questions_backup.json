@@ -77316,5 +77316,39 @@
       "explanation": "Quanto é 14 + 7 = 21."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 62 - 18?",
+    "options": [
+      "34",
+      "44",
+      "37",
+      "43"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 62 - 18 = 44."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 ÷ 2?",
+    "options": [
+      "2",
+      "0",
+      "6",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 4 ÷ 2 = 2."
+    },
+    "image_url": null
   }
 ]
