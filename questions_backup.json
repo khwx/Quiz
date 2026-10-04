@@ -77386,6 +77386,40 @@
     "image_url": null
   },
   {
+    "text": "Quanto é 2 + 71?",
+    "options": [
+      "73",
+      "71",
+      "78",
+      "72"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 2 + 71 = 73."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 26?",
+    "options": [
+      "94",
+      "92",
+      "97",
+      "99"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 26 = 97."
+    },
+    "image_url": null
+  },
+  {
     "text": "Quanto é 26 + 50?",
     "options": [
       "71",
