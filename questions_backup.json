@@ -77146,5 +77146,39 @@
       "explanation": "Quanto é 12 ÷ 3 = 4."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 76 - 21?",
+    "options": [
+      "57",
+      "56",
+      "55",
+      "54"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 76 - 21 = 55."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 44 ÷ 4?",
+    "options": [
+      "11",
+      "9",
+      "21",
+      "1"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 44 ÷ 4 = 11."
+    },
+    "image_url": null
   }
 ]
