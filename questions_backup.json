@@ -77571,5 +77571,39 @@
       "explanation": "Quanto é 35 - 6 = 29."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 11?",
+    "options": [
+      "96",
+      "95",
+      "104",
+      "99"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 11 = 99."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 70 ÷ 7?",
+    "options": [
+      "14",
+      "0",
+      "10",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 70 ÷ 7 = 10."
+    },
+    "image_url": null
   }
 ]
