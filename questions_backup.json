@@ -77537,5 +77537,39 @@
       "explanation": "Quanto é 20 ÷ 10 = 2."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 45 - 43?",
+    "options": [
+      "0",
+      "9",
+      "2",
+      "1"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 45 - 43 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 35 - 6?",
+    "options": [
+      "29",
+      "30",
+      "26",
+      "24"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 35 - 6 = 29."
+    },
+    "image_url": null
   }
 ]
