@@ -77010,5 +77010,39 @@
       "explanation": "Quanto é 2 + 3 = 5."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 62 + 36?",
+    "options": [
+      "95",
+      "98",
+      "93",
+      "101"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 62 + 36 = 98."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 36 ÷ 3?",
+    "options": [
+      "13",
+      "19",
+      "7",
+      "12"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 36 ÷ 3 = 12."
+    },
+    "image_url": null
   }
 ]
