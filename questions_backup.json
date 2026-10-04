@@ -77469,5 +77469,39 @@
       "explanation": "Quanto é 87 - 82 = 5."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 12?",
+    "options": [
+      "49",
+      "56",
+      "53",
+      "52"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 12 = 56."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 89 + 69?",
+    "options": [
+      "156",
+      "161",
+      "163",
+      "158"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 89 + 69 = 158."
+    },
+    "image_url": null
   }
 ]
