@@ -77384,5 +77384,56 @@
       "explanation": "Quanto é 6 × 8 = 48."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 26 + 50?",
+    "options": [
+      "71",
+      "76",
+      "75",
+      "81"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 26 + 50 = 76."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 65 + 99?",
+    "options": [
+      "163",
+      "166",
+      "167",
+      "164"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 65 + 99 = 164."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 87 - 82?",
+    "options": [
+      "5",
+      "1",
+      "15",
+      "8"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 87 - 82 = 5."
+    },
+    "image_url": null
   }
 ]
