@@ -78234,5 +78234,39 @@
       "explanation": "Quanto é 49 - 22 = 27."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 63 + 19?",
+    "options": [
+      "82",
+      "75",
+      "85",
+      "77"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 63 + 19 = 82."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 79 - 27?",
+    "options": [
+      "57",
+      "52",
+      "51",
+      "56"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 79 - 27 = 52."
+    },
+    "image_url": null
   }
 ]
