@@ -77843,5 +77843,39 @@
       "explanation": "Quanto é 5 × 5 = 25."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 41?",
+    "options": [
+      "105",
+      "109",
+      "112",
+      "119"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 41 = 112."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 ÷ 2?",
+    "options": [
+      "2",
+      "9",
+      "5",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 10 ÷ 2 = 5."
+    },
+    "image_url": null
   }
 ]
