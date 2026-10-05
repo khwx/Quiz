@@ -77775,5 +77775,39 @@
       "explanation": "Quanto é 18 ÷ 2 = 9."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 17 - 13?",
+    "options": [
+      "11",
+      "9",
+      "4",
+      "1"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 17 - 13 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 60 + 53?",
+    "options": [
+      "113",
+      "118",
+      "115",
+      "112"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 60 + 53 = 113."
+    },
+    "image_url": null
   }
 ]
