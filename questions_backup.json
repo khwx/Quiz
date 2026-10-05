@@ -78336,5 +78336,39 @@
       "explanation": "Quanto é 64 - 29 = 35."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 94 - 40?",
+    "options": [
+      "53",
+      "51",
+      "50",
+      "54"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 94 - 40 = 54."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 62 - 30?",
+    "options": [
+      "35",
+      "32",
+      "30",
+      "25"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 62 - 30 = 32."
+    },
+    "image_url": null
   }
 ]
