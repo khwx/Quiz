@@ -78064,5 +78064,39 @@
       "explanation": "Quanto é 94 - 19 = 75."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 8?",
+    "options": [
+      "70",
+      "77",
+      "80",
+      "76"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 8 = 80."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 22 - 17?",
+    "options": [
+      "12",
+      "15",
+      "5",
+      "7"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 22 - 17 = 5."
+    },
+    "image_url": null
   }
 ]
