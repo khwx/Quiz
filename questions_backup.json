@@ -78404,5 +78404,39 @@
       "explanation": "Quanto é 61 - 55 = 6."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 53 - 14?",
+    "options": [
+      "29",
+      "34",
+      "46",
+      "39"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 53 - 14 = 39."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 38 + 2?",
+    "options": [
+      "40",
+      "45",
+      "38",
+      "43"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 38 + 2 = 40."
+    },
+    "image_url": null
   }
 ]
