@@ -78268,5 +78268,39 @@
       "explanation": "Quanto é 79 - 27 = 52."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 47 + 52?",
+    "options": [
+      "99",
+      "96",
+      "97",
+      "104"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 47 + 52 = 99."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 63 + 63?",
+    "options": [
+      "129",
+      "131",
+      "126",
+      "125"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 63 + 63 = 126."
+    },
+    "image_url": null
   }
 ]
