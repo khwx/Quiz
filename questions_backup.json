@@ -77809,5 +77809,39 @@
       "explanation": "Quanto é 60 + 53 = 113."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 80 ÷ 8?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 80 ÷ 8 = 10."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 5?",
+    "options": [
+      "30",
+      "25",
+      "29",
+      "20"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 5 = 25."
+    },
+    "image_url": null
   }
 ]
