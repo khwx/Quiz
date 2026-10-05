@@ -77707,5 +77707,39 @@
       "explanation": "Quanto é 10 - 9 = 1."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 4?",
+    "options": [
+      "34",
+      "32",
+      "36",
+      "37"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 4 = 36."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 49 - 21?",
+    "options": [
+      "35",
+      "38",
+      "28",
+      "24"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 49 - 21 = 28."
+    },
+    "image_url": null
   }
 ]
