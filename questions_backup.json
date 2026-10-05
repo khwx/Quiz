@@ -78013,5 +78013,56 @@
       "explanation": "Quanto é 69 + 30 = 99."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 88 + 75?",
+    "options": [
+      "170",
+      "163",
+      "153",
+      "161"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 88 + 75 = 163."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 ÷ 6?",
+    "options": [
+      "0",
+      "4",
+      "11",
+      "5"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 24 ÷ 6 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 94 - 19?",
+    "options": [
+      "75",
+      "77",
+      "79",
+      "85"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 94 - 19 = 75."
+    },
+    "image_url": null
   }
 ]
