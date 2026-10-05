@@ -77605,5 +77605,39 @@
       "explanation": "Quanto é 70 ÷ 7 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 8 ÷ 4?",
+    "options": [
+      "12",
+      "1",
+      "6",
+      "2"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 8 ÷ 4 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 × 4?",
+    "options": [
+      "24",
+      "14",
+      "25",
+      "31"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 4 = 24."
+    },
+    "image_url": null
   }
 ]
