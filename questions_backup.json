@@ -77979,5 +77979,39 @@
       "explanation": "Quanto é 50 - 5 = 45."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 77 + 52?",
+    "options": [
+      "124",
+      "129",
+      "127",
+      "128"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 77 + 52 = 129."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 69 + 30?",
+    "options": [
+      "92",
+      "109",
+      "99",
+      "103"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 69 + 30 = 99."
+    },
+    "image_url": null
   }
 ]
