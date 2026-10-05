@@ -78132,5 +78132,39 @@
       "explanation": "Quanto é 37 + 83 = 120."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 22 + 82?",
+    "options": [
+      "101",
+      "111",
+      "105",
+      "104"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 22 + 82 = 104."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 × 12?",
+    "options": [
+      "77",
+      "70",
+      "79",
+      "72"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 12 = 72."
+    },
+    "image_url": null
   }
 ]
