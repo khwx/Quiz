@@ -77877,5 +77877,39 @@
       "explanation": "Quanto é 10 ÷ 2 = 5."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 7?",
+    "options": [
+      "80",
+      "70",
+      "65",
+      "66"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 7 = 70."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25 - 13?",
+    "options": [
+      "8",
+      "17",
+      "12",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 25 - 13 = 12."
+    },
+    "image_url": null
   }
 ]
