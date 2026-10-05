@@ -77911,5 +77911,39 @@
       "explanation": "Quanto é 25 - 13 = 12."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 3 × 4?",
+    "options": [
+      "11",
+      "15",
+      "12",
+      "22"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 4 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25 + 61?",
+    "options": [
+      "93",
+      "76",
+      "90",
+      "86"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 25 + 61 = 86."
+    },
+    "image_url": null
   }
 ]
