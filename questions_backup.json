@@ -78166,5 +78166,39 @@
       "explanation": "Quanto é 6 × 12 = 72."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 81 - 72?",
+    "options": [
+      "10",
+      "11",
+      "9",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 81 - 72 = 9."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 22 - 4?",
+    "options": [
+      "21",
+      "11",
+      "20",
+      "18"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 22 - 4 = 18."
+    },
+    "image_url": null
   }
 ]
