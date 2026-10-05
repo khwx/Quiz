@@ -78370,5 +78370,39 @@
       "explanation": "Quanto é 62 - 30 = 32."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 4 × 11?",
+    "options": [
+      "34",
+      "49",
+      "42",
+      "44"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 4 × 11 = 44."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 55?",
+    "options": [
+      "10",
+      "6",
+      "16",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 55 = 6."
+    },
+    "image_url": null
   }
 ]
