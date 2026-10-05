@@ -77673,5 +77673,39 @@
       "explanation": "Quanto é 20 + 70 = 90."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 35 + 59?",
+    "options": [
+      "90",
+      "97",
+      "94",
+      "92"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 35 + 59 = 94."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 - 9?",
+    "options": [
+      "3",
+      "1",
+      "5",
+      "6"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 10 - 9 = 1."
+    },
+    "image_url": null
   }
 ]
