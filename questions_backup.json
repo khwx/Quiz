@@ -77741,5 +77741,39 @@
       "explanation": "Quanto é 49 - 21 = 28."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 12 + 44?",
+    "options": [
+      "60",
+      "53",
+      "56",
+      "55"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 12 + 44 = 56."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 18 ÷ 2?",
+    "options": [
+      "19",
+      "13",
+      "16",
+      "9"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 18 ÷ 2 = 9."
+    },
+    "image_url": null
   }
 ]
