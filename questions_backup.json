@@ -78302,5 +78302,39 @@
       "explanation": "Quanto é 63 + 63 = 126."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 65 + 94?",
+    "options": [
+      "159",
+      "166",
+      "157",
+      "149"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 65 + 94 = 159."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 64 - 29?",
+    "options": [
+      "40",
+      "36",
+      "30",
+      "35"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 64 - 29 = 35."
+    },
+    "image_url": null
   }
 ]
