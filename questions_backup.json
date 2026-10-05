@@ -78438,5 +78438,39 @@
       "explanation": "Quanto é 38 + 2 = 40."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 51 + 4?",
+    "options": [
+      "55",
+      "60",
+      "51",
+      "62"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 51 + 4 = 55."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 70 - 14?",
+    "options": [
+      "49",
+      "56",
+      "58",
+      "52"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 70 - 14 = 56."
+    },
+    "image_url": null
   }
 ]
