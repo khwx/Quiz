@@ -78676,5 +78676,39 @@
       "explanation": "Quanto é 31 - 28 = 3."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 96 + 88?",
+    "options": [
+      "184",
+      "180",
+      "174",
+      "188"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 96 + 88 = 184."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 37?",
+    "options": [
+      "81",
+      "83",
+      "85",
+      "78"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 37 = 81."
+    },
+    "image_url": null
   }
 ]
