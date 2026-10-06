@@ -78642,5 +78642,39 @@
       "explanation": "Quanto é 14 - 3 = 11."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 99 ÷ 11?",
+    "options": [
+      "16",
+      "9",
+      "7",
+      "5"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 99 ÷ 11 = 9."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 31 - 28?",
+    "options": [
+      "6",
+      "2",
+      "13",
+      "3"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 31 - 28 = 3."
+    },
+    "image_url": null
   }
 ]
