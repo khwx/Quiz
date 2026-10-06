@@ -78846,5 +78846,39 @@
       "explanation": "Quanto é 77 - 48 = 29."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 - 3?",
+    "options": [
+      "7",
+      "3",
+      "12",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 10 - 3 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 36 + 64?",
+    "options": [
+      "93",
+      "104",
+      "103",
+      "100"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 36 + 64 = 100."
+    },
+    "image_url": null
   }
 ]
