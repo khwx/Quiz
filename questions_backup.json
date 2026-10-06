@@ -78812,5 +78812,39 @@
       "explanation": "Quanto é 82 + 73 = 155."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 45 ÷ 9?",
+    "options": [
+      "5",
+      "3",
+      "2",
+      "7"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 45 ÷ 9 = 5."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 - 48?",
+    "options": [
+      "31",
+      "34",
+      "29",
+      "26"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 77 - 48 = 29."
+    },
+    "image_url": null
   }
 ]
