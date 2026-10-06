@@ -78744,5 +78744,39 @@
       "explanation": "Quanto é 14 + 56 = 70."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 50 + 40?",
+    "options": [
+      "83",
+      "97",
+      "90",
+      "85"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 50 + 40 = 90."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 49 - 6?",
+    "options": [
+      "45",
+      "41",
+      "38",
+      "43"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 49 - 6 = 43."
+    },
+    "image_url": null
   }
 ]
