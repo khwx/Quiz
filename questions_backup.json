@@ -78880,5 +78880,56 @@
       "explanation": "Quanto é 36 + 64 = 100."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 89 - 28?",
+    "options": [
+      "61",
+      "66",
+      "59",
+      "60"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 89 - 28 = 61."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 99 - 88?",
+    "options": [
+      "4",
+      "11",
+      "8",
+      "13"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 99 - 88 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 73 - 4?",
+    "options": [
+      "72",
+      "69",
+      "76",
+      "73"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 73 - 4 = 69."
+    },
+    "image_url": null
   }
 ]
