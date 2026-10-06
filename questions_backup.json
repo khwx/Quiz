@@ -78891,7 +78891,7 @@
     ],
     "correct_option": 0,
     "category": "MATEMATICA",
-    "age_rating": 14,
+    "age_rating": 10,
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 89 - 28 = 61."
@@ -78929,6 +78929,40 @@
     "metadata": {
       "hint": "Diferença.",
       "explanation": "Quanto é 73 - 4 = 69."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 + 29?",
+    "options": [
+      "26",
+      "33",
+      "30",
+      "31"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 2 + 29 = 31."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 41 + 9?",
+    "options": [
+      "50",
+      "40",
+      "48",
+      "52"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 41 + 9 = 50."
     },
     "image_url": null
   }
