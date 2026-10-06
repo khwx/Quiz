@@ -78472,5 +78472,39 @@
       "explanation": "Quanto é 70 - 14 = 56."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 8 + 81?",
+    "options": [
+      "89",
+      "82",
+      "94",
+      "87"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 8 + 81 = 89."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 51 + 6?",
+    "options": [
+      "56",
+      "54",
+      "57",
+      "62"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 51 + 6 = 57."
+    },
+    "image_url": null
   }
 ]
