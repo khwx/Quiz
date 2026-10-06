@@ -78540,5 +78540,39 @@
       "explanation": "Quanto é 29 - 26 = 3."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 - 8?",
+    "options": [
+      "4",
+      "7",
+      "0",
+      "2"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 10 - 8 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 90 - 22?",
+    "options": [
+      "65",
+      "63",
+      "64",
+      "68"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 90 - 22 = 68."
+    },
+    "image_url": null
   }
 ]
