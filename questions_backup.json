@@ -78574,5 +78574,39 @@
       "explanation": "Quanto é 90 - 22 = 68."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 83 + 13?",
+    "options": [
+      "106",
+      "91",
+      "96",
+      "99"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 83 + 13 = 96."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 × 6?",
+    "options": [
+      "48",
+      "50",
+      "47",
+      "51"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 6 = 48."
+    },
+    "image_url": null
   }
 ]
