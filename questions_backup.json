@@ -78608,5 +78608,39 @@
       "explanation": "Quanto é 8 × 6 = 48."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 24 + 39?",
+    "options": [
+      "59",
+      "73",
+      "63",
+      "56"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 24 + 39 = 63."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 14 - 3?",
+    "options": [
+      "1",
+      "7",
+      "14",
+      "11"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 14 - 3 = 11."
+    },
+    "image_url": null
   }
 ]
