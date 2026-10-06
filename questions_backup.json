@@ -78506,5 +78506,39 @@
       "explanation": "Quanto é 51 + 6 = 57."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 58 - 43?",
+    "options": [
+      "8",
+      "15",
+      "19",
+      "17"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 58 - 43 = 15."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 29 - 26?",
+    "options": [
+      "3",
+      "10",
+      "6",
+      "8"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 29 - 26 = 3."
+    },
+    "image_url": null
   }
 ]
