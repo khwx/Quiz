@@ -78710,5 +78710,39 @@
       "explanation": "Quanto é 44 + 37 = 81."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 63 - 25?",
+    "options": [
+      "36",
+      "39",
+      "38",
+      "35"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 63 - 25 = 38."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 14 + 56?",
+    "options": [
+      "70",
+      "72",
+      "74",
+      "73"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 14 + 56 = 70."
+    },
+    "image_url": null
   }
 ]
