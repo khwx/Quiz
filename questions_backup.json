@@ -79161,5 +79161,39 @@
     },
     "explanation": null,
     "hint": null
+  },
+  {
+    "text": "Quanto é 58 + 54?",
+    "options": [
+      "112",
+      "113",
+      "110",
+      "119"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 58 + 54 = 112."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 45 + 52?",
+    "options": [
+      "95",
+      "104",
+      "97",
+      "90"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 45 + 52 = 97."
+    },
+    "image_url": null
   }
 ]
