@@ -78999,5 +78999,39 @@
       "explanation": "Quanto é 11 × 2 = 22."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 2?",
+    "options": [
+      "40",
+      "29",
+      "26",
+      "30"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 2 = 30."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 + 32?",
+    "options": [
+      "36",
+      "39",
+      "29",
+      "32"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 7 + 32 = 39."
+    },
+    "image_url": null
   }
 ]
