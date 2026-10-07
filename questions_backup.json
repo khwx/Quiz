@@ -79033,5 +79033,56 @@
       "explanation": "Quanto é 7 + 32 = 39."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 84 + 63?",
+    "options": [
+      "145",
+      "147",
+      "154",
+      "150"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 84 + 63 = 147."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50 + 96?",
+    "options": [
+      "144",
+      "153",
+      "139",
+      "146"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 50 + 96 = 146."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 8?",
+    "options": [
+      "45",
+      "40",
+      "47",
+      "33"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 8 = 40."
+    },
+    "image_url": null
   }
 ]
