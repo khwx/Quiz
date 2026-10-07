@@ -78965,5 +78965,39 @@
       "explanation": "Quanto é 41 + 9 = 50."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 43 - 33?",
+    "options": [
+      "10",
+      "14",
+      "15",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 43 - 33 = 10."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 11 × 2?",
+    "options": [
+      "22",
+      "19",
+      "32",
+      "26"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 2 = 22."
+    },
+    "image_url": null
   }
 ]
