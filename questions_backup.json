@@ -79031,7 +79031,8 @@
     "metadata": {
       "hint": "Soma simples.",
       "explanation": "Quanto é 7 + 32 = 39."
-},
+    }
+  },
   {
     "text": "Quanto é 84 + 63?",
     "options": [
@@ -79116,5 +79117,49 @@
       "explanation": "Quanto é 2 × 9 = 18."
     },
     "image_url": null
+  },
+  {
+    "id": "e2e78285-4fc4-4df8-884c-52c751041e01",
+    "text": "Quanto é 8 × 2?",
+    "image_url": null,
+    "options": [
+      "11",
+      "15",
+      "16",
+      "21"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "country_code": "PT",
+    "created_at": "2026-10-07T16:23:40.117539+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 2 = 16."
+    },
+    "explanation": null,
+    "hint": null
+  },
+  {
+    "id": "1241d198-c0df-4b46-95ad-42605505a998",
+    "text": "Quanto é 2 × 3?",
+    "image_url": null,
+    "options": [
+      "2",
+      "5",
+      "10",
+      "6"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "country_code": "PT",
+    "created_at": "2026-10-07T16:23:40.117539+00:00",
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 3 = 6."
+    },
+    "explanation": null,
+    "hint": null
   }
 ]

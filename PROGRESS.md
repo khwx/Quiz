@@ -1,5 +1,12 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-10-07] Ciclo de Manutenção (150º ciclo, 8h) — Novas Perguntas + Fix Backup JSON
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3774 → 3776. Total na BD: 3780.
+  - `questions_backup.json` corrigido (JSON inválido) e sincronizado com BD.
+- **FIX — Backup JSON**: Corrigido erro de sintaxe em `questions_backup.json` (falta de `}` no metadata) que impedia atualização automática do backup.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run build` OK; `npm run lint` apenas warnings (pré-existentes).
+
 ## [2026-10-07] Ciclo de Manutenção (149º ciclo, 8h) — Novas Perguntas + Dedupe Semanal
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run daily` → **+2 novas** via built-in (MATEMATICA). Backup: 3528 → 3530. Total na BD: 3778.
