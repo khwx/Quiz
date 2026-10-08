@@ -79229,5 +79229,56 @@
       "explanation": "Quanto é 19 - 9 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 51 + 23?",
+    "options": [
+      "71",
+      "78",
+      "70",
+      "74"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 51 + 23 = 74."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 30 ÷ 6?",
+    "options": [
+      "5",
+      "12",
+      "10",
+      "7"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 30 ÷ 6 = 5."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 99 - 97?",
+    "options": [
+      "2",
+      "7",
+      "9",
+      "3"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 99 - 97 = 2."
+    },
+    "image_url": null
   }
 ]
