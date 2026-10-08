@@ -79297,5 +79297,39 @@
       "explanation": "Quanto é 97 + 14 = 111."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 53 - 23?",
+    "options": [
+      "31",
+      "37",
+      "35",
+      "30"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 53 - 23 = 30."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 89 + 52?",
+    "options": [
+      "136",
+      "141",
+      "143",
+      "138"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 89 + 52 = 141."
+    },
+    "image_url": null
   }
 ]
