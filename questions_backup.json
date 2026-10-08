@@ -79195,5 +79195,39 @@
       "explanation": "Quanto é 45 + 52 = 97."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 15 - 12?",
+    "options": [
+      "1",
+      "7",
+      "4",
+      "3"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 15 - 12 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 19 - 9?",
+    "options": [
+      "15",
+      "3",
+      "10",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 19 - 9 = 10."
+    },
+    "image_url": null
   }
 ]
