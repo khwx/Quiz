@@ -79365,5 +79365,56 @@
       "explanation": "Quanto é 89 + 79 = 168."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 5 + 71?",
+    "options": [
+      "73",
+      "86",
+      "77",
+      "76"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 5 + 71 = 76."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 43 - 43?",
+    "options": [
+      "5",
+      "0",
+      "7",
+      "4"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 43 - 43 = 0."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 48 - 29?",
+    "options": [
+      "21",
+      "29",
+      "19",
+      "12"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 48 - 29 = 19."
+    },
+    "image_url": null
   }
 ]
