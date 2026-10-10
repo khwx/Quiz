@@ -79399,5 +79399,56 @@
       "explanation": "Quanto é 40 - 18 = 22."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 23 - 12?",
+    "options": [
+      "15",
+      "11",
+      "16",
+      "13"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 23 - 12 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 57 - 20?",
+    "options": [
+      "41",
+      "37",
+      "36",
+      "42"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 57 - 20 = 37."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 75 + 87?",
+    "options": [
+      "162",
+      "161",
+      "158",
+      "159"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 75 + 87 = 162."
+    },
+    "image_url": null
   }
 ]
