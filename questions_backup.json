@@ -79450,5 +79450,56 @@
       "explanation": "Quanto é 75 + 87 = 162."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 50 - 3?",
+    "options": [
+      "46",
+      "47",
+      "57",
+      "45"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 50 - 3 = 47."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 75 - 46?",
+    "options": [
+      "39",
+      "19",
+      "27",
+      "29"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 75 - 46 = 29."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 27 + 46?",
+    "options": [
+      "78",
+      "63",
+      "73",
+      "77"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 27 + 46 = 73."
+    },
+    "image_url": null
   }
 ]
