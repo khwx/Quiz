@@ -79603,5 +79603,56 @@
       "explanation": "Quanto é 90 - 38 = 52."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 6?",
+    "options": [
+      "59",
+      "58",
+      "50",
+      "54"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 6 = 54."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 21 + 75?",
+    "options": [
+      "93",
+      "95",
+      "96",
+      "86"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 21 + 75 = 96."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 11 × 6?",
+    "options": [
+      "73",
+      "68",
+      "66",
+      "76"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 11 × 6 = 66."
+    },
+    "image_url": null
   }
 ]
