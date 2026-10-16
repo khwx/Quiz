@@ -79705,5 +79705,56 @@
       "explanation": "Quanto é 99 + 36 = 135."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 56 ÷ 8?",
+    "options": [
+      "2",
+      "9",
+      "7",
+      "6"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 56 ÷ 8 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 88 - 6?",
+    "options": [
+      "86",
+      "82",
+      "81",
+      "79"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 88 - 6 = 82."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 18 + 57?",
+    "options": [
+      "73",
+      "76",
+      "75",
+      "71"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 18 + 57 = 75."
+    },
+    "image_url": null
   }
 ]
