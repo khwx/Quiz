@@ -79756,5 +79756,56 @@
       "explanation": "Quanto é 18 + 57 = 75."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 21 ÷ 7?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "6"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 21 ÷ 7 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 92 - 30?",
+    "options": [
+      "62",
+      "66",
+      "63",
+      "57"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 92 - 30 = 62."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 83 - 61?",
+    "options": [
+      "12",
+      "22",
+      "20",
+      "18"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 83 - 61 = 22."
+    },
+    "image_url": null
   }
 ]
