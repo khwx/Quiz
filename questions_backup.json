@@ -79807,5 +79807,56 @@
       "explanation": "Quanto é 83 - 61 = 22."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 17 + 67?",
+    "options": [
+      "79",
+      "84",
+      "87",
+      "83"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 17 + 67 = 84."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 57 - 45?",
+    "options": [
+      "10",
+      "13",
+      "12",
+      "7"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 57 - 45 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 72 + 45?",
+    "options": [
+      "117",
+      "118",
+      "127",
+      "120"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 72 + 45 = 117."
+    },
+    "image_url": null
   }
 ]
