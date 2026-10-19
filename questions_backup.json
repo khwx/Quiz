@@ -79858,5 +79858,56 @@
       "explanation": "Quanto é 72 + 45 = 117."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 33 ÷ 3?",
+    "options": [
+      "11",
+      "7",
+      "15",
+      "9"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 33 ÷ 3 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 69 - 19?",
+    "options": [
+      "40",
+      "48",
+      "50",
+      "54"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 69 - 19 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 84 + 17?",
+    "options": [
+      "101",
+      "91",
+      "105",
+      "103"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 84 + 17 = 101."
+    },
+    "image_url": null
   }
 ]
