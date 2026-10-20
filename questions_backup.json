@@ -79909,5 +79909,56 @@
       "explanation": "Quanto é 84 + 17 = 101."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 44 - 44?",
+    "options": [
+      "0",
+      "1",
+      "4",
+      "10"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 44 - 44 = 0."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 14 ÷ 2?",
+    "options": [
+      "9",
+      "5",
+      "4",
+      "7"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 14 ÷ 2 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 58 + 50?",
+    "options": [
+      "98",
+      "107",
+      "108",
+      "101"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 58 + 50 = 108."
+    },
+    "image_url": null
   }
 ]
