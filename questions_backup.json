@@ -80011,5 +80011,56 @@
       "explanation": "Quanto é 96 - 53 = 43."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 83 - 57?",
+    "options": [
+      "21",
+      "24",
+      "26",
+      "19"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 83 - 57 = 26."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 7?",
+    "options": [
+      "32",
+      "25",
+      "42",
+      "35"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 7 = 35."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 36 ÷ 9?",
+    "options": [
+      "3",
+      "1",
+      "4",
+      "0"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 36 ÷ 9 = 4."
+    },
+    "image_url": null
   }
 ]
