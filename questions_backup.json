@@ -80062,5 +80062,56 @@
       "explanation": "Quanto é 36 ÷ 9 = 4."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 91 + 74?",
+    "options": [
+      "165",
+      "172",
+      "168",
+      "160"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 91 + 74 = 165."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 92 + 26?",
+    "options": [
+      "120",
+      "118",
+      "128",
+      "116"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 92 + 26 = 118."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 8 × 8?",
+    "options": [
+      "64",
+      "57",
+      "67",
+      "66"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 8 × 8 = 64."
+    },
+    "image_url": null
   }
 ]
