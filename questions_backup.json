@@ -80164,5 +80164,56 @@
       "explanation": "Quanto é 8 × 4 = 32."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 48 + 20?",
+    "options": [
+      "64",
+      "68",
+      "69",
+      "73"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 48 + 20 = 68."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 87 + 52?",
+    "options": [
+      "134",
+      "139",
+      "141",
+      "129"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 87 + 52 = 139."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 64 - 39?",
+    "options": [
+      "22",
+      "32",
+      "25",
+      "23"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 64 - 39 = 25."
+    },
+    "image_url": null
   }
 ]
