@@ -80215,5 +80215,56 @@
       "explanation": "Quanto é 64 - 39 = 25."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 36 ÷ 12?",
+    "options": [
+      "13",
+      "2",
+      "3",
+      "1"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 36 ÷ 12 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 45?",
+    "options": [
+      "18",
+      "6",
+      "16",
+      "14"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 45 = 16."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 + 70?",
+    "options": [
+      "83",
+      "96",
+      "87",
+      "86"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 16 + 70 = 86."
+    },
+    "image_url": null
   }
 ]
