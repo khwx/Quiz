@@ -80266,5 +80266,56 @@
       "explanation": "Quanto é 16 + 70 = 86."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 76 - 30?",
+    "options": [
+      "43",
+      "46",
+      "51",
+      "56"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 76 - 30 = 46."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 7?",
+    "options": [
+      "18",
+      "16",
+      "14",
+      "11"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 7 = 14."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 - 58?",
+    "options": [
+      "19",
+      "29",
+      "26",
+      "9"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 77 - 58 = 19."
+    },
+    "image_url": null
   }
 ]
