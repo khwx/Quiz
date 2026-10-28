@@ -80317,5 +80317,56 @@
       "explanation": "Quanto é 77 - 58 = 19."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 25 - 18?",
+    "options": [
+      "14",
+      "7",
+      "9",
+      "11"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 25 - 18 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 98 + 9?",
+    "options": [
+      "107",
+      "111",
+      "104",
+      "108"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 98 + 9 = 107."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 88 + 39?",
+    "options": [
+      "127",
+      "128",
+      "117",
+      "130"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 88 + 39 = 127."
+    },
+    "image_url": null
   }
 ]
