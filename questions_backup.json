@@ -80368,5 +80368,56 @@
       "explanation": "Quanto é 88 + 39 = 127."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 49 - 37?",
+    "options": [
+      "19",
+      "22",
+      "17",
+      "12"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 49 - 37 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 30 ÷ 3?",
+    "options": [
+      "10",
+      "6",
+      "11",
+      "15"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 30 ÷ 3 = 10."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 73 - 47?",
+    "options": [
+      "26",
+      "27",
+      "16",
+      "29"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 73 - 47 = 26."
+    },
+    "image_url": null
   }
 ]
