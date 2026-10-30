@@ -80419,5 +80419,56 @@
       "explanation": "Quanto é 73 - 47 = 26."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 65 + 62?",
+    "options": [
+      "129",
+      "125",
+      "127",
+      "128"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 65 + 62 = 127."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 - 9?",
+    "options": [
+      "15",
+      "5",
+      "22",
+      "25"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 24 - 9 = 15."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 87 + 64?",
+    "options": [
+      "158",
+      "151",
+      "152",
+      "144"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 87 + 64 = 151."
+    },
+    "image_url": null
   }
 ]
