@@ -80470,5 +80470,56 @@
       "explanation": "Quanto é 87 + 64 = 151."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 83 - 28?",
+    "options": [
+      "65",
+      "60",
+      "55",
+      "54"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 83 - 28 = 55."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 22 + 64?",
+    "options": [
+      "83",
+      "88",
+      "91",
+      "86"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 22 + 64 = 86."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 30 - 21?",
+    "options": [
+      "12",
+      "19",
+      "2",
+      "9"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 30 - 21 = 9."
+    },
+    "image_url": null
   }
 ]
