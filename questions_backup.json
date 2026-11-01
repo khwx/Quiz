@@ -80521,5 +80521,56 @@
       "explanation": "Quanto é 30 - 21 = 9."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 4 × 6?",
+    "options": [
+      "28",
+      "24",
+      "19",
+      "34"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 4 × 6 = 24."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 67?",
+    "options": [
+      "19",
+      "23",
+      "18",
+      "20"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 67 = 18."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 58 - 12?",
+    "options": [
+      "46",
+      "51",
+      "48",
+      "44"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 58 - 12 = 46."
+    },
+    "image_url": null
   }
 ]
