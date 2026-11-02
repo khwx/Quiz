@@ -80572,5 +80572,56 @@
       "explanation": "Quanto é 58 - 12 = 46."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 87 - 53?",
+    "options": [
+      "33",
+      "34",
+      "27",
+      "35"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 87 - 53 = 34."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 34?",
+    "options": [
+      "76",
+      "78",
+      "71",
+      "68"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 34 = 78."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 15 - 6?",
+    "options": [
+      "7",
+      "9",
+      "6",
+      "12"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 15 - 6 = 9."
+    },
+    "image_url": null
   }
 ]
