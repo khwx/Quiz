@@ -1,5 +1,5 @@
+/// <reference types="vitest/globals" />
 import '@testing-library/jest-dom';
-
 // Mock Supabase
 vi.mock('@/lib/supabase', () => ({
   supabase: {
