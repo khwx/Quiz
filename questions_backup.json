@@ -80810,5 +80810,124 @@
       "explanation": "Em que concelho se situa a freguesia de Sintra (vila histórica) → Sintra."
     },
     "image_url": null
+  },
+  {
+    "text": "Qual é o planeta conhecido como \"Estrela da Manhã\"?",
+    "options": [
+      "Vénus",
+      "Saturno",
+      "Mercúrio",
+      "Júpiter"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Vênus",
+      "explanation": "Qual é o planeta conhecido como \"Estrela da Manhã\" → Vénus."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior recife de coral do mundo?",
+    "options": [
+      "Grande Barreira de Coral",
+      "Recife das Bahamas",
+      "Recife de Belize",
+      "Recife Vermelho"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Austrália",
+      "explanation": "Qual é o maior recife de coral do mundo → Grande Barreira de Coral."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 × 5?",
+    "options": [
+      "30",
+      "37",
+      "23",
+      "29"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 6 × 5 = 30."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 75?",
+    "options": [
+      "14",
+      "6",
+      "10",
+      "3"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 75 = 10."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 9?",
+    "options": [
+      "81",
+      "74",
+      "83",
+      "78"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 9 = 81."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Guimarães (centro histórico) pertence a qual concelho?",
+    "options": [
+      "Felgueiras",
+      "Vizela",
+      "Fafe",
+      "Guimarães"
+    ],
+    "correct_option": 3,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Cidade berço",
+      "explanation": "A freguesia de Guimarães (centro histórico) pertence a qual concelho → Guimarães."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que concelho se situa a freguesia de Coimbra (universidade)?",
+    "options": [
+      "Coimbra",
+      "Lousã",
+      "Condeixa-a-Nova",
+      "Montemor-o-Velho"
+    ],
+    "correct_option": 0,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Rio Mondego",
+      "explanation": "Em que concelho se situa a freguesia de Coimbra (universidade) → Coimbra."
+    },
+    "image_url": null
   }
 ]
