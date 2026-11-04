@@ -80674,5 +80674,141 @@
       "explanation": "Quanto é 13 + 57 = 70."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 87 - 17?",
+    "options": [
+      "70",
+      "73",
+      "67",
+      "72"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 87 - 17 = 70."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 53 - 44?",
+    "options": [
+      "9",
+      "4",
+      "13",
+      "19"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 53 - 44 = 9."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é a camada mais externa da Terra?",
+    "options": [
+      "Manto",
+      "Crosta",
+      "Núcleo",
+      "Litosfera"
+    ],
+    "correct_option": 1,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Geologia",
+      "explanation": "Qual é a camada mais externa da Terra → Crosta."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Qual é o maior osso do corpo humano?",
+    "options": [
+      "Fémur",
+      "Fíbula",
+      "Úmero",
+      "Tíbia"
+    ],
+    "correct_option": 0,
+    "category": "CULTURA_GERAL",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Coxa",
+      "explanation": "Qual é o maior osso do corpo humano → Fémur."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 44 + 21?",
+    "options": [
+      "68",
+      "61",
+      "65",
+      "64"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 44 + 21 = 65."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 76 - 28?",
+    "options": [
+      "44",
+      "43",
+      "38",
+      "48"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 76 - 28 = 48."
+    },
+    "image_url": null
+  },
+  {
+    "text": "A freguesia de Évora (centro histórico) pertence a qual concelho?",
+    "options": [
+      "Viana do Alentejo",
+      "Reguengos de Monsaraz",
+      "Évora",
+      "Estremoz"
+    ],
+    "correct_option": 2,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Alentejo",
+      "explanation": "A freguesia de Évora (centro histórico) pertence a qual concelho → Évora."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Em que concelho se situa a freguesia de Sintra (vila histórica)?",
+    "options": [
+      "Sintra",
+      "Amadora",
+      "Mafra",
+      "Cascais"
+    ],
+    "correct_option": 0,
+    "category": "PORTUGAL_FREGUESIAS",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Palácios e castelos",
+      "explanation": "Em que concelho se situa a freguesia de Sintra (vila histórica) → Sintra."
+    },
+    "image_url": null
   }
 ]

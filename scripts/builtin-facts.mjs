@@ -186,6 +186,10 @@ const CULTURA_GERAL = [
   { text: 'Qual é a velocidade da luz no vácuo?', answer: '300 000 km/s', pool: ['150 000 km/s', '1 000 000 km/s', '30 000 km/s', '3 000 km/s'], hint: 'Constante c' },
   { text: 'Qual é o elemento mais abundante no universo?', answer: 'Hidrogénio', pool: ['Hélio', 'Oxigénio', 'Carbono', 'Ferro'], hint: 'Estrelas' },
   { text: 'Qual é o órgão responsável por bombear o sangue?', answer: 'Coração', pool: ['Fígado', 'Pulmão', 'Rim', 'Cérebro'], hint: 'Sistema circulatório' },
+  { text: 'Qual é a camada mais externa da Terra?', answer: 'Crosta', pool: ['Manto', 'Núcleo', 'Mesosfera', 'Litosfera'], hint: 'Geologia' },
+  { text: 'Qual é o maior osso do corpo humano?', answer: 'Fémur', pool: ['Tíbia', 'Úmero', 'Rádio', 'Fíbula'], hint: 'Coxa' },
+  { text: 'Qual é o planeta conhecido como "Estrela da Manhã"?', answer: 'Vénus', pool: ['Mercúrio', 'Marte', 'Júpiter', 'Saturno'], hint: 'Vênus' },
+  { text: 'Qual é o maior recife de coral do mundo?', answer: 'Grande Barreira de Coral', pool: ['Recife de Belize', 'Recife Vermelho', 'Recife Nova Caledónia', 'Recife das Bahamas'], hint: 'Austrália' },
 ];
 
 // --- PORTUGAL_FREGUESIAS: freguesias e concelhos ----------------------------
@@ -214,6 +218,10 @@ const PORTUGAL = [
   { text: 'A freguesia de Belmonte é a terra natal de qual navegador português?', answer: 'Pedro Álvares Cabral', pool: ['Vasco da Gama', 'Fernão de Magalhães', 'Bartolomeu Dias', 'Gil Eanes'], hint: 'Chegou ao Brasil em 1500' },
   { text: 'A freguesia de Miranda do Douro é célebre por qual língua oficial?', answer: 'Mirandês', pool: ['Galego', 'Barranquenho', 'Asturiano', 'Leonês'], hint: 'Reconhecida em 1999' },
   { text: 'Em que concelho se situa a freguesia de Costa Nova dos palheiros listados?', answer: 'Ílhavo', pool: ['Aveiro', 'Ovar', 'Mira', 'Estarreja'], hint: 'Concelho de Ílhavo' },
+  { text: 'A freguesia de Guimarães (centro histórico) pertence a qual concelho?', answer: 'Guimarães', pool: ['Braga', 'Fafe', 'Vizela', 'Felgueiras'], hint: 'Cidade berço' },
+  { text: 'Em que concelho se situa a freguesia de Sintra (vila histórica)?', answer: 'Sintra', pool: ['Cascais', 'Amadora', 'Oeiras', 'Mafra'], hint: 'Palácios e castelos' },
+  { text: 'A freguesia de Évora (centro histórico) pertence a qual concelho?', answer: 'Évora', pool: ['Montemor-o-Novo', 'Reguengos de Monsaraz', 'Estremoz', 'Viana do Alentejo'], hint: 'Alentejo' },
+  { text: 'Em que concelho se situa a freguesia de Coimbra (universidade)?', answer: 'Coimbra', pool: ['Condeixa-a-Nova', 'Montemor-o-Velho', 'Penacova', 'Lousã'], hint: 'Rio Mondego' },
 ];
 
 export const FACT_GENERATORS = {
