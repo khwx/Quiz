@@ -80929,5 +80929,56 @@
       "explanation": "Em que concelho se situa a freguesia de Coimbra (universidade) → Coimbra."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 31?",
+    "options": [
+      "5",
+      "3",
+      "1",
+      "2"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 31 = 1."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 84 + 6?",
+    "options": [
+      "88",
+      "92",
+      "90",
+      "87"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 84 + 6 = 90."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 72 - 36?",
+    "options": [
+      "38",
+      "31",
+      "36",
+      "43"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 72 - 36 = 36."
+    },
+    "image_url": null
   }
 ]
