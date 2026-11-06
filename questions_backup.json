@@ -81065,5 +81065,447 @@
       "explanation": "Quanto é 64 - 15 = 49."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 72 - 32?",
+    "options": [
+      "40",
+      "35",
+      "50",
+      "39"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 72 - 32 = 40."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 77?",
+    "options": [
+      "152",
+      "155",
+      "141",
+      "148"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 77 = 148."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 91 + 72?",
+    "options": [
+      "158",
+      "163",
+      "159",
+      "161"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 91 + 72 = 163."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 55 - 21?",
+    "options": [
+      "44",
+      "33",
+      "38",
+      "34"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 55 - 21 = 34."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 - 10?",
+    "options": [
+      "66",
+      "56",
+      "61",
+      "58"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 71 - 10 = 61."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 97 - 4?",
+    "options": [
+      "90",
+      "100",
+      "93",
+      "83"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 97 - 4 = 93."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 99 + 53?",
+    "options": [
+      "152",
+      "150",
+      "162",
+      "145"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 99 + 53 = 152."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 54 - 6?",
+    "options": [
+      "48",
+      "58",
+      "44",
+      "47"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 54 - 6 = 48."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 79?",
+    "options": [
+      "147",
+      "146",
+      "150",
+      "145"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 79 = 150."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 37 + 13?",
+    "options": [
+      "49",
+      "54",
+      "45",
+      "50"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 37 + 13 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 52 - 17?",
+    "options": [
+      "35",
+      "45",
+      "36",
+      "40"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 52 - 17 = 35."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 27 - 26?",
+    "options": [
+      "1",
+      "3",
+      "8",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 27 - 26 = 1."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 86 + 39?",
+    "options": [
+      "125",
+      "129",
+      "127",
+      "115"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 86 + 39 = 125."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 34 + 75?",
+    "options": [
+      "109",
+      "114",
+      "102",
+      "104"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 34 + 75 = 109."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 57 + 35?",
+    "options": [
+      "92",
+      "95",
+      "90",
+      "89"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 57 + 35 = 92."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 108 ÷ 12?",
+    "options": [
+      "8",
+      "14",
+      "10",
+      "9"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 108 ÷ 12 = 9."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 27 - 9?",
+    "options": [
+      "18",
+      "11",
+      "17",
+      "14"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 27 - 9 = 18."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 50 - 34?",
+    "options": [
+      "18",
+      "14",
+      "16",
+      "9"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 50 - 34 = 16."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 96 - 21?",
+    "options": [
+      "72",
+      "75",
+      "68",
+      "74"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 96 - 21 = 75."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 2?",
+    "options": [
+      "23",
+      "19",
+      "16",
+      "18"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 2 = 18."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 24 + 43?",
+    "options": [
+      "77",
+      "69",
+      "74",
+      "67"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 24 + 43 = 67."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 89 - 4?",
+    "options": [
+      "92",
+      "85",
+      "87",
+      "90"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 89 - 4 = 85."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 9?",
+    "options": [
+      "19",
+      "21",
+      "16",
+      "23"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 9 = 23."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 4?",
+    "options": [
+      "8",
+      "10",
+      "18",
+      "12"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 4 = 8."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 83 - 47?",
+    "options": [
+      "36",
+      "26",
+      "29",
+      "31"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 83 - 47 = 36."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 + 97?",
+    "options": [
+      "102",
+      "112",
+      "105",
+      "104"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 5 + 97 = 102."
+    },
+    "image_url": null
   }
 ]
