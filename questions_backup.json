@@ -81609,5 +81609,39 @@
       "explanation": "Quanto é 10 ÷ 5 = 2."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 35 + 88?",
+    "options": [
+      "123",
+      "116",
+      "120",
+      "119"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 35 + 88 = 123."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 84 + 76?",
+    "options": [
+      "170",
+      "163",
+      "167",
+      "160"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 84 + 76 = 160."
+    },
+    "image_url": null
   }
 ]
