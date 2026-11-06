@@ -81541,5 +81541,39 @@
       "explanation": "Quanto é 87 - 21 = 66."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 99 + 4?",
+    "options": [
+      "110",
+      "103",
+      "113",
+      "101"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 99 + 4 = 103."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 69 + 64?",
+    "options": [
+      "131",
+      "132",
+      "133",
+      "129"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 69 + 64 = 133."
+    },
+    "image_url": null
   }
 ]
