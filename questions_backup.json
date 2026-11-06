@@ -81507,5 +81507,39 @@
       "explanation": "Quanto é 5 + 97 = 102."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 37 - 4?",
+    "options": [
+      "33",
+      "32",
+      "35",
+      "36"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 37 - 4 = 33."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 87 - 21?",
+    "options": [
+      "73",
+      "66",
+      "56",
+      "63"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 87 - 21 = 66."
+    },
+    "image_url": null
   }
 ]

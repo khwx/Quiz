@@ -1,12 +1,12 @@
 {
   "date": "2026-11-06",
-  "totalQuestions": 3931,
+  "totalQuestions": 3943,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 30,
-  "fuzzyPairs": 1341,
-  "templateFamilyPairs": 2342,
-  "fuzzyAffectedQuestions": 556,
+  "fuzzyPairs": 1385,
+  "templateFamilyPairs": 2370,
+  "fuzzyAffectedQuestions": 567,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],
@@ -104,45 +104,59 @@
       ]
     },
     {
-      "category": "GEOGRAFIA",
+      "category": "MATEMATICA",
       "ids": [
-        "1a5c120f-1f71-4744-84f5-e552501640a7",
-        "f3130d37-a187-46a1-abaf-cc9d3ef2feca"
+        "0f5c010d-82b9-40a9-8f68-cc7b52838f7b",
+        "80a35241-e0c0-456a-b119-61ab78a39662"
       ]
     },
     {
-      "category": "GEOGRAFIA",
+      "category": "MATEMATICA",
       "ids": [
-        "e110f834-3a69-4744-ab48-fbeaea189f48",
-        "6f2154dc-2cab-478b-a51a-3d0e6bc77428"
+        "0f5c010d-82b9-40a9-8f68-cc7b52838f7b",
+        "c782f84d-48f0-4fe9-b327-66facfd3d67f"
       ]
     },
     {
-      "category": "GEOGRAFIA",
+      "category": "MATEMATICA",
       "ids": [
-        "e110f834-3a69-4744-ab48-fbeaea189f48",
-        "0d59ef5f-956b-4b39-99c5-57be78e0199c"
+        "0f5c010d-82b9-40a9-8f68-cc7b52838f7b",
+        "eccc55b6-6166-41f4-8fe1-3a910a209d18"
       ]
     },
     {
-      "category": "GEOGRAFIA",
+      "category": "MATEMATICA",
       "ids": [
-        "e110f834-3a69-4744-ab48-fbeaea189f48",
-        "33798100-6b4f-43b4-98a4-b5a4c82aa2c7"
+        "0f5c010d-82b9-40a9-8f68-cc7b52838f7b",
+        "c11ee8ed-e122-4381-940a-b49c98796043"
       ]
     },
     {
-      "category": "GEOGRAFIA",
+      "category": "MATEMATICA",
       "ids": [
-        "ca0786a1-0c4f-4b15-a9b3-09ade8fff8de",
-        "526fa3b0-0255-4f2c-96a8-8ee39d55afb6"
+        "8724bca9-2194-499d-b7e1-17a0f99a5b05",
+        "f8429a2e-4dc2-4129-a5bf-a7f24d584b92"
       ]
     },
     {
-      "category": "GEOGRAFIA",
+      "category": "MATEMATICA",
       "ids": [
-        "83d9e0f2-690b-42da-8714-89dff87b5888",
-        "f3130d37-a187-46a1-abaf-cc9d3ef2feca"
+        "8724bca9-2194-499d-b7e1-17a0f99a5b05",
+        "4441b98e-9db2-4020-9d0a-0d6ccca2c652"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "8724bca9-2194-499d-b7e1-17a0f99a5b05",
+        "38c70418-6fbc-4e5a-b3c2-c0d8b10ade29"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "8724bca9-2194-499d-b7e1-17a0f99a5b05",
+        "b68a0e6f-4adb-4816-8dd4-2df0da8e5d9b"
       ]
     },
     {
@@ -155,36 +169,22 @@
     {
       "category": "MATEMATICA",
       "ids": [
+        "80dae14d-2066-41ac-b8f7-e5bf5ed29921",
+        "a1c3048c-175c-4129-89da-634d9f8c28b3"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
+        "80dae14d-2066-41ac-b8f7-e5bf5ed29921",
+        "6b79c3e1-32d9-4792-aef4-521b21607b98"
+      ]
+    },
+    {
+      "category": "MATEMATICA",
+      "ids": [
         "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
         "4ca0e303-cdfe-42d7-ab94-fb6cddf47901"
-      ]
-    },
-    {
-      "category": "MATEMATICA",
-      "ids": [
-        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
-        "4b36a5ec-4fe8-4e2c-a581-af80eb670505"
-      ]
-    },
-    {
-      "category": "MATEMATICA",
-      "ids": [
-        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
-        "c5a12647-435e-4ecb-b810-ae5cc127ff6d"
-      ]
-    },
-    {
-      "category": "MATEMATICA",
-      "ids": [
-        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
-        "c256d99b-cb09-4998-854a-b479a72ce2c8"
-      ]
-    },
-    {
-      "category": "MATEMATICA",
-      "ids": [
-        "c20f1f30-5ef8-4af6-a5e1-8de86a904692",
-        "eaae7106-c3b8-44a6-aba7-b5047e3f4425"
       ]
     }
   ]
