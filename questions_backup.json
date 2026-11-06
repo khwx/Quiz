@@ -80980,5 +80980,56 @@
       "explanation": "Quanto é 72 - 36 = 36."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 90 - 52?",
+    "options": [
+      "35",
+      "38",
+      "45",
+      "37"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 90 - 52 = 38."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 + 69?",
+    "options": [
+      "65",
+      "73",
+      "70",
+      "75"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 6 + 69 = 75."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 97 + 56?",
+    "options": [
+      "153",
+      "158",
+      "150",
+      "143"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 97 + 56 = 153."
+    },
+    "image_url": null
   }
 ]
