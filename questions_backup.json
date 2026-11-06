@@ -81575,5 +81575,39 @@
       "explanation": "Quanto é 69 + 64 = 133."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 56 + 17?",
+    "options": [
+      "68",
+      "69",
+      "73",
+      "76"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 56 + 17 = 73."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 ÷ 5?",
+    "options": [
+      "2",
+      "6",
+      "1",
+      "5"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 10 ÷ 5 = 2."
+    },
+    "image_url": null
   }
 ]
