@@ -81745,5 +81745,39 @@
       "explanation": "Quanto é 72 + 57 = 129."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 46 - 42?",
+    "options": [
+      "4",
+      "0",
+      "5",
+      "2"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 46 - 42 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 19 - 5?",
+    "options": [
+      "17",
+      "21",
+      "15",
+      "14"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 19 - 5 = 14."
+    },
+    "image_url": null
   }
 ]
