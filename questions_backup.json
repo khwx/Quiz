@@ -81932,5 +81932,39 @@
       "explanation": "Quanto é 59 + 25 = 84."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 71 - 11?",
+    "options": [
+      "58",
+      "60",
+      "62",
+      "55"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 71 - 11 = 60."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 33 + 52?",
+    "options": [
+      "88",
+      "82",
+      "85",
+      "81"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 33 + 52 = 85."
+    },
+    "image_url": null
   }
 ]
