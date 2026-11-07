@@ -82000,5 +82000,39 @@
       "explanation": "Quanto é 16 ÷ 8 = 2."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 84?",
+    "options": [
+      "157",
+      "151",
+      "155",
+      "145"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 84 = 155."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 13?",
+    "options": [
+      "15",
+      "12",
+      "19",
+      "17"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 13 = 19."
+    },
+    "image_url": null
   }
 ]
