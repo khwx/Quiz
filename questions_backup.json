@@ -81966,5 +81966,39 @@
       "explanation": "Quanto é 33 + 52 = 85."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 63 - 39?",
+    "options": [
+      "24",
+      "28",
+      "29",
+      "23"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 63 - 39 = 24."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 ÷ 8?",
+    "options": [
+      "7",
+      "2",
+      "5",
+      "4"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 16 ÷ 8 = 2."
+    },
+    "image_url": null
   }
 ]
