@@ -81643,5 +81643,39 @@
       "explanation": "Quanto é 84 + 76 = 160."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 56 - 6?",
+    "options": [
+      "53",
+      "48",
+      "50",
+      "55"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 56 - 6 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 2?",
+    "options": [
+      "3",
+      "7",
+      "17",
+      "10"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 2 = 10."
+    },
+    "image_url": null
   }
 ]
