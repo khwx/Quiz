@@ -82068,5 +82068,39 @@
       "explanation": "Quanto é 8 + 61 = 69."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 88 + 77?",
+    "options": [
+      "160",
+      "172",
+      "165",
+      "161"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 88 + 77 = 165."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 33 - 13?",
+    "options": [
+      "30",
+      "20",
+      "22",
+      "25"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 33 - 13 = 20."
+    },
+    "image_url": null
   }
 ]
