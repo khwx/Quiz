@@ -81779,5 +81779,39 @@
       "explanation": "Quanto é 19 - 5 = 14."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 5?",
+    "options": [
+      "27",
+      "23",
+      "20",
+      "34"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 5 = 27."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 44 - 28?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "17"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 44 - 28 = 16."
+    },
+    "image_url": null
   }
 ]
