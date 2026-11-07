@@ -81813,5 +81813,56 @@
       "explanation": "Quanto é 44 - 28 = 16."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 12 + 57?",
+    "options": [
+      "62",
+      "67",
+      "66",
+      "69"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 12 + 57 = 69."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 21 ÷ 3?",
+    "options": [
+      "10",
+      "7",
+      "0",
+      "8"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 21 ÷ 3 = 7."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 × 4?",
+    "options": [
+      "38",
+      "48",
+      "43",
+      "53"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 12 × 4 = 48."
+    },
+    "image_url": null
   }
 ]
