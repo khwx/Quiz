@@ -82204,5 +82204,39 @@
       "explanation": "Quanto é 4 × 8 = 32."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 17 - 14?",
+    "options": [
+      "8",
+      "6",
+      "3",
+      "4"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 17 - 14 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 95 + 65?",
+    "options": [
+      "167",
+      "158",
+      "160",
+      "155"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 95 + 65 = 160."
+    },
+    "image_url": null
   }
 ]
