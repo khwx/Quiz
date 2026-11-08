@@ -82442,5 +82442,39 @@
       "explanation": "Quanto é 51 + 98 = 149."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 58 + 21?",
+    "options": [
+      "74",
+      "81",
+      "78",
+      "79"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 58 + 21 = 79."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 - 70?",
+    "options": [
+      "3",
+      "7",
+      "0",
+      "11"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 77 - 70 = 7."
+    },
+    "image_url": null
   }
 ]
