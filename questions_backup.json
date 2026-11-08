@@ -82306,5 +82306,39 @@
       "explanation": "Quanto é 18 - 18 = 0."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 36 - 19?",
+    "options": [
+      "17",
+      "27",
+      "22",
+      "13"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 36 - 19 = 17."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 108 ÷ 9?",
+    "options": [
+      "2",
+      "11",
+      "12",
+      "10"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 108 ÷ 9 = 12."
+    },
+    "image_url": null
   }
 ]
