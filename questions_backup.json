@@ -82238,5 +82238,39 @@
       "explanation": "Quanto é 95 + 65 = 160."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 76 - 37?",
+    "options": [
+      "39",
+      "36",
+      "32",
+      "42"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 76 - 37 = 39."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 20 + 90?",
+    "options": [
+      "106",
+      "114",
+      "108",
+      "110"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 20 + 90 = 110."
+    },
+    "image_url": null
   }
 ]
