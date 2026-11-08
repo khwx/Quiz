@@ -82136,5 +82136,39 @@
       "explanation": "Quanto é 15 - 13 = 2."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 68?",
+    "options": [
+      "139",
+      "149",
+      "138",
+      "141"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 68 = 139."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 59 + 6?",
+    "options": [
+      "65",
+      "66",
+      "67",
+      "61"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 59 + 6 = 65."
+    },
+    "image_url": null
   }
 ]
