@@ -82170,5 +82170,39 @@
       "explanation": "Quanto é 59 + 6 = 65."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 71 + 65?",
+    "options": [
+      "129",
+      "131",
+      "132",
+      "136"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 71 + 65 = 136."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 4 × 8?",
+    "options": [
+      "32",
+      "22",
+      "27",
+      "30"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 4 × 8 = 32."
+    },
+    "image_url": null
   }
 ]
