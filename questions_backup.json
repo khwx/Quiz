@@ -82374,5 +82374,56 @@
       "explanation": "Quanto é 26 + 3 = 29."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 60 - 7?",
+    "options": [
+      "54",
+      "49",
+      "53",
+      "51"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 60 - 7 = 53."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 60 - 34?",
+    "options": [
+      "31",
+      "26",
+      "30",
+      "22"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 60 - 34 = 26."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 70 + 83?",
+    "options": [
+      "153",
+      "160",
+      "150",
+      "148"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 70 + 83 = 153."
+    },
+    "image_url": null
   }
 ]
