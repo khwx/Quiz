@@ -82578,5 +82578,39 @@
       "explanation": "Quanto é 47 + 93 = 140."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 3 × 5?",
+    "options": [
+      "11",
+      "10",
+      "19",
+      "15"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 3 × 5 = 15."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 21 + 49?",
+    "options": [
+      "67",
+      "66",
+      "80",
+      "70"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 21 + 49 = 70."
+    },
+    "image_url": null
   }
 ]
