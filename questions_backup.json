@@ -82340,5 +82340,39 @@
       "explanation": "Quanto é 108 ÷ 9 = 12."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 98 + 43?",
+    "options": [
+      "146",
+      "142",
+      "141",
+      "145"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 98 + 43 = 141."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 26 + 3?",
+    "options": [
+      "30",
+      "33",
+      "27",
+      "29"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 26 + 3 = 29."
+    },
+    "image_url": null
   }
 ]
