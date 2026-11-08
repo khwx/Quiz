@@ -82374,5 +82374,39 @@
       "explanation": "Quanto é 26 + 3 = 29."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 4 + 63?",
+    "options": [
+      "69",
+      "67",
+      "66",
+      "57"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 4 + 63 = 67."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 3 + 46?",
+    "options": [
+      "45",
+      "49",
+      "53",
+      "42"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 3 + 46 = 49."
+    },
+    "image_url": null
   }
 ]
