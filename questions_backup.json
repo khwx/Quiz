@@ -82476,5 +82476,39 @@
       "explanation": "Quanto é 77 - 70 = 7."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 82?",
+    "options": [
+      "3",
+      "6",
+      "5",
+      "0"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 82 = 3."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 35 - 11?",
+    "options": [
+      "34",
+      "19",
+      "17",
+      "24"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 35 - 11 = 24."
+    },
+    "image_url": null
   }
 ]
