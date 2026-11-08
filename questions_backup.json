@@ -82102,5 +82102,39 @@
       "explanation": "Quanto é 33 - 13 = 20."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 92 - 55?",
+    "options": [
+      "37",
+      "33",
+      "40",
+      "35"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 92 - 55 = 37."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 15 - 13?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "1"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 15 - 13 = 2."
+    },
+    "image_url": null
   }
 ]
