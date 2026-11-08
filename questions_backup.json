@@ -82646,5 +82646,39 @@
       "explanation": "Quanto é 21 - 17 = 4."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 9 + 71?",
+    "options": [
+      "80",
+      "87",
+      "73",
+      "75"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 9 + 71 = 80."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 42 ÷ 6?",
+    "options": [
+      "7",
+      "4",
+      "6",
+      "12"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 42 ÷ 6 = 7."
+    },
+    "image_url": null
   }
 ]
