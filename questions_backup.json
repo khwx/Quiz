@@ -82408,5 +82408,39 @@
       "explanation": "Quanto é 3 + 46 = 49."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 50 - 45?",
+    "options": [
+      "12",
+      "9",
+      "5",
+      "4"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 50 - 45 = 5."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 51 + 98?",
+    "options": [
+      "139",
+      "144",
+      "149",
+      "150"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 51 + 98 = 149."
+    },
+    "image_url": null
   }
 ]
