@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-11-09] Ciclo de Manutenção (8h) — Novas Perguntas + Dedupe Semanal (19º ciclo)
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run maintain` → **+2 novas** via built-in (MATEMATICA: "Quanto é 69 - 65?" e "Quanto é 32 - 15?"). Backup: 3999 → 4001. Total na BD: 4033.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 30 grupos aproximados, 1638 pares fuzzy (≥0.9) fora de BANDEIRAS, 2546 pares de famílias de template ignorados. Total na BD: 4033.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run lint` 0 erros (113 warnings pré-existentes); `npm run typecheck` limpo; `npm run build` OK.
+
 ## [2026-11-09] Ciclo de Manutenção (8h) — Novas Perguntas + Dedupe Semanal (18º ciclo)
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run maintain` → **+2 novas** via built-in (MATEMATICA: 23+64 e 25−15). Backup: 3997 → 3999. Total na BD: 4031.

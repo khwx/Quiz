@@ -82952,5 +82952,39 @@
       "explanation": "Quanto é 25 - 15 = 10."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 69 - 65?",
+    "options": [
+      "4",
+      "11",
+      "2",
+      "14"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 69 - 65 = 4."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 15?",
+    "options": [
+      "7",
+      "17",
+      "24",
+      "27"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 15 = 17."
+    },
+    "image_url": null
   }
 ]
