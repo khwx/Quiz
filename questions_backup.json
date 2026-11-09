@@ -82714,5 +82714,39 @@
       "explanation": "Quanto é 16 ÷ 2 = 8."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 78 - 14?",
+    "options": [
+      "68",
+      "69",
+      "64",
+      "74"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 78 - 14 = 64."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 31 + 59?",
+    "options": [
+      "94",
+      "88",
+      "90",
+      "86"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 31 + 59 = 90."
+    },
+    "image_url": null
   }
 ]
