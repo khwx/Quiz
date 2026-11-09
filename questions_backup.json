@@ -82986,5 +82986,39 @@
       "explanation": "Quanto é 32 - 15 = 17."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 5 × 9?",
+    "options": [
+      "45",
+      "49",
+      "48",
+      "43"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 5 × 9 = 45."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 96 + 48?",
+    "options": [
+      "142",
+      "143",
+      "154",
+      "144"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 96 + 48 = 144."
+    },
+    "image_url": null
   }
 ]
