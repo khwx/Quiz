@@ -83088,5 +83088,73 @@
       "explanation": "Quanto é 89 - 43 = 46."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 4 + 83?",
+    "options": [
+      "94",
+      "86",
+      "97",
+      "87"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 4 + 83 = 87."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 52 - 15?",
+    "options": [
+      "33",
+      "36",
+      "32",
+      "37"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 52 - 15 = 37."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 80 - 36?",
+    "options": [
+      "41",
+      "44",
+      "51",
+      "40"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 80 - 36 = 44."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 91 - 69?",
+    "options": [
+      "22",
+      "23",
+      "27",
+      "19"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 91 - 69 = 22."
+    },
+    "image_url": null
   }
 ]
