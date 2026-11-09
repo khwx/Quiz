@@ -1,5 +1,13 @@
 # 📈 Progress Log - QuizVerse
 
+## [2026-11-09] Ciclo de Manutenção (8h) — Novas Perguntas + Dedupe Semanal (27º ciclo)
+
+- **TAREFA DIÁRIA — Novas perguntas**: `npm run maintain` → **+2 novas** via built-in (MATEMATICA: "Quanto é 88 - 17?" e "Quanto é 43 - 38?"). Backup: 4020 → 4022. Total na BD: 4058.
+  - `questions_backup.json` atualizado automaticamente pelo script.
+- **TAREFA SEMANAL — Duplicados**: `scripts/weekly-dedupe.mjs` → **0 duplicados exatos removidos**. 30 grupos aproximados, 1711 pares fuzzy (≥0.9) fora de BANDEIRAS, 2599 pares de famílias de template ignorados. Total na BD: 4058.
+  - Relatório gravado em `scripts/dedupe-report.json`.
+- **LINT/BUILD/TESTS**: `npm test` 15/15 passaram; `npm run lint` 0 erros (113 warnings pré-existentes); `npm run typecheck` limpo; `npm run build` OK.
+
 ## [2026-11-09] Ciclo de Manutenção (8h) — Novas Perguntas + Dedupe Semanal (23º ciclo)
 
 - **TAREFA DIÁRIA — Novas perguntas**: `npm run maintain` → **+2 novas** via built-in (MATEMATICA: "Quanto é 55 ÷ 11?" e "Quanto é 2 × 11?"). Backup: 4011 → 4013. Total na BD: 4045.
