@@ -83190,5 +83190,56 @@
       "explanation": "Quanto é 2 × 11 = 22."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 80 - 30?",
+    "options": [
+      "45",
+      "53",
+      "50",
+      "52"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 80 - 30 = 50."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 90 + 2?",
+    "options": [
+      "92",
+      "102",
+      "95",
+      "94"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 90 + 2 = 92."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 65 - 5?",
+    "options": [
+      "67",
+      "70",
+      "63",
+      "60"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 65 - 5 = 60."
+    },
+    "image_url": null
   }
 ]
