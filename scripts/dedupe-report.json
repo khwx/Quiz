@@ -1,12 +1,12 @@
 {
   "date": "2026-11-09",
-  "totalQuestions": 4021,
+  "totalQuestions": 4023,
   "exactDuplicatesRemoved": 0,
   "exactDuplicatesFound": 0,
   "nearDuplicateGroups": 30,
-  "fuzzyPairs": 1620,
-  "templateFamilyPairs": 2522,
-  "fuzzyAffectedQuestions": 633,
+  "fuzzyPairs": 1621,
+  "templateFamilyPairs": 2526,
+  "fuzzyAffectedQuestions": 635,
   "fuzzySkippedCategories": [
     "BANDEIRAS"
   ],

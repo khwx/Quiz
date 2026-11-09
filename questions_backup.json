@@ -82782,5 +82782,39 @@
       "explanation": "Quanto é 6 + 88 = 94."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 65 - 40?",
+    "options": [
+      "25",
+      "27",
+      "32",
+      "15"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 65 - 40 = 25."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 63 + 69?",
+    "options": [
+      "125",
+      "139",
+      "132",
+      "136"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 63 + 69 = 132."
+    },
+    "image_url": null
   }
 ]
