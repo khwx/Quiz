@@ -82748,5 +82748,39 @@
       "explanation": "Quanto é 31 + 59 = 90."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 5?",
+    "options": [
+      "35",
+      "33",
+      "28",
+      "39"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 5 = 35."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 6 + 88?",
+    "options": [
+      "93",
+      "91",
+      "89",
+      "94"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 6 + 88 = 94."
+    },
+    "image_url": null
   }
 ]
