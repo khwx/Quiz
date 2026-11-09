@@ -83343,5 +83343,39 @@
       "explanation": "Quanto é 43 - 38 = 5."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 15 + 86?",
+    "options": [
+      "103",
+      "104",
+      "101",
+      "97"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 15 + 86 = 101."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 31 - 20?",
+    "options": [
+      "11",
+      "1",
+      "9",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 31 - 20 = 11."
+    },
+    "image_url": null
   }
 ]
