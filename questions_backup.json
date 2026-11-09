@@ -83275,5 +83275,39 @@
       "explanation": "Quanto é 39 + 87 = 126."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 20 + 84?",
+    "options": [
+      "100",
+      "111",
+      "107",
+      "104"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 20 + 84 = 104."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 65 - 36?",
+    "options": [
+      "33",
+      "27",
+      "29",
+      "34"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 65 - 36 = 29."
+    },
+    "image_url": null
   }
 ]
