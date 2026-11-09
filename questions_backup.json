@@ -82680,5 +82680,39 @@
       "explanation": "Quanto é 42 ÷ 6 = 7."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 19 - 7?",
+    "options": [
+      "9",
+      "22",
+      "11",
+      "12"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 19 - 7 = 12."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 ÷ 2?",
+    "options": [
+      "10",
+      "9",
+      "1",
+      "8"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 16 ÷ 2 = 8."
+    },
+    "image_url": null
   }
 ]
