@@ -82850,5 +82850,39 @@
       "explanation": "Quanto é 90 - 44 = 46."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 72 + 16?",
+    "options": [
+      "91",
+      "83",
+      "88",
+      "89"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 72 + 16 = 88."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 61 - 31?",
+    "options": [
+      "30",
+      "29",
+      "20",
+      "33"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 61 - 31 = 30."
+    },
+    "image_url": null
   }
 ]
