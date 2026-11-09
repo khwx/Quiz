@@ -82918,5 +82918,39 @@
       "explanation": "Quanto é 18 + 9 = 27."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 23 + 64?",
+    "options": [
+      "82",
+      "94",
+      "87",
+      "89"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 23 + 64 = 87."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 25 - 15?",
+    "options": [
+      "11",
+      "8",
+      "20",
+      "10"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 25 - 15 = 10."
+    },
+    "image_url": null
   }
 ]
