@@ -83156,5 +83156,39 @@
       "explanation": "Quanto é 91 - 69 = 22."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 55 ÷ 11?",
+    "options": [
+      "9",
+      "5",
+      "7",
+      "3"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 55 ÷ 11 = 5."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 2 × 11?",
+    "options": [
+      "25",
+      "17",
+      "12",
+      "22"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 2 × 11 = 22."
+    },
+    "image_url": null
   }
 ]
