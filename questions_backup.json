@@ -83377,5 +83377,56 @@
       "explanation": "Quanto é 31 - 20 = 11."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 24 - 11?",
+    "options": [
+      "14",
+      "13",
+      "23",
+      "15"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 24 - 11 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 28 - 2?",
+    "options": [
+      "26",
+      "25",
+      "31",
+      "29"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 28 - 2 = 26."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 - 6?",
+    "options": [
+      "1",
+      "7",
+      "6",
+      "13"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 12 - 6 = 6."
+    },
+    "image_url": null
   }
 ]
