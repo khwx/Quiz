@@ -83428,5 +83428,56 @@
       "explanation": "Quanto é 12 - 6 = 6."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 10 + 55?",
+    "options": [
+      "65",
+      "75",
+      "67",
+      "64"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 10 + 55 = 65."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 83 - 21?",
+    "options": [
+      "62",
+      "64",
+      "66",
+      "52"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 83 - 21 = 62."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 54 - 33?",
+    "options": [
+      "21",
+      "31",
+      "16",
+      "24"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 54 - 33 = 21."
+    },
+    "image_url": null
   }
 ]
