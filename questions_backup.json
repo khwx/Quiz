@@ -83479,5 +83479,56 @@
       "explanation": "Quanto é 54 - 33 = 21."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 52 + 36?",
+    "options": [
+      "85",
+      "88",
+      "84",
+      "91"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 52 + 36 = 88."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 94 + 61?",
+    "options": [
+      "154",
+      "155",
+      "150",
+      "157"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 94 + 61 = 155."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 32 - 16?",
+    "options": [
+      "16",
+      "11",
+      "21",
+      "13"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 32 - 16 = 16."
+    },
+    "image_url": null
   }
 ]
