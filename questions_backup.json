@@ -83530,5 +83530,56 @@
       "explanation": "Quanto é 32 - 16 = 16."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 60 - 28?",
+    "options": [
+      "32",
+      "30",
+      "34",
+      "28"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 60 - 28 = 32."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 15 + 43?",
+    "options": [
+      "58",
+      "62",
+      "56",
+      "65"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 15 + 43 = 58."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 89 - 87?",
+    "options": [
+      "0",
+      "2",
+      "4",
+      "6"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 89 - 87 = 2."
+    },
+    "image_url": null
   }
 ]
