@@ -83581,5 +83581,56 @@
       "explanation": "Quanto é 89 - 87 = 2."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 46 - 31?",
+    "options": [
+      "15",
+      "17",
+      "13",
+      "20"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 46 - 31 = 15."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 99 + 46?",
+    "options": [
+      "152",
+      "145",
+      "144",
+      "147"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 99 + 46 = 145."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 + 16?",
+    "options": [
+      "88",
+      "103",
+      "93",
+      "97"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 77 + 16 = 93."
+    },
+    "image_url": null
   }
 ]
