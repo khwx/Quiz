@@ -83632,5 +83632,56 @@
       "explanation": "Quanto é 77 + 16 = 93."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 86 - 34?",
+    "options": [
+      "62",
+      "47",
+      "52",
+      "55"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 86 - 34 = 52."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 62 - 35?",
+    "options": [
+      "31",
+      "27",
+      "29",
+      "32"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 62 - 35 = 27."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 41 + 32?",
+    "options": [
+      "73",
+      "71",
+      "80",
+      "68"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 41 + 32 = 73."
+    },
+    "image_url": null
   }
 ]
