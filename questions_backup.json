@@ -83683,5 +83683,56 @@
       "explanation": "Quanto é 41 + 32 = 73."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 93 - 53?",
+    "options": [
+      "50",
+      "33",
+      "43",
+      "40"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 93 - 53 = 40."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 41 + 68?",
+    "options": [
+      "107",
+      "110",
+      "106",
+      "109"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 41 + 68 = 109."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 85 - 78?",
+    "options": [
+      "7",
+      "11",
+      "5",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 85 - 78 = 7."
+    },
+    "image_url": null
   }
 ]
