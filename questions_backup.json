@@ -83734,5 +83734,56 @@
       "explanation": "Quanto é 85 - 78 = 7."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 93 - 23?",
+    "options": [
+      "70",
+      "72",
+      "60",
+      "69"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 93 - 23 = 70."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 96 + 27?",
+    "options": [
+      "120",
+      "123",
+      "122",
+      "126"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 96 + 27 = 123."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 68 + 15?",
+    "options": [
+      "85",
+      "83",
+      "90",
+      "87"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 68 + 15 = 83."
+    },
+    "image_url": null
   }
 ]
