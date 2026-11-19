@@ -83836,5 +83836,56 @@
       "explanation": "Quanto é 20 + 88 = 108."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 98 + 22?",
+    "options": [
+      "115",
+      "121",
+      "123",
+      "120"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 98 + 22 = 120."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 73 - 27?",
+    "options": [
+      "41",
+      "46",
+      "49",
+      "53"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 73 - 27 = 46."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 68 + 31?",
+    "options": [
+      "92",
+      "99",
+      "103",
+      "94"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 68 + 31 = 99."
+    },
+    "image_url": null
   }
 ]
