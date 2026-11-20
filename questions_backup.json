@@ -83887,5 +83887,56 @@
       "explanation": "Quanto é 68 + 31 = 99."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 16 + 13?",
+    "options": [
+      "29",
+      "30",
+      "26",
+      "39"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 16 + 13 = 29."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 9 × 5?",
+    "options": [
+      "41",
+      "35",
+      "38",
+      "45"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 9 × 5 = 45."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 63 - 52?",
+    "options": [
+      "12",
+      "11",
+      "6",
+      "21"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 63 - 52 = 11."
+    },
+    "image_url": null
   }
 ]
