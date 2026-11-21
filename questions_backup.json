@@ -83938,5 +83938,56 @@
       "explanation": "Quanto é 63 - 52 = 11."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 20 - 18?",
+    "options": [
+      "2",
+      "1",
+      "5",
+      "6"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 20 - 18 = 2."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 17 - 6?",
+    "options": [
+      "11",
+      "6",
+      "9",
+      "13"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 17 - 6 = 11."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 77 + 74?",
+    "options": [
+      "155",
+      "151",
+      "150",
+      "161"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 77 + 74 = 151."
+    },
+    "image_url": null
   }
 ]
