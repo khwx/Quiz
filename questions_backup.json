@@ -83989,5 +83989,56 @@
       "explanation": "Quanto é 77 + 74 = 151."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 31 + 43?",
+    "options": [
+      "70",
+      "67",
+      "74",
+      "81"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 31 + 43 = 74."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 7 × 6?",
+    "options": [
+      "39",
+      "42",
+      "38",
+      "46"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 7 × 6 = 42."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 12 ÷ 6?",
+    "options": [
+      "12",
+      "2",
+      "5",
+      "7"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Divisão exata.",
+      "explanation": "Quanto é 12 ÷ 6 = 2."
+    },
+    "image_url": null
   }
 ]
