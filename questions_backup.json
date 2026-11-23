@@ -84040,5 +84040,56 @@
       "explanation": "Quanto é 12 ÷ 6 = 2."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 46 + 76?",
+    "options": [
+      "122",
+      "125",
+      "129",
+      "132"
+    ],
+    "correct_option": 0,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 46 + 76 = 122."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 74 - 61?",
+    "options": [
+      "18",
+      "10",
+      "13",
+      "8"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 74 - 61 = 13."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 10 × 4?",
+    "options": [
+      "44",
+      "33",
+      "45",
+      "40"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Tabuada.",
+      "explanation": "Quanto é 10 × 4 = 40."
+    },
+    "image_url": null
   }
 ]
