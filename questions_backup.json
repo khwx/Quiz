@@ -84091,5 +84091,56 @@
       "explanation": "Quanto é 10 × 4 = 40."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 65 - 51?",
+    "options": [
+      "17",
+      "14",
+      "18",
+      "13"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 65 - 51 = 14."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 26 + 79?",
+    "options": [
+      "100",
+      "109",
+      "105",
+      "115"
+    ],
+    "correct_option": 2,
+    "category": "MATEMATICA",
+    "age_rating": 8,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 26 + 79 = 105."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 67 + 3?",
+    "options": [
+      "67",
+      "66",
+      "69",
+      "70"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 16,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 67 + 3 = 70."
+    },
+    "image_url": null
   }
 ]
