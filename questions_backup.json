@@ -84244,5 +84244,56 @@
       "explanation": "Quanto é 78 + 67 = 145."
     },
     "image_url": null
+  },
+  {
+    "text": "Quanto é 92 - 21?",
+    "options": [
+      "81",
+      "61",
+      "73",
+      "71"
+    ],
+    "correct_option": 3,
+    "category": "MATEMATICA",
+    "age_rating": 14,
+    "metadata": {
+      "hint": "Diferença.",
+      "explanation": "Quanto é 92 - 21 = 71."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 64 + 11?",
+    "options": [
+      "70",
+      "75",
+      "74",
+      "77"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 12,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 64 + 11 = 75."
+    },
+    "image_url": null
+  },
+  {
+    "text": "Quanto é 16 + 21?",
+    "options": [
+      "34",
+      "37",
+      "41",
+      "30"
+    ],
+    "correct_option": 1,
+    "category": "MATEMATICA",
+    "age_rating": 10,
+    "metadata": {
+      "hint": "Soma simples.",
+      "explanation": "Quanto é 16 + 21 = 37."
+    },
+    "image_url": null
   }
 ]
